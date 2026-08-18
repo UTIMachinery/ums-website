@@ -164,7 +164,7 @@ function getMachineImage(invID) {
   const file = machineCardImages.value[invID]
 
   return file
-    ? `/Images/${file}`
+    ? `/images/${file}`
     : ''
 }
 

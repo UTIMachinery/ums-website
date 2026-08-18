@@ -71,7 +71,7 @@
 
   <img
     v-else
-    :src="`/Images/${machineImages[selectedImage]}`"
+    :src="`/images/${machineImages[selectedImage]}`"
     :alt="`${machine.Year} ${machine.Manufacturer} ${machine.Model}`"
   />
 
@@ -94,7 +94,7 @@
   >
     <img
       v-if="item.type === 'image'"
-      :src="`/Images/${item.file}`"
+      :src="`/images/${item.file}`"
       :alt="`${machine.Year} ${machine.Manufacturer} ${machine.Model}`"
       class="thumbnail"
       @click="showVideo = false; selectedImage = machineImages.indexOf(item.file)"
@@ -106,7 +106,7 @@
       @click="showVideo = true"
     >
       <img
-        :src="`/Images/${machineImages[selectedImage]}`"
+        :src="`/images/${machineImages[selectedImage]}`"
         :alt="`Video - ${machine.Year} ${machine.Manufacturer} ${machine.Model}`"
         class="thumbnail"
       />
@@ -566,7 +566,7 @@ useSeoMeta({
     : 'Used CNC machinery and industrial equipment from Used Machinery Source.',
 
   ogImage: () => machine.value
-    ? `https://www.usedmachinerysource.com/Images/${machine.value.InvID}_1.jpg`
+    ? `https://www.usedmachinerysource.com/images/${machine.value.InvID}_1.jpg`
     : '',
 
 ogUrl: `https://www.usedmachinerysource.com${route.path}`,
@@ -584,7 +584,7 @@ ogUrl: `https://www.usedmachinerysource.com${route.path}`,
     : 'Used CNC machinery and industrial equipment from Used Machinery Source.',
 
   twitterImage: () => machine.value
-    ? `https://www.usedmachinerysource.com/Images/${machine.value.InvID}_1.jpg`
+    ? `https://www.usedmachinerysource.com/images/${machine.value.InvID}_1.jpg`
     : ''
 })
 

@@ -3,7 +3,7 @@
     <div class="header-inner">
       <a href="/" class="logo-link">
         <img
-          src="/Images/ums-logo.png"
+          src="/images/ums-logo.png"
           alt="Used Machinery Source"
           class="logo"
         />
