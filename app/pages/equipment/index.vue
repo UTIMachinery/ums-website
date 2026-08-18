@@ -161,12 +161,9 @@ async function loadMachineCardImages() {
 }
 
 function getMachineImage(invID) {
-  const file = machineCardImages.value[invID]
-
-  return file
-    ? `/Images/${file}`
-    : ''
+  return `/Images/${invID}_1.jpg`
 }
+
 
 const activeMachines = computed(() => {
   return (machines.value || []).filter(machine =>
