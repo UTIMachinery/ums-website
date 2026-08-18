@@ -161,7 +161,8 @@ async function loadMachineCardImages() {
 }
 
 function getMachineImage(invID) {
-  return `/Images/${invID}_1.jpg`
+  const file = machineCardImages.value[invID]
+  return file ? `/Images/${file}` : `/Images/${invID}_1.jpg`
 }
 
 
