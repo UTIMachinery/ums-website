@@ -94,7 +94,7 @@
 >
   <div class="machine-card-image">
     <img
-      :src="getMachineImage(machine.InvID)"
+      :src="machineCardImages[machine.InvID] ? `/Images/${machineCardImages[machine.InvID]}` : ''"
       :alt="`${machine.Year} ${machine.Manufacturer} ${machine.Model}`"
     />
   </div>
