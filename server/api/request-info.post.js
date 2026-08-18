@@ -11,9 +11,34 @@ export default defineEventHandler(async (event) => {
     }
   })
 
-  const subject = `Website Lead - ${body.machine.year} ${body.machine.manufacturer} ${body.machine.model} - Stock #${body.machine.invID}`
+  const subject =
+  body.inquiryType === 'machine-needed'
+    ? 'Machine Needed!'
+    : `Website Lead - ${body.machine.year} ${body.machine.manufacturer} ${body.machine.model} - Stock #${body.machine.invID}`
 
-  const message = `
+  const message =
+  body.inquiryType === 'machine-needed'
+    ? `
+Machine Needed!
+
+Contact Information:
+Email: ${body.contact.email}
+Contact Name: ${body.contact.contactName}
+Phone: ${body.contact.phone}
+Company Name: ${body.contact.companyName}
+Address: ${body.contact.address}
+City: ${body.contact.city}
+State: ${body.contact.state}
+Postal Code: ${body.contact.postalCode}
+Country: ${body.contact.country}
+
+Have machines to sell or trade?: ${body.machinesToSell}
+Sign up for email list?: ${body.emailList}
+
+Machine Needed:
+${body.message}
+`
+    : `
 Website Request for Information
 
 Machine:
@@ -36,7 +61,7 @@ Sign up for email list?: ${body.emailList}
 
 Message:
 ${body.message}
-  `
+`
 
   await transporter.sendMail({
     from: process.env.SMTP_USER,

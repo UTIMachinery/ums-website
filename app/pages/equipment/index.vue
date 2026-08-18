@@ -87,6 +87,23 @@
   </button>
 </div>
 
+<div id="tell-us-what-you-need" class="machine-needed-callout">
+  <div>
+    <h3>Don't See What You're Looking For?</h3>
+<p>
+  Our inventory is constantly changing. If you don't see what you need—or would rather send us your requirements—tell us what you're looking for. We'll let you know what's available that fits your needs.
+</p>
+  </div>
+
+  <button
+    type="button"
+    class="machine-needed-button"
+    @click="showMachineNeededForm = true"
+  >
+    Tell Us What You Need
+  </button>
+</div>
+
   <article
   v-for="machine in filteredMachines"
   :key="machine.InvID"
@@ -116,12 +133,244 @@
   No equipment found matching your search.
 </p>
 </section>
+<div
+  v-if="showMachineNeededForm"
+  class="request-modal-overlay"
+>
+  <div class="request-modal">
+    <button
+      type="button"
+      class="request-modal-close"
+      @click="showMachineNeededForm = false"
+    >
+      ×
+    </button>
+
+    <h2>Machine Needed</h2>
+    <p class="request-machine">
+      Tell us what you're looking for.
+    </p>
+
+    <form
+      class="request-form"
+      @submit.prevent="submitMachineNeededForm"
+    >
+      <label>
+        Email *
+        <input
+          v-model="machineNeededForm.email"
+          type="email"
+          autocomplete="email"
+          required
+        />
+      </label>
+
+      <label>
+        Contact Name *
+        <input
+          v-model="machineNeededForm.contactName"
+          type="text"
+          required
+        />
+      </label>
+
+      <label>
+        Phone *
+        <input
+          v-model="machineNeededForm.phone"
+          type="tel"
+          required
+        />
+      </label>
+
+      <label>
+        Company Name
+        <input
+          v-model="machineNeededForm.companyName"
+          type="text"
+        />
+      </label>
+
+      <label>
+        Address
+        <input
+          v-model="machineNeededForm.address"
+          type="text"
+        />
+      </label>
+
+      <label>
+        City
+        <input
+          v-model="machineNeededForm.city"
+          type="text"
+        />
+      </label>
+
+      <label>
+        State
+        <input
+          v-model="machineNeededForm.state"
+          type="text"
+        />
+      </label>
+
+      <label>
+        Postal Code
+        <input
+          v-model="machineNeededForm.postalCode"
+          type="text"
+        />
+      </label>
+
+      <label>
+        Country
+        <input
+          v-model="machineNeededForm.country"
+          type="text"
+        />
+      </label>
+
+      <fieldset class="request-radio-group">
+        <legend>Have machines to sell or trade?</legend>
+
+        <label>
+          <input
+            v-model="machineNeededForm.machinesToSell"
+            type="radio"
+            value="yes"
+          />
+          Yes
+        </label>
+
+        <label>
+          <input
+            v-model="machineNeededForm.machinesToSell"
+            type="radio"
+            value="no"
+          />
+          No
+        </label>
+      </fieldset>
+
+      <fieldset class="request-radio-group">
+        <legend>Sign up for email list?</legend>
+
+        <label>
+          <input
+            v-model="machineNeededForm.emailList"
+            type="radio"
+            value="yes"
+          />
+          Yes
+        </label>
+
+        <label>
+          <input
+            v-model="machineNeededForm.emailList"
+            type="radio"
+            value="no"
+          />
+          No
+        </label>
+      </fieldset>
+
+      <label class="request-message">
+        Tell us what you're looking for *
+        <textarea
+          v-model="machineNeededForm.message"
+          rows="5"
+          required
+        ></textarea>
+      </label>
+
+      <div class="request-form-actions">
+        <button
+          type="button"
+          @click="showMachineNeededForm = false"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="submit"
+          :disabled="machineNeededSending"
+        >
+          {{ machineNeededSending ? 'Sending...' : 'Submit' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
   </main>
 </template>
 <script setup>
 import machinesData from '~/assets/data/machines.json'
 const selectedCategory = ref('all')
 const searchTerm = ref('')
+const showMachineNeededForm = ref(false)
+const machineNeededSending = ref(false)
+const machineNeededSent = ref(false)
+
+const machineNeededForm = reactive({
+  email: '',
+  contactName: '',
+  phone: '',
+  companyName: '',
+  address: '',
+  city: '',
+  state: '',
+  postalCode: '',
+  country: '',
+  machinesToSell: 'no',
+  emailList: 'yes',
+  message: ''
+})
+
+async function submitMachineNeededForm() {
+  machineNeededSending.value = true
+
+  const payload = {
+    inquiryType: 'machine-needed',
+    contact: {
+      email: machineNeededForm.email,
+      contactName: machineNeededForm.contactName,
+      phone: machineNeededForm.phone,
+      companyName: machineNeededForm.companyName,
+      address: machineNeededForm.address,
+      city: machineNeededForm.city,
+      state: machineNeededForm.state,
+      postalCode: machineNeededForm.postalCode,
+      country: machineNeededForm.country
+    },
+    machinesToSell: machineNeededForm.machinesToSell,
+    emailList: machineNeededForm.emailList,
+    message: machineNeededForm.message
+  }
+
+  try {
+    await $fetch('/api/request-info', {
+      method: 'POST',
+      body: payload
+    })
+
+    showMachineNeededForm.value = false
+    machineNeededSent.value = true
+
+    machineNeededForm.message = ''
+    machineNeededForm.machinesToSell = 'no'
+
+    setTimeout(() => {
+      machineNeededSent.value = false
+    }, 7000)
+  } catch (error) {
+    console.error('Machine needed request failed:', error)
+    alert('Your request could not be sent. Please try again.')
+  } finally {
+    machineNeededSending.value = false
+  }
+}
+
 const machines = ref(machinesData)
 const machineCardImages = ref({})
 onMounted(async () => {
@@ -171,7 +420,10 @@ const activeMachines = computed(() => {
 })
 
 const filteredMachines = computed(() => {
-  const term = searchTerm.value.trim().toLowerCase()
+  const term = searchTerm.value
+  .trim()
+  .toLowerCase()
+  .replace(/[^a-z0-9]/g, '')
 
   return activeMachines.value.filter(machine => {
     const categoryMatch =
@@ -210,8 +462,9 @@ const filteredMachines = computed(() => {
       machine.InvID
     ]
       .filter(Boolean)
-      .join(' ')
-      .toLowerCase()
+.join(' ')
+.toLowerCase()
+.replace(/[^a-z0-9]/g, '')
 
     const searchMatch = term === '' || searchText.includes(term)
 
@@ -491,5 +744,251 @@ flex: 1;
 .view-all-equipment-button:hover {
   background: #1c4587;
   color: #ffffff;
+}
+
+.request-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.request-modal {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 28px;
+    box-sizing: border-box;
+}
+
+.request-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.request-form {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 14px 18px;
+    margin-top: 20px;
+}
+.form-question {
+    grid-column: span 6;
+}
+
+.request-form textarea {
+    grid-column: 1 / -1;
+}
+
+.request-form > label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-weight: 600;
+    font-size: 15px;
+}
+.request-form > label:last-of-type {
+    grid-column: 1 / -1;
+}
+
+.request-form textarea {
+    min-height: 120px;
+}
+
+.request-form input[type="text"],
+.request-form input[type="email"],
+.request-form input[type="tel"],
+.request-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid #d6dee8;
+    border-radius: 6px;
+    background: #ffffff;
+}
+
+.request-form textarea {
+    resize: vertical;
+}
+
+.form-question {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 15px;
+}
+
+.form-question > span {
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.form-question label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 400;
+}
+
+.request-form > label:nth-of-type(1),
+.request-form > label:nth-of-type(2),
+.request-form > label:nth-of-type(3) {
+    grid-column: span 4;
+}
+
+.request-form > label:nth-of-type(4) {
+    grid-column: span 4;
+}
+
+.request-form > label:nth-of-type(5) {
+    grid-column: span 8;
+}
+
+.request-form > label:nth-of-type(6) {
+    grid-column: span 5;
+}
+
+.request-form > label:nth-of-type(7) {
+    grid-column: span 2;
+}
+
+.request-form > label:nth-of-type(8) {
+    grid-column: span 2;
+}
+
+.request-form > label:nth-of-type(9) {
+    grid-column: span 3;
+}
+
+.request-machine {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1c4587;
+    margin-top: 6px;
+    margin-bottom: 14px;
+}
+
+.request-form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4px;
+}
+
+.request-submit-button {
+    background: #1c4587;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.request-submit-button:hover {
+    background: #16386e;
+}
+
+.request-form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.request-cancel-button {
+    background: #ffffff;
+    color: #1c4587;
+    border: 2px solid #1c4587;
+    border-radius: 8px;
+    padding: 9px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.request-clear-button {
+    grid-column: 1 / 3;
+    justify-self: start;
+    background: transparent;
+    color: #1c4587;
+    border: none;
+    padding: 6px 0;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.request-success {
+  margin-top: 14px;
+  padding: 14px 18px;
+  background: #eaf4ea;
+  border: 2px solid #5b9b5b;
+  border-radius: 8px;
+  color: #245c24;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+.request-radio-group {
+  grid-column: span 6;
+  min-width: 0;
+}
+.machine-needed-callout {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 14px 0 28px;
+  padding: 28px 26px;
+  background: #f4f7fb;
+  border: 1px solid #cfd8e6;
+  border-left: 6px solid #1c4587;
+  border-radius: 6px;
+}
+
+.machine-needed-callout h3 {
+  margin: 0 0 8px;
+  font-size: 25px;
+  font-weight: 800;
+  color: #1c4587;
+}
+
+.machine-needed-callout p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.machine-needed-button {
+  flex: 0 0 auto;
+  background: #1c4587;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.machine-needed-button:hover {
+  background: #16386e;
 }
 </style>
