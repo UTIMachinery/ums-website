@@ -124,7 +124,7 @@ const selectedCategory = ref('all')
 const searchTerm = ref('')
 const machines = ref(machinesData)
 const machineCardImages = ref({})
-onMounted(() => {
+onMounted(async () => {
   const savedCategory = localStorage.getItem('ums-equipment-category')
   const savedSearch = localStorage.getItem('ums-equipment-search')
 
@@ -135,7 +135,7 @@ onMounted(() => {
   if (savedSearch) {
     searchTerm.value = savedSearch
   }
- loadMachineCardImages()
+ await loadMachineCardImages()
 })
 watch(selectedCategory, (value) => {
   localStorage.setItem('ums-equipment-category', value)
