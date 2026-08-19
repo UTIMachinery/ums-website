@@ -1,5 +1,6 @@
 <template>
   <main class="equipment-page">
+ 
   <div class="search-panel">
     <section class="equipment-intro">
       <h1>Equipment Search</h1>
@@ -113,6 +114,12 @@
   >
     Tell Us What You Need
   </button>
+  <div
+  v-if="machineNeededSent"
+  class="machine-needed-sent"
+>
+  Your message has been sent successfully.
+</div>
 </div>
 
   <article
@@ -296,20 +303,22 @@
       </label>
 
       <div class="request-form-actions">
-        <button
-          type="button"
-          @click="showMachineNeededForm = false"
-        >
-          Cancel
-        </button>
+  <button
+    type="button"
+    class="request-cancel-button"
+    @click="showMachineNeededForm = false"
+  >
+    Cancel
+  </button>
 
-        <button
-          type="submit"
-          :disabled="machineNeededSending"
-        >
-          {{ machineNeededSending ? 'Sending...' : 'Submit' }}
-        </button>
-      </div>
+  <button
+    type="submit"
+    class="request-submit-button"
+    :disabled="machineNeededSending"
+  >
+    {{ machineNeededSending ? 'Sending...' : 'Submit' }}
+  </button>
+</div>
     </form>
   </div>
 </div>
@@ -1075,5 +1084,16 @@ padding: 9px 16px;
 
 .machine-needed-button:hover {
   background: #16386e;
+}
+.machine-needed-sent {
+  background: #e8f5e9;
+  color: #1b5e20;
+  border: 1px solid #a5d6a7;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-left: 14px;
 }
 </style>

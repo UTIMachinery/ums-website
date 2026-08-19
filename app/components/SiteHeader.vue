@@ -9,14 +9,18 @@
         />
       </a>
 
-      <nav>
-        <a href="https://www.usedmachinerysource.com/">Home</a>
-        <a href="https://www.usedmachinerysource.com/about">About</a>
-        <a href="https://www.usedmachinerysource.com/services">Services</a>
-        <a href="/equipment">Equipment</a>
-        <a href="https://www.usedmachinerysource.com/sell-your-machine">Sell Your Machine</a>
-        <a href="https://www.usedmachinerysource.com/contact">Contact</a>
-      </nav>
+      <div class="header-right">
+  <nav>
+    <a href="https://www.usedmachinerysource.com/">Home</a>
+    <a href="https://www.usedmachinerysource.com/about">About</a>
+    <a href="https://www.usedmachinerysource.com/services">Services</a>
+    <a href="/equipment">Equipment</a>
+    <a href="https://www.usedmachinerysource.com/sell-your-machine">Sell Your Machine</a>
+    <a href="https://www.usedmachinerysource.com/contact">Contact</a>
+  </nav>
+
+  <div class="header-phone">(256) 980-1200</div>
+</div>
     </div>
   </header>
 </template>
@@ -52,7 +56,12 @@ overflow: hidden;
   display: block;
   transform: translateY(10px);
 }
-
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
 nav {
   display: flex;
   gap: 30px;
@@ -62,10 +71,14 @@ nav {
 nav a {
   color: #0b2545;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
 }
-
+.header-phone {
+  color: #0b2545;
+  font-size: 18px;
+  font-weight: 600;
+}
 nav a:hover {
   color: #ff6a00;
 }
