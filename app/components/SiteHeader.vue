@@ -10,12 +10,12 @@
       </a>
 
       <nav>
-        <a href="/">Home</a>
+        <a href="https://www.usedmachinerysource.com/">Home</a>
+        <a href="https://www.usedmachinerysource.com/about">About</a>
+        <a href="https://www.usedmachinerysource.com/services">Services</a>
         <a href="/equipment">Equipment</a>
-        <a href="/services">Services</a>
-        <a href="/sell-your-machine">Sell Your Machine</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
+        <a href="https://www.usedmachinerysource.com/sell-your-machine">Sell Your Machine</a>
+        <a href="https://www.usedmachinerysource.com/contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -25,6 +25,9 @@
 .site-header {
     background: #ffffff;
   border-bottom: 1px solid #d9dee5;
+  position: sticky;
+top: 0;
+z-index: 1000;
 }
 
 .header-inner {

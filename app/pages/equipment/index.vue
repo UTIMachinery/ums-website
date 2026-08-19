@@ -1,9 +1,11 @@
 <template>
   <main class="equipment-page">
+  <div class="search-panel">
     <section class="equipment-intro">
-      <h1>Equipment</h1>
-
+      <h1>Equipment Search</h1>
+      
       <div class="equipment-search">
+      <div class="search-label">Search by Keyword</div>
         <input
         :value="searchTerm"
   @input="searchTerm = $event.target.value"
@@ -12,80 +14,89 @@
 />
         
       </div> 
-    </section><section class="equipment-categories">
-  <h2>Browse by Machine Type</h2>
+    </section>
+    <div class="search-or">OR</div>
+
+    <section class="equipment-categories">
+  <div class="browse-heading">
+  <h2>Search by Machine Type</h2>
+
+  
+</div>
 
   <div class="category-grid">
     <button
   v-if="categoryCounts.vmc > 0"
   type="button"
-  @click="selectedCategory = 'vmc'"
+  @click="selectedCategory = 'vmc'; searchTerm = ''"
 >
   CNC Vertical Machining Centers
 </button>
     <button
   v-if="categoryCounts.hmc > 0"
   type="button"
-  @click="selectedCategory = 'hmc'"
+  @click="selectedCategory = 'hmc'; searchTerm = ''"
 >
   CNC Horizontal Machining Centers
 </button>
     <button
   v-if="categoryCounts.lathe > 0"
   type="button"
-  @click="selectedCategory = 'lathe'"
+  @click="selectedCategory = 'lathe'; searchTerm = ''"
 >
   CNC Lathes & Turning Centers
 </button>
     <button
   v-if="categoryCounts.boring > 0"
   type="button"
-  @click="selectedCategory = 'boring'"
+  @click="selectedCategory = 'boring'; searchTerm = ''"
 >
   Boring Mills & VTLs
 </button>
     <button
   v-if="categoryCounts.grinder > 0"
   type="button"
-  @click="selectedCategory = 'grinder'"
+  @click="selectedCategory = 'grinder'; searchTerm = ''"
 >
   Grinders
 </button>
     <button
   v-if="categoryCounts.fabrication > 0"
   type="button"
-  @click="selectedCategory = 'fabrication'"
+  @click="selectedCategory = 'fabrication'; searchTerm = ''"
 >
   Fabrication Equipment
 </button>
     <button
   v-if="categoryCounts.inspection > 0"
   type="button"
-  @click="selectedCategory = 'inspection'"
+  @click="selectedCategory = 'inspection'; searchTerm = ''"
 >
   Inspection Equipment
 </button>
     <button
   v-if="categoryCounts.other > 0"
   type="button"
-  @click="selectedCategory = 'other'"
+  @click="selectedCategory = 'other'; searchTerm = ''"
 >
   Other Machinery
 </button>
   </div>
 </section>
 
-<section class="equipment-listing">
-  <div class="listing-heading">
-  <h2>Available Equipment</h2>
-  <button
+<div class="listing-heading">
+    <button
   type="button"
   class="view-all-equipment-button"
   @click="selectedCategory = 'all'; searchTerm = ''"
 >
-    View All Equipment
+    Reset Search / View All Equipment
   </button>
 </div>
+
+</div>
+<section class="equipment-listing">
+  
 
 <div id="tell-us-what-you-need" class="machine-needed-callout">
   <div>
@@ -392,6 +403,10 @@ watch(selectedCategory, (value) => {
 
 watch(searchTerm, (value) => {
   localStorage.setItem('ums-equipment-search', value)
+
+  if (value.trim() !== '') {
+    selectedCategory.value = 'all'
+  }
 })
 async function loadMachineCardImages() {
   for (const machine of machines.value) {
@@ -512,6 +527,65 @@ other: activeMachines.value.filter(machine =>
 }))
 </script>
 <style scoped>
+.search-panel {
+  background: #fafbfc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.search-label {
+  margin: 0;
+  font-weight: 600;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.search-or {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+  margin: 14px 0 18px 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+.search-or::before,
+.search-or::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid #c6ccd2;
+}
+
+.browse-heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 14px;
+  margin-bottom: 12px;
+}
+
+.browse-heading h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.reset-search-button {
+  padding: 8px 14px;
+  border: 1px solid #1c4587;
+  border-radius: 5px;
+  background: white;
+  color: #1c4587;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.reset-search-button:hover {
+  background: #1c4587;
+  color: white;
+}
 .equipment-page {
   max-width: 1400px;
   margin: 0 auto;
@@ -519,25 +593,33 @@ other: activeMachines.value.filter(machine =>
 }
 
 .equipment-intro h1 {
-  margin: 0 0 22px;
-  color: #0b2545;
-  font-size: 34px;
+  margin: 0;
+  margin-bottom: 20px;
+  color: #0d2545;
+  font-size: 30px;
   font-weight: 700;
+  text-align: center;
+  background: #f4f7fb;
+  border-bottom: 1px solid #d9e1ea;
+  padding: 16px 14px;
 }
 
 
 
 .equipment-search {
   display: flex;
-  max-width: 720px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 12px;
+  
 }
 
 .equipment-search input {
-  flex: 1;
-  padding: 14px 16px;
-  border: 1px solid #c9cdd2;
-  border-radius: 5px 0 0 5px;
-  font-size: 16px;
+  flex: none;
+  width: 700px;
+max-width: 100%;
+  height: 46px;
 }
 
 .equipment-search button {
@@ -660,8 +742,9 @@ flex: 1;
   grid-column: 1 / -1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .listing-heading h2 {
@@ -738,6 +821,8 @@ flex: 1;
   border: 1px solid #1c4587;
   border-radius: 6px;
   font-weight: 700;
+  margin-top: 24px;
+padding: 9px 16px;
   cursor: pointer;
 }
 
