@@ -463,7 +463,7 @@ const filteredMachines = computed(() => {
       (selectedCategory.value === 'grinder' &&
         machine.Groups?.includes('Grinders')) ||
       (selectedCategory.value === 'fabrication' &&
-        machine.Groups?.includes('Fabrication')) ||
+  machine.Groups?.includes('Fabricating')) ||
       (selectedCategory.value === 'inspection' &&
         machine.Groups?.includes('Inspection')) ||
       (selectedCategory.value === 'other' &&
@@ -517,8 +517,8 @@ const categoryCounts = computed(() => ({
   ).length,
 
   fabrication: activeMachines.value.filter(
-    machine => machine.Groups?.includes('Fabrication')
-  ).length,
+  machine => machine.Groups?.includes('Fabricating')
+).length,
 
   inspection: activeMachines.value.filter(
   machine => machine.Groups?.includes('Inspection')
@@ -530,7 +530,7 @@ other: activeMachines.value.filter(machine =>
   !machine.WebDesc?.startsWith('CNC Lathes') &&
   !machine.Groups?.includes('Boring Mills') &&
   !machine.Groups?.includes('Grinders') &&
-  !machine.Groups?.includes('Fabrication') &&
+  !machine.Groups?.includes('Fabricating') &&
   !machine.Groups?.includes('Inspection')
 ).length
 }))

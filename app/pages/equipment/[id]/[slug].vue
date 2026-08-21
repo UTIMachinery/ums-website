@@ -166,6 +166,21 @@
 </section>
 </div>
 
+<section
+  v-if="machineDescription"
+  class="machine-overview"
+>
+  <h2>Machine Overview</h2>
+
+  <p v-if="machineDescription.Paragraph1">
+    {{ machineDescription.Paragraph1 }}
+  </p>
+
+  <p v-if="machineDescription.Paragraph2">
+    {{ machineDescription.Paragraph2 }}
+  </p>
+</section>
+
 <div
   v-if="showRequestForm"
   class="request-modal-overlay"
@@ -359,6 +374,7 @@
 import machinesData from '~/assets/data/machines.json'
 import specificationsData from '~/assets/data/specifications.json'
 import videosData from '~/assets/data/Videos.json'
+import machineDescriptionsData from '~/assets/data/machineDescriptions.json'
 const showRequestForm = ref(false)
 const requestSent = ref(false)
 const requestSending = ref(false)
@@ -544,6 +560,12 @@ function backToEquipment() {
 
 const machine = computed(() => {
   return machinesData.find(
+    item => String(item.InvID) === String(route.params.id)
+  )
+})
+
+const machineDescription = computed(() => {
+  return machineDescriptionsData.find(
     item => String(item.InvID) === String(route.params.id)
   )
 })
@@ -1206,4 +1228,22 @@ text-align: center;
   width: 100%;
 }
 }
+
+.machine-overview {
+  margin-top: 28px;
+  margin-bottom: 32px;
+}
+
+.machine-overview h2 {
+  margin-bottom: 14px;
+  font-size: 24px;
+  color: #0b2545;
+}
+
+.machine-overview p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
 </style>
