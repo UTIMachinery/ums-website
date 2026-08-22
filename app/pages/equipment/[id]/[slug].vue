@@ -198,7 +198,7 @@
       class="similar-machine-card"
     >
       <img
-        :src="`/Images/${item.InvID}_1.jpg`"
+        :src="getSimilarMachineImage(item)"
         :alt="`${item.Year} ${item.Manufacturer} ${item.Model}`"
       />
 
@@ -407,6 +407,7 @@ import machinesData from '~/assets/data/machines.json'
 import specificationsData from '~/assets/data/specifications.json'
 import videosData from '~/assets/data/Videos.json'
 import machineDescriptionsData from '~/assets/data/machineDescriptions.json'
+import imagesData from '~/assets/data/images.json'
 const showRequestForm = ref(false)
 const requestSent = ref(false)
 const requestSending = ref(false)
@@ -621,6 +622,16 @@ function machineSlug(item) {
     .trim()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
+}
+
+function getSimilarMachineImage(item) {
+  const prefix = `${item.InvID}_`
+
+  const image = imagesData.find(file =>
+    file.toLowerCase().startsWith(prefix.toLowerCase())
+  )
+
+  return image ? `/Images/${image}` : ''
 }
 
 function goBack() {
