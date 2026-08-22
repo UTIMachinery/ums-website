@@ -57,7 +57,12 @@
 </div>
 </div>
 
-<div v-if="machine && machineImages?.length" class="machine-gallery">
+<div class="gallery-column">
+  <button type="button" class="simple-back" @click="goBack">
+    ‹ Back
+  </button>
+
+  <div v-if="machine && machineImages?.length" class="machine-gallery">
   <div class="main-image">
 
   <iframe
@@ -126,6 +131,7 @@
 </div>
 </div>
 </div>
+</div>
 
 <div class="lower-grid">
 
@@ -180,6 +186,32 @@
     {{ machineDescription.Paragraph2 }}
   </p>
 </section>
+
+<section v-if="similarMachines.length" class="similar-machines">
+  <h2>Similar Machines</h2>
+
+  <div class="similar-machines-grid">
+    <NuxtLink
+      v-for="item in similarMachines"
+      :key="item.InvID"
+      :to="`/equipment/${item.InvID}/${machineSlug(item)}`"
+      class="similar-machine-card"
+    >
+      <img
+        :src="`/Images/${item.InvID}_1.jpg`"
+        :alt="`${item.Year} ${item.Manufacturer} ${item.Model}`"
+      />
+
+      <div class="similar-machine-info">
+        <h3>{{ item.Year }} {{ item.Manufacturer }} {{ item.Model }}</h3>
+        <p>{{ item.WebDesc }}</p>
+        <p>Stock #{{ item.InvID }}</p>
+        <span>View Machine</span>
+      </div>
+    </NuxtLink>
+  </div>
+</section>
+
 
 <div
   v-if="showRequestForm"
@@ -564,10 +596,49 @@ const machine = computed(() => {
   )
 })
 
+const similarMachines = computed(() => {
+  if (!machine.value) return []
+
+  const current = machine.value
+
+  return machinesData
+    .filter(item =>
+      String(item.InvID) !== String(current.InvID) &&
+      Number(item.Sold || 0) === 0 &&
+      Number(item.OffMarket || 0) === 0 &&
+      Number(item.dont_advertise || 0) === 0 &&
+      (
+        item.WebDesc === current.WebDesc ||
+        item.Groups === current.Groups
+      )
+    )
+    .slice(0, 3)
+})
+
+function machineSlug(item) {
+  return `${item.Manufacturer}-${item.Model}`
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
+function goBack() {
+  if (window.history.length > 1) {
+    window.history.back()
+  } else {
+    navigateTo('/equipment')
+  }
+}
+
 const machineDescription = computed(() => {
   return machineDescriptionsData.find(
     item => String(item.InvID) === String(route.params.id)
   )
+})
+
+const { data: machineImages } = await useFetch('/api/images', {
+  query: { invID: route.params.id }
 })
 
 useSeoMeta({
@@ -587,11 +658,11 @@ useSeoMeta({
     ? `${machine.value.AdvSpec || ''} Stock #${machine.value.InvID}.`
     : 'Used CNC machinery and industrial equipment from Used Machinery Source.',
 
-  ogImage: () => machine.value
-    ? `https://www.usedmachinerysource.com/Images/${machine.value.InvID}_1.jpg`
-    : '',
+  ogImage: () => machineImages.value?.length
+  ? `https://equipment.usedmachinerysource.com/Images/${machineImages.value[0]}`
+  : '',
 
-ogUrl: `https://www.usedmachinerysource.com${route.path}`,
+ogUrl: `https://equipment.usedmachinerysource.com${route.path}`,
 
   ogType: 'website',
 
@@ -605,16 +676,16 @@ ogUrl: `https://www.usedmachinerysource.com${route.path}`,
     ? `${machine.value.AdvSpec || ''} Stock #${machine.value.InvID}.`
     : 'Used CNC machinery and industrial equipment from Used Machinery Source.',
 
-  twitterImage: () => machine.value
-    ? `https://www.usedmachinerysource.com/Images/${machine.value.InvID}_1.jpg`
-    : ''
+  twitterImage: () => machineImages.value?.length
+  ? `https://equipment.usedmachinerysource.com/Images/${machineImages.value[0]}`
+  : '',
 })
 
 useHead({
   link: [
     {
       rel: 'canonical',
-      href: `https://www.usedmachinerysource.com${route.path}`
+      href: `https://equipment.usedmachinerysource.com${route.path}`
     }
   ]
 })
@@ -645,10 +716,6 @@ const machineEquipment = computed(() => {
 })
 
 
-
-const { data: machineImages } = await useFetch('/api/images', {
-  query: { invID: route.params.id }
-})
 
 console.log('machineImages:', machineImages.value)
 </script>
@@ -1244,6 +1311,100 @@ text-align: center;
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 14px;
+}
+
+.similar-machines {
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+.similar-machines h2 {
+  margin-bottom: 18px;
+  color: #0b2545;
+  font-size: 24px;
+}
+
+.similar-machines-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.similar-machine-card {
+  border: 1px solid #d7dde5;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(11, 37, 69, 0.08);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.similar-machine-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  background: #f7f7f7;
+}
+
+.similar-machine-info {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.similar-machine-info h3 {
+  margin: 0 0 8px;
+  color: #0b2545;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.similar-machine-info p {
+  margin: 0 0 8px;
+}
+
+.similar-machine-info span {
+  margin-top: auto;
+  display: block;
+  background: #1c4587;
+  color: #ffffff;
+  text-align: center;
+  padding: 11px 16px;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .similar-machines-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.simple-back {
+  display: block;
+  align-self: flex-start;
+  background: transparent;
+  border: 0;
+  padding: 4px 0;
+  margin: 0 0 12px 0;
+  color: #1c4587;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  direction: ltr;
+}
+
+.gallery-column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  direction: ltr;
 }
 
 </style>

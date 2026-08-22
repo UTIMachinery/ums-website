@@ -62,7 +62,7 @@ function convertMachineRecord(record) {
     Groups: record.Groups,
     Manufacturer: record.Manufacturer,
     Model: record.Model,
-    year: record.Year,
+    Year: record.Year,
     Control: record.Control,
     Price: record.Price,
     Location: record.Location,
