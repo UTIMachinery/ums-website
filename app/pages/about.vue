@@ -1,13 +1,15 @@
 <template>
   <main class="page">
     <section class="page-hero">
-      <div class="wrap hero-inner">
-        <div>
+      <div class="wrap about-hero-inner">
+        <div class="hero-copy">
           <p class="eyebrow">ABOUT USED MACHINERY SOURCE</p>
           <h1>Experience You Can Rely On.</h1>
-          <p class="lead">Straightforward information, responsive service and decades of experience helping manufacturers buy and sell used CNC machinery.</p>
+          <p class="lead">Straightforward information, responsive service and decades of experience helping manufacturers buy, sell and locate used CNC machinery.</p>
         </div>
-        <div class="hero-mark">UMS</div>
+        <div class="about-image-wrap">
+          <img src="/Images/about-jonathan-lester.png" alt="Meet Jonathan Lester, the person behind Used Machinery Source" class="about-image">
+        </div>
       </div>
     </section>
 
@@ -50,6 +52,7 @@ useSeoMeta({title:'About Used Machinery Source | Used CNC Machinery',description
 </script>
 
 <style scoped>
-.page{color:#1a2532}.wrap{max-width:1280px;margin:0 auto;padding-left:40px;padding-right:40px}.page-hero{background:#061526;color:#fff}.hero-inner{min-height:350px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:50px}.eyebrow{margin:0 0 15px;color:#f36c21;font-size:14px;font-weight:800;letter-spacing:1.5px}.eyebrow.dark{color:#d75b16}.page-hero h1{font-size:clamp(42px,5vw,64px);line-height:1.04;margin:0 0 20px}.lead{max-width:760px;font-size:20px;line-height:1.6;color:#dce4ed}.hero-mark{font-size:86px;font-weight:900;color:rgba(255,255,255,.07);letter-spacing:-5px}.section{padding:78px 0}.section.light{background:#f4f6f8}.two-col{display:grid;grid-template-columns:1.5fr .65fr;gap:90px;align-items:center}.section h2{color:#082b5c;font-size:36px;line-height:1.18;margin:0 0 24px}.section p{font-size:17px;line-height:1.75;color:#46505d}.experience-card{background:#082b5c;color:#fff;padding:40px;border-top:5px solid #f36c21}.experience-card span{display:block;color:#f9a06e;font-weight:700}.experience-card strong{display:block;font-size:46px;margin:8px 0}.experience-card p{color:#fff;margin:0}.section-heading{max-width:720px;margin-bottom:38px}.values{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.values article{background:#fff;padding:34px;border:1px solid #e0e4e8}.values span{color:#f36c21;font-weight:800}.values h3{color:#082b5c;font-size:22px;margin:12px 0}.values p{font-size:16px;margin:0}.cta{background:#0b315f;color:#fff;padding:46px 0}.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}.cta h2{margin:0 0 8px;font-size:30px}.cta p{margin:0;color:#dce5ef}.cta-actions{display:flex;gap:12px}.btn{display:inline-flex;min-height:50px;padding:0 22px;align-items:center;justify-content:center;text-decoration:none;font-weight:800;border-radius:3px}.light-btn{background:#fff;color:#082b5c}.orange-btn{background:#f36c21;color:#fff}
-@media(max-width:800px){.wrap{padding-left:22px;padding-right:22px}.hero-inner{grid-template-columns:1fr;min-height:310px}.hero-mark{display:none}.two-col{grid-template-columns:1fr;gap:35px}.values{grid-template-columns:1fr}.cta-inner{align-items:flex-start;flex-direction:column}.section{padding:55px 0}.section h2{font-size:30px}}
+.page{color:#1a2532}.wrap{max-width:1280px;margin:0 auto;padding-left:40px;padding-right:40px}.page-hero{background:#061526;color:#fff;padding:46px 0}.about-hero-inner{display:grid;grid-template-columns:1fr minmax(500px,42%);align-items:center;gap:58px}.hero-copy{padding:20px 0}.eyebrow{margin:0 0 15px;color:#f36c21;font-size:14px;font-weight:800;letter-spacing:1.5px}.eyebrow.dark{color:#d75b16}.page-hero h1{font-size:clamp(42px,4.7vw,62px);line-height:1.04;margin:0 0 20px}.lead{max-width:680px;font-size:20px;line-height:1.6;color:#dce4ed}.about-image-wrap{width:100%;display:flex;justify-content:flex-end}.about-image{display:block;width:100%;max-width:600px;height:auto;border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 40px rgba(0,0,0,.28)}.section{padding:78px 0}.section.light{background:#f4f6f8}.two-col{display:grid;grid-template-columns:1.5fr .65fr;gap:90px;align-items:center}.section h2{color:#082b5c;font-size:36px;line-height:1.18;margin:0 0 24px}.section p{font-size:17px;line-height:1.75;color:#46505d}.experience-card{background:#082b5c;color:#fff;padding:40px;border-top:5px solid #f36c21}.experience-card span{display:block;color:#f9a06e;font-weight:700}.experience-card strong{display:block;font-size:46px;margin:8px 0}.experience-card p{color:#fff;margin:0}.section-heading{max-width:720px;margin-bottom:38px}.values{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.values article{background:#fff;padding:34px;border:1px solid #e0e4e8}.values span{color:#f36c21;font-weight:800}.values h3{color:#082b5c;font-size:22px;margin:12px 0}.values p{font-size:16px;margin:0}.cta{background:#0b315f;color:#fff;padding:46px 0}.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}.cta h2{margin:0 0 8px;font-size:30px}.cta p{margin:0;color:#dce5ef}.cta-actions{display:flex;gap:12px}.btn{display:inline-flex;min-height:50px;padding:0 22px;align-items:center;justify-content:center;text-decoration:none;font-weight:800;border-radius:3px}.light-btn{background:#fff;color:#082b5c}.orange-btn{background:#f36c21;color:#fff}
+@media(max-width:1000px){.about-hero-inner{grid-template-columns:1fr 46%;gap:34px}.about-image{max-width:520px}}
+@media(max-width:800px){.wrap{padding-left:22px;padding-right:22px}.page-hero{padding:38px 0}.about-hero-inner{grid-template-columns:1fr;gap:28px}.about-image-wrap{justify-content:flex-start}.about-image{max-width:100%}.two-col{grid-template-columns:1fr;gap:35px}.values{grid-template-columns:1fr}.cta-inner{align-items:flex-start;flex-direction:column}.section{padding:55px 0}.section h2{font-size:30px}}
 </style>
