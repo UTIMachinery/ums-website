@@ -7,7 +7,7 @@
         <div class="info-block"><span>PHONE</span><a href="tel:+12569801200">(256) 980-1200</a></div>
         <div class="info-block"><span>EMAIL</span><a href="mailto:jon@usedmachinerysource.com">jon@usedmachinerysource.com</a></div>
         <div class="info-block"><span>LOCATION</span><strong>Florence, Alabama</strong><small>Serving customers throughout the United States.</small></div>
-        <div class="quick-links"><NuxtLink to="/equipment">Search Equipment →</NuxtLink><NuxtLink to="/sell-your-machine">Sell Your Machine →</NuxtLink></div>
+        <div class="quick-links"><NuxtLink to="/equipment">Search Equipment →</NuxtLink><NuxtLink to="/sell-your-machine">Sell Your Machine →</NuxtLink><NuxtLink to="/equipment#tell-us-what-you-need">Tell Us What You Need →</NuxtLink></div>
       </div>
 
       <div class="form-card"><h2>Send Us a Message</h2><form @submit.prevent="submitForm">
