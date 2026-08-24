@@ -3,6 +3,10 @@ export async function verifyTurnstile(event) {
   const token = getCookie(event, 'ums_turnstile_token')
 
   if (!secret) {
+    if (process.env.VERCEL_ENV !== 'production') {
+      return { success: true, bypassed: true }
+    }
+
     throw createError({ statusCode: 500, statusMessage: 'Turnstile is not configured.' })
   }
 
