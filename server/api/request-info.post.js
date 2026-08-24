@@ -1,6 +1,9 @@
 import nodemailer from 'nodemailer'
+import { verifyTurnstile } from '../utils/verify-turnstile'
 
 export default defineEventHandler(async (event) => {
+  await verifyTurnstile(event)
+
   const body = await readBody(event)
 
   const transporter = nodemailer.createTransport({
