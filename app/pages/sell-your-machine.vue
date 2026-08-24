@@ -1,6 +1,6 @@
 <template>
   <main class="page">
-    <section class="page-hero"><div class="wrap"><p class="eyebrow">SELL YOUR MACHINE</p><h1>Have Machinery You No Longer Need?</h1><p>Tell us what you have. We work with manufacturers looking to sell single machines, surplus equipment, trade-ins and larger machinery packages.</p></div></section>
+    <section class="page-hero"><div class="wrap"><p class="eyebrow">SELL YOUR MACHINE</p><h1>Have Machinery You No Longer Need?</h1><p>Tell us what you have.</p></div></section>
 
     <section class="section"><div class="wrap layout">
       <div class="copy"><p class="eyebrow dark">WHAT DO YOU HAVE FOR SALE?</p><h2>Send Us the Details.</h2><p>The more information you can provide, the better we can evaluate the opportunity. Start with the basic machine information below. We can follow up for additional specifications, photos or documentation as needed.</p><div class="selling-points"><div><strong>Single Machines</strong><span>Equipment that is no longer needed.</span></div><div><strong>Surplus Equipment</strong><span>Multiple machines from capacity or process changes.</span></div><div><strong>Trade-Ins</strong><span>Machinery being replaced with newer equipment.</span></div><div><strong>Facilities &amp; Packages</strong><span>Larger groups of machinery or complete operations.</span></div></div></div>
