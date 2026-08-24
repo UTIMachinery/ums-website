@@ -54,6 +54,9 @@ export default defineNuxtPlugin(() => {
     const mount = document.createElement('div')
     mount.className = 'ums-turnstile'
     mount.setAttribute('aria-label', 'Security verification')
+    mount.style.gridColumn = '1 / -1'
+    mount.style.margin = '12px 0 16px'
+    mount.style.minHeight = '65px'
 
     const actions = submit.closest('.request-form-actions')
     if (actions && actions.parentNode === form) {
