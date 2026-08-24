@@ -1,6 +1,6 @@
 <template>
   <main class="page">
-    <section class="page-hero"><div class="wrap"><p class="eyebrow">CONTACT USED MACHINERY SOURCE</p><h1>Let’s Talk Machinery.</h1><p>Buying, selling or searching for a specific machine? Send us a message or contact us directly.</p></div></section>
+    <section class="page-hero"><div class="wrap"><p class="eyebrow">CONTACT USED MACHINERY SOURCE</p><h1>Let’s Talk Machinery.</h1><p>Send us a message directly.</p></div></section>
 
     <section class="section"><div class="wrap contact-layout">
       <div class="contact-info"><p class="eyebrow dark">GET IN TOUCH</p><h2>We’re Here to Help.</h2><p>Tell us what you are working on. You’ll receive direct, responsive communication from someone who understands used CNC machinery.</p>
