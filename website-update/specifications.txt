@@ -1,0 +1,1030 @@
+id	invid	specid	groupnames	description	specvalues	ewid	equippedwith	groupnameew
+1	30684	87394	Travels:	X-Axis Travel	20 "			
+2	30684	87395		Y-Axis Travel	36 "			
+3	30684	87396		Z-Axis Travel	16 "			
+4	30877	90283	Capacity:	Table Diameter	56 "			
+5	30877	90284		Maximum Swing	68 "			
+6	30877	90285		Maximum Height Under Rail	85 "			
+7	30877	90286	Spindle:	Spindle Speed: Minimum	2 rpm			
+8	30877	90287		                       Maximum	320 rpm			
+9	30877	90288		Motor	75 hp			
+10	30877	90289	Ram Head	X-Axis (Longitudinal) Travel	- "			
+11	30877	90290		Z-Axis (Veritcal) Travel	71 "			
+12	30877	90291	Tool Changer:	Number of Positions	16 atc			
+13	30965	91674	Table:	Width	40 "			
+14	30965	91675		Length	94.5 "			
+15	30965	91676		Maximum Table Load	6600 lbs			
+16	30965	91677	Travels:	X-Axis Travel	84.6 "			
+17	30965	91678		Y-Axis Travel	39.3 "			
+18	30965	91679		Z-Axis Travel	31.5 "			
+19	30965	91682	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+20	30965	91683		                       Maximum	6000 rpm			
+21	30965	91684		Spindle Taper	50 			
+22	30965	91685		Main Motor (HP)	25 hp			
+23	30965	91686	Tool Changer:	Tool Changer Positions	30 atc			
+24	31001	92246	Table/Pallet:	Width	36 "			
+25	31001	92247		Length	64 "			
+26	31001	92248		Number of Table/Pallet(s)	1 			
+27	31001	92250		Maximum Load	10,000 lbs			
+28	31001	92251	Travels:	X-Axis Travel	64 "			
+29	31001	92252		Y-Axis Travel	50 "			
+30	31001	92253		Z-Axis Travel	32 "			
+31	31001	92254	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+32	31001	92255		                       Maximum	6000 rpm			
+33	31001	92256		Spindle Taper	50 			
+34	31001	92257		Main Motor (HP)	40 hp			
+35	31001	92258	Tool Changer:	Tool Changer Positions	30 atc			
+36	31031	92703	Table:	Width	12 "			
+37	31031	92704		Length	50 "			
+38	31031	92705		Load	1500 Lbs.			
+39	31031	92706	Travels:	X-Axis (Longitudinal)	30 "			
+40	31031	92707		Y-Axis (Cross)	15 "			
+41	31031	92708		Z-Axis (Vertical)	Quill 5 "			
+42	31031	92709		Knee	16 "			
+43	31031	92710	Spindle:	Speeds	60 - 4000 RPM			
+44	31031	92711		Taper	R8 			
+45	31031	92712		Motor	5 HP			
+46	31044	92886	Capacity:	Swing	39.1 "			
+47	31044	92888		Maximum Machining Diameter	35.4 "			
+48	31044	92889		Distance Between Centers	78.7 "			
+49	31044	92890	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+50	31044	92891		                       Maximum	700 rpm			
+51	31044	92892		Spindle Bore	10.8 "			
+52	31044	92893		Main Motor	60 hp			
+53	31044	92894		Spindle Nose	A2-20 			
+54	31044	92895	Turret:	Number Of Positions	12 			
+55	31044	92896		X-Axis Travel	19.1 "			
+56	31044	92897		Z-Axis Travel	84.6 "			
+57	31044	92898	Tailstock:	Quill Diameter	5.9 "			
+58	31044	92901		Body Travel	82.7 "			
+59	31044	92902	Chuck:	Diameter	32 "			
+60	31044	92903		Hole Thru	10.8 "			
+61	31044	92904		Number of Jaws	4 			
+62	31068	93284	Capacity:	Swing	29.5 "			
+63	31068	93286		Maximum Machining Diameter	9.84 "			
+64	31068	93287		Maximum Machining Length	40.2 "			
+65	31068	93288	Main Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+66	31068	93289		                       Maximum	5000 rpm			
+67	31068	93290		Spindle Bore	2.99 "			
+68	31068	93291		Spindle Nose	A2-8 			
+69	31068	93292		Main Motor (HP)	35 hp			
+70	31068	93293	Sub-Spindle:	Maximum Spindle Speed	5000 rpm			
+71	31068	93296	Tool Changer:	Number Of Positions	40 ATC 			
+72	31068	93297		X-Axis Travel	21.9 "			
+73	31068	93298		Y-Axis Travel	6.3 "			
+74	31068	93299		Z-Axis Travel	43.1 "			
+75	31068	93300	Live Tooling:	Maximum Speed	10000 rpm			
+76	31068	93302		C-Axis Indexing: Main Spindle	0.001 °			
+77	31068	93304	Main Chuck:	Diameter	10 "			
+78	31068	93305		Hole Thru	2.6 "			
+79	31068	93306		Number of Jaws	3 			
+80	31068	93307	Sub Chuck:	Diameter	8 "			
+81	31071	93336	Table:	Width	24 "			
+82	31071	93337		Length	50 "			
+83	31071	93338		Maximum Table Load	3000 lbs			
+84	31071	93339	Travels:	X-Axis Travel	42 "			
+85	31071	93340		Y-Axis Travel	24 "			
+86	31071	93341		Z-Axis Travel	24 "			
+87	31071	93342		Spindle Nose to Table Top Minimum	6 "			
+88	31071	93343		                                           Maximum	30 "			
+89	31071	93344	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+90	31071	93345		                       Maximum	10000 rpm			
+91	31071	93346		Spindle Taper	40 			
+92	31071	93347		Main Motor (HP)	24 hp			
+93	31071	93348	Tool Changer:	Tool Changer Positions	24 atc			
+94	31072	93349	Capacity:	Swing	30 "			
+95	31072	93350		Swing Over Cross Slide	20.5 "			
+96	31072	93352		Distance Between Centers	120 "			
+97	31072	93353	Spindle:	Spindle Speed: Minimum (RPM)	5 rpm			
+98	31072	93354		                       Maximum	300 rpm			
+99	31072	93355		Spindle Bore	12.5 "			
+100	31072	93356		Main Motor	20 hp			
+101	31072	93358	Turret:	Number Of Positions	8 			
+102	31072	93361	Tailstock:	Quill Diameter	5.125 "			
+103	31072	93362		Quill Travel	11.75 "			
+104	31072	93363		Taper	6 MT			
+105	31082	93551	Capacity:	Swing	31.7 "			
+106	31082	93552		Swing Over Cross Slide	20.8 "			
+107	31082	93554		Distance Between Centers	30 "			
+108	31082	93555	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+109	31082	93556		                       Maximum	3400 rpm			
+110	31082	93557		Spindle Bore	3.5 "			
+111	31082	93558		Main Motor	30 hp			
+112	31082	93559		Spindle Nose	A2-6 			
+113	31082	93560	Turret:	Number Of Positions	12 			
+114	31082	93561		X-Axis Travel	12.5 "			
+115	31082	93562		Z-Axis Travel	30 "			
+116	31082	93567	Chuck:	Diameter	10 "			
+117	31082	93568		Hole Thru	3 "			
+118	31082	93569		Number of Jaws	3 			
+119	31087	93630	Capacity:	Swing	23 "			
+120	31087	93632		Maximum Machining Diameter	15.7 "			
+121	31087	93633		Distance Between Centers	50.6 "			
+122	31087	93634	Spindle:	Spindle Speed: Minimum (RPM)	30 rpm			
+123	31087	93635		                       Maximum	2800 rpm			
+124	31087	93636		Spindle Bore	4.53 "			
+125	31087	93637		Main Motor	35 hp			
+126	31087	93638		Spindle Nose	A2-11 			
+127	31087	93639	Turret:	Number Of Positions	10 			
+128	31087	93640		X-Axis Travel	11.1 "			
+129	31087	93641		Z-Axis Travel	51.8 "			
+130	31087	93642	Tailstock:	Quill Diameter	3.9 "			
+131	31087	93643		Quill Travel	3.9 "			
+132	31087	93644		Taper	4 MT			
+133	31087	93646	Chuck:	Diameter	12 "			
+134	31087	93647		Hole Thru	4 "			
+135	31087	93648		Number of Jaws	3 			
+136	31088	93649	Capacity:	Swing	42 "			
+137	31088	93651		Maximum Machining Diameter	33 "			
+138	31088	93652		Maximum Machining Length	77.92 "			
+139	31088	93653	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+140	31088	93654		                       Maximum	300 rpm			
+141	31088	93655		Spindle Bore	20.75 "			
+142	31088	93657		Main Motor (HP)	80 hp			
+143	31088	93658	Turret:	Number Of Positions	10 			
+144	31088	93659		X-Axis Travel	10.5 "			
+145	31088	93660		Z-Axis Travel	77.92 "			
+146	31089	93664	Table:	Width	12 "			
+147	31089	93665		Length	36 "			
+148	31089	93666		Maximum Table Load	500 lbs			
+149	31089	93667	Travels:	X-Axis Travel	16 "			
+150	31089	93668		Y-Axis Travel	12 "			
+151	31089	93669		Z-Axis Travel	10 "			
+152	31089	93672	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+153	31089	93673		                       Maximum	6000 rpm			
+154	31089	93674		Spindle Taper	40 			
+155	31089	93676	Tool Changer:	Tool Changer Positions	10 atc			
+156	31093	93710	Capacity:	Swing	53.31 "			
+157	31093	93712		Maximum Machining Diameter	22.17 "			
+158	31093	93713		Distance Between Centers	118 "			
+159	31093	93714	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+160	31093	93715		                       Maximum	500 rpm			
+161	31093	93716		Spindle Bore	12.99 "			
+162	31093	93717		Main Motor	60 hp			
+163	31093	93719	Turret:	Number Of Positions	8 + 6 			
+164	31093	93720		X-Axis Travel	26.57 "			
+165	31093	93721		Z-Axis Travel	118 "			
+166	31094	93729	Capacity:	Swing	42 "			
+167	31094	93731		Maximum Machining Diameter	27.96 "			
+168	31094	93732		Distance Between Centers	121 "			
+169	31094	93733	Spindle:	Spindle Speed: Minimum (RPM)	4 rpm			
+170	31094	93734		                       Maximum	750 rpm			
+171	31094	93735		Spindle Bore	10.2 "			
+172	31094	93736		Main Motor	80 hp			
+173	31094	93737		Spindle Nose	A2-15 			
+174	31094	93738	Turret:	Number Of Positions	15 			
+175	31094	93739		X-Axis Travel	25.39 "			
+176	31094	93740		Z-Axis Travel	118 "			
+177	31096	93767	Capacity:	Swing	42 "			
+178	31096	93769		Maximum Machining Diameter	39 "			
+179	31096	93771	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+180	31096	93772		                       Maximum	750 rpm			
+181	31096	93773		Spindle Bore	14 "			
+182	31096	93775		Main Motor (HP)	60 hp			
+183	31096	93776	Turret:	Number Of Positions	8 			
+184	31096	93777		X-Axis Travel	25 "			
+185	31096	93778		Z-Axis Travel	45 "			
+186	31098	93801	Table:	Width	20 "			
+187	31098	93802		Length	46 "			
+188	31098	93804	Travels:	X-Axis Travel	40 "			
+189	31098	93805		Y-Axis Travel	20 "			
+190	31098	93806		Z-Axis Travel	20 "			
+191	31098	93809	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+192	31098	93810		                       Maximum	10000 rpm			
+193	31098	93811		Spindle Taper	40 			
+194	31098	93812		Main Motor (HP)	20 hp			
+195	31098	93813	Tool Changer:	Tool Changer Positions	20 atc			
+196	31099	93814	Table:	Width	16 "			
+197	31099	93815		Length	30 "			
+198	31099	93817	Travels:	X-Axis Travel	26 "			
+199	31099	93818		Y-Axis Travel	16 "			
+200	31099	93819		Z-Axis Travel	20 "			
+201	31099	93820		Spindle Nose to Table Top Minimum	4 "			
+202	31099	93821		                                           Maximum	24 "			
+203	31099	93822	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+204	31099	93823		                       Maximum	10000 rpm			
+205	31099	93824		Spindle Taper	40 			
+206	31099	93825		Main Motor (HP)	15 hp			
+207	31099	93826	Tool Changer:	Tool Changer Positions	20 atc			
+208	31100	93827	Table:	Width	16 "			
+209	31100	93828		Length	30 "			
+210	31100	93830	Travels:	X-Axis Travel	26 "			
+211	31100	93831		Y-Axis Travel	16 "			
+212	31100	93832		Z-Axis Travel	20 "			
+213	31100	93833		Spindle Nose to Table Top Minimum	4 "			
+214	31100	93834		                                           Maximum	24 "			
+215	31100	93835	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+216	31100	93836		                       Maximum	12000 rpm			
+217	31100	93837		Spindle Taper	40 			
+218	31100	93838		Main Motor (HP)	15 hp			
+219	31100	93839	Tool Changer:	Tool Changer Positions	20 atc			
+220	31102	93847	Capacity:	Swing	16.5 "			
+221	31102	93849		Maximum Machining Diameter	12 "			
+222	31102	93850		Maximum Machining Length	16 "			
+223	31102	93851	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+224	31102	93852		                       Maximum	6000 rpm			
+225	31102	93853		Spindle Bore	2.31 "			
+226	31102	93854		Spindle Nose	A2-5 			
+227	31102	93855		Main Motor (HP)	15 hp			
+228	31102	93856	Turret:	Number Of Positions	12 			
+229	31102	93857		X-Axis Travel	7.88 "			
+230	31102	93858		Z-Axis Travel	16 "			
+231	31102	93859	Chuck:	Diameter	6.5 "			
+232	31102	93860		Hole Thru	1.75 "			
+233	31102	93861		Number of Jaws	3 			
+234	31112	94015	Capacity:	Swing	37.43 "			
+235	31112	94016		Swing Over Cross Slide	24.8 "			
+236	31112	94018		Distance Between Centers	157.6 "			
+237	31112	94019	Spindle:	Spindle Speed: Minimum (RPM)	3 rpm			
+238	31112	94020		                       Maximum	630 rpm			
+239	31112	94021		Spindle Bore	10 "			
+240	31112	94022		Main Motor	35 hp			
+241	31112	94023		Spindle Nose	A2-15 			
+242	31112	94024	Turret:	Number Of Positions	8 			
+243	31112	94025		X-Axis Travel	21.1 "			
+244	31112	94026		Z-Axis Travel	151 "			
+245	31112	94027	Tailstock:	Quill Diameter	9.85 "			
+246	31112	94029		Taper	6 MT			
+247	31122	94159	Table:	Width	21.3 "			
+248	31122	94160		Length	47.2 "			
+249	31122	94161		Maximum Table Load	2646 lbs			
+250	31122	94162	Travels:	X-Axis Travel	41.3 "			
+251	31122	94163		Y-Axis Travel	22 "			
+252	31122	94164		Z-Axis Travel	25.6 "			
+253	31122	94165		Spindle Nose to Table Top Minimum	5.9 "			
+254	31122	94166		                                           Maximum	31.5 "			
+255	31122	94167	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+256	31122	94168		                       Maximum	12000 rpm			
+257	31122	94169		Spindle Taper	BT40 			
+258	31122	94170		Main Motor (HP)	20 hp			
+259	31122	94171	Tool Changer:	Tool Changer Positions	30 atc			
+260	31132	94291	Capacity:	Swing	31.75 "			
+261	31132	94293		Maximum Machining Diameter	21 "			
+262	31132	94294		Distance Between Centers	26 "			
+263	31132	94295	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+264	31132	94296		                       Maximum	2400 rpm			
+265	31132	94297		Spindle Bore	4.62 "			
+266	31132	94298		Main Motor	40 hp			
+267	31132	94299		Spindle Nose	A2-8 			
+268	31132	94300	Turret:	Number Of Positions	12 			
+269	31132	94301		X-Axis Travel	9.4 "			
+270	31132	94302		Z-Axis Travel	26 "			
+271	31132	94307	Chuck:	Diameter	12 "			
+272	31132	94308		Hole Thru	4 "			
+273	31132	94309		Number of Jaws	3 			
+274	31137	94383	Table:	Width	27.58 "			
+275	31137	94384		Length	15.37 "			
+276	31137	94385		Maximum Table Load	396 lbs			
+277	31137	94386	Travels:	X-Axis Travel	27.56 "			
+278	31137	94387		Y-Axis Travel	15.76 "			
+279	31137	94388		Z-Axis Travel	13 "			
+280	31137	94391	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+281	31137	94392		                       Maximum	24000 rpm			
+282	31137	94393		Spindle Taper	BT30 Big Plus 			
+283	31137	94394		Main Motor (HP)	18.7 hp			
+284	31137	94395	Tool Changer:	Tool Changer Positions	21 atc			
+285	31139	94418	Table:	Width	70 "			
+286	31139	94419		Length	18 "			
+287	31139	94420		Maximum Table Load	2950 lbs			
+288	31139	94421	Travels:	X-Axis Travel	60 "			
+289	31139	94422		Y-Axis Travel	25 "			
+290	31139	94423		Z-Axis Travel	24 "			
+291	31139	94424		Spindle Nose to Table Top Minimum	4 "			
+292	31139	94425		                                           Maximum	28 "			
+293	31139	94426	Spindle:	Spindle Speed: Minimum (RPM)	60 rpm			
+294	31139	94427		                       Maximum	8000 rpm			
+295	31139	94428		Spindle Taper	40 			
+296	31139	94429		Main Motor (HP)	12 hp			
+297	31139	94430	Tool Changer:	Tool Changer Positions	12 atc			
+298	31140	94431	Table:	Width	28 "			
+299	31140	94432		Length	64 "			
+300	31140	94433		Maximum Table Load	4000 lbs			
+301	31140	94434	Travels:	X-Axis Travel	64 "			
+302	31140	94435		Y-Axis Travel	32 "			
+303	31140	94436		Z-Axis Travel	30 "			
+304	31140	94437		Spindle Nose to Table Top Minimum	4 "			
+305	31140	94438		                                           Maximum	34 "			
+306	31140	94439	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+307	31140	94440		                       Maximum	15000 rpm			
+308	31140	94441		Spindle Taper	40 			
+309	31140	94442		Main Motor (HP)	30 hp			
+310	31140	94443	Tool Changer:	Tool Changer Positions	30+1 atc			
+311	31146	94531	Table:	Width	24 "			
+312	31146	94532		Length	54 "			
+313	31146	94533		Maximum Table Load	1750 lbs			
+314	31146	94534	Travels:	X-Axis Travel	40 "			
+315	31146	94535		Y-Axis Travel	26 "			
+316	31146	94536		Z-Axis Travel	25 "			
+317	31146	94537		Spindle Nose to Table Top Minimum	4.2 "			
+318	31146	94538		                                           Maximum	29.2 "			
+319	31146	94539	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+320	31146	94540		                       Maximum	15000 rpm			
+321	31146	94541		Spindle Taper	40 			
+322	31146	94542		Main Motor (HP)	30 hp			
+323	31146	94543	Tool Changer:	Tool Changer Positions	30+1 atc			
+324	31147	94544	Capacity:	Swing	23.6 "			
+325	31147	94546		Maximum Machining Diameter	13.8 "			
+326	31147	94547		Distance Between Centers	13 "			
+327	31147	94548	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+328	31147	94549		                       Maximum	6000 rpm			
+329	31147	94550		Spindle Bore	2.4 "			
+330	31147	94551		Main Motor	20 hp			
+331	31147	94552		Spindle Nose	A2-5 			
+332	31147	94553	Turret:	Number Of Positions	12 			
+333	31147	94554		X-Axis Travel	8.1 "			
+334	31147	94555		Z-Axis Travel	13.4 "			
+335	31147	94560	Chuck:	Diameter	6 "			
+336	31147	94561		Hole Thru	2 "			
+337	31147	94562		Number of Jaws	3 			
+338	31154	94641	Capacity:	Swing	35.4 "			
+339	31154	94643		Maximum Machining Diameter	26 "			
+340	31154	94644		Distance Between Centers	82 "			
+341	31154	94645	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+342	31154	94646		                       Maximum	1000 rpm			
+343	31154	94647		Spindle Bore	10.78 "			
+344	31154	94648		Main Motor	60 hp			
+345	31154	94650	Turret:	Number Of Positions	10 			
+346	31154	94651		X-Axis Travel	14.3 "			
+347	31154	94652		Z-Axis Travel	84.8 "			
+348	31155	94660	Capacity:	Swing	26 "			
+349	31155	94662		Maximum Machining Diameter	14.96 "			
+350	31155	94663		Distance Between Centers	40.55 "			
+351	31155	94664	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+352	31155	94665		                       Maximum	3500 rpm			
+353	31155	94666		Spindle Bore	3.23 "			
+354	31155	94667		Main Motor	35 hp			
+355	31155	94669	Turret:	Number Of Positions	12 			
+356	31155	94670		X-Axis Travel	10.24 "			
+357	31155	94671		Z-Axis Travel	43.3 "			
+358	31155	94672	Live Tooling:	Number of Live Positions	- 			
+359	31155	94673		Maximum Speed	6000 rpm			
+360	31156	94682	Capacity:	Swing	22.45 "			
+361	31156	94683		Swing Over Cross Slide	18.12 "			
+362	31156	94684		Maximum Machining Diameter	14.18 "			
+363	31156	94685		Distance Between Centers	23 "			
+364	31156	94686	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+365	31156	94687		                       Maximum	6000 rpm			
+366	31156	94688		Spindle Bore	2.4 "			
+367	31156	94689		Main Motor	20/25 hp			
+368	31156	94690		Spindle Nose	A2-5 			
+369	31156	94691	Turret:	Number Of Positions	12 			
+370	31156	94692		X-Axis Travel	8.27 "			
+371	31156	94693		Z-Axis Travel	22.14 "			
+372	31156	94694	Tailstock:	Quill Diameter	2.96 "			
+373	31156	94695		Quill Travel	3.15 "			
+374	31156	94697		Body Travel	17.72 "			
+375	31156	94698	Chuck:	Diameter	6 "			
+376	31156	94699		Hole Thru	2 "			
+377	31156	94700		Number of Jaws	3 			
+378	31157	94701	Table:	Width	18 "			
+379	31157	94702		Length	52 "			
+380	31157	94703		Maximum Table Load	3500 lbs			
+381	31157	94704	Travels:	X-Axis Travel	50 "			
+382	31157	94705		Y-Axis Travel	20 "			
+383	31157	94706		Z-Axis Travel	25 "			
+384	31157	94707		Spindle Nose to Table Top Minimum	4 "			
+385	31157	94708		                                           Maximum	29 "			
+386	31157	94709	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+387	31157	94710		                       Maximum	8100 rpm			
+388	31157	94711		Spindle Taper	40 			
+389	31157	94712		Main Motor (HP)	30 hp			
+390	31157	94713	Tool Changer:	Tool Changer Positions	24+1 atc			
+391	31160	94722	Specifications:	Table Diameter	6.3 "			
+392	31160	94723		Indexing	0.001 Degrees			
+393	31162	94742	Table:	Width	64 "			
+394	31162	94743		Length	36 "			
+395	31162	94744		Maximum Table Load	4000 lbs			
+396	31162	94745	Travels:	X-Axis Travel	64 "			
+397	31162	94746		Y-Axis Travel	40 "			
+398	31162	94747		Z-Axis Travel	30 "			
+399	31162	94750	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+400	31162	94751		                       Maximum	10000 rpm			
+401	31162	94752		Spindle Taper	40 			
+402	31162	94753		Main Motor (HP)	30 hp			
+403	31162	94754	Tool Changer:	Tool Changer Positions	24+1 atc			
+404	31163	94755	Table:	Width	47.75 "			
+405	31163	94756		Length	10.5 "			
+406	31163	94757		Maximum Table Load	1000 lbs			
+407	31163	94758	Travels:	X-Axis Travel	30 "			
+408	31163	94759		Y-Axis Travel	12 "			
+409	31163	94760		Z-Axis Travel	16 "			
+410	31163	94763	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+411	31163	94764		                       Maximum	4000 rpm			
+412	31163	94765		Spindle Taper	40 			
+413	31163	94766		Main Motor (HP)	7.5 hp			
+414	31163	94767	Tool Changer:	Tool Changer Positions	10 atc			
+415	31165	94790	Table:	Width	18 "			
+416	31165	94791		Length	48 "			
+417	31165	94792		Maximum Table Load	3500 lbs			
+418	31165	94793	Travels:	X-Axis Travel	40 "			
+419	31165	94794		Y-Axis Travel	20 "			
+420	31165	94795		Z-Axis Travel	25 "			
+421	31165	94796		Spindle Nose to Table Top Minimum	4 "			
+422	31165	94797		                                           Maximum	29 "			
+423	31165	94798	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+424	31165	94799		                       Maximum	7500 rpm			
+425	31165	94800		Spindle Taper	40 			
+426	31165	94801		Main Motor (HP)	20 hp			
+427	31165	94802	Tool Changer:	Tool Changer Positions	24+1 atc			
+428	31166	94803	Capacity:	Swing	20 "			
+429	31166	94804		Swing Over Cross Slide	13 "			
+430	31166	94805		Maximum Machining Diameter	20 "			
+431	31166	94806		Distance Between Centers	60 "			
+432	31166	94807	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+433	31166	94808		                       Maximum	1800 rpm			
+434	31166	94809		Spindle Bore	3.5 "			
+435	31166	94810		Main Motor	18 hp			
+436	31166	94811		Spindle Nose	A2-6 			
+437	31166	94812	Turret:	Number Of Positions	Tool Post 			
+438	31166	94813		X-Axis Travel	16 "			
+439	31166	94814		Z-Axis Travel	60 "			
+440	31166	94819	Chuck:	Diameter	12 "			
+441	31166	94820		Hole Thru	3 "			
+442	31166	94821		Number of Jaws	3 			
+443	31167	94822	Capacity:	Swing	40.6 "			
+444	31167	94824		Maximum Machining Diameter	35.4 "			
+445	31167	94825		Distance Between Centers	126 "			
+446	31167	94826	Spindle:	Spindle Speed: Minimum (RPM)	3 rpm			
+447	31167	94827		                       Maximum	750 rpm			
+448	31167	94828		Spindle Bore	12.6 "			
+449	31167	94829		Main Motor	50/60 hp			
+450	31167	94830		Spindle Nose	A2-20 			
+451	31167	94831	Turret:	Number Of Positions	12 			
+452	31167	94832		X-Axis Travel	18.52 "			
+453	31167	94833		Z-Axis Travel	127.46 "			
+454	31167	94834	Live Tooling:	Number of Live Positions	-- 			
+455	31167	94835		Maximum Speed	30-3000 rpm			
+456	31167	94836		Motor	15 hp			
+457	31167	94837	Tailstock:	Quill Diameter	6.3 "			
+458	31167	94838		Quill Travel	5.9 "			
+459	31167	94839		Taper	5 MT			
+460	31168	94844	Table:	Width	10.5 "			
+461	31168	94845		Length	57.75 "			
+462	31168	94846		Maximum Table Load	350 lbs			
+463	31168	94847	Travels:	X-Axis Travel	40 "			
+464	31168	94848		Y-Axis Travel	16 "			
+465	31168	94849		Z-Axis Travel	16 "			
+466	31168	94850		Spindle Nose to Table Top Minimum	4 "			
+467	31168	94851		                                           Maximum	20 "			
+468	31168	94852	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+469	31168	94853		                       Maximum	6000 rpm			
+470	31168	94854		Spindle Taper	40 			
+471	31168	94855		Main Motor (HP)	7.5 hp			
+472	31168	94856	Tool Changer:	Tool Changer Positions	10 atc			
+473	31169	94857	Table:	Width	19.7 "			
+474	31169	94858		Length	35.4 "			
+475	31169	94859		Maximum Table Load	1100 lbs			
+476	31169	94860	Travels:	X-Axis Travel	23.4 "			
+477	31169	94861		Y-Axis Travel	16.9 "			
+478	31169	94862		Z-Axis Travel	18.1 "			
+479	31169	94863		Spindle Nose to Table Top Minimum	5.91 "			
+480	31169	94864		                                           Maximum	24.02 "			
+481	31169	94865	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+482	31169	94866		                       Maximum	12000 rpm			
+483	31169	94867		Spindle Taper	40 			
+484	31169	94868		Main Motor (HP)	30 hp			
+485	31169	94869	Tool Changer:	Tool Changer Positions	30 atc			
+486	31170	94870	Table:	Width	16.5 "			
+487	31170	94871		Length	27.6 "			
+488	31170	94872		Maximum Table Load	660 lbs			
+489	31170	94873	Travels:	X-Axis Travel	22 "			
+490	31170	94874		Y-Axis Travel	16.1 "			
+491	31170	94875		Z-Axis Travel	18 "			
+492	31170	94876		Spindle Nose to Table Top Minimum	4.3 "			
+493	31170	94877		                                           Maximum	22 "			
+494	31170	94878	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+495	31170	94879		                       Maximum	10000 rpm			
+496	31170	94880		Spindle Taper	40 			
+497	31170	94881		Main Motor (HP)	15 hp			
+498	31170	94882	Tool Changer:	Tool Changer Positions	20 atc			
+499	31172	94883	Capacity:	Swing	23 "			
+500	31172	94884		Swing Over Cross Slide	9.5 "			
+501	31172	94885		Maximum Machining Diameter	10.3 "			
+502	31172	94886		Distance Between Centers	24 "			
+503	31172	94887	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+504	31172	94888		                       Maximum	3400 rpm			
+505	31172	94889		Spindle Bore	3 "			
+506	31172	94890		Main Motor	30 hp			
+507	31172	94891		Spindle Nose	A2-6 			
+508	31172	94892	Turret:	Number Of Positions	10 			
+509	31172	94893		X-Axis Travel	8.45 "			
+510	31172	94894		Z-Axis Travel	20 "			
+511	31172	94899	Chuck:	Diameter	10 "			
+512	31172	94900		Hole Thru	2.5 "			
+513	31172	94901		Number of Jaws	3 			
+514	31173	94902	Table:	Width	36 "			
+515	31173	94903		Length	84 "			
+516	31173	94904		Maximum Table Load	4000 lbs			
+517	31173	94905	Travels:	X-Axis Travel	84 "			
+518	31173	94906		Y-Axis Travel	40 "			
+519	31173	94907		Z-Axis Travel	30 "			
+520	31173	94908		Spindle Nose to Table Top Minimum	4 "			
+521	31173	94909		                                           Maximum	34 "			
+522	31173	94910	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+523	31173	94911		                       Maximum	8100 rpm			
+524	31173	94912		Spindle Taper	40 			
+525	31173	94913		Main Motor (HP)	30 hp			
+526	31173	94914	Tool Changer:	Tool Changer Positions	30+1 atc			
+527	31174	94915	Table:	Width	32 "			
+528	31174	94916		Length	64 "			
+529	31174	94918	Travels:	X-Axis Travel	64 "			
+530	31174	94919		Y-Axis Travel	32 "			
+531	31174	94920		Z-Axis Travel	30 "			
+532	31174	94921		Spindle Nose to Table Top Minimum	4 "			
+533	31174	94922		                                           Maximum	34 "			
+534	31174	94923	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+535	31174	94924		                       Maximum	8100 rpm			
+536	31174	94925		Spindle Taper	40 			
+537	31174	94926		Main Motor (HP)	30 hp			
+538	31174	94927	Tool Changer:	Tool Changer Positions	24+1 atc			
+539	31175	94928	Capacity:	Swing	16.5 "			
+540	31175	94930		Maximum Machining Diameter	12 "			
+541	31175	94931		Distance Between Centers	16 "			
+542	31175	94932	Spindle:	Spindle Speed: Minimum (RPM)	0 rpm			
+543	31175	94933		                       Maximum	6000 rpm			
+544	31175	94934		Spindle Bore	2.31 "			
+545	31175	94935		Main Motor	15 hp			
+546	31175	94936		Spindle Nose	A2-5 			
+547	31175	94937	Turret:	Number Of Positions	12 			
+548	31175	94938		X-Axis Travel	7.88 "			
+549	31175	94939		Z-Axis Travel	16 "			
+550	31175	94944	Chuck:	Diameter	6 "			
+551	31175	94945		Hole Thru	1.75 "			
+552	31175	94946		Number of Jaws	3 			
+553	31119	83872	Specifications:	Number of Axes	5			
+554	31119	83873		Swing	12"			
+555	31119	83874		Distance Between Centers	15.75"			
+556	31119	83875		Gringing Wheel Diameter	8"			
+557	31119	83876		Spindle Motor	49 hp			
+558	31119	83877		Maximum Speed	10000 rpm			
+559	31119	83878		X-Axis	23.1"			
+560	31119	83879		Y-Axis	16.1"			
+561	31119	83880		Z-Axis	9.5"			
+562	31119	83881		C-Axis	0.0001°			
+563	31119	83882		A-Axis	360°			
+564	31122	83883	Dimensions:	Floor Space: (L x W)	118.5" x 104.5"			
+565	31122	83884		Height	122.8"			
+566	31122	83885		Weight	14,330 lbs			
+567	31139	83897	Dimensions:	Shipping: (L x W x H)	72" x 92" x 89"			
+568	31139	83898		Maximum Operating (L x W x H)	174" x 92" x 113"			
+569	31139	83899		Weight	10,000 lbs			
+570	31158	83900	Specification:	Punching Capacity	120 Ton			
+571	31158	83901		Punch Capacity: Through 1.1" Thick Mild Steel	1.1" Diameter			
+572	31158	83902		Angle Shear	6" x 6" x 1/2"			
+573	31158	83903		Flat Bar Shear	24" x 5/8"			
+574	31158	83904		Alernate Flat Bar Shear	16" x 3/4"			
+575	31158	83905		Round Capacity	2" Diameter			
+576	31158	83906		Square Capacity	2" Square			
+577	31158	83907		Rectangle Notcher	3.54: x 2" x 1/2"			
+578	31158	83908		Hydraulic Cylinders	Daul (2)			
+579	31158	83909		Workstations	5			
+580	31158	83910		Stroke Length	3.15"			
+581	31158	83911		Punching Speed (Stroke Per Minute)	28 SPM			
+582	31158	83912		Throat Depth	24"			
+583	31160	83913		Maximum Part Swing	17.5"			
+584	31160	83914		Dimensions: L x W x H	49" x 21" x 25"			
+585	31160	83915		Weight	520 lbs			
+586	31169	83916	Dimensions:	Length x Width	95" x 85"			
+587	31169	83917		Height	107			
+588	31169	83918		Weight	11,500 lbs			
+589	31171	83919	Specifications:	Heat Type	Electric			
+590	31171	83920		Maximum Temperature	300 degrees			
+591	31171	83921		Length	288" (24')			
+592	31171	83922		Width	120" (10')			
+593	31171	83923		Height	96" (8')			
+594	31171	83924		Door Opening (Height x Width)	90" x 114"			
+595	30684					45881	Purchased new in 2001, Software updated to DCC/CNC retrofit in 2009.	Note:
+596	30877					47739	Fanuc 21i-TB CNC Control	Equipped With:
+597	30877					47740	56" 4-Jaw Chuck	
+598	30877					47741	16 Position Automatic Tool Changer	
+599	30877					47742	Chuck Guarding	
+600	30877					47743	Way Covers on Cross Rail	
+601	30877					47744	Fanuc Servo Drives and Motors	
+602	30877					47745	75 hp Fanuc AC Table Drive Motor	
+603	30877					47746	Large Quanity of Tool Holders	
+604	30965					48666	Fanuc 0i-MC 4-Axis CNC Control	Equipped With:
+605	30965					48667	30 Position sidemount Tool Changer	
+606	30965					48668	CAT 50 Taper Spindle	
+607	30965					48669	Flood Coolant System	
+608	30965					48670	Remote Jog Handle	
+609	30965					48671	4th-Axis Drive and Wiring	
+610	30965					48672	4th-Axis Rotary Table	
+611	31001					49044	Haas 5-Axis CNC Control with 15" color LCD Monitor	Equipped With:
+612	31001					49045	USB Port, Memorylock Key Switch	
+613	31001					49046	Built-in 30" 4th Axis Platter	
+614	31001					49047	Wireless Probing System	
+615	31001					49048	Macros, Coord Rotation and Scaling, Ridig Tap, Spindle Orientation, 16MB	
+616	31001					49049	High Speed Machining	
+617	31001					49050	5th-Axis Drive and Wiring	
+618	31001					49051	Intuitive Programming System	
+619	31001					49052	Hard Drive, Ethernet Interface, Network	
+620	31001					49053	Coolant Thru Spindle	
+621	31001					49054	Aux Coolant Filter	
+622	31001					49055	Chip Auger	
+623	31001					49056	Programmable Coolant Nozzle	
+624	31001					49057	Remote Jog Handle	
+625	31001					49058	750 MB Extended Memory	
+626	31031					49312	Milltronics CNC 7000 2-Axis Control	Equipped With:
+627	31031					49313	Conversational Programming	
+628	31031					49314	Variable Speed Spindle	
+629	31031					49315	2-Axis CNC Capability (X & Y-Axes)	
+630	31031					49316	Manual Quill & Knee Movement	
+631	31031					49317	Quill Scale	
+632	31031					49318	RS-232 Port	
+633	31031					49319	3.5" Floppy Drive	
+634	31031					49320	Work Light	
+635	31031					49321	Auto Lube System	
+636	31031					49322	Coolant Collection Pan	
+637	31031					49323	Boxed Ways on X & Y Axes	
+638	31031					49324	AC Spindle Drive	
+639	31031					49325	Parameters Disk	
+640	31031					49326	Set of Manuals	
+641	31044					49454	Mori MSX-500III CNC Control	Equipped With:
+642	31044					49455	32" 4-Jaw Chuck with 10.8" Bore	
+643	31044					49456	Chip Conveyor	
+644	31044					49457	Tailstock	
+645	31044					49458	Flood Coolant System	
+646	31044					49459	RS-232 Port Interface	
+647	31044					49460	Approx 5500 cutting hours	Note:
+648	31044					49461	Machine Build Date: Dec. 2006, installed new in 2007.	
+649	31068					49701	Fanuc 18i-TB 9-Axis CNC Control	Equipped With:
+650	31068					49702	Pendulum Style B-Axis Head	
+651	31068					49703	Live Milling Capability on Upper Head	
+652	31068					49704	Y-Axis Capability on Upper Head	
+653	31068					49720	40 Position Automatic Tool Changer	
+654	31068					49721	Sub Spindle	
+655	31068					49722	10" 3 Jaw Hydraulic Chuck on Main Spindle	
+656	31068					49723	8" 3 Jaw Hydraulic Chuck on Subspindle	
+657	31068					49724	12 Station Lower Turret with All Locations Capable of Live	
+658	31068					49725	Automatic Tool Eye	
+659	31068					49726	Chip Conveyor	
+660	31068					49727	Parts Exit Conveyor System	
+661	31068					49728	Complete Coolant System with Tank & Pump	
+662	31068					49729	3 Color Machine Status Condition Lights	
+663	31068					49730	Card Interface	
+664	31068					49731	RS 232 Port Interface	
+665	31068					49732	All Available Manuals	
+666	31068					49733	All Available Tooling	
+667	31071					49750	Hurco Ultimax 4-Axis CNC Control	Equipped With:
+668	31071					49751	Flood Coolant System	
+669	31071					49752	Full Chip/Coolant Enclosure	
+670	31071					49753	10" 4th-Axis Rotary Table	
+671	31071					49754	Conversational Programming	
+672	31071					49755	Washdown	
+673	31071					49756	Coolant Thru Tool	
+674	31071					49757	Chip Conveyor	
+675	31071					49758	All Original Manuals	
+676	31071					49759	One Owner Machine	Note:
+677	31072					49760	Fanuc 0T 2-Axis CNC Control	Equipped With:
+678	31072					49761	Front & Rear 24" 4-Jaw Chucks	
+679	31072					49762	Steady Rest	
+680	31072					49763	Taper Attachment	
+681	31072					49764	4-Way Rapid Traverse	
+682	31072					49765	Hydraulic Braking System	
+683	31072					49766	2-Speed Drive Tailstock Quill	
+684	31072					49767	(2) Chip Pans	
+685	31072					49768	Digital Readouts	
+686	31072					49769	12.5" Spindle Bore	
+687	31072					49771	Auto Thread Re-Track Option	
+688	31072					49772	Machine may be run in CNC or in Manual Operation Modes	Note:
+689	31082					49874	Haas CNC Control with 15" Color LCD Monitor	Equipped With:
+690	31082					49875	Memory Lock Keyswitch, USB Port, Rigid Tapping	
+691	31082					49876	Automatic Tool Presetter	Purchased Opts:
+692	31082					49877	Belt Type Chip Conveyor	
+693	31082					49878	Programmable Tailstock	
+694	31082					49879	2-Speed Gearbox	
+695	31082					49881	High Intensity Lighting	
+696	31082					49882	Intuitive Programming System	
+697	31087					49928	Fanuc 2-Axis CNC Control	Equipped With:
+698	31087					49929	Tool Eye	
+699	31087					49930	Chip Conveyor	
+700	31087					49931	12" 3-Jaw Hydraulic Chuck	
+701	31087					49932	Flood Coolant System	
+702	31087					49933	Manufacture date: 8/2004	Note:
+703	31088					49934	Mazatrol Fusion 640T CNC Control	Equipped With:
+704	31088					49935	Re-Threading Option	
+705	31088					49936	Hi-Power Coolant	
+706	31088					49937	Chip Conveyor	
+707	31088					49938	Front and Rear 40" Dia 4-Jaw Manual Chucks with 20" bores	
+708	31089					49939	Haas 3-Axis CNC Control with 15" Color LCD Monitor	Equipped With:
+709	31089					49940	Wireless Intuitive Probing System-Renishw	
+710	31089					49941	Single or 3 Phase	
+711	31089					49942	Chip Auger	
+712	31089					49943	Coolant Pump Kit	
+713	31089					49944	Window Blast	
+714	31089					49945	Work Light	
+715	31089					49946	1 GB Program Memory	
+716	31089					49947	Early Power Failure Detection Module	
+717	31089					49948	Ethernet	
+718	31089					49949	Haas Connect	
+719	31089					49950	HaasDrop	
+720	31089					49951	Media Display	
+721	31089					49952	Rigid Tapping-3	
+722	31089					49953	Safe Run	
+723	31089					49954	Touch Screen	
+724	31089					49955	Wifi	
+725	31089					49956	Never used only 21 hours run time.	Note:
+726	31093					49964	Okuma OSP-E100L CNC Control	Equipped With:
+727	31093					49965	Chip Conveyor	
+728	31093					49966	Tailstock	
+729	31093					49967	Steady Rest	
+730	31093					49968	Front and Rear 24" 4-jaw Noble Chucks	
+731	31093					49969	** 12.99" Spindle Bore **	
+732	31094					49970	Mazatrol T32-2 CNC Control with 14" Color Display	Equipped With:
+733	31094					49971	Conversational Programming	
+734	31094					49972	EIA/ISO Input Function	
+735	31094					49973	Graphic Display	
+736	31094					49974	Chip Conveyor	
+737	31094					49975	Mist Buster	
+738	31094					49976	Transformer	
+739	31094					49977	Front and Rear SMW 630-310 ES (extended stroke) Air Chucks	**
+740	31096					49985	Mazatrol 2-Axis CNC Control	Equipped With:
+741	31096					49986	Chip Conveyor	
+742	31096					49987	Front and Rear Woodworth THC 34000 (14" bore Extended Stroke) Air Chucks	
+743	31096					49988	Price is for (2) Identical Machines. Would be willing to separate.	Note:
+744	31096					49989	Currently disassembled and going through complete reconditioning. 30-60 Delivery	
+745	31098					49996	WinMax CNC Control	Equipped With:
+746	31098					49997	Rigid Tap	
+747	31098					49998	Swept Surface	
+748	31098					49999	3D Mold	
+749	31098					50000	Multi-Pocket	
+750	31098					50001	Helix	
+751	31098					50002	DXF	
+752	31098					50003	4th-Axis Integrated (No Rotary Table)	
+753	31098					50004	Sub Plate	
+754	31099					50005	Hurco CNC Control	Equipped With:
+755	31099					50006	Rigid Tap	
+756	31099					50007	Swept Surface	
+757	31099					50008	3D Mold	
+758	31099					50009	Multi-Pocket	
+759	31099					50010	Helix	
+760	31099					50011	DXF	
+761	31099					50012	Sub-Plate	
+762	31099					50013	1212 Spindle Hours	Note:
+763	31100					50014	Hurco CNC Control	Equipped With:
+764	31100					50015	Renishaw Tool Probing	
+765	31100					50016	Spindle Chiller	
+766	31100					50017	Rigid Tapping	
+767	31100					50018	Swept Surface	
+768	31100					50019	3D Mold	
+769	31100					50020	Mulit-Pocket	
+770	31100					50021	Helix	
+771	31100					50022	DXF	
+772	31100					50023	Sub-Plate	
+773	31100					50024	619 Spindle hours	Note:
+774	31102					50025	Haas 2-Axis CNC Control with 15" Color LCD Monitor	Equipped With:
+775	31102					50026	Control Touch Screen, Ethernet Interface, WIFI, Early Power Failure	
+776	31102					50027	 Detection Module, Advanced Tool Management, Media Display M-Code: M130,	
+777	31102					50028	 HaasConnect: Remote Monitoring, Safe Run, Haas Drop, Rigid Tapping, 1GB	
+778	31102					50029	 Progam Memory, 6.5" 3-Jaw Hydraulic Chuck.	
+779	31102					50030	Royal Quick-Change Collet Chuck	Additonal Opts:
+780	31102					50031	Automatic Tool Presetter	
+781	31102					50032	Chip Conveyor	
+782	31102					50033	Only 1303 Power on hours	Note:
+783	31112					50144	Fanuc 21i-TB Control	Equipped With:
+784	31112					50145	10" Spindle Bore/Bar Capacity	
+785	31112					50146	Chip Conveyor	
+786	31112					50147	25" 4 Jaw Manual Chuck with 10" hole on Front	
+787	31112					50148	25" 3 Jaw Manual Chuck with 10" hole on Rear	
+788	31112					50149	8 Station Turret that Mounts on Cross Slide	
+789	31112					50150	Dorian Tool Post Mounted on Cross Slide	
+790	31112					50151	Heavy Duty Tailstock	
+791	31112					50152	(2) Roller Type Steady Rests	
+792	31112					50153	(1) Follower Rest	
+793	31112					50154	Long Boring Bar Attachment	
+794	31112					50155	Remote Jog Handle	
+795	31112					50156	Enclosed with Slide Doors	
+796	31112					50157	Work Light	
+797	31112					50158	Coolant System with Tank & Pump	
+798	31112					50159	Hard Disk Interface	
+799	31112					50160	RS 232 Port Interface	
+800	31112					50161	All Available Manuals & Tooling	
+801	31112					50162	Machine has 6,069 Run Time Hours	Note:
+802	31119					50227	Loader	Equipped With:
+803	31119					50228	Software V. RN31.1-1	
+804	31119					50229	Seco Drill	
+805	31119					50230	Multi Drill	
+806	31119					50231	Profile	
+807	31119					50232	Loadermate	
+808	31122					50265	Fanuc CNC Control	Equipped With:
+809	31122					50266	LNS Chip Conveyor	
+810	31122					50267	Complete Coolant System	
+811	31122					50268	Full Coolant/Chip Enclosure	
+812	31132					50359	Haas 2-Axis CNC Control with 15" Color LCD Monitor	Equipped With:
+813	31132					50360	Memory Lock Keyswitch, USB Port, Rigid Tapping	
+814	31132					50361	Gearbox, 2400 rpm, 40 HP	Options:
+815	31132					50362	Automatic Tool Presetter	
+816	31132					50363	Parts Catcher System	
+817	31132					50364	Enclosure Exhaust System	
+818	31132					50365	High Intensity Lighting	
+819	31132					50366	Programmable Hydraulic Tailstock	
+820	31132					50367	Belt-Type Chip Conveyor	
+821	31137					50410	Fanuc 31i-B5 CNC Control with 10.4" Color LCD Display	Equipped With:
+822	31137					50411	Midaco 2 Pallet Changer System	
+823	31137					50412	24,000 RPM Spindle	
+824	31137					50413	21 Station Tool Changer	
+825	31137					50414	Mist Buster Air Filtration System	
+826	31137					50415	Rigid Tapping up to 5,000 RPM	
+827	31137					50416	USB Port Interface	
+828	31137					50417	RS 232 Port Interface	
+829	31137					50418	Chip / Coolant Pan with Pump	
+830	31137					50419	Spindle Orientation	
+831	31137					50420	Custom Macro	
+832	31137					50421	Coordinate System Rotation	
+833	31137					50422	All Available Manuals	
+834	31139					50441	Siemens 828D CNC Control	Control:
+835	31139					50442	Table Mounted Splash Guarding (Never used, still packaged)	Options Included:
+836	31139					50443	Spray Mist Coolant System	
+837	31139					50444	Air Blast System	
+838	31139					50445	Rigid Tapping	
+839	31139					50446	Hand Wheel Run Function	
+840	31139					50447	DXF File Import Feature	
+841	31139					50448	4th Axis Drive and Wiring (No table with machine)	
+842	31139					50449	Indexer Interface (No indexer with machine)	
+843	31139					50450	In-Process Part Probe Measurement Cycles	
+844	31139					50451	3D High Speed Machining	
+845	31139					50452	Residual Material Detection	
+846	31139					50453	Siemends Offline Programming	
+847	31139					50454	Expanded Memory, 8 GB	
+848	31139					50455	Automatic Tool Changer, 12 Positions Carousel	
+849	31139					50456	Way Covers	
+850	31139					50457	Remote Electronic Handwheel	
+851	31140					50458	Haas CNC Control with 15" Color LCD Monitor	Equipped With:
+852	31140					50459	Large Remote Jog Handle with Touchscreen Display	
+853	31140					50460	Ethernet Interface, Wifi, EPFDM, Advanced Tool Management, Media Display	
+854	31140					50461	  HaasConnect, Safe Run, HaasDrop, Rigid Tapping, User-Definable Macros,	
+855	31140					50462	  Coord Rotation and Scaling, 1GB Memory, ECO Mode, Programmable Coolant	
+856	31140					50463	  Nozzle, Auto Air Gun, Chip Auger, Window Air Blast, 95 Gal Coolant Tank, Chip Tray	
+857	31140					50464	  Filter, Multi-Stage Coolant Pump, Chip Washdown Feature	
+858	31140					50465	15,000 RPM, 40 taper, 30 hp spindle	Options:
+859	31140					50466	Wireless Intuitive Probing System-Renishaw	
+860	31140					50467	High Intensity Lighting	
+861	31140					50468	Coolant Chiller	
+862	31140					50469	Visual Part Programming System and Spindle Orientation	
+863	31140					50485	Linear Scales	
+864	31140					50486	64GB Expanded Memory	
+865	31068					50512	Upper Turret Milling spindle needs rebuilt. All other functions of machine checked out	Note:
+866	31068					50513	   to be in good condition. Spindle will be repaired or cost of repaired reduced	
+867	31146					50522	Haas 4-Axis CNC Control with 15" Color LCD Monitor	Equipped With:
+868	31146					50523	Eithernet Interface, Wifi, EPFDM, HaasConnect, Safe Run, HaasDrop,	
+869	31146					50524	  Rigid Tapping, 1GB Program Memory.	
+870	31146					50525	15000 RPM Spindle, 40 Taper, 30 Horsepower	Options:
+871	31146					50526	4th-Axis Drive and Wiring	
+872	31146					50527	Haas HRT-210 Rotary Table	
+873	31146					50528	Wireless Intuitive Probing System	
+874	31146					50529	Chip Auger	
+875	31146					50530	Through Spindle Coolant (300psi)	
+876	31146					50531	Programmable Coolant Nozzle	
+877	31146					50532	High Speed Machining	
+878	31146					50533	1774 Feed Cutting Hours	Note:
+879	31147					50534	Fanuc 0i-TF-Plus 2-Axis CNC Control w/Doosan EZ Guide i Conversational Programming	Equipped With:
+880	31147					50535	Royal Accu-length QG-65 collet system with 10 collets (3/8 to 2” common sizes)	
+881	31147					50536	6" 3-Jaw Samchully chuck	
+882	31147					50537	Royal Grippex 20L Coolant-Actuated CNC Bar Puller - Several spindle liners included	
+883	31147					50538	Programmable part catcher	
+884	31147					50539	Tool setter	
+885	31147					50540	Tailstock	
+886	31147					50541	Rigid Tapping	
+887	31147					50542	Auto Grease Lube System	
+888	31147					50543	Tool Holders and other quality Tooling included (Mostly Iscar)	
+889	31147					50544	Machine has approx. 250 hours of operation. Well Cared for in a climate controlled	Note:
+890	31147					50545	  Facility.	
+891	31139					50605	Machine never used in production. Only used to run a few parts in a small one-man	Note:
+892	31139					50606	  shop. Like new condition.	
+893	31068					50607	   from sales price of the machine.	
+894	31154					50622	Fanuc i-Series 2-Axis CNC Control	Equipped With:
+895	31154					50623	Large 10.78" Diameter Spindle Bore	
+896	31154					50624	Chip Conveyor	
+897	31154					50625	Hydraulic Tailstock	
+898	31154					50626	Flood Coolant System	
+899	31154					50627	Box Way Design	
+900	31154					50628	2-Speed Gearbox	
+901	31154					50629	Automatic lubrication system	
+902	31154					50630	Full Coolant/Chip Enclosure	
+903	31154					50631	Ethernet and USB connectivity	
+904	31154					50632	MPG handwheel	
+905	31154					50633	3-Jaw Hydraulic Chuck	
+906	31155					50634	Fanuc 0i-Plus with iMHI CNC Control	Equipped With:
+907	31156					50635	Fanuc 0i-TF Plus CNC Control	Equipped With:
+908	31156					50636	6" 3-Jaw Hydraulic Chuck with 2.05" Bar Capacity	
+909	31156					50637	Programmable Hyd Tailstock	
+910	31156					50638	Parts Catcher	
+911	31156					50639	Tool Presetter	
+912	31157					50640	Haas CNC Control with 15" Color LCD Monitor	Equipped With:
+913	31157					50641	USB port, memory lock keyswitch, rigid tapping and 55-gallon	
+914	31157					50642	  flood coolant system	
+915	31157					50647	24 Position Sidemount ATC	
+916	31157					50648	Chip Auger	
+917	31157					50649	Machine was installed new and 2-year warranty start date was 1-6-2016	Note:
+918	31157					50650	  although the machine was manufactured 6-2015	
+919	31158					50651	Dual Cylinder Design allows Two Operators to Work Simultaneously	Equipped With:
+920	31158					50652	Five integrated workstations for punching, shearing, cropping, and notching.	
+921	31158					50653	Heavy-duty fabricated steel frame.	
+922	31158					50654	Adjustable hold-downs and gauging.	
+923	31158					50655	Foot pedal operation.	
+924	31158					50656	Designed for structural steel fabrication and general metalworking.	
+925	31155					50657	12 Station BMT-55 Live Tooling Turret	
+926	31155					50658	Tailstock	
+927	31155					50659	Live Tooling Capability	
+928	31155					50660	Chip Conveyor	
+929	31155					50661	Parts Catcher	
+930	31155					50662	Coolant System	
+931	31155					50663	Hydraulic Chuck	
+932	31155					50664	Servo Driven Turret	
+933	31160					50665	Trunnion has never been used, still in brand new condition.	Note:
+934	31162					50677	Haas 5-Axis CNC Control with Color LCD Monitor	Equipped With:
+935	31162					50678	Full 5-Axis Capability: A-axis tilt: +/- 32 Degrees	
+936	31162					50679	                                   B-axis tilt: +/- 32 Degrees	
+937	31162					50680	High-Speed Machining Software	
+938	31162					50681	WIPS Renishaw Tool & Part Probe	
+939	31162					50682	Thru the Spindle Coolant	
+940	31162					50683	Haas Intuitive Programming System	
+941	31162					50684	User Definable Macros	
+942	31162					50685	Coordinate Rotation & Scaling	
+943	31162					50686	Spindle Orientation	
+944	31162					50687	Programmable Coolant Nozzle	
+945	31162					50688	Remote Jog Handle	
+946	31162					50689	USB Port Interface	
+947	31162					50690	Coolant System with Tank & Pump	
+948	31163					50691	Haas CNC Control with Color LCD Monitor	Ewuiped With:
+949	31163					50692	4th Axis Drive & Wiring	
+950	31163					50693	Coolant System with Tank and Pump	
+951	31163					50694	G Code Compatible	
+952	31163					50695	Vector Spindle Drive	
+953	31165					50707	Haas CNC Control With Color LCD Monitor	Equipped With:
+954	31165					50708	1MB Program Memory, Rigid Tapping, USB Port, RS-232	
+955	31165					50709	Spindle Orientation	
+956	31165					50710	Visual Quick Code	
+957	31165					50711	User Definable Macros	
+958	31165					50712	High Speed Machining	
+959	31165					50713	Coordinate Rotation & Scaling	
+960	31165					50714	Wireless Intuitive Probing System	
+961	31165					50715	Programmable Coolant Nozzle	
+962	31165					50716	4th Axis Drive & Wiring	
+963	31165					50717	Auxillary Coolant Filter System	
+964	31165					50718	Chip Auger	
+965	31166					50719	Haas 2-Axis CNC Control	Equipped With:
+966	31166					50720	Tailstock	
+967	31166					50721	Manual Hand Wheels	
+968	31166					50722	Work Light	
+969	31166					50723	Coolant System with Tank & Pump	
+970	31166					50724	Chuck Guard/Cover	
+971	31166					50725	Gearbox	
+972	31166					50726	Quick Change Tool Post, 4-Position	
+973	31166					50727	12" Manual Chuck	
+974	31167					50728	Fanuc Series 32i-B 3 Axis CNC Control	Equipped With:
+975	31167					50729	12.6" Bar Capacity	
+976	31167					50730	RIP Manual Steady Rest	
+977	31167					50731	Chip Conveyor	
+978	31167					50732	Tailstock	
+979	31167					50733	Mist Collector	
+980	31167					50734	Coolant System with Tank & Pump	
+981	31167					50735	Misc Tool Tooling along with Live Tool Holders	
+982	31163					50736	Direct Belt Drive	
+983	31163					50737	3-Phase or Single Phase Capability	
+984	31168					50738	Haas 4-Axis CNC Control with 15" Color LCD Monitor	Equipped With:
+985	31168					50739	4th Axis Drive & Wiring	
+986	31168					50740	Programmable Coolant Nozzle	
+987	31168					50741	Coolant System with Tank & Pump	
+988	31168					50742	Rigid Tapping	
+989	31169					50743	Fanuc-MSC-501 5-Axis CNC Control	Equipped With:
+990	31169					50744	4th-Axis Drive and Wiring	
+991	31169					50745	5th-Axis Drive and Wiring	
+992	31169					50746	Flood Coolant System	
+993	31169					50747	Full Coolant/Chip Enclosure	
+994	31169					50748	1259 IPM Rapids	
+995	31169					50749	Spindle Oil Cooler	
+996	31169					50750	Showa Automatic Lubrication System	
+997	31169					50751	(2) Coolant Pans (1) 40"W x 96"L & (1) 24"W x 96"L	
+998	31170					50752	Fanuc 21i-B 3-Axis CNC Control	Equipped With:
+999	31170					50753	Flood Coolant System	
+1000	31170					50754	Full Coolant/Chip Enclosure	
+1001	31170					50755	1417 IPM Rapids	
+1002	31170					50756	Auto Lub System	
+1003	31171					50757	Double Doors on each end	Equipped With:
+1004	31171					50758	Temperature Guage	
+1005	31171					50759	480/3/60 Voltage	
+1006	31171					50760	3hp. 1725 rpm, Blower	
+1007	31172					50761	Haas 2-Axis CNC Control with Color Monitor	Equipped With:
+1008	31172					50762	10" Kitagawa B-210 3 Jaw Hydraulic Chuck	
+1009	31172					50763	Programmable Tailstock	
+1010	31172					50764	Big Bore Spindle with 2.5" Bar Capacity	
+1011	31172					50765	Chip Conveyor	
+1012	31173					50766	Haas CNC Control with 15" Color LCD Monitor	Equipped With:
+1013	31173					50767	1GB Program Memeory, Early Power Failure Detection Module, Media Display,	
+1014	31173					50768	  Wireless Networking, HaasConnect, Ethernet, WIFI, VPS	
+1015	31173					50769	Rigid Tapping	
+1016	31173					50770	WIPS (Wireless Intuitive Probing System)	
+1017	31173					50771	Programmable Coolant	
+1018	31173					50772	Custom Macros	
+1019	31173					50773	Coordinate Rotation and Scaling	
+1020	31173					50774	Spindle Orientation	
+1021	31173					50775	High Speed Machining	
+1022	31173					50776	30 Position Side-Mount Toolchanger	
+1023	31173					50777	Chip Auger	
+1024	31173					50778	Remote Jog Handle	
+1025	31175					50780	Haas CNC Control with 15" Color LCD Monitor	Equipped With:
+1026	31175					50781	Memory Lock Keyswitch, USB port, Rigid Tapping	
+1027	31175					50782	Manual Hydraulic Tailstock	
+1028	31175					50783	Tool Presetter	
+1029	31175					50784	Under 2000 Spindle Hours cutting Aluminum and Steel	Note:

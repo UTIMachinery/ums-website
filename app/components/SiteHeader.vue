@@ -54,7 +54,7 @@ const menuOpen = ref(false)
 }
 
 .header-inner {
-  max-width: 1400px;
+  max-width: 1540px;
   margin: 0 auto;
   padding: 4px 32px;
   display: flex;
@@ -78,26 +78,31 @@ const menuOpen = ref(false)
 
 .header-right {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 36px;
 }
 
 nav {
   display: flex;
   gap: 30px;
   align-items: center;
+  margin-right: 260px;
 }
 
 nav a {
-  color: #0b2545;
+  color: #111111;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
+  padding-bottom: 5px;
+border-bottom: 2px solid transparent;
 }
 
 nav a:hover {
   color: #ff6a00;
+  border-bottom-color: #ff6a00;
 }
 
 .header-phone {
