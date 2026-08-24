@@ -13,19 +13,17 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="wrap two-col">
-        <div>
-          <p class="eyebrow dark">WHO WE ARE</p>
-          <h2>Built Around the Way Machinery Business Should Be Done.</h2>
-          <p>Used Machinery Source works with manufacturers throughout the United States to buy, sell and locate quality used CNC machinery. Our focus is simple: provide accurate information, communicate clearly and make the process easier for the people on both sides of a machinery transaction.</p>
-          <p>Whether you are searching for a specific machine, moving surplus equipment or evaluating a larger plant project, you work directly with someone who understands the machinery and the market.</p>
+    <section class="section intro-section">
+      <div class="wrap intro-wrap">
+        <p class="eyebrow dark">MEET THE PERSON BEHIND UMS</p>
+        <h2>A Trusted Source for Used CNC Machinery.</h2>
+        <div class="intro-copy">
+          <p>The name <strong>Used Machinery Source</strong> wasn't chosen simply because I sell used machinery. It reflects the role I've built throughout my career—to be a trusted source for quality used CNC machinery, accurate information, honest guidance, and lasting relationships. Whether you're looking to move equipment or searching for the right machine, my goal is to be a trusted resource your company can rely on to make informed decisions with confidence.</p>
+          <p>My introduction to the used machinery business began in 1988, making cold calls for my uncle. Over the years, I came to realize this industry is about much more than buying and selling machines. It's about building relationships, earning trust, and helping companies solve problems. That early experience laid the foundation for the way I still do business today.</p>
+          <p>Since those early days, I've had the opportunity to work with manufacturers, machine shops, OEM distributors, banks, finance companies, and businesses throughout North America. Along the way, I've learned that lasting relationships are built through honesty, responsiveness, and doing what's right for the customer—even when it isn't the easiest path.</p>
+          <p>What I enjoy most about this business is the relationships. Many of the companies I work with today have been customers for years, and some for decades. There's no greater compliment than having someone call again because they trust your advice and know you'll always do what's right for them.</p>
+          <p>Whether you're looking to buy a machine, move surplus equipment, or simply need honest advice, I'd appreciate the opportunity to earn your trust and your business.</p>
         </div>
-        <aside class="experience-card">
-          <span>Since 1989</span>
-          <strong>35+ Years</strong>
-          <p>of hands-on experience in the used machinery industry.</p>
-        </aside>
       </div>
     </section>
 
@@ -36,9 +34,9 @@
           <h2>A Better Way to Buy and Sell Used Machinery.</h2>
         </div>
         <div class="values">
-          <article><span>01</span><h3>Accurate Information</h3><p>Clear machine details, specifications and photos so you can make informed decisions.</p></article>
-          <article><span>02</span><h3>Honest Guidance</h3><p>Practical answers based on experience—not pressure to make a transaction happen.</p></article>
-          <article><span>03</span><h3>Responsive Service</h3><p>Direct communication and timely follow-up when you have a question or opportunity.</p></article>
+          <article><h3>Accurate Information</h3><p>Clear machine details, specifications and photos so you can make informed decisions.</p></article>
+          <article><h3>Honest Guidance</h3><p>Practical answers based on experience—not pressure to make a transaction happen.</p></article>
+          <article><h3>Responsive Service</h3><p>Direct communication and timely follow-up when you have a question or opportunity.</p></article>
         </div>
       </div>
     </section>
@@ -52,7 +50,7 @@ useSeoMeta({title:'About Used Machinery Source | Used CNC Machinery',description
 </script>
 
 <style scoped>
-.page{color:#1a2532}.wrap{max-width:1280px;margin:0 auto;padding-left:40px;padding-right:40px}.page-hero{position:relative;min-height:430px;overflow:hidden;background:#061526;color:#fff}.hero-photo{position:absolute;inset:0 0 0 36%;background-image:url('/Images/about-jonathan-lester-2.png');background-size:cover;background-position:center 18%;background-repeat:no-repeat}.hero-chevron{position:absolute;inset:0;background:#061526;clip-path:polygon(0 0,64% 0,76% 50%,64% 100%,0 100%);z-index:1;pointer-events:none}.hero-content{position:relative;z-index:2;min-height:430px;display:flex;align-items:center}.hero-copy{max-width:680px;padding:44px 0}.eyebrow{margin:0 0 15px;color:#f36c21;font-size:14px;font-weight:800;letter-spacing:1.5px}.eyebrow.dark{color:#d75b16}.page-hero h1{font-size:clamp(42px,4.7vw,62px);line-height:1.04;margin:0 0 10px}.hero-subhead{margin:0 0 20px;font-size:clamp(21px,2vw,28px);line-height:1.25;font-weight:600;color:#fff}.lead{max-width:650px;font-size:19px;line-height:1.6;color:#dce4ed}.section{padding:78px 0}.section.light{background:#f4f6f8}.two-col{display:grid;grid-template-columns:1.5fr .65fr;gap:90px;align-items:center}.section h2{color:#082b5c;font-size:36px;line-height:1.18;margin:0 0 24px}.section p{font-size:17px;line-height:1.75;color:#46505d}.experience-card{background:#082b5c;color:#fff;padding:40px;border-top:5px solid #f36c21}.experience-card span{display:block;color:#f9a06e;font-weight:700}.experience-card strong{display:block;font-size:46px;margin:8px 0}.experience-card p{color:#fff;margin:0}.section-heading{max-width:720px;margin-bottom:38px}.values{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.values article{background:#fff;padding:34px;border:1px solid #e0e4e8}.values span{color:#f36c21;font-weight:800}.values h3{color:#082b5c;font-size:22px;margin:12px 0}.values p{font-size:16px;margin:0}.cta{background:#0b315f;color:#fff;padding:46px 0}.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}.cta h2{margin:0 0 8px;font-size:30px}.cta p{margin:0;color:#dce5ef}.cta-actions{display:flex;gap:12px}.btn{display:inline-flex;min-height:50px;padding:0 22px;align-items:center;justify-content:center;text-decoration:none;font-weight:800;border-radius:3px}.light-btn{background:#fff;color:#082b5c}.orange-btn{background:#f36c21;color:#fff}
+.page{color:#1a2532}.wrap{max-width:1280px;margin:0 auto;padding-left:40px;padding-right:40px}.page-hero{position:relative;min-height:430px;overflow:hidden;background:#061526;color:#fff}.hero-photo{position:absolute;inset:0 0 0 36%;background-image:url('/Images/about-jonathan-lester-2.png');background-size:cover;background-position:center 18%;background-repeat:no-repeat}.hero-chevron{position:absolute;inset:0;background:#061526;clip-path:polygon(0 0,64% 0,76% 50%,64% 100%,0 100%);z-index:1;pointer-events:none}.hero-content{position:relative;z-index:2;min-height:430px;display:flex;align-items:center}.hero-copy{max-width:680px;padding:44px 0}.eyebrow{margin:0 0 15px;color:#f36c21;font-size:14px;font-weight:800;letter-spacing:1.5px}.eyebrow.dark{color:#d75b16}.page-hero h1{font-size:clamp(42px,4.7vw,62px);line-height:1.04;margin:0 0 10px}.hero-subhead{margin:0 0 20px;font-size:clamp(21px,2vw,28px);line-height:1.25;font-weight:600;color:#fff}.lead{max-width:650px;font-size:19px;line-height:1.6;color:#dce4ed}.section{padding:78px 0}.section.light{background:#f4f6f8}.intro-wrap{max-width:1080px}.section h2{color:#082b5c;font-size:36px;line-height:1.18;margin:0 0 24px}.section p{font-size:17px;line-height:1.75;color:#46505d}.intro-copy{max-width:1000px}.intro-copy p{margin:0 0 20px}.intro-copy p:last-child{margin-bottom:0}.section-heading{max-width:720px;margin-bottom:38px}.values{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.values article{background:#fff;padding:34px;border:1px solid #e0e4e8}.values h3{color:#082b5c;font-size:22px;margin:0 0 12px}.values p{font-size:16px;margin:0}.cta{background:#0b315f;color:#fff;padding:46px 0}.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}.cta h2{margin:0 0 8px;font-size:30px}.cta p{margin:0;color:#dce5ef}.cta-actions{display:flex;gap:12px}.btn{display:inline-flex;min-height:50px;padding:0 22px;align-items:center;justify-content:center;text-decoration:none;font-weight:800;border-radius:3px}.light-btn{background:#fff;color:#082b5c}.orange-btn{background:#f36c21;color:#fff}
 @media(max-width:1000px){.hero-photo{inset:0 0 0 30%;background-position:center 16%}.hero-chevron{clip-path:polygon(0 0,62% 0,75% 50%,62% 100%,0 100%)}}
-@media(max-width:800px){.wrap{padding-left:22px;padding-right:22px}.page-hero,.hero-content{min-height:540px}.hero-photo{inset:190px 0 0 0;background-position:center 10%}.hero-chevron{background:linear-gradient(180deg,#061526 0%,#061526 38%,rgba(6,21,38,.96) 52%,rgba(6,21,38,.45) 72%,rgba(6,21,38,0) 90%);clip-path:none}.hero-content{align-items:flex-start}.hero-copy{padding:38px 0 0;max-width:100%}.lead{font-size:17px;max-width:560px}.hero-subhead{font-size:21px}.two-col{grid-template-columns:1fr;gap:35px}.values{grid-template-columns:1fr}.cta-inner{align-items:flex-start;flex-direction:column}.section{padding:55px 0}.section h2{font-size:30px}}
+@media(max-width:800px){.wrap{padding-left:22px;padding-right:22px}.page-hero,.hero-content{min-height:540px}.hero-photo{inset:190px 0 0 0;background-position:center 10%}.hero-chevron{background:linear-gradient(180deg,#061526 0%,#061526 38%,rgba(6,21,38,.96) 52%,rgba(6,21,38,.45) 72%,rgba(6,21,38,0) 90%);clip-path:none}.hero-content{align-items:flex-start}.hero-copy{padding:38px 0 0;max-width:100%}.lead{font-size:17px;max-width:560px}.hero-subhead{font-size:21px}.values{grid-template-columns:1fr}.cta-inner{align-items:flex-start;flex-direction:column}.section{padding:55px 0}.section h2{font-size:30px}}
 </style>
