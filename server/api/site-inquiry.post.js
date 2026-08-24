@@ -1,8 +1,11 @@
 import nodemailer from 'nodemailer'
+import { verifyTurnstile } from '../utils/verify-turnstile'
 
 const clean = (value = '') => String(value).replace(/[\r\n]+/g, ' ').trim()
 
 export default defineEventHandler(async (event) => {
+  await verifyTurnstile(event)
+
   const body = await readBody(event)
   const contact = body.contact || {}
   const machine = body.machine || {}
