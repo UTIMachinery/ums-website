@@ -3,8 +3,8 @@ import machinesData from '../../../app/assets/data/machines.json'
 export default defineEventHandler((event) => {
   const activeMachines = machinesData.filter(machine =>
     Number(machine.Sold) === 0 &&
-    Number(machine.OffMarket) === 0 &&
-    Number(machine.dont_advertise) === 0
+    Number(machine.Off_Market ?? machine.OffMarket ?? 0) === 0 &&
+    Number(machine.dont_advertise ?? 0) === 0
   )
 
   const baseUrl = 'https://www.usedmachinerysource.com'
