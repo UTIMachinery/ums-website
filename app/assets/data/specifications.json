@@ -830,7 +830,7 @@
     "specid": "93302",
     "groupnames": "",
     "description": "C-Axis Indexing: Main Spindle",
-    "specvalues": "0.001 �",
+    "specvalues": "0.001 °",
     "ewid": "",
     "equippedwith": "",
     "groupnameew": ""
@@ -6073,6 +6073,1733 @@
   },
   {
     "id": "553",
+    "invid": "31176",
+    "specid": "94947",
+    "groupnames": "Table:",
+    "description": "Width",
+    "specvalues": "10.5 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "554",
+    "invid": "31176",
+    "specid": "94948",
+    "groupnames": "",
+    "description": "Length",
+    "specvalues": "47.8 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "555",
+    "invid": "31176",
+    "specid": "94949",
+    "groupnames": "",
+    "description": "Maximum Table Load",
+    "specvalues": "1000 lbs",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "556",
+    "invid": "31176",
+    "specid": "94950",
+    "groupnames": "Travels:",
+    "description": "X-Axis Travel",
+    "specvalues": "30 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "557",
+    "invid": "31176",
+    "specid": "94951",
+    "groupnames": "",
+    "description": "Y-Axis Travel",
+    "specvalues": "12 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "558",
+    "invid": "31176",
+    "specid": "94952",
+    "groupnames": "",
+    "description": "Z-Axis Travel",
+    "specvalues": "16 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "559",
+    "invid": "31176",
+    "specid": "94953",
+    "groupnames": "",
+    "description": "Spindle Nose to Table Top Minimum",
+    "specvalues": "4 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "560",
+    "invid": "31176",
+    "specid": "94954",
+    "groupnames": "",
+    "description": "                                           Maximum",
+    "specvalues": "20 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "561",
+    "invid": "31176",
+    "specid": "94955",
+    "groupnames": "Spindle:",
+    "description": "Spindle Speed: Minimum (RPM)",
+    "specvalues": "0 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "562",
+    "invid": "31176",
+    "specid": "94956",
+    "groupnames": "",
+    "description": "                       Maximum",
+    "specvalues": "6000 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "563",
+    "invid": "31176",
+    "specid": "94957",
+    "groupnames": "",
+    "description": "Spindle Taper",
+    "specvalues": "40 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "564",
+    "invid": "31176",
+    "specid": "94958",
+    "groupnames": "",
+    "description": "Main Motor (HP)",
+    "specvalues": "7.5 hp",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "565",
+    "invid": "31176",
+    "specid": "94959",
+    "groupnames": "Tool Changer:",
+    "description": "Tool Changer Positions",
+    "specvalues": "10 atc",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "566",
+    "invid": "31177",
+    "specid": "94960",
+    "groupnames": "Table/Pallet:",
+    "description": "Width",
+    "specvalues": "19.7 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "567",
+    "invid": "31177",
+    "specid": "94961",
+    "groupnames": "",
+    "description": "Length",
+    "specvalues": "19.7 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "568",
+    "invid": "31177",
+    "specid": "94962",
+    "groupnames": "",
+    "description": "Number of Table/Pallet(s)",
+    "specvalues": "2 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "569",
+    "invid": "31177",
+    "specid": "94963",
+    "groupnames": "",
+    "description": "Indexing",
+    "specvalues": "0.001 °",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "570",
+    "invid": "31177",
+    "specid": "94964",
+    "groupnames": "",
+    "description": "Maximum Load",
+    "specvalues": "1100 lbs",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "571",
+    "invid": "31177",
+    "specid": "94965",
+    "groupnames": "Travels:",
+    "description": "X-Axis Travel",
+    "specvalues": "29.9 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "572",
+    "invid": "31177",
+    "specid": "94966",
+    "groupnames": "",
+    "description": "Y-Axis Travel",
+    "specvalues": "29.9 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "573",
+    "invid": "31177",
+    "specid": "94967",
+    "groupnames": "",
+    "description": "Z-Axis Travel",
+    "specvalues": "29.9 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "574",
+    "invid": "31177",
+    "specid": "94968",
+    "groupnames": "Spindle:",
+    "description": "Spindle Speed: Minimum (RPM)",
+    "specvalues": "0 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "575",
+    "invid": "31177",
+    "specid": "94969",
+    "groupnames": "",
+    "description": "                       Maximum",
+    "specvalues": "15000 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "576",
+    "invid": "31177",
+    "specid": "94970",
+    "groupnames": "",
+    "description": "Spindle Taper",
+    "specvalues": "40 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "577",
+    "invid": "31177",
+    "specid": "94971",
+    "groupnames": "",
+    "description": "Main Motor (HP)",
+    "specvalues": "40 hp",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "578",
+    "invid": "31177",
+    "specid": "94972",
+    "groupnames": "Tool Changer:",
+    "description": "Tool Changer Positions",
+    "specvalues": "64 atc",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "579",
+    "invid": "31178",
+    "specid": "94973",
+    "groupnames": "Capacity:",
+    "description": "Swing",
+    "specvalues": "44 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "580",
+    "invid": "31178",
+    "specid": "94974",
+    "groupnames": "",
+    "description": "Swing in Gap",
+    "specvalues": "55.11 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "581",
+    "invid": "31178",
+    "specid": "94976",
+    "groupnames": "",
+    "description": "Swing Over Cross Slide/carriage",
+    "specvalues": "27.95 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "582",
+    "invid": "31178",
+    "specid": "94977",
+    "groupnames": "",
+    "description": "Distance Between Centers",
+    "specvalues": "60 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "583",
+    "invid": "31178",
+    "specid": "94978",
+    "groupnames": "Spindle:",
+    "description": "Spindle Speed: Minimum (RPM)",
+    "specvalues": "7 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "584",
+    "invid": "31178",
+    "specid": "94979",
+    "groupnames": "",
+    "description": "                       Maximum",
+    "specvalues": "264 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "585",
+    "invid": "31178",
+    "specid": "94980",
+    "groupnames": "",
+    "description": "Spindle Bore",
+    "specvalues": "12 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "586",
+    "invid": "31178",
+    "specid": "94981",
+    "groupnames": "",
+    "description": "Spindle Nose",
+    "specvalues": "A2-11 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "587",
+    "invid": "31178",
+    "specid": "94982",
+    "groupnames": "",
+    "description": "Main Motor (HP)",
+    "specvalues": "30 hp",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "588",
+    "invid": "31178",
+    "specid": "94983",
+    "groupnames": "Chuck:",
+    "description": "Diameter",
+    "specvalues": "24.5 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "589",
+    "invid": "31178",
+    "specid": "94984",
+    "groupnames": "",
+    "description": "Hole Thru",
+    "specvalues": "12.5 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "590",
+    "invid": "31178",
+    "specid": "94985",
+    "groupnames": "",
+    "description": "Number of Jaws",
+    "specvalues": "3 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "591",
+    "invid": "31179",
+    "specid": "94991",
+    "groupnames": "Table:",
+    "description": "Width",
+    "specvalues": "23.6 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "592",
+    "invid": "31179",
+    "specid": "94992",
+    "groupnames": "",
+    "description": "Length",
+    "specvalues": "98.4 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "593",
+    "invid": "31179",
+    "specid": "94993",
+    "groupnames": "",
+    "description": "Maximum Table Load",
+    "specvalues": "3960 lbs",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "594",
+    "invid": "31179",
+    "specid": "94994",
+    "groupnames": "Travels:",
+    "description": "X-Axis Travel",
+    "specvalues": "88.6 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "595",
+    "invid": "31179",
+    "specid": "94995",
+    "groupnames": "",
+    "description": "Y-Axis Travel",
+    "specvalues": "24.4 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "596",
+    "invid": "31179",
+    "specid": "94996",
+    "groupnames": "",
+    "description": "Z-Axis Travel",
+    "specvalues": "24.4 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "597",
+    "invid": "31179",
+    "specid": "94997",
+    "groupnames": "",
+    "description": "Spindle Nose to Table Top Minimum",
+    "specvalues": "4.728 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "598",
+    "invid": "31179",
+    "specid": "94998",
+    "groupnames": "",
+    "description": "                                           Maximum",
+    "specvalues": "29.156 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "599",
+    "invid": "31179",
+    "specid": "94999",
+    "groupnames": "Spindle:",
+    "description": "Spindle Speed: Minimum (RPM)",
+    "specvalues": "0 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "600",
+    "invid": "31179",
+    "specid": "95000",
+    "groupnames": "",
+    "description": "                       Maximum",
+    "specvalues": "10000 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "601",
+    "invid": "31179",
+    "specid": "95001",
+    "groupnames": "",
+    "description": "Spindle Taper",
+    "specvalues": "40 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "602",
+    "invid": "31179",
+    "specid": "95002",
+    "groupnames": "",
+    "description": "Main Motor (HP)",
+    "specvalues": "20 hp",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "603",
+    "invid": "31179",
+    "specid": "95003",
+    "groupnames": "Tool Changer:",
+    "description": "Tool Changer Positions",
+    "specvalues": "32 atc",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "604",
+    "invid": "31180",
+    "specid": "95004",
+    "groupnames": "Specifications:",
+    "description": "Capacity",
+    "specvalues": "19000 Lbs.",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "605",
+    "invid": "31180",
+    "specid": "95005",
+    "groupnames": "",
+    "description": "Type (Electric or Gas or Diesel or Propane)",
+    "specvalues": "Diesel ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "606",
+    "invid": "31180",
+    "specid": "95006",
+    "groupnames": "",
+    "description": "Tires (Solid or Pneumatic)",
+    "specvalues": "Solid ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "607",
+    "invid": "31180",
+    "specid": "95007",
+    "groupnames": "",
+    "description": "Forks (Length)",
+    "specvalues": "96 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "608",
+    "invid": "31180",
+    "specid": "95008",
+    "groupnames": "",
+    "description": "Mast (Number Of Stages)",
+    "specvalues": "2 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "609",
+    "invid": "31180",
+    "specid": "95009",
+    "groupnames": "",
+    "description": "Mast Maximun Lift",
+    "specvalues": "144 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "610",
+    "invid": "31180",
+    "specid": "95012",
+    "groupnames": "",
+    "description": "Truck Weight",
+    "specvalues": "30,000 Lbs.",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "611",
+    "invid": "31181",
+    "specid": "95013",
+    "groupnames": "Table:",
+    "description": "Width",
+    "specvalues": "23 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "612",
+    "invid": "31181",
+    "specid": "95014",
+    "groupnames": "",
+    "description": "Length",
+    "specvalues": "52 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "613",
+    "invid": "31181",
+    "specid": "95015",
+    "groupnames": "",
+    "description": "Maximum Table Load",
+    "specvalues": "4000 lbs",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "614",
+    "invid": "31181",
+    "specid": "95016",
+    "groupnames": "Travels:",
+    "description": "X-Axis Travel",
+    "specvalues": "50 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "615",
+    "invid": "31181",
+    "specid": "95017",
+    "groupnames": "",
+    "description": "Y-Axis Travel",
+    "specvalues": "26 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "616",
+    "invid": "31181",
+    "specid": "95018",
+    "groupnames": "",
+    "description": "Z-Axis Travel",
+    "specvalues": "25 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "617",
+    "invid": "31181",
+    "specid": "95019",
+    "groupnames": "",
+    "description": "Spindle Nose to Table Top Minimum",
+    "specvalues": "7 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "618",
+    "invid": "31181",
+    "specid": "95020",
+    "groupnames": "",
+    "description": "                                           Maximum",
+    "specvalues": "32 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "619",
+    "invid": "31181",
+    "specid": "95021",
+    "groupnames": "Spindle:",
+    "description": "Spindle Speed: Minimum (RPM)",
+    "specvalues": "0 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "620",
+    "invid": "31181",
+    "specid": "95022",
+    "groupnames": "",
+    "description": "                       Maximum",
+    "specvalues": "12000 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "621",
+    "invid": "31181",
+    "specid": "95023",
+    "groupnames": "",
+    "description": "Spindle Taper",
+    "specvalues": "40 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "622",
+    "invid": "31181",
+    "specid": "95024",
+    "groupnames": "",
+    "description": "Main Motor (HP)",
+    "specvalues": "30 hp",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "623",
+    "invid": "31181",
+    "specid": "95025",
+    "groupnames": "Tool Changer:",
+    "description": "Tool Changer Positions",
+    "specvalues": "24+1 atc",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "624",
+    "invid": "31182",
+    "specid": "95029",
+    "groupnames": "Travels:",
+    "description": "X-Axis Travel",
+    "specvalues": "96 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "625",
+    "invid": "31182",
+    "specid": "95030",
+    "groupnames": "",
+    "description": "Y-Axis Travel",
+    "specvalues": "60 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "626",
+    "invid": "31182",
+    "specid": "95031",
+    "groupnames": "",
+    "description": "Z-Axis Travel",
+    "specvalues": "16 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "627",
+    "invid": "31182",
+    "specid": "95034",
+    "groupnames": "Spindle:",
+    "description": "Spindle Speed: Minimum (RPM)",
+    "specvalues": "0 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "628",
+    "invid": "31182",
+    "specid": "95035",
+    "groupnames": "",
+    "description": "                       Maximum",
+    "specvalues": "18000 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "629",
+    "invid": "31182",
+    "specid": "95037",
+    "groupnames": "",
+    "description": "Main Motor (HP)",
+    "specvalues": "4 hp",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "630",
+    "invid": "31183",
+    "specid": "95039",
+    "groupnames": "Capacity:",
+    "description": "Swing",
+    "specvalues": "17 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "631",
+    "invid": "31183",
+    "specid": "95040",
+    "groupnames": "",
+    "description": "Swing in Gap",
+    "specvalues": "24 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "632",
+    "invid": "31183",
+    "specid": "95042",
+    "groupnames": "",
+    "description": "Swing Over Cross Slide/carriage",
+    "specvalues": "10.6 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "633",
+    "invid": "31183",
+    "specid": "95043",
+    "groupnames": "",
+    "description": "Distance Between Centers",
+    "specvalues": "67 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "634",
+    "invid": "31183",
+    "specid": "95044",
+    "groupnames": "Spindle:",
+    "description": "Spindle Speed: Minimum (RPM)",
+    "specvalues": "12 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "635",
+    "invid": "31183",
+    "specid": "95045",
+    "groupnames": "",
+    "description": "                       Maximum",
+    "specvalues": "1650 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "636",
+    "invid": "31183",
+    "specid": "95046",
+    "groupnames": "",
+    "description": "Spindle Bore",
+    "specvalues": "3.07 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "637",
+    "invid": "31183",
+    "specid": "95047",
+    "groupnames": "",
+    "description": "Spindle Nose",
+    "specvalues": "D1-8 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "638",
+    "invid": "31183",
+    "specid": "95048",
+    "groupnames": "",
+    "description": "Main Motor (HP)",
+    "specvalues": "7.5 hp",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "639",
+    "invid": "31183",
+    "specid": "95049",
+    "groupnames": "Chuck:",
+    "description": "Diameter",
+    "specvalues": "12 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "640",
+    "invid": "31183",
+    "specid": "95050",
+    "groupnames": "",
+    "description": "Hole Thru",
+    "specvalues": "3 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "641",
+    "invid": "31183",
+    "specid": "95051",
+    "groupnames": "",
+    "description": "Number of Jaws",
+    "specvalues": "3 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "642",
+    "invid": "31185",
+    "specid": "95076",
+    "groupnames": "Capacity:",
+    "description": "Swing",
+    "specvalues": "48 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "643",
+    "invid": "31185",
+    "specid": "95079",
+    "groupnames": "",
+    "description": "Distance Between Centers",
+    "specvalues": "80 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "644",
+    "invid": "31185",
+    "specid": "95082",
+    "groupnames": "",
+    "description": "Spindle Bore",
+    "specvalues": "9 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "645",
+    "invid": "31185",
+    "specid": "95083",
+    "groupnames": "",
+    "description": "Main Motor",
+    "specvalues": "50 hp",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "646",
+    "invid": "31185",
+    "specid": "95084",
+    "groupnames": "",
+    "description": "Spindle Nose",
+    "specvalues": "A2-28 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "647",
+    "invid": "31185",
+    "specid": "95085",
+    "groupnames": "Turret:",
+    "description": "Number Of Positions",
+    "specvalues": "V8 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "648",
+    "invid": "31186",
+    "specid": "95095",
+    "groupnames": "Table:",
+    "description": "Width",
+    "specvalues": "28 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "649",
+    "invid": "31186",
+    "specid": "95096",
+    "groupnames": "",
+    "description": "Length",
+    "specvalues": "120 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "650",
+    "invid": "31186",
+    "specid": "95098",
+    "groupnames": "Travels:",
+    "description": "X-Axis Travel",
+    "specvalues": "120 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "651",
+    "invid": "31186",
+    "specid": "95099",
+    "groupnames": "",
+    "description": "Y-Axis Travel",
+    "specvalues": "32 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "652",
+    "invid": "31186",
+    "specid": "95100",
+    "groupnames": "",
+    "description": "Z-Axis Travel",
+    "specvalues": "30 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "653",
+    "invid": "31186",
+    "specid": "95101",
+    "groupnames": "",
+    "description": "Spindle Nose to Table Top Minimum",
+    "specvalues": "5 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "654",
+    "invid": "31186",
+    "specid": "95102",
+    "groupnames": "",
+    "description": "                                           Maximum",
+    "specvalues": "35 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "655",
+    "invid": "31186",
+    "specid": "95103",
+    "groupnames": "Spindle:",
+    "description": "Spindle Speed: Minimum (RPM)",
+    "specvalues": "0 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "656",
+    "invid": "31186",
+    "specid": "95104",
+    "groupnames": "",
+    "description": "                       Maximum",
+    "specvalues": "7500 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "657",
+    "invid": "31186",
+    "specid": "95105",
+    "groupnames": "",
+    "description": "Spindle Taper",
+    "specvalues": "50 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "658",
+    "invid": "31186",
+    "specid": "95106",
+    "groupnames": "",
+    "description": "Main Motor (HP)",
+    "specvalues": "30 hp",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "659",
+    "invid": "31186",
+    "specid": "95107",
+    "groupnames": "Tool Changer:",
+    "description": "Tool Changer Positions",
+    "specvalues": "30+1 atc",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "660",
+    "invid": "31187",
+    "specid": "95108",
+    "groupnames": "Table:",
+    "description": "Width",
+    "specvalues": "14 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "661",
+    "invid": "31187",
+    "specid": "95109",
+    "groupnames": "",
+    "description": "Length",
+    "specvalues": "36 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "662",
+    "invid": "31187",
+    "specid": "95110",
+    "groupnames": "",
+    "description": "Maximum Table Load",
+    "specvalues": "3000 lbs",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "663",
+    "invid": "31187",
+    "specid": "95111",
+    "groupnames": "Travels:",
+    "description": "X-Axis Travel",
+    "specvalues": "30 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "664",
+    "invid": "31187",
+    "specid": "95112",
+    "groupnames": "",
+    "description": "Y-Axis Travel",
+    "specvalues": "16 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "665",
+    "invid": "31187",
+    "specid": "95113",
+    "groupnames": "",
+    "description": "Z-Axis Travel",
+    "specvalues": "20 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "666",
+    "invid": "31187",
+    "specid": "95114",
+    "groupnames": "",
+    "description": "Spindle Nose to Table Top Minimum",
+    "specvalues": "4 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "667",
+    "invid": "31187",
+    "specid": "95115",
+    "groupnames": "",
+    "description": "                                           Maximum",
+    "specvalues": "24 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "668",
+    "invid": "31187",
+    "specid": "95116",
+    "groupnames": "Spindle:",
+    "description": "Spindle Speed: Minimum (RPM)",
+    "specvalues": "0 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "669",
+    "invid": "31187",
+    "specid": "95117",
+    "groupnames": "",
+    "description": "                       Maximum",
+    "specvalues": "10000 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "670",
+    "invid": "31187",
+    "specid": "95118",
+    "groupnames": "",
+    "description": "Spindle Taper",
+    "specvalues": "40 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "671",
+    "invid": "31187",
+    "specid": "95119",
+    "groupnames": "",
+    "description": "Main Motor (HP)",
+    "specvalues": "20 hp",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "672",
+    "invid": "31187",
+    "specid": "95120",
+    "groupnames": "Tool Changer:",
+    "description": "Tool Changer Positions",
+    "specvalues": "24+1 atc",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "673",
+    "invid": "31188",
+    "specid": "95121",
+    "groupnames": "Capacity:",
+    "description": "Swing",
+    "specvalues": "33.268 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "674",
+    "invid": "31188",
+    "specid": "95122",
+    "groupnames": "",
+    "description": "Swing Over Cross Slide",
+    "specvalues": "18.25 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "675",
+    "invid": "31188",
+    "specid": "95123",
+    "groupnames": "",
+    "description": "Maximum Machining Diameter",
+    "specvalues": "22.8 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "676",
+    "invid": "31188",
+    "specid": "95124",
+    "groupnames": "",
+    "description": "Distance Between Centers",
+    "specvalues": "40 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "677",
+    "invid": "31188",
+    "specid": "95125",
+    "groupnames": "Spindle:",
+    "description": "Spindle Speed: Minimum (RPM)",
+    "specvalues": "4 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "678",
+    "invid": "31188",
+    "specid": "95126",
+    "groupnames": "",
+    "description": "                       Maximum",
+    "specvalues": "2000 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "679",
+    "invid": "31188",
+    "specid": "95127",
+    "groupnames": "",
+    "description": "Spindle Bore",
+    "specvalues": "7 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "680",
+    "invid": "31188",
+    "specid": "95128",
+    "groupnames": "",
+    "description": "Main Motor",
+    "specvalues": "40 hp",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "681",
+    "invid": "31188",
+    "specid": "95129",
+    "groupnames": "",
+    "description": "Spindle Nose",
+    "specvalues": "A2-15 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "682",
+    "invid": "31188",
+    "specid": "95130",
+    "groupnames": "Turret:",
+    "description": "Number Of Positions",
+    "specvalues": "12 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "683",
+    "invid": "31188",
+    "specid": "95131",
+    "groupnames": "",
+    "description": "X-Axis Travel",
+    "specvalues": "13.375 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "684",
+    "invid": "31188",
+    "specid": "95132",
+    "groupnames": "",
+    "description": "Z-Axis Travel",
+    "specvalues": "41 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "685",
+    "invid": "31188",
+    "specid": "95133",
+    "groupnames": "Tailstock:",
+    "description": "Quill Diameter",
+    "specvalues": "5 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "686",
+    "invid": "31188",
+    "specid": "95136",
+    "groupnames": "",
+    "description": "Body Travel",
+    "specvalues": "32.5 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "687",
+    "invid": "31188",
+    "specid": "95137",
+    "groupnames": "Chuck:",
+    "description": "Diameter",
+    "specvalues": "18 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "688",
+    "invid": "31188",
+    "specid": "95138",
+    "groupnames": "",
+    "description": "Hole Thru",
+    "specvalues": "7 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "689",
+    "invid": "31188",
+    "specid": "95139",
+    "groupnames": "",
+    "description": "Number of Jaws",
+    "specvalues": "3 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "690",
+    "invid": "31189",
+    "specid": "95143",
+    "groupnames": "Travels:",
+    "description": "X-Axis (Longitudinal)",
+    "specvalues": "15.75 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "691",
+    "invid": "31189",
+    "specid": "95144",
+    "groupnames": "",
+    "description": "Y-Axis (Cross)",
+    "specvalues": "11.81 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "692",
+    "invid": "31189",
+    "specid": "95145",
+    "groupnames": "",
+    "description": "Z-Axis (Vertical)",
+    "specvalues": "8.66 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "693",
+    "invid": "31189",
+    "specid": "95146",
+    "groupnames": "",
+    "description": "U-Travel",
+    "specvalues": "3.15 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "694",
+    "invid": "31189",
+    "specid": "95147",
+    "groupnames": "",
+    "description": "V-Travel",
+    "specvalues": "3.15 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "695",
+    "invid": "31189",
+    "specid": "95148",
+    "groupnames": "Wire:",
+    "description": "Minimum Wire Diameter",
+    "specvalues": "0.004 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "696",
+    "invid": "31189",
+    "specid": "95149",
+    "groupnames": "",
+    "description": "Maximum Wire Diameter",
+    "specvalues": "0.012 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "697",
+    "invid": "31189",
+    "specid": "95150",
+    "groupnames": "Tank:",
+    "description": "Length",
+    "specvalues": "33.86 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "698",
+    "invid": "31189",
+    "specid": "95151",
+    "groupnames": "",
+    "description": "Width",
+    "specvalues": "27.17 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "699",
+    "invid": "31190",
+    "specid": "95154",
+    "groupnames": "Capacity:",
+    "description": "Swing",
+    "specvalues": "31.75 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "700",
+    "invid": "31190",
+    "specid": "95156",
+    "groupnames": "",
+    "description": "Maximum Machining Diameter",
+    "specvalues": "21 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "701",
+    "invid": "31190",
+    "specid": "95157",
+    "groupnames": "",
+    "description": "Distance Between Centers",
+    "specvalues": "32.5 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "702",
+    "invid": "31190",
+    "specid": "95158",
+    "groupnames": "Spindle:",
+    "description": "Spindle Speed: Minimum (RPM)",
+    "specvalues": "0 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "703",
+    "invid": "31190",
+    "specid": "95159",
+    "groupnames": "",
+    "description": "                       Maximum",
+    "specvalues": "3400 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "704",
+    "invid": "31190",
+    "specid": "95160",
+    "groupnames": "",
+    "description": "Spindle Bore",
+    "specvalues": "3.5 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "705",
+    "invid": "31190",
+    "specid": "95161",
+    "groupnames": "",
+    "description": "Main Motor",
+    "specvalues": "30 hp",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "706",
+    "invid": "31190",
+    "specid": "95163",
+    "groupnames": "Turret:",
+    "description": "Number Of Positions",
+    "specvalues": "12 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "707",
+    "invid": "31190",
+    "specid": "95173",
+    "groupnames": "Chuck:",
+    "description": "Diameter",
+    "specvalues": "10 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "708",
+    "invid": "31190",
+    "specid": "95174",
+    "groupnames": "",
+    "description": "Hole Thru",
+    "specvalues": "3 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "709",
+    "invid": "31190",
+    "specid": "95175",
+    "groupnames": "",
+    "description": "Number of Jaws",
+    "specvalues": "3 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "710",
     "invid": "31119",
     "specid": "83872",
     "groupnames": "Specifications:",
@@ -6083,7 +7810,7 @@
     "groupnameew": ""
   },
   {
-    "id": "554",
+    "id": "711",
     "invid": "31119",
     "specid": "83873",
     "groupnames": "",
@@ -6094,7 +7821,7 @@
     "groupnameew": ""
   },
   {
-    "id": "555",
+    "id": "712",
     "invid": "31119",
     "specid": "83874",
     "groupnames": "",
@@ -6105,7 +7832,7 @@
     "groupnameew": ""
   },
   {
-    "id": "556",
+    "id": "713",
     "invid": "31119",
     "specid": "83875",
     "groupnames": "",
@@ -6116,7 +7843,7 @@
     "groupnameew": ""
   },
   {
-    "id": "557",
+    "id": "714",
     "invid": "31119",
     "specid": "83876",
     "groupnames": "",
@@ -6127,7 +7854,7 @@
     "groupnameew": ""
   },
   {
-    "id": "558",
+    "id": "715",
     "invid": "31119",
     "specid": "83877",
     "groupnames": "",
@@ -6138,7 +7865,7 @@
     "groupnameew": ""
   },
   {
-    "id": "559",
+    "id": "716",
     "invid": "31119",
     "specid": "83878",
     "groupnames": "",
@@ -6149,7 +7876,7 @@
     "groupnameew": ""
   },
   {
-    "id": "560",
+    "id": "717",
     "invid": "31119",
     "specid": "83879",
     "groupnames": "",
@@ -6160,7 +7887,7 @@
     "groupnameew": ""
   },
   {
-    "id": "561",
+    "id": "718",
     "invid": "31119",
     "specid": "83880",
     "groupnames": "",
@@ -6171,29 +7898,29 @@
     "groupnameew": ""
   },
   {
-    "id": "562",
+    "id": "719",
     "invid": "31119",
     "specid": "83881",
     "groupnames": "",
     "description": "C-Axis",
-    "specvalues": "0.0001�",
+    "specvalues": "0.0001°",
     "ewid": "",
     "equippedwith": "",
     "groupnameew": ""
   },
   {
-    "id": "563",
+    "id": "720",
     "invid": "31119",
     "specid": "83882",
     "groupnames": "",
     "description": "A-Axis",
-    "specvalues": "360�",
+    "specvalues": "360°",
     "ewid": "",
     "equippedwith": "",
     "groupnameew": ""
   },
   {
-    "id": "564",
+    "id": "721",
     "invid": "31122",
     "specid": "83883",
     "groupnames": "Dimensions:",
@@ -6204,7 +7931,7 @@
     "groupnameew": ""
   },
   {
-    "id": "565",
+    "id": "722",
     "invid": "31122",
     "specid": "83884",
     "groupnames": "",
@@ -6215,7 +7942,7 @@
     "groupnameew": ""
   },
   {
-    "id": "566",
+    "id": "723",
     "invid": "31122",
     "specid": "83885",
     "groupnames": "",
@@ -6226,7 +7953,7 @@
     "groupnameew": ""
   },
   {
-    "id": "567",
+    "id": "724",
     "invid": "31139",
     "specid": "83897",
     "groupnames": "Dimensions:",
@@ -6237,7 +7964,7 @@
     "groupnameew": ""
   },
   {
-    "id": "568",
+    "id": "725",
     "invid": "31139",
     "specid": "83898",
     "groupnames": "",
@@ -6248,7 +7975,7 @@
     "groupnameew": ""
   },
   {
-    "id": "569",
+    "id": "726",
     "invid": "31139",
     "specid": "83899",
     "groupnames": "",
@@ -6259,7 +7986,7 @@
     "groupnameew": ""
   },
   {
-    "id": "570",
+    "id": "727",
     "invid": "31158",
     "specid": "83900",
     "groupnames": "Specification:",
@@ -6270,7 +7997,7 @@
     "groupnameew": ""
   },
   {
-    "id": "571",
+    "id": "728",
     "invid": "31158",
     "specid": "83901",
     "groupnames": "",
@@ -6281,7 +8008,7 @@
     "groupnameew": ""
   },
   {
-    "id": "572",
+    "id": "729",
     "invid": "31158",
     "specid": "83902",
     "groupnames": "",
@@ -6292,7 +8019,7 @@
     "groupnameew": ""
   },
   {
-    "id": "573",
+    "id": "730",
     "invid": "31158",
     "specid": "83903",
     "groupnames": "",
@@ -6303,7 +8030,7 @@
     "groupnameew": ""
   },
   {
-    "id": "574",
+    "id": "731",
     "invid": "31158",
     "specid": "83904",
     "groupnames": "",
@@ -6314,7 +8041,7 @@
     "groupnameew": ""
   },
   {
-    "id": "575",
+    "id": "732",
     "invid": "31158",
     "specid": "83905",
     "groupnames": "",
@@ -6325,7 +8052,7 @@
     "groupnameew": ""
   },
   {
-    "id": "576",
+    "id": "733",
     "invid": "31158",
     "specid": "83906",
     "groupnames": "",
@@ -6336,7 +8063,7 @@
     "groupnameew": ""
   },
   {
-    "id": "577",
+    "id": "734",
     "invid": "31158",
     "specid": "83907",
     "groupnames": "",
@@ -6347,7 +8074,7 @@
     "groupnameew": ""
   },
   {
-    "id": "578",
+    "id": "735",
     "invid": "31158",
     "specid": "83908",
     "groupnames": "",
@@ -6358,7 +8085,7 @@
     "groupnameew": ""
   },
   {
-    "id": "579",
+    "id": "736",
     "invid": "31158",
     "specid": "83909",
     "groupnames": "",
@@ -6369,7 +8096,7 @@
     "groupnameew": ""
   },
   {
-    "id": "580",
+    "id": "737",
     "invid": "31158",
     "specid": "83910",
     "groupnames": "",
@@ -6380,7 +8107,7 @@
     "groupnameew": ""
   },
   {
-    "id": "581",
+    "id": "738",
     "invid": "31158",
     "specid": "83911",
     "groupnames": "",
@@ -6391,7 +8118,7 @@
     "groupnameew": ""
   },
   {
-    "id": "582",
+    "id": "739",
     "invid": "31158",
     "specid": "83912",
     "groupnames": "",
@@ -6402,7 +8129,7 @@
     "groupnameew": ""
   },
   {
-    "id": "583",
+    "id": "740",
     "invid": "31160",
     "specid": "83913",
     "groupnames": "",
@@ -6413,7 +8140,7 @@
     "groupnameew": ""
   },
   {
-    "id": "584",
+    "id": "741",
     "invid": "31160",
     "specid": "83914",
     "groupnames": "",
@@ -6424,7 +8151,7 @@
     "groupnameew": ""
   },
   {
-    "id": "585",
+    "id": "742",
     "invid": "31160",
     "specid": "83915",
     "groupnames": "",
@@ -6435,7 +8162,7 @@
     "groupnameew": ""
   },
   {
-    "id": "586",
+    "id": "743",
     "invid": "31169",
     "specid": "83916",
     "groupnames": "Dimensions:",
@@ -6446,7 +8173,7 @@
     "groupnameew": ""
   },
   {
-    "id": "587",
+    "id": "744",
     "invid": "31169",
     "specid": "83917",
     "groupnames": "",
@@ -6457,7 +8184,7 @@
     "groupnameew": ""
   },
   {
-    "id": "588",
+    "id": "745",
     "invid": "31169",
     "specid": "83918",
     "groupnames": "",
@@ -6468,7 +8195,7 @@
     "groupnameew": ""
   },
   {
-    "id": "589",
+    "id": "746",
     "invid": "31171",
     "specid": "83919",
     "groupnames": "Specifications:",
@@ -6479,7 +8206,7 @@
     "groupnameew": ""
   },
   {
-    "id": "590",
+    "id": "747",
     "invid": "31171",
     "specid": "83920",
     "groupnames": "",
@@ -6490,7 +8217,7 @@
     "groupnameew": ""
   },
   {
-    "id": "591",
+    "id": "748",
     "invid": "31171",
     "specid": "83921",
     "groupnames": "",
@@ -6501,7 +8228,7 @@
     "groupnameew": ""
   },
   {
-    "id": "592",
+    "id": "749",
     "invid": "31171",
     "specid": "83922",
     "groupnames": "",
@@ -6512,7 +8239,7 @@
     "groupnameew": ""
   },
   {
-    "id": "593",
+    "id": "750",
     "invid": "31171",
     "specid": "83923",
     "groupnames": "",
@@ -6523,7 +8250,7 @@
     "groupnameew": ""
   },
   {
-    "id": "594",
+    "id": "751",
     "invid": "31171",
     "specid": "83924",
     "groupnames": "",
@@ -6534,7 +8261,73 @@
     "groupnameew": ""
   },
   {
-    "id": "595",
+    "id": "752",
+    "invid": "31189",
+    "specid": "83925",
+    "groupnames": "Additional Specs:",
+    "description": "Maximum Work Piece Weight",
+    "specvalues": "1102 lbs",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "753",
+    "invid": "31189",
+    "specid": "83926",
+    "groupnames": "",
+    "description": "Max Wire Feed Rate",
+    "specvalues": "420 mm/sec",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "754",
+    "invid": "31189",
+    "specid": "83927",
+    "groupnames": "",
+    "description": "Table Height",
+    "specvalues": "35.43",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "755",
+    "invid": "31189",
+    "specid": "83928",
+    "groupnames": "",
+    "description": "Position Resolution",
+    "specvalues": "0.1 Micron",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "756",
+    "invid": "31189",
+    "specid": "83929",
+    "groupnames": "",
+    "description": "Drive System",
+    "specvalues": "Linear Motors",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "757",
+    "invid": "31189",
+    "specid": "83930",
+    "groupnames": "",
+    "description": "Position Feedback",
+    "specvalues": "Linear Glass Scales",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "758",
     "invid": "30684",
     "specid": "",
     "groupnames": "",
@@ -6545,7 +8338,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "596",
+    "id": "759",
     "invid": "30877",
     "specid": "",
     "groupnames": "",
@@ -6556,7 +8349,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "597",
+    "id": "760",
     "invid": "30877",
     "specid": "",
     "groupnames": "",
@@ -6567,7 +8360,7 @@
     "groupnameew": ""
   },
   {
-    "id": "598",
+    "id": "761",
     "invid": "30877",
     "specid": "",
     "groupnames": "",
@@ -6578,7 +8371,7 @@
     "groupnameew": ""
   },
   {
-    "id": "599",
+    "id": "762",
     "invid": "30877",
     "specid": "",
     "groupnames": "",
@@ -6589,7 +8382,7 @@
     "groupnameew": ""
   },
   {
-    "id": "600",
+    "id": "763",
     "invid": "30877",
     "specid": "",
     "groupnames": "",
@@ -6600,7 +8393,7 @@
     "groupnameew": ""
   },
   {
-    "id": "601",
+    "id": "764",
     "invid": "30877",
     "specid": "",
     "groupnames": "",
@@ -6611,7 +8404,7 @@
     "groupnameew": ""
   },
   {
-    "id": "602",
+    "id": "765",
     "invid": "30877",
     "specid": "",
     "groupnames": "",
@@ -6622,7 +8415,7 @@
     "groupnameew": ""
   },
   {
-    "id": "603",
+    "id": "766",
     "invid": "30877",
     "specid": "",
     "groupnames": "",
@@ -6633,7 +8426,7 @@
     "groupnameew": ""
   },
   {
-    "id": "604",
+    "id": "767",
     "invid": "30965",
     "specid": "",
     "groupnames": "",
@@ -6644,7 +8437,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "605",
+    "id": "768",
     "invid": "30965",
     "specid": "",
     "groupnames": "",
@@ -6655,7 +8448,7 @@
     "groupnameew": ""
   },
   {
-    "id": "606",
+    "id": "769",
     "invid": "30965",
     "specid": "",
     "groupnames": "",
@@ -6666,7 +8459,7 @@
     "groupnameew": ""
   },
   {
-    "id": "607",
+    "id": "770",
     "invid": "30965",
     "specid": "",
     "groupnames": "",
@@ -6677,7 +8470,7 @@
     "groupnameew": ""
   },
   {
-    "id": "608",
+    "id": "771",
     "invid": "30965",
     "specid": "",
     "groupnames": "",
@@ -6688,7 +8481,7 @@
     "groupnameew": ""
   },
   {
-    "id": "609",
+    "id": "772",
     "invid": "30965",
     "specid": "",
     "groupnames": "",
@@ -6699,7 +8492,7 @@
     "groupnameew": ""
   },
   {
-    "id": "610",
+    "id": "773",
     "invid": "30965",
     "specid": "",
     "groupnames": "",
@@ -6710,7 +8503,7 @@
     "groupnameew": ""
   },
   {
-    "id": "611",
+    "id": "774",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -6721,7 +8514,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "612",
+    "id": "775",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -6732,7 +8525,7 @@
     "groupnameew": ""
   },
   {
-    "id": "613",
+    "id": "776",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -6743,7 +8536,7 @@
     "groupnameew": ""
   },
   {
-    "id": "614",
+    "id": "777",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -6754,7 +8547,7 @@
     "groupnameew": ""
   },
   {
-    "id": "615",
+    "id": "778",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -6765,7 +8558,7 @@
     "groupnameew": ""
   },
   {
-    "id": "616",
+    "id": "779",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -6776,7 +8569,7 @@
     "groupnameew": ""
   },
   {
-    "id": "617",
+    "id": "780",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -6787,7 +8580,7 @@
     "groupnameew": ""
   },
   {
-    "id": "618",
+    "id": "781",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -6798,7 +8591,7 @@
     "groupnameew": ""
   },
   {
-    "id": "619",
+    "id": "782",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -6809,7 +8602,7 @@
     "groupnameew": ""
   },
   {
-    "id": "620",
+    "id": "783",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -6820,7 +8613,7 @@
     "groupnameew": ""
   },
   {
-    "id": "621",
+    "id": "784",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -6831,7 +8624,7 @@
     "groupnameew": ""
   },
   {
-    "id": "622",
+    "id": "785",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -6842,7 +8635,7 @@
     "groupnameew": ""
   },
   {
-    "id": "623",
+    "id": "786",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -6853,7 +8646,7 @@
     "groupnameew": ""
   },
   {
-    "id": "624",
+    "id": "787",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -6864,7 +8657,7 @@
     "groupnameew": ""
   },
   {
-    "id": "625",
+    "id": "788",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -6875,7 +8668,7 @@
     "groupnameew": ""
   },
   {
-    "id": "626",
+    "id": "789",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -6886,7 +8679,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "627",
+    "id": "790",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -6897,7 +8690,7 @@
     "groupnameew": ""
   },
   {
-    "id": "628",
+    "id": "791",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -6908,7 +8701,7 @@
     "groupnameew": ""
   },
   {
-    "id": "629",
+    "id": "792",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -6919,7 +8712,7 @@
     "groupnameew": ""
   },
   {
-    "id": "630",
+    "id": "793",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -6930,7 +8723,7 @@
     "groupnameew": ""
   },
   {
-    "id": "631",
+    "id": "794",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -6941,7 +8734,7 @@
     "groupnameew": ""
   },
   {
-    "id": "632",
+    "id": "795",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -6952,7 +8745,7 @@
     "groupnameew": ""
   },
   {
-    "id": "633",
+    "id": "796",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -6963,7 +8756,7 @@
     "groupnameew": ""
   },
   {
-    "id": "634",
+    "id": "797",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -6974,7 +8767,7 @@
     "groupnameew": ""
   },
   {
-    "id": "635",
+    "id": "798",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -6985,7 +8778,7 @@
     "groupnameew": ""
   },
   {
-    "id": "636",
+    "id": "799",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -6996,7 +8789,7 @@
     "groupnameew": ""
   },
   {
-    "id": "637",
+    "id": "800",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -7007,7 +8800,7 @@
     "groupnameew": ""
   },
   {
-    "id": "638",
+    "id": "801",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -7018,7 +8811,7 @@
     "groupnameew": ""
   },
   {
-    "id": "639",
+    "id": "802",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -7029,7 +8822,7 @@
     "groupnameew": ""
   },
   {
-    "id": "640",
+    "id": "803",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -7040,7 +8833,7 @@
     "groupnameew": ""
   },
   {
-    "id": "641",
+    "id": "804",
     "invid": "31044",
     "specid": "",
     "groupnames": "",
@@ -7051,7 +8844,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "642",
+    "id": "805",
     "invid": "31044",
     "specid": "",
     "groupnames": "",
@@ -7062,7 +8855,7 @@
     "groupnameew": ""
   },
   {
-    "id": "643",
+    "id": "806",
     "invid": "31044",
     "specid": "",
     "groupnames": "",
@@ -7073,7 +8866,7 @@
     "groupnameew": ""
   },
   {
-    "id": "644",
+    "id": "807",
     "invid": "31044",
     "specid": "",
     "groupnames": "",
@@ -7084,7 +8877,7 @@
     "groupnameew": ""
   },
   {
-    "id": "645",
+    "id": "808",
     "invid": "31044",
     "specid": "",
     "groupnames": "",
@@ -7095,7 +8888,7 @@
     "groupnameew": ""
   },
   {
-    "id": "646",
+    "id": "809",
     "invid": "31044",
     "specid": "",
     "groupnames": "",
@@ -7106,7 +8899,7 @@
     "groupnameew": ""
   },
   {
-    "id": "647",
+    "id": "810",
     "invid": "31044",
     "specid": "",
     "groupnames": "",
@@ -7117,7 +8910,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "648",
+    "id": "811",
     "invid": "31044",
     "specid": "",
     "groupnames": "",
@@ -7128,7 +8921,7 @@
     "groupnameew": ""
   },
   {
-    "id": "649",
+    "id": "812",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7139,7 +8932,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "650",
+    "id": "813",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7150,7 +8943,7 @@
     "groupnameew": ""
   },
   {
-    "id": "651",
+    "id": "814",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7161,7 +8954,7 @@
     "groupnameew": ""
   },
   {
-    "id": "652",
+    "id": "815",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7172,7 +8965,7 @@
     "groupnameew": ""
   },
   {
-    "id": "653",
+    "id": "816",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7183,7 +8976,7 @@
     "groupnameew": ""
   },
   {
-    "id": "654",
+    "id": "817",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7194,7 +8987,7 @@
     "groupnameew": ""
   },
   {
-    "id": "655",
+    "id": "818",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7205,7 +8998,7 @@
     "groupnameew": ""
   },
   {
-    "id": "656",
+    "id": "819",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7216,7 +9009,7 @@
     "groupnameew": ""
   },
   {
-    "id": "657",
+    "id": "820",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7227,7 +9020,7 @@
     "groupnameew": ""
   },
   {
-    "id": "658",
+    "id": "821",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7238,7 +9031,7 @@
     "groupnameew": ""
   },
   {
-    "id": "659",
+    "id": "822",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7249,7 +9042,7 @@
     "groupnameew": ""
   },
   {
-    "id": "660",
+    "id": "823",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7260,7 +9053,7 @@
     "groupnameew": ""
   },
   {
-    "id": "661",
+    "id": "824",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7271,7 +9064,7 @@
     "groupnameew": ""
   },
   {
-    "id": "662",
+    "id": "825",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7282,7 +9075,7 @@
     "groupnameew": ""
   },
   {
-    "id": "663",
+    "id": "826",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7293,7 +9086,7 @@
     "groupnameew": ""
   },
   {
-    "id": "664",
+    "id": "827",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7304,7 +9097,7 @@
     "groupnameew": ""
   },
   {
-    "id": "665",
+    "id": "828",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7315,7 +9108,7 @@
     "groupnameew": ""
   },
   {
-    "id": "666",
+    "id": "829",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -7326,7 +9119,7 @@
     "groupnameew": ""
   },
   {
-    "id": "667",
+    "id": "830",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -7337,7 +9130,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "668",
+    "id": "831",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -7348,7 +9141,7 @@
     "groupnameew": ""
   },
   {
-    "id": "669",
+    "id": "832",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -7359,7 +9152,7 @@
     "groupnameew": ""
   },
   {
-    "id": "670",
+    "id": "833",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -7370,7 +9163,7 @@
     "groupnameew": ""
   },
   {
-    "id": "671",
+    "id": "834",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -7381,7 +9174,7 @@
     "groupnameew": ""
   },
   {
-    "id": "672",
+    "id": "835",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -7392,7 +9185,7 @@
     "groupnameew": ""
   },
   {
-    "id": "673",
+    "id": "836",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -7403,7 +9196,7 @@
     "groupnameew": ""
   },
   {
-    "id": "674",
+    "id": "837",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -7414,7 +9207,7 @@
     "groupnameew": ""
   },
   {
-    "id": "675",
+    "id": "838",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -7425,7 +9218,7 @@
     "groupnameew": ""
   },
   {
-    "id": "676",
+    "id": "839",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -7436,7 +9229,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "677",
+    "id": "840",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -7447,7 +9240,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "678",
+    "id": "841",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -7458,7 +9251,7 @@
     "groupnameew": ""
   },
   {
-    "id": "679",
+    "id": "842",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -7469,7 +9262,7 @@
     "groupnameew": ""
   },
   {
-    "id": "680",
+    "id": "843",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -7480,7 +9273,7 @@
     "groupnameew": ""
   },
   {
-    "id": "681",
+    "id": "844",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -7491,7 +9284,7 @@
     "groupnameew": ""
   },
   {
-    "id": "682",
+    "id": "845",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -7502,7 +9295,7 @@
     "groupnameew": ""
   },
   {
-    "id": "683",
+    "id": "846",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -7513,7 +9306,7 @@
     "groupnameew": ""
   },
   {
-    "id": "684",
+    "id": "847",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -7524,7 +9317,7 @@
     "groupnameew": ""
   },
   {
-    "id": "685",
+    "id": "848",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -7535,7 +9328,7 @@
     "groupnameew": ""
   },
   {
-    "id": "686",
+    "id": "849",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -7546,7 +9339,7 @@
     "groupnameew": ""
   },
   {
-    "id": "687",
+    "id": "850",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -7557,7 +9350,7 @@
     "groupnameew": ""
   },
   {
-    "id": "688",
+    "id": "851",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -7568,7 +9361,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "689",
+    "id": "852",
     "invid": "31082",
     "specid": "",
     "groupnames": "",
@@ -7579,7 +9372,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "690",
+    "id": "853",
     "invid": "31082",
     "specid": "",
     "groupnames": "",
@@ -7590,7 +9383,7 @@
     "groupnameew": ""
   },
   {
-    "id": "691",
+    "id": "854",
     "invid": "31082",
     "specid": "",
     "groupnames": "",
@@ -7601,7 +9394,7 @@
     "groupnameew": "Purchased Opts:"
   },
   {
-    "id": "692",
+    "id": "855",
     "invid": "31082",
     "specid": "",
     "groupnames": "",
@@ -7612,7 +9405,7 @@
     "groupnameew": ""
   },
   {
-    "id": "693",
+    "id": "856",
     "invid": "31082",
     "specid": "",
     "groupnames": "",
@@ -7623,7 +9416,7 @@
     "groupnameew": ""
   },
   {
-    "id": "694",
+    "id": "857",
     "invid": "31082",
     "specid": "",
     "groupnames": "",
@@ -7634,7 +9427,7 @@
     "groupnameew": ""
   },
   {
-    "id": "695",
+    "id": "858",
     "invid": "31082",
     "specid": "",
     "groupnames": "",
@@ -7645,7 +9438,7 @@
     "groupnameew": ""
   },
   {
-    "id": "696",
+    "id": "859",
     "invid": "31082",
     "specid": "",
     "groupnames": "",
@@ -7656,7 +9449,7 @@
     "groupnameew": ""
   },
   {
-    "id": "697",
+    "id": "860",
     "invid": "31087",
     "specid": "",
     "groupnames": "",
@@ -7667,7 +9460,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "698",
+    "id": "861",
     "invid": "31087",
     "specid": "",
     "groupnames": "",
@@ -7678,7 +9471,7 @@
     "groupnameew": ""
   },
   {
-    "id": "699",
+    "id": "862",
     "invid": "31087",
     "specid": "",
     "groupnames": "",
@@ -7689,7 +9482,7 @@
     "groupnameew": ""
   },
   {
-    "id": "700",
+    "id": "863",
     "invid": "31087",
     "specid": "",
     "groupnames": "",
@@ -7700,7 +9493,7 @@
     "groupnameew": ""
   },
   {
-    "id": "701",
+    "id": "864",
     "invid": "31087",
     "specid": "",
     "groupnames": "",
@@ -7711,7 +9504,7 @@
     "groupnameew": ""
   },
   {
-    "id": "702",
+    "id": "865",
     "invid": "31087",
     "specid": "",
     "groupnames": "",
@@ -7722,7 +9515,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "703",
+    "id": "866",
     "invid": "31088",
     "specid": "",
     "groupnames": "",
@@ -7733,7 +9526,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "704",
+    "id": "867",
     "invid": "31088",
     "specid": "",
     "groupnames": "",
@@ -7744,7 +9537,7 @@
     "groupnameew": ""
   },
   {
-    "id": "705",
+    "id": "868",
     "invid": "31088",
     "specid": "",
     "groupnames": "",
@@ -7755,7 +9548,7 @@
     "groupnameew": ""
   },
   {
-    "id": "706",
+    "id": "869",
     "invid": "31088",
     "specid": "",
     "groupnames": "",
@@ -7766,7 +9559,7 @@
     "groupnameew": ""
   },
   {
-    "id": "707",
+    "id": "870",
     "invid": "31088",
     "specid": "",
     "groupnames": "",
@@ -7777,7 +9570,7 @@
     "groupnameew": ""
   },
   {
-    "id": "708",
+    "id": "871",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7788,7 +9581,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "709",
+    "id": "872",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7799,7 +9592,7 @@
     "groupnameew": ""
   },
   {
-    "id": "710",
+    "id": "873",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7810,7 +9603,7 @@
     "groupnameew": ""
   },
   {
-    "id": "711",
+    "id": "874",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7821,7 +9614,7 @@
     "groupnameew": ""
   },
   {
-    "id": "712",
+    "id": "875",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7832,7 +9625,7 @@
     "groupnameew": ""
   },
   {
-    "id": "713",
+    "id": "876",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7843,7 +9636,7 @@
     "groupnameew": ""
   },
   {
-    "id": "714",
+    "id": "877",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7854,7 +9647,7 @@
     "groupnameew": ""
   },
   {
-    "id": "715",
+    "id": "878",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7865,7 +9658,7 @@
     "groupnameew": ""
   },
   {
-    "id": "716",
+    "id": "879",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7876,7 +9669,7 @@
     "groupnameew": ""
   },
   {
-    "id": "717",
+    "id": "880",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7887,7 +9680,7 @@
     "groupnameew": ""
   },
   {
-    "id": "718",
+    "id": "881",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7898,7 +9691,7 @@
     "groupnameew": ""
   },
   {
-    "id": "719",
+    "id": "882",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7909,7 +9702,7 @@
     "groupnameew": ""
   },
   {
-    "id": "720",
+    "id": "883",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7920,7 +9713,7 @@
     "groupnameew": ""
   },
   {
-    "id": "721",
+    "id": "884",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7931,7 +9724,7 @@
     "groupnameew": ""
   },
   {
-    "id": "722",
+    "id": "885",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7942,7 +9735,7 @@
     "groupnameew": ""
   },
   {
-    "id": "723",
+    "id": "886",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7953,7 +9746,7 @@
     "groupnameew": ""
   },
   {
-    "id": "724",
+    "id": "887",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7964,7 +9757,7 @@
     "groupnameew": ""
   },
   {
-    "id": "725",
+    "id": "888",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -7975,7 +9768,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "726",
+    "id": "889",
     "invid": "31093",
     "specid": "",
     "groupnames": "",
@@ -7986,7 +9779,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "727",
+    "id": "890",
     "invid": "31093",
     "specid": "",
     "groupnames": "",
@@ -7997,7 +9790,7 @@
     "groupnameew": ""
   },
   {
-    "id": "728",
+    "id": "891",
     "invid": "31093",
     "specid": "",
     "groupnames": "",
@@ -8008,7 +9801,7 @@
     "groupnameew": ""
   },
   {
-    "id": "729",
+    "id": "892",
     "invid": "31093",
     "specid": "",
     "groupnames": "",
@@ -8019,7 +9812,7 @@
     "groupnameew": ""
   },
   {
-    "id": "730",
+    "id": "893",
     "invid": "31093",
     "specid": "",
     "groupnames": "",
@@ -8030,7 +9823,7 @@
     "groupnameew": ""
   },
   {
-    "id": "731",
+    "id": "894",
     "invid": "31093",
     "specid": "",
     "groupnames": "",
@@ -8041,7 +9834,7 @@
     "groupnameew": ""
   },
   {
-    "id": "732",
+    "id": "895",
     "invid": "31094",
     "specid": "",
     "groupnames": "",
@@ -8052,7 +9845,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "733",
+    "id": "896",
     "invid": "31094",
     "specid": "",
     "groupnames": "",
@@ -8063,7 +9856,7 @@
     "groupnameew": ""
   },
   {
-    "id": "734",
+    "id": "897",
     "invid": "31094",
     "specid": "",
     "groupnames": "",
@@ -8074,7 +9867,7 @@
     "groupnameew": ""
   },
   {
-    "id": "735",
+    "id": "898",
     "invid": "31094",
     "specid": "",
     "groupnames": "",
@@ -8085,7 +9878,7 @@
     "groupnameew": ""
   },
   {
-    "id": "736",
+    "id": "899",
     "invid": "31094",
     "specid": "",
     "groupnames": "",
@@ -8096,7 +9889,7 @@
     "groupnameew": ""
   },
   {
-    "id": "737",
+    "id": "900",
     "invid": "31094",
     "specid": "",
     "groupnames": "",
@@ -8107,7 +9900,7 @@
     "groupnameew": ""
   },
   {
-    "id": "738",
+    "id": "901",
     "invid": "31094",
     "specid": "",
     "groupnames": "",
@@ -8118,7 +9911,7 @@
     "groupnameew": ""
   },
   {
-    "id": "739",
+    "id": "902",
     "invid": "31094",
     "specid": "",
     "groupnames": "",
@@ -8129,7 +9922,7 @@
     "groupnameew": "**"
   },
   {
-    "id": "740",
+    "id": "903",
     "invid": "31096",
     "specid": "",
     "groupnames": "",
@@ -8140,7 +9933,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "741",
+    "id": "904",
     "invid": "31096",
     "specid": "",
     "groupnames": "",
@@ -8151,7 +9944,7 @@
     "groupnameew": ""
   },
   {
-    "id": "742",
+    "id": "905",
     "invid": "31096",
     "specid": "",
     "groupnames": "",
@@ -8162,7 +9955,7 @@
     "groupnameew": ""
   },
   {
-    "id": "743",
+    "id": "906",
     "invid": "31096",
     "specid": "",
     "groupnames": "",
@@ -8173,7 +9966,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "744",
+    "id": "907",
     "invid": "31096",
     "specid": "",
     "groupnames": "",
@@ -8184,7 +9977,7 @@
     "groupnameew": ""
   },
   {
-    "id": "745",
+    "id": "908",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -8195,7 +9988,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "746",
+    "id": "909",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -8206,7 +9999,7 @@
     "groupnameew": ""
   },
   {
-    "id": "747",
+    "id": "910",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -8217,7 +10010,7 @@
     "groupnameew": ""
   },
   {
-    "id": "748",
+    "id": "911",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -8228,7 +10021,7 @@
     "groupnameew": ""
   },
   {
-    "id": "749",
+    "id": "912",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -8239,7 +10032,7 @@
     "groupnameew": ""
   },
   {
-    "id": "750",
+    "id": "913",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -8250,7 +10043,7 @@
     "groupnameew": ""
   },
   {
-    "id": "751",
+    "id": "914",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -8261,7 +10054,7 @@
     "groupnameew": ""
   },
   {
-    "id": "752",
+    "id": "915",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -8272,7 +10065,7 @@
     "groupnameew": ""
   },
   {
-    "id": "753",
+    "id": "916",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -8283,7 +10076,7 @@
     "groupnameew": ""
   },
   {
-    "id": "754",
+    "id": "917",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -8294,7 +10087,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "755",
+    "id": "918",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -8305,7 +10098,7 @@
     "groupnameew": ""
   },
   {
-    "id": "756",
+    "id": "919",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -8316,7 +10109,7 @@
     "groupnameew": ""
   },
   {
-    "id": "757",
+    "id": "920",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -8327,7 +10120,7 @@
     "groupnameew": ""
   },
   {
-    "id": "758",
+    "id": "921",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -8338,7 +10131,7 @@
     "groupnameew": ""
   },
   {
-    "id": "759",
+    "id": "922",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -8349,7 +10142,7 @@
     "groupnameew": ""
   },
   {
-    "id": "760",
+    "id": "923",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -8360,7 +10153,7 @@
     "groupnameew": ""
   },
   {
-    "id": "761",
+    "id": "924",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -8371,7 +10164,7 @@
     "groupnameew": ""
   },
   {
-    "id": "762",
+    "id": "925",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -8382,7 +10175,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "763",
+    "id": "926",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -8393,7 +10186,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "764",
+    "id": "927",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -8404,7 +10197,7 @@
     "groupnameew": ""
   },
   {
-    "id": "765",
+    "id": "928",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -8415,7 +10208,7 @@
     "groupnameew": ""
   },
   {
-    "id": "766",
+    "id": "929",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -8426,7 +10219,7 @@
     "groupnameew": ""
   },
   {
-    "id": "767",
+    "id": "930",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -8437,7 +10230,7 @@
     "groupnameew": ""
   },
   {
-    "id": "768",
+    "id": "931",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -8448,7 +10241,7 @@
     "groupnameew": ""
   },
   {
-    "id": "769",
+    "id": "932",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -8459,7 +10252,7 @@
     "groupnameew": ""
   },
   {
-    "id": "770",
+    "id": "933",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -8470,7 +10263,7 @@
     "groupnameew": ""
   },
   {
-    "id": "771",
+    "id": "934",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -8481,7 +10274,7 @@
     "groupnameew": ""
   },
   {
-    "id": "772",
+    "id": "935",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -8492,7 +10285,7 @@
     "groupnameew": ""
   },
   {
-    "id": "773",
+    "id": "936",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -8503,7 +10296,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "774",
+    "id": "937",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -8514,7 +10307,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "775",
+    "id": "938",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -8525,7 +10318,7 @@
     "groupnameew": ""
   },
   {
-    "id": "776",
+    "id": "939",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -8536,7 +10329,7 @@
     "groupnameew": ""
   },
   {
-    "id": "777",
+    "id": "940",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -8547,7 +10340,7 @@
     "groupnameew": ""
   },
   {
-    "id": "778",
+    "id": "941",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -8558,7 +10351,7 @@
     "groupnameew": ""
   },
   {
-    "id": "779",
+    "id": "942",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -8569,7 +10362,7 @@
     "groupnameew": "Additonal Opts:"
   },
   {
-    "id": "780",
+    "id": "943",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -8580,7 +10373,7 @@
     "groupnameew": ""
   },
   {
-    "id": "781",
+    "id": "944",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -8591,7 +10384,7 @@
     "groupnameew": ""
   },
   {
-    "id": "782",
+    "id": "945",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -8602,7 +10395,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "783",
+    "id": "946",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8613,7 +10406,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "784",
+    "id": "947",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8624,7 +10417,7 @@
     "groupnameew": ""
   },
   {
-    "id": "785",
+    "id": "948",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8635,7 +10428,7 @@
     "groupnameew": ""
   },
   {
-    "id": "786",
+    "id": "949",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8646,7 +10439,7 @@
     "groupnameew": ""
   },
   {
-    "id": "787",
+    "id": "950",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8657,7 +10450,7 @@
     "groupnameew": ""
   },
   {
-    "id": "788",
+    "id": "951",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8668,7 +10461,7 @@
     "groupnameew": ""
   },
   {
-    "id": "789",
+    "id": "952",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8679,7 +10472,7 @@
     "groupnameew": ""
   },
   {
-    "id": "790",
+    "id": "953",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8690,7 +10483,7 @@
     "groupnameew": ""
   },
   {
-    "id": "791",
+    "id": "954",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8701,7 +10494,7 @@
     "groupnameew": ""
   },
   {
-    "id": "792",
+    "id": "955",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8712,7 +10505,7 @@
     "groupnameew": ""
   },
   {
-    "id": "793",
+    "id": "956",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8723,7 +10516,7 @@
     "groupnameew": ""
   },
   {
-    "id": "794",
+    "id": "957",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8734,7 +10527,7 @@
     "groupnameew": ""
   },
   {
-    "id": "795",
+    "id": "958",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8745,7 +10538,7 @@
     "groupnameew": ""
   },
   {
-    "id": "796",
+    "id": "959",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8756,7 +10549,7 @@
     "groupnameew": ""
   },
   {
-    "id": "797",
+    "id": "960",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8767,7 +10560,7 @@
     "groupnameew": ""
   },
   {
-    "id": "798",
+    "id": "961",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8778,7 +10571,7 @@
     "groupnameew": ""
   },
   {
-    "id": "799",
+    "id": "962",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8789,7 +10582,7 @@
     "groupnameew": ""
   },
   {
-    "id": "800",
+    "id": "963",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8800,7 +10593,7 @@
     "groupnameew": ""
   },
   {
-    "id": "801",
+    "id": "964",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -8811,7 +10604,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "802",
+    "id": "965",
     "invid": "31119",
     "specid": "",
     "groupnames": "",
@@ -8822,7 +10615,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "803",
+    "id": "966",
     "invid": "31119",
     "specid": "",
     "groupnames": "",
@@ -8833,7 +10626,7 @@
     "groupnameew": ""
   },
   {
-    "id": "804",
+    "id": "967",
     "invid": "31119",
     "specid": "",
     "groupnames": "",
@@ -8844,7 +10637,7 @@
     "groupnameew": ""
   },
   {
-    "id": "805",
+    "id": "968",
     "invid": "31119",
     "specid": "",
     "groupnames": "",
@@ -8855,7 +10648,7 @@
     "groupnameew": ""
   },
   {
-    "id": "806",
+    "id": "969",
     "invid": "31119",
     "specid": "",
     "groupnames": "",
@@ -8866,7 +10659,7 @@
     "groupnameew": ""
   },
   {
-    "id": "807",
+    "id": "970",
     "invid": "31119",
     "specid": "",
     "groupnames": "",
@@ -8877,7 +10670,7 @@
     "groupnameew": ""
   },
   {
-    "id": "808",
+    "id": "971",
     "invid": "31122",
     "specid": "",
     "groupnames": "",
@@ -8888,7 +10681,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "809",
+    "id": "972",
     "invid": "31122",
     "specid": "",
     "groupnames": "",
@@ -8899,7 +10692,7 @@
     "groupnameew": ""
   },
   {
-    "id": "810",
+    "id": "973",
     "invid": "31122",
     "specid": "",
     "groupnames": "",
@@ -8910,7 +10703,7 @@
     "groupnameew": ""
   },
   {
-    "id": "811",
+    "id": "974",
     "invid": "31122",
     "specid": "",
     "groupnames": "",
@@ -8921,7 +10714,7 @@
     "groupnameew": ""
   },
   {
-    "id": "812",
+    "id": "975",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -8932,7 +10725,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "813",
+    "id": "976",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -8943,7 +10736,7 @@
     "groupnameew": ""
   },
   {
-    "id": "814",
+    "id": "977",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -8954,7 +10747,7 @@
     "groupnameew": "Options:"
   },
   {
-    "id": "815",
+    "id": "978",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -8965,7 +10758,7 @@
     "groupnameew": ""
   },
   {
-    "id": "816",
+    "id": "979",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -8976,7 +10769,7 @@
     "groupnameew": ""
   },
   {
-    "id": "817",
+    "id": "980",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -8987,7 +10780,7 @@
     "groupnameew": ""
   },
   {
-    "id": "818",
+    "id": "981",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -8998,7 +10791,7 @@
     "groupnameew": ""
   },
   {
-    "id": "819",
+    "id": "982",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -9009,7 +10802,7 @@
     "groupnameew": ""
   },
   {
-    "id": "820",
+    "id": "983",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -9020,7 +10813,7 @@
     "groupnameew": ""
   },
   {
-    "id": "821",
+    "id": "984",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -9031,7 +10824,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "822",
+    "id": "985",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -9042,7 +10835,7 @@
     "groupnameew": ""
   },
   {
-    "id": "823",
+    "id": "986",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -9053,7 +10846,7 @@
     "groupnameew": ""
   },
   {
-    "id": "824",
+    "id": "987",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -9064,7 +10857,7 @@
     "groupnameew": ""
   },
   {
-    "id": "825",
+    "id": "988",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -9075,7 +10868,7 @@
     "groupnameew": ""
   },
   {
-    "id": "826",
+    "id": "989",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -9086,7 +10879,7 @@
     "groupnameew": ""
   },
   {
-    "id": "827",
+    "id": "990",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -9097,7 +10890,7 @@
     "groupnameew": ""
   },
   {
-    "id": "828",
+    "id": "991",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -9108,7 +10901,7 @@
     "groupnameew": ""
   },
   {
-    "id": "829",
+    "id": "992",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -9119,7 +10912,7 @@
     "groupnameew": ""
   },
   {
-    "id": "830",
+    "id": "993",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -9130,7 +10923,7 @@
     "groupnameew": ""
   },
   {
-    "id": "831",
+    "id": "994",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -9141,7 +10934,7 @@
     "groupnameew": ""
   },
   {
-    "id": "832",
+    "id": "995",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -9152,7 +10945,7 @@
     "groupnameew": ""
   },
   {
-    "id": "833",
+    "id": "996",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -9163,7 +10956,7 @@
     "groupnameew": ""
   },
   {
-    "id": "834",
+    "id": "997",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9174,7 +10967,7 @@
     "groupnameew": "Control:"
   },
   {
-    "id": "835",
+    "id": "998",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9185,7 +10978,7 @@
     "groupnameew": "Options Included:"
   },
   {
-    "id": "836",
+    "id": "999",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9196,7 +10989,7 @@
     "groupnameew": ""
   },
   {
-    "id": "837",
+    "id": "1000",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9207,7 +11000,7 @@
     "groupnameew": ""
   },
   {
-    "id": "838",
+    "id": "1001",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9218,7 +11011,7 @@
     "groupnameew": ""
   },
   {
-    "id": "839",
+    "id": "1002",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9229,7 +11022,7 @@
     "groupnameew": ""
   },
   {
-    "id": "840",
+    "id": "1003",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9240,7 +11033,7 @@
     "groupnameew": ""
   },
   {
-    "id": "841",
+    "id": "1004",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9251,7 +11044,7 @@
     "groupnameew": ""
   },
   {
-    "id": "842",
+    "id": "1005",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9262,7 +11055,7 @@
     "groupnameew": ""
   },
   {
-    "id": "843",
+    "id": "1006",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9273,7 +11066,7 @@
     "groupnameew": ""
   },
   {
-    "id": "844",
+    "id": "1007",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9284,7 +11077,7 @@
     "groupnameew": ""
   },
   {
-    "id": "845",
+    "id": "1008",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9295,7 +11088,7 @@
     "groupnameew": ""
   },
   {
-    "id": "846",
+    "id": "1009",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9306,7 +11099,7 @@
     "groupnameew": ""
   },
   {
-    "id": "847",
+    "id": "1010",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9317,7 +11110,7 @@
     "groupnameew": ""
   },
   {
-    "id": "848",
+    "id": "1011",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9328,7 +11121,7 @@
     "groupnameew": ""
   },
   {
-    "id": "849",
+    "id": "1012",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9339,7 +11132,7 @@
     "groupnameew": ""
   },
   {
-    "id": "850",
+    "id": "1013",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9350,7 +11143,7 @@
     "groupnameew": ""
   },
   {
-    "id": "851",
+    "id": "1014",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -9361,7 +11154,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "852",
+    "id": "1015",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -9372,7 +11165,7 @@
     "groupnameew": ""
   },
   {
-    "id": "853",
+    "id": "1016",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -9383,7 +11176,7 @@
     "groupnameew": ""
   },
   {
-    "id": "854",
+    "id": "1017",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -9394,7 +11187,7 @@
     "groupnameew": ""
   },
   {
-    "id": "855",
+    "id": "1018",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -9405,7 +11198,7 @@
     "groupnameew": ""
   },
   {
-    "id": "856",
+    "id": "1019",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -9416,7 +11209,7 @@
     "groupnameew": ""
   },
   {
-    "id": "857",
+    "id": "1020",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -9427,7 +11220,7 @@
     "groupnameew": ""
   },
   {
-    "id": "858",
+    "id": "1021",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -9438,7 +11231,7 @@
     "groupnameew": "Options:"
   },
   {
-    "id": "859",
+    "id": "1022",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -9449,7 +11242,7 @@
     "groupnameew": ""
   },
   {
-    "id": "860",
+    "id": "1023",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -9460,7 +11253,7 @@
     "groupnameew": ""
   },
   {
-    "id": "861",
+    "id": "1024",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -9471,7 +11264,7 @@
     "groupnameew": ""
   },
   {
-    "id": "862",
+    "id": "1025",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -9482,7 +11275,7 @@
     "groupnameew": ""
   },
   {
-    "id": "863",
+    "id": "1026",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -9493,7 +11286,7 @@
     "groupnameew": ""
   },
   {
-    "id": "864",
+    "id": "1027",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -9504,7 +11297,7 @@
     "groupnameew": ""
   },
   {
-    "id": "865",
+    "id": "1028",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -9515,7 +11308,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "866",
+    "id": "1029",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -9526,7 +11319,7 @@
     "groupnameew": ""
   },
   {
-    "id": "867",
+    "id": "1030",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -9537,7 +11330,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "868",
+    "id": "1031",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -9548,7 +11341,7 @@
     "groupnameew": ""
   },
   {
-    "id": "869",
+    "id": "1032",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -9559,7 +11352,7 @@
     "groupnameew": ""
   },
   {
-    "id": "870",
+    "id": "1033",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -9570,7 +11363,7 @@
     "groupnameew": "Options:"
   },
   {
-    "id": "871",
+    "id": "1034",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -9581,7 +11374,7 @@
     "groupnameew": ""
   },
   {
-    "id": "872",
+    "id": "1035",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -9592,7 +11385,7 @@
     "groupnameew": ""
   },
   {
-    "id": "873",
+    "id": "1036",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -9603,7 +11396,7 @@
     "groupnameew": ""
   },
   {
-    "id": "874",
+    "id": "1037",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -9614,7 +11407,7 @@
     "groupnameew": ""
   },
   {
-    "id": "875",
+    "id": "1038",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -9625,7 +11418,7 @@
     "groupnameew": ""
   },
   {
-    "id": "876",
+    "id": "1039",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -9636,7 +11429,7 @@
     "groupnameew": ""
   },
   {
-    "id": "877",
+    "id": "1040",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -9647,7 +11440,7 @@
     "groupnameew": ""
   },
   {
-    "id": "878",
+    "id": "1041",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -9658,7 +11451,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "879",
+    "id": "1042",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -9669,18 +11462,18 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "880",
+    "id": "1043",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
     "description": "",
     "specvalues": "",
     "ewid": "50535",
-    "equippedwith": "Royal Accu-length QG-65 collet system with 10 collets (3/8 to 2� common sizes)",
+    "equippedwith": "Royal Accu-length QG-65 collet system with 10 collets (3/8 to 2” common sizes)",
     "groupnameew": ""
   },
   {
-    "id": "881",
+    "id": "1044",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -9691,7 +11484,7 @@
     "groupnameew": ""
   },
   {
-    "id": "882",
+    "id": "1045",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -9702,7 +11495,7 @@
     "groupnameew": ""
   },
   {
-    "id": "883",
+    "id": "1046",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -9713,7 +11506,7 @@
     "groupnameew": ""
   },
   {
-    "id": "884",
+    "id": "1047",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -9724,7 +11517,7 @@
     "groupnameew": ""
   },
   {
-    "id": "885",
+    "id": "1048",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -9735,7 +11528,7 @@
     "groupnameew": ""
   },
   {
-    "id": "886",
+    "id": "1049",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -9746,7 +11539,7 @@
     "groupnameew": ""
   },
   {
-    "id": "887",
+    "id": "1050",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -9757,7 +11550,7 @@
     "groupnameew": ""
   },
   {
-    "id": "888",
+    "id": "1051",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -9768,7 +11561,7 @@
     "groupnameew": ""
   },
   {
-    "id": "889",
+    "id": "1052",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -9779,7 +11572,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "890",
+    "id": "1053",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -9790,7 +11583,7 @@
     "groupnameew": ""
   },
   {
-    "id": "891",
+    "id": "1054",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9801,7 +11594,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "892",
+    "id": "1055",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -9812,7 +11605,7 @@
     "groupnameew": ""
   },
   {
-    "id": "893",
+    "id": "1056",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -9823,7 +11616,7 @@
     "groupnameew": ""
   },
   {
-    "id": "894",
+    "id": "1057",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -9834,7 +11627,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "895",
+    "id": "1058",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -9845,7 +11638,7 @@
     "groupnameew": ""
   },
   {
-    "id": "896",
+    "id": "1059",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -9856,7 +11649,7 @@
     "groupnameew": ""
   },
   {
-    "id": "897",
+    "id": "1060",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -9867,7 +11660,7 @@
     "groupnameew": ""
   },
   {
-    "id": "898",
+    "id": "1061",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -9878,7 +11671,7 @@
     "groupnameew": ""
   },
   {
-    "id": "899",
+    "id": "1062",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -9889,7 +11682,7 @@
     "groupnameew": ""
   },
   {
-    "id": "900",
+    "id": "1063",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -9900,7 +11693,7 @@
     "groupnameew": ""
   },
   {
-    "id": "901",
+    "id": "1064",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -9911,7 +11704,7 @@
     "groupnameew": ""
   },
   {
-    "id": "902",
+    "id": "1065",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -9922,7 +11715,7 @@
     "groupnameew": ""
   },
   {
-    "id": "903",
+    "id": "1066",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -9933,7 +11726,7 @@
     "groupnameew": ""
   },
   {
-    "id": "904",
+    "id": "1067",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -9944,7 +11737,7 @@
     "groupnameew": ""
   },
   {
-    "id": "905",
+    "id": "1068",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -9955,7 +11748,7 @@
     "groupnameew": ""
   },
   {
-    "id": "906",
+    "id": "1069",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -9966,7 +11759,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "907",
+    "id": "1070",
     "invid": "31156",
     "specid": "",
     "groupnames": "",
@@ -9977,7 +11770,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "908",
+    "id": "1071",
     "invid": "31156",
     "specid": "",
     "groupnames": "",
@@ -9988,7 +11781,7 @@
     "groupnameew": ""
   },
   {
-    "id": "909",
+    "id": "1072",
     "invid": "31156",
     "specid": "",
     "groupnames": "",
@@ -9999,7 +11792,7 @@
     "groupnameew": ""
   },
   {
-    "id": "910",
+    "id": "1073",
     "invid": "31156",
     "specid": "",
     "groupnames": "",
@@ -10010,7 +11803,7 @@
     "groupnameew": ""
   },
   {
-    "id": "911",
+    "id": "1074",
     "invid": "31156",
     "specid": "",
     "groupnames": "",
@@ -10021,7 +11814,7 @@
     "groupnameew": ""
   },
   {
-    "id": "912",
+    "id": "1075",
     "invid": "31157",
     "specid": "",
     "groupnames": "",
@@ -10032,7 +11825,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "913",
+    "id": "1076",
     "invid": "31157",
     "specid": "",
     "groupnames": "",
@@ -10043,7 +11836,7 @@
     "groupnameew": ""
   },
   {
-    "id": "914",
+    "id": "1077",
     "invid": "31157",
     "specid": "",
     "groupnames": "",
@@ -10054,7 +11847,7 @@
     "groupnameew": ""
   },
   {
-    "id": "915",
+    "id": "1078",
     "invid": "31157",
     "specid": "",
     "groupnames": "",
@@ -10065,7 +11858,7 @@
     "groupnameew": ""
   },
   {
-    "id": "916",
+    "id": "1079",
     "invid": "31157",
     "specid": "",
     "groupnames": "",
@@ -10076,7 +11869,7 @@
     "groupnameew": ""
   },
   {
-    "id": "917",
+    "id": "1080",
     "invid": "31157",
     "specid": "",
     "groupnames": "",
@@ -10087,7 +11880,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "918",
+    "id": "1081",
     "invid": "31157",
     "specid": "",
     "groupnames": "",
@@ -10098,7 +11891,7 @@
     "groupnameew": ""
   },
   {
-    "id": "919",
+    "id": "1082",
     "invid": "31158",
     "specid": "",
     "groupnames": "",
@@ -10109,7 +11902,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "920",
+    "id": "1083",
     "invid": "31158",
     "specid": "",
     "groupnames": "",
@@ -10120,7 +11913,7 @@
     "groupnameew": ""
   },
   {
-    "id": "921",
+    "id": "1084",
     "invid": "31158",
     "specid": "",
     "groupnames": "",
@@ -10131,7 +11924,7 @@
     "groupnameew": ""
   },
   {
-    "id": "922",
+    "id": "1085",
     "invid": "31158",
     "specid": "",
     "groupnames": "",
@@ -10142,7 +11935,7 @@
     "groupnameew": ""
   },
   {
-    "id": "923",
+    "id": "1086",
     "invid": "31158",
     "specid": "",
     "groupnames": "",
@@ -10153,7 +11946,7 @@
     "groupnameew": ""
   },
   {
-    "id": "924",
+    "id": "1087",
     "invid": "31158",
     "specid": "",
     "groupnames": "",
@@ -10164,7 +11957,7 @@
     "groupnameew": ""
   },
   {
-    "id": "925",
+    "id": "1088",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -10175,7 +11968,7 @@
     "groupnameew": ""
   },
   {
-    "id": "926",
+    "id": "1089",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -10186,7 +11979,7 @@
     "groupnameew": ""
   },
   {
-    "id": "927",
+    "id": "1090",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -10197,7 +11990,7 @@
     "groupnameew": ""
   },
   {
-    "id": "928",
+    "id": "1091",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -10208,7 +12001,7 @@
     "groupnameew": ""
   },
   {
-    "id": "929",
+    "id": "1092",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -10219,7 +12012,7 @@
     "groupnameew": ""
   },
   {
-    "id": "930",
+    "id": "1093",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -10230,7 +12023,7 @@
     "groupnameew": ""
   },
   {
-    "id": "931",
+    "id": "1094",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -10241,7 +12034,7 @@
     "groupnameew": ""
   },
   {
-    "id": "932",
+    "id": "1095",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -10252,7 +12045,7 @@
     "groupnameew": ""
   },
   {
-    "id": "933",
+    "id": "1096",
     "invid": "31160",
     "specid": "",
     "groupnames": "",
@@ -10263,7 +12056,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "934",
+    "id": "1097",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -10274,7 +12067,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "935",
+    "id": "1098",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -10285,7 +12078,7 @@
     "groupnameew": ""
   },
   {
-    "id": "936",
+    "id": "1099",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -10296,7 +12089,7 @@
     "groupnameew": ""
   },
   {
-    "id": "937",
+    "id": "1100",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -10307,7 +12100,7 @@
     "groupnameew": ""
   },
   {
-    "id": "938",
+    "id": "1101",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -10318,7 +12111,7 @@
     "groupnameew": ""
   },
   {
-    "id": "939",
+    "id": "1102",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -10329,7 +12122,7 @@
     "groupnameew": ""
   },
   {
-    "id": "940",
+    "id": "1103",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -10340,7 +12133,7 @@
     "groupnameew": ""
   },
   {
-    "id": "941",
+    "id": "1104",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -10351,7 +12144,7 @@
     "groupnameew": ""
   },
   {
-    "id": "942",
+    "id": "1105",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -10362,7 +12155,7 @@
     "groupnameew": ""
   },
   {
-    "id": "943",
+    "id": "1106",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -10373,7 +12166,7 @@
     "groupnameew": ""
   },
   {
-    "id": "944",
+    "id": "1107",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -10384,7 +12177,7 @@
     "groupnameew": ""
   },
   {
-    "id": "945",
+    "id": "1108",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -10395,7 +12188,7 @@
     "groupnameew": ""
   },
   {
-    "id": "946",
+    "id": "1109",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -10406,7 +12199,7 @@
     "groupnameew": ""
   },
   {
-    "id": "947",
+    "id": "1110",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -10417,7 +12210,7 @@
     "groupnameew": ""
   },
   {
-    "id": "948",
+    "id": "1111",
     "invid": "31163",
     "specid": "",
     "groupnames": "",
@@ -10428,7 +12221,7 @@
     "groupnameew": "Ewuiped With:"
   },
   {
-    "id": "949",
+    "id": "1112",
     "invid": "31163",
     "specid": "",
     "groupnames": "",
@@ -10439,7 +12232,7 @@
     "groupnameew": ""
   },
   {
-    "id": "950",
+    "id": "1113",
     "invid": "31163",
     "specid": "",
     "groupnames": "",
@@ -10450,7 +12243,7 @@
     "groupnameew": ""
   },
   {
-    "id": "951",
+    "id": "1114",
     "invid": "31163",
     "specid": "",
     "groupnames": "",
@@ -10461,7 +12254,7 @@
     "groupnameew": ""
   },
   {
-    "id": "952",
+    "id": "1115",
     "invid": "31163",
     "specid": "",
     "groupnames": "",
@@ -10472,7 +12265,7 @@
     "groupnameew": ""
   },
   {
-    "id": "953",
+    "id": "1116",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -10483,7 +12276,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "954",
+    "id": "1117",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -10494,7 +12287,7 @@
     "groupnameew": ""
   },
   {
-    "id": "955",
+    "id": "1118",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -10505,7 +12298,7 @@
     "groupnameew": ""
   },
   {
-    "id": "956",
+    "id": "1119",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -10516,7 +12309,7 @@
     "groupnameew": ""
   },
   {
-    "id": "957",
+    "id": "1120",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -10527,7 +12320,7 @@
     "groupnameew": ""
   },
   {
-    "id": "958",
+    "id": "1121",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -10538,7 +12331,7 @@
     "groupnameew": ""
   },
   {
-    "id": "959",
+    "id": "1122",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -10549,7 +12342,7 @@
     "groupnameew": ""
   },
   {
-    "id": "960",
+    "id": "1123",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -10560,7 +12353,7 @@
     "groupnameew": ""
   },
   {
-    "id": "961",
+    "id": "1124",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -10571,7 +12364,7 @@
     "groupnameew": ""
   },
   {
-    "id": "962",
+    "id": "1125",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -10582,7 +12375,7 @@
     "groupnameew": ""
   },
   {
-    "id": "963",
+    "id": "1126",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -10593,7 +12386,7 @@
     "groupnameew": ""
   },
   {
-    "id": "964",
+    "id": "1127",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -10604,7 +12397,7 @@
     "groupnameew": ""
   },
   {
-    "id": "965",
+    "id": "1128",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -10615,7 +12408,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "966",
+    "id": "1129",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -10626,7 +12419,7 @@
     "groupnameew": ""
   },
   {
-    "id": "967",
+    "id": "1130",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -10637,7 +12430,7 @@
     "groupnameew": ""
   },
   {
-    "id": "968",
+    "id": "1131",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -10648,7 +12441,7 @@
     "groupnameew": ""
   },
   {
-    "id": "969",
+    "id": "1132",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -10659,7 +12452,7 @@
     "groupnameew": ""
   },
   {
-    "id": "970",
+    "id": "1133",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -10670,7 +12463,7 @@
     "groupnameew": ""
   },
   {
-    "id": "971",
+    "id": "1134",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -10681,7 +12474,7 @@
     "groupnameew": ""
   },
   {
-    "id": "972",
+    "id": "1135",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -10692,7 +12485,7 @@
     "groupnameew": ""
   },
   {
-    "id": "973",
+    "id": "1136",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -10703,7 +12496,7 @@
     "groupnameew": ""
   },
   {
-    "id": "974",
+    "id": "1137",
     "invid": "31167",
     "specid": "",
     "groupnames": "",
@@ -10714,7 +12507,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "975",
+    "id": "1138",
     "invid": "31167",
     "specid": "",
     "groupnames": "",
@@ -10725,7 +12518,7 @@
     "groupnameew": ""
   },
   {
-    "id": "976",
+    "id": "1139",
     "invid": "31167",
     "specid": "",
     "groupnames": "",
@@ -10736,7 +12529,7 @@
     "groupnameew": ""
   },
   {
-    "id": "977",
+    "id": "1140",
     "invid": "31167",
     "specid": "",
     "groupnames": "",
@@ -10747,7 +12540,7 @@
     "groupnameew": ""
   },
   {
-    "id": "978",
+    "id": "1141",
     "invid": "31167",
     "specid": "",
     "groupnames": "",
@@ -10758,7 +12551,7 @@
     "groupnameew": ""
   },
   {
-    "id": "979",
+    "id": "1142",
     "invid": "31167",
     "specid": "",
     "groupnames": "",
@@ -10769,7 +12562,7 @@
     "groupnameew": ""
   },
   {
-    "id": "980",
+    "id": "1143",
     "invid": "31167",
     "specid": "",
     "groupnames": "",
@@ -10780,7 +12573,7 @@
     "groupnameew": ""
   },
   {
-    "id": "981",
+    "id": "1144",
     "invid": "31167",
     "specid": "",
     "groupnames": "",
@@ -10791,7 +12584,7 @@
     "groupnameew": ""
   },
   {
-    "id": "982",
+    "id": "1145",
     "invid": "31163",
     "specid": "",
     "groupnames": "",
@@ -10802,7 +12595,7 @@
     "groupnameew": ""
   },
   {
-    "id": "983",
+    "id": "1146",
     "invid": "31163",
     "specid": "",
     "groupnames": "",
@@ -10813,7 +12606,7 @@
     "groupnameew": ""
   },
   {
-    "id": "984",
+    "id": "1147",
     "invid": "31168",
     "specid": "",
     "groupnames": "",
@@ -10824,7 +12617,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "985",
+    "id": "1148",
     "invid": "31168",
     "specid": "",
     "groupnames": "",
@@ -10835,7 +12628,7 @@
     "groupnameew": ""
   },
   {
-    "id": "986",
+    "id": "1149",
     "invid": "31168",
     "specid": "",
     "groupnames": "",
@@ -10846,7 +12639,7 @@
     "groupnameew": ""
   },
   {
-    "id": "987",
+    "id": "1150",
     "invid": "31168",
     "specid": "",
     "groupnames": "",
@@ -10857,7 +12650,7 @@
     "groupnameew": ""
   },
   {
-    "id": "988",
+    "id": "1151",
     "invid": "31168",
     "specid": "",
     "groupnames": "",
@@ -10868,7 +12661,7 @@
     "groupnameew": ""
   },
   {
-    "id": "989",
+    "id": "1152",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -10879,7 +12672,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "990",
+    "id": "1153",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -10890,7 +12683,7 @@
     "groupnameew": ""
   },
   {
-    "id": "991",
+    "id": "1154",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -10901,7 +12694,7 @@
     "groupnameew": ""
   },
   {
-    "id": "992",
+    "id": "1155",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -10912,7 +12705,7 @@
     "groupnameew": ""
   },
   {
-    "id": "993",
+    "id": "1156",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -10923,7 +12716,7 @@
     "groupnameew": ""
   },
   {
-    "id": "994",
+    "id": "1157",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -10934,7 +12727,7 @@
     "groupnameew": ""
   },
   {
-    "id": "995",
+    "id": "1158",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -10945,7 +12738,7 @@
     "groupnameew": ""
   },
   {
-    "id": "996",
+    "id": "1159",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -10956,7 +12749,7 @@
     "groupnameew": ""
   },
   {
-    "id": "997",
+    "id": "1160",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -10967,7 +12760,7 @@
     "groupnameew": ""
   },
   {
-    "id": "998",
+    "id": "1161",
     "invid": "31170",
     "specid": "",
     "groupnames": "",
@@ -10978,7 +12771,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "999",
+    "id": "1162",
     "invid": "31170",
     "specid": "",
     "groupnames": "",
@@ -10989,7 +12782,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1000",
+    "id": "1163",
     "invid": "31170",
     "specid": "",
     "groupnames": "",
@@ -11000,7 +12793,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1001",
+    "id": "1164",
     "invid": "31170",
     "specid": "",
     "groupnames": "",
@@ -11011,7 +12804,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1002",
+    "id": "1165",
     "invid": "31170",
     "specid": "",
     "groupnames": "",
@@ -11022,7 +12815,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1003",
+    "id": "1166",
     "invid": "31171",
     "specid": "",
     "groupnames": "",
@@ -11033,7 +12826,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1004",
+    "id": "1167",
     "invid": "31171",
     "specid": "",
     "groupnames": "",
@@ -11044,7 +12837,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1005",
+    "id": "1168",
     "invid": "31171",
     "specid": "",
     "groupnames": "",
@@ -11055,7 +12848,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1006",
+    "id": "1169",
     "invid": "31171",
     "specid": "",
     "groupnames": "",
@@ -11066,7 +12859,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1007",
+    "id": "1170",
     "invid": "31172",
     "specid": "",
     "groupnames": "",
@@ -11077,7 +12870,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1008",
+    "id": "1171",
     "invid": "31172",
     "specid": "",
     "groupnames": "",
@@ -11088,7 +12881,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1009",
+    "id": "1172",
     "invid": "31172",
     "specid": "",
     "groupnames": "",
@@ -11099,7 +12892,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1010",
+    "id": "1173",
     "invid": "31172",
     "specid": "",
     "groupnames": "",
@@ -11110,7 +12903,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1011",
+    "id": "1174",
     "invid": "31172",
     "specid": "",
     "groupnames": "",
@@ -11121,7 +12914,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1012",
+    "id": "1175",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -11132,7 +12925,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1013",
+    "id": "1176",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -11143,7 +12936,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1014",
+    "id": "1177",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -11154,7 +12947,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1015",
+    "id": "1178",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -11165,7 +12958,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1016",
+    "id": "1179",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -11176,7 +12969,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1017",
+    "id": "1180",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -11187,7 +12980,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1018",
+    "id": "1181",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -11198,7 +12991,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1019",
+    "id": "1182",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -11209,7 +13002,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1020",
+    "id": "1183",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -11220,7 +13013,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1021",
+    "id": "1184",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -11231,7 +13024,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1022",
+    "id": "1185",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -11242,7 +13035,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1023",
+    "id": "1186",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -11253,7 +13046,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1024",
+    "id": "1187",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -11264,7 +13057,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1025",
+    "id": "1188",
     "invid": "31175",
     "specid": "",
     "groupnames": "",
@@ -11275,7 +13068,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1026",
+    "id": "1189",
     "invid": "31175",
     "specid": "",
     "groupnames": "",
@@ -11286,7 +13079,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1027",
+    "id": "1190",
     "invid": "31175",
     "specid": "",
     "groupnames": "",
@@ -11297,7 +13090,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1028",
+    "id": "1191",
     "invid": "31175",
     "specid": "",
     "groupnames": "",
@@ -11308,7 +13101,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1029",
+    "id": "1192",
     "invid": "31175",
     "specid": "",
     "groupnames": "",
@@ -11317,5 +13110,1578 @@
     "ewid": "50784",
     "equippedwith": "Under 2000 Spindle Hours cutting Aluminum and Steel",
     "groupnameew": "Note:"
+  },
+  {
+    "id": "1193",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50785",
+    "equippedwith": "Haas 5-Axis CNC Control with 15\" Color LCD Monitor",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1194",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50786",
+    "equippedwith": "1 GB Prdram Memory, Memory Lock Keyswitch, Rigid Tapping, USB Port,",
+    "groupnameew": ""
+  },
+  {
+    "id": "1195",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50787",
+    "equippedwith": "  Ethernet, Haas Connect, HaasDrop, Media Display, WIFI",
+    "groupnameew": ""
+  },
+  {
+    "id": "1196",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50788",
+    "equippedwith": "4th Axis Drive & Wiring",
+    "groupnameew": ""
+  },
+  {
+    "id": "1197",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50789",
+    "equippedwith": "5th Axis Drive & Wiring",
+    "groupnameew": ""
+  },
+  {
+    "id": "1198",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50790",
+    "equippedwith": "WIPS-R Intuitive Probing-Renishaw Tool & Part Probing",
+    "groupnameew": ""
+  },
+  {
+    "id": "1199",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50791",
+    "equippedwith": "Programmable Coolant Nozzle",
+    "groupnameew": ""
+  },
+  {
+    "id": "1200",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50792",
+    "equippedwith": "Haas TRT100 2 Axis Rotary/Tilt Table with Version P14 Connection",
+    "groupnameew": ""
+  },
+  {
+    "id": "1201",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50793",
+    "equippedwith": "High Speed Machining",
+    "groupnameew": ""
+  },
+  {
+    "id": "1202",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50794",
+    "equippedwith": "Spindle Orientation",
+    "groupnameew": ""
+  },
+  {
+    "id": "1203",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50795",
+    "equippedwith": "User Definable Macros",
+    "groupnameew": ""
+  },
+  {
+    "id": "1204",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50796",
+    "equippedwith": "Coordinate Rotation and Scaling",
+    "groupnameew": ""
+  },
+  {
+    "id": "1205",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50797",
+    "equippedwith": "Visual Part Programming System",
+    "groupnameew": ""
+  },
+  {
+    "id": "1206",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50798",
+    "equippedwith": "Coolant Pump Kit",
+    "groupnameew": ""
+  },
+  {
+    "id": "1207",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50799",
+    "equippedwith": "Early Power Failure Detection Module",
+    "groupnameew": ""
+  },
+  {
+    "id": "1208",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50802",
+    "equippedwith": "American Rotary Phase Converter System allowing machine to run on single phase power",
+    "groupnameew": ""
+  },
+  {
+    "id": "1209",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50803",
+    "equippedwith": "Hours: Power on: 3227  Cycle Start: 1603  Feed Cutting: 1351",
+    "groupnameew": "Note:"
+  },
+  {
+    "id": "1210",
+    "invid": "31176",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50804",
+    "equippedwith": "Build date is Dec. 2020",
+    "groupnameew": ""
+  },
+  {
+    "id": "1211",
+    "invid": "31177",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50805",
+    "equippedwith": "Okuma OSP-P300MA 4-Axis CNC Control",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1212",
+    "invid": "31177",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50806",
+    "equippedwith": "MP Systems R-Series High Pressure Coolant Unit",
+    "groupnameew": ""
+  },
+  {
+    "id": "1213",
+    "invid": "31177",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50807",
+    "equippedwith": "Hi Pressure Coolant Thru Spindle",
+    "groupnameew": ""
+  },
+  {
+    "id": "1214",
+    "invid": "31177",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50808",
+    "equippedwith": "Chip Conveyor",
+    "groupnameew": ""
+  },
+  {
+    "id": "1215",
+    "invid": "31177",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50809",
+    "equippedwith": "Coolant Tank & Pumps",
+    "groupnameew": ""
+  },
+  {
+    "id": "1216",
+    "invid": "31177",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50810",
+    "equippedwith": "Full B (4th) Axis Indexing - 0.001°",
+    "groupnameew": ""
+  },
+  {
+    "id": "1217",
+    "invid": "31177",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50811",
+    "equippedwith": "Hydraulic Clamping System",
+    "groupnameew": ""
+  },
+  {
+    "id": "1218",
+    "invid": "31178",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50812",
+    "equippedwith": "4 Way Dorian Tool Post",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1219",
+    "invid": "31178",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50813",
+    "equippedwith": "24.5\" QU Industrial 3 Jaw Manual Chuck with 12.5\" Bore",
+    "groupnameew": ""
+  },
+  {
+    "id": "1220",
+    "invid": "31178",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50814",
+    "equippedwith": "Newall DP700 Digital Readout",
+    "groupnameew": ""
+  },
+  {
+    "id": "1221",
+    "invid": "31178",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50815",
+    "equippedwith": "Heavy Duty Tailstock",
+    "groupnameew": ""
+  },
+  {
+    "id": "1222",
+    "invid": "31178",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50816",
+    "equippedwith": "Hardened & Ground Bedways with Turcite B Coating",
+    "groupnameew": ""
+  },
+  {
+    "id": "1223",
+    "invid": "31178",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50817",
+    "equippedwith": "Rapid Traverse",
+    "groupnameew": ""
+  },
+  {
+    "id": "1224",
+    "invid": "31178",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50818",
+    "equippedwith": "480V / 3 Phase",
+    "groupnameew": ""
+  },
+  {
+    "id": "1225",
+    "invid": "31178",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50819",
+    "equippedwith": "12 Speed, High/Low Range",
+    "groupnameew": ""
+  },
+  {
+    "id": "1226",
+    "invid": "31178",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50820",
+    "equippedwith": "Taper Attachment",
+    "groupnameew": ""
+  },
+  {
+    "id": "1227",
+    "invid": "31178",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50821",
+    "equippedwith": "Flood Coolant System w/ Coolant Pump",
+    "groupnameew": ""
+  },
+  {
+    "id": "1228",
+    "invid": "31178",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50822",
+    "equippedwith": "Thread Dial Indicator for Inch/Metric Threading",
+    "groupnameew": ""
+  },
+  {
+    "id": "1229",
+    "invid": "31178",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50823",
+    "equippedwith": "Automatic Way Lubrication",
+    "groupnameew": ""
+  },
+  {
+    "id": "1230",
+    "invid": "31179",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50824",
+    "equippedwith": "Fanuc 0i-MF Plus 4-Axis CNC Control",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1231",
+    "invid": "31179",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50825",
+    "equippedwith": "4th Axis Drive",
+    "groupnameew": ""
+  },
+  {
+    "id": "1232",
+    "invid": "31179",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50826",
+    "equippedwith": "10,000 RPM Spindle with 2 Speed Gearbox",
+    "groupnameew": ""
+  },
+  {
+    "id": "1233",
+    "invid": "31179",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50827",
+    "equippedwith": "Rigid Tapping",
+    "groupnameew": ""
+  },
+  {
+    "id": "1234",
+    "invid": "31179",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50828",
+    "equippedwith": "Remote Jog Handle",
+    "groupnameew": ""
+  },
+  {
+    "id": "1235",
+    "invid": "31179",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50829",
+    "equippedwith": "Auger Style Chip Conveyor",
+    "groupnameew": ""
+  },
+  {
+    "id": "1236",
+    "invid": "31179",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50830",
+    "equippedwith": "Spindle Air Blow",
+    "groupnameew": ""
+  },
+  {
+    "id": "1237",
+    "invid": "31179",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50831",
+    "equippedwith": "Heat Exchanger for Electrical Cabinet",
+    "groupnameew": ""
+  },
+  {
+    "id": "1238",
+    "invid": "31179",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50832",
+    "equippedwith": "Flood Coolant",
+    "groupnameew": ""
+  },
+  {
+    "id": "1239",
+    "invid": "31179",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50833",
+    "equippedwith": "USB Port Interface",
+    "groupnameew": ""
+  },
+  {
+    "id": "1240",
+    "invid": "31179",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50834",
+    "equippedwith": "Chiller Unit",
+    "groupnameew": ""
+  },
+  {
+    "id": "1241",
+    "invid": "31179",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50835",
+    "equippedwith": "Chip Flush System",
+    "groupnameew": ""
+  },
+  {
+    "id": "1242",
+    "invid": "31179",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50836",
+    "equippedwith": "Traveling Column Design",
+    "groupnameew": ""
+  },
+  {
+    "id": "1243",
+    "invid": "31180",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50837",
+    "equippedwith": "Linde Hydrostat Transmission",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1244",
+    "invid": "31180",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50838",
+    "equippedwith": "Double Stage Mast",
+    "groupnameew": ""
+  },
+  {
+    "id": "1245",
+    "invid": "31180",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50839",
+    "equippedwith": "Newer Hydraulic Hoses",
+    "groupnameew": ""
+  },
+  {
+    "id": "1246",
+    "invid": "31180",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50840",
+    "equippedwith": "All Available Documentation & Service History",
+    "groupnameew": ""
+  },
+  {
+    "id": "1247",
+    "invid": "31180",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50841",
+    "equippedwith": "1,096 Hours on Meter",
+    "groupnameew": "Note:"
+  },
+  {
+    "id": "1248",
+    "invid": "31181",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50842",
+    "equippedwith": "HAAS CNC Control with 15\" Color LCD Monitor",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1249",
+    "invid": "31181",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50843",
+    "equippedwith": "USB Port, Memory Lock Keyswitch, Rigid Tapping",
+    "groupnameew": ""
+  },
+  {
+    "id": "1250",
+    "invid": "31181",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50844",
+    "equippedwith": "WIPS: Wireless Intuitive Probing System, Renishaw",
+    "groupnameew": ""
+  },
+  {
+    "id": "1251",
+    "invid": "31181",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50845",
+    "equippedwith": "Macros, Coordinate Rotation and Scaling, Spindle Orientation",
+    "groupnameew": ""
+  },
+  {
+    "id": "1252",
+    "invid": "31181",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50846",
+    "equippedwith": "Intuitive Programming System",
+    "groupnameew": ""
+  },
+  {
+    "id": "1253",
+    "invid": "31181",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50847",
+    "equippedwith": "Through Spindle Coolant",
+    "groupnameew": ""
+  },
+  {
+    "id": "1254",
+    "invid": "31181",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50848",
+    "equippedwith": "Programmable Coolant",
+    "groupnameew": ""
+  },
+  {
+    "id": "1255",
+    "invid": "31181",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50849",
+    "equippedwith": "Chip Auger",
+    "groupnameew": ""
+  },
+  {
+    "id": "1256",
+    "invid": "31181",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50850",
+    "equippedwith": "24+1 Position Sidemount Tool Chnager",
+    "groupnameew": ""
+  },
+  {
+    "id": "1257",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50851",
+    "equippedwith": "ShopSabre WINCNC Industrial Controller Hardware & Software.",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1258",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50852",
+    "equippedwith": "  ShopSabre Computer System - Full Size Desktop System with Solid State Hard Drive,",
+    "groupnameew": ""
+  },
+  {
+    "id": "1259",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50853",
+    "equippedwith": "  8GB Memory, 19\" Flat Screen Monitor, Keyboard, Mouse.",
+    "groupnameew": ""
+  },
+  {
+    "id": "1260",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50854",
+    "equippedwith": "ShopSabre Auto Stabilization Steel Machine Operator Control Stand.",
+    "groupnameew": ""
+  },
+  {
+    "id": "1261",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50855",
+    "equippedwith": "Vectric Vcarve Pro CAD/CAM Software.",
+    "groupnameew": ""
+  },
+  {
+    "id": "1262",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50856",
+    "equippedwith": "Machined MDF Table Top.",
+    "groupnameew": ""
+  },
+  {
+    "id": "1263",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50857",
+    "equippedwith": "Tool Measure Switch - Measures Tooling Height without Changing Z Height for Fast",
+    "groupnameew": ""
+  },
+  {
+    "id": "1264",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50858",
+    "equippedwith": "  Tool Change.",
+    "groupnameew": ""
+  },
+  {
+    "id": "1265",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50859",
+    "equippedwith": "3KW 4HP HSD 18,000 MAX RPM Spindle with VFD - Manual Change",
+    "groupnameew": "Options:"
+  },
+  {
+    "id": "1266",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50860",
+    "equippedwith": "Automated Software Control for Spindle On/Off",
+    "groupnameew": ""
+  },
+  {
+    "id": "1267",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50861",
+    "equippedwith": "Automated Software Control for Spindle RPM",
+    "groupnameew": ""
+  },
+  {
+    "id": "1268",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50862",
+    "equippedwith": "Z Axis Air Balancer for Locking Z on power down & Increases Overall Speed",
+    "groupnameew": ""
+  },
+  {
+    "id": "1269",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50863",
+    "equippedwith": "Upgrade Dust Skirt with Containment Design",
+    "groupnameew": ""
+  },
+  {
+    "id": "1270",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50864",
+    "equippedwith": "Phenolic Table Top for 408",
+    "groupnameew": ""
+  },
+  {
+    "id": "1271",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50865",
+    "equippedwith": "T-Slot Installed Every 8 on Center in Standard Table Top with Clamp Kit for 408",
+    "groupnameew": ""
+  },
+  {
+    "id": "1272",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50866",
+    "equippedwith": "Industrial Pop-Up Table Reference Pins",
+    "groupnameew": ""
+  },
+  {
+    "id": "1273",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50867",
+    "equippedwith": "ShopSabre Single Phase F4 Vacuum System",
+    "groupnameew": ""
+  },
+  {
+    "id": "1274",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50868",
+    "equippedwith": "ECOCAM Tangential Oscillating Knife",
+    "groupnameew": ""
+  },
+  {
+    "id": "1275",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50869",
+    "equippedwith": "ShopSabre Air Gun",
+    "groupnameew": ""
+  },
+  {
+    "id": "1276",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50870",
+    "equippedwith": "Material Height Touch Pad - Electronic Z Setter",
+    "groupnameew": ""
+  },
+  {
+    "id": "1277",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50871",
+    "equippedwith": "Maintenance Kit",
+    "groupnameew": ""
+  },
+  {
+    "id": "1278",
+    "invid": "31182",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50872",
+    "equippedwith": "Opt Laser - PLH3D-6W Engraving Laser Head",
+    "groupnameew": ""
+  },
+  {
+    "id": "1279",
+    "invid": "31183",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50873",
+    "equippedwith": "Coolant System",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1280",
+    "invid": "31183",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50874",
+    "equippedwith": "Hardened and Ground Ways",
+    "groupnameew": ""
+  },
+  {
+    "id": "1281",
+    "invid": "31183",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50875",
+    "equippedwith": "Tailstock",
+    "groupnameew": ""
+  },
+  {
+    "id": "1282",
+    "invid": "31183",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50876",
+    "equippedwith": "Tool Post",
+    "groupnameew": ""
+  },
+  {
+    "id": "1283",
+    "invid": "31183",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50877",
+    "equippedwith": "12\" 3 Jaw Chuck",
+    "groupnameew": ""
+  },
+  {
+    "id": "1284",
+    "invid": "31185",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50883",
+    "equippedwith": "Fanuc 21iTF 2-Axis CNC Control",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1285",
+    "invid": "31185",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50884",
+    "equippedwith": "Tailstock",
+    "groupnameew": ""
+  },
+  {
+    "id": "1286",
+    "invid": "31185",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50885",
+    "equippedwith": "No Chucks with machine",
+    "groupnameew": ""
+  },
+  {
+    "id": "1287",
+    "invid": "31186",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50886",
+    "equippedwith": "Haas 4-Axis CNC Control with 15\" Color LCD Monitor",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1288",
+    "invid": "31186",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50887",
+    "equippedwith": "1GB Program Memory, Memory Lock Keyswitch, USB Port, Rigid Tapping",
+    "groupnameew": ""
+  },
+  {
+    "id": "1289",
+    "invid": "31186",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50888",
+    "equippedwith": "4th Axis Drive",
+    "groupnameew": ""
+  },
+  {
+    "id": "1290",
+    "invid": "31186",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50889",
+    "equippedwith": "Haas HRT450 Rotary Table",
+    "groupnameew": ""
+  },
+  {
+    "id": "1291",
+    "invid": "31186",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50890",
+    "equippedwith": "High Speed Machining",
+    "groupnameew": ""
+  },
+  {
+    "id": "1292",
+    "invid": "31186",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50891",
+    "equippedwith": "Linear Scales",
+    "groupnameew": ""
+  },
+  {
+    "id": "1293",
+    "invid": "31186",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50892",
+    "equippedwith": "WIPS Wireless Intuitive Probing System",
+    "groupnameew": ""
+  },
+  {
+    "id": "1294",
+    "invid": "31186",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50893",
+    "equippedwith": "Chip Auger",
+    "groupnameew": ""
+  },
+  {
+    "id": "1295",
+    "invid": "31186",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50894",
+    "equippedwith": "Programmable Coolant Nozzle",
+    "groupnameew": ""
+  },
+  {
+    "id": "1296",
+    "invid": "31186",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50895",
+    "equippedwith": "Through Spindle Coolant",
+    "groupnameew": ""
+  },
+  {
+    "id": "1297",
+    "invid": "31187",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50896",
+    "equippedwith": "Haas 5-Axis CNC Control",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1298",
+    "invid": "31187",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50897",
+    "equippedwith": "24+1 Position Side Mount ATC",
+    "groupnameew": ""
+  },
+  {
+    "id": "1299",
+    "invid": "31187",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50898",
+    "equippedwith": "WIPS: Wireless Intuitive Probing System",
+    "groupnameew": ""
+  },
+  {
+    "id": "1300",
+    "invid": "31187",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50899",
+    "equippedwith": "4th-Axis Drive",
+    "groupnameew": ""
+  },
+  {
+    "id": "1301",
+    "invid": "31187",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50900",
+    "equippedwith": "5th-Axis Drive",
+    "groupnameew": ""
+  },
+  {
+    "id": "1302",
+    "invid": "31187",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50901",
+    "equippedwith": "TR160 5-Axis Trunnion Table",
+    "groupnameew": ""
+  },
+  {
+    "id": "1303",
+    "invid": "31187",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50902",
+    "equippedwith": "Auto Door",
+    "groupnameew": ""
+  },
+  {
+    "id": "1304",
+    "invid": "31187",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50903",
+    "equippedwith": "Programmable Coolant",
+    "groupnameew": ""
+  },
+  {
+    "id": "1305",
+    "invid": "31187",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50904",
+    "equippedwith": "USB Port",
+    "groupnameew": ""
+  },
+  {
+    "id": "1306",
+    "invid": "31187",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50905",
+    "equippedwith": "Remote Jog Handle",
+    "groupnameew": ""
+  },
+  {
+    "id": "1307",
+    "invid": "31187",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50906",
+    "equippedwith": "10,000 RPM Spindle",
+    "groupnameew": ""
+  },
+  {
+    "id": "1308",
+    "invid": "31187",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50907",
+    "equippedwith": "Gearbox",
+    "groupnameew": ""
+  },
+  {
+    "id": "1309",
+    "invid": "31188",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50908",
+    "equippedwith": "Mazatrol Matrix CNC Control",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1310",
+    "invid": "31188",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50909",
+    "equippedwith": "Spiral, EIA 3D Comp, Rotation, Geometric, Scaling, EXT-Data I/O, Polar Coordinates",
+    "groupnameew": ""
+  },
+  {
+    "id": "1311",
+    "invid": "31188",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50910",
+    "equippedwith": "  Input, Comparsion Stop, S54.1, Variable 600 Sets, EIA Helical Tap Cycle, Pitch",
+    "groupnameew": ""
+  },
+  {
+    "id": "1312",
+    "invid": "31188",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50911",
+    "equippedwith": "  Error Compensation, EIA Pattern Cycle, EIA/ISO Programming",
+    "groupnameew": ""
+  },
+  {
+    "id": "1313",
+    "invid": "31188",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50912",
+    "equippedwith": "Programmable Tailstock",
+    "groupnameew": ""
+  },
+  {
+    "id": "1314",
+    "invid": "31188",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50913",
+    "equippedwith": "Chip Conveyor",
+    "groupnameew": ""
+  },
+  {
+    "id": "1315",
+    "invid": "31188",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50914",
+    "equippedwith": "Transformer",
+    "groupnameew": ""
+  },
+  {
+    "id": "1316",
+    "invid": "31188",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50915",
+    "equippedwith": "18\" Air Chuck with 7\" Thru Hole",
+    "groupnameew": ""
+  },
+  {
+    "id": "1317",
+    "invid": "31188",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50916",
+    "equippedwith": "Prepped for Rear Chuck",
+    "groupnameew": ""
+  },
+  {
+    "id": "1318",
+    "invid": "31189",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50917",
+    "equippedwith": "Sodick LN2W CNC Control",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1319",
+    "invid": "31189",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50918",
+    "equippedwith": "WS4 High Precision 4th Axis Rotary",
+    "groupnameew": ""
+  },
+  {
+    "id": "1320",
+    "invid": "31189",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50919",
+    "equippedwith": "Linear Glass Scales",
+    "groupnameew": ""
+  },
+  {
+    "id": "1321",
+    "invid": "31189",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50920",
+    "equippedwith": "Linear Motor Drives on X, Y, Z, U and V",
+    "groupnameew": ""
+  },
+  {
+    "id": "1322",
+    "invid": "31189",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50921",
+    "equippedwith": "Auto Wire Threading",
+    "groupnameew": ""
+  },
+  {
+    "id": "1323",
+    "invid": "31189",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50922",
+    "equippedwith": "Automatic dielectric fluid-level control",
+    "groupnameew": ""
+  },
+  {
+    "id": "1324",
+    "invid": "31189",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50923",
+    "equippedwith": "High-speed electrolysis-free power supply",
+    "groupnameew": ""
+  },
+  {
+    "id": "1325",
+    "invid": "31189",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50924",
+    "equippedwith": "Dielectric chiller",
+    "groupnameew": ""
+  },
+  {
+    "id": "1326",
+    "invid": "31189",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50925",
+    "equippedwith": "USB/LAN connectivity",
+    "groupnameew": ""
+  },
+  {
+    "id": "1327",
+    "invid": "31189",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50926",
+    "equippedwith": "Remote hand control",
+    "groupnameew": ""
+  },
+  {
+    "id": "1328",
+    "invid": "31189",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50927",
+    "equippedwith": "Sodick's Heart NC programming software",
+    "groupnameew": ""
+  },
+  {
+    "id": "1329",
+    "invid": "31190",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50928",
+    "equippedwith": "Haas CNC control with 15\" Color LCD Monitor",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1330",
+    "invid": "31190",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50929",
+    "equippedwith": "Memory Lock Keyswitch, USB Port, Rigid Tapping",
+    "groupnameew": ""
+  },
+  {
+    "id": "1331",
+    "invid": "31190",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50930",
+    "equippedwith": "Live Tooling with Live holder included",
+    "groupnameew": "Options:"
+  },
+  {
+    "id": "1332",
+    "invid": "31190",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50931",
+    "equippedwith": "Bar Feeder",
+    "groupnameew": ""
+  },
+  {
+    "id": "1333",
+    "invid": "31190",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50932",
+    "equippedwith": "Tailstock",
+    "groupnameew": ""
+  },
+  {
+    "id": "1334",
+    "invid": "31190",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50933",
+    "equippedwith": "Tool Presetter",
+    "groupnameew": ""
+  },
+  {
+    "id": "1335",
+    "invid": "31190",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50934",
+    "equippedwith": "Chip Conveyor",
+    "groupnameew": ""
   }
 ]
