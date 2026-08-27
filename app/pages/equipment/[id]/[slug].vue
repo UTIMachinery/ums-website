@@ -670,10 +670,10 @@ useSeoMeta({
     : 'Used CNC machinery and industrial equipment from Used Machinery Source.',
 
   ogImage: () => machineImages.value?.length
-  ? `https://equipment.usedmachinerysource.com/Images/${machineImages.value[0]}`
+  ? `https://www.usedmachinerysource.com/Images/${machineImages.value[0]}`
   : '',
 
-ogUrl: `https://equipment.usedmachinerysource.com${route.path}`,
+ogUrl: `https://www.usedmachinerysource.com${route.path}`,
 
   ogType: 'website',
 
@@ -688,7 +688,7 @@ ogUrl: `https://equipment.usedmachinerysource.com${route.path}`,
     : 'Used CNC machinery and industrial equipment from Used Machinery Source.',
 
   twitterImage: () => machineImages.value?.length
-  ? `https://equipment.usedmachinerysource.com/Images/${machineImages.value[0]}`
+  ? `https://www.usedmachinerysource.com/Images/${machineImages.value[0]}`
   : '',
 })
 
@@ -696,7 +696,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: `https://equipment.usedmachinerysource.com${route.path}`
+      href: `https://www.usedmachinerysource.com${route.path}`
     }
   ]
 })
