@@ -133,7 +133,7 @@ const machines = ref(machinesData)
 const machineCardImages = ref({})
 const webDescription = (machine) => machine.WebDesc || machine.Web_Desc || ''
 const advertisingSpec = (machine) => machine.AdvSpec || machine.Adv_Spec || ''
-const groupName = (machine) => String(machine.Groups || '').trim()
+const groupName = (machine) => machine.Groups || ''
 const offMarketValue = (machine) => machine.OffMarket ?? machine.Off_Market ?? 0
 
 function selectCategory(category) {
@@ -217,7 +217,7 @@ const activeMachines = computed(() => (machines.value || []).filter(machine =>
 ))
 
 const visibleMachineGroups = computed(() => [
-  ...new Set(activeMachines.value.map(groupName).filter(Boolean))
+  ...new Set(activeMachines.value.map(machine => machine.Groups).filter(group => group !== null && group !== undefined && group !== ''))
 ])
 
 const filteredMachines = computed(() => {
