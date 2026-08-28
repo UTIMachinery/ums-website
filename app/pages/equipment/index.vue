@@ -218,7 +218,7 @@ const activeMachines = computed(() => (machines.value || []).filter(machine =>
 
 const visibleMachineGroups = computed(() => [
   ...new Set(activeMachines.value.map(machine => machine.Groups).filter(group => group !== null && group !== undefined && group !== ''))
-])
+].sort((a, b) => a.localeCompare(b)))
 
 const filteredMachines = computed(() => {
   const term = searchTerm.value.trim().toLowerCase().replace(/[^a-z0-9]/g, '')
