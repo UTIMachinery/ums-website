@@ -156,6 +156,8 @@ const machines = ref(machinesData)
 const machineCardImages = ref({})
 const webDescription = (machine) => machine.WebDesc || machine.Web_Desc || ''
 const advertisingSpec = (machine) => machine.AdvSpec || machine.Adv_Spec || ''
+const groupName = (machine) => String(machine.Groups || '').trim()
+const offMarketValue = (machine) => machine.OffMarket ?? machine.Off_Market ?? 0
 
 function selectCategory(category) {
   selectedCategory.value = category
@@ -206,14 +208,7 @@ onMounted(async () => {
   const savedCategory = localStorage.getItem('ums-equipment-category')
   const savedSearch = localStorage.getItem('ums-equipment-search')
 
-  const savedCategoryHasMachines = savedCategory && (machines.value || []).some(machine =>
-    Number(machine.Sold) === 0 &&
-    Number(machine.OffMarket) === 0 &&
-    Number(machine.dont_advertise) === 0 &&
-    machine.Groups === savedCategory
-  )
-
-  if (savedCategory === 'all' || (machineGroups.includes(savedCategory) && savedCategoryHasMachines)) {
+  if (savedCategory === 'all' || visibleMachineGroups.value.includes(savedCategory)) {
     selectedCategory.value = savedCategory
   } else {
     selectedCategory.value = 'all'
@@ -241,19 +236,22 @@ async function loadMachineCardImages() {
 }
 
 const activeMachines = computed(() => (machines.value || []).filter(machine =>
-  Number(machine.Sold) === 0 && Number(machine.OffMarket) === 0 && Number(machine.dont_advertise) === 0
+  Number(machine.Sold) === 0 && Number(offMarketValue(machine)) === 0 && Number(machine.dont_advertise) === 0
 ))
 
-const visibleMachineGroups = computed(() => machineGroups.filter(group =>
-  activeMachines.value.some(machine => (machine.Groups || '') === group)
-))
+const visibleMachineGroups = computed(() => {
+  const activeGroupSet = new Set(activeMachines.value.map(groupName).filter(Boolean))
+  const orderedGroups = machineGroups.filter(group => activeGroupSet.has(group))
+  const otherGroups = [...activeGroupSet].filter(group => !machineGroups.includes(group)).sort()
+  return [...orderedGroups, ...otherGroups]
+})
 
 const filteredMachines = computed(() => {
   const term = searchTerm.value.trim().toLowerCase().replace(/[^a-z0-9]/g, '')
 
   return activeMachines.value.filter(machine => {
     const desc = webDescription(machine)
-    const group = machine.Groups || ''
+    const group = groupName(machine)
     const categoryMatch = selectedCategory.value === 'all' || group === selectedCategory.value
 
     const searchText = [
