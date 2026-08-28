@@ -30,14 +30,15 @@
         </div>
 
         <div class="category-grid">
-          <button v-if="categoryCounts.vmc > 0" type="button" :class="{ active: selectedCategory === 'vmc' }" @click="selectCategory('vmc')">CNC Vertical Machining Centers</button>
-          <button v-if="categoryCounts.hmc > 0" type="button" :class="{ active: selectedCategory === 'hmc' }" @click="selectCategory('hmc')">CNC Horizontal Machining Centers</button>
-          <button v-if="categoryCounts.lathe > 0" type="button" :class="{ active: selectedCategory === 'lathe' }" @click="selectCategory('lathe')">CNC Lathes &amp; Turning Centers</button>
-          <button v-if="categoryCounts.boring > 0" type="button" :class="{ active: selectedCategory === 'boring' }" @click="selectCategory('boring')">Boring Mills &amp; VTLs</button>
-          <button v-if="categoryCounts.grinder > 0" type="button" :class="{ active: selectedCategory === 'grinder' }" @click="selectCategory('grinder')">Grinders</button>
-          <button v-if="categoryCounts.fabrication > 0" type="button" :class="{ active: selectedCategory === 'fabrication' }" @click="selectCategory('fabrication')">Fabrication Equipment</button>
-          <button v-if="categoryCounts.inspection > 0" type="button" :class="{ active: selectedCategory === 'inspection' }" @click="selectCategory('inspection')">Inspection Equipment</button>
-          <button v-if="categoryCounts.other > 0" type="button" :class="{ active: selectedCategory === 'other' }" @click="selectCategory('other')">Other Machinery</button>
+          <button
+            v-for="category in machineGroups"
+            :key="category"
+            type="button"
+            :class="{ active: selectedCategory === category }"
+            @click="selectCategory(category)"
+          >
+            {{ category }}
+          </button>
         </div>
       </section>
 
@@ -124,6 +125,29 @@ const showMachineNeededForm = ref(false)
 const machineNeededSending = ref(false)
 const machineNeededSent = ref(false)
 
+const machineGroups = [
+  'CNC Horizontal Machining Centers',
+  'CNC Lathes & Turning Centers',
+  'CNC Vertical Machining Centers and CNC Mills',
+  'EDM',
+  'Engine Lathes, Drilling & Milling',
+  'Fabricating',
+  'Finishing',
+  'Gear',
+  'Grinders, Lappers & Hones',
+  'Heat Treating',
+  'Horizontal Boring Mills & HBM',
+  'Inspection',
+  'Material Handling',
+  'Other Machinery',
+  'Presses',
+  'Saws',
+  'Tables',
+  'Vertical Boring Mills & VTL',
+  'Welding',
+  'Wire & Fastener'
+]
+
 const machineNeededForm = reactive({
   email: '', contactName: '', phone: '', companyName: '', address: '', city: '', state: '', postalCode: '', country: '', machinesToSell: 'no', emailList: 'yes', message: ''
 })
@@ -181,7 +205,13 @@ async function submitMachineNeededForm() {
 onMounted(async () => {
   const savedCategory = localStorage.getItem('ums-equipment-category')
   const savedSearch = localStorage.getItem('ums-equipment-search')
-  if (savedCategory) selectedCategory.value = savedCategory
+
+  if (savedCategory && (savedCategory === 'all' || machineGroups.includes(savedCategory))) {
+    selectedCategory.value = savedCategory
+  } else {
+    selectedCategory.value = 'all'
+  }
+
   if (savedSearch) searchTerm.value = savedSearch
   await loadMachineCardImages()
 })
@@ -209,43 +239,31 @@ const activeMachines = computed(() => (machines.value || []).filter(machine =>
 
 const filteredMachines = computed(() => {
   const term = searchTerm.value.trim().toLowerCase().replace(/[^a-z0-9]/g, '')
+
   return activeMachines.value.filter(machine => {
     const desc = webDescription(machine)
-    const groups = machine.Groups || ''
-    const categoryMatch =
-      selectedCategory.value === 'all' ||
-      (selectedCategory.value === 'vmc' && desc === 'CNC Machining Centers, Vertical') ||
-      (selectedCategory.value === 'lathe' && desc.startsWith('CNC Lathes')) ||
-      (selectedCategory.value === 'hmc' && desc === 'CNC Machining Centers, Horizontal') ||
-      (selectedCategory.value === 'boring' && groups.includes('Boring Mills')) ||
-      (selectedCategory.value === 'grinder' && groups.includes('Grinders')) ||
-      (selectedCategory.value === 'fabrication' && groups.includes('Fabricating')) ||
-      (selectedCategory.value === 'inspection' && groups.includes('Inspection')) ||
-      (selectedCategory.value === 'other' &&
-        !['CNC Machining Centers, Vertical', 'CNC Machining Centers, Horizontal'].includes(desc) &&
-        !desc.startsWith('CNC Lathes') && !groups.includes('Boring Mills') && !groups.includes('Grinders') && !groups.includes('Fabricating') && !groups.includes('Inspection'))
+    const group = machine.Groups || ''
+    const categoryMatch = selectedCategory.value === 'all' || group === selectedCategory.value
 
-    const searchText = [machine.Year, machine.Manufacturer, machine.Model, desc, advertisingSpec(machine), machine.Description, machine.Code, machine.InvID]
-      .filter(Boolean).join(' ').toLowerCase().replace(/[^a-z0-9]/g, '')
+    const searchText = [
+      machine.Year,
+      machine.Manufacturer,
+      machine.Model,
+      desc,
+      group,
+      advertisingSpec(machine),
+      machine.Description,
+      machine.Code,
+      machine.InvID
+    ]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase()
+      .replace(/[^a-z0-9]/g, '')
 
     return categoryMatch && (term === '' || searchText.includes(term))
   })
 })
-
-const categoryCounts = computed(() => ({
-  vmc: activeMachines.value.filter(machine => webDescription(machine) === 'CNC Machining Centers, Vertical').length,
-  lathe: activeMachines.value.filter(machine => webDescription(machine).startsWith('CNC Lathes')).length,
-  hmc: activeMachines.value.filter(machine => webDescription(machine) === 'CNC Machining Centers, Horizontal').length,
-  boring: activeMachines.value.filter(machine => (machine.Groups || '').includes('Boring Mills')).length,
-  grinder: activeMachines.value.filter(machine => (machine.Groups || '').includes('Grinders')).length,
-  fabrication: activeMachines.value.filter(machine => (machine.Groups || '').includes('Fabricating')).length,
-  inspection: activeMachines.value.filter(machine => (machine.Groups || '').includes('Inspection')).length,
-  other: activeMachines.value.filter(machine => {
-    const desc = webDescription(machine)
-    const groups = machine.Groups || ''
-    return desc !== 'CNC Machining Centers, Vertical' && desc !== 'CNC Machining Centers, Horizontal' && !desc.startsWith('CNC Lathes') && !groups.includes('Boring Mills') && !groups.includes('Grinders') && !groups.includes('Fabricating') && !groups.includes('Inspection')
-  }).length
-}))
 </script>
 
 <style scoped>
