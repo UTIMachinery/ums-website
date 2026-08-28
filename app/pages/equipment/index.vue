@@ -46,15 +46,6 @@
     </section>
 
     <section class="equipment-listing">
-      <div id="tell-us-what-you-need" class="machine-needed-callout">
-        <div class="machine-needed-copy">
-          <h3>Don't See What You're Looking For?</h3>
-          <p>Our inventory is constantly changing. If you don't see what you need—or would rather send us your requirements—tell us what you're looking for. We'll let you know what's available that fits your needs.</p>
-        </div>
-        <button type="button" class="machine-needed-button" @click="showMachineNeededForm = true">Tell Us What You Need</button>
-        <div v-if="machineNeededSent" class="machine-needed-sent">Your message has been sent successfully.</div>
-      </div>
-
       <h2 class="current-inventory-heading">{{ (selectedCategory !== 'all' || searchTerm.trim() !== '') ? `Your Search Returned ${filteredMachines.length} ${filteredMachines.length === 1 ? 'Machine' : 'Machines'}` : `Current Inventory — ${filteredMachines.length} ${filteredMachines.length === 1 ? 'Machine' : 'Machines'}` }}</h2>
 
       <article v-for="machine in filteredMachines" :key="machine.InvID" class="machine-card">
@@ -71,6 +62,15 @@
       </article>
 
       <p v-if="filteredMachines.length === 0" class="no-results">No equipment found matching your search.</p>
+
+      <div id="tell-us-what-you-need" class="machine-needed-callout">
+        <div class="machine-needed-copy">
+          <h3>Don't See What You're Looking For?</h3>
+          <p>Our inventory is constantly changing. If you don't see what you need—or would rather send us your requirements—tell us what you're looking for. We'll let you know what's available that fits your needs.</p>
+        </div>
+        <button type="button" class="machine-needed-button" @click="showMachineNeededForm = true">Tell Us What You Need</button>
+        <div v-if="machineNeededSent" class="machine-needed-sent">Your message has been sent successfully.</div>
+      </div>
     </section>
 
     <div v-if="showMachineNeededForm" class="request-modal-overlay">
@@ -272,7 +272,7 @@ const filteredMachines = computed(() => {
 .view-all-equipment-button { padding: 10px 17px; background: #0b2545; color: #fff; border: 1px solid #0b2545; border-radius: 5px; font-size: 13px; font-weight: 700; cursor: pointer; }
 .view-all-equipment-button:hover { background: #1c4587; border-color: #1c4587; }
 .equipment-listing { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
-.machine-needed-callout { grid-column: 1/-1; display: flex; align-items: center; gap: 24px; margin: 0 0 8px; padding: 22px 26px; background: linear-gradient(105deg,#071b33 0%,#0b2545 100%); border-left: 5px solid #f47b20; border-radius: 6px; color: #fff; }
+.machine-needed-callout { grid-column: 1/-1; display: flex; align-items: center; gap: 24px; margin: 12px 0 0; padding: 22px 26px; background: linear-gradient(105deg,#071b33 0%,#0b2545 100%); border-left: 5px solid #f47b20; border-radius: 6px; color: #fff; }
 .machine-needed-copy { flex: 1; }
 .machine-needed-callout h3 { margin: 0 0 7px; color: #fff; font-size: 21px; font-weight: 800; }
 .machine-needed-callout p { margin: 0; color: #e8eef5; font-size: 14px; line-height: 1.55; }
