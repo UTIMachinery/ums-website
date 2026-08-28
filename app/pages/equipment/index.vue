@@ -125,29 +125,6 @@ const showMachineNeededForm = ref(false)
 const machineNeededSending = ref(false)
 const machineNeededSent = ref(false)
 
-const machineGroups = [
-  'CNC Horizontal Machining Centers',
-  'CNC Lathes & Turning Centers',
-  'CNC Vertical Machining Centers and CNC Mills',
-  'EDM',
-  'Engine Lathes, Drilling & Milling',
-  'Fabricating',
-  'Finishing',
-  'Gear',
-  'Grinders, Lappers & Hones',
-  'Heat Treating',
-  'Horizontal Boring Mills & HBM',
-  'Inspection',
-  'Material Handling',
-  'Other Machinery',
-  'Presses',
-  'Saws',
-  'Tables',
-  'Vertical Boring Mills & VTL',
-  'Welding',
-  'Wire & Fastener'
-]
-
 const machineNeededForm = reactive({
   email: '', contactName: '', phone: '', companyName: '', address: '', city: '', state: '', postalCode: '', country: '', machinesToSell: 'no', emailList: 'yes', message: ''
 })
@@ -239,12 +216,9 @@ const activeMachines = computed(() => (machines.value || []).filter(machine =>
   Number(machine.Sold) === 0 && Number(offMarketValue(machine)) === 0 && Number(machine.dont_advertise) === 0
 ))
 
-const visibleMachineGroups = computed(() => {
-  const activeGroupSet = new Set(activeMachines.value.map(groupName).filter(Boolean))
-  const orderedGroups = machineGroups.filter(group => activeGroupSet.has(group))
-  const otherGroups = [...activeGroupSet].filter(group => !machineGroups.includes(group)).sort()
-  return [...orderedGroups, ...otherGroups]
-})
+const visibleMachineGroups = computed(() => [
+  ...new Set(activeMachines.value.map(groupName).filter(Boolean))
+])
 
 const filteredMachines = computed(() => {
   const term = searchTerm.value.trim().toLowerCase().replace(/[^a-z0-9]/g, '')
