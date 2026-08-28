@@ -55,7 +55,7 @@
         <div v-if="machineNeededSent" class="machine-needed-sent">Your message has been sent successfully.</div>
       </div>
 
-      <h2 class="current-inventory-heading">Current Inventory</h2>
+      <h2 class="current-inventory-heading">{{ (selectedCategory !== 'all' || searchTerm.trim() !== '') ? `Your Search Returned ${filteredMachines.length} ${filteredMachines.length === 1 ? 'Machine' : 'Machines'}` : `Current Inventory — ${filteredMachines.length} ${filteredMachines.length === 1 ? 'Machine' : 'Machines'}` }}</h2>
 
       <article v-for="machine in filteredMachines" :key="machine.InvID" class="machine-card">
         <div class="machine-card-image">
