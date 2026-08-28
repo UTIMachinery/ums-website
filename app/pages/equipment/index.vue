@@ -31,7 +31,7 @@
 
         <div class="category-grid">
           <button
-            v-for="category in machineGroups"
+            v-for="category in visibleMachineGroups"
             :key="category"
             type="button"
             :class="{ active: selectedCategory === category }"
@@ -206,7 +206,14 @@ onMounted(async () => {
   const savedCategory = localStorage.getItem('ums-equipment-category')
   const savedSearch = localStorage.getItem('ums-equipment-search')
 
-  if (savedCategory && (savedCategory === 'all' || machineGroups.includes(savedCategory))) {
+  const savedCategoryHasMachines = savedCategory && (machines.value || []).some(machine =>
+    Number(machine.Sold) === 0 &&
+    Number(machine.OffMarket) === 0 &&
+    Number(machine.dont_advertise) === 0 &&
+    machine.Groups === savedCategory
+  )
+
+  if (savedCategory === 'all' || (machineGroups.includes(savedCategory) && savedCategoryHasMachines)) {
     selectedCategory.value = savedCategory
   } else {
     selectedCategory.value = 'all'
@@ -235,6 +242,10 @@ async function loadMachineCardImages() {
 
 const activeMachines = computed(() => (machines.value || []).filter(machine =>
   Number(machine.Sold) === 0 && Number(machine.OffMarket) === 0 && Number(machine.dont_advertise) === 0
+))
+
+const visibleMachineGroups = computed(() => machineGroups.filter(group =>
+  activeMachines.value.some(machine => (machine.Groups || '') === group)
 ))
 
 const filteredMachines = computed(() => {
