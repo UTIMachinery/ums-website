@@ -7052,6 +7052,149 @@
   },
   {
     "id": "642",
+    "invid": "31184",
+    "specid": "95057",
+    "groupnames": "Capacity:",
+    "description": "Swing",
+    "specvalues": "21.6 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "643",
+    "invid": "31184",
+    "specid": "95058",
+    "groupnames": "",
+    "description": "Swing Over Cross Slide",
+    "specvalues": "11.8 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "644",
+    "invid": "31184",
+    "specid": "95060",
+    "groupnames": "",
+    "description": "Distance Between Centers",
+    "specvalues": "27.9 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "645",
+    "invid": "31184",
+    "specid": "95061",
+    "groupnames": "Spindle:",
+    "description": "Spindle Speed: Minimum (RPM)",
+    "specvalues": "0 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "646",
+    "invid": "31184",
+    "specid": "95062",
+    "groupnames": "",
+    "description": "                       Maximum",
+    "specvalues": "4800 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "647",
+    "invid": "31184",
+    "specid": "95063",
+    "groupnames": "",
+    "description": "Spindle Bore",
+    "specvalues": "2.4 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "648",
+    "invid": "31184",
+    "specid": "95064",
+    "groupnames": "",
+    "description": "Main Motor",
+    "specvalues": "15 hp",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "649",
+    "invid": "31184",
+    "specid": "95066",
+    "groupnames": "Turret:",
+    "description": "Number Of Positions",
+    "specvalues": "10 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "650",
+    "invid": "31184",
+    "specid": "95067",
+    "groupnames": "",
+    "description": "X-Axis Travel",
+    "specvalues": "8 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "651",
+    "invid": "31184",
+    "specid": "95068",
+    "groupnames": "",
+    "description": "Z-Axis Travel",
+    "specvalues": "20 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "652",
+    "invid": "31184",
+    "specid": "95073",
+    "groupnames": "Chuck:",
+    "description": "Diameter",
+    "specvalues": "8 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "653",
+    "invid": "31184",
+    "specid": "95074",
+    "groupnames": "",
+    "description": "Hole Thru",
+    "specvalues": "2 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "654",
+    "invid": "31184",
+    "specid": "95075",
+    "groupnames": "",
+    "description": "Number of Jaws",
+    "specvalues": "3 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "655",
     "invid": "31185",
     "specid": "95076",
     "groupnames": "Capacity:",
@@ -7062,7 +7205,7 @@
     "groupnameew": ""
   },
   {
-    "id": "643",
+    "id": "656",
     "invid": "31185",
     "specid": "95079",
     "groupnames": "",
@@ -7073,7 +7216,7 @@
     "groupnameew": ""
   },
   {
-    "id": "644",
+    "id": "657",
     "invid": "31185",
     "specid": "95082",
     "groupnames": "",
@@ -7084,7 +7227,7 @@
     "groupnameew": ""
   },
   {
-    "id": "645",
+    "id": "658",
     "invid": "31185",
     "specid": "95083",
     "groupnames": "",
@@ -7095,7 +7238,7 @@
     "groupnameew": ""
   },
   {
-    "id": "646",
+    "id": "659",
     "invid": "31185",
     "specid": "95084",
     "groupnames": "",
@@ -7106,7 +7249,7 @@
     "groupnameew": ""
   },
   {
-    "id": "647",
+    "id": "660",
     "invid": "31185",
     "specid": "95085",
     "groupnames": "Turret:",
@@ -7117,7 +7260,7 @@
     "groupnameew": ""
   },
   {
-    "id": "648",
+    "id": "661",
     "invid": "31186",
     "specid": "95095",
     "groupnames": "Table:",
@@ -7128,7 +7271,7 @@
     "groupnameew": ""
   },
   {
-    "id": "649",
+    "id": "662",
     "invid": "31186",
     "specid": "95096",
     "groupnames": "",
@@ -7139,7 +7282,7 @@
     "groupnameew": ""
   },
   {
-    "id": "650",
+    "id": "663",
     "invid": "31186",
     "specid": "95098",
     "groupnames": "Travels:",
@@ -7150,7 +7293,7 @@
     "groupnameew": ""
   },
   {
-    "id": "651",
+    "id": "664",
     "invid": "31186",
     "specid": "95099",
     "groupnames": "",
@@ -7161,7 +7304,7 @@
     "groupnameew": ""
   },
   {
-    "id": "652",
+    "id": "665",
     "invid": "31186",
     "specid": "95100",
     "groupnames": "",
@@ -7172,7 +7315,7 @@
     "groupnameew": ""
   },
   {
-    "id": "653",
+    "id": "666",
     "invid": "31186",
     "specid": "95101",
     "groupnames": "",
@@ -7183,7 +7326,7 @@
     "groupnameew": ""
   },
   {
-    "id": "654",
+    "id": "667",
     "invid": "31186",
     "specid": "95102",
     "groupnames": "",
@@ -7194,7 +7337,7 @@
     "groupnameew": ""
   },
   {
-    "id": "655",
+    "id": "668",
     "invid": "31186",
     "specid": "95103",
     "groupnames": "Spindle:",
@@ -7205,7 +7348,7 @@
     "groupnameew": ""
   },
   {
-    "id": "656",
+    "id": "669",
     "invid": "31186",
     "specid": "95104",
     "groupnames": "",
@@ -7216,7 +7359,7 @@
     "groupnameew": ""
   },
   {
-    "id": "657",
+    "id": "670",
     "invid": "31186",
     "specid": "95105",
     "groupnames": "",
@@ -7227,7 +7370,7 @@
     "groupnameew": ""
   },
   {
-    "id": "658",
+    "id": "671",
     "invid": "31186",
     "specid": "95106",
     "groupnames": "",
@@ -7238,7 +7381,7 @@
     "groupnameew": ""
   },
   {
-    "id": "659",
+    "id": "672",
     "invid": "31186",
     "specid": "95107",
     "groupnames": "Tool Changer:",
@@ -7249,7 +7392,7 @@
     "groupnameew": ""
   },
   {
-    "id": "660",
+    "id": "673",
     "invid": "31187",
     "specid": "95108",
     "groupnames": "Table:",
@@ -7260,7 +7403,7 @@
     "groupnameew": ""
   },
   {
-    "id": "661",
+    "id": "674",
     "invid": "31187",
     "specid": "95109",
     "groupnames": "",
@@ -7271,7 +7414,7 @@
     "groupnameew": ""
   },
   {
-    "id": "662",
+    "id": "675",
     "invid": "31187",
     "specid": "95110",
     "groupnames": "",
@@ -7282,7 +7425,7 @@
     "groupnameew": ""
   },
   {
-    "id": "663",
+    "id": "676",
     "invid": "31187",
     "specid": "95111",
     "groupnames": "Travels:",
@@ -7293,7 +7436,7 @@
     "groupnameew": ""
   },
   {
-    "id": "664",
+    "id": "677",
     "invid": "31187",
     "specid": "95112",
     "groupnames": "",
@@ -7304,7 +7447,7 @@
     "groupnameew": ""
   },
   {
-    "id": "665",
+    "id": "678",
     "invid": "31187",
     "specid": "95113",
     "groupnames": "",
@@ -7315,7 +7458,7 @@
     "groupnameew": ""
   },
   {
-    "id": "666",
+    "id": "679",
     "invid": "31187",
     "specid": "95114",
     "groupnames": "",
@@ -7326,7 +7469,7 @@
     "groupnameew": ""
   },
   {
-    "id": "667",
+    "id": "680",
     "invid": "31187",
     "specid": "95115",
     "groupnames": "",
@@ -7337,7 +7480,7 @@
     "groupnameew": ""
   },
   {
-    "id": "668",
+    "id": "681",
     "invid": "31187",
     "specid": "95116",
     "groupnames": "Spindle:",
@@ -7348,7 +7491,7 @@
     "groupnameew": ""
   },
   {
-    "id": "669",
+    "id": "682",
     "invid": "31187",
     "specid": "95117",
     "groupnames": "",
@@ -7359,7 +7502,7 @@
     "groupnameew": ""
   },
   {
-    "id": "670",
+    "id": "683",
     "invid": "31187",
     "specid": "95118",
     "groupnames": "",
@@ -7370,7 +7513,7 @@
     "groupnameew": ""
   },
   {
-    "id": "671",
+    "id": "684",
     "invid": "31187",
     "specid": "95119",
     "groupnames": "",
@@ -7381,7 +7524,7 @@
     "groupnameew": ""
   },
   {
-    "id": "672",
+    "id": "685",
     "invid": "31187",
     "specid": "95120",
     "groupnames": "Tool Changer:",
@@ -7392,7 +7535,7 @@
     "groupnameew": ""
   },
   {
-    "id": "673",
+    "id": "686",
     "invid": "31188",
     "specid": "95121",
     "groupnames": "Capacity:",
@@ -7403,7 +7546,7 @@
     "groupnameew": ""
   },
   {
-    "id": "674",
+    "id": "687",
     "invid": "31188",
     "specid": "95122",
     "groupnames": "",
@@ -7414,7 +7557,7 @@
     "groupnameew": ""
   },
   {
-    "id": "675",
+    "id": "688",
     "invid": "31188",
     "specid": "95123",
     "groupnames": "",
@@ -7425,7 +7568,7 @@
     "groupnameew": ""
   },
   {
-    "id": "676",
+    "id": "689",
     "invid": "31188",
     "specid": "95124",
     "groupnames": "",
@@ -7436,7 +7579,7 @@
     "groupnameew": ""
   },
   {
-    "id": "677",
+    "id": "690",
     "invid": "31188",
     "specid": "95125",
     "groupnames": "Spindle:",
@@ -7447,7 +7590,7 @@
     "groupnameew": ""
   },
   {
-    "id": "678",
+    "id": "691",
     "invid": "31188",
     "specid": "95126",
     "groupnames": "",
@@ -7458,7 +7601,7 @@
     "groupnameew": ""
   },
   {
-    "id": "679",
+    "id": "692",
     "invid": "31188",
     "specid": "95127",
     "groupnames": "",
@@ -7469,7 +7612,7 @@
     "groupnameew": ""
   },
   {
-    "id": "680",
+    "id": "693",
     "invid": "31188",
     "specid": "95128",
     "groupnames": "",
@@ -7480,7 +7623,7 @@
     "groupnameew": ""
   },
   {
-    "id": "681",
+    "id": "694",
     "invid": "31188",
     "specid": "95129",
     "groupnames": "",
@@ -7491,7 +7634,7 @@
     "groupnameew": ""
   },
   {
-    "id": "682",
+    "id": "695",
     "invid": "31188",
     "specid": "95130",
     "groupnames": "Turret:",
@@ -7502,7 +7645,7 @@
     "groupnameew": ""
   },
   {
-    "id": "683",
+    "id": "696",
     "invid": "31188",
     "specid": "95131",
     "groupnames": "",
@@ -7513,7 +7656,7 @@
     "groupnameew": ""
   },
   {
-    "id": "684",
+    "id": "697",
     "invid": "31188",
     "specid": "95132",
     "groupnames": "",
@@ -7524,7 +7667,7 @@
     "groupnameew": ""
   },
   {
-    "id": "685",
+    "id": "698",
     "invid": "31188",
     "specid": "95133",
     "groupnames": "Tailstock:",
@@ -7535,7 +7678,7 @@
     "groupnameew": ""
   },
   {
-    "id": "686",
+    "id": "699",
     "invid": "31188",
     "specid": "95136",
     "groupnames": "",
@@ -7546,7 +7689,7 @@
     "groupnameew": ""
   },
   {
-    "id": "687",
+    "id": "700",
     "invid": "31188",
     "specid": "95137",
     "groupnames": "Chuck:",
@@ -7557,7 +7700,7 @@
     "groupnameew": ""
   },
   {
-    "id": "688",
+    "id": "701",
     "invid": "31188",
     "specid": "95138",
     "groupnames": "",
@@ -7568,7 +7711,7 @@
     "groupnameew": ""
   },
   {
-    "id": "689",
+    "id": "702",
     "invid": "31188",
     "specid": "95139",
     "groupnames": "",
@@ -7579,7 +7722,7 @@
     "groupnameew": ""
   },
   {
-    "id": "690",
+    "id": "703",
     "invid": "31189",
     "specid": "95143",
     "groupnames": "Travels:",
@@ -7590,7 +7733,7 @@
     "groupnameew": ""
   },
   {
-    "id": "691",
+    "id": "704",
     "invid": "31189",
     "specid": "95144",
     "groupnames": "",
@@ -7601,7 +7744,7 @@
     "groupnameew": ""
   },
   {
-    "id": "692",
+    "id": "705",
     "invid": "31189",
     "specid": "95145",
     "groupnames": "",
@@ -7612,7 +7755,7 @@
     "groupnameew": ""
   },
   {
-    "id": "693",
+    "id": "706",
     "invid": "31189",
     "specid": "95146",
     "groupnames": "",
@@ -7623,7 +7766,7 @@
     "groupnameew": ""
   },
   {
-    "id": "694",
+    "id": "707",
     "invid": "31189",
     "specid": "95147",
     "groupnames": "",
@@ -7634,7 +7777,7 @@
     "groupnameew": ""
   },
   {
-    "id": "695",
+    "id": "708",
     "invid": "31189",
     "specid": "95148",
     "groupnames": "Wire:",
@@ -7645,7 +7788,7 @@
     "groupnameew": ""
   },
   {
-    "id": "696",
+    "id": "709",
     "invid": "31189",
     "specid": "95149",
     "groupnames": "",
@@ -7656,7 +7799,7 @@
     "groupnameew": ""
   },
   {
-    "id": "697",
+    "id": "710",
     "invid": "31189",
     "specid": "95150",
     "groupnames": "Tank:",
@@ -7667,7 +7810,7 @@
     "groupnameew": ""
   },
   {
-    "id": "698",
+    "id": "711",
     "invid": "31189",
     "specid": "95151",
     "groupnames": "",
@@ -7678,7 +7821,7 @@
     "groupnameew": ""
   },
   {
-    "id": "699",
+    "id": "712",
     "invid": "31190",
     "specid": "95154",
     "groupnames": "Capacity:",
@@ -7689,7 +7832,7 @@
     "groupnameew": ""
   },
   {
-    "id": "700",
+    "id": "713",
     "invid": "31190",
     "specid": "95156",
     "groupnames": "",
@@ -7700,7 +7843,7 @@
     "groupnameew": ""
   },
   {
-    "id": "701",
+    "id": "714",
     "invid": "31190",
     "specid": "95157",
     "groupnames": "",
@@ -7711,7 +7854,7 @@
     "groupnameew": ""
   },
   {
-    "id": "702",
+    "id": "715",
     "invid": "31190",
     "specid": "95158",
     "groupnames": "Spindle:",
@@ -7722,7 +7865,7 @@
     "groupnameew": ""
   },
   {
-    "id": "703",
+    "id": "716",
     "invid": "31190",
     "specid": "95159",
     "groupnames": "",
@@ -7733,7 +7876,7 @@
     "groupnameew": ""
   },
   {
-    "id": "704",
+    "id": "717",
     "invid": "31190",
     "specid": "95160",
     "groupnames": "",
@@ -7744,7 +7887,7 @@
     "groupnameew": ""
   },
   {
-    "id": "705",
+    "id": "718",
     "invid": "31190",
     "specid": "95161",
     "groupnames": "",
@@ -7755,7 +7898,7 @@
     "groupnameew": ""
   },
   {
-    "id": "706",
+    "id": "719",
     "invid": "31190",
     "specid": "95163",
     "groupnames": "Turret:",
@@ -7766,7 +7909,7 @@
     "groupnameew": ""
   },
   {
-    "id": "707",
+    "id": "720",
     "invid": "31190",
     "specid": "95173",
     "groupnames": "Chuck:",
@@ -7777,7 +7920,7 @@
     "groupnameew": ""
   },
   {
-    "id": "708",
+    "id": "721",
     "invid": "31190",
     "specid": "95174",
     "groupnames": "",
@@ -7788,7 +7931,7 @@
     "groupnameew": ""
   },
   {
-    "id": "709",
+    "id": "722",
     "invid": "31190",
     "specid": "95175",
     "groupnames": "",
@@ -7799,7 +7942,359 @@
     "groupnameew": ""
   },
   {
-    "id": "710",
+    "id": "723",
+    "invid": "31191",
+    "specid": "95176",
+    "groupnames": "Table:",
+    "description": "Width",
+    "specvalues": "24 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "724",
+    "invid": "31191",
+    "specid": "95177",
+    "groupnames": "",
+    "description": "Length",
+    "specvalues": "54 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "725",
+    "invid": "31191",
+    "specid": "95178",
+    "groupnames": "",
+    "description": "Maximum Table Load",
+    "specvalues": "3500 lbs",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "726",
+    "invid": "31191",
+    "specid": "95179",
+    "groupnames": "Travels:",
+    "description": "X-Axis Travel",
+    "specvalues": "40 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "727",
+    "invid": "31191",
+    "specid": "95180",
+    "groupnames": "",
+    "description": "Y-Axis Travel",
+    "specvalues": "26 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "728",
+    "invid": "31191",
+    "specid": "95181",
+    "groupnames": "",
+    "description": "Z-Axis Travel",
+    "specvalues": "25 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "729",
+    "invid": "31191",
+    "specid": "95182",
+    "groupnames": "",
+    "description": "Spindle Nose to Table Top Minimum",
+    "specvalues": "4.2 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "730",
+    "invid": "31191",
+    "specid": "95183",
+    "groupnames": "",
+    "description": "                                           Maximum",
+    "specvalues": "29.2 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "731",
+    "invid": "31191",
+    "specid": "95184",
+    "groupnames": "Spindle:",
+    "description": "Spindle Speed: Minimum (RPM)",
+    "specvalues": "0 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "732",
+    "invid": "31191",
+    "specid": "95185",
+    "groupnames": "",
+    "description": "                       Maximum",
+    "specvalues": "8100 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "733",
+    "invid": "31191",
+    "specid": "95186",
+    "groupnames": "",
+    "description": "Spindle Taper",
+    "specvalues": "40 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "734",
+    "invid": "31191",
+    "specid": "95187",
+    "groupnames": "",
+    "description": "Main Motor (HP)",
+    "specvalues": "30 hp",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "735",
+    "invid": "31191",
+    "specid": "95188",
+    "groupnames": "Tool Changer:",
+    "description": "Tool Changer Positions",
+    "specvalues": "30+1 atc",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "736",
+    "invid": "31192",
+    "specid": "95189",
+    "groupnames": "Capacity:",
+    "description": "Swing",
+    "specvalues": "40 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "737",
+    "invid": "31192",
+    "specid": "95190",
+    "groupnames": "",
+    "description": "Swing Over Cross Slide",
+    "specvalues": "25 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "738",
+    "invid": "31192",
+    "specid": "95191",
+    "groupnames": "",
+    "description": "Maximum Machining Diameter",
+    "specvalues": "25.5 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "739",
+    "invid": "31192",
+    "specid": "95192",
+    "groupnames": "",
+    "description": "Distance Between Centers",
+    "specvalues": "44 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "740",
+    "invid": "31192",
+    "specid": "95193",
+    "groupnames": "Spindle:",
+    "description": "Spindle Speed: Minimum (RPM)",
+    "specvalues": "0 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "741",
+    "invid": "31192",
+    "specid": "95194",
+    "groupnames": "",
+    "description": "                       Maximum",
+    "specvalues": "1400 rpm",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "742",
+    "invid": "31192",
+    "specid": "95195",
+    "groupnames": "",
+    "description": "Spindle Bore",
+    "specvalues": "7.08 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "743",
+    "invid": "31192",
+    "specid": "95196",
+    "groupnames": "",
+    "description": "Main Motor",
+    "specvalues": "55 hp",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "744",
+    "invid": "31192",
+    "specid": "95197",
+    "groupnames": "",
+    "description": "Spindle Nose",
+    "specvalues": "A2-11 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "745",
+    "invid": "31192",
+    "specid": "95198",
+    "groupnames": "Turret:",
+    "description": "Number Of Positions",
+    "specvalues": "10 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "746",
+    "invid": "31192",
+    "specid": "95199",
+    "groupnames": "",
+    "description": "X-Axis Travel",
+    "specvalues": "17 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "747",
+    "invid": "31192",
+    "specid": "95200",
+    "groupnames": "",
+    "description": "Z-Axis Travel",
+    "specvalues": "44 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "748",
+    "invid": "31192",
+    "specid": "95201",
+    "groupnames": "Tailstock:",
+    "description": "Quill Diameter",
+    "specvalues": "4 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "749",
+    "invid": "31192",
+    "specid": "95202",
+    "groupnames": "",
+    "description": "Quill Travel",
+    "specvalues": "6 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "750",
+    "invid": "31192",
+    "specid": "95203",
+    "groupnames": "",
+    "description": "Taper",
+    "specvalues": "5 MT",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "751",
+    "invid": "31192",
+    "specid": "95204",
+    "groupnames": "",
+    "description": "Body Travel",
+    "specvalues": "33.5 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "752",
+    "invid": "31192",
+    "specid": "95205",
+    "groupnames": "Chuck:",
+    "description": "Diameter",
+    "specvalues": "18 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "753",
+    "invid": "31192",
+    "specid": "95206",
+    "groupnames": "",
+    "description": "Hole Thru",
+    "specvalues": "6.5 \"",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "754",
+    "invid": "31192",
+    "specid": "95207",
+    "groupnames": "",
+    "description": "Number of Jaws",
+    "specvalues": "3 ",
+    "ewid": "",
+    "equippedwith": "",
+    "groupnameew": ""
+  },
+  {
+    "id": "755",
     "invid": "31119",
     "specid": "83872",
     "groupnames": "Specifications:",
@@ -7810,7 +8305,7 @@
     "groupnameew": ""
   },
   {
-    "id": "711",
+    "id": "756",
     "invid": "31119",
     "specid": "83873",
     "groupnames": "",
@@ -7821,7 +8316,7 @@
     "groupnameew": ""
   },
   {
-    "id": "712",
+    "id": "757",
     "invid": "31119",
     "specid": "83874",
     "groupnames": "",
@@ -7832,7 +8327,7 @@
     "groupnameew": ""
   },
   {
-    "id": "713",
+    "id": "758",
     "invid": "31119",
     "specid": "83875",
     "groupnames": "",
@@ -7843,7 +8338,7 @@
     "groupnameew": ""
   },
   {
-    "id": "714",
+    "id": "759",
     "invid": "31119",
     "specid": "83876",
     "groupnames": "",
@@ -7854,7 +8349,7 @@
     "groupnameew": ""
   },
   {
-    "id": "715",
+    "id": "760",
     "invid": "31119",
     "specid": "83877",
     "groupnames": "",
@@ -7865,7 +8360,7 @@
     "groupnameew": ""
   },
   {
-    "id": "716",
+    "id": "761",
     "invid": "31119",
     "specid": "83878",
     "groupnames": "",
@@ -7876,7 +8371,7 @@
     "groupnameew": ""
   },
   {
-    "id": "717",
+    "id": "762",
     "invid": "31119",
     "specid": "83879",
     "groupnames": "",
@@ -7887,7 +8382,7 @@
     "groupnameew": ""
   },
   {
-    "id": "718",
+    "id": "763",
     "invid": "31119",
     "specid": "83880",
     "groupnames": "",
@@ -7898,7 +8393,7 @@
     "groupnameew": ""
   },
   {
-    "id": "719",
+    "id": "764",
     "invid": "31119",
     "specid": "83881",
     "groupnames": "",
@@ -7909,7 +8404,7 @@
     "groupnameew": ""
   },
   {
-    "id": "720",
+    "id": "765",
     "invid": "31119",
     "specid": "83882",
     "groupnames": "",
@@ -7920,7 +8415,7 @@
     "groupnameew": ""
   },
   {
-    "id": "721",
+    "id": "766",
     "invid": "31122",
     "specid": "83883",
     "groupnames": "Dimensions:",
@@ -7931,7 +8426,7 @@
     "groupnameew": ""
   },
   {
-    "id": "722",
+    "id": "767",
     "invid": "31122",
     "specid": "83884",
     "groupnames": "",
@@ -7942,7 +8437,7 @@
     "groupnameew": ""
   },
   {
-    "id": "723",
+    "id": "768",
     "invid": "31122",
     "specid": "83885",
     "groupnames": "",
@@ -7953,7 +8448,7 @@
     "groupnameew": ""
   },
   {
-    "id": "724",
+    "id": "769",
     "invid": "31139",
     "specid": "83897",
     "groupnames": "Dimensions:",
@@ -7964,7 +8459,7 @@
     "groupnameew": ""
   },
   {
-    "id": "725",
+    "id": "770",
     "invid": "31139",
     "specid": "83898",
     "groupnames": "",
@@ -7975,7 +8470,7 @@
     "groupnameew": ""
   },
   {
-    "id": "726",
+    "id": "771",
     "invid": "31139",
     "specid": "83899",
     "groupnames": "",
@@ -7986,7 +8481,7 @@
     "groupnameew": ""
   },
   {
-    "id": "727",
+    "id": "772",
     "invid": "31158",
     "specid": "83900",
     "groupnames": "Specification:",
@@ -7997,7 +8492,7 @@
     "groupnameew": ""
   },
   {
-    "id": "728",
+    "id": "773",
     "invid": "31158",
     "specid": "83901",
     "groupnames": "",
@@ -8008,7 +8503,7 @@
     "groupnameew": ""
   },
   {
-    "id": "729",
+    "id": "774",
     "invid": "31158",
     "specid": "83902",
     "groupnames": "",
@@ -8019,7 +8514,7 @@
     "groupnameew": ""
   },
   {
-    "id": "730",
+    "id": "775",
     "invid": "31158",
     "specid": "83903",
     "groupnames": "",
@@ -8030,7 +8525,7 @@
     "groupnameew": ""
   },
   {
-    "id": "731",
+    "id": "776",
     "invid": "31158",
     "specid": "83904",
     "groupnames": "",
@@ -8041,7 +8536,7 @@
     "groupnameew": ""
   },
   {
-    "id": "732",
+    "id": "777",
     "invid": "31158",
     "specid": "83905",
     "groupnames": "",
@@ -8052,7 +8547,7 @@
     "groupnameew": ""
   },
   {
-    "id": "733",
+    "id": "778",
     "invid": "31158",
     "specid": "83906",
     "groupnames": "",
@@ -8063,7 +8558,7 @@
     "groupnameew": ""
   },
   {
-    "id": "734",
+    "id": "779",
     "invid": "31158",
     "specid": "83907",
     "groupnames": "",
@@ -8074,7 +8569,7 @@
     "groupnameew": ""
   },
   {
-    "id": "735",
+    "id": "780",
     "invid": "31158",
     "specid": "83908",
     "groupnames": "",
@@ -8085,7 +8580,7 @@
     "groupnameew": ""
   },
   {
-    "id": "736",
+    "id": "781",
     "invid": "31158",
     "specid": "83909",
     "groupnames": "",
@@ -8096,7 +8591,7 @@
     "groupnameew": ""
   },
   {
-    "id": "737",
+    "id": "782",
     "invid": "31158",
     "specid": "83910",
     "groupnames": "",
@@ -8107,7 +8602,7 @@
     "groupnameew": ""
   },
   {
-    "id": "738",
+    "id": "783",
     "invid": "31158",
     "specid": "83911",
     "groupnames": "",
@@ -8118,7 +8613,7 @@
     "groupnameew": ""
   },
   {
-    "id": "739",
+    "id": "784",
     "invid": "31158",
     "specid": "83912",
     "groupnames": "",
@@ -8129,7 +8624,7 @@
     "groupnameew": ""
   },
   {
-    "id": "740",
+    "id": "785",
     "invid": "31160",
     "specid": "83913",
     "groupnames": "",
@@ -8140,7 +8635,7 @@
     "groupnameew": ""
   },
   {
-    "id": "741",
+    "id": "786",
     "invid": "31160",
     "specid": "83914",
     "groupnames": "",
@@ -8151,7 +8646,7 @@
     "groupnameew": ""
   },
   {
-    "id": "742",
+    "id": "787",
     "invid": "31160",
     "specid": "83915",
     "groupnames": "",
@@ -8162,7 +8657,7 @@
     "groupnameew": ""
   },
   {
-    "id": "743",
+    "id": "788",
     "invid": "31169",
     "specid": "83916",
     "groupnames": "Dimensions:",
@@ -8173,7 +8668,7 @@
     "groupnameew": ""
   },
   {
-    "id": "744",
+    "id": "789",
     "invid": "31169",
     "specid": "83917",
     "groupnames": "",
@@ -8184,7 +8679,7 @@
     "groupnameew": ""
   },
   {
-    "id": "745",
+    "id": "790",
     "invid": "31169",
     "specid": "83918",
     "groupnames": "",
@@ -8195,7 +8690,7 @@
     "groupnameew": ""
   },
   {
-    "id": "746",
+    "id": "791",
     "invid": "31171",
     "specid": "83919",
     "groupnames": "Specifications:",
@@ -8206,7 +8701,7 @@
     "groupnameew": ""
   },
   {
-    "id": "747",
+    "id": "792",
     "invid": "31171",
     "specid": "83920",
     "groupnames": "",
@@ -8217,7 +8712,7 @@
     "groupnameew": ""
   },
   {
-    "id": "748",
+    "id": "793",
     "invid": "31171",
     "specid": "83921",
     "groupnames": "",
@@ -8228,7 +8723,7 @@
     "groupnameew": ""
   },
   {
-    "id": "749",
+    "id": "794",
     "invid": "31171",
     "specid": "83922",
     "groupnames": "",
@@ -8239,7 +8734,7 @@
     "groupnameew": ""
   },
   {
-    "id": "750",
+    "id": "795",
     "invid": "31171",
     "specid": "83923",
     "groupnames": "",
@@ -8250,7 +8745,7 @@
     "groupnameew": ""
   },
   {
-    "id": "751",
+    "id": "796",
     "invid": "31171",
     "specid": "83924",
     "groupnames": "",
@@ -8261,7 +8756,7 @@
     "groupnameew": ""
   },
   {
-    "id": "752",
+    "id": "797",
     "invid": "31189",
     "specid": "83925",
     "groupnames": "Additional Specs:",
@@ -8272,7 +8767,7 @@
     "groupnameew": ""
   },
   {
-    "id": "753",
+    "id": "798",
     "invid": "31189",
     "specid": "83926",
     "groupnames": "",
@@ -8283,7 +8778,7 @@
     "groupnameew": ""
   },
   {
-    "id": "754",
+    "id": "799",
     "invid": "31189",
     "specid": "83927",
     "groupnames": "",
@@ -8294,7 +8789,7 @@
     "groupnameew": ""
   },
   {
-    "id": "755",
+    "id": "800",
     "invid": "31189",
     "specid": "83928",
     "groupnames": "",
@@ -8305,7 +8800,7 @@
     "groupnameew": ""
   },
   {
-    "id": "756",
+    "id": "801",
     "invid": "31189",
     "specid": "83929",
     "groupnames": "",
@@ -8316,7 +8811,7 @@
     "groupnameew": ""
   },
   {
-    "id": "757",
+    "id": "802",
     "invid": "31189",
     "specid": "83930",
     "groupnames": "",
@@ -8327,7 +8822,7 @@
     "groupnameew": ""
   },
   {
-    "id": "758",
+    "id": "803",
     "invid": "30684",
     "specid": "",
     "groupnames": "",
@@ -8338,7 +8833,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "759",
+    "id": "804",
     "invid": "30877",
     "specid": "",
     "groupnames": "",
@@ -8349,7 +8844,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "760",
+    "id": "805",
     "invid": "30877",
     "specid": "",
     "groupnames": "",
@@ -8360,7 +8855,7 @@
     "groupnameew": ""
   },
   {
-    "id": "761",
+    "id": "806",
     "invid": "30877",
     "specid": "",
     "groupnames": "",
@@ -8371,7 +8866,7 @@
     "groupnameew": ""
   },
   {
-    "id": "762",
+    "id": "807",
     "invid": "30877",
     "specid": "",
     "groupnames": "",
@@ -8382,7 +8877,7 @@
     "groupnameew": ""
   },
   {
-    "id": "763",
+    "id": "808",
     "invid": "30877",
     "specid": "",
     "groupnames": "",
@@ -8393,7 +8888,7 @@
     "groupnameew": ""
   },
   {
-    "id": "764",
+    "id": "809",
     "invid": "30877",
     "specid": "",
     "groupnames": "",
@@ -8404,7 +8899,7 @@
     "groupnameew": ""
   },
   {
-    "id": "765",
+    "id": "810",
     "invid": "30877",
     "specid": "",
     "groupnames": "",
@@ -8415,7 +8910,7 @@
     "groupnameew": ""
   },
   {
-    "id": "766",
+    "id": "811",
     "invid": "30877",
     "specid": "",
     "groupnames": "",
@@ -8426,7 +8921,7 @@
     "groupnameew": ""
   },
   {
-    "id": "767",
+    "id": "812",
     "invid": "30965",
     "specid": "",
     "groupnames": "",
@@ -8437,7 +8932,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "768",
+    "id": "813",
     "invid": "30965",
     "specid": "",
     "groupnames": "",
@@ -8448,7 +8943,7 @@
     "groupnameew": ""
   },
   {
-    "id": "769",
+    "id": "814",
     "invid": "30965",
     "specid": "",
     "groupnames": "",
@@ -8459,7 +8954,7 @@
     "groupnameew": ""
   },
   {
-    "id": "770",
+    "id": "815",
     "invid": "30965",
     "specid": "",
     "groupnames": "",
@@ -8470,7 +8965,7 @@
     "groupnameew": ""
   },
   {
-    "id": "771",
+    "id": "816",
     "invid": "30965",
     "specid": "",
     "groupnames": "",
@@ -8481,7 +8976,7 @@
     "groupnameew": ""
   },
   {
-    "id": "772",
+    "id": "817",
     "invid": "30965",
     "specid": "",
     "groupnames": "",
@@ -8492,7 +8987,7 @@
     "groupnameew": ""
   },
   {
-    "id": "773",
+    "id": "818",
     "invid": "30965",
     "specid": "",
     "groupnames": "",
@@ -8503,7 +8998,7 @@
     "groupnameew": ""
   },
   {
-    "id": "774",
+    "id": "819",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -8514,7 +9009,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "775",
+    "id": "820",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -8525,7 +9020,7 @@
     "groupnameew": ""
   },
   {
-    "id": "776",
+    "id": "821",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -8536,7 +9031,7 @@
     "groupnameew": ""
   },
   {
-    "id": "777",
+    "id": "822",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -8547,7 +9042,7 @@
     "groupnameew": ""
   },
   {
-    "id": "778",
+    "id": "823",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -8558,7 +9053,7 @@
     "groupnameew": ""
   },
   {
-    "id": "779",
+    "id": "824",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -8569,7 +9064,7 @@
     "groupnameew": ""
   },
   {
-    "id": "780",
+    "id": "825",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -8580,7 +9075,7 @@
     "groupnameew": ""
   },
   {
-    "id": "781",
+    "id": "826",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -8591,7 +9086,7 @@
     "groupnameew": ""
   },
   {
-    "id": "782",
+    "id": "827",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -8602,7 +9097,7 @@
     "groupnameew": ""
   },
   {
-    "id": "783",
+    "id": "828",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -8613,7 +9108,7 @@
     "groupnameew": ""
   },
   {
-    "id": "784",
+    "id": "829",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -8624,7 +9119,7 @@
     "groupnameew": ""
   },
   {
-    "id": "785",
+    "id": "830",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -8635,7 +9130,7 @@
     "groupnameew": ""
   },
   {
-    "id": "786",
+    "id": "831",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -8646,7 +9141,7 @@
     "groupnameew": ""
   },
   {
-    "id": "787",
+    "id": "832",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -8657,7 +9152,7 @@
     "groupnameew": ""
   },
   {
-    "id": "788",
+    "id": "833",
     "invid": "31001",
     "specid": "",
     "groupnames": "",
@@ -8668,7 +9163,7 @@
     "groupnameew": ""
   },
   {
-    "id": "789",
+    "id": "834",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -8679,7 +9174,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "790",
+    "id": "835",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -8690,7 +9185,7 @@
     "groupnameew": ""
   },
   {
-    "id": "791",
+    "id": "836",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -8701,7 +9196,7 @@
     "groupnameew": ""
   },
   {
-    "id": "792",
+    "id": "837",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -8712,7 +9207,7 @@
     "groupnameew": ""
   },
   {
-    "id": "793",
+    "id": "838",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -8723,7 +9218,7 @@
     "groupnameew": ""
   },
   {
-    "id": "794",
+    "id": "839",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -8734,7 +9229,7 @@
     "groupnameew": ""
   },
   {
-    "id": "795",
+    "id": "840",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -8745,7 +9240,7 @@
     "groupnameew": ""
   },
   {
-    "id": "796",
+    "id": "841",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -8756,7 +9251,7 @@
     "groupnameew": ""
   },
   {
-    "id": "797",
+    "id": "842",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -8767,7 +9262,7 @@
     "groupnameew": ""
   },
   {
-    "id": "798",
+    "id": "843",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -8778,7 +9273,7 @@
     "groupnameew": ""
   },
   {
-    "id": "799",
+    "id": "844",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -8789,7 +9284,7 @@
     "groupnameew": ""
   },
   {
-    "id": "800",
+    "id": "845",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -8800,7 +9295,7 @@
     "groupnameew": ""
   },
   {
-    "id": "801",
+    "id": "846",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -8811,7 +9306,7 @@
     "groupnameew": ""
   },
   {
-    "id": "802",
+    "id": "847",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -8822,7 +9317,7 @@
     "groupnameew": ""
   },
   {
-    "id": "803",
+    "id": "848",
     "invid": "31031",
     "specid": "",
     "groupnames": "",
@@ -8833,7 +9328,7 @@
     "groupnameew": ""
   },
   {
-    "id": "804",
+    "id": "849",
     "invid": "31044",
     "specid": "",
     "groupnames": "",
@@ -8844,7 +9339,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "805",
+    "id": "850",
     "invid": "31044",
     "specid": "",
     "groupnames": "",
@@ -8855,7 +9350,7 @@
     "groupnameew": ""
   },
   {
-    "id": "806",
+    "id": "851",
     "invid": "31044",
     "specid": "",
     "groupnames": "",
@@ -8866,7 +9361,7 @@
     "groupnameew": ""
   },
   {
-    "id": "807",
+    "id": "852",
     "invid": "31044",
     "specid": "",
     "groupnames": "",
@@ -8877,7 +9372,7 @@
     "groupnameew": ""
   },
   {
-    "id": "808",
+    "id": "853",
     "invid": "31044",
     "specid": "",
     "groupnames": "",
@@ -8888,7 +9383,7 @@
     "groupnameew": ""
   },
   {
-    "id": "809",
+    "id": "854",
     "invid": "31044",
     "specid": "",
     "groupnames": "",
@@ -8899,7 +9394,7 @@
     "groupnameew": ""
   },
   {
-    "id": "810",
+    "id": "855",
     "invid": "31044",
     "specid": "",
     "groupnames": "",
@@ -8910,7 +9405,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "811",
+    "id": "856",
     "invid": "31044",
     "specid": "",
     "groupnames": "",
@@ -8921,7 +9416,7 @@
     "groupnameew": ""
   },
   {
-    "id": "812",
+    "id": "857",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -8932,7 +9427,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "813",
+    "id": "858",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -8943,7 +9438,7 @@
     "groupnameew": ""
   },
   {
-    "id": "814",
+    "id": "859",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -8954,7 +9449,7 @@
     "groupnameew": ""
   },
   {
-    "id": "815",
+    "id": "860",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -8965,7 +9460,7 @@
     "groupnameew": ""
   },
   {
-    "id": "816",
+    "id": "861",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -8976,7 +9471,7 @@
     "groupnameew": ""
   },
   {
-    "id": "817",
+    "id": "862",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -8987,7 +9482,7 @@
     "groupnameew": ""
   },
   {
-    "id": "818",
+    "id": "863",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -8998,7 +9493,7 @@
     "groupnameew": ""
   },
   {
-    "id": "819",
+    "id": "864",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -9009,7 +9504,7 @@
     "groupnameew": ""
   },
   {
-    "id": "820",
+    "id": "865",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -9020,7 +9515,7 @@
     "groupnameew": ""
   },
   {
-    "id": "821",
+    "id": "866",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -9031,7 +9526,7 @@
     "groupnameew": ""
   },
   {
-    "id": "822",
+    "id": "867",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -9042,7 +9537,7 @@
     "groupnameew": ""
   },
   {
-    "id": "823",
+    "id": "868",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -9053,7 +9548,7 @@
     "groupnameew": ""
   },
   {
-    "id": "824",
+    "id": "869",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -9064,7 +9559,7 @@
     "groupnameew": ""
   },
   {
-    "id": "825",
+    "id": "870",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -9075,7 +9570,7 @@
     "groupnameew": ""
   },
   {
-    "id": "826",
+    "id": "871",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -9086,7 +9581,7 @@
     "groupnameew": ""
   },
   {
-    "id": "827",
+    "id": "872",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -9097,7 +9592,7 @@
     "groupnameew": ""
   },
   {
-    "id": "828",
+    "id": "873",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -9108,7 +9603,7 @@
     "groupnameew": ""
   },
   {
-    "id": "829",
+    "id": "874",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -9119,7 +9614,7 @@
     "groupnameew": ""
   },
   {
-    "id": "830",
+    "id": "875",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -9130,7 +9625,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "831",
+    "id": "876",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -9141,7 +9636,7 @@
     "groupnameew": ""
   },
   {
-    "id": "832",
+    "id": "877",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -9152,7 +9647,7 @@
     "groupnameew": ""
   },
   {
-    "id": "833",
+    "id": "878",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -9163,7 +9658,7 @@
     "groupnameew": ""
   },
   {
-    "id": "834",
+    "id": "879",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -9174,7 +9669,7 @@
     "groupnameew": ""
   },
   {
-    "id": "835",
+    "id": "880",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -9185,7 +9680,7 @@
     "groupnameew": ""
   },
   {
-    "id": "836",
+    "id": "881",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -9196,7 +9691,7 @@
     "groupnameew": ""
   },
   {
-    "id": "837",
+    "id": "882",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -9207,7 +9702,7 @@
     "groupnameew": ""
   },
   {
-    "id": "838",
+    "id": "883",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -9218,7 +9713,7 @@
     "groupnameew": ""
   },
   {
-    "id": "839",
+    "id": "884",
     "invid": "31071",
     "specid": "",
     "groupnames": "",
@@ -9229,7 +9724,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "840",
+    "id": "885",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -9240,7 +9735,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "841",
+    "id": "886",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -9251,7 +9746,7 @@
     "groupnameew": ""
   },
   {
-    "id": "842",
+    "id": "887",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -9262,7 +9757,7 @@
     "groupnameew": ""
   },
   {
-    "id": "843",
+    "id": "888",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -9273,7 +9768,7 @@
     "groupnameew": ""
   },
   {
-    "id": "844",
+    "id": "889",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -9284,7 +9779,7 @@
     "groupnameew": ""
   },
   {
-    "id": "845",
+    "id": "890",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -9295,7 +9790,7 @@
     "groupnameew": ""
   },
   {
-    "id": "846",
+    "id": "891",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -9306,7 +9801,7 @@
     "groupnameew": ""
   },
   {
-    "id": "847",
+    "id": "892",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -9317,7 +9812,7 @@
     "groupnameew": ""
   },
   {
-    "id": "848",
+    "id": "893",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -9328,7 +9823,7 @@
     "groupnameew": ""
   },
   {
-    "id": "849",
+    "id": "894",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -9339,7 +9834,7 @@
     "groupnameew": ""
   },
   {
-    "id": "850",
+    "id": "895",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -9350,7 +9845,7 @@
     "groupnameew": ""
   },
   {
-    "id": "851",
+    "id": "896",
     "invid": "31072",
     "specid": "",
     "groupnames": "",
@@ -9361,7 +9856,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "852",
+    "id": "897",
     "invid": "31082",
     "specid": "",
     "groupnames": "",
@@ -9372,7 +9867,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "853",
+    "id": "898",
     "invid": "31082",
     "specid": "",
     "groupnames": "",
@@ -9383,7 +9878,7 @@
     "groupnameew": ""
   },
   {
-    "id": "854",
+    "id": "899",
     "invid": "31082",
     "specid": "",
     "groupnames": "",
@@ -9394,7 +9889,7 @@
     "groupnameew": "Purchased Opts:"
   },
   {
-    "id": "855",
+    "id": "900",
     "invid": "31082",
     "specid": "",
     "groupnames": "",
@@ -9405,7 +9900,7 @@
     "groupnameew": ""
   },
   {
-    "id": "856",
+    "id": "901",
     "invid": "31082",
     "specid": "",
     "groupnames": "",
@@ -9416,7 +9911,7 @@
     "groupnameew": ""
   },
   {
-    "id": "857",
+    "id": "902",
     "invid": "31082",
     "specid": "",
     "groupnames": "",
@@ -9427,7 +9922,7 @@
     "groupnameew": ""
   },
   {
-    "id": "858",
+    "id": "903",
     "invid": "31082",
     "specid": "",
     "groupnames": "",
@@ -9438,7 +9933,7 @@
     "groupnameew": ""
   },
   {
-    "id": "859",
+    "id": "904",
     "invid": "31082",
     "specid": "",
     "groupnames": "",
@@ -9449,7 +9944,7 @@
     "groupnameew": ""
   },
   {
-    "id": "860",
+    "id": "905",
     "invid": "31087",
     "specid": "",
     "groupnames": "",
@@ -9460,7 +9955,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "861",
+    "id": "906",
     "invid": "31087",
     "specid": "",
     "groupnames": "",
@@ -9471,7 +9966,7 @@
     "groupnameew": ""
   },
   {
-    "id": "862",
+    "id": "907",
     "invid": "31087",
     "specid": "",
     "groupnames": "",
@@ -9482,7 +9977,7 @@
     "groupnameew": ""
   },
   {
-    "id": "863",
+    "id": "908",
     "invid": "31087",
     "specid": "",
     "groupnames": "",
@@ -9493,7 +9988,7 @@
     "groupnameew": ""
   },
   {
-    "id": "864",
+    "id": "909",
     "invid": "31087",
     "specid": "",
     "groupnames": "",
@@ -9504,7 +9999,7 @@
     "groupnameew": ""
   },
   {
-    "id": "865",
+    "id": "910",
     "invid": "31087",
     "specid": "",
     "groupnames": "",
@@ -9515,7 +10010,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "866",
+    "id": "911",
     "invid": "31088",
     "specid": "",
     "groupnames": "",
@@ -9526,7 +10021,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "867",
+    "id": "912",
     "invid": "31088",
     "specid": "",
     "groupnames": "",
@@ -9537,7 +10032,7 @@
     "groupnameew": ""
   },
   {
-    "id": "868",
+    "id": "913",
     "invid": "31088",
     "specid": "",
     "groupnames": "",
@@ -9548,7 +10043,7 @@
     "groupnameew": ""
   },
   {
-    "id": "869",
+    "id": "914",
     "invid": "31088",
     "specid": "",
     "groupnames": "",
@@ -9559,7 +10054,7 @@
     "groupnameew": ""
   },
   {
-    "id": "870",
+    "id": "915",
     "invid": "31088",
     "specid": "",
     "groupnames": "",
@@ -9570,7 +10065,7 @@
     "groupnameew": ""
   },
   {
-    "id": "871",
+    "id": "916",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9581,7 +10076,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "872",
+    "id": "917",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9592,7 +10087,7 @@
     "groupnameew": ""
   },
   {
-    "id": "873",
+    "id": "918",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9603,7 +10098,7 @@
     "groupnameew": ""
   },
   {
-    "id": "874",
+    "id": "919",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9614,7 +10109,7 @@
     "groupnameew": ""
   },
   {
-    "id": "875",
+    "id": "920",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9625,7 +10120,7 @@
     "groupnameew": ""
   },
   {
-    "id": "876",
+    "id": "921",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9636,7 +10131,7 @@
     "groupnameew": ""
   },
   {
-    "id": "877",
+    "id": "922",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9647,7 +10142,7 @@
     "groupnameew": ""
   },
   {
-    "id": "878",
+    "id": "923",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9658,7 +10153,7 @@
     "groupnameew": ""
   },
   {
-    "id": "879",
+    "id": "924",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9669,7 +10164,7 @@
     "groupnameew": ""
   },
   {
-    "id": "880",
+    "id": "925",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9680,7 +10175,7 @@
     "groupnameew": ""
   },
   {
-    "id": "881",
+    "id": "926",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9691,7 +10186,7 @@
     "groupnameew": ""
   },
   {
-    "id": "882",
+    "id": "927",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9702,7 +10197,7 @@
     "groupnameew": ""
   },
   {
-    "id": "883",
+    "id": "928",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9713,7 +10208,7 @@
     "groupnameew": ""
   },
   {
-    "id": "884",
+    "id": "929",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9724,7 +10219,7 @@
     "groupnameew": ""
   },
   {
-    "id": "885",
+    "id": "930",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9735,7 +10230,7 @@
     "groupnameew": ""
   },
   {
-    "id": "886",
+    "id": "931",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9746,7 +10241,7 @@
     "groupnameew": ""
   },
   {
-    "id": "887",
+    "id": "932",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9757,7 +10252,7 @@
     "groupnameew": ""
   },
   {
-    "id": "888",
+    "id": "933",
     "invid": "31089",
     "specid": "",
     "groupnames": "",
@@ -9768,7 +10263,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "889",
+    "id": "934",
     "invid": "31093",
     "specid": "",
     "groupnames": "",
@@ -9779,7 +10274,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "890",
+    "id": "935",
     "invid": "31093",
     "specid": "",
     "groupnames": "",
@@ -9790,7 +10285,7 @@
     "groupnameew": ""
   },
   {
-    "id": "891",
+    "id": "936",
     "invid": "31093",
     "specid": "",
     "groupnames": "",
@@ -9801,7 +10296,7 @@
     "groupnameew": ""
   },
   {
-    "id": "892",
+    "id": "937",
     "invid": "31093",
     "specid": "",
     "groupnames": "",
@@ -9812,7 +10307,7 @@
     "groupnameew": ""
   },
   {
-    "id": "893",
+    "id": "938",
     "invid": "31093",
     "specid": "",
     "groupnames": "",
@@ -9823,7 +10318,7 @@
     "groupnameew": ""
   },
   {
-    "id": "894",
+    "id": "939",
     "invid": "31093",
     "specid": "",
     "groupnames": "",
@@ -9834,7 +10329,7 @@
     "groupnameew": ""
   },
   {
-    "id": "895",
+    "id": "940",
     "invid": "31094",
     "specid": "",
     "groupnames": "",
@@ -9845,7 +10340,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "896",
+    "id": "941",
     "invid": "31094",
     "specid": "",
     "groupnames": "",
@@ -9856,7 +10351,7 @@
     "groupnameew": ""
   },
   {
-    "id": "897",
+    "id": "942",
     "invid": "31094",
     "specid": "",
     "groupnames": "",
@@ -9867,7 +10362,7 @@
     "groupnameew": ""
   },
   {
-    "id": "898",
+    "id": "943",
     "invid": "31094",
     "specid": "",
     "groupnames": "",
@@ -9878,7 +10373,7 @@
     "groupnameew": ""
   },
   {
-    "id": "899",
+    "id": "944",
     "invid": "31094",
     "specid": "",
     "groupnames": "",
@@ -9889,7 +10384,7 @@
     "groupnameew": ""
   },
   {
-    "id": "900",
+    "id": "945",
     "invid": "31094",
     "specid": "",
     "groupnames": "",
@@ -9900,7 +10395,7 @@
     "groupnameew": ""
   },
   {
-    "id": "901",
+    "id": "946",
     "invid": "31094",
     "specid": "",
     "groupnames": "",
@@ -9911,7 +10406,7 @@
     "groupnameew": ""
   },
   {
-    "id": "902",
+    "id": "947",
     "invid": "31094",
     "specid": "",
     "groupnames": "",
@@ -9922,7 +10417,7 @@
     "groupnameew": "**"
   },
   {
-    "id": "903",
+    "id": "948",
     "invid": "31096",
     "specid": "",
     "groupnames": "",
@@ -9933,7 +10428,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "904",
+    "id": "949",
     "invid": "31096",
     "specid": "",
     "groupnames": "",
@@ -9944,7 +10439,7 @@
     "groupnameew": ""
   },
   {
-    "id": "905",
+    "id": "950",
     "invid": "31096",
     "specid": "",
     "groupnames": "",
@@ -9955,7 +10450,7 @@
     "groupnameew": ""
   },
   {
-    "id": "906",
+    "id": "951",
     "invid": "31096",
     "specid": "",
     "groupnames": "",
@@ -9966,7 +10461,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "907",
+    "id": "952",
     "invid": "31096",
     "specid": "",
     "groupnames": "",
@@ -9977,7 +10472,7 @@
     "groupnameew": ""
   },
   {
-    "id": "908",
+    "id": "953",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -9988,7 +10483,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "909",
+    "id": "954",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -9999,7 +10494,7 @@
     "groupnameew": ""
   },
   {
-    "id": "910",
+    "id": "955",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -10010,7 +10505,7 @@
     "groupnameew": ""
   },
   {
-    "id": "911",
+    "id": "956",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -10021,7 +10516,7 @@
     "groupnameew": ""
   },
   {
-    "id": "912",
+    "id": "957",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -10032,7 +10527,7 @@
     "groupnameew": ""
   },
   {
-    "id": "913",
+    "id": "958",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -10043,7 +10538,7 @@
     "groupnameew": ""
   },
   {
-    "id": "914",
+    "id": "959",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -10054,7 +10549,7 @@
     "groupnameew": ""
   },
   {
-    "id": "915",
+    "id": "960",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -10065,7 +10560,7 @@
     "groupnameew": ""
   },
   {
-    "id": "916",
+    "id": "961",
     "invid": "31098",
     "specid": "",
     "groupnames": "",
@@ -10076,7 +10571,7 @@
     "groupnameew": ""
   },
   {
-    "id": "917",
+    "id": "962",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -10087,7 +10582,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "918",
+    "id": "963",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -10098,7 +10593,7 @@
     "groupnameew": ""
   },
   {
-    "id": "919",
+    "id": "964",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -10109,7 +10604,7 @@
     "groupnameew": ""
   },
   {
-    "id": "920",
+    "id": "965",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -10120,7 +10615,7 @@
     "groupnameew": ""
   },
   {
-    "id": "921",
+    "id": "966",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -10131,7 +10626,7 @@
     "groupnameew": ""
   },
   {
-    "id": "922",
+    "id": "967",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -10142,7 +10637,7 @@
     "groupnameew": ""
   },
   {
-    "id": "923",
+    "id": "968",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -10153,7 +10648,7 @@
     "groupnameew": ""
   },
   {
-    "id": "924",
+    "id": "969",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -10164,7 +10659,7 @@
     "groupnameew": ""
   },
   {
-    "id": "925",
+    "id": "970",
     "invid": "31099",
     "specid": "",
     "groupnames": "",
@@ -10175,7 +10670,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "926",
+    "id": "971",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -10186,7 +10681,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "927",
+    "id": "972",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -10197,7 +10692,7 @@
     "groupnameew": ""
   },
   {
-    "id": "928",
+    "id": "973",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -10208,7 +10703,7 @@
     "groupnameew": ""
   },
   {
-    "id": "929",
+    "id": "974",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -10219,7 +10714,7 @@
     "groupnameew": ""
   },
   {
-    "id": "930",
+    "id": "975",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -10230,7 +10725,7 @@
     "groupnameew": ""
   },
   {
-    "id": "931",
+    "id": "976",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -10241,7 +10736,7 @@
     "groupnameew": ""
   },
   {
-    "id": "932",
+    "id": "977",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -10252,7 +10747,7 @@
     "groupnameew": ""
   },
   {
-    "id": "933",
+    "id": "978",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -10263,7 +10758,7 @@
     "groupnameew": ""
   },
   {
-    "id": "934",
+    "id": "979",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -10274,7 +10769,7 @@
     "groupnameew": ""
   },
   {
-    "id": "935",
+    "id": "980",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -10285,7 +10780,7 @@
     "groupnameew": ""
   },
   {
-    "id": "936",
+    "id": "981",
     "invid": "31100",
     "specid": "",
     "groupnames": "",
@@ -10296,7 +10791,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "937",
+    "id": "982",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -10307,7 +10802,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "938",
+    "id": "983",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -10318,7 +10813,7 @@
     "groupnameew": ""
   },
   {
-    "id": "939",
+    "id": "984",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -10329,7 +10824,7 @@
     "groupnameew": ""
   },
   {
-    "id": "940",
+    "id": "985",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -10340,7 +10835,7 @@
     "groupnameew": ""
   },
   {
-    "id": "941",
+    "id": "986",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -10351,7 +10846,7 @@
     "groupnameew": ""
   },
   {
-    "id": "942",
+    "id": "987",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -10362,7 +10857,7 @@
     "groupnameew": "Additonal Opts:"
   },
   {
-    "id": "943",
+    "id": "988",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -10373,7 +10868,7 @@
     "groupnameew": ""
   },
   {
-    "id": "944",
+    "id": "989",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -10384,7 +10879,7 @@
     "groupnameew": ""
   },
   {
-    "id": "945",
+    "id": "990",
     "invid": "31102",
     "specid": "",
     "groupnames": "",
@@ -10395,7 +10890,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "946",
+    "id": "991",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10406,7 +10901,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "947",
+    "id": "992",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10417,7 +10912,7 @@
     "groupnameew": ""
   },
   {
-    "id": "948",
+    "id": "993",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10428,7 +10923,7 @@
     "groupnameew": ""
   },
   {
-    "id": "949",
+    "id": "994",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10439,7 +10934,7 @@
     "groupnameew": ""
   },
   {
-    "id": "950",
+    "id": "995",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10450,7 +10945,7 @@
     "groupnameew": ""
   },
   {
-    "id": "951",
+    "id": "996",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10461,7 +10956,7 @@
     "groupnameew": ""
   },
   {
-    "id": "952",
+    "id": "997",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10472,7 +10967,7 @@
     "groupnameew": ""
   },
   {
-    "id": "953",
+    "id": "998",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10483,7 +10978,7 @@
     "groupnameew": ""
   },
   {
-    "id": "954",
+    "id": "999",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10494,7 +10989,7 @@
     "groupnameew": ""
   },
   {
-    "id": "955",
+    "id": "1000",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10505,7 +11000,7 @@
     "groupnameew": ""
   },
   {
-    "id": "956",
+    "id": "1001",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10516,7 +11011,7 @@
     "groupnameew": ""
   },
   {
-    "id": "957",
+    "id": "1002",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10527,7 +11022,7 @@
     "groupnameew": ""
   },
   {
-    "id": "958",
+    "id": "1003",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10538,7 +11033,7 @@
     "groupnameew": ""
   },
   {
-    "id": "959",
+    "id": "1004",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10549,7 +11044,7 @@
     "groupnameew": ""
   },
   {
-    "id": "960",
+    "id": "1005",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10560,7 +11055,7 @@
     "groupnameew": ""
   },
   {
-    "id": "961",
+    "id": "1006",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10571,7 +11066,7 @@
     "groupnameew": ""
   },
   {
-    "id": "962",
+    "id": "1007",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10582,7 +11077,7 @@
     "groupnameew": ""
   },
   {
-    "id": "963",
+    "id": "1008",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10593,7 +11088,7 @@
     "groupnameew": ""
   },
   {
-    "id": "964",
+    "id": "1009",
     "invid": "31112",
     "specid": "",
     "groupnames": "",
@@ -10604,7 +11099,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "965",
+    "id": "1010",
     "invid": "31119",
     "specid": "",
     "groupnames": "",
@@ -10615,7 +11110,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "966",
+    "id": "1011",
     "invid": "31119",
     "specid": "",
     "groupnames": "",
@@ -10626,7 +11121,7 @@
     "groupnameew": ""
   },
   {
-    "id": "967",
+    "id": "1012",
     "invid": "31119",
     "specid": "",
     "groupnames": "",
@@ -10637,7 +11132,7 @@
     "groupnameew": ""
   },
   {
-    "id": "968",
+    "id": "1013",
     "invid": "31119",
     "specid": "",
     "groupnames": "",
@@ -10648,7 +11143,7 @@
     "groupnameew": ""
   },
   {
-    "id": "969",
+    "id": "1014",
     "invid": "31119",
     "specid": "",
     "groupnames": "",
@@ -10659,7 +11154,7 @@
     "groupnameew": ""
   },
   {
-    "id": "970",
+    "id": "1015",
     "invid": "31119",
     "specid": "",
     "groupnames": "",
@@ -10670,7 +11165,7 @@
     "groupnameew": ""
   },
   {
-    "id": "971",
+    "id": "1016",
     "invid": "31122",
     "specid": "",
     "groupnames": "",
@@ -10681,7 +11176,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "972",
+    "id": "1017",
     "invid": "31122",
     "specid": "",
     "groupnames": "",
@@ -10692,7 +11187,7 @@
     "groupnameew": ""
   },
   {
-    "id": "973",
+    "id": "1018",
     "invid": "31122",
     "specid": "",
     "groupnames": "",
@@ -10703,7 +11198,7 @@
     "groupnameew": ""
   },
   {
-    "id": "974",
+    "id": "1019",
     "invid": "31122",
     "specid": "",
     "groupnames": "",
@@ -10714,7 +11209,7 @@
     "groupnameew": ""
   },
   {
-    "id": "975",
+    "id": "1020",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -10725,7 +11220,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "976",
+    "id": "1021",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -10736,7 +11231,7 @@
     "groupnameew": ""
   },
   {
-    "id": "977",
+    "id": "1022",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -10747,7 +11242,7 @@
     "groupnameew": "Options:"
   },
   {
-    "id": "978",
+    "id": "1023",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -10758,7 +11253,7 @@
     "groupnameew": ""
   },
   {
-    "id": "979",
+    "id": "1024",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -10769,7 +11264,7 @@
     "groupnameew": ""
   },
   {
-    "id": "980",
+    "id": "1025",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -10780,7 +11275,7 @@
     "groupnameew": ""
   },
   {
-    "id": "981",
+    "id": "1026",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -10791,7 +11286,7 @@
     "groupnameew": ""
   },
   {
-    "id": "982",
+    "id": "1027",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -10802,7 +11297,7 @@
     "groupnameew": ""
   },
   {
-    "id": "983",
+    "id": "1028",
     "invid": "31132",
     "specid": "",
     "groupnames": "",
@@ -10813,7 +11308,7 @@
     "groupnameew": ""
   },
   {
-    "id": "984",
+    "id": "1029",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -10824,7 +11319,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "985",
+    "id": "1030",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -10835,7 +11330,7 @@
     "groupnameew": ""
   },
   {
-    "id": "986",
+    "id": "1031",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -10846,7 +11341,7 @@
     "groupnameew": ""
   },
   {
-    "id": "987",
+    "id": "1032",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -10857,7 +11352,7 @@
     "groupnameew": ""
   },
   {
-    "id": "988",
+    "id": "1033",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -10868,7 +11363,7 @@
     "groupnameew": ""
   },
   {
-    "id": "989",
+    "id": "1034",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -10879,7 +11374,7 @@
     "groupnameew": ""
   },
   {
-    "id": "990",
+    "id": "1035",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -10890,7 +11385,7 @@
     "groupnameew": ""
   },
   {
-    "id": "991",
+    "id": "1036",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -10901,7 +11396,7 @@
     "groupnameew": ""
   },
   {
-    "id": "992",
+    "id": "1037",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -10912,7 +11407,7 @@
     "groupnameew": ""
   },
   {
-    "id": "993",
+    "id": "1038",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -10923,7 +11418,7 @@
     "groupnameew": ""
   },
   {
-    "id": "994",
+    "id": "1039",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -10934,7 +11429,7 @@
     "groupnameew": ""
   },
   {
-    "id": "995",
+    "id": "1040",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -10945,7 +11440,7 @@
     "groupnameew": ""
   },
   {
-    "id": "996",
+    "id": "1041",
     "invid": "31137",
     "specid": "",
     "groupnames": "",
@@ -10956,7 +11451,7 @@
     "groupnameew": ""
   },
   {
-    "id": "997",
+    "id": "1042",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -10967,7 +11462,7 @@
     "groupnameew": "Control:"
   },
   {
-    "id": "998",
+    "id": "1043",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -10978,7 +11473,7 @@
     "groupnameew": "Options Included:"
   },
   {
-    "id": "999",
+    "id": "1044",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -10989,7 +11484,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1000",
+    "id": "1045",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -11000,7 +11495,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1001",
+    "id": "1046",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -11011,7 +11506,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1002",
+    "id": "1047",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -11022,7 +11517,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1003",
+    "id": "1048",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -11033,7 +11528,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1004",
+    "id": "1049",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -11044,7 +11539,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1005",
+    "id": "1050",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -11055,7 +11550,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1006",
+    "id": "1051",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -11066,7 +11561,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1007",
+    "id": "1052",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -11077,7 +11572,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1008",
+    "id": "1053",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -11088,7 +11583,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1009",
+    "id": "1054",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -11099,7 +11594,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1010",
+    "id": "1055",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -11110,7 +11605,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1011",
+    "id": "1056",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -11121,7 +11616,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1012",
+    "id": "1057",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -11132,7 +11627,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1013",
+    "id": "1058",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -11143,7 +11638,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1014",
+    "id": "1059",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -11154,7 +11649,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1015",
+    "id": "1060",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -11165,7 +11660,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1016",
+    "id": "1061",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -11176,7 +11671,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1017",
+    "id": "1062",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -11187,7 +11682,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1018",
+    "id": "1063",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -11198,7 +11693,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1019",
+    "id": "1064",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -11209,7 +11704,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1020",
+    "id": "1065",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -11220,7 +11715,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1021",
+    "id": "1066",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -11231,7 +11726,7 @@
     "groupnameew": "Options:"
   },
   {
-    "id": "1022",
+    "id": "1067",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -11242,7 +11737,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1023",
+    "id": "1068",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -11253,7 +11748,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1024",
+    "id": "1069",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -11264,7 +11759,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1025",
+    "id": "1070",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -11275,7 +11770,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1026",
+    "id": "1071",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -11286,7 +11781,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1027",
+    "id": "1072",
     "invid": "31140",
     "specid": "",
     "groupnames": "",
@@ -11297,7 +11792,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1028",
+    "id": "1073",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -11308,7 +11803,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "1029",
+    "id": "1074",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -11319,7 +11814,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1030",
+    "id": "1075",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -11330,7 +11825,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1031",
+    "id": "1076",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -11341,7 +11836,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1032",
+    "id": "1077",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -11352,7 +11847,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1033",
+    "id": "1078",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -11363,7 +11858,7 @@
     "groupnameew": "Options:"
   },
   {
-    "id": "1034",
+    "id": "1079",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -11374,7 +11869,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1035",
+    "id": "1080",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -11385,7 +11880,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1036",
+    "id": "1081",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -11396,7 +11891,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1037",
+    "id": "1082",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -11407,7 +11902,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1038",
+    "id": "1083",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -11418,7 +11913,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1039",
+    "id": "1084",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -11429,7 +11924,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1040",
+    "id": "1085",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -11440,7 +11935,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1041",
+    "id": "1086",
     "invid": "31146",
     "specid": "",
     "groupnames": "",
@@ -11451,7 +11946,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "1042",
+    "id": "1087",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -11462,7 +11957,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1043",
+    "id": "1088",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -11473,7 +11968,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1044",
+    "id": "1089",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -11484,7 +11979,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1045",
+    "id": "1090",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -11495,7 +11990,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1046",
+    "id": "1091",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -11506,7 +12001,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1047",
+    "id": "1092",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -11517,7 +12012,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1048",
+    "id": "1093",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -11528,7 +12023,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1049",
+    "id": "1094",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -11539,7 +12034,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1050",
+    "id": "1095",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -11550,7 +12045,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1051",
+    "id": "1096",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -11561,7 +12056,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1052",
+    "id": "1097",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -11572,7 +12067,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "1053",
+    "id": "1098",
     "invid": "31147",
     "specid": "",
     "groupnames": "",
@@ -11583,7 +12078,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1054",
+    "id": "1099",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -11594,7 +12089,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "1055",
+    "id": "1100",
     "invid": "31139",
     "specid": "",
     "groupnames": "",
@@ -11605,7 +12100,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1056",
+    "id": "1101",
     "invid": "31068",
     "specid": "",
     "groupnames": "",
@@ -11616,7 +12111,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1057",
+    "id": "1102",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -11627,7 +12122,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1058",
+    "id": "1103",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -11638,7 +12133,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1059",
+    "id": "1104",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -11649,7 +12144,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1060",
+    "id": "1105",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -11660,7 +12155,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1061",
+    "id": "1106",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -11671,7 +12166,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1062",
+    "id": "1107",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -11682,7 +12177,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1063",
+    "id": "1108",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -11693,7 +12188,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1064",
+    "id": "1109",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -11704,7 +12199,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1065",
+    "id": "1110",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -11715,7 +12210,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1066",
+    "id": "1111",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -11726,7 +12221,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1067",
+    "id": "1112",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -11737,7 +12232,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1068",
+    "id": "1113",
     "invid": "31154",
     "specid": "",
     "groupnames": "",
@@ -11748,7 +12243,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1069",
+    "id": "1114",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -11759,7 +12254,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1070",
+    "id": "1115",
     "invid": "31156",
     "specid": "",
     "groupnames": "",
@@ -11770,7 +12265,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1071",
+    "id": "1116",
     "invid": "31156",
     "specid": "",
     "groupnames": "",
@@ -11781,7 +12276,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1072",
+    "id": "1117",
     "invid": "31156",
     "specid": "",
     "groupnames": "",
@@ -11792,7 +12287,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1073",
+    "id": "1118",
     "invid": "31156",
     "specid": "",
     "groupnames": "",
@@ -11803,7 +12298,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1074",
+    "id": "1119",
     "invid": "31156",
     "specid": "",
     "groupnames": "",
@@ -11814,7 +12309,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1075",
+    "id": "1120",
     "invid": "31157",
     "specid": "",
     "groupnames": "",
@@ -11825,7 +12320,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1076",
+    "id": "1121",
     "invid": "31157",
     "specid": "",
     "groupnames": "",
@@ -11836,7 +12331,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1077",
+    "id": "1122",
     "invid": "31157",
     "specid": "",
     "groupnames": "",
@@ -11847,7 +12342,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1078",
+    "id": "1123",
     "invid": "31157",
     "specid": "",
     "groupnames": "",
@@ -11858,7 +12353,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1079",
+    "id": "1124",
     "invid": "31157",
     "specid": "",
     "groupnames": "",
@@ -11869,7 +12364,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1080",
+    "id": "1125",
     "invid": "31157",
     "specid": "",
     "groupnames": "",
@@ -11880,7 +12375,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "1081",
+    "id": "1126",
     "invid": "31157",
     "specid": "",
     "groupnames": "",
@@ -11891,7 +12386,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1082",
+    "id": "1127",
     "invid": "31158",
     "specid": "",
     "groupnames": "",
@@ -11902,7 +12397,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1083",
+    "id": "1128",
     "invid": "31158",
     "specid": "",
     "groupnames": "",
@@ -11913,7 +12408,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1084",
+    "id": "1129",
     "invid": "31158",
     "specid": "",
     "groupnames": "",
@@ -11924,7 +12419,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1085",
+    "id": "1130",
     "invid": "31158",
     "specid": "",
     "groupnames": "",
@@ -11935,7 +12430,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1086",
+    "id": "1131",
     "invid": "31158",
     "specid": "",
     "groupnames": "",
@@ -11946,7 +12441,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1087",
+    "id": "1132",
     "invid": "31158",
     "specid": "",
     "groupnames": "",
@@ -11957,7 +12452,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1088",
+    "id": "1133",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -11968,7 +12463,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1089",
+    "id": "1134",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -11979,7 +12474,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1090",
+    "id": "1135",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -11990,7 +12485,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1091",
+    "id": "1136",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -12001,7 +12496,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1092",
+    "id": "1137",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -12012,7 +12507,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1093",
+    "id": "1138",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -12023,7 +12518,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1094",
+    "id": "1139",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -12034,7 +12529,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1095",
+    "id": "1140",
     "invid": "31155",
     "specid": "",
     "groupnames": "",
@@ -12045,7 +12540,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1096",
+    "id": "1141",
     "invid": "31160",
     "specid": "",
     "groupnames": "",
@@ -12056,7 +12551,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "1097",
+    "id": "1142",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -12067,7 +12562,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1098",
+    "id": "1143",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -12078,7 +12573,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1099",
+    "id": "1144",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -12089,7 +12584,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1100",
+    "id": "1145",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -12100,7 +12595,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1101",
+    "id": "1146",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -12111,7 +12606,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1102",
+    "id": "1147",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -12122,7 +12617,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1103",
+    "id": "1148",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -12133,7 +12628,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1104",
+    "id": "1149",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -12144,7 +12639,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1105",
+    "id": "1150",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -12155,7 +12650,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1106",
+    "id": "1151",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -12166,7 +12661,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1107",
+    "id": "1152",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -12177,7 +12672,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1108",
+    "id": "1153",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -12188,7 +12683,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1109",
+    "id": "1154",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -12199,7 +12694,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1110",
+    "id": "1155",
     "invid": "31162",
     "specid": "",
     "groupnames": "",
@@ -12210,7 +12705,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1111",
+    "id": "1156",
     "invid": "31163",
     "specid": "",
     "groupnames": "",
@@ -12221,7 +12716,7 @@
     "groupnameew": "Ewuiped With:"
   },
   {
-    "id": "1112",
+    "id": "1157",
     "invid": "31163",
     "specid": "",
     "groupnames": "",
@@ -12232,7 +12727,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1113",
+    "id": "1158",
     "invid": "31163",
     "specid": "",
     "groupnames": "",
@@ -12243,7 +12738,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1114",
+    "id": "1159",
     "invid": "31163",
     "specid": "",
     "groupnames": "",
@@ -12254,7 +12749,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1115",
+    "id": "1160",
     "invid": "31163",
     "specid": "",
     "groupnames": "",
@@ -12265,7 +12760,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1116",
+    "id": "1161",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -12276,7 +12771,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1117",
+    "id": "1162",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -12287,7 +12782,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1118",
+    "id": "1163",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -12298,7 +12793,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1119",
+    "id": "1164",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -12309,7 +12804,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1120",
+    "id": "1165",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -12320,7 +12815,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1121",
+    "id": "1166",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -12331,7 +12826,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1122",
+    "id": "1167",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -12342,7 +12837,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1123",
+    "id": "1168",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -12353,7 +12848,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1124",
+    "id": "1169",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -12364,7 +12859,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1125",
+    "id": "1170",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -12375,7 +12870,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1126",
+    "id": "1171",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -12386,7 +12881,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1127",
+    "id": "1172",
     "invid": "31165",
     "specid": "",
     "groupnames": "",
@@ -12397,7 +12892,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1128",
+    "id": "1173",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -12408,7 +12903,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1129",
+    "id": "1174",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -12419,7 +12914,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1130",
+    "id": "1175",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -12430,7 +12925,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1131",
+    "id": "1176",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -12441,7 +12936,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1132",
+    "id": "1177",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -12452,7 +12947,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1133",
+    "id": "1178",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -12463,7 +12958,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1134",
+    "id": "1179",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -12474,7 +12969,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1135",
+    "id": "1180",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -12485,7 +12980,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1136",
+    "id": "1181",
     "invid": "31166",
     "specid": "",
     "groupnames": "",
@@ -12496,7 +12991,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1137",
+    "id": "1182",
     "invid": "31167",
     "specid": "",
     "groupnames": "",
@@ -12507,7 +13002,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1138",
+    "id": "1183",
     "invid": "31167",
     "specid": "",
     "groupnames": "",
@@ -12518,7 +13013,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1139",
+    "id": "1184",
     "invid": "31167",
     "specid": "",
     "groupnames": "",
@@ -12529,7 +13024,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1140",
+    "id": "1185",
     "invid": "31167",
     "specid": "",
     "groupnames": "",
@@ -12540,7 +13035,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1141",
+    "id": "1186",
     "invid": "31167",
     "specid": "",
     "groupnames": "",
@@ -12551,7 +13046,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1142",
+    "id": "1187",
     "invid": "31167",
     "specid": "",
     "groupnames": "",
@@ -12562,7 +13057,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1143",
+    "id": "1188",
     "invid": "31167",
     "specid": "",
     "groupnames": "",
@@ -12573,7 +13068,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1144",
+    "id": "1189",
     "invid": "31167",
     "specid": "",
     "groupnames": "",
@@ -12584,7 +13079,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1145",
+    "id": "1190",
     "invid": "31163",
     "specid": "",
     "groupnames": "",
@@ -12595,7 +13090,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1146",
+    "id": "1191",
     "invid": "31163",
     "specid": "",
     "groupnames": "",
@@ -12606,7 +13101,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1147",
+    "id": "1192",
     "invid": "31168",
     "specid": "",
     "groupnames": "",
@@ -12617,7 +13112,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1148",
+    "id": "1193",
     "invid": "31168",
     "specid": "",
     "groupnames": "",
@@ -12628,7 +13123,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1149",
+    "id": "1194",
     "invid": "31168",
     "specid": "",
     "groupnames": "",
@@ -12639,7 +13134,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1150",
+    "id": "1195",
     "invid": "31168",
     "specid": "",
     "groupnames": "",
@@ -12650,7 +13145,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1151",
+    "id": "1196",
     "invid": "31168",
     "specid": "",
     "groupnames": "",
@@ -12661,7 +13156,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1152",
+    "id": "1197",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -12672,7 +13167,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1153",
+    "id": "1198",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -12683,7 +13178,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1154",
+    "id": "1199",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -12694,7 +13189,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1155",
+    "id": "1200",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -12705,7 +13200,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1156",
+    "id": "1201",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -12716,7 +13211,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1157",
+    "id": "1202",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -12727,7 +13222,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1158",
+    "id": "1203",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -12738,7 +13233,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1159",
+    "id": "1204",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -12749,7 +13244,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1160",
+    "id": "1205",
     "invid": "31169",
     "specid": "",
     "groupnames": "",
@@ -12760,7 +13255,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1161",
+    "id": "1206",
     "invid": "31170",
     "specid": "",
     "groupnames": "",
@@ -12771,7 +13266,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1162",
+    "id": "1207",
     "invid": "31170",
     "specid": "",
     "groupnames": "",
@@ -12782,7 +13277,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1163",
+    "id": "1208",
     "invid": "31170",
     "specid": "",
     "groupnames": "",
@@ -12793,7 +13288,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1164",
+    "id": "1209",
     "invid": "31170",
     "specid": "",
     "groupnames": "",
@@ -12804,7 +13299,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1165",
+    "id": "1210",
     "invid": "31170",
     "specid": "",
     "groupnames": "",
@@ -12815,7 +13310,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1166",
+    "id": "1211",
     "invid": "31171",
     "specid": "",
     "groupnames": "",
@@ -12826,7 +13321,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1167",
+    "id": "1212",
     "invid": "31171",
     "specid": "",
     "groupnames": "",
@@ -12837,7 +13332,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1168",
+    "id": "1213",
     "invid": "31171",
     "specid": "",
     "groupnames": "",
@@ -12848,7 +13343,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1169",
+    "id": "1214",
     "invid": "31171",
     "specid": "",
     "groupnames": "",
@@ -12859,7 +13354,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1170",
+    "id": "1215",
     "invid": "31172",
     "specid": "",
     "groupnames": "",
@@ -12870,7 +13365,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1171",
+    "id": "1216",
     "invid": "31172",
     "specid": "",
     "groupnames": "",
@@ -12881,7 +13376,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1172",
+    "id": "1217",
     "invid": "31172",
     "specid": "",
     "groupnames": "",
@@ -12892,7 +13387,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1173",
+    "id": "1218",
     "invid": "31172",
     "specid": "",
     "groupnames": "",
@@ -12903,7 +13398,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1174",
+    "id": "1219",
     "invid": "31172",
     "specid": "",
     "groupnames": "",
@@ -12914,7 +13409,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1175",
+    "id": "1220",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -12925,7 +13420,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1176",
+    "id": "1221",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -12936,7 +13431,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1177",
+    "id": "1222",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -12947,7 +13442,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1178",
+    "id": "1223",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -12958,7 +13453,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1179",
+    "id": "1224",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -12969,7 +13464,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1180",
+    "id": "1225",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -12980,7 +13475,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1181",
+    "id": "1226",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -12991,7 +13486,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1182",
+    "id": "1227",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -13002,7 +13497,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1183",
+    "id": "1228",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -13013,7 +13508,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1184",
+    "id": "1229",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -13024,7 +13519,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1185",
+    "id": "1230",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -13035,7 +13530,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1186",
+    "id": "1231",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -13046,7 +13541,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1187",
+    "id": "1232",
     "invid": "31173",
     "specid": "",
     "groupnames": "",
@@ -13057,7 +13552,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1188",
+    "id": "1233",
     "invid": "31175",
     "specid": "",
     "groupnames": "",
@@ -13068,7 +13563,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1189",
+    "id": "1234",
     "invid": "31175",
     "specid": "",
     "groupnames": "",
@@ -13079,7 +13574,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1190",
+    "id": "1235",
     "invid": "31175",
     "specid": "",
     "groupnames": "",
@@ -13090,7 +13585,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1191",
+    "id": "1236",
     "invid": "31175",
     "specid": "",
     "groupnames": "",
@@ -13101,7 +13596,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1192",
+    "id": "1237",
     "invid": "31175",
     "specid": "",
     "groupnames": "",
@@ -13112,7 +13607,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "1193",
+    "id": "1238",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13123,7 +13618,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1194",
+    "id": "1239",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13134,7 +13629,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1195",
+    "id": "1240",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13145,7 +13640,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1196",
+    "id": "1241",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13156,7 +13651,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1197",
+    "id": "1242",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13167,7 +13662,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1198",
+    "id": "1243",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13178,7 +13673,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1199",
+    "id": "1244",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13189,7 +13684,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1200",
+    "id": "1245",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13200,7 +13695,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1201",
+    "id": "1246",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13211,7 +13706,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1202",
+    "id": "1247",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13222,7 +13717,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1203",
+    "id": "1248",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13233,7 +13728,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1204",
+    "id": "1249",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13244,7 +13739,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1205",
+    "id": "1250",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13255,7 +13750,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1206",
+    "id": "1251",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13266,7 +13761,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1207",
+    "id": "1252",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13277,7 +13772,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1208",
+    "id": "1253",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13288,7 +13783,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1209",
+    "id": "1254",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13299,7 +13794,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "1210",
+    "id": "1255",
     "invid": "31176",
     "specid": "",
     "groupnames": "",
@@ -13310,7 +13805,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1211",
+    "id": "1256",
     "invid": "31177",
     "specid": "",
     "groupnames": "",
@@ -13321,7 +13816,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1212",
+    "id": "1257",
     "invid": "31177",
     "specid": "",
     "groupnames": "",
@@ -13332,7 +13827,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1213",
+    "id": "1258",
     "invid": "31177",
     "specid": "",
     "groupnames": "",
@@ -13343,7 +13838,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1214",
+    "id": "1259",
     "invid": "31177",
     "specid": "",
     "groupnames": "",
@@ -13354,7 +13849,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1215",
+    "id": "1260",
     "invid": "31177",
     "specid": "",
     "groupnames": "",
@@ -13365,7 +13860,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1216",
+    "id": "1261",
     "invid": "31177",
     "specid": "",
     "groupnames": "",
@@ -13376,7 +13871,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1217",
+    "id": "1262",
     "invid": "31177",
     "specid": "",
     "groupnames": "",
@@ -13387,7 +13882,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1218",
+    "id": "1263",
     "invid": "31178",
     "specid": "",
     "groupnames": "",
@@ -13398,7 +13893,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1219",
+    "id": "1264",
     "invid": "31178",
     "specid": "",
     "groupnames": "",
@@ -13409,7 +13904,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1220",
+    "id": "1265",
     "invid": "31178",
     "specid": "",
     "groupnames": "",
@@ -13420,7 +13915,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1221",
+    "id": "1266",
     "invid": "31178",
     "specid": "",
     "groupnames": "",
@@ -13431,7 +13926,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1222",
+    "id": "1267",
     "invid": "31178",
     "specid": "",
     "groupnames": "",
@@ -13442,7 +13937,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1223",
+    "id": "1268",
     "invid": "31178",
     "specid": "",
     "groupnames": "",
@@ -13453,7 +13948,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1224",
+    "id": "1269",
     "invid": "31178",
     "specid": "",
     "groupnames": "",
@@ -13464,7 +13959,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1225",
+    "id": "1270",
     "invid": "31178",
     "specid": "",
     "groupnames": "",
@@ -13475,7 +13970,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1226",
+    "id": "1271",
     "invid": "31178",
     "specid": "",
     "groupnames": "",
@@ -13486,7 +13981,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1227",
+    "id": "1272",
     "invid": "31178",
     "specid": "",
     "groupnames": "",
@@ -13497,7 +13992,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1228",
+    "id": "1273",
     "invid": "31178",
     "specid": "",
     "groupnames": "",
@@ -13508,7 +14003,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1229",
+    "id": "1274",
     "invid": "31178",
     "specid": "",
     "groupnames": "",
@@ -13519,7 +14014,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1230",
+    "id": "1275",
     "invid": "31179",
     "specid": "",
     "groupnames": "",
@@ -13530,7 +14025,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1231",
+    "id": "1276",
     "invid": "31179",
     "specid": "",
     "groupnames": "",
@@ -13541,7 +14036,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1232",
+    "id": "1277",
     "invid": "31179",
     "specid": "",
     "groupnames": "",
@@ -13552,7 +14047,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1233",
+    "id": "1278",
     "invid": "31179",
     "specid": "",
     "groupnames": "",
@@ -13563,7 +14058,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1234",
+    "id": "1279",
     "invid": "31179",
     "specid": "",
     "groupnames": "",
@@ -13574,7 +14069,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1235",
+    "id": "1280",
     "invid": "31179",
     "specid": "",
     "groupnames": "",
@@ -13585,7 +14080,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1236",
+    "id": "1281",
     "invid": "31179",
     "specid": "",
     "groupnames": "",
@@ -13596,7 +14091,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1237",
+    "id": "1282",
     "invid": "31179",
     "specid": "",
     "groupnames": "",
@@ -13607,7 +14102,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1238",
+    "id": "1283",
     "invid": "31179",
     "specid": "",
     "groupnames": "",
@@ -13618,7 +14113,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1239",
+    "id": "1284",
     "invid": "31179",
     "specid": "",
     "groupnames": "",
@@ -13629,7 +14124,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1240",
+    "id": "1285",
     "invid": "31179",
     "specid": "",
     "groupnames": "",
@@ -13640,7 +14135,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1241",
+    "id": "1286",
     "invid": "31179",
     "specid": "",
     "groupnames": "",
@@ -13651,7 +14146,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1242",
+    "id": "1287",
     "invid": "31179",
     "specid": "",
     "groupnames": "",
@@ -13662,7 +14157,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1243",
+    "id": "1288",
     "invid": "31180",
     "specid": "",
     "groupnames": "",
@@ -13673,7 +14168,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1244",
+    "id": "1289",
     "invid": "31180",
     "specid": "",
     "groupnames": "",
@@ -13684,7 +14179,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1245",
+    "id": "1290",
     "invid": "31180",
     "specid": "",
     "groupnames": "",
@@ -13695,7 +14190,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1246",
+    "id": "1291",
     "invid": "31180",
     "specid": "",
     "groupnames": "",
@@ -13706,7 +14201,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1247",
+    "id": "1292",
     "invid": "31180",
     "specid": "",
     "groupnames": "",
@@ -13717,7 +14212,7 @@
     "groupnameew": "Note:"
   },
   {
-    "id": "1248",
+    "id": "1293",
     "invid": "31181",
     "specid": "",
     "groupnames": "",
@@ -13728,7 +14223,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1249",
+    "id": "1294",
     "invid": "31181",
     "specid": "",
     "groupnames": "",
@@ -13739,7 +14234,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1250",
+    "id": "1295",
     "invid": "31181",
     "specid": "",
     "groupnames": "",
@@ -13750,7 +14245,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1251",
+    "id": "1296",
     "invid": "31181",
     "specid": "",
     "groupnames": "",
@@ -13761,7 +14256,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1252",
+    "id": "1297",
     "invid": "31181",
     "specid": "",
     "groupnames": "",
@@ -13772,7 +14267,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1253",
+    "id": "1298",
     "invid": "31181",
     "specid": "",
     "groupnames": "",
@@ -13783,7 +14278,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1254",
+    "id": "1299",
     "invid": "31181",
     "specid": "",
     "groupnames": "",
@@ -13794,7 +14289,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1255",
+    "id": "1300",
     "invid": "31181",
     "specid": "",
     "groupnames": "",
@@ -13805,7 +14300,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1256",
+    "id": "1301",
     "invid": "31181",
     "specid": "",
     "groupnames": "",
@@ -13816,7 +14311,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1257",
+    "id": "1302",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -13827,7 +14322,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1258",
+    "id": "1303",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -13838,7 +14333,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1259",
+    "id": "1304",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -13849,7 +14344,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1260",
+    "id": "1305",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -13860,7 +14355,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1261",
+    "id": "1306",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -13871,7 +14366,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1262",
+    "id": "1307",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -13882,7 +14377,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1263",
+    "id": "1308",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -13893,7 +14388,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1264",
+    "id": "1309",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -13904,7 +14399,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1265",
+    "id": "1310",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -13915,7 +14410,7 @@
     "groupnameew": "Options:"
   },
   {
-    "id": "1266",
+    "id": "1311",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -13926,7 +14421,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1267",
+    "id": "1312",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -13937,7 +14432,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1268",
+    "id": "1313",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -13948,7 +14443,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1269",
+    "id": "1314",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -13959,7 +14454,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1270",
+    "id": "1315",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -13970,7 +14465,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1271",
+    "id": "1316",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -13981,7 +14476,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1272",
+    "id": "1317",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -13992,7 +14487,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1273",
+    "id": "1318",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -14003,7 +14498,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1274",
+    "id": "1319",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -14014,7 +14509,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1275",
+    "id": "1320",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -14025,7 +14520,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1276",
+    "id": "1321",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -14036,7 +14531,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1277",
+    "id": "1322",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -14047,7 +14542,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1278",
+    "id": "1323",
     "invid": "31182",
     "specid": "",
     "groupnames": "",
@@ -14058,7 +14553,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1279",
+    "id": "1324",
     "invid": "31183",
     "specid": "",
     "groupnames": "",
@@ -14069,7 +14564,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1280",
+    "id": "1325",
     "invid": "31183",
     "specid": "",
     "groupnames": "",
@@ -14080,7 +14575,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1281",
+    "id": "1326",
     "invid": "31183",
     "specid": "",
     "groupnames": "",
@@ -14091,7 +14586,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1282",
+    "id": "1327",
     "invid": "31183",
     "specid": "",
     "groupnames": "",
@@ -14102,7 +14597,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1283",
+    "id": "1328",
     "invid": "31183",
     "specid": "",
     "groupnames": "",
@@ -14113,7 +14608,62 @@
     "groupnameew": ""
   },
   {
-    "id": "1284",
+    "id": "1329",
+    "invid": "31184",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50878",
+    "equippedwith": "Winmax 2-Axis CNC Control",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1330",
+    "invid": "31184",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50879",
+    "equippedwith": "Conversational Programming",
+    "groupnameew": ""
+  },
+  {
+    "id": "1331",
+    "invid": "31184",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50880",
+    "equippedwith": "8\" 3-jaw Hydraulic Chuck",
+    "groupnameew": ""
+  },
+  {
+    "id": "1332",
+    "invid": "31184",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50881",
+    "equippedwith": "10 Position Turret",
+    "groupnameew": ""
+  },
+  {
+    "id": "1333",
+    "invid": "31184",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50882",
+    "equippedwith": "Tailstock",
+    "groupnameew": ""
+  },
+  {
+    "id": "1334",
     "invid": "31185",
     "specid": "",
     "groupnames": "",
@@ -14124,7 +14674,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1285",
+    "id": "1335",
     "invid": "31185",
     "specid": "",
     "groupnames": "",
@@ -14135,7 +14685,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1286",
+    "id": "1336",
     "invid": "31185",
     "specid": "",
     "groupnames": "",
@@ -14146,7 +14696,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1287",
+    "id": "1337",
     "invid": "31186",
     "specid": "",
     "groupnames": "",
@@ -14157,7 +14707,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1288",
+    "id": "1338",
     "invid": "31186",
     "specid": "",
     "groupnames": "",
@@ -14168,7 +14718,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1289",
+    "id": "1339",
     "invid": "31186",
     "specid": "",
     "groupnames": "",
@@ -14179,7 +14729,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1290",
+    "id": "1340",
     "invid": "31186",
     "specid": "",
     "groupnames": "",
@@ -14190,7 +14740,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1291",
+    "id": "1341",
     "invid": "31186",
     "specid": "",
     "groupnames": "",
@@ -14201,7 +14751,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1292",
+    "id": "1342",
     "invid": "31186",
     "specid": "",
     "groupnames": "",
@@ -14212,7 +14762,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1293",
+    "id": "1343",
     "invid": "31186",
     "specid": "",
     "groupnames": "",
@@ -14223,7 +14773,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1294",
+    "id": "1344",
     "invid": "31186",
     "specid": "",
     "groupnames": "",
@@ -14234,7 +14784,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1295",
+    "id": "1345",
     "invid": "31186",
     "specid": "",
     "groupnames": "",
@@ -14245,7 +14795,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1296",
+    "id": "1346",
     "invid": "31186",
     "specid": "",
     "groupnames": "",
@@ -14256,7 +14806,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1297",
+    "id": "1347",
     "invid": "31187",
     "specid": "",
     "groupnames": "",
@@ -14267,7 +14817,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1298",
+    "id": "1348",
     "invid": "31187",
     "specid": "",
     "groupnames": "",
@@ -14278,7 +14828,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1299",
+    "id": "1349",
     "invid": "31187",
     "specid": "",
     "groupnames": "",
@@ -14289,7 +14839,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1300",
+    "id": "1350",
     "invid": "31187",
     "specid": "",
     "groupnames": "",
@@ -14300,7 +14850,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1301",
+    "id": "1351",
     "invid": "31187",
     "specid": "",
     "groupnames": "",
@@ -14311,7 +14861,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1302",
+    "id": "1352",
     "invid": "31187",
     "specid": "",
     "groupnames": "",
@@ -14322,7 +14872,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1303",
+    "id": "1353",
     "invid": "31187",
     "specid": "",
     "groupnames": "",
@@ -14333,7 +14883,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1304",
+    "id": "1354",
     "invid": "31187",
     "specid": "",
     "groupnames": "",
@@ -14344,7 +14894,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1305",
+    "id": "1355",
     "invid": "31187",
     "specid": "",
     "groupnames": "",
@@ -14355,7 +14905,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1306",
+    "id": "1356",
     "invid": "31187",
     "specid": "",
     "groupnames": "",
@@ -14366,7 +14916,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1307",
+    "id": "1357",
     "invid": "31187",
     "specid": "",
     "groupnames": "",
@@ -14377,7 +14927,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1308",
+    "id": "1358",
     "invid": "31187",
     "specid": "",
     "groupnames": "",
@@ -14388,7 +14938,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1309",
+    "id": "1359",
     "invid": "31188",
     "specid": "",
     "groupnames": "",
@@ -14399,7 +14949,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1310",
+    "id": "1360",
     "invid": "31188",
     "specid": "",
     "groupnames": "",
@@ -14410,7 +14960,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1311",
+    "id": "1361",
     "invid": "31188",
     "specid": "",
     "groupnames": "",
@@ -14421,7 +14971,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1312",
+    "id": "1362",
     "invid": "31188",
     "specid": "",
     "groupnames": "",
@@ -14432,7 +14982,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1313",
+    "id": "1363",
     "invid": "31188",
     "specid": "",
     "groupnames": "",
@@ -14443,7 +14993,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1314",
+    "id": "1364",
     "invid": "31188",
     "specid": "",
     "groupnames": "",
@@ -14454,7 +15004,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1315",
+    "id": "1365",
     "invid": "31188",
     "specid": "",
     "groupnames": "",
@@ -14465,7 +15015,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1316",
+    "id": "1366",
     "invid": "31188",
     "specid": "",
     "groupnames": "",
@@ -14476,7 +15026,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1317",
+    "id": "1367",
     "invid": "31188",
     "specid": "",
     "groupnames": "",
@@ -14487,7 +15037,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1318",
+    "id": "1368",
     "invid": "31189",
     "specid": "",
     "groupnames": "",
@@ -14498,7 +15048,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1319",
+    "id": "1369",
     "invid": "31189",
     "specid": "",
     "groupnames": "",
@@ -14509,7 +15059,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1320",
+    "id": "1370",
     "invid": "31189",
     "specid": "",
     "groupnames": "",
@@ -14520,7 +15070,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1321",
+    "id": "1371",
     "invid": "31189",
     "specid": "",
     "groupnames": "",
@@ -14531,7 +15081,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1322",
+    "id": "1372",
     "invid": "31189",
     "specid": "",
     "groupnames": "",
@@ -14542,7 +15092,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1323",
+    "id": "1373",
     "invid": "31189",
     "specid": "",
     "groupnames": "",
@@ -14553,7 +15103,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1324",
+    "id": "1374",
     "invid": "31189",
     "specid": "",
     "groupnames": "",
@@ -14564,7 +15114,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1325",
+    "id": "1375",
     "invid": "31189",
     "specid": "",
     "groupnames": "",
@@ -14575,7 +15125,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1326",
+    "id": "1376",
     "invid": "31189",
     "specid": "",
     "groupnames": "",
@@ -14586,7 +15136,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1327",
+    "id": "1377",
     "invid": "31189",
     "specid": "",
     "groupnames": "",
@@ -14597,7 +15147,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1328",
+    "id": "1378",
     "invid": "31189",
     "specid": "",
     "groupnames": "",
@@ -14608,7 +15158,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1329",
+    "id": "1379",
     "invid": "31190",
     "specid": "",
     "groupnames": "",
@@ -14619,7 +15169,7 @@
     "groupnameew": "Equipped With:"
   },
   {
-    "id": "1330",
+    "id": "1380",
     "invid": "31190",
     "specid": "",
     "groupnames": "",
@@ -14630,7 +15180,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1331",
+    "id": "1381",
     "invid": "31190",
     "specid": "",
     "groupnames": "",
@@ -14641,7 +15191,7 @@
     "groupnameew": "Options:"
   },
   {
-    "id": "1332",
+    "id": "1382",
     "invid": "31190",
     "specid": "",
     "groupnames": "",
@@ -14652,7 +15202,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1333",
+    "id": "1383",
     "invid": "31190",
     "specid": "",
     "groupnames": "",
@@ -14663,7 +15213,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1334",
+    "id": "1384",
     "invid": "31190",
     "specid": "",
     "groupnames": "",
@@ -14674,7 +15224,7 @@
     "groupnameew": ""
   },
   {
-    "id": "1335",
+    "id": "1385",
     "invid": "31190",
     "specid": "",
     "groupnames": "",
@@ -14682,6 +15232,248 @@
     "specvalues": "",
     "ewid": "50934",
     "equippedwith": "Chip Conveyor",
+    "groupnameew": ""
+  },
+  {
+    "id": "1386",
+    "invid": "31191",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50935",
+    "equippedwith": "Haas CNC Control with 15\" Color LCD Monitor",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1387",
+    "invid": "31191",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50936",
+    "equippedwith": "1GB Program Memory, Ethernet Interface, USB Port, Rigid Tapping",
+    "groupnameew": ""
+  },
+  {
+    "id": "1388",
+    "invid": "31191",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50937",
+    "equippedwith": "High-speed machining",
+    "groupnameew": ""
+  },
+  {
+    "id": "1389",
+    "invid": "31191",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50938",
+    "equippedwith": "Wireless intuitive probing system",
+    "groupnameew": ""
+  },
+  {
+    "id": "1390",
+    "invid": "31191",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50939",
+    "equippedwith": "Programmable coolant nozzle",
+    "groupnameew": ""
+  },
+  {
+    "id": "1391",
+    "invid": "31191",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50940",
+    "equippedwith": "Auger-style chip conveyor",
+    "groupnameew": ""
+  },
+  {
+    "id": "1392",
+    "invid": "31191",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50941",
+    "equippedwith": "30+1 Position Sidemount Tool Changer",
+    "groupnameew": ""
+  },
+  {
+    "id": "1393",
+    "invid": "31191",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50942",
+    "equippedwith": "Haas Connect",
+    "groupnameew": ""
+  },
+  {
+    "id": "1394",
+    "invid": "31191",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50943",
+    "equippedwith": "Edia Display M-Code",
+    "groupnameew": ""
+  },
+  {
+    "id": "1395",
+    "invid": "31192",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50944",
+    "equippedwith": "Haas 2-Axis CNC Control with 15\" Color LCD Monitor",
+    "groupnameew": "Equipped With:"
+  },
+  {
+    "id": "1396",
+    "invid": "31192",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50945",
+    "equippedwith": "Intuitive Programming System",
+    "groupnameew": ""
+  },
+  {
+    "id": "1397",
+    "invid": "31192",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50946",
+    "equippedwith": "Ethernet/Hard Drive",
+    "groupnameew": ""
+  },
+  {
+    "id": "1398",
+    "invid": "31192",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50947",
+    "equippedwith": "Spindle Orientation",
+    "groupnameew": ""
+  },
+  {
+    "id": "1399",
+    "invid": "31192",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50948",
+    "equippedwith": "RS-232 Interface",
+    "groupnameew": ""
+  },
+  {
+    "id": "1400",
+    "invid": "31192",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50949",
+    "equippedwith": "Extra Performance Option, 55 hp",
+    "groupnameew": ""
+  },
+  {
+    "id": "1401",
+    "invid": "31192",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50950",
+    "equippedwith": "Chip Conveyor",
+    "groupnameew": ""
+  },
+  {
+    "id": "1402",
+    "invid": "31192",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50951",
+    "equippedwith": "Tool Presetter",
+    "groupnameew": ""
+  },
+  {
+    "id": "1403",
+    "invid": "31192",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50952",
+    "equippedwith": "Programmable Hydraulic Tailstock",
+    "groupnameew": ""
+  },
+  {
+    "id": "1404",
+    "invid": "31192",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50953",
+    "equippedwith": "High Pressure Coolant System",
+    "groupnameew": ""
+  },
+  {
+    "id": "1405",
+    "invid": "31192",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50954",
+    "equippedwith": "Extended Tool Pocket",
+    "groupnameew": ""
+  },
+  {
+    "id": "1406",
+    "invid": "31192",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50955",
+    "equippedwith": "Remote Jog Handle",
+    "groupnameew": ""
+  },
+  {
+    "id": "1407",
+    "invid": "31192",
+    "specid": "",
+    "groupnames": "",
+    "description": "",
+    "specvalues": "",
+    "ewid": "50956",
+    "equippedwith": "High Intensity Lighting",
     "groupnameew": ""
   }
 ]

@@ -283,5 +283,20 @@
     "InvID": "31170",
     "Paragraph1": "This 2004 YCM XV-560A Vertical Machining Center provides a compact, high-speed machining platform for precision job-shop and production work. It features 22″ X-axis, 16.1″ Y-axis, and 18″ Z-axis travels, a 16.5″ x 27.6″ table rated for up to 660 lbs, a 10,000 RPM CAT 40 spindle powered by a 15 HP motor, and a 20-position automatic tool changer.",
     "Paragraph2": "The machine is equipped with a Fanuc 21i-B 3-axis CNC control, flood coolant system, full coolant/chip enclosure, automatic lubrication system, and rapid traverse rates up to 1,417 IPM. Its combination of 10,000 RPM spindle speed, Fanuc control, compact work envelope, and fast rapids makes the XV-560A a capable choice for smaller precision components and general production machining."
+  },
+    {
+    "InvID": "31184",
+    "Paragraph1": "This 2010 Hurco TM8 CNC Lathe is configured for versatile turning and conversational machining applications. Key specifications include a 21.6″ swing, 11.8″ swing over the cross slide, 27.9″ distance between centers, 2.4″ spindle bore, spindle speeds up to 4,800 rpm, 15 hp main motor, and a 10-position turret.",
+    "Paragraph2": "The machine is equipped with a WinMax 2-Axis CNC Control with conversational programming. Additional equipment includes an 8″ 3-jaw hydraulic chuck, 10-position turret, and tailstock, providing a practical combination for general-purpose CNC turning and short-run production."
+  },
+  {
+    "InvID": "31191",
+    "Paragraph1": "This 2017 Haas VF-3YT/40 Vertical Machining Center offers extended Y-axis travel and a versatile work envelope for precision machining and production applications. It features 40″ X-axis, 26″ Y-axis, and 25″ Z-axis travels, a 54″ x 24″ table with 3,500 lb capacity, an 8,100 rpm 40-taper spindle, 30 hp main motor, and a 30+1 position automatic tool changer.",
+    "Paragraph2": "The machine is equipped with a Haas CNC Control with 15″ color LCD monitor, 1GB program memory, Ethernet interface, USB port, rigid tapping, high-speed machining, Wireless Intuitive Probing System, programmable coolant nozzle, auger-style chip conveyor, 30+1 position sidemount tool changer, HaasConnect, and Media Display M-Code."
+  },
+  {
+    "InvID": "31192",
+    "Paragraph1": "This 2007 Haas SL-40TB CNC Lathe provides substantial turning capacity for larger workpieces. Key specifications include a 40″ swing, 25″ swing over the cross slide, 25.5″ maximum machining diameter, 44″ distance between centers, 7.08″ spindle bore, spindle speeds up to 1,400 rpm, 55 hp main motor, and a 10-position turret.",
+    "Paragraph2": "The machine is equipped with a Haas 2-Axis CNC Control with 15″ color LCD monitor, Intuitive Programming System, Ethernet/hard drive, spindle orientation, RS-232 interface, Extra Performance Option with 55 hp, chip conveyor, tool presetter, programmable hydraulic tailstock, high-pressure coolant system, extended tool pocket, remote jog handle, and high-intensity lighting."
   }
 ]
