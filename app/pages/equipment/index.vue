@@ -3,14 +3,12 @@
     <section class="equipment-hero">
       <div class="equipment-hero-inner">
         <div class="hero-kicker">USED CNC MACHINERY &amp; EQUIPMENT</div>
-        <h1>Find the Right Machine.</h1>
+        <h1>Search Our Inventory.</h1>
         <p>Search our current inventory of quality used machinery.</p>
       </div>
     </section>
 
     <section class="search-panel">
-      <h2>Search Our Inventory</h2>
-
       <div class="equipment-search">
         <label class="search-label" for="equipment-keyword">Search by Keyword</label>
         <input
@@ -30,14 +28,15 @@
         </div>
 
         <div class="category-grid">
-          <button v-if="categoryCounts.vmc > 0" type="button" :class="{ active: selectedCategory === 'vmc' }" @click="selectCategory('vmc')">CNC Vertical Machining Centers</button>
-          <button v-if="categoryCounts.hmc > 0" type="button" :class="{ active: selectedCategory === 'hmc' }" @click="selectCategory('hmc')">CNC Horizontal Machining Centers</button>
-          <button v-if="categoryCounts.lathe > 0" type="button" :class="{ active: selectedCategory === 'lathe' }" @click="selectCategory('lathe')">CNC Lathes &amp; Turning Centers</button>
-          <button v-if="categoryCounts.boring > 0" type="button" :class="{ active: selectedCategory === 'boring' }" @click="selectCategory('boring')">Boring Mills &amp; VTLs</button>
-          <button v-if="categoryCounts.grinder > 0" type="button" :class="{ active: selectedCategory === 'grinder' }" @click="selectCategory('grinder')">Grinders</button>
-          <button v-if="categoryCounts.fabrication > 0" type="button" :class="{ active: selectedCategory === 'fabrication' }" @click="selectCategory('fabrication')">Fabrication Equipment</button>
-          <button v-if="categoryCounts.inspection > 0" type="button" :class="{ active: selectedCategory === 'inspection' }" @click="selectCategory('inspection')">Inspection Equipment</button>
-          <button v-if="categoryCounts.other > 0" type="button" :class="{ active: selectedCategory === 'other' }" @click="selectCategory('other')">Other Machinery</button>
+          <button
+            v-for="category in visibleMachineGroups"
+            :key="category"
+            type="button"
+            :class="{ active: selectedCategory === category }"
+            @click="selectCategory(category)"
+          >
+            {{ category }}
+          </button>
         </div>
       </section>
 
@@ -47,16 +46,7 @@
     </section>
 
     <section class="equipment-listing">
-      <div id="tell-us-what-you-need" class="machine-needed-callout">
-        <div class="machine-needed-copy">
-          <h3>Don't See What You're Looking For?</h3>
-          <p>Our inventory is constantly changing. If you don't see what you need—or would rather send us your requirements—tell us what you're looking for. We'll let you know what's available that fits your needs.</p>
-        </div>
-        <button type="button" class="machine-needed-button" @click="showMachineNeededForm = true">Tell Us What You Need</button>
-        <div v-if="machineNeededSent" class="machine-needed-sent">Your message has been sent successfully.</div>
-      </div>
-
-      <h2 class="current-inventory-heading">Current Inventory</h2>
+      <h2 class="current-inventory-heading">{{ (selectedCategory !== 'all' || searchTerm.trim() !== '') ? `Your Search Returned ${filteredMachines.length} ${filteredMachines.length === 1 ? 'Machine' : 'Machines'}` : `Current Inventory — ${filteredMachines.length} ${filteredMachines.length === 1 ? 'Machine' : 'Machines'}` }}</h2>
 
       <article v-for="machine in filteredMachines" :key="machine.InvID" class="machine-card">
         <div class="machine-card-image">
@@ -72,6 +62,15 @@
       </article>
 
       <p v-if="filteredMachines.length === 0" class="no-results">No equipment found matching your search.</p>
+
+      <div id="tell-us-what-you-need" class="machine-needed-callout">
+        <div class="machine-needed-copy">
+          <h3>Don't See What You're Looking For?</h3>
+          <p>Our inventory is constantly changing. If you don't see what you need—or would rather send us your requirements—tell us what you're looking for. We'll let you know what's available that fits your needs.</p>
+        </div>
+        <button type="button" class="machine-needed-button" @click="showMachineNeededForm = true">Tell Us What You Need</button>
+        <div v-if="machineNeededSent" class="machine-needed-sent">Your message has been sent successfully.</div>
+      </div>
     </section>
 
     <div v-if="showMachineNeededForm" class="request-modal-overlay">
@@ -132,6 +131,8 @@ const machines = ref(machinesData)
 const machineCardImages = ref({})
 const webDescription = (machine) => machine.WebDesc || machine.Web_Desc || ''
 const advertisingSpec = (machine) => machine.AdvSpec || machine.Adv_Spec || ''
+const groupName = (machine) => machine.Groups || ''
+const offMarketValue = (machine) => machine.OffMarket ?? machine.Off_Market ?? 0
 
 function selectCategory(category) {
   selectedCategory.value = category
@@ -181,7 +182,13 @@ async function submitMachineNeededForm() {
 onMounted(async () => {
   const savedCategory = localStorage.getItem('ums-equipment-category')
   const savedSearch = localStorage.getItem('ums-equipment-search')
-  if (savedCategory) selectedCategory.value = savedCategory
+
+  if (savedCategory === 'all' || visibleMachineGroups.value.includes(savedCategory)) {
+    selectedCategory.value = savedCategory
+  } else {
+    selectedCategory.value = 'all'
+  }
+
   if (savedSearch) searchTerm.value = savedSearch
   await loadMachineCardImages()
 })
@@ -204,84 +211,75 @@ async function loadMachineCardImages() {
 }
 
 const activeMachines = computed(() => (machines.value || []).filter(machine =>
-  Number(machine.Sold) === 0 && Number(machine.OffMarket) === 0 && Number(machine.dont_advertise) === 0
+  Number(machine.Sold) === 0 && Number(offMarketValue(machine)) === 0 && Number(machine.dont_advertise) === 0
 ))
+
+const visibleMachineGroups = computed(() => [
+  ...new Set(activeMachines.value.map(machine => machine.Groups).filter(group => group !== null && group !== undefined && group !== ''))
+].sort((a, b) => a.localeCompare(b)))
 
 const filteredMachines = computed(() => {
   const term = searchTerm.value.trim().toLowerCase().replace(/[^a-z0-9]/g, '')
+
   return activeMachines.value.filter(machine => {
     const desc = webDescription(machine)
-    const groups = machine.Groups || ''
-    const categoryMatch =
-      selectedCategory.value === 'all' ||
-      (selectedCategory.value === 'vmc' && desc === 'CNC Machining Centers, Vertical') ||
-      (selectedCategory.value === 'lathe' && desc.startsWith('CNC Lathes')) ||
-      (selectedCategory.value === 'hmc' && desc === 'CNC Machining Centers, Horizontal') ||
-      (selectedCategory.value === 'boring' && groups.includes('Boring Mills')) ||
-      (selectedCategory.value === 'grinder' && groups.includes('Grinders')) ||
-      (selectedCategory.value === 'fabrication' && groups.includes('Fabricating')) ||
-      (selectedCategory.value === 'inspection' && groups.includes('Inspection')) ||
-      (selectedCategory.value === 'other' &&
-        !['CNC Machining Centers, Vertical', 'CNC Machining Centers, Horizontal'].includes(desc) &&
-        !desc.startsWith('CNC Lathes') && !groups.includes('Boring Mills') && !groups.includes('Grinders') && !groups.includes('Fabricating') && !groups.includes('Inspection'))
+    const group = groupName(machine)
+    const categoryMatch = selectedCategory.value === 'all' || group === selectedCategory.value
 
-    const searchText = [machine.Year, machine.Manufacturer, machine.Model, desc, advertisingSpec(machine), machine.Description, machine.Code, machine.InvID]
-      .filter(Boolean).join(' ').toLowerCase().replace(/[^a-z0-9]/g, '')
+    const searchText = [
+      machine.Year,
+      machine.Manufacturer,
+      machine.Model,
+      desc,
+      group,
+      advertisingSpec(machine),
+      machine.Description,
+      machine.Code,
+      machine.InvID
+    ]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase()
+      .replace(/[^a-z0-9]/g, '')
 
     return categoryMatch && (term === '' || searchText.includes(term))
   })
 })
-
-const categoryCounts = computed(() => ({
-  vmc: activeMachines.value.filter(machine => webDescription(machine) === 'CNC Machining Centers, Vertical').length,
-  lathe: activeMachines.value.filter(machine => webDescription(machine).startsWith('CNC Lathes')).length,
-  hmc: activeMachines.value.filter(machine => webDescription(machine) === 'CNC Machining Centers, Horizontal').length,
-  boring: activeMachines.value.filter(machine => (machine.Groups || '').includes('Boring Mills')).length,
-  grinder: activeMachines.value.filter(machine => (machine.Groups || '').includes('Grinders')).length,
-  fabrication: activeMachines.value.filter(machine => (machine.Groups || '').includes('Fabricating')).length,
-  inspection: activeMachines.value.filter(machine => (machine.Groups || '').includes('Inspection')).length,
-  other: activeMachines.value.filter(machine => {
-    const desc = webDescription(machine)
-    const groups = machine.Groups || ''
-    return desc !== 'CNC Machining Centers, Vertical' && desc !== 'CNC Machining Centers, Horizontal' && !desc.startsWith('CNC Lathes') && !groups.includes('Boring Mills') && !groups.includes('Grinders') && !groups.includes('Fabricating') && !groups.includes('Inspection')
-  }).length
-}))
 </script>
 
 <style scoped>
 .equipment-page { padding: 0 0 48px; }
 .equipment-hero { background: linear-gradient(105deg, #071b33 0%, #0b2545 62%, #0d2c52 100%); color: #fff; }
-.equipment-hero-inner { max-width: 1320px; margin: 0 auto; padding: 52px 32px 48px; }
-.hero-kicker { color: #f47b20; font-size: 13px; font-weight: 800; letter-spacing: .08em; margin-bottom: 12px; }
-.equipment-hero h1 { margin: 0 0 10px; font-size: clamp(36px, 4vw, 52px); line-height: 1.05; font-family: Georgia, 'Times New Roman', serif; font-weight: 700; }
+.equipment-hero-inner { max-width: 1320px; margin: 0 auto; padding: 44px 32px 40px; }
+.hero-kicker { color: #f47b20; font-size: 13px; font-weight: 800; letter-spacing: .08em; margin-bottom: 10px; }
+.equipment-hero h1 { margin: 0 0 8px; font-size: clamp(36px, 4vw, 52px); line-height: 1.05; font-family: Georgia, 'Times New Roman', serif; font-weight: 700; }
 .equipment-hero p { margin: 0; font-size: 17px; line-height: 1.5; color: #e8eef5; }
 .search-panel, .equipment-listing { max-width: 1320px; margin-left: auto; margin-right: auto; padding-left: 32px; padding-right: 32px; }
-.search-panel { padding-top: 38px; padding-bottom: 28px; }
-.search-panel > h2, .browse-heading h2, .current-inventory-heading { margin: 0; color: #0b2545; font-family: Georgia, 'Times New Roman', serif; font-weight: 700; }
-.search-panel > h2 { font-size: 26px; margin-bottom: 22px; }
-.equipment-search { display: flex; flex-direction: column; gap: 8px; }
-.search-label { color: #0b2545; font-size: 14px; font-weight: 700; }
+.search-panel { padding-top: 24px; padding-bottom: 20px; }
+.browse-heading h2, .current-inventory-heading { margin: 0; color: #0b2545; font-family: Georgia, 'Times New Roman', serif; font-weight: 700; }
+.equipment-search { display: flex; flex-direction: column; gap: 10px; }
+.search-label { color: #0b2545; font-size: 20px; font-weight: 700; }
 .equipment-search input { width: min(760px, 100%); height: 44px; box-sizing: border-box; padding: 0 14px; border: 1px solid #cfd8e3; border-radius: 4px; background: #fff; color: #17273a; font-size: 15px; }
 .equipment-search input:focus { outline: 2px solid rgba(28,69,135,.16); border-color: #1c4587; }
-.search-or { display: flex; align-items: center; width: 100%; gap: 14px; margin: 20px 0; color: #24364a; font-size: 12px; font-weight: 800; }
+.search-or { display: flex; align-items: center; width: 100%; gap: 14px; margin: 16px 0; color: #24364a; font-size: 12px; font-weight: 800; }
 .search-or::before, .search-or::after { content: ''; flex: 1; border-top: 1px solid #d6dde6; }
-.browse-heading { margin-bottom: 14px; }
+.browse-heading { margin-bottom: 12px; }
 .browse-heading h2 { font-size: 20px; font-family: inherit; font-weight: 700; }
 .category-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px; }
 .category-grid button { min-height: 48px; padding: 10px 12px; background: #fff; border: 1px solid #b9c7d8; border-radius: 5px; color: #0b2545; font-size: 14px; font-weight: 700; cursor: pointer; transition: background .15s ease,color .15s ease,border-color .15s ease; }
 .category-grid button:hover, .category-grid button.active { background: #1c4587; color: #fff; border-color: #1c4587; }
-.listing-heading { display: flex; justify-content: center; margin-top: 18px; }
+.listing-heading { display: flex; justify-content: center; margin-top: 14px; }
 .view-all-equipment-button { padding: 10px 17px; background: #0b2545; color: #fff; border: 1px solid #0b2545; border-radius: 5px; font-size: 13px; font-weight: 700; cursor: pointer; }
 .view-all-equipment-button:hover { background: #1c4587; border-color: #1c4587; }
 .equipment-listing { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
-.machine-needed-callout { grid-column: 1/-1; display: flex; align-items: center; gap: 24px; margin: 4px 0 10px; padding: 24px 26px; background: linear-gradient(105deg,#071b33 0%,#0b2545 100%); border-left: 5px solid #f47b20; border-radius: 6px; color: #fff; }
+.machine-needed-callout { grid-column: 1/-1; display: flex; align-items: center; gap: 24px; margin: 12px 0 0; padding: 22px 26px; background: linear-gradient(105deg,#071b33 0%,#0b2545 100%); border-left: 5px solid #f47b20; border-radius: 6px; color: #fff; }
 .machine-needed-copy { flex: 1; }
 .machine-needed-callout h3 { margin: 0 0 7px; color: #fff; font-size: 21px; font-weight: 800; }
 .machine-needed-callout p { margin: 0; color: #e8eef5; font-size: 14px; line-height: 1.55; }
 .machine-needed-button { flex: 0 0 auto; background: #f47b20; color: #fff; border: 1px solid #f47b20; border-radius: 5px; padding: 11px 18px; font-size: 14px; font-weight: 800; cursor: pointer; white-space: nowrap; }
 .machine-needed-button:hover { background: #d96512; border-color: #d96512; }
 .machine-needed-sent { flex: 0 0 auto; background: #e8f5e9; color: #1b5e20; border: 1px solid #a5d6a7; border-radius: 5px; padding: 9px 12px; font-size: 13px; font-weight: 700; }
-.current-inventory-heading { grid-column: 1/-1; font-size: 24px; margin: 8px 0 0; }
+.current-inventory-heading { grid-column: 1/-1; font-size: 24px; margin: 6px 0 0; }
 .machine-card { border: 1px solid #d7dde5; border-radius: 7px; overflow: hidden; background: #fff; box-shadow: 0 2px 8px rgba(11,37,69,.07); display: flex; flex-direction: column; }
 .machine-card-image { width: 100%; height: 300px; display: flex; align-items: center; justify-content: center; background: #f7f8fa; }
 .machine-card-image img { width: 100%; height: 100%; object-fit: contain; }
@@ -315,5 +313,5 @@ const categoryCounts = computed(() => ({
 .request-submit-button { background: #1c4587; color: #fff; border: 2px solid #1c4587; }
 .request-cancel-button { background: #fff; color: #1c4587; border: 2px solid #1c4587; }
 @media (max-width:900px) { .category-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .equipment-listing { grid-template-columns: repeat(2,minmax(0,1fr)); } .machine-needed-callout { flex-wrap: wrap; } }
-@media (max-width:600px) { .equipment-hero-inner, .search-panel, .equipment-listing { padding-left: 16px; padding-right: 16px; } .equipment-hero-inner { padding-top: 38px; padding-bottom: 36px; } .category-grid, .equipment-listing { grid-template-columns: 1fr; } .machine-needed-callout { flex-direction: column; align-items: flex-start; } .machine-needed-button { width: 100%; } .request-form { grid-template-columns: 1fr; } .request-form > label, .request-form > label:nth-of-type(n), .request-radio-group, .request-form-actions { grid-column: 1/-1; } }
+@media (max-width:600px) { .equipment-hero-inner, .search-panel, .equipment-listing { padding-left: 16px; padding-right: 16px; } .equipment-hero-inner { padding-top: 34px; padding-bottom: 32px; } .category-grid, .equipment-listing { grid-template-columns: 1fr; } .machine-needed-callout { flex-direction: column; align-items: flex-start; } .machine-needed-button { width: 100%; } .request-form { grid-template-columns: 1fr; } .request-form > label, .request-form > label:nth-of-type(n), .request-radio-group, .request-form-actions { grid-column: 1/-1; } }
 </style>
