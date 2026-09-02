@@ -6,6 +6,7 @@ const searchTerm = ref('')
 const selectedGroup = ref('All')
 const selectedWebDesc = ref('All')
 const selectedWanted = ref<any>(null)
+const featuredScroll = ref<HTMLElement | null>(null)
 const sellerSending = ref(false)
 const sellerSent = ref(false)
 const sellerError = ref(false)
@@ -73,6 +74,10 @@ function resetFilters() {
   searchTerm.value = ''
   selectedGroup.value = 'All'
   selectedWebDesc.value = 'All'
+}
+
+function scrollFeatured(direction: number) {
+  featuredScroll.value?.scrollBy({ left: direction * 410, behavior: 'smooth' })
 }
 
 function openSellerForm(wanted: any) {
@@ -144,14 +149,21 @@ useSeoMeta({
     </section>
 
     <section v-if="featuredWanteds.length" class="section featured-section">
-      <div class="section-heading"><div><p class="eyebrow dark">FEATURED WANTEDS</p><h2>Machines Buyers Are Looking For Now</h2></div></div>
-      <div class="featured-scroll">
-        <article v-for="wanted in featuredWanteds" :key="wanted.WtdID" class="wanted-card featured-card">
-          <div class="wanted-label">WANTED</div>
-          <div class="wanted-type">{{ wanted.WebDesc }}</div>
-          <p class="wanted-description">{{ wanted.Description }}</p>
-          <button type="button" class="card-button" @click="openSellerForm(wanted)">I Have One to Sell</button>
-        </article>
+      <div class="section-heading"><div><p class="eyebrow dark">FEATURED WANTEDS</p><h2>Machines Needed Now!</h2></div></div>
+      <div class="featured-carousel">
+        <button type="button" class="carousel-arrow carousel-arrow-left" aria-label="Previous featured Wanteds" @click="scrollFeatured(-1)">‹</button>
+        <div ref="featuredScroll" class="featured-scroll">
+          <article v-for="wanted in featuredWanteds" :key="wanted.WtdID" class="wanted-card featured-card">
+            <div class="featured-topline">
+              <span class="hot-label">HOT WANTED</span>
+              <span class="featured-id">ID #{{ wanted.WtdID }}</span>
+            </div>
+            <div class="wanted-type">{{ wanted.WebDesc }}</div>
+            <p class="wanted-description">{{ wanted.Description }}</p>
+            <button type="button" class="card-button" @click="openSellerForm(wanted)">I Have One to Sell</button>
+          </article>
+        </div>
+        <button type="button" class="carousel-arrow carousel-arrow-right" aria-label="Next featured Wanteds" @click="scrollFeatured(1)">›</button>
       </div>
     </section>
 
@@ -223,7 +235,7 @@ useSeoMeta({
             <label>Contact Name *<input v-model="sellerForm.contactName" required></label>
             <label>Company Name<input v-model="sellerForm.companyName"></label>
             <label>Email *<input v-model="sellerForm.email" type="email" required></label>
-            <label>Phone<input v-model="sellerForm.phone" type="tel"></label>
+            <label>Phone *<input v-model="sellerForm.phone" type="tel" required></label>
             <label>Year<input v-model="sellerForm.year"></label>
             <label>Manufacturer<input v-model="sellerForm.manufacturer"></label>
             <label>Model<input v-model="sellerForm.model"></label>
@@ -258,8 +270,24 @@ h2 { margin: 4px 0 0; font-size: clamp(1.7rem, 3vw, 2.45rem); }
 .section { padding: 56px 32px; }
 .featured-section { padding-bottom: 20px; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
-.featured-scroll { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(300px, 390px); gap: 18px; overflow-x: auto; padding: 2px 2px 18px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
-.featured-card { scroll-snap-align: start; border-top: 4px solid #e66d18; }
+.featured-carousel { position: relative; padding: 0 52px; }
+.featured-scroll { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(300px, 390px); gap: 18px; overflow-x: auto; padding: 4px 4px 24px; scroll-snap-type: x mandatory; scrollbar-width: auto; scrollbar-color: #70839a #d9e1e9; }
+.featured-scroll::-webkit-scrollbar { height: 14px; }
+.featured-scroll::-webkit-scrollbar-track { background: #d9e1e9; border-radius: 8px; }
+.featured-scroll::-webkit-scrollbar-thumb { background: #70839a; border-radius: 8px; border: 2px solid #d9e1e9; }
+.carousel-arrow { position: absolute; top: 50%; z-index: 5; width: 44px; height: 54px; transform: translateY(-62%); border: 1px solid #b5c0cb; border-radius: 6px; background: #fff; color: #0b315d; font-size: 34px; font-weight: 800; line-height: 1; cursor: pointer; box-shadow: 0 4px 12px rgba(17,32,51,.12); }
+.carousel-arrow:hover { background: #0b315d; color: #fff; border-color: #0b315d; }
+.carousel-arrow-left { left: 0; }
+.carousel-arrow-right { right: 0; }
+.wanted-card { display: flex; min-height: 260px; flex-direction: column; border: 1px solid #d7dde5; border-radius: 8px; background: #fff; padding: 22px; box-shadow: 0 3px 12px rgba(17, 32, 51, .05); }
+.featured-card { scroll-snap-align: start; min-height: 275px; border: 2px solid #e4a06f; border-top: 7px solid #e66d18; background: #fffdf9; box-shadow: 0 7px 20px rgba(17,32,51,.12); }
+.featured-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.hot-label { color: #c95000; font-size: .76rem; font-weight: 900; letter-spacing: .11em; }
+.featured-id { color: #647282; font-size: .78rem; font-weight: 800; }
+.wanted-label { color: #d35f10; font-size: .76rem; font-weight: 900; letter-spacing: .12em; }
+.wanted-type { margin-top: 12px; color: #0b315d; font-size: 1.08rem; font-weight: 900; }
+.wanted-description { margin: 14px 0 22px; color: #172033; font-size: 1.02rem; font-weight: 650; line-height: 1.5; }
+.card-button { width: 100%; min-height: 42px; margin-top: auto; padding: 9px 8px; text-align: center; font-size: .9rem; white-space: normal; }
 .search-box, .filter-block, .refine-block { margin-bottom: 28px; }
 .search-box label, .refine-block label, .filter-block h3 { display: block; margin: 0 0 10px; font-weight: 800; }
 .search-box input, .refine-block select { width: 100%; border: 1px solid #cbd3dc; border-radius: 5px; background: #fff; padding: 14px 16px; font: inherit; }
@@ -268,11 +296,6 @@ h2 { margin: 4px 0 0; font-size: clamp(1.7rem, 3vw, 2.45rem); }
 .filter-button.active { border-color: #123b6d; background: #123b6d; color: #fff; }
 .reset-button:hover, .filter-button:hover { border-color: #123b6d; }
 .results-bar { margin: 12px 0 18px; color: #596574; }
-.wanted-card { display: flex; min-height: 260px; flex-direction: column; border: 1px solid #d7dde5; border-radius: 8px; background: #fff; padding: 22px; box-shadow: 0 3px 12px rgba(17, 32, 51, .05); }
-.wanted-label { color: #d35f10; font-size: .76rem; font-weight: 900; letter-spacing: .12em; }
-.wanted-type { margin-top: 12px; color: #123b6d; font-size: 1.05rem; font-weight: 800; }
-.wanted-description { margin: 14px 0 22px; color: #343e4b; line-height: 1.55; }
-.card-button { width: 100%; min-height: 42px; margin-top: auto; padding: 9px 10px; text-align: center; font-size: .94rem; }
 .wanted-list { display: flex; flex-direction: column; gap: 30px; }
 .wanted-type-group { overflow: hidden; border: 1px solid #c9d2dc; border-radius: 8px; background: #fff; box-shadow: 0 3px 12px rgba(17, 32, 51, .04); }
 .type-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid #aebdcb; background: #d9e3ed; padding: 13px 18px; }
@@ -311,7 +334,9 @@ h2 { margin: 4px 0 0; font-size: clamp(1.7rem, 3vw, 2.45rem); }
 @media (max-width: 760px) {
   .wanted-hero, .section { padding-left: 20px; padding-right: 20px; }
   .section-heading, .bottom-cta { align-items: stretch; flex-direction: column; }
-  .featured-scroll { grid-auto-columns: 88%; }
+  .featured-carousel { padding: 0 38px; }
+  .featured-scroll { grid-auto-columns: 92%; }
+  .carousel-arrow { width: 34px; height: 48px; font-size: 28px; }
   .wanted-row { grid-template-columns: 1fr; gap: 8px; padding: 15px; }
   .wanted-row-number { flex-direction: row; justify-content: space-between; }
   .row-button { width: 100%; }
