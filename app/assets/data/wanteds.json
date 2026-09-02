@@ -1,0 +1,1325 @@
+[
+  {
+    "WtdID": 4982,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas VF-5SS or VF-6SS 2008-2015, TSC, Probe, Chip Conv",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 4983,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas Mini Mill, early 2000's",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 4984,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "Haas TL-3 w/turret",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 4985,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "Haas ST-30 4-7 yr old",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 4986,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas VF-3 w/4th axis 4-7 yr old.",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 4988,
+    "Code": "L3000",
+    "Groups": "Engine Lathes, Drilling & Milling",
+    "WebDesc": "Lathes, Manual",
+    "Description": "6\" Bore, no tailstock required, prefers short machine",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 4989,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "10\" Bore, no tailstock required, G-code programmable control, Fanuc or Mazatrol preferred",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 4990,
+    "Code": "L2125",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "CNC Lathe with 12.2\" or larger bore, likes Mazatrol or Fanuc controls, prefers an air chuck. Under $300K",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 4991,
+    "Code": "L2125",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "6.5\" bar cap CNC Lathe, Prefer Haas SL-40BB or ST-40BB",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 4992,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "Mazak with 10.75\" bore, 120\" centers, newer the better",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 4993,
+    "Code": "R8906",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "Routers",
+    "Description": "Haas GR-510 under $100k, 2016 or newer",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 4994,
+    "Code": "L2150M",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes, 3-Axis or More",
+    "Description": "Haas ST-10Y or ST-20Y",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 4995,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas VF-1 or VF-2 with 4 axis maybe 5th axis",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 4996,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "Haas TL-2, 2011 or newer. Maybe consdier another brand toolroom lathe with 40-48\" centers",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 4997,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas VF-5/40 $50K range",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 4998,
+    "Code": "L2150M",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes, 3-Axis or More",
+    "Description": "Doosan Lynx 220LMA",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 4999,
+    "Code": "B6006",
+    "Groups": "Vertical Boring Mills & VTL",
+    "WebDesc": "Vertical Boring Mills, VTL, Manual",
+    "Description": "120\" Table, 142\" turn diameter or larger",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5000,
+    "Code": "P9295",
+    "Groups": "Fabricating",
+    "WebDesc": "Punches, Turret, CNC",
+    "Description": "Amada EMK 3612 Turret Punch or similar mfg & models.",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5001,
+    "Code": "G8507",
+    "Groups": "Grinders, Lappers & Hones",
+    "WebDesc": "Grinders, CNC",
+    "Description": "Anca FX5 Linear, looking for FX5 microplus or equivalent",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5002,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas Super Mini-Mill, 15-25k budget delivered",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5003,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "inquired on a 2012 Haas VF-6 priced at $69,500.",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5004,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "Haas TL-1 (inquired on a 2009)",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5005,
+    "Code": "L2150M",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes, 3-Axis or More",
+    "Description": "2015 or newer Mazak Integrex I-200 or I-250.May consider 2022+ I-100.",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5006,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "2007-09 Haas VF-5/40",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5007,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas VF-4SS 2015+/- (hot)",
+    "Featured": true,
+    "FeatureOrder": 1
+  },
+  {
+    "WtdID": 5008,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "2015+ Haas ST-25Y or ST-30Y",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5009,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "2011-2014 Haas VF-10, would consider 40 or 50 Taper",
+    "Featured": true,
+    "FeatureOrder": 2
+  },
+  {
+    "WtdID": 5010,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "inquired on a 2013 Haas VF-2TR that was sold.",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5011,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "inquired on  2022 Haas VF-2SS",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5012,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Iquired on 2022 Haas VF-2SS",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5013,
+    "Code": "B6200",
+    "Groups": "Vertical Boring Mills & VTL",
+    "WebDesc": "Vertical Boring Mills, VTL, VBM, CNC",
+    "Description": "You Ji VTL-1000ATC",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5014,
+    "Code": "L2150M",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes, 3-Axis or More",
+    "Description": "Haas ST-30M",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5015,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas VM-6",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5016,
+    "Code": "L2150M",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes, 3-Axis or More",
+    "Description": "Inquired on a ST-30Y 2017",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5017,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Inquired on a 2017 Haas VF-3YT/40",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5018,
+    "Code": "E2475",
+    "Groups": "EDM",
+    "WebDesc": "EDM",
+    "Description": "Like the Charmille Robofil 240",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5019,
+    "Code": "L21256MS",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes, 3-Axis or More",
+    "Description": "DMG Mori NTX2000/1500SZM",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5020,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "2020ish Haas ST-30, with tailstock",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5021,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas VF-2TR 2011+, 5-axis",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5022,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "2009+ Haas VF-2YT, something in good condition, prefer western USA location",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5023,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "Large CNC Lathe, 40\"+ swing, 120\" centers, Likes Fanuc Control",
+    "Featured": true,
+    "FeatureOrder": 3
+  },
+  {
+    "WtdID": 5024,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "2015+ Haas ST-40, tailstock",
+    "Featured": true,
+    "FeatureOrder": 8
+  },
+  {
+    "WtdID": 5025,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas VF-6 or VM-6, newer the better",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5026,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas VF-3SS, 15k rpm would be nice.",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5027,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "Haas SL-20 Big Bore, 2007-2010, tailstock",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5028,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "Haas ST-20 with tailstock, 2012+",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5029,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas Mini Mill, will consider 2001 if in nice condition, Wants a cheaper VMC, prefer close to PA",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5030,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "Haas ST-35",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5031,
+    "Code": "E2475",
+    "Groups": "EDM",
+    "WebDesc": "EDM",
+    "Description": "Mitsubishi MV2400S Wire EDM",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5032,
+    "Code": "M0130",
+    "Groups": "CNC Horizontal Machining Centers",
+    "WebDesc": "CNC Machining Centers, Horizontal",
+    "Description": "DMG Mori NHX-4000, 2013 or newer.",
+    "Featured": true,
+    "FeatureOrder": 5
+  },
+  {
+    "WtdID": 5033,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas VF-2SS, prefer 2020 or newer",
+    "Featured": true,
+    "FeatureOrder": 9
+  },
+  {
+    "WtdID": 5034,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas VF-2SS, will consider 2010 or newer in good condition",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5035,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "Weiler E50/2000 CNC Lathe, 2012 or newer",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5036,
+    "Code": "L2125TM",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes, 3-Axis or More",
+    "Description": "Haas DS-30Y, new as possible",
+    "Featured": true,
+    "FeatureOrder": 13
+  },
+  {
+    "WtdID": 5037,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas VF-3SS or VF-4SS 2020 or newer",
+    "Featured": true,
+    "FeatureOrder": 10
+  },
+  {
+    "WtdID": 5038,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "Haas ST-20Y, prefer 2015ish",
+    "Featured": true,
+    "FeatureOrder": 14
+  },
+  {
+    "WtdID": 5039,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas VF-2, 2010+",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5040,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas VF-2TR or 5-axis VMC X-30\" Y-16\" Z-20\", Likes Haas but open to other machines.",
+    "Featured": true,
+    "FeatureOrder": 11
+  },
+  {
+    "WtdID": 5041,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "TAKISAWA TCY-200YS, Y-Axis and Subspindle",
+    "Featured": true,
+    "FeatureOrder": 7
+  },
+  {
+    "WtdID": 5042,
+    "Code": "M0130",
+    "Groups": "CNC Horizontal Machining Centers",
+    "WebDesc": "CNC Machining Centers, Horizontal",
+    "Description": "TOYODA FA800, Wants this make & Model Only",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5043,
+    "Code": "D7553",
+    "Groups": "",
+    "WebDesc": "DRYERS",
+    "Description": "EBAC LD800, Flow Rate: 460 ft³/min., I'm building a wood drying kiln., Up to $10,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5044,
+    "Code": "R4704",
+    "Groups": "Fabricating",
+    "WebDesc": "Rolls, Angle",
+    "Description": "ZOPF ZB100/2H, I'm looking for a ZOPF #ZB100/2H #Angle Bending Rolls, but am open to other manufacturers and mod...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5045,
+    "Code": "S0730",
+    "Groups": "Saws",
+    "WebDesc": "Saws, Cold",
+    "Description": "500 bottom feed, $10,001 - $50,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5046,
+    "Code": "W0504",
+    "Groups": "Finishing",
+    "WebDesc": "WASHING EQUIPMENT",
+    "Description": "AALADIN 8430, Max Pressure: 3,000 PSI; Motor: 7.5 hp, need a quote on a Aaladin 8430 208 volt 3 phase",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5047,
+    "Code": "P8040",
+    "Groups": "",
+    "WebDesc": "PRINTING/COPYING EQUIPMENT",
+    "Description": "TAMPOPRINT TS100/31, Up to $10,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5048,
+    "Code": "L0754",
+    "Groups": "Grinders, Lappers & Hones",
+    "WebDesc": "Lapping Machines",
+    "Description": "PR HOFFMAN PR1-66T, Capacity: 5\", Interested in PR1-66T or the slightly larger version. Machines and spare parts. Please contact me., $50,001 - $100,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5049,
+    "Code": "B7015",
+    "Groups": "Fabricating",
+    "WebDesc": "Press Brake",
+    "Description": "AMADA HRB 8025, Tonnage: 88 T; Overall Length: 102.4\"; Between Housings: 87\"; Stroke: 9.84\"; # Axis: 6, Industrial Hydraulic Press Brake Brand Name or Equal: AMADA HRB 8025 (or Equal) Salient Character...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5050,
+    "Code": "B7015",
+    "Groups": "Fabricating",
+    "WebDesc": "Press Brake",
+    "Description": "AMADA HRB 8025, Tonnage: 88 T; Overall Length: 102.4\"; Between Housings: 87\"; Stroke: 9.84\"; # Axis: 6, Please provide a quotation for the items listed below, which are required by our federal customer..., $50,001 - $100,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5051,
+    "Code": "F2798",
+    "Groups": "Other Machinery",
+    "WebDesc": "Folding Machines",
+    "Description": "CIDAN K15-30, Max Thickness: 0.0598\"; Max Thickness (gauge): 16 gauge; Overall Length: 122\"",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5052,
+    "Code": "E2450",
+    "Groups": "EDM",
+    "WebDesc": "EDM",
+    "Description": "Looking to learn more on your Hole Poppers. Specifically small hole....simple manipulation of axi..., $50,001 - $100,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5053,
+    "Code": "O4803",
+    "Groups": "",
+    "WebDesc": "OIL SEPARATORS",
+    "Description": "ATLAS COPCO OSC 95, Need Price and Availability., Up to $10,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5054,
+    "Code": "B7015",
+    "Groups": "Fabricating",
+    "WebDesc": "Press Brake",
+    "Description": "TRUMPF TRUBEND 5230, Tonnage: 253 T; Type: HYD; Overall Length: 127\"; Between Housings: 106\", Looking for Trumpf 5230, $100,001 USD and over",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5055,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "MAKINO V99/50, X: 59\"; Y: 39.37\"; Z: 31.49\"; RPM: 12,000 RPM; # ATC: 30; Table-W: 39.37\"; Table-L: 70.87\"; # Axis: 3, Suitable for blow mold making and cutting aluminum, $50,001 - $100,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5056,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "DMG MORI DECKEL MAHO DMU 65 MONOBLOCK, I'm looking for a DMG MORI #DECKEL MAHO DMU 65 MONOBLOCK #Vertical Machining Centers (5-Axis or M...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5057,
+    "Code": "B1804",
+    "Groups": "Fabricating",
+    "WebDesc": "TUBE BENDERS & PIPE BENDERS",
+    "Description": "HOSSFELD #2 STANDARD, Capacity: 2\", Looking for a Hossfeld bender, Up to $10,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5058,
+    "Code": "S5054",
+    "Groups": "Finishing",
+    "WebDesc": "Shot Blast, Shot Peening",
+    "Description": "STEELABRATOR 250, Hi am looking into possibly buying one of these machines but first am looking for quote., Up to $10,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5059,
+    "Code": "L0850",
+    "Groups": "Fabricating",
+    "WebDesc": "Lasers",
+    "Description": "5' x 10' 6kW laser table Tube combination, $50,001 - $100,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5060,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "Any Brand ANY MODEL, Looking for the MAKINO DA300 quote and availability., $100,001 USD and over",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5061,
+    "Code": "M2824",
+    "Groups": "Engine Lathes, Drilling & Milling",
+    "WebDesc": "Mills, Manual",
+    "Description": "SOUTH BEND SB1028F, Table-W: 10\"; Table-L: 54\"; Travel-Long: 35\"; Travel-Cross: 16\"; Power: 5 hp; RPM: 5,000 RPM; Taper: R8, We are requesting a formal quotation for the South Bend Milling Machine, Model SB1028F. Please co..., $10,001 - $50,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5062,
+    "Code": "B7015",
+    "Groups": "Fabricating",
+    "WebDesc": "Press Brake",
+    "Description": "ADIRA PH 30040, Tonnage: 300 T; Type: HYD; Overall Length: 13.29'; Between Housings: 10.33'; Stroke: 9.8425\", Dear Sir/Madam, I hope you are doing well. We are currently seeking quotations for the supply of ..., $100,001 USD and over",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5063,
+    "Code": "B7015",
+    "Groups": "Fabricating",
+    "WebDesc": "Press Brake",
+    "Description": "AMADA HRB 8025, Tonnage: 88 T; Overall Length: 102.4\"; Between Housings: 87\"; Stroke: 9.84\"; # Axis: 6, We are interested in receiving your best commercial offer, including equipment pricing, delivery,...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5064,
+    "Code": "F2798",
+    "Groups": "Other Machinery",
+    "WebDesc": "Folding Machines",
+    "Description": "RAS 62.30 TURBO PLUS, I'm looking for a RAS #62.30 TURBO PLUS #Folding Machines, but am open to other manufacturers and...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5066,
+    "Code": "B2754",
+    "Groups": "Other Machinery",
+    "WebDesc": "Shot Blast, Shot Peening, Blast Cleaning",
+    "Description": "COMCO PROCENTER PLUS, looking for a quote to purchase.",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5067,
+    "Code": "P0248",
+    "Groups": "Other Machinery",
+    "WebDesc": "Paint Systems",
+    "Description": "KCI KCI-206, I have a kci box feed now falling apart butt it been in use 13yrs interested in price of replacement, Up to $10,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5068,
+    "Code": "G6260",
+    "Groups": "Grinders, Lappers & Hones",
+    "WebDesc": "GRINDERS, FACE PLATE",
+    "Description": "WINONA VAN NORMAN FG5000, Looking for our own machine to resurface flywheels., $10,001 - $50,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5069,
+    "Code": "S0403",
+    "Groups": "Finishing",
+    "WebDesc": "Sanders",
+    "Description": "TIMESAVERS 1200 SERIES | 25” WIDE | DRY, Width of Belt: 25\"; Power: 15 hp, Could you please provide more details about pricing, availability, and how I can place an order? ..., $50,001 - $100,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5070,
+    "Code": "M2824",
+    "Groups": "Engine Lathes, Drilling & Milling",
+    "WebDesc": "Mills, Manual",
+    "Description": "SOUTH BEND SB1028F, Table-W: 10\"; Table-L: 54\"; Travel-Long: 35\"; Travel-Cross: 16\"; Power: 5 hp; RPM: 5,000 RPM; Taper: R8, We are a federal contracting company sourcing these items. Could you assist us with this opportun..., $10,001 - $50,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5071,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "AUTOMATE CNC FL300, Power: 4 hp; Max RPM: 3,000 RPM; Swing: 17.5\", I usually buy this with an extra bank of m-functions, $10,001 - $50,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5072,
+    "Code": "U5503",
+    "Groups": "Other Machinery",
+    "WebDesc": "UPENDERS/DOWN-ENDERS",
+    "Description": "COILQUIP MU12000V, Max Weight Capacity: 12,000 lb, a quote for a Coilquip MU12000V Mechanical Coil Upender/Coil Tipper (60 in OD)",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5073,
+    "Code": "K3004",
+    "Groups": "Engine Lathes, Drilling & Milling",
+    "WebDesc": "KEYSEATER",
+    "Description": "HYDRAULIC KEYWAY MACHINE TOOL IN GOOD CONDITION TO CUT UP TO 1.50\" KEYWAY WIDTH WITH STROKE LENGT..., $10,001 - $50,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5074,
+    "Code": "C5901",
+    "Groups": "Inspection",
+    "WebDesc": "Measuring Machine",
+    "Description": "MITUTOYO CRYSTA-APEX S9108, X: 35.4\"; Y: 39.4\"; Z: 31.5\", We currently have a Crysta Apex 9106 but are looking for a 9108 for increased work envelope., $50,001 - $100,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5075,
+    "Code": "P8448",
+    "Groups": "",
+    "WebDesc": "PUMPS, CENTRIFUGAL",
+    "Description": "CORNELL 4SP, Wanted to see about getting an estimate on purchasing 20 of these. Quote and estimated lead time ...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5076,
+    "Code": "W2210",
+    "Groups": "Welding",
+    "WebDesc": "WELDERS, LASER",
+    "Description": "OROTIG EVO WHITE 130J, Wattage: 5 kw, We would use for jewelry repair, Up to $10,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5077,
+    "Code": "C5901",
+    "Groups": "Inspection",
+    "WebDesc": "Measuring Machine",
+    "Description": "MAHR MARFORM MFU 100, We are looking to replace obsolete Mahr MMQ44 with MFU100., $10,001 - $50,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5078,
+    "Code": "W2210",
+    "Groups": "Welding",
+    "WebDesc": "WELDERS, LASER",
+    "Description": "OR LASER ECO LASER 2600, Wattage: 100 w, We are searching for a small laser welder to do material cladding or additive manufacturing with ..., $10,001 - $50,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5079,
+    "Code": "P7050",
+    "Groups": "Presses",
+    "WebDesc": "Presses",
+    "Description": "KOBO TC-851, Want one to foil stamp, Up to $10,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5080,
+    "Code": "W0760",
+    "Groups": "Fabricating",
+    "WebDesc": "Water Jets",
+    "Description": "FLOW ANY MODEL, Machine Requirements: Brand: Flow WaterJet Year: 2018 or Newer Footprint: No bigger than 12' X 9'...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5081,
+    "Code": "W6356",
+    "Groups": "",
+    "WebDesc": "WIRE MACHINERY, SPOOLERS",
+    "Description": "JOVIL SMC-1S, I would like to see a quote for Jovil SMC-1 and Jovil SMC-1S please., $10,001 - $50,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5082,
+    "Code": "H5975",
+    "Groups": "Grinders, Lappers & Hones",
+    "WebDesc": "Hones",
+    "Description": "STAHLI DLM 1205, Hello, we are in the market for a gently used or refurbished machine at our Rockwood Tennessee lo..., $50,001 - $100,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5083,
+    "Code": "P8598",
+    "Groups": "",
+    "WebDesc": "PUMPS, MISCELLANEOUS",
+    "Description": "GRUNDFOS MORRIS 6100, I'm looking for a new Grundfos Morris 6100 series pump that has 2 inch suction and discharge flan..., $10,001 - $50,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5084,
+    "Code": "L3000",
+    "Groups": "Engine Lathes, Drilling & Milling",
+    "WebDesc": "Lathes, Manual",
+    "Description": "SCHAUBLIN 70-CF, Swing: 5.1181\"; Centers: 10.827\"; Power: 1.5 hp; RPM: 5,000 RPM, Hello interested to learn about pricing for the 70-CF., $9,999 - $49,989 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5085,
+    "Code": "W1003",
+    "Groups": "Welding",
+    "WebDesc": "WELDERS, ARC",
+    "Description": "LINCOLN ELECTRIC POWER WAVE S350, I'm looking for this machine with a feeder setup used., Up to $9,998 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5086,
+    "Code": "W1003",
+    "Groups": "Welding",
+    "WebDesc": "WELDERS, ARC",
+    "Description": "MILLER SR-300, AMP: 300 A, We would need another unit of this type of arc welder same as what we have in shop., Up to $10,184 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5087,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "HAAS SUPER MINI MILL, X: 16\"; Y: 12\"; Z: 10\"; Power: 15 hp; RPM: 10,000 RPM; # ATC: 10; TableW: 12\"; Table-L: 36\"; Taper: CT or BT 40, I'm looking to purchase a used Haas Super Mini Mill and have $15,000– $25,000 to spend for the rig..., $10,001 - $50,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5088,
+    "Code": "L0754",
+    "Groups": "Grinders, Lappers & Hones",
+    "WebDesc": "Lapping Machines",
+    "Description": "LAPMASTER 20/OF, Capacity: 20\", 20\" hand weight lapping machine with a copper plate, $10,001 - $50,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5089,
+    "Code": "G8100",
+    "Groups": "Grinders, Lappers & Hones",
+    "WebDesc": "Grinders",
+    "Description": "COMEC RTV 600, Chuck Size: 14\", Our truck repair shop is looking for a used machinery such as Kansas Instruments FG-24 Flywheel G...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5090,
+    "Code": "O7400",
+    "Groups": "Heat Treating",
+    "WebDesc": "Ovens",
+    "Description": "WISCONSIN OVEN SPC-34-HTS/109, Chamber-W: 36\"; Chamber-L: 48\"; Chamber-H: 36\"; Max Temperature: 1,250°F, Hello, I am currently looking for an SPC-34-HTS/109 oven from Wisconsin ovens. I am interested in..., $10,001 - $50,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5091,
+    "Code": "M2824",
+    "Groups": "Engine Lathes, Drilling & Milling",
+    "WebDesc": "Mills, Manual",
+    "Description": "ACER E-MILL 3VS, Table-W: 9\"; Table-L: 42\"; Travel-Long: 24\"; Travel-Cross: 11\"; Power: 3 hp; RPM: 4,500 RPM; Taper: R-8/N.T.30, I will need one new ACER E-MILL 3VS with N.T.30 spindle delivered to Kerrville Texas, what will b...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5092,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "MULTICAM 3000 SERIES, Table-W: 80\"; Table-L: 241\"; Z: 12\", I'm looking for a MULTICAM #3000 SERIES #Routers, but am open to other manufacturers and models.",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5093,
+    "Code": "B6006",
+    "Groups": "Vertical Boring Mills & VTL",
+    "WebDesc": "Vertical Boring Mills, VTL, Manual",
+    "Description": "KNUTH VDM 1600 S, Table Dia: 55\"; Swing: 63\"; Work Ht-U/R: 39\"; Power: 40.2 hp; RPM: 160 RPM, I'm looking for a KNUTH #VDM 1600 S #Vertical Boring Mills (incld VTL), but am open to other manu...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5094,
+    "Code": "R3775",
+    "Groups": "Other Machinery",
+    "WebDesc": "Robots",
+    "Description": "ABB IRB 6620LX, # Axis: 6; Payload: 330.7 lb; Horizontal Reach: 74.803\", Let me know what you can offer",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5095,
+    "Code": "P8598",
+    "Groups": "",
+    "WebDesc": "PUMPS, MISCELLANEOUS",
+    "Description": "WOERNER GMG-B, I need a new pump asap for my saw",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5096,
+    "Code": "B5400",
+    "Groups": "Horizontal Boring Mills & HBM",
+    "WebDesc": "Horizontal Boring Mills, Manual",
+    "Description": "NEW BHARAT BFP 110, Spindle Size: 4.3307\"; Power: 49.6 hp, Boiler drum, $100,001 USD and over",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5097,
+    "Code": "M0130",
+    "Groups": "CNC Horizontal Machining Centers",
+    "WebDesc": "CNC Machining Centers, Horizontal",
+    "Description": "MAZAK HCN-6800",
+    "Featured": true,
+    "FeatureOrder": 4
+  },
+  {
+    "WtdID": 5098,
+    "Code": "F0760",
+    "Groups": "",
+    "WebDesc": "FEEDERS, AIR",
+    "Description": "RAPID AIR C6, Max Width: 3\"; Max Thickness: 0.062\", please quote with lead time and shipping cost, Up to $10,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5099,
+    "Code": "W5304",
+    "Groups": "",
+    "WebDesc": "WIRE MACHINERY, CUTTING & STRIPPING",
+    "Description": "CARPENTER M930",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5100,
+    "Code": "U5503",
+    "Groups": "Other Machinery",
+    "WebDesc": "UPENDERS/DOWN-ENDERS",
+    "Description": "I'm looking for a BRANER #_UNKNOWN_ #Upenders / Down-Enders, but am open to other manufacturers a...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5101,
+    "Code": "M0753",
+    "Groups": "Other Machinery",
+    "WebDesc": "MARKING MACHINES",
+    "Description": "ALT LIGHTNING RAIL, Marking Area (X): 4'; Marking Area (Y): 8', Looking for an ALT lightning rail machine, preferably used.",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5102,
+    "Code": "D8300",
+    "Groups": "Other Machinery",
+    "WebDesc": "DUST COLLECTORS",
+    "Description": "DONALDSON TORIT CYCLONE 36-20, Flow Rate: 7,000 ft³/min., we would like to request a formal quote for the following items: Oneida Smart System (or compatib...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5103,
+    "Code": "M2680",
+    "Groups": "Engine Lathes, Drilling & Milling",
+    "WebDesc": "Mills, Manual",
+    "Description": "PRECISION MATTHEWS PM-739V-W/3AXDRO, Table-W: 7\"; Table-L: 39\"; Power: 2 hp; RPM: 2,500 RPM, Looking for this material in particular for outfitting, $10,001 - $50,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5104,
+    "Code": "P7136",
+    "Groups": "Presses",
+    "WebDesc": "Presses",
+    "Description": "ROUSSELLE 4SS-56, Tonnage: 40 T; Stroke: 2\"; Shut Height: 13.75\"; SPM: 105 strokes/min.; Bed W: 22\"; Bed L: 56\"; Crank (Single/Double): Double, Up to $10,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5105,
+    "Code": "F2798",
+    "Groups": "Other Machinery",
+    "WebDesc": "Folding Machines",
+    "Description": "UPTREND SF 6512 SA-1250, Max Thickness: 0.0472\"; Overall Length: 21.33', Looking for min 16' + working length, max 16GA mild steel, CNC folder, $100,001 USD and over",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5106,
+    "Code": "C5825",
+    "Groups": "Other Machinery",
+    "WebDesc": "COOLING TOWERS",
+    "Description": "DELTA COOLING TM415412, We are actually looking for mor information on this Model tower; can you please email us the subm..., $50,001 - $100,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5107,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "TOSHIBA BTU-14, X: 78.7\"; Y: 57\"; Z: 59\"; # Axis: 5; RPM: 8,000 RPM; Table-W: 55\"; Table-L: 63\"; Taper: #50, looking for cost and availability, $100,001 USD and over",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5108,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "TOS FRFQ 300 KR/A16, X: 590.55\"; Y: 149.61\"; Z: 47.244\"; RPM: 4,000 RPM; Table-W: 118.11\"; Table-L: 629.92\"; # ATC: 40; Taper: ISO 50, Looking for TOS FRFQ 300 KR/A16 travelling bridge, double column machine or any brand , similar t...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5109,
+    "Code": "C1678",
+    "Groups": "Other Machinery",
+    "WebDesc": "CHILLERS",
+    "Description": "KOOLANT KOOLERS SCV20000-PR-NF, I'm looking for a KOOLANT KOOLERS #SCV20000-PR-NF #Chillers, but am open to other manufacturers a...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5110,
+    "Code": "G6260",
+    "Groups": "Grinders, Lappers & Hones",
+    "WebDesc": "GRINDERS, FACE PLATE",
+    "Description": "DCM SG7000, I am looking for a flywheel grinder. I have used the dcm sg7000, great machine.",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5111,
+    "Code": "P7410",
+    "Groups": "Presses",
+    "WebDesc": "Presses",
+    "Description": "GREENERD HCS-20-8, Tonnage: 20 T, We are looking into a 20 ton press and came across the GREENERD HCS20-8, could I please get a qu...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5112,
+    "Code": "C5825",
+    "Groups": "Other Machinery",
+    "WebDesc": "COOLING TOWERS",
+    "Description": "THERMAL CARE FT8250, Tonnage: 60 T, please send more than one option, $10,001 - $50,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5113,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "HAAS ST-45L, Chuck Size: 18\"; # Axis: 2; Power: 40 hp; Max RPM: 1,400 RPM; Turning Dia: 25.5\"; Swing: 34.5\"; Machining Length: 80\"; Tailstock: No, LOOKING FOR 7'' BAR CAPASITY HAAS SL45L ST40LB SL40LB BIG LONG BED 50,000/100,00.00 PRICE RANGE",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5114,
+    "Code": "W0504",
+    "Groups": "Finishing",
+    "WebDesc": "WASHING EQUIPMENT",
+    "Description": "SAFETY KLEEN AQ-1, Max Load Capacity: 150 lb, I'm looking to purchase 3 to four AQ-1 parts washers or something very similar., Up to $10,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5115,
+    "Code": "P9082",
+    "Groups": "",
+    "WebDesc": "PUNCHES, PORTABLE",
+    "Description": "FRANKLIN F5100X6, Tonnage: 100 T, please quote and add freight to Calexico Ca 92231 USA",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5116,
+    "Code": "L3000",
+    "Groups": "Engine Lathes, Drilling & Milling",
+    "WebDesc": "Lathes, Manual",
+    "Description": "AMERICAN TURNMASTER ATV-618-TR, Swing: 11\"; Centers: 18\"; Power: 5 hp; RPM: 4,000 RPM, I'm in the US Navy station in Naval Air Station North Island and we are looking to equip our mach..., $10,001 - $50,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5117,
+    "Code": "G4800",
+    "Groups": "Grinders, Lappers & Hones",
+    "WebDesc": "Grinders",
+    "Description": "OKAMOTO OGM-1236UNCIII, Swing: 12.6\"; Centers: 36\"; Power: 7.5 hp; Grinding Wheel Dia.: 14\"; Max Weight Between Centers: 330 lb; Plunge (Yes/No): Yes, Please provide a quotation for the items listed below, which are required by our federal customer...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5118,
+    "Code": "G4800",
+    "Groups": "Grinders, Lappers & Hones",
+    "WebDesc": "Grinders",
+    "Description": "OKAMOTO OGM-1236",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5119,
+    "Code": "P8915",
+    "Groups": "Fabricating",
+    "WebDesc": "Ironworkers",
+    "Description": "KINGSLAND MULTI 125, Angle (L1): 6\"; Angle (L2): 6\"; Angle (T): 0.75\"; Tonnage: 140 T; Power: 10 hp; Throat: 14\"; Stroke: 3.125\", supply of one (1) 125 Ton Hydraulic Ironworker for a procurement opportunity. Please provide your...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5120,
+    "Code": "S3804",
+    "Groups": "Fabricating",
+    "WebDesc": "Shears",
+    "Description": "FAMCO A36, Could you please provide a quotation for the following item, including delivery costs to the belo..., Up to $10,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5121,
+    "Code": "M2680",
+    "Groups": "Engine Lathes, Drilling & Milling",
+    "WebDesc": "Mills, Manual",
+    "Description": "REPUBLIC LAGUN FUTV-185-EF, Table Size-W: 14\"; Table Size-L: 73\", Could you please provide us with your best available pricing, including delivery time and freight...",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5123,
+    "Code": "B0275",
+    "Groups": "",
+    "WebDesc": "BAGGERS",
+    "Description": "ROLLBAG ROLLBAG R3200, I'm looking for a ROLLBAG #ROLLBAG R3200 #Baggers, but am open to other manufacturers and models.",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5124,
+    "Code": "L2150",
+    "Groups": "CNC Lathes & Turning Centers",
+    "WebDesc": "CNC Lathes",
+    "Description": "MORI SEIKI NLX, Mori Seiki (pre-DMG) NLX lathe with y-axis and sub-spindle or Mori Seiki (pre-DMG) NT[all sizes] ..., $50,001 - $100,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5125,
+    "Code": "F2798",
+    "Groups": "Other Machinery",
+    "WebDesc": "Folding Machines",
+    "Description": "CIDAN FORMA 40, Max Thickness: 0.1046\"; Max Thickness (gauge): 12 gauge; Overall Length: 13.25', Looking to purchase 10' brake, $50,001 - $100,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5126,
+    "Code": "G1100",
+    "Groups": "Gear",
+    "WebDesc": "Gear Machinery",
+    "Description": "HELIOS HERA 90, Looking for a HERA 90 CNC or a Koepfer K160 CNC gear cutting machine, Up to $10,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5127,
+    "Code": "I4604",
+    "Groups": "Other Machinery",
+    "WebDesc": "Injection Molders",
+    "Description": "pre-owned J100EII Injection Molder for making small belt parts 2-3 oz",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5128,
+    "Code": "R3400",
+    "Groups": "",
+    "WebDesc": "RIVET SPINNERS",
+    "Description": "TAUMEL T-161, Max Dia. of Rivet: 0.16\", We are looking to replace our benchtop orbital riveter, an older BalTec RN180. Which benchtop orb..., Up to $10,000 USD",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5129,
+    "Code": "L3000",
+    "Groups": "Engine Lathes, Drilling & Milling",
+    "WebDesc": "Lathes, Manual",
+    "Description": "Monarch 21/79, 21\" swing, 80\" centers. Replacing an old one, want new or excellent condition machine",
+    "Featured": false,
+    "FeatureOrder": null
+  },
+  {
+    "WtdID": 5130,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Large gantry, traveling bridge ,double column, machining centre.preferably Haidenhain or Fanuc control",
+    "Featured": true,
+    "FeatureOrder": 6
+  },
+  {
+    "WtdID": 5131,
+    "Code": "M0185",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Description": "Haas VF-2, 2020+, would like 4th-axis rotary",
+    "Featured": true,
+    "FeatureOrder": 12
+  }
+]
