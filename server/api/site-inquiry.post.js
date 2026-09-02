@@ -14,6 +14,10 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, statusMessage: 'Name and email are required.' })
   }
 
+  if (body.inquiryType === 'wanted-response' && !contact.phone) {
+    throw createError({ statusCode: 400, statusMessage: 'Phone is required for Wanted responses.' })
+  }
+
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
