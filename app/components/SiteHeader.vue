@@ -11,6 +11,7 @@
           <NuxtLink to="/about" @click="menuOpen = false">About</NuxtLink>
           <NuxtLink to="/services" @click="menuOpen = false">Services</NuxtLink>
           <NuxtLink to="/equipment" @click="menuOpen = false">Equipment</NuxtLink>
+          <NuxtLink to="/wanted" @click="menuOpen = false">Wanted</NuxtLink>
           <NuxtLink to="/sell-your-machine" @click="menuOpen = false">Sell Your Machine</NuxtLink>
           <NuxtLink to="/contact" @click="menuOpen = false">Contact</NuxtLink>
           <a class="mobile-phone" href="tel:+12569801200">(256) 980-1200</a>
