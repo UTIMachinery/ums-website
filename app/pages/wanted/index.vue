@@ -41,14 +41,31 @@ const featuredWanteds = computed(() =>
 const filteredWanteds = computed(() => {
   const term = searchTerm.value.trim().toLowerCase()
 
-  return wanteds.filter(w => {
-    const matchesGroup = selectedGroup.value === 'All' || w.Groups === selectedGroup.value
-    const matchesWebDesc = selectedWebDesc.value === 'All' || w.WebDesc === selectedWebDesc.value
-    const searchable = `${w.WebDesc} ${w.Description} ${w.Groups}`.toLowerCase()
-    const matchesSearch = !term || searchable.includes(term)
+  return wanteds
+    .filter(w => {
+      const matchesGroup = selectedGroup.value === 'All' || w.Groups === selectedGroup.value
+      const matchesWebDesc = selectedWebDesc.value === 'All' || w.WebDesc === selectedWebDesc.value
+      const searchable = `${w.WebDesc} ${w.Description} ${w.Groups}`.toLowerCase()
+      const matchesSearch = !term || searchable.includes(term)
 
-    return matchesGroup && matchesWebDesc && matchesSearch
-  })
+      return matchesGroup && matchesWebDesc && matchesSearch
+    })
+    .sort((a, b) => {
+      const typeCompare = (a.WebDesc || 'Other Machinery').localeCompare(b.WebDesc || 'Other Machinery')
+      return typeCompare || a.WtdID - b.WtdID
+    })
+})
+
+const groupedWanteds = computed(() => {
+  const grouped = new Map<string, typeof filteredWanteds.value>()
+
+  for (const wanted of filteredWanteds.value) {
+    const type = wanted.WebDesc || 'Other Machinery'
+    if (!grouped.has(type)) grouped.set(type, [])
+    grouped.get(type)!.push(wanted)
+  }
+
+  return Array.from(grouped, ([type, items]) => ({ type, items }))
 })
 
 function chooseGroup(group: string) {
@@ -115,24 +132,13 @@ useSeoMeta({
 
       <div class="search-box">
         <label for="wanted-search">Search by manufacturer, model or keyword</label>
-        <input
-          id="wanted-search"
-          v-model="searchTerm"
-          type="search"
-          placeholder="Example: Haas VF-3, Mazak, press brake, grinder..."
-        >
+        <input id="wanted-search" v-model="searchTerm" type="search" placeholder="Example: Haas VF-3, Mazak, press brake, grinder...">
       </div>
 
       <div class="filter-block">
         <h3>Browse by Machine Type</h3>
         <div class="filter-buttons">
-          <button
-            v-for="group in groups"
-            :key="group"
-            type="button"
-            :class="['filter-button', { active: selectedGroup === group }]"
-            @click="chooseGroup(group)"
-          >
+          <button v-for="group in groups" :key="group" type="button" :class="['filter-button', { active: selectedGroup === group }]" @click="chooseGroup(group)">
             {{ group }}
           </button>
         </div>
@@ -151,16 +157,22 @@ useSeoMeta({
         <strong>{{ filteredWanteds.length }}</strong> wanted {{ filteredWanteds.length === 1 ? 'machine' : 'machines' }}
       </div>
 
-      <div v-if="filteredWanteds.length" class="wanted-grid">
-        <article v-for="wanted in filteredWanteds" :key="wanted.WtdID" class="wanted-card">
-          <div class="card-topline">
-            <span class="wanted-label">WANTED</span>
-            <span class="wanted-number">#{{ wanted.WtdID }}</span>
+      <div v-if="filteredWanteds.length" class="wanted-list">
+        <section v-for="grouped in groupedWanteds" :key="grouped.type" class="wanted-type-group">
+          <div class="type-heading">
+            <h3>{{ grouped.type }}</h3>
+            <span>{{ grouped.items.length }} {{ grouped.items.length === 1 ? 'wanted' : 'wanteds' }}</span>
           </div>
-          <div class="wanted-type">{{ wanted.WebDesc }}</div>
-          <p class="wanted-description">{{ wanted.Description }}</p>
-          <NuxtLink :to="sellerLink(wanted.WtdID)" class="card-button">I Have One of These to Sell</NuxtLink>
-        </article>
+
+          <article v-for="wanted in grouped.items" :key="wanted.WtdID" class="wanted-row">
+            <div class="wanted-row-number">
+              <span class="wanted-label">WANTED</span>
+              <span>#{{ wanted.WtdID }}</span>
+            </div>
+            <p class="wanted-row-description">{{ wanted.Description }}</p>
+            <NuxtLink :to="sellerLink(wanted.WtdID)" class="row-button">I Have One to Sell</NuxtLink>
+          </article>
+        </section>
       </div>
 
       <div v-else class="no-results">
@@ -182,303 +194,58 @@ useSeoMeta({
 </template>
 
 <style scoped>
-.wanted-page {
-  background: #f5f7fa;
-  color: #172033;
-}
-
-.wanted-hero {
-  background: #071a2c;
-  color: #fff;
-  padding: 72px 32px;
-}
-
-.hero-inner,
-.section,
-.bottom-cta {
-  max-width: 1320px;
-  margin: 0 auto;
-}
-
-.hero-inner {
-  max-width: 920px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.eyebrow {
-  margin: 0 0 12px;
-  color: #f47b20;
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-}
-
-.eyebrow.dark {
-  color: #c95c12;
-}
-
-h1 {
-  margin: 0;
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  line-height: 1.05;
-}
-
-h2 {
-  margin: 4px 0 0;
-  font-size: clamp(1.7rem, 3vw, 2.45rem);
-}
-
-.hero-copy {
-  max-width: 760px;
-  margin: 22px auto 28px;
-  color: #d9e1ea;
-  font-size: 1.08rem;
-  line-height: 1.7;
-}
-
-.no-cost {
-  margin: 14px 0 0;
-  color: #c7d1dc;
-  font-size: 0.92rem;
-}
-
-.primary-cta,
-.card-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  background: #e66d18;
-  color: #fff;
-  font-weight: 800;
-  text-decoration: none;
-  transition: transform 0.15s ease, background 0.15s ease;
-}
-
-.primary-cta {
-  min-height: 48px;
-  padding: 0 24px;
-}
-
-.primary-cta:hover,
-.card-button:hover {
-  background: #cc5c0e;
-  transform: translateY(-1px);
-}
-
-.section {
-  padding: 56px 32px;
-}
-
-.featured-section {
-  padding-bottom: 20px;
-}
-
-.section-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 24px;
-  margin-bottom: 24px;
-}
-
-.featured-scroll {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(300px, 390px);
-  gap: 18px;
-  overflow-x: auto;
-  padding: 2px 2px 18px;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
-}
-
-.featured-card {
-  scroll-snap-align: start;
-  border-top: 4px solid #e66d18;
-}
-
-.search-box,
-.filter-block,
-.refine-block {
-  margin-bottom: 28px;
-}
-
-.search-box label,
-.refine-block label,
-.filter-block h3 {
-  display: block;
-  margin: 0 0 10px;
-  font-weight: 800;
-}
-
-.search-box input,
-.refine-block select {
-  width: 100%;
-  border: 1px solid #cbd3dc;
-  border-radius: 5px;
-  background: #fff;
-  padding: 14px 16px;
-  font: inherit;
-}
-
-.filter-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-}
-
-.filter-button,
-.reset-button {
-  border: 1px solid #b9c3ce;
-  border-radius: 5px;
-  background: #fff;
-  color: #172033;
-  padding: 10px 14px;
-  font: inherit;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.filter-button.active {
-  border-color: #123b6d;
-  background: #123b6d;
-  color: #fff;
-}
-
-.reset-button:hover,
-.filter-button:hover {
-  border-color: #123b6d;
-}
-
-.results-bar {
-  margin: 12px 0 18px;
-  color: #596574;
-}
-
-.wanted-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.wanted-card {
-  display: flex;
-  min-height: 260px;
-  flex-direction: column;
-  border: 1px solid #d7dde5;
-  border-radius: 8px;
-  background: #fff;
-  padding: 22px;
-  box-shadow: 0 3px 12px rgba(17, 32, 51, 0.05);
-}
-
-.card-topline {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.wanted-label {
-  color: #d35f10;
-  font-size: 0.76rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-}
-
-.wanted-number {
-  color: #7a8490;
-  font-size: 0.82rem;
-}
-
-.wanted-type {
-  margin-top: 12px;
-  color: #123b6d;
-  font-size: 1.05rem;
-  font-weight: 800;
-}
-
-.wanted-description {
-  margin: 14px 0 22px;
-  color: #343e4b;
-  line-height: 1.55;
-}
-
-.card-button {
-  width: 100%;
-  min-height: 44px;
-  margin-top: auto;
-  padding: 0 14px;
-  text-align: center;
-}
-
-.no-results {
-  border: 1px solid #d7dde5;
-  border-radius: 8px;
-  background: #fff;
-  padding: 40px;
-  text-align: center;
-}
-
-.bottom-cta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  margin-bottom: 64px;
-  border-radius: 10px;
-  background: #071a2c;
-  color: #fff;
-  padding: 38px 42px;
-}
-
-.bottom-cta h2 {
-  margin: 0 0 8px;
-}
-
-.bottom-cta p:last-child {
-  margin: 0;
-  color: #d9e1ea;
-}
-
-@media (max-width: 960px) {
-  .wanted-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .bottom-cta {
-    margin-left: 24px;
-    margin-right: 24px;
-  }
-}
-
-@media (max-width: 680px) {
-  .wanted-hero,
-  .section {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .wanted-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section-heading,
-  .bottom-cta {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .featured-scroll {
-    grid-auto-columns: 88%;
-  }
-
-  .bottom-cta {
-    margin-left: 16px;
-    margin-right: 16px;
-    padding: 30px 24px;
-  }
+.wanted-page { background: #f5f7fa; color: #172033; }
+.wanted-hero { background: #071a2c; color: #fff; padding: 72px 32px; }
+.hero-inner, .section, .bottom-cta { max-width: 1320px; margin: 0 auto; }
+.hero-inner { max-width: 920px; margin-left: auto; margin-right: auto; text-align: center; }
+.eyebrow { margin: 0 0 12px; color: #f47b20; font-size: .82rem; font-weight: 800; letter-spacing: .14em; }
+.eyebrow.dark { color: #c95c12; }
+h1 { margin: 0; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.05; }
+h2 { margin: 4px 0 0; font-size: clamp(1.7rem, 3vw, 2.45rem); }
+.hero-copy { max-width: 760px; margin: 22px auto 28px; color: #d9e1ea; font-size: 1.08rem; line-height: 1.7; }
+.no-cost { margin: 14px 0 0; color: #c7d1dc; font-size: .92rem; }
+.primary-cta, .card-button, .row-button { display: inline-flex; align-items: center; justify-content: center; border-radius: 5px; background: #e66d18; color: #fff; font-weight: 800; text-decoration: none; transition: transform .15s ease, background .15s ease; }
+.primary-cta { min-height: 48px; padding: 0 24px; }
+.primary-cta:hover, .card-button:hover, .row-button:hover { background: #cc5c0e; transform: translateY(-1px); }
+.section { padding: 56px 32px; }
+.featured-section { padding-bottom: 20px; }
+.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+.featured-scroll { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(300px, 390px); gap: 18px; overflow-x: auto; padding: 2px 2px 18px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+.featured-card { scroll-snap-align: start; border-top: 4px solid #e66d18; }
+.search-box, .filter-block, .refine-block { margin-bottom: 28px; }
+.search-box label, .refine-block label, .filter-block h3 { display: block; margin: 0 0 10px; font-weight: 800; }
+.search-box input, .refine-block select { width: 100%; border: 1px solid #cbd3dc; border-radius: 5px; background: #fff; padding: 14px 16px; font: inherit; }
+.filter-buttons { display: flex; flex-wrap: wrap; gap: 9px; }
+.filter-button, .reset-button { border: 1px solid #b9c3ce; border-radius: 5px; background: #fff; color: #172033; padding: 10px 14px; font: inherit; font-weight: 700; cursor: pointer; }
+.filter-button.active { border-color: #123b6d; background: #123b6d; color: #fff; }
+.reset-button:hover, .filter-button:hover { border-color: #123b6d; }
+.results-bar { margin: 12px 0 18px; color: #596574; }
+.wanted-card { display: flex; min-height: 260px; flex-direction: column; border: 1px solid #d7dde5; border-radius: 8px; background: #fff; padding: 22px; box-shadow: 0 3px 12px rgba(17, 32, 51, .05); }
+.wanted-label { color: #d35f10; font-size: .76rem; font-weight: 900; letter-spacing: .12em; }
+.wanted-type { margin-top: 12px; color: #123b6d; font-size: 1.05rem; font-weight: 800; }
+.wanted-description { margin: 14px 0 22px; color: #343e4b; line-height: 1.55; }
+.card-button { width: 100%; min-height: 44px; margin-top: auto; padding: 0 14px; text-align: center; }
+.wanted-list { display: flex; flex-direction: column; gap: 30px; }
+.wanted-type-group { overflow: hidden; border: 1px solid #d7dde5; border-radius: 8px; background: #fff; box-shadow: 0 3px 12px rgba(17, 32, 51, .04); }
+.type-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid #d7dde5; background: #edf2f7; padding: 12px 18px; }
+.type-heading h3 { margin: 0; color: #123b6d; font-size: 1.08rem; }
+.type-heading span { color: #6b7684; font-size: .84rem; }
+.wanted-row { display: grid; grid-template-columns: 125px minmax(0, 1fr) 190px; align-items: center; gap: 18px; min-height: 72px; padding: 10px 14px 10px 18px; border-bottom: 1px solid #e5e9ee; }
+.wanted-row:last-child { border-bottom: 0; }
+.wanted-row-number { display: flex; flex-direction: column; gap: 3px; color: #7a8490; font-size: .82rem; }
+.wanted-row-description { display: -webkit-box; overflow: hidden; margin: 0; color: #343e4b; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.row-button { min-height: 40px; padding: 0 14px; text-align: center; }
+.no-results { border: 1px solid #d7dde5; border-radius: 8px; background: #fff; padding: 40px; text-align: center; }
+.bottom-cta { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-bottom: 64px; border-radius: 10px; background: #071a2c; color: #fff; padding: 38px 42px; }
+.bottom-cta h2 { margin: 0 0 8px; }
+.bottom-cta p:last-child { margin: 0; color: #d9e1ea; }
+@media (max-width: 760px) {
+  .wanted-hero, .section { padding-left: 20px; padding-right: 20px; }
+  .section-heading, .bottom-cta { align-items: stretch; flex-direction: column; }
+  .featured-scroll { grid-auto-columns: 88%; }
+  .wanted-row { grid-template-columns: 1fr; gap: 8px; padding: 15px; }
+  .wanted-row-number { flex-direction: row; justify-content: space-between; }
+  .row-button { width: 100%; }
+  .bottom-cta { margin-left: 16px; margin-right: 16px; padding: 30px 24px; }
 }
 </style>
