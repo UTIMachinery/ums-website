@@ -166,7 +166,7 @@ useSeoMeta({
 
           <article v-for="wanted in grouped.items" :key="wanted.WtdID" class="wanted-row">
             <div class="wanted-row-number">
-              <span class="wanted-label">WANTED</span>
+              <span class="id-label">ID</span>
               <span>#{{ wanted.WtdID }}</span>
             </div>
             <p class="wanted-row-description">{{ wanted.Description }}</p>
@@ -226,14 +226,15 @@ h2 { margin: 4px 0 0; font-size: clamp(1.7rem, 3vw, 2.45rem); }
 .wanted-description { margin: 14px 0 22px; color: #343e4b; line-height: 1.55; }
 .card-button { width: 100%; min-height: 44px; margin-top: auto; padding: 0 14px; text-align: center; }
 .wanted-list { display: flex; flex-direction: column; gap: 30px; }
-.wanted-type-group { overflow: hidden; border: 1px solid #d7dde5; border-radius: 8px; background: #fff; box-shadow: 0 3px 12px rgba(17, 32, 51, .04); }
-.type-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid #d7dde5; background: #edf2f7; padding: 12px 18px; }
-.type-heading h3 { margin: 0; color: #123b6d; font-size: 1.08rem; }
-.type-heading span { color: #6b7684; font-size: .84rem; }
-.wanted-row { display: grid; grid-template-columns: 125px minmax(0, 1fr) 190px; align-items: center; gap: 18px; min-height: 72px; padding: 10px 14px 10px 18px; border-bottom: 1px solid #e5e9ee; }
+.wanted-type-group { overflow: hidden; border: 1px solid #c9d2dc; border-radius: 8px; background: #fff; box-shadow: 0 3px 12px rgba(17, 32, 51, .04); }
+.type-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid #aebdcb; background: #d9e3ed; padding: 13px 18px; }
+.type-heading h3 { margin: 0; color: #0b315d; font-size: 1.18rem; font-weight: 900; letter-spacing: .01em; }
+.type-heading span { color: #526274; font-size: .86rem; font-weight: 700; }
+.wanted-row { display: grid; grid-template-columns: 82px minmax(0, 1fr) 190px; align-items: center; gap: 16px; min-height: 68px; padding: 9px 14px 9px 18px; border-bottom: 1px solid #e1e6eb; }
 .wanted-row:last-child { border-bottom: 0; }
-.wanted-row-number { display: flex; flex-direction: column; gap: 3px; color: #7a8490; font-size: .82rem; }
-.wanted-row-description { display: -webkit-box; overflow: hidden; margin: 0; color: #343e4b; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.wanted-row-number { display: flex; flex-direction: column; gap: 2px; color: #788390; font-size: .8rem; }
+.id-label { color: #9a5a2a; font-size: .69rem; font-weight: 800; letter-spacing: .08em; }
+.wanted-row-description { display: -webkit-box; overflow: hidden; margin: 0; color: #172033; font-size: 1rem; font-weight: 600; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .row-button { min-height: 40px; padding: 0 14px; text-align: center; }
 .no-results { border: 1px solid #d7dde5; border-radius: 8px; background: #fff; padding: 40px; text-align: center; }
 .bottom-cta { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-bottom: 64px; border-radius: 10px; background: #071a2c; color: #fff; padding: 38px 42px; }
