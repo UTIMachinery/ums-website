@@ -27,6 +27,11 @@ export default defineEventHandler(async (event) => {
     message = `Machine for Sale\n\nContact Information:\nName: ${clean(contact.contactName)}\nCompany: ${clean(contact.companyName)}\nEmail: ${clean(contact.email)}\nPhone: ${clean(contact.phone)}\n\nMachine Information:\nYear: ${clean(machine.year)}\nManufacturer: ${clean(machine.manufacturer)}\nModel: ${clean(machine.model)}\nMachine Type: ${clean(machine.machineType)}\nLocation: ${clean(machine.location)}\n\nDetails:\n${body.message || ''}`
   }
 
+  if (body.inquiryType === 'wanted-response') {
+    subject = `Wanted Response - ID #${clean(body.wtdId)}`
+    message = `Wanted Response\n\nWanted ID: #${clean(body.wtdId)}\nWanted Type: ${clean(body.wantedType)}\nWanted Description: ${clean(body.wantedDescription)}\n\nContact Information:\nName: ${clean(contact.contactName)}\nCompany: ${clean(contact.companyName)}\nEmail: ${clean(contact.email)}\nPhone: ${clean(contact.phone)}\n\nMachine Information:\nYear: ${clean(machine.year)}\nManufacturer: ${clean(machine.manufacturer)}\nModel: ${clean(machine.model)}\nLocation: ${clean(machine.location)}\n\nDetails:\n${body.message || ''}`
+  }
+
   await transporter.sendMail({
     from: process.env.SMTP_USER,
     to: 'jon@usedmachinerysource.com',
