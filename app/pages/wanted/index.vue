@@ -10,10 +10,18 @@ const featuredScroll = ref<HTMLElement | null>(null)
 const sellerSending = ref(false)
 const sellerSent = ref(false)
 const sellerError = ref(false)
+const showWantedRequestForm = ref(false)
+const wantedRequestSending = ref(false)
+const wantedRequestSent = ref(false)
+const wantedRequestError = ref(false)
 
 const sellerForm = reactive({
   contactName: '', companyName: '', email: '', phone: '',
   year: '', manufacturer: '', model: '', location: '', details: ''
+})
+
+const wantedRequestForm = reactive({
+  email: '', contactName: '', phone: '', companyName: '', address: '', city: '', state: '', postalCode: '', country: '', machinesToSell: 'no', emailList: 'yes', message: ''
 })
 
 const wanteds = wantedsData as Array<{
@@ -92,6 +100,18 @@ function closeSellerForm() {
   sellerError.value = false
 }
 
+function openWantedRequestForm() {
+  wantedRequestSent.value = false
+  wantedRequestError.value = false
+  showWantedRequestForm.value = true
+}
+
+function closeWantedRequestForm() {
+  showWantedRequestForm.value = false
+  wantedRequestSent.value = false
+  wantedRequestError.value = false
+}
+
 async function submitSellerForm() {
   if (!selectedWanted.value) return
   sellerSending.value = true
@@ -130,6 +150,42 @@ async function submitSellerForm() {
   }
 }
 
+async function submitWantedRequestForm() {
+  wantedRequestSending.value = true
+  wantedRequestSent.value = false
+  wantedRequestError.value = false
+
+  try {
+    await $fetch('/api/request-info', {
+      method: 'POST',
+      body: {
+        inquiryType: 'machine-needed',
+        contact: {
+          email: wantedRequestForm.email,
+          contactName: wantedRequestForm.contactName,
+          phone: wantedRequestForm.phone,
+          companyName: wantedRequestForm.companyName,
+          address: wantedRequestForm.address,
+          city: wantedRequestForm.city,
+          state: wantedRequestForm.state,
+          postalCode: wantedRequestForm.postalCode,
+          country: wantedRequestForm.country
+        },
+        machinesToSell: wantedRequestForm.machinesToSell,
+        emailList: wantedRequestForm.emailList,
+        message: wantedRequestForm.message
+      }
+    })
+    wantedRequestSent.value = true
+    wantedRequestForm.message = ''
+    wantedRequestForm.machinesToSell = 'no'
+  } catch (e) {
+    wantedRequestError.value = true
+  } finally {
+    wantedRequestSending.value = false
+  }
+}
+
 useSeoMeta({
   title: 'Wanted Used Machinery | Used Machinery Source',
   description: 'See machinery our customers are actively looking to buy. Search current wanted CNC machines and other industrial equipment, or add your machinery requirement.'
@@ -144,12 +200,12 @@ useSeoMeta({
         <h1>Machine Wanted Listings!</h1>
         <p class="hero-copy">Let us know if you have a machine that may fit any of these requirements.</p>
         <p class="hero-wanted-copy">Looking for a machine? Add a wanted listing at no cost!</p>
-        <NuxtLink to="/equipment/request" class="primary-cta">Add My Wanted Machine</NuxtLink>
+        <button type="button" class="primary-cta" @click="openWantedRequestForm">Add My Wanted Machine</button>
       </div>
     </section>
 
     <section v-if="featuredWanteds.length" class="section featured-section">
-      <div class="section-heading"><div><p class="eyebrow dark">FEATURED WANTEDS</p><h2>Machines Needed Now!</h2></div></div>
+      <div class="section-heading featured-heading"><div><p class="eyebrow dark">FEATURED WANTEDS</p><h2>Machines Needed Now!</h2></div></div>
       <div class="featured-carousel">
         <button type="button" class="carousel-arrow carousel-arrow-left" aria-label="Previous featured Wanteds" @click="scrollFeatured(-1)">‹</button>
         <div ref="featuredScroll" class="featured-scroll">
@@ -216,7 +272,7 @@ useSeoMeta({
 
     <section class="bottom-cta">
       <div><p class="eyebrow">LOOKING FOR A MACHINE?</p><h2>Tell Us What You Need</h2><p>Send us your machinery requirement and we'll add it to our Wanted Machines list at no cost.</p></div>
-      <NuxtLink to="/equipment/request" class="primary-cta">Add My Wanted Machine</NuxtLink>
+      <button type="button" class="primary-cta" @click="openWantedRequestForm">Add My Wanted Machine</button>
     </section>
 
     <div v-if="selectedWanted" class="modal-overlay" @click.self="closeSellerForm">
@@ -252,44 +308,94 @@ useSeoMeta({
         </form>
       </div>
     </div>
+
+    <div v-if="showWantedRequestForm" class="modal-overlay" @click.self="closeWantedRequestForm">
+      <div class="seller-modal wanted-request-modal">
+        <button type="button" class="modal-close" aria-label="Close" @click="closeWantedRequestForm">×</button>
+        <p class="eyebrow dark">ADD A WANTED MACHINE</p>
+        <h2>Tell Us What You're Looking For</h2>
+
+        <div v-if="wantedRequestSent" class="sent-confirmation">
+          <h3>Sent Successfully</h3>
+          <p>Thank you. Your wanted machine request has been sent.</p>
+          <button type="button" class="close-after-send" @click="closeWantedRequestForm">Close</button>
+        </div>
+
+        <form v-else class="seller-form" @submit.prevent="submitWantedRequestForm">
+          <div class="form-grid">
+            <label>Email *<input v-model="wantedRequestForm.email" type="email" required></label>
+            <label>Contact Name *<input v-model="wantedRequestForm.contactName" required></label>
+            <label>Phone *<input v-model="wantedRequestForm.phone" type="tel" required></label>
+            <label>Company Name<input v-model="wantedRequestForm.companyName"></label>
+            <label>Address<input v-model="wantedRequestForm.address"></label>
+            <label>City<input v-model="wantedRequestForm.city"></label>
+            <label>State<input v-model="wantedRequestForm.state"></label>
+            <label>Postal Code<input v-model="wantedRequestForm.postalCode"></label>
+            <label>Country<input v-model="wantedRequestForm.country"></label>
+          </div>
+
+          <fieldset class="request-radio-group">
+            <legend>Have machines to sell or trade?</legend>
+            <label><input v-model="wantedRequestForm.machinesToSell" type="radio" value="yes"> Yes</label>
+            <label><input v-model="wantedRequestForm.machinesToSell" type="radio" value="no"> No</label>
+          </fieldset>
+
+          <fieldset class="request-radio-group">
+            <legend>Sign up for email list?</legend>
+            <label><input v-model="wantedRequestForm.emailList" type="radio" value="yes"> Yes</label>
+            <label><input v-model="wantedRequestForm.emailList" type="radio" value="no"> No</label>
+          </fieldset>
+
+          <label>Tell us what you're looking for *<textarea v-model="wantedRequestForm.message" rows="5" required></textarea></label>
+          <p v-if="wantedRequestError" class="form-error">We couldn't send the form. Please try again or call (256) 980-1200.</p>
+          <div class="form-actions">
+            <button type="button" class="cancel-button" :disabled="wantedRequestSending" @click="closeWantedRequestForm">Cancel</button>
+            <button type="submit" class="submit-button" :disabled="wantedRequestSending">{{ wantedRequestSending ? 'Sending...' : 'Submit Wanted Machine' }}</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </main>
 </template>
 
 <style scoped>
 .wanted-page { background: #f5f7fa; color: #172033; }
-.wanted-hero { background: #071a2c; color: #fff; padding: 30px 32px 32px; }
+.wanted-hero { background: #071a2c; color: #fff; padding: 20px 32px 22px; }
 .hero-inner, .section, .bottom-cta { max-width: 1320px; margin: 0 auto; }
 .hero-inner { max-width: 920px; margin-left: auto; margin-right: auto; text-align: center; }
-.eyebrow { margin: 0 0 8px; color: #f47b20; font-size: .78rem; font-weight: 800; letter-spacing: .14em; }
+.eyebrow { margin: 0 0 5px; color: #f47b20; font-size: .75rem; font-weight: 800; letter-spacing: .14em; }
 .eyebrow.dark { color: #c95c12; }
-h1 { margin: 0; font-size: clamp(2.1rem, 4vw, 3.25rem); line-height: 1.05; }
+h1 { margin: 0; font-size: clamp(2rem, 3.6vw, 3rem); line-height: 1.02; }
 h2 { margin: 4px 0 0; font-size: clamp(1.7rem, 3vw, 2.45rem); }
-.hero-copy, .hero-wanted-copy { max-width: 780px; margin: 10px auto 0; color: #d9e1ea; font-size: 1rem; line-height: 1.45; }
-.hero-wanted-copy { margin-top: 4px; margin-bottom: 14px; }
+.hero-copy, .hero-wanted-copy { max-width: 780px; margin: 7px auto 0; color: #d9e1ea; font-size: .96rem; line-height: 1.35; }
+.hero-wanted-copy { margin-top: 2px; margin-bottom: 10px; }
 .primary-cta, .card-button, .row-button { display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; border: 0; border-radius: 5px; background: #e66d18; color: #fff; font: inherit; font-weight: 800; text-decoration: none; cursor: pointer; transition: transform .15s ease, background .15s ease; }
-.primary-cta { min-height: 42px; padding: 0 22px; }
+.primary-cta { min-height: 38px; padding: 0 20px; }
 .primary-cta:hover, .card-button:hover, .row-button:hover { background: #cc5c0e; transform: translateY(-1px); }
-.section { padding: 56px 32px; }
-.featured-section { padding-bottom: 20px; }
-.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+.section { padding: 42px 32px; }
+.featured-section { padding-top: 24px; padding-bottom: 8px; }
+.featured-heading { margin-bottom: 10px; }
+.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+.featured-heading h2 { font-size: clamp(1.55rem, 2.5vw, 2.15rem); }
 .featured-carousel { position: relative; padding: 0 52px; }
-.featured-scroll { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(300px, 390px); gap: 18px; overflow-x: auto; padding: 4px 4px 24px; scroll-snap-type: x mandatory; scrollbar-width: auto; scrollbar-color: #70839a #d9e1e9; }
+.featured-scroll { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(300px, 390px); gap: 16px; overflow-x: auto; padding: 4px 4px 18px; scroll-snap-type: x mandatory; scrollbar-width: auto; scrollbar-color: #70839a #d9e1e9; }
 .featured-scroll::-webkit-scrollbar { height: 14px; }
 .featured-scroll::-webkit-scrollbar-track { background: #d9e1e9; border-radius: 8px; }
 .featured-scroll::-webkit-scrollbar-thumb { background: #70839a; border-radius: 8px; border: 2px solid #d9e1e9; }
-.carousel-arrow { position: absolute; top: 50%; z-index: 5; width: 44px; height: 54px; transform: translateY(-62%); border: 1px solid #b5c0cb; border-radius: 6px; background: #fff; color: #0b315d; font-size: 34px; font-weight: 800; line-height: 1; cursor: pointer; box-shadow: 0 4px 12px rgba(17,32,51,.12); }
+.carousel-arrow { position: absolute; top: 50%; z-index: 5; width: 44px; height: 50px; transform: translateY(-58%); border: 1px solid #b5c0cb; border-radius: 6px; background: #fff; color: #0b315d; font-size: 34px; font-weight: 800; line-height: 1; cursor: pointer; box-shadow: 0 4px 12px rgba(17,32,51,.12); }
 .carousel-arrow:hover { background: #0b315d; color: #fff; border-color: #0b315d; }
 .carousel-arrow-left { left: 0; }
 .carousel-arrow-right { right: 0; }
-.wanted-card { display: flex; min-height: 260px; flex-direction: column; border: 1px solid #d7dde5; border-radius: 8px; background: #fff; padding: 22px; box-shadow: 0 3px 12px rgba(17, 32, 51, .05); }
-.featured-card { scroll-snap-align: start; min-height: 275px; border: 2px solid #e4a06f; border-top: 7px solid #e66d18; background: #fffdf9; box-shadow: 0 7px 20px rgba(17,32,51,.12); }
+.wanted-card { display: flex; min-height: 220px; flex-direction: column; border: 1px solid #d7dde5; border-radius: 8px; background: #fff; padding: 18px 20px; box-shadow: 0 3px 12px rgba(17, 32, 51, .05); }
+.featured-card { scroll-snap-align: start; min-height: 220px; border: 2px solid #e4a06f; border-top: 7px solid #e66d18; background: #fffdf9; box-shadow: 0 7px 20px rgba(17,32,51,.12); }
 .featured-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .hot-label { color: #c95000; font-size: .76rem; font-weight: 900; letter-spacing: .11em; }
 .featured-id { color: #647282; font-size: .78rem; font-weight: 800; }
 .wanted-label { color: #d35f10; font-size: .76rem; font-weight: 900; letter-spacing: .12em; }
-.wanted-type { margin-top: 12px; color: #0b315d; font-size: 1.08rem; font-weight: 900; }
-.wanted-description { margin: 14px 0 22px; color: #172033; font-size: 1.02rem; font-weight: 650; line-height: 1.5; }
-.card-button { width: 100%; min-height: 42px; margin-top: auto; padding: 9px 8px; text-align: center; font-size: .9rem; white-space: normal; }
+.wanted-type { margin-top: 9px; color: #0b315d; font-size: .98rem; font-weight: 900; }
+.wanted-description { margin: 19px 0 16px; color: #101a26; font-size: 1.13rem; font-weight: 750; line-height: 1.42; letter-spacing: .005em; }
+.card-button { width: 100%; min-height: 38px; margin-top: auto; padding: 8px; text-align: center; font-size: .89rem; white-space: normal; }
+.browse-section { padding-top: 24px; }
 .search-box, .filter-block, .refine-block { margin-bottom: 28px; }
 .search-box label, .refine-block label, .filter-block h3 { display: block; margin: 0 0 10px; font-weight: 800; }
 .search-box input, .refine-block select { width: 100%; border: 1px solid #cbd3dc; border-radius: 5px; background: #fff; padding: 14px 16px; font: inherit; }
@@ -335,9 +441,13 @@ h2 { margin: 4px 0 0; font-size: clamp(1.7rem, 3vw, 2.45rem); }
 .sent-confirmation { border: 1px solid #b7d9c1; border-radius: 6px; background: #eef8f1; padding: 24px; color: #205c35; }
 .sent-confirmation h3 { margin: 0 0 8px; font-size: 1.3rem; }
 .sent-confirmation p { margin: 0 0 18px; line-height: 1.5; }
+.request-radio-group { display: flex; align-items: center; gap: 18px; margin: 2px 0 16px; border: 0; padding: 0; }
+.request-radio-group legend { margin-bottom: 7px; color: #253344; font-size: .88rem; font-weight: 700; }
+.request-radio-group label { display: inline-flex; align-items: center; gap: 6px; margin: 0; }
+.request-radio-group input { width: auto; margin: 0; }
 @media (max-width: 760px) {
   .wanted-hero, .section { padding-left: 20px; padding-right: 20px; }
-  .wanted-hero { padding-top: 26px; padding-bottom: 28px; }
+  .wanted-hero { padding-top: 18px; padding-bottom: 20px; }
   .section-heading, .bottom-cta { align-items: stretch; flex-direction: column; }
   .featured-carousel { padding: 0 38px; }
   .featured-scroll { grid-auto-columns: 92%; }
