@@ -141,10 +141,10 @@ useSeoMeta({
     <section class="wanted-hero">
       <div class="hero-inner">
         <p class="eyebrow">WANTED MACHINERY</p>
-        <h1>Machines Our Customers Are Looking For</h1>
-        <p class="hero-copy">Browse current machinery requirements from customers actively looking to buy. If you have a machine that matches one of these requests, let us know.</p>
+        <h1>Machine Wanted Listings!</h1>
+        <p class="hero-copy">Let us know if you have a machine that may fit any of these requirements.</p>
+        <p class="hero-wanted-copy">Looking for a machine? Add a wanted listing at no cost!</p>
         <NuxtLink to="/equipment/request" class="primary-cta">Add My Wanted Machine</NuxtLink>
-        <p class="no-cost">Looking for a machine? We can add your requirement to our Wanted Machines list at no cost.</p>
       </div>
     </section>
 
@@ -192,7 +192,9 @@ useSeoMeta({
         </select>
       </div>
 
-      <div class="results-bar"><strong>{{ filteredWanteds.length }}</strong> wanted {{ filteredWanteds.length === 1 ? 'machine' : 'machines' }}</div>
+      <div class="results-separator">
+        <div class="results-bar"><strong>{{ filteredWanteds.length }}</strong> {{ filteredWanteds.length === 1 ? 'machine wanted listing' : 'machine wanted listings' }}</div>
+      </div>
 
       <div v-if="filteredWanteds.length" class="wanted-list">
         <section v-for="grouped in groupedWanteds" :key="grouped.type" class="wanted-type-group">
@@ -255,17 +257,17 @@ useSeoMeta({
 
 <style scoped>
 .wanted-page { background: #f5f7fa; color: #172033; }
-.wanted-hero { background: #071a2c; color: #fff; padding: 72px 32px; }
+.wanted-hero { background: #071a2c; color: #fff; padding: 30px 32px 32px; }
 .hero-inner, .section, .bottom-cta { max-width: 1320px; margin: 0 auto; }
 .hero-inner { max-width: 920px; margin-left: auto; margin-right: auto; text-align: center; }
-.eyebrow { margin: 0 0 12px; color: #f47b20; font-size: .82rem; font-weight: 800; letter-spacing: .14em; }
+.eyebrow { margin: 0 0 8px; color: #f47b20; font-size: .78rem; font-weight: 800; letter-spacing: .14em; }
 .eyebrow.dark { color: #c95c12; }
-h1 { margin: 0; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.05; }
+h1 { margin: 0; font-size: clamp(2.1rem, 4vw, 3.25rem); line-height: 1.05; }
 h2 { margin: 4px 0 0; font-size: clamp(1.7rem, 3vw, 2.45rem); }
-.hero-copy { max-width: 760px; margin: 22px auto 28px; color: #d9e1ea; font-size: 1.08rem; line-height: 1.7; }
-.no-cost { margin: 14px 0 0; color: #c7d1dc; font-size: .92rem; }
+.hero-copy, .hero-wanted-copy { max-width: 780px; margin: 10px auto 0; color: #d9e1ea; font-size: 1rem; line-height: 1.45; }
+.hero-wanted-copy { margin-top: 4px; margin-bottom: 14px; }
 .primary-cta, .card-button, .row-button { display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; border: 0; border-radius: 5px; background: #e66d18; color: #fff; font: inherit; font-weight: 800; text-decoration: none; cursor: pointer; transition: transform .15s ease, background .15s ease; }
-.primary-cta { min-height: 48px; padding: 0 24px; }
+.primary-cta { min-height: 42px; padding: 0 22px; }
 .primary-cta:hover, .card-button:hover, .row-button:hover { background: #cc5c0e; transform: translateY(-1px); }
 .section { padding: 56px 32px; }
 .featured-section { padding-bottom: 20px; }
@@ -295,7 +297,9 @@ h2 { margin: 4px 0 0; font-size: clamp(1.7rem, 3vw, 2.45rem); }
 .filter-button, .reset-button { border: 1px solid #b9c3ce; border-radius: 5px; background: #fff; color: #172033; padding: 10px 14px; font: inherit; font-weight: 700; cursor: pointer; }
 .filter-button.active { border-color: #123b6d; background: #123b6d; color: #fff; }
 .reset-button:hover, .filter-button:hover { border-color: #123b6d; }
-.results-bar { margin: 12px 0 18px; color: #596574; }
+.results-separator { margin: 34px 0 22px; padding-top: 20px; border-top: 2px solid #c7d2de; }
+.results-bar { display: inline-block; color: #0b315d; font-size: 1.16rem; font-weight: 700; }
+.results-bar strong { font-size: 1.34rem; }
 .wanted-list { display: flex; flex-direction: column; gap: 30px; }
 .wanted-type-group { overflow: hidden; border: 1px solid #c9d2dc; border-radius: 8px; background: #fff; box-shadow: 0 3px 12px rgba(17, 32, 51, .04); }
 .type-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid #aebdcb; background: #d9e3ed; padding: 13px 18px; }
@@ -333,6 +337,7 @@ h2 { margin: 4px 0 0; font-size: clamp(1.7rem, 3vw, 2.45rem); }
 .sent-confirmation p { margin: 0 0 18px; line-height: 1.5; }
 @media (max-width: 760px) {
   .wanted-hero, .section { padding-left: 20px; padding-right: 20px; }
+  .wanted-hero { padding-top: 26px; padding-bottom: 28px; }
   .section-heading, .bottom-cta { align-items: stretch; flex-direction: column; }
   .featured-carousel { padding: 0 38px; }
   .featured-scroll { grid-auto-columns: 92%; }
