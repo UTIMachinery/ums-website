@@ -7,7 +7,7 @@
         <div class="quick-links"><NuxtLink to="/equipment">Search Equipment →</NuxtLink><NuxtLink to="/sell-your-machine">Sell Your Machine →</NuxtLink><NuxtLink to="/equipment#tell-us-what-you-need">Tell Us What You Need →</NuxtLink></div>
       </div>
       <div class="form-card"><h2>Send Us a Message</h2><form @submit.prevent="submitForm">
-        <div class="form-grid"><label>Name *<input v-model="form.contactName" required></label><label>Company<input v-model="form.companyName"></label><label>Email *<input v-model="form.email" type="email" required></label><label>Phone<input v-model="form.phone" type="tel"></label></div>
+        <div class="form-grid"><label>Name *<input v-model="form.contactName" required></label><label>Company<input v-model="form.companyName"></label><label>Email *<input v-model="form.email" type="email" required></label><label>Phone *<input v-model="form.phone" type="tel" required></label></div>
         <label>Preferred method of communication *<select v-model="form.preferredContact" required><option disabled value="">Select one</option><option>Call</option><option>Email</option><option>Text</option></select></label>
         <label>How can we help?<select v-model="form.subject"><option>General Question</option><option>Buying a Machine</option><option>Selling a Machine</option><option>Looking for a Specific Machine</option></select></label>
         <label>Message *<textarea v-model="form.message" rows="7" required></textarea></label>
