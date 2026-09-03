@@ -18,6 +18,48 @@
   margin-top: 10px !important;
 }
 
+/* Keep form action buttons consistent with the equipment Request Information form. */
+.wanted-page .seller-modal .cancel-button {
+  background: #ffffff !important;
+  color: #1c4587 !important;
+  border: 2px solid #1c4587 !important;
+  border-radius: 8px !important;
+  padding: 10px 24px !important;
+}
+
+.wanted-page .seller-modal .submit-button,
+.wanted-page .seller-modal .close-after-send {
+  background: #1c4587 !important;
+  color: #ffffff !important;
+  border: 2px solid #1c4587 !important;
+  border-radius: 8px !important;
+  padding: 10px 24px !important;
+}
+
+.wanted-page .seller-modal .submit-button:hover,
+.wanted-page .seller-modal .close-after-send:hover {
+  background: #16386e !important;
+  border-color: #16386e !important;
+}
+
+.wanted-page .seller-modal .cancel-button:hover {
+  background: #f3f6fa !important;
+}
+
+/* Standalone Contact and Sell forms use the same blue primary action. */
+.form-card form > button[type='submit'] {
+  background: #1c4587 !important;
+  color: #ffffff !important;
+  border: 2px solid #1c4587 !important;
+  border-radius: 8px !important;
+  padding: 11px 24px !important;
+}
+
+.form-card form > button[type='submit']:hover {
+  background: #16386e !important;
+  border-color: #16386e !important;
+}
+
 @media (max-width: 600px) {
   .wanted-page .featured-card .wanted-description {
     font-size: 17px !important;
