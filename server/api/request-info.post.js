@@ -23,14 +23,15 @@ export default defineEventHandler(async (event) => {
   })
 
   const isMachineNeeded = body.inquiryType === 'machine-needed'
+  const preference = clean(contact.preferredContact) || clean(getCookie(event, 'ums-preferred-contact')) || 'Not specified'
 
   const subject = isMachineNeeded
     ? `[UMS Website] Machine Needed - ${clean(contact.contactName)}${contact.companyName ? ` - ${clean(contact.companyName)}` : ''}`
     : `Website Lead - ${clean(machine.year)} ${clean(machine.manufacturer)} ${clean(machine.model)} - Stock #${clean(machine.invID)}`
 
   const message = isMachineNeeded
-    ? `Machine Needed - Website Inquiry\n\nContact Information:\nName: ${clean(contact.contactName)}\nCompany: ${clean(contact.companyName)}\nEmail: ${clean(contact.email)}\nPhone: ${clean(contact.phone)}\nAddress: ${clean(contact.address)}\nCity: ${clean(contact.city)}\nState: ${clean(contact.state)}\nPostal Code: ${clean(contact.postalCode)}\nCountry: ${clean(contact.country)}\n\nHave machines to sell or trade?: ${clean(body.machinesToSell)}\nSign up for email list?: ${clean(body.emailList)}\n\nMachine Needed:\n${body.message || ''}`
-    : `Website Request for Information\n\nMachine:\n${clean(machine.year)} ${clean(machine.manufacturer)} ${clean(machine.model)}\nStock #${clean(machine.invID)}\n\nContact Information:\nName: ${clean(contact.contactName)}\nCompany: ${clean(contact.companyName)}\nEmail: ${clean(contact.email)}\nPhone: ${clean(contact.phone)}\nAddress: ${clean(contact.address)}\nCity: ${clean(contact.city)}\nState: ${clean(contact.state)}\nPostal Code: ${clean(contact.postalCode)}\nCountry: ${clean(contact.country)}\n\nHave machines to sell or trade?: ${clean(body.machinesToSell)}\nSign up for email list?: ${clean(body.emailList)}\n\nMessage:\n${body.message || ''}`
+    ? `Machine Needed - Website Inquiry\n\nContact Information:\nName: ${clean(contact.contactName)}\nCompany: ${clean(contact.companyName)}\nEmail: ${clean(contact.email)}\nPhone: ${clean(contact.phone)}\nPreferred Contact: ${preference}\nAddress: ${clean(contact.address)}\nCity: ${clean(contact.city)}\nState: ${clean(contact.state)}\nPostal Code: ${clean(contact.postalCode)}\nCountry: ${clean(contact.country)}\n\nHave machines to sell or trade?: ${clean(body.machinesToSell)}\nSign up for email list?: ${clean(body.emailList)}\n\nMachine Needed:\n${body.message || ''}`
+    : `Website Request for Information\n\nMachine:\n${clean(machine.year)} ${clean(machine.manufacturer)} ${clean(machine.model)}\nStock #${clean(machine.invID)}\n\nContact Information:\nName: ${clean(contact.contactName)}\nCompany: ${clean(contact.companyName)}\nEmail: ${clean(contact.email)}\nPhone: ${clean(contact.phone)}\nPreferred Contact: ${preference}\nAddress: ${clean(contact.address)}\nCity: ${clean(contact.city)}\nState: ${clean(contact.state)}\nPostal Code: ${clean(contact.postalCode)}\nCountry: ${clean(contact.country)}\n\nHave machines to sell or trade?: ${clean(body.machinesToSell)}\nSign up for email list?: ${clean(body.emailList)}\n\nMessage:\n${body.message || ''}`
 
   const recipients = ['jon@usedmachinerysource.com']
   if (process.env.SMTP_USER && !recipients.includes(process.env.SMTP_USER)) {
