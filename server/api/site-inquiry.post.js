@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
   if (body.inquiryType === 'wanted-response' && !contact.phone) throw createError({ statusCode: 400, statusMessage: 'Phone is required for Wanted responses.' })
 
   const transporter = nodemailer.createTransport({ service: 'gmail', auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS } })
-  const preference = clean(contact.preferredContact) || 'Not specified'
+  const preference = clean(contact.preferredContact) || clean(getCookie(event, 'ums-preferred-contact')) || 'Not specified'
   let subject = 'Website Contact - Used Machinery Source'
   let message = `Website Contact\n\nName: ${clean(contact.contactName)}\nCompany: ${clean(contact.companyName)}\nEmail: ${clean(contact.email)}\nPhone: ${clean(contact.phone)}\nPreferred Contact: ${preference}\nSubject: ${clean(body.subject)}\n\nMessage:\n${body.message || ''}`
   if (body.inquiryType === 'machine-for-sale') {
