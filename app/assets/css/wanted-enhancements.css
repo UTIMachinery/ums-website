@@ -18,15 +18,20 @@
   margin-top: 10px !important;
 }
 
-/* Keep form action buttons consistent with the equipment Request Information form. */
+/* Match modal action buttons to the equipment Request Information form. */
 .wanted-page .seller-modal .cancel-button {
   background: #ffffff !important;
   color: #1c4587 !important;
   border: 2px solid #1c4587 !important;
   border-radius: 8px !important;
   padding: 10px 24px !important;
-  min-width: 104px !important;
-  min-height: 44px !important;
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  font-size: 16px !important;
+  line-height: normal !important;
+  flex: 0 0 auto !important;
 }
 
 .wanted-page .seller-modal .submit-button,
@@ -36,7 +41,13 @@
   border: 2px solid #1c4587 !important;
   border-radius: 8px !important;
   padding: 10px 24px !important;
-  min-height: 44px !important;
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  font-size: 16px !important;
+  line-height: normal !important;
+  flex: 0 0 auto !important;
 }
 
 .wanted-page .seller-modal .submit-button:hover,
@@ -88,15 +99,24 @@
 
 .wanted-page .wanted-request-modal .form-actions {
   margin-top: 2px !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
 }
 
-/* Standalone Contact and Sell forms use the same blue primary action. */
+/* Standalone forms use the same compact blue primary action. */
 .form-card form > button[type='submit'] {
   background: #1c4587 !important;
   color: #ffffff !important;
   border: 2px solid #1c4587 !important;
   border-radius: 8px !important;
-  padding: 11px 24px !important;
+  padding: 10px 24px !important;
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  font-size: 16px !important;
+  line-height: normal !important;
 }
 
 .form-card form > button[type='submit']:hover {
