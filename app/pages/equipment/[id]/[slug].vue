@@ -601,19 +601,42 @@ const similarMachines = computed(() => {
   if (!machine.value) return []
 
   const current = machine.value
+  const isAvailable = item =>
+    String(item.InvID) !== String(current.InvID) &&
+    Number(item.Sold || 0) === 0 &&
+    Number(item.OffMarket || 0) === 0 &&
+    Number(item.dont_advertise || 0) === 0
 
-  return machinesData
+  const rotateFromCurrent = items => {
+    if (!items.length) return []
+    const seed = Number(current.InvID) || 0
+    const start = seed % items.length
+    return [...items.slice(start), ...items.slice(0, start)]
+  }
+
+  const exactMatches = machinesData
+    .filter(item => isAvailable(item) && item.WebDesc === current.WebDesc)
+    .sort((a, b) => Number(a.InvID) - Number(b.InvID))
+
+  const broaderMatches = machinesData
     .filter(item =>
-      String(item.InvID) !== String(current.InvID) &&
-      Number(item.Sold || 0) === 0 &&
-      Number(item.OffMarket || 0) === 0 &&
-      Number(item.dont_advertise || 0) === 0 &&
-      (
-        item.WebDesc === current.WebDesc ||
-        item.Groups === current.Groups
-      )
+      isAvailable(item) &&
+      item.WebDesc !== current.WebDesc &&
+      item.Groups === current.Groups
     )
-    .slice(0, 3)
+    .sort((a, b) => Number(a.InvID) - Number(b.InvID))
+
+  const results = rotateFromCurrent(exactMatches).slice(0, 3)
+
+  if (results.length < 3) {
+    const alreadyUsed = new Set(results.map(item => String(item.InvID)))
+    const fillers = rotateFromCurrent(broaderMatches)
+      .filter(item => !alreadyUsed.has(String(item.InvID)))
+      .slice(0, 3 - results.length)
+    results.push(...fillers)
+  }
+
+  return results
 })
 
 function machineSlug(item) {
