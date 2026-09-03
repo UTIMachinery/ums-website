@@ -18,8 +18,9 @@ export default defineEventHandler(async (event) => {
 
   const contact = body.contact || {}
   const machine = body.machine || {}
-  if (!contact.email || !contact.contactName) throw createError({ statusCode: 400, statusMessage: 'Name and email are required.' })
-  if (body.inquiryType === 'wanted-response' && !contact.phone) throw createError({ statusCode: 400, statusMessage: 'Phone is required for Wanted responses.' })
+  if (!contact.contactName || !contact.email || !contact.phone) {
+    throw createError({ statusCode: 400, statusMessage: 'Name, email and phone are required.' })
+  }
 
   const transporter = nodemailer.createTransport({ service: 'gmail', auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS } })
   const preference = clean(contact.preferredContact) || clean(getCookie(event, 'ums-preferred-contact')) || 'Not specified'
