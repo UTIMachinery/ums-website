@@ -25,6 +25,8 @@
   border: 2px solid #1c4587 !important;
   border-radius: 8px !important;
   padding: 10px 24px !important;
+  min-width: 104px !important;
+  min-height: 44px !important;
 }
 
 .wanted-page .seller-modal .submit-button,
@@ -34,6 +36,7 @@
   border: 2px solid #1c4587 !important;
   border-radius: 8px !important;
   padding: 10px 24px !important;
+  min-height: 44px !important;
 }
 
 .wanted-page .seller-modal .submit-button:hover,
@@ -44,6 +47,47 @@
 
 .wanted-page .seller-modal .cancel-button:hover {
   background: #f3f6fa !important;
+}
+
+/* Compact the Add a Wanted Machine form so all three questions share one row. */
+.wanted-page .wanted-request-modal .seller-form {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  column-gap: 18px !important;
+  align-items: end !important;
+}
+
+.wanted-page .wanted-request-modal .form-grid,
+.wanted-page .wanted-request-modal .seller-form > label:not(.ums-preferred-contact),
+.wanted-page .wanted-request-modal .form-error,
+.wanted-page .wanted-request-modal .form-actions {
+  grid-column: 1 / -1 !important;
+}
+
+.wanted-page .wanted-request-modal .ums-preferred-contact,
+.wanted-page .wanted-request-modal .request-radio-group {
+  grid-column: auto !important;
+  margin: 2px 0 14px !important;
+  align-self: end !important;
+}
+
+.wanted-page .wanted-request-modal .request-radio-group {
+  display: block !important;
+  min-width: 0 !important;
+}
+
+.wanted-page .wanted-request-modal .request-radio-group legend {
+  min-height: 18px !important;
+  margin-bottom: 8px !important;
+}
+
+.wanted-page .wanted-request-modal .request-radio-group label {
+  display: inline-flex !important;
+  margin-right: 14px !important;
+}
+
+.wanted-page .wanted-request-modal .form-actions {
+  margin-top: 2px !important;
 }
 
 /* Standalone Contact and Sell forms use the same blue primary action. */
@@ -58,6 +102,17 @@
 .form-card form > button[type='submit']:hover {
   background: #16386e !important;
   border-color: #16386e !important;
+}
+
+@media (max-width: 760px) {
+  .wanted-page .wanted-request-modal .seller-form {
+    grid-template-columns: 1fr !important;
+  }
+
+  .wanted-page .wanted-request-modal .ums-preferred-contact,
+  .wanted-page .wanted-request-modal .request-radio-group {
+    grid-column: 1 / -1 !important;
+  }
 }
 
 @media (max-width: 600px) {
