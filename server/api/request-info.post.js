@@ -10,8 +10,8 @@ export default defineEventHandler(async (event) => {
   const contact = body.contact || {}
   const machine = body.machine || {}
 
-  if (!contact.email || !contact.contactName) {
-    throw createError({ statusCode: 400, statusMessage: 'Name and email are required.' })
+  if (!contact.contactName || !contact.email || !contact.phone) {
+    throw createError({ statusCode: 400, statusMessage: 'Name, email and phone are required.' })
   }
 
   const transporter = nodemailer.createTransport({
