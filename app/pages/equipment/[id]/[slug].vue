@@ -74,11 +74,32 @@
     allowfullscreen
   ></iframe>
 
-  <img
-    v-else
-    :src="`/Images/${machineImages[selectedImage]}`"
-    :alt="`${machine.Year} ${machine.Manufacturer} ${machine.Model}`"
-  />
+  <template v-else>
+    <img
+      :src="`/Images/${machineImages[selectedImage]}`"
+      :alt="`${machine.Year} ${machine.Manufacturer} ${machine.Model}`"
+    />
+
+    <button
+      v-if="machineImages.length > 1"
+      type="button"
+      class="main-image-arrow main-image-arrow-left"
+      aria-label="Previous machine photo"
+      @click="previousImage"
+    >
+      ‹
+    </button>
+
+    <button
+      v-if="machineImages.length > 1"
+      type="button"
+      class="main-image-arrow main-image-arrow-right"
+      aria-label="Next machine photo"
+      @click="nextImage"
+    >
+      ›
+    </button>
+  </template>
 
 </div>
 
@@ -455,6 +476,20 @@ function nextThumbnails() {
   const maxStart = Math.max(0, galleryItems.value.length - 5)
   thumbnailStart.value = Math.min(maxStart, thumbnailStart.value + 5)
 }
+
+function previousImage() {
+  if (!machineImages.value?.length) return
+  showVideo.value = false
+  selectedImage.value =
+    (selectedImage.value - 1 + machineImages.value.length) % machineImages.value.length
+}
+
+function nextImage() {
+  if (!machineImages.value?.length) return
+  showVideo.value = false
+  selectedImage.value =
+    (selectedImage.value + 1) % machineImages.value.length
+}
   
 const requestForm = reactive({
   email: '',
@@ -765,6 +800,7 @@ console.log('machineImages:', machineImages.value)
 }
 
 .main-image {
+  position: relative;
   background: #f5f7fa;
   border: 1px solid #d7dde5;
   border-radius: 10px;
@@ -776,6 +812,39 @@ console.log('machineImages:', machineImages.value)
   height: 100%;
   object-fit: contain;
   display: block;
+}
+
+.main-image-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 76px;
+  border: 0;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.22);
+  color: #ffffff;
+  font-size: 46px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background 0.15s ease;
+}
+
+.main-image-arrow:hover,
+.main-image-arrow:focus-visible {
+  background: rgba(0, 0, 0, 0.42);
+}
+
+.main-image-arrow-left {
+  left: 12px;
+}
+
+.main-image-arrow-right {
+  right: 12px;
 }
 
 .thumbnail-grid {
@@ -1295,6 +1364,20 @@ text-align: center;
 
 .main-image {
   height: 420px;
+}
+
+.main-image-arrow {
+  width: 52px;
+  height: 84px;
+  font-size: 50px;
+}
+
+.main-image-arrow-left {
+  left: 8px;
+}
+
+.main-image-arrow-right {
+  right: 8px;
 }
 .lower-grid {
   grid-template-columns: 1fr;
