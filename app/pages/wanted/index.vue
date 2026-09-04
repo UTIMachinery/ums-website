@@ -2,6 +2,7 @@
 import { computed, reactive, ref } from 'vue'
 import wantedsData from '~/assets/data/wanteds.json'
 
+const route = useRoute()
 const searchTerm = ref('')
 const selectedGroup = ref('All')
 const selectedWebDesc = ref('All')
@@ -14,6 +15,7 @@ const showWantedRequestForm = ref(false)
 const wantedRequestSending = ref(false)
 const wantedRequestSent = ref(false)
 const wantedRequestError = ref(false)
+const copiedWantedId = ref<number | null>(null)
 
 const sellerForm = reactive({
   contactName: '', companyName: '', email: '', phone: '',
@@ -33,6 +35,20 @@ const wanteds = wantedsData as Array<{
   Featured: boolean
   FeatureOrder: number | null
 }>
+
+const sharedWantedId = computed(() => Number(Array.isArray(route.query.id) ? route.query.id[0] : route.query.id))
+const sharedWanted = computed(() => Number.isFinite(sharedWantedId.value) ? wanteds.find(w => w.WtdID === sharedWantedId.value) || null : null)
+const sharedWantedUrl = computed(() => sharedWanted.value
+  ? `https://www.usedmachinerysource.com/wanted?id=${sharedWanted.value.WtdID}`
+  : 'https://www.usedmachinerysource.com/wanted')
+
+const socialTitle = computed(() => sharedWanted.value
+  ? `Hot Wanted: ${sharedWanted.value.WebDesc} | Used Machinery Source`
+  : 'Wanted Used Machinery | Used Machinery Source')
+
+const socialDescription = computed(() => sharedWanted.value
+  ? `Wanted ID #${sharedWanted.value.WtdID}: ${sharedWanted.value.Description}`.slice(0, 190)
+  : 'See machinery our customers are actively looking to buy. Search current wanted CNC machines and other industrial equipment, or add your machinery requirement.')
 
 const groups = computed(() => [
   'All',
@@ -112,6 +128,19 @@ function closeWantedRequestForm() {
   wantedRequestError.value = false
 }
 
+async function copyWantedLink(wanted: any) {
+  const url = `https://www.usedmachinerysource.com/wanted?id=${wanted.WtdID}`
+  try {
+    await navigator.clipboard.writeText(url)
+    copiedWantedId.value = wanted.WtdID
+    setTimeout(() => {
+      if (copiedWantedId.value === wanted.WtdID) copiedWantedId.value = null
+    }, 2200)
+  } catch (e) {
+    copiedWantedId.value = null
+  }
+}
+
 async function submitSellerForm() {
   if (!selectedWanted.value) return
   sellerSending.value = true
@@ -187,8 +216,22 @@ async function submitWantedRequestForm() {
 }
 
 useSeoMeta({
-  title: 'Wanted Used Machinery | Used Machinery Source',
-  description: 'See machinery our customers are actively looking to buy. Search current wanted CNC machines and other industrial equipment, or add your machinery requirement.'
+  title: () => socialTitle.value,
+  description: () => socialDescription.value,
+  ogTitle: () => socialTitle.value,
+  ogDescription: () => socialDescription.value,
+  ogType: 'website',
+  ogUrl: () => sharedWantedUrl.value,
+  ogImage: 'https://www.usedmachinerysource.com/Images/ums-logo.png',
+  ogSiteName: 'Used Machinery Source',
+  twitterCard: 'summary_large_image',
+  twitterTitle: () => socialTitle.value,
+  twitterDescription: () => socialDescription.value,
+  twitterImage: 'https://www.usedmachinerysource.com/Images/ums-logo.png'
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: 'https://www.usedmachinerysource.com/wanted' }]
 })
 </script>
 
@@ -204,6 +247,22 @@ useSeoMeta({
       </div>
     </section>
 
+    <section v-if="sharedWanted" class="section shared-wanted-section">
+      <div class="shared-wanted-card">
+        <div class="shared-wanted-topline">
+          <span class="hot-label">HOT WANTED</span>
+          <span class="featured-id">ID #{{ sharedWanted.WtdID }}</span>
+        </div>
+        <div class="shared-wanted-type">{{ sharedWanted.WebDesc }}</div>
+        <p class="shared-wanted-description">{{ sharedWanted.Description }}</p>
+        <div class="shared-wanted-actions">
+          <button type="button" class="card-button shared-sell-button" @click="openSellerForm(sharedWanted)">I Have One to Sell</button>
+          <button type="button" class="copy-link-button" @click="copyWantedLink(sharedWanted)">{{ copiedWantedId === sharedWanted.WtdID ? 'Link Copied!' : 'Copy Link' }}</button>
+        </div>
+        <p class="shared-wanted-note">Browse the other current Wanted Machine listings below.</p>
+      </div>
+    </section>
+
     <section v-if="featuredWanteds.length" class="section featured-section">
       <div class="section-heading featured-heading"><div><p class="eyebrow dark">FEATURED WANTEDS</p><h2>Machines Needed Now!</h2></div></div>
       <div class="featured-carousel">
@@ -216,7 +275,10 @@ useSeoMeta({
             </div>
             <div class="wanted-type">{{ wanted.WebDesc }}</div>
             <p class="wanted-description">{{ wanted.Description }}</p>
-            <button type="button" class="card-button" @click="openSellerForm(wanted)">I Have One to Sell</button>
+            <div class="featured-card-actions">
+              <button type="button" class="card-button" @click="openSellerForm(wanted)">I Have One to Sell</button>
+              <button type="button" class="copy-link-button" @click="copyWantedLink(wanted)">{{ copiedWantedId === wanted.WtdID ? 'Link Copied!' : 'Copy Link' }}</button>
+            </div>
           </article>
         </div>
         <button type="button" class="carousel-arrow carousel-arrow-right" aria-label="Next featured Wanteds" @click="scrollFeatured(1)">›</button>
@@ -373,6 +435,14 @@ h2 { margin: 4px 0 0; font-size: clamp(1.7rem, 3vw, 2.45rem); }
 .primary-cta { min-height: 38px; padding: 0 20px; }
 .primary-cta:hover, .card-button:hover, .row-button:hover { background: #cc5c0e; transform: translateY(-1px); }
 .section { padding: 42px 32px; }
+.shared-wanted-section { padding-top: 24px; padding-bottom: 0; }
+.shared-wanted-card { border: 2px solid #e4a06f; border-top: 8px solid #e66d18; border-radius: 9px; background: #fffdf9; padding: 22px 26px; box-shadow: 0 8px 22px rgba(17,32,51,.12); }
+.shared-wanted-topline { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.shared-wanted-type { margin-top: 9px; color: #0b315d; font-size: 1.08rem; font-weight: 900; }
+.shared-wanted-description { margin: 14px 0 18px; color: #101a26; font-size: 1.35rem; font-weight: 750; line-height: 1.4; }
+.shared-wanted-actions { display: flex; align-items: center; gap: 10px; }
+.shared-sell-button { width: auto; min-width: 180px; margin-top: 0; }
+.shared-wanted-note { margin: 14px 0 0; color: #647282; font-size: .9rem; }
 .featured-section { padding-top: 24px; padding-bottom: 8px; }
 .featured-heading { margin-bottom: 10px; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
@@ -394,7 +464,10 @@ h2 { margin: 4px 0 0; font-size: clamp(1.7rem, 3vw, 2.45rem); }
 .wanted-label { color: #d35f10; font-size: .76rem; font-weight: 900; letter-spacing: .12em; }
 .wanted-type { margin-top: 9px; color: #0b315d; font-size: .98rem; font-weight: 900; }
 .wanted-description { margin: 19px 0 16px; color: #101a26; font-size: 1.13rem; font-weight: 750; line-height: 1.42; letter-spacing: .005em; }
+.featured-card-actions { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; margin-top: auto; }
 .card-button { width: 100%; min-height: 38px; margin-top: auto; padding: 8px; text-align: center; font-size: .89rem; white-space: normal; }
+.copy-link-button { min-height: 38px; border: 1px solid #c4ced8; border-radius: 5px; background: #fff; color: #0b315d; padding: 7px 12px; font: inherit; font-size: .83rem; font-weight: 800; cursor: pointer; white-space: nowrap; }
+.copy-link-button:hover { border-color: #0b315d; background: #eef3f8; }
 .browse-section { padding-top: 24px; }
 .search-box, .filter-block, .refine-block { margin-bottom: 28px; }
 .search-box label, .refine-block label, .filter-block h3 { display: block; margin: 0 0 10px; font-weight: 800; }
@@ -449,9 +522,13 @@ h2 { margin: 4px 0 0; font-size: clamp(1.7rem, 3vw, 2.45rem); }
   .wanted-hero, .section { padding-left: 20px; padding-right: 20px; }
   .wanted-hero { padding-top: 18px; padding-bottom: 20px; }
   .section-heading, .bottom-cta { align-items: stretch; flex-direction: column; }
+  .shared-wanted-description { font-size: 1.14rem; }
+  .shared-wanted-actions { align-items: stretch; flex-direction: column; }
+  .shared-sell-button, .copy-link-button { width: 100%; }
   .featured-carousel { padding: 0 38px; }
   .featured-scroll { grid-auto-columns: 92%; }
   .carousel-arrow { width: 34px; height: 48px; font-size: 28px; }
+  .featured-card-actions { grid-template-columns: 1fr; }
   .wanted-row { grid-template-columns: 1fr; gap: 8px; padding: 15px; }
   .wanted-row-number { flex-direction: row; justify-content: space-between; }
   .row-button { width: 100%; }
