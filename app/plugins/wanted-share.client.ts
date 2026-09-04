@@ -1,7 +1,5 @@
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
   if (import.meta.server) return
-
-  const router = nuxtApp.$router
 
   const style = document.createElement('style')
   style.textContent = `
@@ -26,10 +24,11 @@ export default defineNuxtPlugin((nuxtApp) => {
     if (target.closest('button, a, input, select, textarea, label')) return
 
     const idText = card.querySelector('.featured-id')?.textContent || ''
-    const match = idText.match(/(\d+)/)
+    const match = idText.match(/#\s*(\d+)/)
     if (!match) return
 
-    const wantedId = match[1]
-    router.push({ path: '/wanted', query: { id: wantedId } })
+    // A real navigation makes the ?id=#### URL reliable in mobile browsers
+    // and available to the phone's normal Share / Copy Link controls.
+    window.location.href = `/wanted?id=${match[1]}`
   })
 })
