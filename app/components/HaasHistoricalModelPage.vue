@@ -1,29 +1,9 @@
-<template>
-  <main class="page" v-if="entry">
-    <NuxtLink to="/spec-library/haas/cnc-lathes" class="back">← Haas CNC Lathe Specification Library</NuxtLink>
-    <p class="eyebrow">UMS MACHINERY SPECIFICATION LIBRARY</p>
-    <h1>Haas {{ entry.model }} Specifications</h1>
-    <p class="lead">Historical specifications and configurations recorded by Used Machinery Source for Haas {{ entry.model }} CNC lathes.</p>
-    <div class="notice"><strong>Historical specification library — not a current machine listing.</strong> Specifications below reflect individual machines recorded by UMS and can vary by year, configuration and options.</div>
-    <section class="records">
-      <article v-for="(r,i) in usableRecords" :key="`${r.invid}-${i}`" class="record">
-        <div class="record-head"><div><p class="year">{{ r.year || 'Year not recorded' }}</p><h2>{{ r.control || 'Haas CNC configuration' }}</h2></div><button type="button" @click="copy(r,i)">{{ copied === i ? 'Copied' : 'Copy Specifications' }}</button></div>
-        <p class="summary">{{ r.summary }}</p>
-        <p class="source">Historical UMS record #{{ r.invid }}</p>
-      </article>
-    </section>
-    <section class="cta"><h2>Looking for a Haas {{ entry.model }}?</h2><p>Check our current equipment or tell UMS what machine you need.</p><div><NuxtLink to="/equipment">View Current Equipment</NuxtLink><NuxtLink to="/wanted" class="secondary">Machine Wanted Listings</NuxtLink></div></section>
-  </main>
-</template>
+<template><main class="model-page" v-if="entry"><section class="hero"><div class="wrap"><NuxtLink to="/spec-library/haas/cnc-lathes" class="back">← Haas CNC Lathe Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>Haas {{ entry.model }} Specifications</h1><p>Historical Haas {{ entry.model }} CNC turning specifications organized by year and control from UMS machinery records.</p></div></section><section class="wrap section"><div class="warning"><strong>Historical specification information — not a machine-for-sale listing.</strong> These are specifications recorded on individual machines and may vary by year, control, configuration and optional equipment.</div><h2>Historical {{ entry.model }} Specifications by Year</h2><SpecYearConfigurations :model="`Haas ${entry.model}`" :configurations="configurations" /><section class="cta"><h2>Looking for a Haas {{ entry.model }}?</h2><p>Check our current equipment or tell UMS what machine you need.</p><div><NuxtLink to="/equipment">View Current Equipment</NuxtLink><NuxtLink to="/wanted" class="secondary">Machine Wanted Listings</NuxtLink></div></section></section></main></template>
 <script setup>
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 const props=defineProps({entry:{type:Object,required:true}})
-const copied=ref(-1)
-const usableRecords=computed(()=>props.entry.records.filter(r=>r.summary && r.summary.trim()))
-async function copy(r,i){try{await navigator.clipboard.writeText(`Haas ${props.entry.model} — ${r.year || 'Year not recorded'}\n${r.control || ''}\n${r.summary}`);copied.value=i;setTimeout(()=>copied.value=-1,1800)}catch{copied.value=-1}}
+const configurations=computed(()=>(props.entry.records||[]).filter(r=>r.summary&&r.summary.trim()).map((r,i)=>({year:r.year||'Year not recorded',title:r.control||`Historical UMS configuration ${i+1}`,control:r.control||'Haas CNC configuration',recordedSpecs:r.summary,note:`Historical UMS record #${r.invid}`})))
 useSeoMeta({title:()=>`Haas ${props.entry.model} Specifications by Year | UMS Spec Library`,description:()=>`Historical Haas ${props.entry.model} CNC lathe specifications, years, controls and configurations recorded by Used Machinery Source.`})
 useHead({link:[{rel:'canonical',href:()=>`https://usedmachinerysource.com/spec-library/haas/${props.entry.slug}`} ]})
 </script>
-<style scoped>
-.page{max-width:1180px;margin:0 auto;padding:42px 28px 72px;color:#172033}.back{color:#1c4587;text-decoration:none;font-weight:700}.eyebrow{margin:30px 0 8px;color:#5f6b7a;font-size:13px;font-weight:800;letter-spacing:.12em}h1{font-size:42px;line-height:1.08;margin:0 0 14px;color:#0b2545}.lead{font-size:20px;line-height:1.55;max-width:850px}.notice{margin:28px 0;padding:18px 20px;border-left:4px solid #1c4587;background:#f2f6fb;line-height:1.55}.records{display:grid;gap:18px}.record{border:1px solid #d9e0e8;border-radius:10px;padding:22px;background:#fff}.record-head{display:flex;justify-content:space-between;gap:20px;align-items:start}.year{font-weight:800;color:#1c4587;margin:0 0 5px}.record h2{font-size:21px;margin:0}.record button{border:1px solid #1c4587;background:#fff;color:#1c4587;border-radius:5px;padding:9px 12px;font-weight:700;cursor:pointer}.summary{font-size:17px;line-height:1.55}.source{font-size:13px;color:#697586;margin-bottom:0}.cta{margin-top:38px;padding:28px;background:#0b2545;color:#fff;border-radius:10px}.cta h2{margin-top:0}.cta a{display:inline-block;background:#fff;color:#0b2545;text-decoration:none;font-weight:800;padding:11px 16px;border-radius:5px;margin:8px 8px 0 0}.cta a.secondary{background:transparent;color:#fff;border:1px solid #fff}@media(max-width:700px){h1{font-size:34px}.record-head{display:block}.record button{margin-top:14px}.page{padding:30px 18px 55px}}
-</style>
+<style scoped>.model-page{color:#17273a;background:#fff;padding-bottom:60px}.wrap{max-width:1120px;margin:0 auto;padding:0 28px}.hero{background:linear-gradient(105deg,#071b33,#0d2c52);color:#fff;padding:48px 0}.back{color:#c8d9eb;text-decoration:none}.kicker{color:#9fc4e7;font-size:.78rem;font-weight:900;letter-spacing:.12em;margin:18px 0 8px}.hero h1{font-size:clamp(2rem,4vw,3.2rem);margin:0 0 12px}.hero p{max-width:820px;line-height:1.7}.section{padding-top:44px}.warning{background:#fff7ea;border-left:5px solid #f47b20;padding:16px 18px;border-radius:6px;margin-bottom:34px}.section>h2{color:#0b2545;margin:34px 0 12px}.cta{margin-top:42px;padding:28px;background:#0b2545;color:#fff;border-radius:10px}.cta h2{margin:0 0 8px;color:#fff}.cta p{margin:0 0 8px}.cta a{display:inline-block;background:#fff;color:#0b2545;text-decoration:none;font-weight:800;padding:11px 16px;border-radius:5px;margin:8px 8px 0 0}.cta a.secondary{background:transparent;color:#fff;border:1px solid #fff}@media(max-width:760px){.wrap{padding:0 18px}}</style>
