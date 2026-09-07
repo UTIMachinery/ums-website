@@ -1,0 +1,4 @@
+<template><MazakHistoricalModelPage model="SQT-10MS" :configurations="configurations" /></template><script setup>
+const configurations=[{year:'1993',title:'1993 Mazak SQT-10MS — T-32B',control:'Mazatrol T-32B / CRT',recordedSpecs:'17 in swing, 20 in centers, 12-station turret, 15 HP, sub-spindle, tool holders, chip conveyor.'},{year:'1993',title:'1993 Mazak SQT-10MS — T32-3',control:'Mazatrol T32-3 / CRT',recordedSpecs:'17.1 in swing, 2 in spindle bore, 6,000 RPM, 12-position turret, live tooling, sub-spindle, parts catcher, chip conveyor.'}]
+useSeoMeta({title:'Mazak SQT-10MS Specifications | UMS Spec Library',description:'Historical Mazak SQT-10MS specifications and 1993 control configurations from UMS machinery records.'});useHead({link:[{rel:'canonical',href:'https://usedmachinerysource.com/spec-library/mazak/sqt-10ms'}]})
+</script>
