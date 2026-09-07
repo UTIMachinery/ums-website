@@ -3,6 +3,8 @@ import mazakSingle1 from '../../../app/assets/data/mazak-historical-single-1.js'
 import mazakSingle2 from '../../../app/assets/data/mazak-historical-single-2.js'
 import mazakSingle3 from '../../../app/assets/data/mazak-historical-single-3.js'
 import mazakSingle4 from '../../../app/assets/data/mazak-historical-single-4.js'
+import mazakCollision1 from '../../../app/assets/data/mazak-historical-collision-1.js'
+import mazakCollision2 from '../../../app/assets/data/mazak-historical-collision-2.js'
 
 export default defineEventHandler((event) => {
   const activeMachines = machinesData.filter(machine =>
@@ -30,9 +32,11 @@ export default defineEventHandler((event) => {
     'm-5','m-4','m-5-2000','m-4-1500','m-5-3000','m5-1500','m5-2000','m5n-3000','qt-250','qt-15','qt-20hp','qt-15n','qt-18n','qt-200','qt-6t','qt-10','qt-25','qt-25c','qt-28n','qt-30','qt-350','qt-8n','qt-8sp','qt6t','qtn-450-ii','quick-turn-15','quick-turn-15n','quick-turn-20hp','quick-turn-30','quick-turn-35n-1500','quick-turn-25l','quick-turn-25l-quick-turn','quick-turn-18','quick-turn-20n','quick-turn-28n','quick-turn-6g','quick-turn-6t','super-quick-turn-15ms','sqt-10ms','super-quick-turn-15s','super-quick-turn-10ms','integrex-30-1000','integrex-200msy','integrex-30y-1500','integrex-35y-1000','integrex-40','powermaster-chucker','powermaster-1600-big-bore','powermaster-3000','slant-turn-15','slant-turn-30-1500','slant-turn-50n','slant-turn-60-2000'
   ]
 
-  const excludedSingleSlugs = new Set(['kfhgkdfj'])
-  const mazakSingleModels = [...mazakSingle1, ...mazakSingle2, ...mazakSingle3, ...mazakSingle4]
-    .filter(item => !excludedSingleSlugs.has(item.slug))
+  const excludedHistoricalSlugs = new Set(['kfhgkdfj'])
+  const mazakHistoricalModels = [
+    ...mazakSingle1, ...mazakSingle2, ...mazakSingle3, ...mazakSingle4,
+    ...mazakCollision1, ...mazakCollision2
+  ].filter(item => !excludedHistoricalSlugs.has(item.slug))
 
   const staticUrls = staticPages.map(page => `
   <url>
@@ -43,7 +47,7 @@ export default defineEventHandler((event) => {
 
   const specLibraryUrls = [
     ...mazakCuratedSlugs.map(slug => `/spec-library/mazak/${slug}`),
-    ...mazakSingleModels.map(item => `/spec-library/mazak/${item.slug}`)
+    ...mazakHistoricalModels.map(item => `/spec-library/mazak/${item.slug}`)
   ].map(path => `
   <url>
     <loc>${baseUrl}${path}</loc>
