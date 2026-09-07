@@ -1,0 +1,70 @@
+<template>
+  <main class="library-page">
+    <section class="hero">
+      <div class="wrap">
+        <NuxtLink to="/spec-library/cnc-lathes" class="back-link">← CNC Lathe Spec Library</NuxtLink>
+        <div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div>
+        <h1>Mazak CNC Lathes & Turning Centers</h1>
+        <p>Research Mazak CNC lathe and turning-center families, model designations and historical specifications from machinery records accumulated over many years by Used Machinery Source.</p>
+      </div>
+    </section>
+
+    <section class="wrap section current">
+      <div class="kicker sale">FOR SALE NOW</div>
+      <h2>Mazak CNC Lathes Currently Available</h2>
+      <div v-if="currentMazak.length" class="current-grid">
+        <article v-for="machine in currentMazak" :key="machine.InvID" class="current-card">
+          <h3>{{ machine.Year }} {{ machine.Manufacturer }} {{ machine.Model }}</h3>
+          <p>{{ webDescription(machine) }}</p>
+          <p class="stock">Stock #{{ machine.InvID }}</p>
+          <NuxtLink :to="machineUrl(machine)" class="button">View Machine</NuxtLink>
+        </article>
+      </div>
+      <div v-else class="notice"><strong>No matching Mazak CNC lathe is listed in current inventory right now.</strong> The Spec Library below remains available for research. <NuxtLink to="/equipment#tell-us-what-you-need">Tell us what you need →</NuxtLink></div>
+    </section>
+
+    <section class="section muted">
+      <div class="wrap">
+        <div class="kicker">MAZAK MODEL FAMILIES</div>
+        <h2>Browse Mazak Turning Equipment</h2>
+        <p class="intro">UMS historical records include Quick-Turn, Quick Turn, QT, SQT, Slant-Turn, Integrex, Multiplex, M-Series, Powermaster and other Mazak turning platforms. Original model wording is preserved because different designations can represent different generations, configurations, or the terminology used when a machine was marketed.</p>
+        <div class="family-grid">
+          <article class="family-card featured">
+            <h3>QT Series</h3>
+            <p>Historical UMS records include QT-series machines across multiple sizes and years.</p>
+            <NuxtLink to="/spec-library/mazak/qt-20" class="text-link">QT-20 specifications →</NuxtLink>
+          </article>
+          <article class="family-card featured">
+            <h3>Quick-Turn / Quick Turn</h3>
+            <p>Earlier and alternate Quick-Turn naming appears throughout the historical database and is retained rather than automatically merged with QT designations.</p>
+            <NuxtLink to="/spec-library/mazak/quick-turn-20" class="text-link">Quick-Turn 20 specifications →</NuxtLink>
+          </article>
+          <article v-for="family in otherFamilies" :key="family" class="family-card"><h3>{{ family }}</h3><p>Additional model pages will be added where the historical machine and specification data supports a useful permanent page.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section history">
+      <div class="history-label">SPECIFICATION LIBRARY — HISTORICAL INFORMATION</div>
+      <h2>How to Use the Mazak Spec Library</h2>
+      <p>These pages are intended for machinery buyers, dealers and manufacturing professionals researching older Mazak machines. Historical records are not current inventory and do not mean a machine is available for sale.</p>
+      <p><strong>Specifications can vary by year, generation, control, configuration and optional equipment.</strong> For that reason, UMS will keep materially different historical model designations separate unless the underlying data supports treating them together.</p>
+    </section>
+  </main>
+</template>
+
+<script setup>
+import machinesData from '~/assets/data/machines.json'
+const machines = ref(machinesData)
+const webDescription = m => m.WebDesc || m.Web_Desc || ''
+const offMarket = m => m.OffMarket ?? m.Off_Market ?? 0
+const currentMazak = computed(() => (machines.value || []).filter(m => Number(m.Sold) === 0 && Number(offMarket(m)) === 0 && Number(m.dont_advertise) === 0 && m.Groups === 'CNC Lathes & Turning Centers' && String(m.Manufacturer || '').trim().toLowerCase() === 'mazak').sort((a,b) => Number(b.Year || 0)-Number(a.Year || 0)))
+const machineUrl = m => `/equipment/${m.InvID}/${`${m.Manufacturer || ''}-${m.Model || ''}`.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}`
+const otherFamilies = ['SQT Series','Slant-Turn','Integrex','Multiplex','M-Series','Powermaster']
+useSeoMeta({title:'Mazak CNC Lathes & Turning Centers | Specifications | UMS',description:'Research Mazak CNC lathe and turning center models, families and historical specifications, and see current Mazak CNC lathes available from Used Machinery Source.',ogTitle:'Mazak CNC Lathes & Turning Centers | UMS Spec Library',ogDescription:'Mazak CNC lathe model families, historical specifications and current machines for sale.',ogType:'website',ogUrl:'https://usedmachinerysource.com/spec-library/mazak/cnc-lathes'})
+useHead({link:[{rel:'canonical',href:'https://usedmachinerysource.com/spec-library/mazak/cnc-lathes'}]})
+</script>
+
+<style scoped>
+.library-page{color:#17273a;background:#fff;padding-bottom:56px}.wrap{max-width:1260px;margin:0 auto;padding-left:28px;padding-right:28px}.hero{background:linear-gradient(105deg,#071b33,#0d2c52);color:#fff;padding:50px 0}.back-link{color:#c8d9eb;text-decoration:none}.kicker{font-size:.78rem;font-weight:800;letter-spacing:.12em;color:#1c5a94;margin:18px 0 8px}.hero .kicker{color:#9fc4e7}.hero h1{font-size:clamp(2rem,4vw,3.25rem);margin:0 0 14px}.hero p{max-width:850px;font-size:1.08rem;line-height:1.7}.section{padding-top:46px;padding-bottom:46px}.section h2{font-size:2rem;margin:0 0 14px}.sale{color:#b44c10}.current-grid,.family-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px}.current-card,.family-card,.notice{border:1px solid #d8e0e8;border-radius:12px;padding:22px;background:#fff}.stock{color:#667789}.button{display:inline-block;background:#1c4587;color:#fff;text-decoration:none;padding:10px 16px;border-radius:6px;font-weight:700}.notice a,.text-link{color:#1c4587;font-weight:800;text-decoration:none}.muted{background:#f4f7fa}.intro{max-width:980px;line-height:1.7}.family-card.featured{border-top:4px solid #1c4587}.family-card h3{margin-top:0}.history{margin-top:42px;border:2px solid #9fb4c8;border-radius:14px;padding-top:30px;padding-bottom:30px}.history-label{font-weight:900;color:#8c3f10;letter-spacing:.08em;font-size:.8rem}.history p{line-height:1.7}@media(max-width:850px){.current-grid,.family-grid{grid-template-columns:1fr}.wrap{padding-left:18px;padding-right:18px}.hero{padding:36px 0}.section{padding-top:34px;padding-bottom:34px}}
+</style>
