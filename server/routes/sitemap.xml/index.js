@@ -1,4 +1,10 @@
 import machinesData from '../../../app/assets/data/machines.json'
+import mazakSingle1 from '../../../app/assets/data/mazak-historical-single-1.js'
+import mazakSingle2 from '../../../app/assets/data/mazak-historical-single-2.js'
+import mazakSingle3 from '../../../app/assets/data/mazak-historical-single-3.js'
+import mazakSingle4 from '../../../app/assets/data/mazak-historical-single-4.js'
+import mazakCollision1 from '../../../app/assets/data/mazak-historical-collision-1.js'
+import mazakCollision2 from '../../../app/assets/data/mazak-historical-collision-2.js'
 
 export default defineEventHandler((event) => {
   const activeMachines = machinesData.filter(machine =>
@@ -16,14 +22,37 @@ export default defineEventHandler((event) => {
     { path: '/about', changefreq: 'monthly', priority: '0.7' },
     { path: '/services', changefreq: 'monthly', priority: '0.7' },
     { path: '/sell-your-machine', changefreq: 'monthly', priority: '0.8' },
-    { path: '/contact', changefreq: 'monthly', priority: '0.6' }
+    { path: '/contact', changefreq: 'monthly', priority: '0.6' },
+    { path: '/spec-library/cnc-lathes', changefreq: 'monthly', priority: '0.8' },
+    { path: '/spec-library/mazak/cnc-lathes', changefreq: 'monthly', priority: '0.8' }
   ]
+
+  const mazakCuratedSlugs = [
+    'qt-20','quick-turn-20','quick-turn-10','quick-turn-18n','quick-turn-8','quick-turn-8n','qt-25l','slant-turn-50','qt-250hp','sqt-18m','dual-turn-20','integrex-30y','sqt-200ms','qt-300l','integrex-35y-1500','sqt-250m','sqt-250ms','integrex-200sy','multiplex-6200','sqt-15m','sqt-28ms','slant-turn-60n','integrex-300yb','sqt-10m','sqt-30ms','multiplex-630','powermaster','quick-turn-nexus-400','quick-turn-nexus-450m','multiplex-6200y','powermaster-1600','quick-turn-smart-250m','quick-turn-smart-350','multiplex-6200r','sqt-15ms','quick-turn-smart-100','quick-turn-smart-200','quick-turn-smart-350m','quick-turn-nexus-250ms',
+    'm-5','m-4','m-5-2000','m-4-1500','m-5-3000','m5-1500','m5-2000','m5n-3000','qt-250','qt-15','qt-20hp','qt-15n','qt-18n','qt-200','qt-6t','qt-10','qt-25','qt-25c','qt-28n','qt-30','qt-350','qt-8n','qt-8sp','qt6t','qtn-450-ii','quick-turn-15','quick-turn-15n','quick-turn-20hp','quick-turn-30','quick-turn-35n-1500','quick-turn-25l','quick-turn-25l-quick-turn','quick-turn-18','quick-turn-20n','quick-turn-28n','quick-turn-6g','quick-turn-6t','super-quick-turn-15ms','sqt-10ms','super-quick-turn-15s','super-quick-turn-10ms','integrex-30-1000','integrex-200msy','integrex-30y-1500','integrex-35y-1000','integrex-40','powermaster-chucker','powermaster-1600-big-bore','powermaster-3000','slant-turn-15','slant-turn-30-1500','slant-turn-50n','slant-turn-60-2000'
+  ]
+
+  const excludedHistoricalSlugs = new Set(['kfhgkdfj'])
+  const mazakHistoricalModels = [
+    ...mazakSingle1, ...mazakSingle2, ...mazakSingle3, ...mazakSingle4,
+    ...mazakCollision1, ...mazakCollision2
+  ].filter(item => !excludedHistoricalSlugs.has(item.slug))
 
   const staticUrls = staticPages.map(page => `
   <url>
     <loc>${baseUrl}${page.path}</loc>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
+  </url>`).join('')
+
+  const specLibraryUrls = [
+    ...mazakCuratedSlugs.map(slug => `/spec-library/mazak/${slug}`),
+    ...mazakHistoricalModels.map(item => `/spec-library/mazak/${item.slug}`)
+  ].map(path => `
+  <url>
+    <loc>${baseUrl}${path}</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>`).join('')
 
   const machineUrls = activeMachines.map(machine => {
@@ -41,10 +70,9 @@ export default defineEventHandler((event) => {
   }).join('')
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${staticUrls}${machineUrls}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${staticUrls}${specLibraryUrls}${machineUrls}
 </urlset>`
 
   setHeader(event, 'Content-Type', 'application/xml')
-
   return sitemap
 })

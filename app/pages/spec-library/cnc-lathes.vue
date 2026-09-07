@@ -89,7 +89,8 @@
         <article v-for="maker in featuredManufacturers" :key="maker.name" class="manufacturer-card">
           <h3>{{ maker.name }}</h3>
           <p>{{ maker.families }}</p>
-          <span class="coming-link">Manufacturer library page planned</span>
+          <NuxtLink v-if="maker.to" :to="maker.to" class="manufacturer-link">Browse Mazak specifications →</NuxtLink>
+          <span v-else class="coming-link">Manufacturer library page planned</span>
         </article>
       </div>
 
@@ -139,6 +140,7 @@
           <div class="family-tags">
             <span v-for="family in maker.families" :key="family">{{ family }}</span>
           </div>
+          <NuxtLink v-if="maker.to" :to="maker.to" class="family-browse-link">Browse Mazak Spec Library →</NuxtLink>
         </article>
       </div>
 
@@ -212,7 +214,7 @@ const machineTypes = [
 ]
 
 const featuredManufacturers = [
-  { name: 'Mazak CNC Lathes & Turning Centers', families: 'Quick-Turn, QT, SQT, Slant-Turn, Integrex, Multiplex, M-Series, Powermaster and other Mazak turning platforms.' },
+  { name: 'Mazak CNC Lathes & Turning Centers', families: 'Quick-Turn, QT, SQT, Slant-Turn, Integrex, Multiplex, M-Series, Powermaster and other Mazak turning platforms.', to: '/spec-library/mazak/cnc-lathes' },
   { name: 'Haas CNC Lathes & Turning Centers', families: 'SL, ST, TL and HL series CNC turning machines.' },
   { name: 'Okuma CNC Lathes & Turning Centers', families: 'LB, LC, LU, LR, Cadet and other Okuma turning machines.' },
   { name: 'Mori-Seiki CNC Lathes & Turning Centers', families: 'SL, ZL, LL, TL, DL and other Mori-Seiki turning machines.' }
@@ -234,7 +236,7 @@ const specificationGuide = [
 ]
 
 const libraryFamilies = [
-  { name: 'Mazak', families: ['Quick-Turn', 'Quick Turn', 'QT', 'SQT', 'Slant-Turn', 'Integrex', 'Multiplex', 'M-Series', 'Powermaster'] },
+  { name: 'Mazak', families: ['Quick-Turn', 'Quick Turn', 'QT', 'SQT', 'Slant-Turn', 'Integrex', 'Multiplex', 'M-Series', 'Powermaster'], to: '/spec-library/mazak/cnc-lathes' },
   { name: 'Haas', families: ['SL Series', 'ST Series', 'TL Series', 'HL Series'] },
   { name: 'Okuma', families: ['LB Series', 'LC Series', 'LU Series', 'LR Series', 'Cadet'] },
   { name: 'Mori-Seiki', families: ['SL Series', 'ZL Series', 'LL Series', 'TL Series', 'DL Series'] }
@@ -335,6 +337,8 @@ useHead({
 .manufacturer-card { padding: 22px; border: 1px solid #d6dee8; border-radius: 6px; background: #fff; }
 .manufacturer-card h3 { margin: 0 0 8px; color: #0b2545; font-size: 20px; }
 .manufacturer-card p { margin: 0 0 12px; color: #526579; line-height: 1.55; }
+.manufacturer-link,.family-browse-link { color:#1c4587; font-weight:800; text-decoration:none; }
+.manufacturer-link:hover,.family-browse-link:hover { text-decoration:underline; }
 .coming-link { color: #7a8795; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
 .other-manufacturers { margin: 22px 0 0; line-height: 1.6; color: #43566b; }
 .library-section { margin-top: 18px; border: 1px solid #d7e0ea; border-top: 6px solid #0b2545; border-radius: 7px; box-shadow: 0 5px 20px rgba(11,37,69,.06); }
@@ -346,6 +350,7 @@ useHead({
 .family-card h3 { margin: 0 0 12px; color: #0b2545; font-size: 20px; }
 .family-tags { display: flex; flex-wrap: wrap; gap: 7px; }
 .family-tags span { padding: 6px 8px; background: #fff; border: 1px solid #ccd6e1; border-radius: 4px; color: #334b63; font-size: 12px; font-weight: 700; }
+.family-browse-link { display:inline-block; margin-top:14px; }
 .naming-note { margin-top: 24px; padding: 20px 22px; background: #f5f7fa; border-radius: 6px; }
 .naming-note h3 { margin: 0 0 7px; color: #0b2545; font-size: 19px; }
 .naming-note p { margin: 0; color: #43566b; line-height: 1.6; }
