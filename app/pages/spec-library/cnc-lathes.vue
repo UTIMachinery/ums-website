@@ -89,7 +89,7 @@
         <article v-for="maker in featuredManufacturers" :key="maker.name" class="manufacturer-card">
           <h3>{{ maker.name }}</h3>
           <p>{{ maker.families }}</p>
-          <NuxtLink v-if="maker.to" :to="maker.to" class="manufacturer-link">Browse Mazak specifications →</NuxtLink>
+          <NuxtLink v-if="maker.to" :to="maker.to" class="manufacturer-link">{{ maker.linkLabel }}</NuxtLink>
           <span v-else class="coming-link">Manufacturer library page planned</span>
         </article>
       </div>
@@ -140,7 +140,7 @@
           <div class="family-tags">
             <span v-for="family in maker.families" :key="family">{{ family }}</span>
           </div>
-          <NuxtLink v-if="maker.to" :to="maker.to" class="family-browse-link">Browse Mazak Spec Library →</NuxtLink>
+          <NuxtLink v-if="maker.to" :to="maker.to" class="family-browse-link">{{ maker.linkLabel }}</NuxtLink>
         </article>
       </div>
 
@@ -214,8 +214,8 @@ const machineTypes = [
 ]
 
 const featuredManufacturers = [
-  { name: 'Mazak CNC Lathes & Turning Centers', families: 'Quick-Turn, QT, SQT, Slant-Turn, Integrex, Multiplex, M-Series, Powermaster and other Mazak turning platforms.', to: '/spec-library/mazak/cnc-lathes' },
-  { name: 'Haas CNC Lathes & Turning Centers', families: 'SL, ST, TL and HL series CNC turning machines.' },
+  { name: 'Mazak CNC Lathes & Turning Centers', families: 'Quick-Turn, QT, SQT, Slant-Turn, Integrex, Multiplex, M-Series, Powermaster and other Mazak turning platforms.', to: '/spec-library/mazak/cnc-lathes', linkLabel: 'Browse Mazak specifications →' },
+  { name: 'Haas CNC Lathes & Turning Centers', families: 'SL, ST, TL and HL series CNC turning machines.', to: '/spec-library/haas/cnc-lathes', linkLabel: 'Browse Haas specifications →' },
   { name: 'Okuma CNC Lathes & Turning Centers', families: 'LB, LC, LU, LR, Cadet and other Okuma turning machines.' },
   { name: 'Mori-Seiki CNC Lathes & Turning Centers', families: 'SL, ZL, LL, TL, DL and other Mori-Seiki turning machines.' }
 ]
@@ -236,8 +236,8 @@ const specificationGuide = [
 ]
 
 const libraryFamilies = [
-  { name: 'Mazak', families: ['Quick-Turn', 'Quick Turn', 'QT', 'SQT', 'Slant-Turn', 'Integrex', 'Multiplex', 'M-Series', 'Powermaster'], to: '/spec-library/mazak/cnc-lathes' },
-  { name: 'Haas', families: ['SL Series', 'ST Series', 'TL Series', 'HL Series'] },
+  { name: 'Mazak', families: ['Quick-Turn', 'Quick Turn', 'QT', 'SQT', 'Slant-Turn', 'Integrex', 'Multiplex', 'M-Series', 'Powermaster'], to: '/spec-library/mazak/cnc-lathes', linkLabel: 'Browse Mazak Spec Library →' },
+  { name: 'Haas', families: ['SL Series', 'ST Series', 'TL Series', 'HL Series'], to: '/spec-library/haas/cnc-lathes', linkLabel: 'Browse Haas Spec Library →' },
   { name: 'Okuma', families: ['LB Series', 'LC Series', 'LU Series', 'LR Series', 'Cadet'] },
   { name: 'Mori-Seiki', families: ['SL Series', 'ZL Series', 'LL Series', 'TL Series', 'DL Series'] }
 ]
