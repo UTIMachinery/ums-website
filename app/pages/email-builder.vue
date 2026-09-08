@@ -1,0 +1,189 @@
+<template>
+  <main class="builder-page">
+    <section class="builder-shell">
+      <div class="builder-heading">
+        <div>
+          <p class="kicker">UMS INTERNAL TOOL</p>
+          <h1>Email Campaign Builder</h1>
+          <p>Featured machines are selected automatically. Reorder them, edit the campaign copy, then copy the finished HTML into Brevo.</p>
+        </div>
+        <div class="count">{{ selectedMachines.length }} selected</div>
+      </div>
+
+      <section class="controls">
+        <label>Campaign headline<input v-model="headline" type="text" /></label>
+        <label>Intro text<textarea v-model="intro" rows="3" /></label>
+        <div class="actions">
+          <button type="button" @click="resetFeatured">Reload Featured</button>
+          <button type="button" class="primary" @click="copyHtml">{{ copyLabel }}</button>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="machine-picker">
+          <h2>Campaign Machines</h2>
+          <p class="help">Drag to reorder. Uncheck a machine to leave it out of this campaign.</p>
+          <div
+            v-for="(machine, index) in selectedMachines"
+            :key="machine.InvID"
+            class="selected-row"
+            draggable="true"
+            @dragstart="dragIndex = index"
+            @dragover.prevent
+            @drop="dropAt(index)"
+          >
+            <span class="drag">☰</span>
+            <div class="row-copy">
+              <strong>{{ machineTitle(machine) }}</strong>
+              <small>Stock #{{ machine.InvID }}</small>
+            </div>
+            <button type="button" class="remove" @click="removeMachine(machine.InvID)">Remove</button>
+          </div>
+
+          <details>
+            <summary>Add another active machine</summary>
+            <input v-model="search" class="search" type="search" placeholder="Search stock #, manufacturer or model" />
+            <button
+              v-for="machine in availableMachines"
+              :key="machine.InvID"
+              type="button"
+              class="add-row"
+              @click="addMachine(machine)"
+            >
+              + {{ machineTitle(machine) }} — #{{ machine.InvID }}
+            </button>
+          </details>
+        </div>
+
+        <div class="preview-wrap">
+          <div class="preview-label">EMAIL PREVIEW</div>
+          <div class="email-preview">
+            <div class="email-header">
+              <div class="ums">USED MACHINERY SOURCE</div>
+              <div class="tagline">Quality Used Machinery • Nationwide Brokerage</div>
+            </div>
+            <div class="email-intro">
+              <h2>{{ headline }}</h2>
+              <p>{{ intro }}</p>
+            </div>
+            <article v-for="machine in selectedMachines" :key="machine.InvID" class="email-machine">
+              <img v-if="machineImages[machine.InvID]" :src="imageUrl(machine.InvID)" :alt="machineTitle(machine)" />
+              <div class="email-machine-copy">
+                <h3>{{ machineTitle(machine) }}</h3>
+                <p class="type">{{ webDescription(machine) }}</p>
+                <p class="stock"><strong>Stock #{{ machine.InvID }}</strong></p>
+                <p>{{ advertisingSpec(machine) }}</p>
+                <a :href="machineUrl(machine)" target="_blank">VIEW MACHINE</a>
+              </div>
+            </article>
+            <div class="email-footer">
+              <strong>Used Machinery Source, LLC</strong><br />
+              Florence, Alabama<br />
+              <a href="https://usedmachinerysource.com/equipment">View Current Inventory</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+</template>
+
+<script setup>
+import machinesData from '~/assets/data/machines.json'
+
+useHead({ title: 'UMS Email Campaign Builder', meta: [{ name: 'robots', content: 'noindex,nofollow' }] })
+
+const headline = ref('Featured Machinery Available Now')
+const intro = ref('Take a look at these machines currently available through Used Machinery Source. Contact us for additional information, pricing, or to arrange an inspection.')
+const selectedMachines = ref([])
+const machineImages = ref({})
+const dragIndex = ref(null)
+const search = ref('')
+const copyLabel = ref('Copy HTML for Brevo')
+
+const offMarketValue = machine => machine.OffMarket ?? machine.Off_Market ?? 0
+const webDescription = machine => machine.WebDesc || machine.Web_Desc || ''
+const advertisingSpec = machine => machine.AdvSpec || machine.Adv_Spec || ''
+const machineTitle = machine => [machine.Year, machine.Manufacturer, machine.Model].filter(Boolean).join(' ')
+const slug = machine => `${machine.Manufacturer || ''}-${machine.Model || ''}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+const machineUrl = machine => `https://usedmachinerysource.com/equipment/${machine.InvID}/${slug(machine)}`
+const imageUrl = invID => `https://usedmachinerysource.com/Images/${machineImages.value[invID]}`
+
+const activeMachines = computed(() => machinesData.filter(machine =>
+  Number(machine.Sold) === 0 && Number(offMarketValue(machine)) === 0 && Number(machine.dont_advertise) === 0
+))
+
+const availableMachines = computed(() => {
+  const chosen = new Set(selectedMachines.value.map(machine => String(machine.InvID)))
+  const q = search.value.trim().toLowerCase()
+  return activeMachines.value
+    .filter(machine => !chosen.has(String(machine.InvID)))
+    .filter(machine => !q || `${machine.InvID} ${machine.Manufacturer} ${machine.Model} ${webDescription(machine)}`.toLowerCase().includes(q))
+    .slice(0, 20)
+})
+
+async function loadImage(machine) {
+  if (machineImages.value[machine.InvID]) return
+  try {
+    const files = await $fetch('/api/images', { query: { invID: machine.InvID } })
+    if (files?.length) machineImages.value[machine.InvID] = files[0]
+  } catch (error) {
+    console.error(`Could not load image for ${machine.InvID}`, error)
+  }
+}
+
+async function resetFeatured() {
+  selectedMachines.value = activeMachines.value.filter(machine => Number(machine.Featured) === 1)
+  for (const machine of selectedMachines.value) await loadImage(machine)
+}
+
+async function addMachine(machine) {
+  selectedMachines.value.push(machine)
+  search.value = ''
+  await loadImage(machine)
+}
+
+function removeMachine(invID) {
+  selectedMachines.value = selectedMachines.value.filter(machine => String(machine.InvID) !== String(invID))
+}
+
+function dropAt(index) {
+  if (dragIndex.value === null || dragIndex.value === index) return
+  const next = [...selectedMachines.value]
+  const [moved] = next.splice(dragIndex.value, 1)
+  next.splice(index, 0, moved)
+  selectedMachines.value = next
+  dragIndex.value = null
+}
+
+function esc(value = '') {
+  return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+}
+
+function buildEmailHtml() {
+  const blocks = selectedMachines.value.map(machine => {
+    const img = machineImages.value[machine.InvID]
+      ? `<img src="${imageUrl(machine.InvID)}" alt="${esc(machineTitle(machine))}" width="560" style="display:block;width:100%;max-width:560px;height:auto;border:0;margin:0 auto 18px;">`
+      : ''
+    return `<tr><td style="padding:0 20px 28px;"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border:1px solid #d9dee7;border-radius:6px;"><tr><td style="padding:20px;">${img}<h2 style="margin:0 0 6px;font-family:Arial,sans-serif;font-size:22px;color:#1c4587;">${esc(machineTitle(machine))}</h2><p style="margin:0 0 8px;font-family:Arial,sans-serif;font-size:15px;color:#434343;">${esc(webDescription(machine))}</p><p style="margin:0 0 12px;font-family:Arial,sans-serif;font-size:14px;color:#222;"><strong>Stock #${esc(machine.InvID)}</strong></p><p style="margin:0 0 18px;font-family:Arial,sans-serif;font-size:15px;line-height:1.5;color:#333;">${esc(advertisingSpec(machine))}</p><a href="${machineUrl(machine)}" style="display:inline-block;background:#1c4587;color:#fff;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;font-size:14px;padding:11px 18px;border-radius:4px;">VIEW MACHINE</a></td></tr></table></td></tr>`
+  }).join('')
+
+  return `<!doctype html><html><body style="margin:0;padding:0;background:#f3f5f7;"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#f3f5f7;"><tr><td align="center" style="padding:24px 10px;"><table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="width:100%;max-width:600px;background:#fff;"><tr><td style="background:#1c4587;padding:24px 20px;text-align:center;color:#fff;font-family:Arial,sans-serif;"><div style="font-size:24px;font-weight:bold;">USED MACHINERY SOURCE</div><div style="font-size:13px;margin-top:5px;">Quality Used Machinery • Nationwide Brokerage</div></td></tr><tr><td style="padding:28px 24px 22px;text-align:center;font-family:Arial,sans-serif;"><h1 style="margin:0 0 12px;font-size:28px;color:#222;">${esc(headline.value)}</h1><p style="margin:0;font-size:16px;line-height:1.55;color:#555;">${esc(intro.value)}</p></td></tr>${blocks}<tr><td style="padding:22px;text-align:center;background:#f4f4f4;font-family:Arial,sans-serif;font-size:13px;line-height:1.6;color:#555;"><strong>Used Machinery Source, LLC</strong><br>Florence, Alabama<br><a href="https://usedmachinerysource.com/equipment" style="color:#1c4587;">View Current Inventory</a></td></tr></table></td></tr></table></body></html>`
+}
+
+async function copyHtml() {
+  try {
+    await navigator.clipboard.writeText(buildEmailHtml())
+    copyLabel.value = 'Copied!'
+    setTimeout(() => { copyLabel.value = 'Copy HTML for Brevo' }, 2200)
+  } catch {
+    copyLabel.value = 'Copy failed'
+  }
+}
+
+onMounted(resetFeatured)
+</script>
+
+<style scoped>
+.builder-page{min-height:100vh;background:#eef1f5;color:#222;font-family:Arial,sans-serif;padding:34px 18px 60px}.builder-shell{max-width:1240px;margin:auto}.builder-heading{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;margin-bottom:22px}.builder-heading h1{font-size:36px;margin:4px 0 8px}.builder-heading p{margin:0;max-width:760px;line-height:1.5}.kicker{font-size:12px!important;font-weight:700;letter-spacing:1.5px;color:#1c4587}.count{background:#1c4587;color:#fff;padding:10px 14px;border-radius:18px;font-weight:700;white-space:nowrap}.controls,.machine-picker,.preview-wrap{background:#fff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.07)}.controls{padding:20px;margin-bottom:22px;display:grid;grid-template-columns:1fr 1.5fr auto;gap:16px;align-items:end}.controls label{font-size:13px;font-weight:700}.controls input,.controls textarea,.search{display:block;width:100%;box-sizing:border-box;margin-top:7px;border:1px solid #bcc5d0;border-radius:4px;padding:10px;font:inherit}.actions{display:flex;gap:8px}.actions button,.remove,.add-row{border:1px solid #1c4587;background:#fff;color:#1c4587;border-radius:4px;padding:10px 12px;cursor:pointer;font-weight:700}.actions .primary{background:#1c4587;color:#fff}.workspace{display:grid;grid-template-columns:390px 1fr;gap:22px;align-items:start}.machine-picker{padding:20px;position:sticky;top:20px}.machine-picker h2{margin:0 0 4px}.help{font-size:13px;color:#666;margin:0 0 16px}.selected-row{display:flex;align-items:center;gap:10px;border:1px solid #d7dde5;border-radius:5px;padding:10px;margin-bottom:8px;background:#fff;cursor:grab}.drag{font-size:20px;color:#777}.row-copy{flex:1;min-width:0}.row-copy strong,.row-copy small{display:block}.row-copy small{margin-top:3px;color:#666}.remove{padding:6px 8px;font-size:12px;border-color:#aaa;color:#555}details{margin-top:18px}summary{cursor:pointer;font-weight:700;color:#1c4587}.add-row{display:block;width:100%;text-align:left;margin-top:6px;border-color:#d7dde5;color:#333;font-weight:400}.preview-wrap{padding:18px}.preview-label{font-size:11px;letter-spacing:1.4px;font-weight:700;color:#777;margin:0 0 10px}.email-preview{max-width:600px;margin:auto;border:1px solid #ddd;background:#fff}.email-header{background:#1c4587;color:#fff;text-align:center;padding:24px}.ums{font-size:24px;font-weight:700}.tagline{font-size:13px;margin-top:5px}.email-intro{text-align:center;padding:28px 24px 22px}.email-intro h2{font-size:28px;margin:0 0 12px}.email-intro p{color:#555;line-height:1.55;margin:0}.email-machine{margin:0 20px 28px;border:1px solid #d9dee7;border-radius:6px;overflow:hidden}.email-machine img{display:block;width:100%;max-height:350px;object-fit:contain;background:#fff}.email-machine-copy{padding:20px}.email-machine h3{color:#1c4587;font-size:22px;margin:0 0 6px}.email-machine p{line-height:1.5}.email-machine .type{margin:0 0 8px;color:#434343}.email-machine .stock{margin:0 0 12px}.email-machine a{display:inline-block;background:#1c4587;color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:11px 18px;border-radius:4px}.email-footer{text-align:center;background:#f4f4f4;padding:22px;color:#555;font-size:13px;line-height:1.6}.email-footer a{color:#1c4587}@media(max-width:900px){.controls,.workspace{grid-template-columns:1fr}.machine-picker{position:static}.builder-heading{align-items:flex-start;flex-direction:column}.actions{flex-wrap:wrap}}
+</style>
