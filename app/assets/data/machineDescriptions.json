@@ -298,5 +298,55 @@
     "InvID": "31192",
     "Paragraph1": "This 2007 Haas SL-40TB CNC Lathe provides substantial turning capacity for larger workpieces. Key specifications include a 40″ swing, 25″ swing over the cross slide, 25.5″ maximum machining diameter, 44″ distance between centers, 7.08″ spindle bore, spindle speeds up to 1,400 rpm, 55 hp main motor, and a 10-position turret.",
     "Paragraph2": "The machine is equipped with a Haas 2-Axis CNC Control with 15″ color LCD monitor, Intuitive Programming System, Ethernet/hard drive, spindle orientation, RS-232 interface, Extra Performance Option with 55 hp, chip conveyor, tool presetter, programmable hydraulic tailstock, high-pressure coolant system, extended tool pocket, remote jog handle, and high-intensity lighting."
+  },
+  {
+    "InvID": "31193",
+    "Paragraph1": "This 2002 Charmilles Robofil 240 Wire EDM provides precision wire-cut EDM capability with 13.76″ X-axis, 8.66″ Y-axis, 8.66″ Z-axis, 13.76″ U-axis, and 8.66″ V-axis travels. The machine has a 17.72″ x 26.77″ table with a 1,653 lb maximum load and accommodates wire diameters from .004″ to .012″.",
+    "Paragraph2": "The machine is equipped with automatic wire threading, remote jog handle, .010″ diameter wire guides, and is wired for 400V three-phase power. The supplied information notes approximately 17,000 hours and describes the machine as well maintained from a tool-room environment."
+  },
+  {
+    "InvID": "31194",
+    "Paragraph1": "This 2005 Haas TM-2 CNC Vertical Machining Center offers 40″ X-axis, 16″ Y-axis, and 16″ Z-axis travels with a 10″ x 57″ table. The 40-taper spindle provides speeds up to 4,000 rpm with a 7.5 hp main motor, and the machine is configured with a 10-position automatic tool changer.",
+    "Paragraph2": "The machine is equipped with a Haas 3-axis CNC control, coolant pump kit, floppy drive, coolant/chip enclosure, and miscellaneous spare parts. Its combination of long X-axis travel and straightforward Haas control makes it suitable for general machining and tool-room applications."
+  },
+  {
+    "InvID": "31195",
+    "Paragraph1": "This Roto Die Model 15 Press Brake is configured with a 120″ bed and 120″ distance between housings, along with a 3″ stroke and 7-1/2″ die space. The machine has a 15 hp main motor and the listing specifies 120″ x 14-gauge capacity.",
+    "Paragraph2": "The machine is hydraulically operated and equipped with three extra top dies and eight front and rear supports. Additional listed features include a 15 hp motor and three-phase electrical configuration."
+  },
+  {
+    "InvID": "31196",
+    "Paragraph1": "This 2006 Mori-Seiki NH5000/40 DCG CNC Horizontal Machining Center is equipped with two 19.7″ x 19.7″ pallets, 360-degree indexing, and a 1,100 lb maximum pallet load. The specification data lists 28.7″ X-axis, 28.7″ Y-axis, and 33.5″ Z-axis travels, a 40-taper spindle capable of 14,000 rpm, and a 60-position automatic tool changer.",
+    "Paragraph2": "The machine is equipped with an MSX-701-III CNC Control, 1,000 PSI high-pressure coolant unit, through-spindle coolant, and rear-discharge chip conveyor. A Renishaw system is also listed, with the probe noted as missing."
+  },
+  {
+    "InvID": "31197",
+    "Paragraph1": "This 2014 Mori-Seiki NHX-4000 CNC Horizontal Machining Center is configured with a 5-station pallet pool using 15.7″ x 15.7″ pallets and .001-degree indexing. It provides 22″ X-axis, 22″ Y-axis, and 26″ Z-axis travels, a 12,000 rpm 40-taper spindle with 40 hp, and a 120-position automatic tool changer.",
+    "Paragraph2": "The machine is equipped with an M730BM CNC Control with MAPPS, full 4th-axis capability, 1,000 PSI through-spindle coolant, chip conveyor, toolsetter, spindle chiller, 120-station twin-arm tool changer, and 5-station pallet pool."
+  },
+  {
+    "InvID": "31198",
+    "Paragraph1": "This 2020 Haas VF-2 Vertical Machining Center provides 30″ X-axis, 16″ Y-axis, and 20″ Z-axis travels with a 14″ x 36″ table rated for 3,000 lbs. It features a 10,000 rpm 40-taper spindle, 30 hp main motor, and a 30+1 position automatic tool changer.",
+    "Paragraph2": "The machine is equipped with a Haas 4-axis CNC Control with 15″ color LCD monitor, 4th-axis drive and wiring, Haas HRT-210 rotary table, 300 PSI through-spindle coolant, high-speed machining, chip auger, programmable coolant nozzle, Visual Quick Code Programming, Intuitive Programming System, and a 55-gallon flood coolant system."
+  },
+  {
+    "InvID": "31199",
+    "Paragraph1": "This 2021 Axile G6 5-Axis Vertical Machining Center is designed for 5-sided and simultaneous 5-axis machining. It provides 25.6″ X-axis, 33.5″ Y-axis, and 19.7″ Z-axis travels, a 23.6″ diameter rotary table with ±120-degree A-axis tilt, a 20,000 rpm HSK-A63 spindle rated at 40/60 hp, and an 80-position automatic tool changer.",
+    "Paragraph2": "The machine is equipped with a Fanuc 31i-B5 Plus 5-axis CNC Control, Heidenhain linear scales, BLUM tool setter, Kinematics reference ball, Heidenhain TS-740/SE-640 workpiece probing system, high-precision A- and C-axis encoders, and a chip-removal/flushing system. Its gantry construction, roller linear guideways, precision ballscrews, and torque-motor rotary table support high-accuracy multi-axis machining."
+  },
+  {
+    "InvID": "31200",
+    "Paragraph1": "This 2017 Amada EG-6013AR Press Brake is a 60-ton fully automatic bending system with a 55.1″ bed length, 39.8″ distance between housings, 5.9″ stroke, and 25″ open height. The machine uses Amada's Dual Servo Press drive mechanism with servo-electric motors.",
+    "Paragraph2": "The system is equipped with an Amada AMNC 3i Control and Amada EG-Robot with 22 lb capacity, six articulated axes plus one travel axis. Additional automation includes four part-loading tables, unloading conveyor, gripper station, tool stocker, and dedicated enclosure."
+  },
+  {
+    "InvID": "31201",
+    "Paragraph1": "This 2016 Amada HG1003ARS Press Brake is a 100-ton robotic bending cell with a 120.5″ bed length, 106.3″ distance between housings, 9.8″ stroke, and 23.5″ open height. It uses a servo-hydraulic hybrid drive system combining electric-motor control with hydraulic-cylinder power.",
+    "Paragraph2": "The machine is equipped with an Amada AMNC 3i CNC Control with touch screen and an Amada HGRobot020/Yaskawa DX100 7-axis robotic arm with 44 lb payload. Additional automation includes an automatic tool changer capable of storing up to 15 punch stockers and 18 die stockers, automatic gripper changer, Amada PF-A3 roller table/conveyor, and an assortment of dies and punches."
+  },
+  {
+    "InvID": "31202",
+    "Paragraph1": "This 2011 Doosan Puma 300C CNC Lathe offers a 22.4″ swing, 17.7″ swing over the cross slide, 25.7″ maximum machining diameter, and 27.8″ distance between centers. It features a 4.5″ spindle bore, spindle speeds up to 2,800 rpm, a 35 hp main motor, A2-11 spindle nose, and a 12-position turret.",
+    "Paragraph2": "The machine is equipped with a Fanuc 2-axis CNC Control, chip conveyor, tailstock, tool setter, and complete coolant system. The supplied hour information lists 9,506 cutting hours and 8,114 run-time hours."
   }
 ]
