@@ -1,0 +1,51 @@
+/* Compact current-inventory cards for the main CNC Lathe Spec Library. */
+@media (min-width: 1051px) {
+  .spec-library-page .machine-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+}
+
+.spec-library-page .machine-card {
+  box-shadow: 0 3px 12px rgba(11,37,69,.06) !important;
+}
+.spec-library-page .machine-card-copy {
+  padding: 14px !important;
+}
+.spec-library-page .machine-card h3 {
+  font-size: 17px !important;
+  margin-bottom: 6px !important;
+}
+.spec-library-page .machine-type {
+  font-size: 13px !important;
+  margin-bottom: 7px !important;
+}
+.spec-library-page .stock-number {
+  font-size: 12px !important;
+  margin-bottom: 7px !important;
+}
+.spec-library-page .adv-spec {
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  margin-bottom: 12px !important;
+}
+.spec-library-page .view-machine-button {
+  padding: 8px 12px !important;
+  font-size: 12px !important;
+}
+
+@media (min-width: 851px) and (max-width: 1050px) {
+  .spec-library-page .machine-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+@media (min-width: 601px) and (max-width: 850px) {
+  .spec-library-page .machine-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 600px) {
+  .spec-library-page .machine-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
