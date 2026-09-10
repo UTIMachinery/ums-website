@@ -40,7 +40,31 @@ const additionalModels=[
 {label:'Integrex 30/1000',to:'/spec-library/mazak/integrex-30-1000'},{label:'Integrex 30Y/1500',to:'/spec-library/mazak/integrex-30y-1500'},{label:'Integrex 35Y/1000',to:'/spec-library/mazak/integrex-35y-1000'},{label:'Integrex 40',to:'/spec-library/mazak/integrex-40'},{label:'Integrex 200MSY',to:'/spec-library/mazak/integrex-200msy'},
 {label:'Powermaster Chucker',to:'/spec-library/mazak/powermaster-chucker'},{label:'Powermaster 1600 Big Bore',to:'/spec-library/mazak/powermaster-1600-big-bore'},{label:'Powermaster 3000',to:'/spec-library/mazak/powermaster-3000'},
 {label:'Slant-Turn 15',to:'/spec-library/mazak/slant-turn-15'},{label:'Slant-Turn 30/1500',to:'/spec-library/mazak/slant-turn-30-1500'},{label:'Slant-Turn 50N',to:'/spec-library/mazak/slant-turn-50n'},{label:'Slant-Turn 60/2000',to:'/spec-library/mazak/slant-turn-60-2000'}]
-useSeoMeta({title:'Mazak CNC Lathes & Turning Centers | Specifications | UMS',description:'Research Mazak CNC lathe and turning center models, families and historical specifications, and see current Mazak CNC lathes available from Used Machinery Source.',ogTitle:'Mazak CNC Lathes & Turning Centers | UMS Spec Library',ogDescription:'Mazak CNC lathe model families, historical specifications and current machines for sale.',ogType:'website',ogUrl:'https://usedmachinerysource.com/spec-library/mazak/cnc-lathes'})
-useHead({link:[{rel:'canonical',href:'https://usedmachinerysource.com/spec-library/mazak/cnc-lathes'}]})
+useSeoMeta({title:'Mazak CNC Lathes & Turning Centers | Specifications | UMS',description:'Research Mazak CNC lathe and turning center models, families and historical specifications, and see current Mazak CNC lathes available from Used Machinery Source.',ogTitle:'Mazak CNC Lathes & Turning Centers | UMS Spec Library',ogDescription:'Mazak CNC lathe model families, historical specifications and current machines for sale.',ogType:'website',ogUrl:'https://www.usedmachinerysource.com/spec-library/mazak/cnc-lathes'})
+const mazakLibrarySchema={
+  '@context':'https://schema.org',
+  '@graph':[
+    {
+      '@type':'CollectionPage',
+      name:'Mazak CNC Lathes & Turning Centers',
+      url:'https://www.usedmachinerysource.com/spec-library/mazak/cnc-lathes',
+      description:'Historical Mazak CNC lathe and turning center specifications by model and year, plus current Mazak machines for sale.',
+      isPartOf:{'@id':'https://www.usedmachinerysource.com/#website'}
+    },
+    {
+      '@type':'BreadcrumbList',
+      itemListElement:[
+        {'@type':'ListItem',position:1,name:'Home',item:'https://www.usedmachinerysource.com/'},
+        {'@type':'ListItem',position:2,name:'CNC Lathe Spec Library',item:'https://www.usedmachinerysource.com/spec-library/cnc-lathes'},
+        {'@type':'ListItem',position:3,name:'Mazak CNC Lathes',item:'https://www.usedmachinerysource.com/spec-library/mazak/cnc-lathes'}
+      ]
+    }
+  ]
+}
+useHead({
+  htmlAttrs:{lang:'en'},
+  link:[{rel:'canonical',href:'https://www.usedmachinerysource.com/spec-library/mazak/cnc-lathes'}],
+  script:[{type:'application/ld+json',children:JSON.stringify(mazakLibrarySchema)}]
+})
 </script>
 <style scoped>.library-page{color:#17273a;background:#fff;padding-bottom:56px}.wrap{max-width:1260px;margin:0 auto;padding-left:28px;padding-right:28px}.hero{background:linear-gradient(105deg,#071b33,#0d2c52);color:#fff;padding:50px 0}.back-link{color:#c8d9eb;text-decoration:none}.kicker{font-size:.78rem;font-weight:800;letter-spacing:.12em;color:#1c5a94;margin:18px 0 8px}.hero .kicker{color:#9fc4e7}.hero h1{font-size:clamp(2rem,4vw,3.25rem);margin:0 0 14px}.hero p{max-width:850px;font-size:1.08rem;line-height:1.7}.section{padding-top:46px;padding-bottom:46px}.section h2{font-size:2rem;margin:0 0 14px}.sale{color:#b44c10}.section-heading-row{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}.machine-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.machine-card{overflow:hidden;background:#fff;border:1px solid #d8e0e9;border-radius:7px;box-shadow:0 3px 12px rgba(11,37,69,.06)}.machine-image-wrap{aspect-ratio:4/3;background:#eef2f6;display:flex;align-items:center;justify-content:center;overflow:hidden}.machine-image-wrap img{width:100%;height:100%;object-fit:cover}.machine-image-placeholder{color:#617386;font-weight:700;font-size:13px}.machine-card-copy{padding:14px}.machine-card h3{margin:0 0 6px;color:#0b2545;font-size:17px;line-height:1.25}.machine-type{margin:0 0 7px;color:#43566b;font-size:13px}.stock-number{margin:0 0 7px;font-size:12px;font-weight:800;color:#17273a}.adv-spec{margin:0 0 12px;color:#43566b;font-size:12px;line-height:1.4}.view-machine-button{display:inline-flex;align-items:center;justify-content:center;background:#1c4587;color:#fff;text-decoration:none;padding:8px 12px;border-radius:5px;font-size:12px;font-weight:800}.notice{border:1px solid #d8e0e8;border-radius:12px;padding:22px;background:#fff}.notice a,.text-link{color:#1c4587;font-weight:800;text-decoration:none}.text-link:hover{text-decoration:underline}.family-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px}.family-card{border:1px solid #d8e0e8;border-radius:12px;padding:22px;background:#fff}.stock{color:#667789}.button{display:inline-block;background:#1c4587;color:#fff;text-decoration:none;padding:10px 16px;border-radius:6px;font-weight:700}.model-links{display:flex;flex-direction:column;gap:8px}.muted{background:#f4f7fa}.intro{max-width:980px;line-height:1.7}.family-card.featured{border-top:4px solid #1c4587}.family-card h3{margin-top:0}.additional-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 18px;margin-top:24px}.additional-link{display:block;border:1px solid #d7e0e8;border-radius:8px;padding:12px 14px;text-decoration:none;color:#1c4587;font-weight:800;background:#fff}.additional-link:hover{text-decoration:underline}.history{margin-top:42px;border:2px solid #9fb4c8;border-radius:14px;padding-top:30px;padding-bottom:30px}.history-label{font-weight:900;color:#8c3f10;letter-spacing:.08em;font-size:.8rem}.history p{line-height:1.7}@media(max-width:1050px){.machine-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:850px){.machine-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.family-grid,.additional-grid{grid-template-columns:1fr}.wrap{padding-left:18px;padding-right:18px}.hero{padding:36px 0}.section{padding-top:34px;padding-bottom:34px}}@media(max-width:600px){.section-heading-row{align-items:flex-start;flex-direction:column}.machine-grid{grid-template-columns:1fr}}</style>
