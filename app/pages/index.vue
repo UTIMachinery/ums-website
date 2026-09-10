@@ -68,6 +68,11 @@ useSeoMeta({
   ogDescription: 'Buying, selling and sourcing quality used CNC machinery.',
   ogType: 'website'
 })
+
+useHead({
+  htmlAttrs: { lang: 'en' },
+  link: [{ rel: 'canonical', href: 'https://www.usedmachinerysource.com/' }]
+})
 </script>
 
 <style scoped>
