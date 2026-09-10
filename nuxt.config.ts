@@ -23,6 +23,23 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/wanted-enhancements.css', '~/assets/css/compact-inventory-cards.css'],
 
+  app: {
+    head: {
+      script: [
+        {
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-SZEKH6SQ1M',
+          async: true
+        },
+        {
+          innerHTML: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SZEKH6SQ1M');`
+        }
+      ]
+    }
+  },
+
   runtimeConfig: {
     public: {
       turnstileSiteKey: ''
