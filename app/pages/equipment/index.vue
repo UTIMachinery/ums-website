@@ -25,6 +25,7 @@
       <NuxtLink to="/equipment/manufacturer/okuma">Okuma</NuxtLink>
       <NuxtLink to="/equipment/manufacturer/kingston">Kingston</NuxtLink>
       <NuxtLink to="/equipment/manufacturer/amada">Amada</NuxtLink>
+      <NuxtLink to="/equipment/manufacturer/smec">SMEC</NuxtLink>
     </nav>
     <div class="listing-heading"><button type="button" class="view-all-equipment-button" @click="resetSearch">Reset Search / View All Equipment</button></div>
     </section>
