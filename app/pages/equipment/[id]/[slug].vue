@@ -84,12 +84,12 @@
 <div v-if="showRequestForm" class="request-modal-overlay">
   <div class="request-modal">
     <button type="button" class="request-modal-close" @click="showRequestForm = false">×</button>
-    <h2>Request Information</h2>
+    <h2>Request Information</h2><p class="form-required-note">Fields marked * are required.</p>
     <p v-if="machine" class="request-machine">{{ machine.Year }} {{ machine.Manufacturer }} {{ machine.Model }} • Stock #{{ machine.InvID }}</p>
     <form class="request-form" @submit.prevent="submitRequestForm">
-<label>Email *<input v-model="requestForm.email" type="email" autocomplete="email" required /></label>
-<label>Contact Name *<input v-model="requestForm.contactName" type="text" autocomplete="name" required /></label>
-<label>Phone *<input v-model="requestForm.phone" type="tel" autocomplete="tel" required /></label>
+<label class="required-field-label required-field-label">Email *<input v-model="requestForm.email" type="email" autocomplete="email" required /></label>
+<label class="required-field-label required-field-label">Contact Name *<input v-model="requestForm.contactName" type="text" autocomplete="name" required /></label>
+<label class="required-field-label required-field-label">Phone *<input v-model="requestForm.phone" type="tel" autocomplete="tel" required /></label>
 <label>Company Name<input v-model="requestForm.companyName" type="text" autocomplete="organization" /></label>
 <label>Address<input v-model="requestForm.address" type="text" autocomplete="street-address" /></label>
 <label>City<input v-model="requestForm.city" type="text" autocomplete="address-level2" /></label>
