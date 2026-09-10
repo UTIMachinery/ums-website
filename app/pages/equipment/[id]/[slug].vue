@@ -31,7 +31,7 @@
   <div class="main-image">
   <iframe v-if="showVideo && machineVideos.length" :src="machineVideos[0].Link.replace('youtu.be/', 'www.youtube.com/embed/')" title="Machine Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <template v-else>
-    <img :src="`/Images/${machineImages[selectedImage]}`" :alt="`${machine.Year} ${machine.Manufacturer} ${machine.Model}`" />
+    <img :src="`/Images/${machineImages[selectedImage]}`" :alt="`Used ${machine.Year || ''} ${machine.Manufacturer || ''} ${machine.Model || ''} ${seoMachineType(machine)} for sale - photo ${selectedImage + 1}`.replace(/\s+/g,' ').trim()" fetchpriority="high" />
     <button v-if="machineImages.length > 1" type="button" class="main-image-arrow main-image-arrow-left" aria-label="Previous machine photo" @click="previousImage">‹</button>
     <button v-if="machineImages.length > 1" type="button" class="main-image-arrow main-image-arrow-right" aria-label="Next machine photo" @click="nextImage">›</button>
   </template>
@@ -39,7 +39,7 @@
   <div class="thumbnail-grid">
   <button v-if="thumbnailStart > 0" type="button" class="thumbnail-arrow" @click="previousThumbnails">‹</button>
   <template v-for="item in visibleGalleryItems" :key="item.type === 'image' ? item.file : item.video.LinkID">
-    <img v-if="item.type === 'image'" :src="`/Images/${item.file}`" :alt="`${machine.Year} ${machine.Manufacturer} ${machine.Model}`" class="thumbnail" @click="showVideo = false; selectedImage = machineImages.indexOf(item.file)" />
+    <img v-if="item.type === 'image'" :src="`/Images/${item.file}`" :alt="`Used ${machine.Year || ''} ${machine.Manufacturer || ''} ${machine.Model || ''} ${seoMachineType(machine)} - thumbnail ${machineImages.indexOf(item.file) + 1}`.replace(/\s+/g,' ').trim()" class="thumbnail" loading="lazy" @click="showVideo = false; selectedImage = machineImages.indexOf(item.file)" />
     <div v-else class="video-thumbnail" @click="showVideo = true">
       <img :src="`/Images/${machineImages[selectedImage]}`" :alt="`Video - ${machine.Year} ${machine.Manufacturer} ${machine.Model}`" class="thumbnail" />
       <span class="video-thumbnail-label">▶ VIDEO</span>
@@ -304,7 +304,7 @@ const machineStructuredData=computed(()=>{
     ]
   }
 })
-useSeoMeta({title:()=>seoMachineTitle(machine.value),description:()=>buildMetaDescription(machine.value),ogTitle:()=>machine.value?`${machine.value.Year} ${machine.value.Manufacturer} ${machine.value.Model}`:'Used Machinery Source',ogDescription:()=>machine.value?`${machine.value.AdvSpec||''} Stock #${machine.value.InvID}.`:'Used CNC machinery and industrial equipment from Used Machinery Source.',ogImage:()=>machineImages.value?.length?`https://www.usedmachinerysource.com/Images/${machineImages.value[0]}`:'',ogUrl:()=>canonicalMachineUrl.value,ogType:'website',twitterCard:'summary_large_image',twitterTitle:()=>machine.value?`${machine.value.Year} ${machine.value.Manufacturer} ${machine.value.Model}`:'Used Machinery Source',twitterDescription:()=>machine.value?`${machine.value.AdvSpec||''} Stock #${machine.value.InvID}.`:'Used CNC machinery and industrial equipment from Used Machinery Source.',twitterImage:()=>machineImages.value?.length?`https://www.usedmachinerysource.com/Images/${machineImages.value[0]}`:''})
+useSeoMeta({title:()=>seoMachineTitle(machine.value),description:()=>buildMetaDescription(machine.value),ogTitle:()=>machine.value?`${machine.value.Year} ${machine.value.Manufacturer} ${machine.value.Model}`:'Used Machinery Source',ogDescription:()=>machine.value?`${machine.value.AdvSpec||''} Stock #${machine.value.InvID}.`:'Used CNC machinery and industrial equipment from Used Machinery Source.',ogImage:()=>machineImages.value?.length?`https://www.usedmachinerysource.com/Images/${machineImages.value[0]}`:'',ogUrl:()=>canonicalMachineUrl.value,ogType:'website',twitterCard:'summary_large_image',twitterTitle:()=>machine.value?`${machine.value.Year} ${machine.value.Manufacturer} ${machine.value.Model}`:'Used Machinery Source',twitterDescription:()=>machine.value?`${machine.value.AdvSpec||''} Stock #${machine.value.InvID}.`:'Used CNC machinery and industrial equipment from Used Machinery Source.',twitterImage:()=>machineImages.value?.length?`https://www.usedmachinerysource.com/Images/${machineImages.value[0]}`:'',ogImageAlt:()=>machine.value?`Used ${machine.value.Year||''} ${machine.value.Manufacturer||''} ${machine.value.Model||''} ${seoMachineType(machine.value)} for sale`.replace(/\s+/g,' ').trim():'Used CNC machinery from Used Machinery Source',twitterImageAlt:()=>machine.value?`Used ${machine.value.Year||''} ${machine.value.Manufacturer||''} ${machine.value.Model||''} ${seoMachineType(machine.value)} for sale`.replace(/\s+/g,' ').trim():'Used CNC machinery from Used Machinery Source'})
 useHead(()=>({
   htmlAttrs:{lang:'en'},
   link:[{rel:'canonical',href:canonicalMachineUrl.value}],
