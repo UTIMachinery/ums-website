@@ -10,6 +10,43 @@
 <script setup>
 const route = useRoute()
 
+const globalStructuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://www.usedmachinerysource.com/#organization',
+      name: 'Used Machinery Source',
+      legalName: 'Used Machinery Source, LLC',
+      url: 'https://www.usedmachinerysource.com/',
+      logo: 'https://www.usedmachinerysource.com/Images/ums-logo.png',
+      telephone: '+1-256-980-1200',
+      email: 'jon@usedms.com',
+      sameAs: [
+        'https://www.facebook.com/UsedMachinerySource',
+        'https://www.youtube.com/@usedmachinerysource'
+      ]
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://www.usedmachinerysource.com/#website',
+      url: 'https://www.usedmachinerysource.com/',
+      name: 'Used Machinery Source',
+      publisher: { '@id': 'https://www.usedmachinerysource.com/#organization' },
+      inLanguage: 'en-US'
+    }
+  ]
+}
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify(globalStructuredData)
+    }
+  ]
+})
+
 const showEquipmentDetailCta = computed(() =>
   /^\/equipment\/[^/]+\/[^/]+/.test(route.path)
 )
