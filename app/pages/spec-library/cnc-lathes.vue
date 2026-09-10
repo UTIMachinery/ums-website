@@ -30,13 +30,13 @@
             <img
               v-if="machineCardImages[machine.InvID]"
               :src="`/Images/${machineCardImages[machine.InvID]}`"
-              :alt="`${machine.Year || ''} ${machine.Manufacturer || ''} ${machine.Model || ''}`.trim()"
+              :alt="`Used ${machine.Year || ''} ${machine.Manufacturer || ''} ${machine.Model || ''} CNC lathe for sale`.replace(/\s+/g,' ').trim()"
               loading="lazy"
             />
             <div v-else class="machine-image-placeholder">Current UMS Inventory</div>
           </div>
           <div class="machine-card-copy">
-            <h3>{{ machine.Year }} {{ machine.Manufacturer }} {{ machine.Model }}</h3>
+            <h3><NuxtLink :to="machineUrl(machine)" class="machine-title-link">{{ machine.Manufacturer }} {{ machine.Model }}<span v-if="machine.Year"> – {{ machine.Year }}</span></NuxtLink></h3>
             <p class="machine-type">{{ webDescription(machine) }}</p>
             <p class="stock-number">Stock #{{ machine.InvID }}</p>
             <p v-if="advertisingSpec(machine)" class="adv-spec">{{ advertisingSpec(machine) }}</p>
@@ -265,29 +265,42 @@ useSeoMeta({
   twitterCard: 'summary_large_image'
 })
 
-useHead({
-  htmlAttrs: { lang: 'en' },
-  link: [
-    { rel: 'canonical', href: 'https://www.usedmachinerysource.com/spec-library/cnc-lathes' }
-  ],
-  script: [
+const cncLatheLibrarySchema = computed(() => ({
+  '@context': 'https://schema.org',
+  '@graph': [
     {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'CollectionPage',
-        name: 'Used CNC Lathes & Turning Centers',
-        url: 'https://www.usedmachinerysource.com/spec-library/cnc-lathes',
-        description: 'Current used CNC lathes for sale and a machinery specification library for CNC lathe types, manufacturers, model families and historical specifications.',
-        isPartOf: {
-          '@type': 'WebSite',
-          name: 'Used Machinery Source',
-          url: 'https://www.usedmachinerysource.com/'
-        }
-      })
+      '@type': 'CollectionPage',
+      '@id': 'https://www.usedmachinerysource.com/spec-library/cnc-lathes#collection',
+      name: 'Used CNC Lathes & Turning Centers',
+      url: 'https://www.usedmachinerysource.com/spec-library/cnc-lathes',
+      description: 'Current used CNC lathes for sale and a machinery specification library for CNC lathe types, manufacturers, model families and historical specifications.',
+      isPartOf: { '@id': 'https://www.usedmachinerysource.com/#website' }
+    },
+    {
+      '@type': 'ItemList',
+      name: 'Current CNC Lathes & Turning Centers for Sale',
+      itemListElement: currentCncLathes.value.map((machine, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: [machine.Manufacturer, machine.Model, machine.Year].filter(Boolean).join(' '),
+        url: `https://www.usedmachinerysource.com${machineUrl(machine)}`
+      }))
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.usedmachinerysource.com/' },
+        { '@type': 'ListItem', position: 2, name: 'CNC Lathe Spec Library', item: 'https://www.usedmachinerysource.com/spec-library/cnc-lathes' }
+      ]
     }
   ]
-})
+}))
+
+useHead(() => ({
+  htmlAttrs: { lang: 'en' },
+  link: [{ rel: 'canonical', href: 'https://www.usedmachinerysource.com/spec-library/cnc-lathes' }],
+  script: [{ type: 'application/ld+json', children: JSON.stringify(cncLatheLibrarySchema.value) }]
+}))
 </script>
 
 <style scoped>
@@ -320,7 +333,7 @@ useHead({
 .machine-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
 .machine-image-placeholder { color: #617386; font-weight: 700; font-size: 14px; }
 .machine-card-copy { padding: 18px; }
-.machine-card h3 { margin: 0 0 7px; color: #0b2545; font-size: 20px; line-height: 1.25; }
+.machine-card h3 { margin: 0 0 7px; color: #0b2545; font-size: 20px; line-height: 1.25; }.machine-title-link{color:#0b2545;text-decoration:none}.machine-title-link:hover{text-decoration:underline}
 .machine-type { margin: 0 0 9px; color: #43566b; font-size: 14px; }
 .stock-number { margin: 0 0 9px; font-size: 13px; font-weight: 800; color: #17273a; }
 .adv-spec { margin: 0 0 16px; color: #43566b; font-size: 14px; line-height: 1.5; }
