@@ -120,7 +120,7 @@ async function loadMachineCardImages(){for(const m of currentMachines.value){try
 onMounted(loadMachineCardImages)
 
 useSeoMeta({title:()=>`${displayName.value} CNC Lathe Specifications & Machines for Sale | UMS`,description:()=>`Browse ${displayName.value} CNC lathes currently for sale and research historical ${props.manufacturer} CNC lathe specifications by exact model and year.`})
-useHead({link:[{rel:'canonical',href:()=>`https://usedmachinerysource.com/spec-library/${props.routeSlug}/cnc-lathes`}]})
+useHead({htmlAttrs:{lang:'en'},link:[{rel:'canonical',href:()=>`https://www.usedmachinerysource.com/spec-library/${props.routeSlug}/cnc-lathes`}]})
 </script>
 
 <style scoped>
