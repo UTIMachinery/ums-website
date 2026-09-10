@@ -223,8 +223,17 @@ function seoMachineType(item){
 function seoMachineTitle(item){
   if(!item) return 'Used Machinery Source'
   const year=String(item.Year||'').trim()
-  const core=[item.Manufacturer,item.Model,seoMachineType(item),'for Sale'].filter(Boolean).join(' ')
-  return year ? `${core} | ${year} | UMS` : `${core} | UMS`
+  const manufacturer=String(item.Manufacturer||'').trim()
+  const model=String(item.Model||'').trim()
+  const type=seoMachineType(item)
+  const base=[manufacturer,model].filter(Boolean).join(' ')
+  const typeAlreadyInName=base.toLowerCase().includes(type.toLowerCase())
+  const core=[base,typeAlreadyInName?'':type,'for Sale'].filter(Boolean).join(' ')
+  const suffix=year?` | ${year}`:''
+  const full=`${core}${suffix} | UMS`
+  if(full.length<=62) return full
+  const shorter=`${base} for Sale${suffix} | UMS`
+  return shorter.length<=62?shorter:`${base} for Sale | UMS`
 }
 const manufacturerInventoryMap={
   'haas':'haas',
