@@ -29,6 +29,7 @@
         <NuxtLink to="/equipment/manufacturer/hurco">Used Hurco Machines</NuxtLink>
         <NuxtLink to="/equipment/manufacturer/mori-seiki">Used Mori-Seiki / DMG MORI</NuxtLink>
         <NuxtLink to="/equipment/manufacturer/okuma">Used Okuma Machines</NuxtLink>
+        <NuxtLink to="/equipment/manufacturer/smec">Used SMEC Machines</NuxtLink>
       </nav>
 
       <nav aria-label="Used Machinery Source resources">
