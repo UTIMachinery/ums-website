@@ -1,3 +1,4 @@
+import { gunzipSync } from 'node:zlib'
 import mazak1 from '../../app/assets/data/mazak-historical-single-1.js'
 import mazak2 from '../../app/assets/data/mazak-historical-single-2.js'
 import mazak3 from '../../app/assets/data/mazak-historical-single-3.js'
@@ -5,10 +6,19 @@ import mazak4 from '../../app/assets/data/mazak-historical-single-4.js'
 import mazakCollisions1 from '../../app/assets/data/mazak-historical-collision-1.js'
 import mazakCollisions2 from '../../app/assets/data/mazak-historical-collision-2.js'
 import haas from '../../app/assets/data/haas-historical-detailed.js'
-import okuma from '../../app/assets/data/okuma-historical-detailed.js'
-import moriSeiki from '../../app/assets/data/moriseiki-historical-detailed.js'
+import okumaP1 from '../../app/assets/data/okuma-packed/p1.js'
+import okumaP2 from '../../app/assets/data/okuma-packed/p2.js'
+import okumaP3 from '../../app/assets/data/okuma-packed/p3.js'
+import okumaP4 from '../../app/assets/data/okuma-packed/p4.js'
+import moriP1 from '../../app/assets/data/moriseiki-packed/p1.js'
+import moriP2 from '../../app/assets/data/moriseiki-packed/p2.js'
+import moriP3 from '../../app/assets/data/moriseiki-packed/p3.js'
+import moriP4 from '../../app/assets/data/moriseiki-packed/p4.js'
 
 const BASE = 'https://usedmachinerysource.com'
+const unpack = parts => JSON.parse(gunzipSync(Buffer.from(parts.join(''), 'base64')).toString('utf8'))
+const okuma = unpack([okumaP1, okumaP2, okumaP3, okumaP4])
+const moriSeiki = unpack([moriP1, moriP2, moriP3, moriP4])
 
 const escapeXml = value => String(value)
   .replaceAll('&', '&amp;')
