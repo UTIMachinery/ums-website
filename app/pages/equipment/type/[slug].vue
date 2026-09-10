@@ -21,7 +21,7 @@
       <div v-if="machines.length" class="grid">
         <article v-for="machine in machines" :key="machine.InvID" class="card">
           <NuxtLink :to="machineUrl(machine)" class="image-link">
-            <img v-if="machineImage(machine)" :src="`/Images/${machineImage(machine)}`" :alt="`${machine.Year || ''} ${machine.Manufacturer || ''} ${machine.Model || ''} ${category.shortTitle}`.trim()" loading="lazy" />
+            <img v-if="machineImage(machine)" :src="`/Images/${machineImage(machine)}`" :alt="`Used ${machine.Year || ''} ${machine.Manufacturer || ''} ${machine.Model || ''} ${category.shortTitle} for sale`.replace(/\s+/g,' ').trim()" loading="lazy" />
             <div v-else class="placeholder">Used Machinery Source</div>
           </NuxtLink>
           <div class="copy">
