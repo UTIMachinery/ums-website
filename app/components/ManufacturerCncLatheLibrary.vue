@@ -120,7 +120,32 @@ async function loadMachineCardImages(){for(const m of currentMachines.value){try
 onMounted(loadMachineCardImages)
 
 useSeoMeta({title:()=>`${displayName.value} CNC Lathe Specifications & Machines for Sale | UMS`,description:()=>`Browse ${displayName.value} CNC lathes currently for sale and research historical ${props.manufacturer} CNC lathe specifications by exact model and year.`})
-useHead({htmlAttrs:{lang:'en'},link:[{rel:'canonical',href:()=>`https://www.usedmachinerysource.com/spec-library/${props.routeSlug}/cnc-lathes`}]})
+const manufacturerLibraryCanonical=computed(()=>`https://www.usedmachinerysource.com/spec-library/${props.routeSlug}/cnc-lathes`)
+const manufacturerLibrarySchema=computed(()=>({
+  '@context':'https://schema.org',
+  '@graph':[
+    {
+      '@type':'CollectionPage',
+      name:`${displayName.value} CNC Lathes & Turning Centers`,
+      url:manufacturerLibraryCanonical.value,
+      description:`Historical ${props.manufacturer} CNC lathe specifications by model and year, plus current machines for sale.`,
+      isPartOf:{'@id':'https://www.usedmachinerysource.com/#website'}
+    },
+    {
+      '@type':'BreadcrumbList',
+      itemListElement:[
+        {'@type':'ListItem',position:1,name:'Home',item:'https://www.usedmachinerysource.com/'},
+        {'@type':'ListItem',position:2,name:'CNC Lathe Spec Library',item:'https://www.usedmachinerysource.com/spec-library/cnc-lathes'},
+        {'@type':'ListItem',position:3,name:`${displayName.value} CNC Lathes`,item:manufacturerLibraryCanonical.value}
+      ]
+    }
+  ]
+}))
+useHead(()=>({
+  htmlAttrs:{lang:'en'},
+  link:[{rel:'canonical',href:manufacturerLibraryCanonical.value}],
+  script:[{type:'application/ld+json',children:JSON.stringify(manufacturerLibrarySchema.value)}]
+}))
 </script>
 
 <style scoped>
