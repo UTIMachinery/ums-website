@@ -24,9 +24,30 @@ const form=reactive({contactName:'',companyName:'',email:'',phone:'',preferredCo
 const sending=ref(false),sent=ref(false),error=ref(false)
 async function submitForm(){sending.value=true;sent.value=false;error.value=false;try{await $fetch('/api/site-inquiry',{method:'POST',body:{inquiryType:'contact',contact:{contactName:form.contactName,companyName:form.companyName,email:form.email,phone:form.phone,preferredContact:form.preferredContact},subject:form.subject,message:form.message}});sent.value=true;form.contactName='';form.companyName='';form.email='';form.phone='';form.preferredContact='';form.subject='General Question';form.message=''}catch(e){error.value=true}finally{sending.value=false}}
 
+const contactSchema={
+  '@context':'https://schema.org',
+  '@graph':[
+    {
+      '@type':'ContactPage',
+      name:'Contact Used Machinery Source',
+      url:'https://www.usedmachinerysource.com/contact',
+      description:'Contact Used Machinery Source for help buying, selling or locating used CNC machinery.',
+      isPartOf:{'@id':'https://www.usedmachinerysource.com/#website'},
+      about:{'@id':'https://www.usedmachinerysource.com/#organization'}
+    },
+    {
+      '@type':'BreadcrumbList',
+      itemListElement:[
+        {'@type':'ListItem',position:1,name:'Home',item:'https://www.usedmachinerysource.com/'},
+        {'@type':'ListItem',position:2,name:'Contact',item:'https://www.usedmachinerysource.com/contact'}
+      ]
+    }
+  ]
+}
 useHead({
-  htmlAttrs: { lang: 'en' },
-  link: [{ rel: 'canonical', href: 'https://www.usedmachinerysource.com/contact' }]
+  htmlAttrs:{lang:'en'},
+  link:[{rel:'canonical',href:'https://www.usedmachinerysource.com/contact'}],
+  script:[{type:'application/ld+json',children:JSON.stringify(contactSchema)}]
 })
 </script>
 <style scoped>
