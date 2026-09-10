@@ -82,7 +82,7 @@
 
 <script setup>
 useSeoMeta({
-  title: 'Used CNC Machinery | Used Machinery Source',
+  title: 'Used CNC Machines for Sale | Used Machinery Source',
   description: 'Used Machinery Source helps manufacturers buy, sell and locate quality used CNC machinery throughout North America.',
   ogTitle: 'Used Machinery Source | Used CNC Machinery',
   ogDescription: 'Buying, selling and sourcing quality used CNC machinery.',
