@@ -4,6 +4,7 @@
     <NuxtPage />
     <div v-if="showMazakIndex" class="mazak-single-wrap"><MazakSingleRecordLinks /></div>
     <EquipmentFooterCta v-if="showEquipmentDetailCta" />
+    <SiteFooter />
   </div>
 </template>
 
@@ -22,6 +23,16 @@ const globalStructuredData = {
       logo: 'https://www.usedmachinerysource.com/Images/ums-logo.png',
       telephone: '+1-256-980-1200',
       email: 'jon@usedms.com',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Florence',
+        addressRegion: 'AL',
+        addressCountry: 'US'
+      },
+      areaServed: {
+        '@type': 'Country',
+        name: 'United States'
+      },
       sameAs: [
         'https://www.facebook.com/UsedMachinerySource',
         'https://www.youtube.com/@usedmachinerysource'
