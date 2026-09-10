@@ -230,10 +230,43 @@ useSeoMeta({
   twitterImage: 'https://www.usedmachinerysource.com/Images/ums-logo.png'
 })
 
-useHead({
+const wantedStructuredData = computed(() => ({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://www.usedmachinerysource.com/wanted#collection',
+      name: 'Used Machinery Wanted Listings',
+      url: 'https://www.usedmachinerysource.com/wanted',
+      description: 'Current machinery requirements from buyers looking for used CNC machines and other industrial equipment.',
+      isPartOf: { '@id': 'https://www.usedmachinerysource.com/#website' }
+    },
+    {
+      '@type': 'ItemList',
+      name: 'Current Used Machinery Wanted Listings',
+      itemListElement: wanteds.map((wanted, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: `${wanted.WebDesc || 'Used machinery wanted'} - Wanted ID #${wanted.WtdID}`,
+        description: wanted.Description,
+        url: `https://www.usedmachinerysource.com/wanted?id=${wanted.WtdID}`
+      }))
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.usedmachinerysource.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Wanted Machinery', item: 'https://www.usedmachinerysource.com/wanted' }
+      ]
+    }
+  ]
+}))
+
+useHead(() => ({
   htmlAttrs: { lang: 'en' },
-  link: [{ rel: 'canonical', href: 'https://www.usedmachinerysource.com/wanted' }]
-})
+  link: [{ rel: 'canonical', href: 'https://www.usedmachinerysource.com/wanted' }],
+  script: [{ type: 'application/ld+json', children: JSON.stringify(wantedStructuredData.value) }]
+}))
 </script>
 
 <template>
@@ -241,7 +274,7 @@ useHead({
     <section class="wanted-hero">
       <div class="hero-inner">
         <p class="eyebrow">WANTED MACHINERY</p>
-        <h1>Machine Wanted Listings!</h1>
+        <h1>Used Machinery Wanted Listings</h1>
         <p class="hero-copy">Let us know if you have a machine that may fit any of these requirements.</p>
         <p class="hero-wanted-copy">Looking for a machine? Add a wanted listing at no cost!</p>
         <button type="button" class="primary-cta" @click="openWantedRequestForm">Add My Wanted Machine</button>
