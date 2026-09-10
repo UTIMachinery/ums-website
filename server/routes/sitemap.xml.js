@@ -1,4 +1,5 @@
 import { gunzipSync } from 'node:zlib'
+import machinesData from '../../app/assets/data/machines.json'
 import mazak1 from '../../app/assets/data/mazak-historical-single-1.js'
 import mazak2 from '../../app/assets/data/mazak-historical-single-2.js'
 import mazak3 from '../../app/assets/data/mazak-historical-single-3.js'
@@ -15,7 +16,7 @@ import moriP2 from '../../app/assets/data/moriseiki-packed/p2.js'
 import moriP3 from '../../app/assets/data/moriseiki-packed/p3.js'
 import moriP4 from '../../app/assets/data/moriseiki-packed/p4.js'
 
-const BASE = 'https://usedmachinerysource.com'
+const BASE = 'https://www.usedmachinerysource.com'
 const unpack = parts => JSON.parse(gunzipSync(Buffer.from(parts.join(''), 'base64')).toString('utf8'))
 const okuma = unpack([okumaP1, okumaP2, okumaP3, okumaP4])
 const moriSeiki = unpack([moriP1, moriP2, moriP3, moriP4])
@@ -35,12 +36,26 @@ export default defineEventHandler(event => {
     '/',
     '/equipment',
     '/wanted',
+    '/about',
+    '/services',
+    '/sell-your-machine',
+    '/contact',
     '/spec-library/cnc-lathes',
     '/spec-library/mazak/cnc-lathes',
     '/spec-library/haas/cnc-lathes',
     '/spec-library/okuma/cnc-lathes',
     '/spec-library/mori-seiki/cnc-lathes'
   ])
+
+  for (const machine of machinesData) {
+    const offMarket = machine.OffMarket ?? machine.Off_Market ?? 0
+    if (Number(machine.Sold) !== 0 || Number(offMarket) !== 0 || Number(machine.dont_advertise) !== 0) continue
+    const slug = `${machine.Manufacturer || ''}-${machine.Model || ''}`
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '')
+    if (machine.InvID && slug) urls.add(`/equipment/${machine.InvID}/${slug}`)
+  }
 
   const mazakEntries = [...mazak1, ...mazak2, ...mazak3, ...mazak4, ...mazakCollisions1, ...mazakCollisions2]
   for (const entry of mazakEntries) {
