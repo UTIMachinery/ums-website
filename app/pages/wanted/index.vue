@@ -231,6 +231,7 @@ useSeoMeta({
 })
 
 useHead({
+  htmlAttrs: { lang: 'en' },
   link: [{ rel: 'canonical', href: 'https://www.usedmachinerysource.com/wanted' }]
 })
 </script>
