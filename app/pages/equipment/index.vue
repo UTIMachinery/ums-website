@@ -1,6 +1,6 @@
 <template>
   <main class="equipment-page">
-    <section class="equipment-hero"><div class="equipment-hero-inner"><div class="hero-kicker">USED CNC MACHINERY &amp; EQUIPMENT</div><h1>Search Our Inventory.</h1><p>Search our current inventory of quality used machinery.</p></div></section>
+    <section class="equipment-hero"><div class="equipment-hero-inner"><div class="hero-kicker">USED CNC MACHINERY &amp; EQUIPMENT</div><h1>Used CNC Machines for Sale</h1><p>Browse current used CNC lathes, machining centers, grinders, boring mills and other industrial machinery available through Used Machinery Source.</p></div></section>
     <section class="search-panel">
       <div class="equipment-search"><label class="search-label" for="equipment-keyword">Search by Keyword</label><input id="equipment-keyword" :value="searchTerm" @input="searchTerm = $event.target.value" type="search" placeholder="Search by manufacturer, model, or keyword" /></div>
       <div class="search-or">OR</div>
@@ -29,9 +29,34 @@ useSeoMeta({
   twitterTitle: 'Used CNC Machines for Sale | Used Machinery Source',
   twitterDescription: 'Browse current used CNC machinery and industrial equipment available from Used Machinery Source.'
 })
-useHead({
-  link: [{ rel: 'canonical', href: 'https://www.usedmachinerysource.com/equipment' }]
-})
+const equipmentStructuredData = computed(() => ({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://www.usedmachinerysource.com/equipment#collection',
+      name: 'Used CNC Machines for Sale',
+      url: 'https://www.usedmachinerysource.com/equipment',
+      description: 'Current used CNC machinery and industrial equipment available through Used Machinery Source.',
+      isPartOf: { '@id': 'https://www.usedmachinerysource.com/#website' }
+    },
+    {
+      '@type': 'ItemList',
+      name: 'Current Used Machinery Inventory',
+      itemListElement: activeMachines.value.map((machine, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: [machine.Year, machine.Manufacturer, machine.Model].filter(Boolean).join(' '),
+        url: `https://www.usedmachinerysource.com/equipment/${machine.InvID}/${`${machine.Manufacturer || ''}-${machine.Model || ''}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`
+      }))
+    }
+  ]
+}))
+useHead(() => ({
+  htmlAttrs: { lang: 'en' },
+  link: [{ rel: 'canonical', href: 'https://www.usedmachinerysource.com/equipment' }],
+  script: [{ type: 'application/ld+json', children: JSON.stringify(equipmentStructuredData.value) }]
+}))
 
 const selectedCategory=ref('all');const searchTerm=ref('');const showMachineNeededForm=ref(false);const machineNeededSending=ref(false);const machineNeededSent=ref(false)
 const machineNeededForm=reactive({email:'',contactName:'',phone:'',companyName:'',address:'',city:'',state:'',postalCode:'',country:'',machinesToSell:'no',emailList:'yes',message:''})
