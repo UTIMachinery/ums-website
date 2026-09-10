@@ -1,6 +1,6 @@
 <template>
   <main class="page">
-    <section class="page-hero"><div class="wrap"><p class="eyebrow">SELL YOUR MACHINE</p><h1>Have Machinery You No Longer Need?</h1><p>Tell us what you have.</p></div></section>
+    <section class="page-hero"><div class="wrap"><p class="eyebrow">SELL YOUR MACHINE</p><h1>Sell Your Used CNC Machine</h1><p>Have machinery you no longer need? Tell us what you have.</p></div></section>
     <section class="section"><div class="wrap layout">
       <div class="copy"><p class="eyebrow dark">WHAT DO YOU HAVE FOR SALE?</p><h2>Send Us the Details.</h2><p>The more information you can provide, the better we can evaluate the opportunity. Start with the basic machine information below. You can also attach photos, PDFs or other machine documentation.</p><div class="selling-points"><div><strong>Single Machines</strong><span>Equipment that is no longer needed.</span></div><div><strong>Surplus Equipment</strong><span>Multiple machines from capacity or process changes.</span></div><div><strong>Trade-Ins</strong><span>Machinery being replaced with newer equipment.</span></div><div><strong>Facilities &amp; Packages</strong><span>Larger groups of machinery or complete operations.</span></div></div></div>
       <div class="form-card"><h2>Machine for Sale</h2><p class="form-intro form-required-note">Fields marked * are required.</p><form data-turnstile-skip="true" @submit.prevent="submitForm">
