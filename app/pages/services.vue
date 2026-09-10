@@ -15,7 +15,12 @@
 </template>
 
 <script setup>
-useSeoMeta({title:'Used CNC Machinery Services | Used Machinery Source',description:'Used Machinery Source helps manufacturers buy, sell and locate used CNC machinery, surplus equipment and plant machinery.'})
+useSeoMeta({title:'Used CNC Machinery Services | Used Machinery Source',description:'Used Machinery Source helps manufacturers buy, sell and locate used CNC machinery, surplus equipment and plant machinery.',ogTitle:'Used CNC Machinery Services | Used Machinery Source',ogDescription:'Used Machinery Source helps manufacturers buy, sell and locate used CNC machinery, surplus equipment and plant machinery.',ogType:'website',ogUrl:'https://www.usedmachinerysource.com/services'})
+
+useHead({
+  htmlAttrs: { lang: 'en' },
+  link: [{ rel: 'canonical', href: 'https://www.usedmachinerysource.com/services' }]
+})
 </script>
 
 <style scoped>
