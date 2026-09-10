@@ -4,7 +4,6 @@ import { verifyTurnstile } from '../utils/verify-turnstile'
 const clean = (value = '') => String(value).replace(/[\r\n]+/g, ' ').trim()
 
 export default defineEventHandler(async (event) => {
-  await verifyTurnstile(event)
   const contentType = getHeader(event, 'content-type') || ''
   let body = {}
   let attachments = []
@@ -15,6 +14,12 @@ export default defineEventHandler(async (event) => {
     body = JSON.parse(payloadPart.data.toString('utf8'))
     attachments = parts.filter(part => part.name === 'attachments' && part.filename && part.data).slice(0, 10).map(part => ({ filename: part.filename, content: part.data, contentType: part.type }))
   } else body = await readBody(event)
+
+  if (body.inquiryType === 'machine-for-sale') {
+    if (body.website) throw createError({ statusCode: 400, statusMessage: 'Invalid submission.' })
+  } else {
+    await verifyTurnstile(event)
+  }
 
   const contact = body.contact || {}
   const machine = body.machine || {}
