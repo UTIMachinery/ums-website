@@ -187,7 +187,22 @@ function getSimilarMachineImage(item){const prefix=`${item.InvID}_`; const image
 function goBack(){if(window.history.length>1)window.history.back();else navigateTo('/equipment')}
 const machineDescription=computed(()=>machineDescriptionsData.find(item=>String(item.InvID)===String(route.params.id)))
 const {data:machineImages}=await useFetch('/api/images',{query:{invID:route.params.id}})
-useSeoMeta({title:()=>machine.value?`${machine.value.Year} ${machine.value.Manufacturer} ${machine.value.Model} | Used Machinery Source`:'Used Machinery Source',description:()=>machine.value?`${machine.value.Year} ${machine.value.Manufacturer} ${machine.value.Model}. ${machine.value.AdvSpec||''} Stock #${machine.value.InvID}.`:'Used CNC machinery and industrial equipment from Used Machinery Source.',ogTitle:()=>machine.value?`${machine.value.Year} ${machine.value.Manufacturer} ${machine.value.Model}`:'Used Machinery Source',ogDescription:()=>machine.value?`${machine.value.AdvSpec||''} Stock #${machine.value.InvID}.`:'Used CNC machinery and industrial equipment from Used Machinery Source.',ogImage:()=>machineImages.value?.length?`https://www.usedmachinerysource.com/Images/${machineImages.value[0]}`:'',ogUrl:`https://www.usedmachinerysource.com${route.path}`,ogType:'website',twitterCard:'summary_large_image',twitterTitle:()=>machine.value?`${machine.value.Year} ${machine.value.Manufacturer} ${machine.value.Model}`:'Used Machinery Source',twitterDescription:()=>machine.value?`${machine.value.AdvSpec||''} Stock #${machine.value.InvID}.`:'Used CNC machinery and industrial equipment from Used Machinery Source.',twitterImage:()=>machineImages.value?.length?`https://www.usedmachinerysource.com/Images/${machineImages.value[0]}`:''})
+function buildMetaDescription(item){
+  if(!item) return 'Used CNC machinery and industrial equipment from Used Machinery Source.'
+  const type = String(item.WebDesc || 'used machine').trim()
+  const year = String(item.Year || '').trim()
+  const prefix = `${item.Manufacturer} ${item.Model} ${type} for sale.${year ? ` ${year} machine.` : ''}`
+  const details = String(item.AdvSpec || '').replace(/\s+/g,' ').trim()
+  let text = `${prefix} ${details}`.replace(/\s+/g,' ').trim()
+  const suffix = ' Used Machinery Source.'
+  if(text.length + suffix.length <= 158) return text + suffix
+  const max = 158 - suffix.length
+  let cut = text.slice(0,max)
+  const lastSpace = cut.lastIndexOf(' ')
+  if(lastSpace > 110) cut = cut.slice(0,lastSpace)
+  return cut.replace(/[.,;:\s]+$/,'') + '…' + suffix
+}
+useSeoMeta({title:()=>machine.value?`${machine.value.Year} ${machine.value.Manufacturer} ${machine.value.Model} | Used Machinery Source`:'Used Machinery Source',description:()=>buildMetaDescription(machine.value),ogTitle:()=>machine.value?`${machine.value.Year} ${machine.value.Manufacturer} ${machine.value.Model}`:'Used Machinery Source',ogDescription:()=>machine.value?`${machine.value.AdvSpec||''} Stock #${machine.value.InvID}.`:'Used CNC machinery and industrial equipment from Used Machinery Source.',ogImage:()=>machineImages.value?.length?`https://www.usedmachinerysource.com/Images/${machineImages.value[0]}`:'',ogUrl:`https://www.usedmachinerysource.com${route.path}`,ogType:'website',twitterCard:'summary_large_image',twitterTitle:()=>machine.value?`${machine.value.Year} ${machine.value.Manufacturer} ${machine.value.Model}`:'Used Machinery Source',twitterDescription:()=>machine.value?`${machine.value.AdvSpec||''} Stock #${machine.value.InvID}.`:'Used CNC machinery and industrial equipment from Used Machinery Source.',twitterImage:()=>machineImages.value?.length?`https://www.usedmachinerysource.com/Images/${machineImages.value[0]}`:'')}
 useHead({link:[{rel:'canonical',href:`https://www.usedmachinerysource.com${route.path}`}]})
 const machineVideos=computed(()=>videosData.filter(item=>String(item.InvID)===String(route.params.id)))
 const specifications=ref(specificationsData)
