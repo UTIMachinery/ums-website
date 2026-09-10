@@ -67,9 +67,16 @@ const equipmentStructuredData = computed(() => ({
       itemListElement: activeMachines.value.map((machine, index) => ({
         '@type': 'ListItem',
         position: index + 1,
-        name: [machine.Year, machine.Manufacturer, machine.Model].filter(Boolean).join(' '),
+        name: [machine.Manufacturer, machine.Model, machine.Year].filter(Boolean).join(' '),
         url: `https://www.usedmachinerysource.com/equipment/${machine.InvID}/${`${machine.Manufacturer || ''}-${machine.Model || ''}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`
       }))
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.usedmachinerysource.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Used CNC Machines for Sale', item: 'https://www.usedmachinerysource.com/equipment' }
+      ]
     }
   ]
 }))
