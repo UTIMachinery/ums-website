@@ -24,7 +24,7 @@
             <img
               v-if="machineImage(machine)"
               :src="`/Images/${machineImage(machine)}`"
-              :alt="`${machine.Year || ''} ${machine.Manufacturer || ''} ${machine.Model || ''} used machine for sale`.trim()"
+              :alt="`Used ${machine.Year || ''} ${machine.Manufacturer || ''} ${machine.Model || ''} ${machine.WebDesc || 'machine'} for sale`.replace(/\s+/g,' ').trim()"
               loading="lazy"
             />
             <div v-else class="placeholder">Used Machinery Source</div>
@@ -48,7 +48,7 @@
 
     <section class="info">
       <div class="wrap">
-        <h2>About Used {{ manufacturer.name }} Machinery</h2>
+        <h2>About Used {{ manufacturer.name }} Machines</h2>
         <p>{{ manufacturer.body }}</p>
         <div class="links">
           <NuxtLink to="/equipment">Browse All Used Machinery</NuxtLink>
