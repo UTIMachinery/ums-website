@@ -1,5 +1,6 @@
 import { gunzipSync } from 'node:zlib'
 import machinesData from '../../app/assets/data/machines.json'
+import imagesData from '../../app/assets/data/images.json'
 import mazak1 from '../../app/assets/data/mazak-historical-single-1.js'
 import mazak2 from '../../app/assets/data/mazak-historical-single-2.js'
 import mazak3 from '../../app/assets/data/mazak-historical-single-3.js'
@@ -96,9 +97,32 @@ export default defineEventHandler(event => {
     }
   }
 
+  const activeMachineByPath = new Map()
+  for (const machine of machinesData) {
+    const offMarket = machine.OffMarket ?? machine.Off_Market ?? 0
+    if (Number(machine.Sold) !== 0 || Number(offMarket) !== 0 || Number(machine.dont_advertise) !== 0) continue
+    const slug = `${machine.Manufacturer || ''}-${machine.Model || ''}`
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '')
+    if (machine.InvID && slug) activeMachineByPath.set(`/equipment/${machine.InvID}/${slug}`, machine)
+  }
+
   const body = [...urls]
-    .map(path => `  <url><loc>${escapeXml(BASE + path)}</loc></url>`)
+    .map(path => {
+      const machine = activeMachineByPath.get(path)
+      if (!machine) return `  <url><loc>${escapeXml(BASE + path)}</loc></url>`
+
+      const imageFile = imagesData.find(file =>
+        String(file).toLowerCase().startsWith(`${machine.InvID}_`.toLowerCase())
+      )
+      const imageXml = imageFile
+        ? `<image:image><image:loc>${escapeXml(BASE + '/Images/' + imageFile)}</image:loc><image:title>${escapeXml([machine.Year, machine.Manufacturer, machine.Model, machine.WebDesc].filter(Boolean).join(' '))}</image:title></image:image>`
+        : ''
+
+      return `  <url><loc>${escapeXml(BASE + path)}</loc>${imageXml}</url>`
+    })
     .join('\n')
 
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>`
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${body}\n</urlset>`
 })
