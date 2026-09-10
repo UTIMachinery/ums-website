@@ -47,7 +47,12 @@
 </template>
 
 <script setup>
-useSeoMeta({title:'About Used Machinery Source | Used CNC Machinery',description:'Meet Jonathan Lester, the person behind Used Machinery Source, with over 35 years of experience helping buyers and sellers find the right used CNC machinery solutions.'})
+useSeoMeta({title:'About Used Machinery Source | Used CNC Machinery',description:'Meet Jonathan Lester, the person behind Used Machinery Source, with over 35 years of experience helping buyers and sellers find the right used CNC machinery solutions.',ogTitle:'About Used Machinery Source | Used CNC Machinery',ogDescription:'Learn about Used Machinery Source and decades of experience helping manufacturers buy, sell and locate used CNC machinery.',ogType:'website',ogUrl:'https://www.usedmachinerysource.com/about'})
+
+useHead({
+  htmlAttrs: { lang: 'en' },
+  link: [{ rel: 'canonical', href: 'https://www.usedmachinerysource.com/about' }]
+})
 </script>
 
 <style scoped>
