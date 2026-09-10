@@ -247,7 +247,9 @@ const manufacturerInventoryMap={
   'dmg-mori':'mori-seiki',
   'okuma':'okuma',
   'kingston':'kingston',
-  'amada':'amada'
+  'amada':'amada',
+  'smec':'smec',
+  'samsung':'smec'
 }
 const manufacturerDisplayName=computed(()=>{
   const m=String(machine.value?.Manufacturer||'').trim()
