@@ -52,6 +52,7 @@ export default defineEventHandler(event => {
     '/equipment/manufacturer/okuma',
     '/equipment/manufacturer/kingston',
     '/equipment/manufacturer/amada',
+    '/equipment/manufacturer/smec',
     '/wanted',
     '/about',
     '/services',
