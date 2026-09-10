@@ -17,9 +17,29 @@
 <script setup>
 useSeoMeta({title:'Used CNC Machinery Services | Used Machinery Source',description:'Used Machinery Source helps manufacturers buy, sell and locate used CNC machinery, surplus equipment and plant machinery.',ogTitle:'Used CNC Machinery Services | Used Machinery Source',ogDescription:'Used Machinery Source helps manufacturers buy, sell and locate used CNC machinery, surplus equipment and plant machinery.',ogType:'website',ogUrl:'https://www.usedmachinerysource.com/services'})
 
+const servicesSchema={
+  '@context':'https://schema.org',
+  '@graph':[
+    {
+      '@type':'CollectionPage',
+      name:'Used CNC Machinery Services',
+      url:'https://www.usedmachinerysource.com/services',
+      description:'Services for buying, selling and locating used CNC machinery and industrial equipment.',
+      isPartOf:{'@id':'https://www.usedmachinerysource.com/#website'}
+    },
+    {
+      '@type':'BreadcrumbList',
+      itemListElement:[
+        {'@type':'ListItem',position:1,name:'Home',item:'https://www.usedmachinerysource.com/'},
+        {'@type':'ListItem',position:2,name:'Services',item:'https://www.usedmachinerysource.com/services'}
+      ]
+    }
+  ]
+}
 useHead({
-  htmlAttrs: { lang: 'en' },
-  link: [{ rel: 'canonical', href: 'https://www.usedmachinerysource.com/services' }]
+  htmlAttrs:{lang:'en'},
+  link:[{rel:'canonical',href:'https://www.usedmachinerysource.com/services'}],
+  script:[{type:'application/ld+json',children:JSON.stringify(servicesSchema)}]
 })
 </script>
 
