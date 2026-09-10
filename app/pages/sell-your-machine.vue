@@ -23,9 +23,30 @@ function handleFiles(e){const added=Array.from(e.target.files||[]);const combine
 function removeFile(index){files.value.splice(index,1)}
 async function submitForm(){sending.value=true;sent.value=false;error.value=false;try{const data=new FormData();data.append('payload',JSON.stringify({inquiryType:'machine-for-sale',contact:{contactName:form.contactName,companyName:form.companyName,email:form.email,phone:form.phone,preferredContact:form.preferredContact},machine:{year:form.year,manufacturer:form.manufacturer,model:form.model,machineType:form.machineType,location:form.location},message:form.details,website:form.website}));files.value.forEach(file=>data.append('attachments',file));await $fetch('/api/site-inquiry',{method:'POST',body:data});sent.value=true;Object.keys(form).forEach(k=>form[k]='');files.value=[];if(fileInput.value)fileInput.value.value=''}catch(e){error.value=true}finally{sending.value=false}}
 
+const sellSchema={
+  '@context':'https://schema.org',
+  '@graph':[
+    {
+      '@type':'WebPage',
+      name:'Sell Your Used CNC Machine',
+      url:'https://www.usedmachinerysource.com/sell-your-machine',
+      description:'Submit used CNC machinery, surplus equipment, trade-ins or machinery packages for sale to Used Machinery Source.',
+      isPartOf:{'@id':'https://www.usedmachinerysource.com/#website'},
+      about:{'@id':'https://www.usedmachinerysource.com/#organization'}
+    },
+    {
+      '@type':'BreadcrumbList',
+      itemListElement:[
+        {'@type':'ListItem',position:1,name:'Home',item:'https://www.usedmachinerysource.com/'},
+        {'@type':'ListItem',position:2,name:'Sell Your Machine',item:'https://www.usedmachinerysource.com/sell-your-machine'}
+      ]
+    }
+  ]
+}
 useHead({
-  htmlAttrs: { lang: 'en' },
-  link: [{ rel: 'canonical', href: 'https://www.usedmachinerysource.com/sell-your-machine' }]
+  htmlAttrs:{lang:'en'},
+  link:[{rel:'canonical',href:'https://www.usedmachinerysource.com/sell-your-machine'}],
+  script:[{type:'application/ld+json',children:JSON.stringify(sellSchema)}]
 })
 </script>
 <style scoped>
