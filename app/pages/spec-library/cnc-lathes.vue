@@ -216,8 +216,8 @@ const machineTypes = [
 const featuredManufacturers = [
   { name: 'Mazak CNC Lathes & Turning Centers', families: 'Quick-Turn, QT, SQT, Slant-Turn, Integrex, Multiplex, M-Series, Powermaster and other Mazak turning platforms.', to: '/spec-library/mazak/cnc-lathes', linkLabel: 'Browse Mazak specifications →' },
   { name: 'Haas CNC Lathes & Turning Centers', families: 'SL, ST, TL and HL series CNC turning machines.', to: '/spec-library/haas/cnc-lathes', linkLabel: 'Browse Haas specifications →' },
-  { name: 'Okuma CNC Lathes & Turning Centers', families: 'LB, LC, LU, LR, Cadet and other Okuma turning machines.' },
-  { name: 'Mori-Seiki CNC Lathes & Turning Centers', families: 'SL, ZL, LL, TL, DL and other Mori-Seiki turning machines.' }
+  { name: 'Okuma CNC Lathes & Turning Centers', families: 'LB, LC, LU, LR, Cadet and other Okuma turning machines.', to: '/spec-library/okuma/cnc-lathes', linkLabel: 'Browse Okuma specifications →' },
+  { name: 'Mori-Seiki / DMG MORI CNC Lathes & Turning Centers', families: 'SL, ZL, LL, TL, DL and other Mori-Seiki turning machines, with current DMG MORI inventory included where applicable.', to: '/spec-library/mori-seiki/cnc-lathes', linkLabel: 'Browse Mori-Seiki / DMG MORI specifications →' }
 ]
 
 const specificationGuide = [
@@ -238,8 +238,8 @@ const specificationGuide = [
 const libraryFamilies = [
   { name: 'Mazak', families: ['Quick-Turn', 'Quick Turn', 'QT', 'SQT', 'Slant-Turn', 'Integrex', 'Multiplex', 'M-Series', 'Powermaster'], to: '/spec-library/mazak/cnc-lathes', linkLabel: 'Browse Mazak Spec Library →' },
   { name: 'Haas', families: ['SL Series', 'ST Series', 'TL Series', 'HL Series'], to: '/spec-library/haas/cnc-lathes', linkLabel: 'Browse Haas Spec Library →' },
-  { name: 'Okuma', families: ['LB Series', 'LC Series', 'LU Series', 'LR Series', 'Cadet'] },
-  { name: 'Mori-Seiki', families: ['SL Series', 'ZL Series', 'LL Series', 'TL Series', 'DL Series'] }
+  { name: 'Okuma', families: ['LB Series', 'LC Series', 'LU Series', 'LR Series', 'Cadet'], to: '/spec-library/okuma/cnc-lathes', linkLabel: 'Browse Okuma Spec Library →' },
+  { name: 'Mori-Seiki / DMG MORI', families: ['SL Series', 'ZL Series', 'LL Series', 'TL Series', 'DL Series'], to: '/spec-library/mori-seiki/cnc-lathes', linkLabel: 'Browse Mori-Seiki / DMG MORI Spec Library →' }
 ]
 
 async function loadMachineCardImages() {
