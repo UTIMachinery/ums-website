@@ -18,6 +18,21 @@
 </template>
 <script setup>
 import machinesData from '~/assets/data/machines.json'
+useSeoMeta({
+  title: 'Used CNC Machines for Sale | Used Machinery Source',
+  description: 'Browse used CNC machines for sale including lathes, vertical and horizontal machining centers, boring mills, grinders and other industrial machinery.',
+  ogTitle: 'Used CNC Machines for Sale | Used Machinery Source',
+  ogDescription: 'Browse current used CNC machinery and industrial equipment available from Used Machinery Source.',
+  ogUrl: 'https://www.usedmachinerysource.com/equipment',
+  ogType: 'website',
+  twitterCard: 'summary',
+  twitterTitle: 'Used CNC Machines for Sale | Used Machinery Source',
+  twitterDescription: 'Browse current used CNC machinery and industrial equipment available from Used Machinery Source.'
+})
+useHead({
+  link: [{ rel: 'canonical', href: 'https://www.usedmachinerysource.com/equipment' }]
+})
+
 const selectedCategory=ref('all');const searchTerm=ref('');const showMachineNeededForm=ref(false);const machineNeededSending=ref(false);const machineNeededSent=ref(false)
 const machineNeededForm=reactive({email:'',contactName:'',phone:'',companyName:'',address:'',city:'',state:'',postalCode:'',country:'',machinesToSell:'no',emailList:'yes',message:''})
 const machines=ref(machinesData);const machineCardImages=ref({});const webDescription=machine=>machine.WebDesc||machine.Web_Desc||'';const advertisingSpec=machine=>machine.AdvSpec||machine.Adv_Spec||'';const groupName=machine=>machine.Groups||'';const offMarketValue=machine=>machine.OffMarket??machine.Off_Market??0
