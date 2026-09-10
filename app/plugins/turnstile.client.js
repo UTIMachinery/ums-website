@@ -41,7 +41,7 @@ export default defineNuxtPlugin(() => {
   }
 
   const protectForm = async (form) => {
-    if (!(form instanceof HTMLFormElement) || form.dataset.turnstileProtected === 'true') return
+    if (!(form instanceof HTMLFormElement) || form.dataset.turnstileProtected === 'true' || form.dataset.turnstileSkip === 'true') return
 
     form.dataset.turnstileProtected = 'true'
     form.dataset.turnstileReady = 'false'
