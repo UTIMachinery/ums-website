@@ -47,7 +47,7 @@
 </template>
 
 <script setup>
-useSeoMeta({title:'About Used Machinery Source | Used CNC Machinery',description:'Meet Jonathan Lester, the person behind Used Machinery Source, with over 35 years of experience helping buyers and sellers find the right used CNC machinery solutions.',ogTitle:'About Used Machinery Source | Used CNC Machinery',ogDescription:'Learn about Used Machinery Source and decades of experience helping manufacturers buy, sell and locate used CNC machinery.',ogType:'website',ogUrl:'https://www.usedmachinerysource.com/about'})
+useSeoMeta({title:'About UMS | Used CNC Machinery Experience',description:'Meet Jonathan Lester, the person behind Used Machinery Source, with over 35 years of experience helping buyers and sellers find the right used CNC machinery solutions.',ogTitle:'About UMS | Used CNC Machinery Experience',ogDescription:'Learn about Used Machinery Source and decades of experience helping manufacturers buy, sell and locate used CNC machinery.',ogType:'website',ogUrl:'https://www.usedmachinerysource.com/about'})
 
 const aboutSchema={
   '@context':'https://schema.org',
