@@ -19,7 +19,7 @@
 </template>
 <script setup>
 import { reactive, ref } from 'vue'
-useSeoMeta({title:'Contact Used Machinery Source | Used CNC Machinery',description:'Contact Used Machinery Source in Florence, Alabama for help buying, selling or locating used CNC machinery.',ogTitle:'Contact Used Machinery Source | Used CNC Machinery',ogDescription:'Contact Used Machinery Source for help buying, selling or locating used CNC machinery and industrial equipment.',ogType:'website',ogUrl:'https://www.usedmachinerysource.com/contact'})
+useSeoMeta({title:'Contact UMS | Used CNC Machinery',description:'Contact Used Machinery Source in Florence, Alabama for help buying, selling or locating used CNC machinery.',ogTitle:'Contact UMS | Used CNC Machinery',ogDescription:'Contact Used Machinery Source for help buying, selling or locating used CNC machinery and industrial equipment.',ogType:'website',ogUrl:'https://www.usedmachinerysource.com/contact'})
 const form=reactive({contactName:'',companyName:'',email:'',phone:'',preferredContact:'',subject:'General Question',message:''})
 const sending=ref(false),sent=ref(false),error=ref(false)
 async function submitForm(){sending.value=true;sent.value=false;error.value=false;try{await $fetch('/api/site-inquiry',{method:'POST',body:{inquiryType:'contact',contact:{contactName:form.contactName,companyName:form.companyName,email:form.email,phone:form.phone,preferredContact:form.preferredContact},subject:form.subject,message:form.message}});sent.value=true;form.contactName='';form.companyName='';form.email='';form.phone='';form.preferredContact='';form.subject='General Question';form.message=''}catch(e){error.value=true}finally{sending.value=false}}
