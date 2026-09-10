@@ -184,6 +184,8 @@ function nextFeatured(){const count=eligibleFeaturedMachines.value.length;if(cou
 function previousFeatured(){const count=eligibleFeaturedMachines.value.length;if(count>4)featuredOffset.value=(featuredOffset.value-4+count)%count}
 watch(()=>route.params.id,()=>{featuredOffset.value=0})
 function machineSlug(item){return `${item.Manufacturer}-${item.Model}`.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')}
+const canonicalMachinePath=computed(()=>machine.value?`/equipment/${machine.value.InvID}/${machineSlug(machine.value)}`:route.path)
+const canonicalMachineUrl=computed(()=>`https://www.usedmachinerysource.com${canonicalMachinePath.value}`)
 function getSimilarMachineImage(item){const prefix=`${item.InvID}_`; const image=imagesData.find(file=>file.toLowerCase().startsWith(prefix.toLowerCase())); return image?`/Images/${image}`:''}
 function goBack(){if(window.history.length>1)window.history.back();else navigateTo('/equipment')}
 const machineDescription=computed(()=>machineDescriptionsData.find(item=>String(item.InvID)===String(route.params.id)))
@@ -232,7 +234,7 @@ const manufacturerSpecLink=computed(()=>{
 })
 const machineStructuredData=computed(()=>{
   if(!machine.value) return null
-  const url=`https://www.usedmachinerysource.com${route.path}`
+  const url=canonicalMachineUrl.value
   const image=machineImages.value?.length?`https://www.usedmachinerysource.com/Images/${machineImages.value[0]}`:undefined
   const name=[machine.value.Year,machine.value.Manufacturer,machine.value.Model].filter(Boolean).join(' ')
   return {
@@ -261,10 +263,10 @@ const machineStructuredData=computed(()=>{
     ]
   }
 })
-useSeoMeta({title:()=>seoMachineTitle(machine.value),description:()=>buildMetaDescription(machine.value),ogTitle:()=>machine.value?`${machine.value.Year} ${machine.value.Manufacturer} ${machine.value.Model}`:'Used Machinery Source',ogDescription:()=>machine.value?`${machine.value.AdvSpec||''} Stock #${machine.value.InvID}.`:'Used CNC machinery and industrial equipment from Used Machinery Source.',ogImage:()=>machineImages.value?.length?`https://www.usedmachinerysource.com/Images/${machineImages.value[0]}`:'',ogUrl:`https://www.usedmachinerysource.com${route.path}`,ogType:'website',twitterCard:'summary_large_image',twitterTitle:()=>machine.value?`${machine.value.Year} ${machine.value.Manufacturer} ${machine.value.Model}`:'Used Machinery Source',twitterDescription:()=>machine.value?`${machine.value.AdvSpec||''} Stock #${machine.value.InvID}.`:'Used CNC machinery and industrial equipment from Used Machinery Source.',twitterImage:()=>machineImages.value?.length?`https://www.usedmachinerysource.com/Images/${machineImages.value[0]}`:''})
+useSeoMeta({title:()=>seoMachineTitle(machine.value),description:()=>buildMetaDescription(machine.value),ogTitle:()=>machine.value?`${machine.value.Year} ${machine.value.Manufacturer} ${machine.value.Model}`:'Used Machinery Source',ogDescription:()=>machine.value?`${machine.value.AdvSpec||''} Stock #${machine.value.InvID}.`:'Used CNC machinery and industrial equipment from Used Machinery Source.',ogImage:()=>machineImages.value?.length?`https://www.usedmachinerysource.com/Images/${machineImages.value[0]}`:'',ogUrl:()=>canonicalMachineUrl.value,ogType:'website',twitterCard:'summary_large_image',twitterTitle:()=>machine.value?`${machine.value.Year} ${machine.value.Manufacturer} ${machine.value.Model}`:'Used Machinery Source',twitterDescription:()=>machine.value?`${machine.value.AdvSpec||''} Stock #${machine.value.InvID}.`:'Used CNC machinery and industrial equipment from Used Machinery Source.',twitterImage:()=>machineImages.value?.length?`https://www.usedmachinerysource.com/Images/${machineImages.value[0]}`:''})
 useHead(()=>({
   htmlAttrs:{lang:'en'},
-  link:[{rel:'canonical',href:`https://www.usedmachinerysource.com${route.path}`}],
+  link:[{rel:'canonical',href:canonicalMachineUrl.value}],
   script:machineStructuredData.value?[{type:'application/ld+json',children:JSON.stringify(machineStructuredData.value)}]:[]
 }))
 const machineVideos=computed(()=>videosData.filter(item=>String(item.InvID)===String(route.params.id)))
