@@ -229,7 +229,7 @@ const manufacturerSpecLink=computed(()=>{
   if(m.includes('okuma')) return '/spec-library/okuma/cnc-lathes'
   if(m.includes('mori')) return '/spec-library/mori-seiki/cnc-lathes'
   return '/spec-library/cnc-lathes'
-}
+})
 const machineStructuredData=computed(()=>{
   if(!machine.value) return null
   const url=`https://www.usedmachinerysource.com${route.path}`
