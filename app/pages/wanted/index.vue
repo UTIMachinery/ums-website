@@ -350,12 +350,12 @@ useHead({
           <button type="button" class="close-after-send" @click="closeSellerForm">Close</button>
         </div>
 
-        <form v-else class="seller-form" @submit.prevent="submitSellerForm">
+        <p class="form-required-note">Fields marked * are required.</p><form v-else class="seller-form" @submit.prevent="submitSellerForm">
           <div class="form-grid">
-            <label>Contact Name *<input v-model="sellerForm.contactName" required></label>
+            <label class="required-field-label required-field-label">Contact Name *<input v-model="sellerForm.contactName" required></label>
             <label>Company Name<input v-model="sellerForm.companyName"></label>
-            <label>Email *<input v-model="sellerForm.email" type="email" required></label>
-            <label>Phone *<input v-model="sellerForm.phone" type="tel" required></label>
+            <label class="required-field-label required-field-label">Email *<input v-model="sellerForm.email" type="email" required></label>
+            <label class="required-field-label required-field-label">Phone *<input v-model="sellerForm.phone" type="tel" required></label>
             <label>Year<input v-model="sellerForm.year"></label>
             <label>Manufacturer<input v-model="sellerForm.manufacturer"></label>
             <label>Model<input v-model="sellerForm.model"></label>
@@ -383,11 +383,11 @@ useHead({
           <button type="button" class="close-after-send" @click="closeWantedRequestForm">Close</button>
         </div>
 
-        <form v-else class="seller-form" @submit.prevent="submitWantedRequestForm">
+        <p class="form-required-note">Fields marked * are required.</p><form v-else class="seller-form" @submit.prevent="submitWantedRequestForm">
           <div class="form-grid">
-            <label>Email *<input v-model="wantedRequestForm.email" type="email" required></label>
-            <label>Contact Name *<input v-model="wantedRequestForm.contactName" required></label>
-            <label>Phone *<input v-model="wantedRequestForm.phone" type="tel" required></label>
+            <label class="required-field-label required-field-label">Email *<input v-model="wantedRequestForm.email" type="email" required></label>
+            <label class="required-field-label required-field-label">Contact Name *<input v-model="wantedRequestForm.contactName" required></label>
+            <label class="required-field-label required-field-label">Phone *<input v-model="wantedRequestForm.phone" type="tel" required></label>
             <label>Company Name<input v-model="wantedRequestForm.companyName"></label>
             <label>Address<input v-model="wantedRequestForm.address"></label>
             <label>City<input v-model="wantedRequestForm.city"></label>
@@ -408,7 +408,7 @@ useHead({
             <label><input v-model="wantedRequestForm.emailList" type="radio" value="no"> No</label>
           </fieldset>
 
-          <label>Tell us what you're looking for *<textarea v-model="wantedRequestForm.message" rows="5" required></textarea></label>
+          <label class="required-field-label required-field-label">Tell us what you're looking for *<textarea v-model="wantedRequestForm.message" rows="5" required></textarea></label>
           <p v-if="wantedRequestError" class="form-error">We couldn't send the form. Please try again or call (256) 980-1200.</p>
           <div class="form-actions">
             <button type="button" class="cancel-button" :disabled="wantedRequestSending" @click="closeWantedRequestForm">Cancel</button>
