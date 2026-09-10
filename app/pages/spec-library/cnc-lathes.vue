@@ -261,13 +261,14 @@ useSeoMeta({
   ogTitle: 'Used CNC Lathes & Turning Centers | UMS Spec Library',
   ogDescription: 'Current CNC lathes for sale plus a permanent machinery specification library for researching CNC lathe types, manufacturers, models and older-machine specifications.',
   ogType: 'website',
-  ogUrl: 'https://usedmachinerysource.com/spec-library/cnc-lathes',
+  ogUrl: 'https://www.usedmachinerysource.com/spec-library/cnc-lathes',
   twitterCard: 'summary_large_image'
 })
 
 useHead({
+  htmlAttrs: { lang: 'en' },
   link: [
-    { rel: 'canonical', href: 'https://usedmachinerysource.com/spec-library/cnc-lathes' }
+    { rel: 'canonical', href: 'https://www.usedmachinerysource.com/spec-library/cnc-lathes' }
   ],
   script: [
     {
@@ -276,12 +277,12 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'CollectionPage',
         name: 'Used CNC Lathes & Turning Centers',
-        url: 'https://usedmachinerysource.com/spec-library/cnc-lathes',
+        url: 'https://www.usedmachinerysource.com/spec-library/cnc-lathes',
         description: 'Current used CNC lathes for sale and a machinery specification library for CNC lathe types, manufacturers, model families and historical specifications.',
         isPartOf: {
           '@type': 'WebSite',
           name: 'Used Machinery Source',
-          url: 'https://usedmachinerysource.com/'
+          url: 'https://www.usedmachinerysource.com/'
         }
       })
     }
