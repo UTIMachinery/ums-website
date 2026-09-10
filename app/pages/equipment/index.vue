@@ -40,14 +40,14 @@
 <script setup>
 import machinesData from '~/assets/data/machines.json'
 useSeoMeta({
-  title: 'Used CNC Machines for Sale | Used Machinery Source',
+  title: 'Used CNC Machines for Sale | UMS',
   description: 'Browse used CNC machines for sale including lathes, vertical and horizontal machining centers, boring mills, grinders and other industrial machinery.',
-  ogTitle: 'Used CNC Machines for Sale | Used Machinery Source',
+  ogTitle: 'Used CNC Machines for Sale | UMS',
   ogDescription: 'Browse current used CNC machinery and industrial equipment available from Used Machinery Source.',
   ogUrl: 'https://www.usedmachinerysource.com/equipment',
   ogType: 'website',
   twitterCard: 'summary',
-  twitterTitle: 'Used CNC Machines for Sale | Used Machinery Source',
+  twitterTitle: 'Used CNC Machines for Sale | UMS',
   twitterDescription: 'Browse current used CNC machinery and industrial equipment available from Used Machinery Source.'
 })
 const equipmentStructuredData = computed(() => ({
