@@ -16,7 +16,7 @@
 </template>
 <script setup>
 import { reactive, ref } from 'vue'
-useSeoMeta({title:'Sell Your Used CNC Machine | Used Machinery Source',description:'Have used CNC machinery for sale? Send Used Machinery Source the details on single machines, surplus equipment, trade-ins or larger machinery packages.',ogTitle:'Sell Your Used CNC Machine | Used Machinery Source',ogDescription:'Tell Used Machinery Source about CNC machines, surplus equipment, trade-ins or machinery packages you have available for sale.',ogType:'website',ogUrl:'https://www.usedmachinerysource.com/sell-your-machine'})
+useSeoMeta({title:'Sell Your Used CNC Machine | UMS',description:'Have used CNC machinery for sale? Send Used Machinery Source the details on single machines, surplus equipment, trade-ins or larger machinery packages.',ogTitle:'Sell Your Used CNC Machine | UMS',ogDescription:'Tell Used Machinery Source about CNC machines, surplus equipment, trade-ins or machinery packages you have available for sale.',ogType:'website',ogUrl:'https://www.usedmachinerysource.com/sell-your-machine'})
 const form=reactive({contactName:'',companyName:'',email:'',phone:'',preferredContact:'',year:'',manufacturer:'',model:'',machineType:'',location:'',details:'',website:''})
 const files=ref([]),fileInput=ref(null),sending=ref(false),sent=ref(false),error=ref(false)
 function handleFiles(e){const added=Array.from(e.target.files||[]);const combined=[...files.value];for(const file of added){if(combined.length>=10)break;const duplicate=combined.some(existing=>existing.name===file.name&&existing.size===file.size&&existing.lastModified===file.lastModified);if(!duplicate)combined.push(file)}files.value=combined;if(fileInput.value)fileInput.value.value=''}
