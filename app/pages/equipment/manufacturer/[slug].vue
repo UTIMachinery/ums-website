@@ -110,6 +110,11 @@ const manufacturers = {
     name: 'Amada',
     aliases: ['Amada'],
     body: 'Used Amada machinery commonly includes press brakes, shears and automated fabrication systems for sheet-metal and structural fabrication.'
+  },
+  smec: {
+    name: 'SMEC',
+    aliases: ['SMEC', 'Samsung'],
+    body: 'Used SMEC machinery includes CNC lathes and turning centers for production turning applications. Buyers commonly compare model, spindle and chuck capacity, turning diameter and length, control, turret configuration and installed options.'
   }
 }
 
