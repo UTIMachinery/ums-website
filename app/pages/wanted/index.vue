@@ -350,12 +350,12 @@ useHead({
           <button type="button" class="close-after-send" @click="closeSellerForm">Close</button>
         </div>
 
-        <p class="form-required-note">Fields marked * are required.</p><form v-else class="seller-form" @submit.prevent="submitSellerForm">
+        <template v-else><p class="form-required-note">Fields marked * are required.</p><form class="seller-form" @submit.prevent="submitSellerForm">
           <div class="form-grid">
-            <label class="required-field-label required-field-label">Contact Name *<input v-model="sellerForm.contactName" required></label>
+            <label class="required-field-label">Contact Name *<input v-model="sellerForm.contactName" required></label>
             <label>Company Name<input v-model="sellerForm.companyName"></label>
-            <label class="required-field-label required-field-label">Email *<input v-model="sellerForm.email" type="email" required></label>
-            <label class="required-field-label required-field-label">Phone *<input v-model="sellerForm.phone" type="tel" required></label>
+            <label class="required-field-label">Email *<input v-model="sellerForm.email" type="email" required></label>
+            <label class="required-field-label">Phone *<input v-model="sellerForm.phone" type="tel" required></label>
             <label>Year<input v-model="sellerForm.year"></label>
             <label>Manufacturer<input v-model="sellerForm.manufacturer"></label>
             <label>Model<input v-model="sellerForm.model"></label>
@@ -367,7 +367,7 @@ useHead({
             <button type="button" class="cancel-button" :disabled="sellerSending" @click="closeSellerForm">Cancel</button>
             <button type="submit" class="submit-button" :disabled="sellerSending">{{ sellerSending ? 'Sending...' : 'Send Machine Information' }}</button>
           </div>
-        </form>
+        </form></template>
       </div>
     </div>
 
@@ -383,11 +383,11 @@ useHead({
           <button type="button" class="close-after-send" @click="closeWantedRequestForm">Close</button>
         </div>
 
-        <p class="form-required-note">Fields marked * are required.</p><form v-else class="seller-form" @submit.prevent="submitWantedRequestForm">
+        <template v-else><p class="form-required-note">Fields marked * are required.</p><form class="seller-form" @submit.prevent="submitWantedRequestForm">
           <div class="form-grid">
-            <label class="required-field-label required-field-label">Email *<input v-model="wantedRequestForm.email" type="email" required></label>
-            <label class="required-field-label required-field-label">Contact Name *<input v-model="wantedRequestForm.contactName" required></label>
-            <label class="required-field-label required-field-label">Phone *<input v-model="wantedRequestForm.phone" type="tel" required></label>
+            <label class="required-field-label">Email *<input v-model="wantedRequestForm.email" type="email" required></label>
+            <label class="required-field-label">Contact Name *<input v-model="wantedRequestForm.contactName" required></label>
+            <label class="required-field-label">Phone *<input v-model="wantedRequestForm.phone" type="tel" required></label>
             <label>Company Name<input v-model="wantedRequestForm.companyName"></label>
             <label>Address<input v-model="wantedRequestForm.address"></label>
             <label>City<input v-model="wantedRequestForm.city"></label>
@@ -408,13 +408,13 @@ useHead({
             <label><input v-model="wantedRequestForm.emailList" type="radio" value="no"> No</label>
           </fieldset>
 
-          <label class="required-field-label required-field-label">Tell us what you're looking for *<textarea v-model="wantedRequestForm.message" rows="5" required></textarea></label>
+          <label class="required-field-label">Tell us what you're looking for *<textarea v-model="wantedRequestForm.message" rows="5" required></textarea></label>
           <p v-if="wantedRequestError" class="form-error">We couldn't send the form. Please try again or call (256) 980-1200.</p>
           <div class="form-actions">
             <button type="button" class="cancel-button" :disabled="wantedRequestSending" @click="closeWantedRequestForm">Cancel</button>
             <button type="submit" class="submit-button" :disabled="wantedRequestSending">{{ wantedRequestSending ? 'Sending...' : 'Submit Wanted Machine' }}</button>
           </div>
-        </form>
+        </form></template>
       </div>
     </div>
   </main>
