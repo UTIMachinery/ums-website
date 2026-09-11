@@ -66,7 +66,7 @@ const equipmentStructuredData = computed(() => ({
     {
       '@type': 'ItemList',
       name: 'Current Used Machinery Inventory',
-      itemListElement: activeMachines.value.map((machine, index) => ({
+      itemListElement: (machinesData || []).filter(machine => Number(machine.Sold) === 0 && Number(machine.OffMarket ?? machine.Off_Market ?? 0) === 0 && Number(machine.dont_advertise) === 0).map((machine, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: [machine.Manufacturer, machine.Model, machine.Year].filter(Boolean).join(' '),
