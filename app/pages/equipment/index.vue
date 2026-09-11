@@ -40,6 +40,7 @@
 </template>
 <script setup>
 import machinesData from '~/assets/data/machines.json'
+import imagesData from '~/assets/data/images.json'
 useSeoMeta({
   title: 'Used CNC Machines for Sale | UMS',
   description: 'Browse used CNC machines for sale including lathes, vertical and horizontal machining centers, boring mills, grinders and other industrial machinery.',
@@ -89,7 +90,7 @@ useHead(() => ({
 
 const selectedCategory=ref('all');const searchTerm=ref('');const showMachineNeededForm=ref(false);const machineNeededSending=ref(false);const machineNeededSent=ref(false)
 const machineNeededForm=reactive({email:'',contactName:'',phone:'',companyName:'',address:'',city:'',state:'',postalCode:'',country:'',machinesToSell:'no',emailList:'yes',message:''})
-const machines=ref(machinesData);const machineCardImages=ref({});const webDescription=machine=>machine.WebDesc||machine.Web_Desc||'';const advertisingSpec=machine=>machine.AdvSpec||machine.Adv_Spec||'';const groupName=machine=>machine.Groups||'';const offMarketValue=machine=>machine.OffMarket??machine.Off_Market??0
+const machines=ref(machinesData);const machineCardImages=ref(Object.fromEntries((imagesData||[]).filter(file=>/\.(jpg|jpeg|png|webp)$/i.test(file)).sort((a,b)=>a.localeCompare(b,undefined,{numeric:true})).reduce((map,file)=>{const match=String(file).match(/^(\d+)_/);if(match&&!map.has(match[1]))map.set(match[1],file);return map},new Map())));const webDescription=machine=>machine.WebDesc||machine.Web_Desc||'';const advertisingSpec=machine=>machine.AdvSpec||machine.Adv_Spec||'';const groupName=machine=>machine.Groups||'';const offMarketValue=machine=>machine.OffMarket??machine.Off_Market??0
 const categorySeoMap={
   'CNC Lathes & Turning Centers':'/equipment/type/cnc-lathes-turning-centers',
   'CNC Vertical Machining Centers and CNC Mills':'/equipment/type/vertical-machining-centers',
@@ -105,9 +106,8 @@ const machineSlug=machine=>`${machine.Manufacturer||''}-${machine.Model||''}`.to
 const machineUrl=machine=>`/equipment/${machine.InvID}/${machineSlug(machine)}`
 function selectCategory(category){selectedCategory.value=category;searchTerm.value=''}function resetSearch(){selectedCategory.value='all';searchTerm.value=''}
 async function submitMachineNeededForm(){machineNeededSending.value=true;const payload={inquiryType:'machine-needed',contact:{email:machineNeededForm.email,contactName:machineNeededForm.contactName,phone:machineNeededForm.phone,companyName:machineNeededForm.companyName,address:machineNeededForm.address,city:machineNeededForm.city,state:machineNeededForm.state,postalCode:machineNeededForm.postalCode,country:machineNeededForm.country},machinesToSell:machineNeededForm.machinesToSell,emailList:machineNeededForm.emailList,message:machineNeededForm.message};try{await $fetch('/api/request-info',{method:'POST',body:payload});showMachineNeededForm.value=false;machineNeededSent.value=true;machineNeededForm.message='';machineNeededForm.machinesToSell='no';setTimeout(()=>{machineNeededSent.value=false},7000)}catch(error){console.error('Machine needed request failed:',error);alert('Your request could not be sent. Please try again.')}finally{machineNeededSending.value=false}}
-onMounted(async()=>{const savedCategory=localStorage.getItem('ums-equipment-category');const savedSearch=localStorage.getItem('ums-equipment-search');if(savedCategory==='all'||visibleMachineGroups.value.includes(savedCategory)){selectedCategory.value=savedCategory}else{selectedCategory.value='all'}if(savedSearch)searchTerm.value=savedSearch;await loadMachineCardImages()})
+onMounted(()=>{const savedCategory=localStorage.getItem('ums-equipment-category');const savedSearch=localStorage.getItem('ums-equipment-search');if(savedCategory==='all'||visibleMachineGroups.value.includes(savedCategory)){selectedCategory.value=savedCategory}else{selectedCategory.value='all'}if(savedSearch)searchTerm.value=savedSearch})
 watch(selectedCategory,value=>localStorage.setItem('ums-equipment-category',value));watch(searchTerm,value=>{localStorage.setItem('ums-equipment-search',value);if(value.trim()!=='')selectedCategory.value='all'})
-async function loadMachineCardImages(){for(const machine of machines.value){try{const files=await $fetch('/api/images',{query:{invID:machine.InvID}});if(files?.length)machineCardImages.value[machine.InvID]=files[0]}catch(error){console.error(`Could not load image for ${machine.InvID}`,error)}}}
 const activeMachines=computed(()=>(machines.value||[]).filter(machine=>Number(machine.Sold)===0&&Number(offMarketValue(machine))===0&&Number(machine.dont_advertise)===0))
 const visibleMachineGroups=computed(()=>[...new Set(activeMachines.value.map(machine=>machine.Groups).filter(group=>group!==null&&group!==undefined&&group!==''))].sort((a,b)=>a.localeCompare(b)))
 const filteredMachines=computed(()=>{const term=searchTerm.value.trim().toLowerCase().replace(/[^a-z0-9]/g,'');return activeMachines.value.filter(machine=>{const desc=webDescription(machine);const group=groupName(machine);const categoryMatch=selectedCategory.value==='all'||group===selectedCategory.value;const searchText=[machine.Year,machine.Manufacturer,machine.Model,desc,group,advertisingSpec(machine),machine.Description,machine.Code,machine.InvID].filter(Boolean).join(' ').toLowerCase().replace(/[^a-z0-9]/g,'');return categoryMatch&&(term===''||searchText.includes(term))})})
