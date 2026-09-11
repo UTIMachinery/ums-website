@@ -1,2 +1,3 @@
 import moriSeiki from './mori-seiki-hmc.js'
-export default [moriSeiki]
+import makino from './makino-hmc.js'
+export default [moriSeiki,makino]
