@@ -153,6 +153,40 @@
     "featOrder": ""
   },
   {
+    "InvID": "31154",
+    "WebDesc": "CNC Lathes",
+    "Groups": "CNC Lathes & Turning Centers",
+    "Manufacturer": "DN Solutions",
+    "Model": "Puma 5100LC",
+    "Year": "2023",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "",
+    "AdvSpec": "26\" Turn Dia, 82\" Centers, 10.78\" Spindle bore, 1000 rpm, 60 hp, 10 pos turret, X-14\" Z-85\", Tailstock, under 1000 hours",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": ""
+  },
+  {
+    "InvID": "31155",
+    "WebDesc": "CNC Lathes, 3-Axis or More",
+    "Groups": "CNC Lathes & Turning Centers",
+    "Manufacturer": "DN Solutions",
+    "Model": "Puma DNT 2600LM",
+    "Year": "2023",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "15\" Cutting Diamter, 40.6\" Centers, 3.23\" Spindle Bore, 3500 rpm, 35 hp, 12 pos turret, Live tooling, Tailstock, 10\" chuck",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": ""
+  },
+  {
     "InvID": "31068",
     "WebDesc": "CNC Lathes, 3-Axis or More",
     "Groups": "CNC Lathes & Turning Centers",
@@ -187,23 +221,6 @@
     "featOrder": ""
   },
   {
-    "InvID": "31154",
-    "WebDesc": "CNC Lathes",
-    "Groups": "CNC Lathes & Turning Centers",
-    "Manufacturer": "Doosan",
-    "Model": "Puma 5100LC",
-    "Year": "2023",
-    "Price": "$0.00",
-    "Location": "",
-    "Condition": "",
-    "AdvSpec": "26\" Turn Dia, 82\" Centers, 10.78\" Spindle bore, 1000 rpm, 60 hp, 10 pos turret, X-14\" Z-85\", Tailstock, under 1000 hours",
-    "Sold": "0",
-    "Off_Market": "0",
-    "dont_advertise": "0",
-    "Featured": "0",
-    "featOrder": ""
-  },
-  {
     "InvID": "31167",
     "WebDesc": "CNC Lathes, 3-Axis or More",
     "Groups": "CNC Lathes & Turning Centers",
@@ -214,23 +231,6 @@
     "Location": "",
     "Condition": "Good",
     "AdvSpec": "40\" swing, 35\" turn dia, 126\" centers, 12.6\" Bore, 750 RPM, 60 hp, 12 pos turret, Live Tooling, Steady Rest, Tailstock, Chip Conv, 32\" Chuck",
-    "Sold": "0",
-    "Off_Market": "0",
-    "dont_advertise": "0",
-    "Featured": "0",
-    "featOrder": ""
-  },
-  {
-    "InvID": "31155",
-    "WebDesc": "CNC Lathes, 3-Axis or More",
-    "Groups": "CNC Lathes & Turning Centers",
-    "Manufacturer": "Doosan",
-    "Model": "Puma DNT 2600LM",
-    "Year": "2023",
-    "Price": "$0.00",
-    "Location": "",
-    "Condition": "Good",
-    "AdvSpec": "15\" Cutting Diamter, 40.6\" Centers, 3.23\" Spindle Bore, 3500 rpm, 35 hp, 12 pos turret, Live tooling, Tailstock, 10\" chuck",
     "Sold": "0",
     "Off_Market": "0",
     "dont_advertise": "0",
@@ -277,7 +277,7 @@
     "Groups": "Engine Lathes, Drilling & Milling",
     "Manufacturer": "Ganesh",
     "Model": "GTD-4460",
-    "Year": "",
+    "Year": "2018",
     "Price": "$0.00",
     "Location": "",
     "Condition": "Good",
@@ -303,7 +303,7 @@
     "Off_Market": "0",
     "dont_advertise": "0",
     "Featured": "1",
-    "featOrder": ""
+    "featOrder": "6"
   },
   {
     "InvID": "31001",
@@ -321,6 +321,23 @@
     "dont_advertise": "0",
     "Featured": "0",
     "featOrder": ""
+  },
+  {
+    "InvID": "31210",
+    "WebDesc": "Rotary Tables",
+    "Groups": "Tables",
+    "Manufacturer": "Haas",
+    "Model": "HRT-310",
+    "Year": "",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "12.2\" Diameter, Sigma 1 Motor, Dual Multi Pin Connections, Servo",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
   },
   {
     "InvID": "31089",
@@ -371,7 +388,7 @@
     "Off_Market": "0",
     "dont_advertise": "0",
     "Featured": "1",
-    "featOrder": ""
+    "featOrder": "2"
   },
   {
     "InvID": "31175",
@@ -406,6 +423,23 @@
     "dont_advertise": "0",
     "Featured": "0",
     "featOrder": ""
+  },
+  {
+    "InvID": "31204",
+    "WebDesc": "CNC Lathes",
+    "Groups": "CNC Lathes & Turning Centers",
+    "Manufacturer": "Haas",
+    "Model": "ST-30",
+    "Year": "2011",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "31\" Swing, 21\" Cut Diameter, 3.5\" Bore, 3400 hpm, 30 hp, 12 Pos Turret, 10\" Chuck, Tool Presetter, Parts Catcher, Chip Conv, Hi Pres Coolant",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
   },
   {
     "InvID": "31082",
@@ -456,7 +490,24 @@
     "Off_Market": "0",
     "dont_advertise": "0",
     "Featured": "1",
-    "featOrder": ""
+    "featOrder": "3"
+  },
+  {
+    "InvID": "31207",
+    "WebDesc": "CNC Lathes",
+    "Groups": "CNC Lathes & Turning Centers",
+    "Manufacturer": "Haas",
+    "Model": "ST-35",
+    "Year": "2020",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "Tailstock, Tool Presetter, Chip Conv, Hi Pres Coolant, Only 100 cutting hours",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
   },
   {
     "InvID": "31166",
@@ -561,6 +612,23 @@
     "featOrder": ""
   },
   {
+    "InvID": "31203",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "Manufacturer": "Haas",
+    "Model": "UMC-750SS",
+    "Year": "2017",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "5-Axis, X-30\" Y-20\" Z-20\", 15000 rpm, 30 hp, 40+1 atc, TSC, WIPS, RJH, Chip Conv, HSM, 32GB",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
+  },
+  {
     "InvID": "31186",
     "WebDesc": "CNC Machining Centers, Vertical",
     "Groups": "CNC Vertical Machining Centers and CNC Mills",
@@ -612,6 +680,23 @@
     "featOrder": ""
   },
   {
+    "InvID": "31208",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "Manufacturer": "Haas",
+    "Model": "VF-2SSYT 5-Axis",
+    "Year": "2015",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "X-30\" Y-20\" Z-20\", 30 hp, 15000 rpm, 24+1 SMATC, T5C3 5-Axis Rotary, WIPS, HSM, Ext Y-Axis",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
+  },
+  {
     "InvID": "31165",
     "WebDesc": "CNC Machining Centers, Vertical",
     "Groups": "CNC Vertical Machining Centers and CNC Mills",
@@ -627,6 +712,23 @@
     "dont_advertise": "0",
     "Featured": "0",
     "featOrder": ""
+  },
+  {
+    "InvID": "31205",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "Manufacturer": "Haas",
+    "Model": "VF-3SS",
+    "Year": "2024",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "X-40\" Y-20\" Z-25\", 12000 rpm, 30 hp, 30+1 SMATC, HRT-210 Rotary Table, 4-Axis, HSM, WIPS, Pcool, Auger, RJH",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
   },
   {
     "InvID": "31146",
@@ -677,7 +779,7 @@
     "Off_Market": "0",
     "dont_advertise": "0",
     "Featured": "1",
-    "featOrder": ""
+    "featOrder": "4"
   },
   {
     "InvID": "31181",
@@ -731,6 +833,23 @@
     "featOrder": ""
   },
   {
+    "InvID": "31209",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "Manufacturer": "Haas",
+    "Model": "VF-9/40 5-Axis",
+    "Year": "2015",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "X-84\" Y-40\" Z-30\", 8100 rpm, 30 hp, 24+1 SMATC, HSM, TSC, 4th-5th Axis drives, TR-310 5-axis trunnion, Ext Z-axis clearance, Pcool",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
+  },
+  {
     "InvID": "31140",
     "WebDesc": "CNC Machining Centers, Vertical",
     "Groups": "CNC Vertical Machining Centers and CNC Mills",
@@ -740,12 +859,12 @@
     "Price": "$0.00",
     "Location": "",
     "Condition": "Good",
-    "AdvSpec": "X-64\" Y-32\" Z-30\", 30 hp, 15000 rpm, 30+1 SMATC, Pcool, HiL, Auger, HSM, WIPS-Renishaw, coolant chiller",
+    "AdvSpec": "X-64\" Y-32\" Z-30\", 30 hp, 15000 rpm, 30+1 SMATC, Pcool, HiL, Auger, HSM, WIPS-Renishaw, coolant chiller, TSC, Linear Scales",
     "Sold": "0",
     "Off_Market": "0",
     "dont_advertise": "0",
     "Featured": "1",
-    "featOrder": ""
+    "featOrder": "5"
   },
   {
     "InvID": "31162",
@@ -1037,6 +1156,23 @@
     "featOrder": ""
   },
   {
+    "InvID": "31206",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "Manufacturer": "Mazak",
+    "Model": "Vortex e-1060V/8 5-Axis",
+    "Year": "2014",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "5-Axis, X-73.82\" Y-41.73\" Z-52.95\", CAT50 Taper, 10000 rpm, 50 hp, (3) 39.4\" Dia Pallets, 120 ATC, Probing, Chip Conv",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
+  },
+  {
     "InvID": "31031",
     "WebDesc": "Mills, CNC",
     "Groups": "CNC Vertical Machining Centers and CNC Mills",
@@ -1238,7 +1374,7 @@
     "Off_Market": "0",
     "dont_advertise": "0",
     "Featured": "1",
-    "featOrder": ""
+    "featOrder": "1"
   },
   {
     "InvID": "31189",

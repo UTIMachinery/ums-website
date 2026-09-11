@@ -348,5 +348,45 @@
     "InvID": "31202",
     "Paragraph1": "This 2011 Doosan Puma 300C CNC Lathe offers a 22.4″ swing, 17.7″ swing over the cross slide, 25.7″ maximum machining diameter, and 27.8″ distance between centers. It features a 4.5″ spindle bore, spindle speeds up to 2,800 rpm, a 35 hp main motor, A2-11 spindle nose, and a 12-position turret.",
     "Paragraph2": "The machine is equipped with a Fanuc 2-axis CNC Control, chip conveyor, tailstock, tool setter, and complete coolant system. The supplied hour information lists 9,506 cutting hours and 8,114 run-time hours."
+  },
+  {
+    "InvID": "31203",
+    "Paragraph1": "This 2017 Haas UMC-750SS 5-Axis Vertical Machining Center provides 30″ X-axis, 20″ Y-axis, and 20″ Z-axis travels with a 19.7″ platter. The 40-taper spindle runs up to 15,000 rpm with 30 hp, and the machine is equipped with a 40+1 position automatic tool changer for high-speed 5-axis machining applications.",
+    "Paragraph2": "The machine is equipped with Haas NextGen Control, 1,000 PSI through-spindle coolant, Renishaw Wireless Intuitive Probing System, through-tool air blast, remote jog handle, chip conveyor, Dynamic Work Offsets and Tool Center Point Control, high-speed machining, spindle orientation, rigid tapping, macros, Ethernet, USB, 32GB memory, and HaasConnect."
+  },
+  {
+    "InvID": "31204",
+    "Paragraph1": "This 2011 Haas ST-30 CNC Lathe offers a 31.8″ swing, 21″ maximum machining diameter, 26″ maximum machining length, and a 3.5″ spindle bore. The spindle runs up to 3,400 rpm with 30 hp, and the machine has a 12-position turret with a 10″ 3-jaw hydraulic chuck.",
+    "Paragraph2": "The machine is equipped with a Haas 2-axis CNC Control with 15″ color LCD monitor, automatic tool presetter, parts catcher, chip conveyor, rigid tapping, USB port, and 300 PSI high-pressure coolant. The supplied note states the hour meter was reset during a battery replacement and that the machine was used one shift running aluminum and stainless."
+  },
+  {
+    "InvID": "31205",
+    "Paragraph1": "This 2024 Haas VF-3SS Vertical Machining Center provides 40″ X-axis, 20″ Y-axis, and 25″ Z-axis travels with an 18″ x 48″ table rated for 1,750 lbs. It features a 12,000 rpm 40-taper spindle with 30 hp and a 30+1 position automatic tool changer.",
+    "Paragraph2": "The machine is equipped with Haas 4-axis CNC Control, Haas HRT-210 rotary table, WIPS wireless probing, high-speed machining, programmable coolant nozzle, chip auger, spindle orientation, coordinate rotation and scaling, macros, high-intensity lighting, mist condenser, remote jog handle with touchscreen display, rotary brake booster, and through-spindle coolant preparation."
+  },
+  {
+    "InvID": "31206",
+    "Paragraph1": "This 2014 Mazak Vortex e-1060V/8 5-Axis Vertical Machining Center provides 73.82″ X-axis, 41.73″ Y-axis, and 52.95″ Z-axis travels. It features a CAT 50 spindle capable of 10,000 rpm with 50 hp, a 120-position automatic tool changer, a 39.4″ diameter pallet system, and simultaneous 5-axis machining capability.",
+    "Paragraph2": "The machine is equipped with a Mazatrol Matrix 2 5-axis CNC Control, 1,000 PSI Mazak Superflow V8M coolant, Renishaw OMP60 work probing, Renishaw NC4 laser tool measurement, advanced probe macros, chip conveyor, coolant washdown, high smoothing control, power indexing at the load station, Mazacc-3D high-speed software, and synchronous tapping."
+  },
+  {
+    "InvID": "31207",
+    "Paragraph1": "This 2020 Haas ST-35 CNC Lathe offers a 31.75″ swing, 21″ maximum machining diameter, 26″ distance between centers, and a 4.62″ spindle bore. The spindle runs up to 2,400 rpm with 40 hp, and the machine has a 12-position turret and 12″ 3-jaw chuck.",
+    "Paragraph2": "The machine is equipped with Haas 2-axis CNC Control, programmable tailstock, tool presetter, chip conveyor, auto door, 300 PSI high-pressure coolant, auxiliary coolant filtration, automatic coolant refill, enclosure exhaust, coolant tank oil skimmer, high-intensity lighting, Visual Part Programming, spindle orientation, macros, and WiFi camera. The supplied information describes the machine as like new."
+  },
+  {
+    "InvID": "31208",
+    "Paragraph1": "This 2015 Haas VF-2SSYT 5-Axis Vertical Machining Center provides 30″ X-axis, 20″ Y-axis, and 20″ Z-axis travels with an 18″ x 36″ table. It features a 15,000 rpm 40-taper spindle with 30 hp and a 24+1 position side-mount automatic tool changer.",
+    "Paragraph2": "The machine is equipped with Haas 5-axis CNC Control, Haas T5C3 tilting 3-head 5C rotary table, 4th- and 5th-axis drives and wiring, extended Y-axis travel, Renishaw WIPS probing, high-speed machining, coordinate rotation and scaling, spindle orientation, macros, Ethernet, USB, rigid tapping, and expanded memory."
+  },
+  {
+    "InvID": "31209",
+    "Paragraph1": "This 2015 Haas VF-9/40 5-Axis Vertical Machining Center provides 84″ X-axis, 40″ Y-axis, and 30″ Z-axis travels with a 36″ x 84″ table rated for 4,000 lbs. It features an 8,100 rpm 40-taper spindle with 30 hp and a 24+1 position automatic tool changer.",
+    "Paragraph2": "The machine is equipped with Haas 5-axis CNC Control, Haas TR-310 5-axis trunnion table, 4th- and 5th-axis drives and wiring, high-speed machining, 300 PSI through-spindle coolant, 8″ extended Z-axis clearance, programmable coolant nozzle, internal high-voltage transformer, auxiliary coolant filtration, chip auger, remote jog handle, Ethernet, USB, and rigid tapping."
+  },
+  {
+    "InvID": "31210",
+    "Paragraph1": "This Haas HRT-310 CNC Servo Rotary Table features a 12.2″ diameter platter, 0.001-degree indexing increments, and a 9″ center height. The table weighs approximately 450 lbs and is equipped with a Sigma 1 motor.",
+    "Paragraph2": "The rotary table is equipped with CNC servo operation and an HTS6 tailstock support. The supplied specifications list a maximum workpiece weight of 435 lbs with support and 218 lbs without support."
   }
 ]
