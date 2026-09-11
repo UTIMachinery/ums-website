@@ -327,7 +327,7 @@ useHead(() => ({
 .for-sale-kicker { color: #22733a; }
 .text-link { color: #1c4587; font-weight: 800; text-decoration: none; white-space: nowrap; }
 .text-link:hover { text-decoration: underline; }
-.machine-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.machine-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
 .machine-card { overflow: hidden; background: #fff; border: 1px solid #d8e0e9; border-radius: 7px; box-shadow: 0 4px 18px rgba(11,37,69,.07); }
 .machine-image-wrap { aspect-ratio: 4 / 3; background: #eef2f6; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .machine-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
@@ -385,6 +385,9 @@ useHead(() => ({
   .conversion-section { grid-template-columns: 1fr; }
 }
 
+@media (max-width: 800px) {
+  .machine-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 700px) {
   .library-hero-inner, .section { padding-left: 20px; padding-right: 20px; }
   .library-hero-inner { padding-top: 38px; padding-bottom: 38px; }
