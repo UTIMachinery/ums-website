@@ -6,7 +6,8 @@
   </main>
 </template>
 <script setup>
-import core from '~/assets/data/haas-vmc-core.js'\nimport more from '~/assets/data/haas-vmc-more.js'
+import core from '~/assets/data/haas-vmc-core.js'
+import more from '~/assets/data/haas-vmc-more.js'
 const q=ref('')
 const models=[...core,...more].sort((a,b)=>a[0].localeCompare(b[0],undefined,{numeric:true}))
 const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?models.filter(m=>m[0].toLowerCase().includes(x)):models})
