@@ -1,8 +1,7 @@
 <template>
   <main v-if="entry" class="page">
     <section class="hero"><div class="wrap"><NuxtLink to="/spec-library/fadal/vmcs" class="back">← Fadal VMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>Fadal {{entry[0]}} Specifications</h1><p>Historical vertical machining center specifications based on {{entry[2]}} UMS machine records spanning {{entry[3]}}–{{entry[4]}}.</p></div></section>
-    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Values can vary by year, control, spindle package and optional equipment.</div><h2>Most Common Recorded Specifications</h2><p class="intro">UMS shows the most frequently recorded value for each field along with the number of historical observations that support it. Exact model variants remain separate.</p>
-      <VmcYearConfigurations :model="entry[0]" :configurations="yearConfigurations" />
+    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Values can vary by year, control, spindle package and optional equipment.</div><h2>Most Common Recorded Specifications</h2><p class="intro">This model is still awaiting full year-by-year normalization. The values below are the most-supported historical values for the exact model and are not presented as year-specific specifications.</p><div class="spec-grid"><article v-for="s in entry[5]" :key="s[0]" class="spec-card"><div class="spec-label">{{s[0]}}</div><div class="spec-value">{{s[1]}}</div><div class="support">{{s[2]}} of {{s[3]}} recorded observations matched<span v-if="s[4]>1"> · {{s[4]}} values recorded</span></div><div v-if="s[4]>1" class="varies">Varies in historical records</div></article></div>
       <section class="cta"><div><div class="cta-kicker">NEED A MACHINE?</div><h2>Looking for a Fadal {{entry[0]}}?</h2><p>Tell Used Machinery Source what you need and we can help locate a machine that fits your requirements.</p></div><NuxtLink to="/equipment#tell-us-what-you-need">Tell Us What You Need</NuxtLink></section>
     </section>
   </main>
@@ -14,7 +13,6 @@ const route=useRoute()
 const entry=computed(()=>raw.find(m=>m[1]===route.params.model))
 if(!entry.value)setResponseStatus(404)
 useSeoMeta({title:()=>entry.value?`Fadal ${entry.value[0]} VMC Specifications | UMS Spec Library`:'Fadal VMC Specifications | UMS',description:()=>entry.value?`Historical Fadal ${entry.value[0]} vertical machining center specifications including travels, table size, spindle, horsepower and tool capacity.`:'Historical Fadal VMC specifications.'})
-const yearConfigurations=computed(()=>{const years=[];for(let y=Number(entry.value?.[3]);y<=Number(entry.value?.[4]);y++){if(Number.isFinite(y))years.push({year:String(y),title:`${y} ${entry.value[0]} historical configuration`,control:'Historical UMS record',specs:(entry.value[5]||[]).map(s=>({label:s[0],value:s[1]})),note:'UMS historical records for this model span multiple years. This year block is retained for year-specific expansion as individual InvID records are normalized.'})}return years})
 const canonical=computed(()=>`https://www.usedmachinerysource.com/spec-library/fadal/vmcs/${route.params.model}`)
 useHead(()=>({link:[{rel:'canonical',href:canonical.value}]}))
 </script>
