@@ -9,7 +9,7 @@
   <main v-else class="missing"><h1>Haas VMC model not found</h1><NuxtLink to="/spec-library/haas/vmcs">Browse Haas VMC specifications</NuxtLink></main>
 </template>
 <script setup>
-import raw from '~/assets/data/haas-vmc-core.js'
+import core from '~/assets/data/haas-vmc-core.js'\nimport more from '~/assets/data/haas-vmc-more.js'\nconst raw=[...core,...more]
 const route=useRoute()
 const entry=computed(()=>raw.find(m=>m[1]===route.params.model))
 if(!entry.value)setResponseStatus(404)
