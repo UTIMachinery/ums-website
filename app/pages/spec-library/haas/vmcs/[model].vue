@@ -9,6 +9,7 @@
   <main v-else class="missing"><h1>Haas VMC model not found</h1><NuxtLink to="/spec-library/haas/vmcs">Browse Haas VMC specifications</NuxtLink></main>
 </template>
 <script setup>
+// VMC model data sources
 import core from '~/assets/data/haas-vmc-core.js'
 import more from '~/assets/data/haas-vmc-more.js'
 const raw=[...core,...more]
