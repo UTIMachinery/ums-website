@@ -1,9 +1,12 @@
 export default defineEventHandler((event) => {
   const url = getRequestURL(event)
+  const forwardedHost = getRequestHeader(event, 'x-forwarded-host')
+  const hostHeader = forwardedHost || getRequestHeader(event, 'host') || url.host
+  const hostname = hostHeader.split(',')[0].trim().split(':')[0].toLowerCase()
 
   if (
-    url.hostname === 'equipment.usedmachinerysource.com' ||
-    url.hostname === 'usedmachinerysource.com'
+    hostname === 'equipment.usedmachinerysource.com' ||
+    hostname === 'usedmachinerysource.com'
   ) {
     return sendRedirect(
       event,
