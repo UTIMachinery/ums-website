@@ -8,7 +8,11 @@
 <article class="card featured"><h3>Hurco</h3><p>BMC, VM, VMX and related Hurco vertical machining centers.</p><NuxtLink to="/spec-library/hurco/vmcs">Browse Hurco VMC specifications →</NuxtLink></article>
 <article class="card featured"><h3>Kitamura</h3><p>Mycenter and Bridgecenter vertical machining centers.</p><NuxtLink to="/spec-library/kitamura/vmcs">Browse Kitamura VMC specifications →</NuxtLink></article>
 <article class="card featured"><h3>OKK</h3><p>MCV, PCV, VM, KVC and related OKK vertical machining centers.</p><NuxtLink to="/spec-library/okk/vmcs">Browse OKK VMC specifications →</NuxtLink></article>
-<article v-for="m in planned" :key="m.name" class="card"><h3>{{m.name}}</h3><p>{{m.text}}</p><span>Manufacturer library page being prepared</span></article>
+<article class="card featured"><h3>Tree</h3><p>VMC-1050, VMC-1060 and related Tree vertical machining centers.</p><NuxtLink to="/spec-library/tree/vmcs">Browse Tree VMC specifications →</NuxtLink></article>
+<article class="card featured"><h3>Milltronics</h3><p>VM, Partner, BR and related Milltronics vertical machining centers.</p><NuxtLink to="/spec-library/milltronics/vmcs">Browse Milltronics VMC specifications →</NuxtLink></article>
+<article class="card featured"><h3>Daewoo</h3><p>DMV-series vertical machining centers.</p><NuxtLink to="/spec-library/daewoo/vmcs">Browse Daewoo VMC specifications →</NuxtLink></article>
+<article class="card featured"><h3>Monarch</h3><p>VMC-45, VMC-75, VMC-150 and related Monarch vertical machining centers.</p><NuxtLink to="/spec-library/monarch/vmcs">Browse Monarch VMC specifications →</NuxtLink></article>
+<article class="card featured"><h3>Enshu</h3><p>650V, 650VX, 400FAV, VMC-430 and related Enshu vertical machining centers.</p><NuxtLink to="/spec-library/enshu/vmcs">Browse Enshu VMC specifications →</NuxtLink></article><article v-for="m in planned" :key="m.name" class="card"><h3>{{m.name}}</h3><p>{{m.text}}</p><span>Manufacturer library page being prepared</span></article>
       </div>
     </section>
     <section class="wrap section guide"><h2>Key VMC Specifications</h2><div class="specs"><div v-for="s in specs" :key="s[0]" class="spec"><h3>{{s[0]}}</h3><p>{{s[1]}}</p></div></div></section>
