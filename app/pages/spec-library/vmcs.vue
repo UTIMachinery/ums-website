@@ -4,7 +4,7 @@
     <section id="library" class="wrap section"><div class="label">SPECIFICATION LIBRARY — HISTORICAL INFORMATION</div><h2>VMC Manufacturer & Model Library</h2><p class="intro">The UMS historical database contains approximately 1,650 vertical machining center records, with detailed specification data on more than 1,600 machines. Historical records do not indicate current availability.</p>
       <div class="grid">
         <article class="card featured"><h3>Haas</h3><p>VF, TM, Mini Mill, VM, UMC, DM, DT, VR and related Haas vertical machining platforms.</p><NuxtLink to="/spec-library/haas/vmcs">Browse Haas VMC specifications →</NuxtLink></article>
-        <article v-for="m in planned" :key="m.name" class="card"><h3>{{m.name}}</h3><p>{{m.text}}</p><span>Manufacturer library page being prepared</span></article>
+        <article class="card featured"><h3>Mazak</h3><p>VTC, VQC, AJV, V-Series and related Mazak vertical machining centers.</p><NuxtLink to="/spec-library/mazak/vmcs">Browse Mazak VMC specifications →</NuxtLink></article><article v-for="m in planned" :key="m.name" class="card"><h3>{{m.name}}</h3><p>{{m.text}}</p><span>Manufacturer library page being prepared</span></article>
       </div>
     </section>
     <section class="wrap section guide"><h2>Key VMC Specifications</h2><div class="specs"><div v-for="s in specs" :key="s[0]" class="spec"><h3>{{s[0]}}</h3><p>{{s[1]}}</p></div></div></section>
@@ -12,7 +12,6 @@
 </template>
 <script setup>
 const planned=[
-{name:'Mazak',text:'VTC, VQC, AJV, V-Series, Nexus/VCN and related Mazak VMCs.'},
 {name:'Fadal',text:'VMC-15, 3016, 4020, 5020, 6030, 8030 and related Fadal models.'},
 {name:'Mori-Seiki',text:'MV, GV and other Mori-Seiki vertical machining centers.'},
 {name:'Cincinnati',text:'Arrow, Lancer, Sabre, 10VC, 15VC and 20VC families.'},
