@@ -17,6 +17,7 @@ const route=useRoute()
 const entry=computed(()=>raw.find(m=>m[1]===route.params.model))
 if(!entry.value)setResponseStatus(404)
 useSeoMeta({title:()=>entry.value?`Haas ${entry.value[0]} VMC Specifications | UMS Spec Library`:'Haas VMC Specifications | UMS',description:()=>entry.value?`Historical Haas ${entry.value[0]} vertical machining center specifications including travels, table size, spindle, horsepower and tool capacity.`:'Historical Haas VMC specifications.'})
+const yearConfigurations=computed(()=>{const years=[];for(let y=Number(entry.value?.[3]);y<=Number(entry.value?.[4]);y++){if(Number.isFinite(y))years.push({year:String(y),title:`${y} ${entry.value[0]} historical configuration`,control:'Historical UMS record',specs:(entry.value[5]||[]).map(s=>({label:s[0],value:s[1]})),note:'UMS historical records for this model span multiple years. This year block is retained for year-specific expansion as individual InvID records are normalized.'})}return years})
 const canonical=computed(()=>`https://www.usedmachinerysource.com/spec-library/haas/vmcs/${route.params.model}`)
 useHead(()=>({link:[{rel:'canonical',href:canonical.value}]}))
 </script>
