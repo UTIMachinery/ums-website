@@ -19,10 +19,29 @@
 <article class="card featured"><h3>Dah Lih</h3><p>MCV-series vertical machining centers.</p><NuxtLink to="/spec-library/dah-lih/vmcs">Browse Dah Lih VMC specifications →</NuxtLink></article><article v-for="m in planned" :key="m.name" class="card"><h3>{{m.name}}</h3><p>{{m.text}}</p><span>Manufacturer library page being prepared</span></article>
       </div>
     </section>
+    <section class="wrap section additional">
+      <div class="label">EXPANDED HISTORICAL VMC LIBRARY</div>
+      <h2>Additional VMC Manufacturers</h2>
+      <p class="intro">Browse the rest of the UMS historical VMC database by manufacturer. These pages use the same manufacturer → model → year/configuration structure as the primary libraries above.</p>
+      <input v-model="otherQ" class="search" type="search" placeholder="Search additional VMC manufacturers">
+      <div class="compact-grid">
+        <NuxtLink v-for="m in filteredOther" :key="m.slug" :to="`/spec-library/${m.slug}/vmcs`" class="compact-card">
+          <strong>{{m.name}}</strong>
+          <span>{{m.models.length}} model{{m.models.length===1?'':'s'}} · {{m.records}} historical record{{m.records===1?'':'s'}}</span>
+        </NuxtLink>
+      </div>
+    </section>
     <section class="wrap section guide"><h2>Key VMC Specifications</h2><div class="specs"><div v-for="s in specs" :key="s[0]" class="spec"><h3>{{s[0]}}</h3><p>{{s[1]}}</p></div></div></section>
   </main>
 </template>
 <script setup>
+import otherLibrary from '~/assets/data/vmc-remaining-library.js'
+const otherQ=ref('')
+const filteredOther=computed(()=>{
+  const x=otherQ.value.trim().toLowerCase()
+  const list=[...otherLibrary]
+  return x?list.filter(m=>m.name.toLowerCase().includes(x)):list
+})
 const planned=[
 ]
 const specs=[
@@ -39,5 +58,5 @@ useSeoMeta({title:'Vertical Machining Center Specifications | VMC Spec Library |
 useHead({link:[{rel:'canonical',href:'https://www.usedmachinerysource.com/spec-library/vmcs'}]})
 </script>
 <style scoped>
-.page{color:#17273a;background:#fff;padding-bottom:60px}.wrap{max-width:1260px;margin:0 auto;padding:0 28px}.hero{background:linear-gradient(105deg,#071b33,#0d2c52);color:#fff;padding:52px 0;border-bottom:4px solid #f47b20}.kicker,.label{font-size:.78rem;font-weight:900;letter-spacing:.12em;color:#f47b20;margin-bottom:10px}.hero h1{font-size:clamp(2.2rem,4.5vw,3.6rem);margin:0 0 14px}.hero p{max-width:880px;font-size:1.1rem;line-height:1.7}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.actions a{padding:11px 16px;border-radius:5px;text-decoration:none;font-weight:800}.primary{background:#f47b20;color:#fff}.secondary{border:1px solid #fff;color:#fff}.section{padding-top:46px}.section h2{font-size:2rem;color:#0b2545;margin:0 0 12px}.intro{max-width:980px;line-height:1.7;color:#526579}.grid,.specs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px}.card,.spec{border:1px solid #d8e0e8;border-radius:10px;padding:20px;background:#fff}.featured{border-top:4px solid #f47b20}.card h3,.spec h3{margin-top:0;color:#0b2545}.card p,.spec p{color:#526579;line-height:1.55}.card a{color:#1c4587;font-weight:800;text-decoration:none}.card span{color:#6a7888;font-size:.88rem;font-weight:700}.guide{margin-top:20px}.specs{grid-template-columns:repeat(4,minmax(0,1fr))}@media(max-width:900px){.grid,.specs{grid-template-columns:1fr}.wrap{padding:0 18px}}
+.page{color:#17273a;background:#fff;padding-bottom:60px}.wrap{max-width:1260px;margin:0 auto;padding:0 28px}.hero{background:linear-gradient(105deg,#071b33,#0d2c52);color:#fff;padding:52px 0;border-bottom:4px solid #f47b20}.kicker,.label{font-size:.78rem;font-weight:900;letter-spacing:.12em;color:#f47b20;margin-bottom:10px}.hero h1{font-size:clamp(2.2rem,4.5vw,3.6rem);margin:0 0 14px}.hero p{max-width:880px;font-size:1.1rem;line-height:1.7}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.actions a{padding:11px 16px;border-radius:5px;text-decoration:none;font-weight:800}.primary{background:#f47b20;color:#fff}.secondary{border:1px solid #fff;color:#fff}.section{padding-top:46px}.section h2{font-size:2rem;color:#0b2545;margin:0 0 12px}.intro{max-width:980px;line-height:1.7;color:#526579}.grid,.specs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px}.card,.spec{border:1px solid #d8e0e8;border-radius:10px;padding:20px;background:#fff}.featured{border-top:4px solid #f47b20}.card h3,.spec h3{margin-top:0;color:#0b2545}.card p,.spec p{color:#526579;line-height:1.55}.card a{color:#1c4587;font-weight:800;text-decoration:none}.card span{color:#6a7888;font-size:.88rem;font-weight:700}.additional{margin-top:10px}.search{width:100%;max-width:620px;padding:13px 15px;border:1px solid #aeb8c4;border-radius:6px;font-size:17px;margin:10px 0 22px}.compact-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.compact-card{display:flex;flex-direction:column;gap:4px;border:1px solid #d8e0e8;border-radius:8px;padding:13px;text-decoration:none;color:#17273a}.compact-card:hover{border-color:#f47b20;background:#fff9f4}.compact-card strong{color:#0b2545}.compact-card span{font-size:.78rem;color:#6a7888}.guide{margin-top:20px}.specs{grid-template-columns:repeat(4,minmax(0,1fr))}@media(max-width:900px){.grid,.specs,.compact-grid{grid-template-columns:1fr}.wrap{padding:0 18px}}
 </style>
