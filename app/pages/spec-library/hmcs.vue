@@ -16,6 +16,8 @@
     <section id="library" class="wrap section"><div class="label">SPECIFICATION LIBRARY — HISTORICAL INFORMATION</div><h2>HMC Manufacturer & Model Library</h2><p class="intro">The UMS historical database contains about 681 horizontal machining center records. Historical records do not indicate current availability.</p>
       <div class="grid">
         <article class="card featured"><h3>Mazak</h3><p>H-Series, FH-Series, HTC and related Mazak horizontal machining centers.</p><NuxtLink to="/spec-library/mazak/hmcs">Browse Mazak HMC specifications →</NuxtLink></article>
+        <article class="card featured"><h3>Mori-Seiki</h3><p>MH, SH and related Mori-Seiki horizontal machining centers.</p><NuxtLink to="/spec-library/mori-seiki/hmcs">Browse Mori-Seiki HMC specifications →</NuxtLink></article>
+        <article class="card featured"><h3>Makino</h3><p>A-Series, MC, MCB and related Makino horizontal machining centers.</p><NuxtLink to="/spec-library/makino/hmcs">Browse Makino HMC specifications →</NuxtLink></article>
         <article v-for="m in planned" :key="m.name" class="card"><h3>{{m.name}}</h3><p>{{m.text}}</p><span>Manufacturer library page being prepared</span></article>
       </div>
     </section>
@@ -36,8 +38,6 @@ const machineUrl=machine=>{const slug=`${machine.Manufacturer||''}-${machine.Mod
 async function loadMachineCardImages(){for(const machine of currentHmcs.value){try{const files=await $fetch('/api/images',{query:{invID:machine.InvID}});if(files?.length)machineCardImages.value[machine.InvID]=files[0]}catch(error){console.error(`Could not load image for ${machine.InvID}`,error)}}}
 onMounted(loadMachineCardImages)
 const planned=[
-{name:'Mori-Seiki',text:'NH, SH, MH and related Mori-Seiki horizontal machining centers.'},
-{name:'Makino',text:'A-Series, MCB and related Makino horizontal machining centers.'},
 {name:'Haas',text:'EC, HS and related Haas horizontal machining centers.'},
 {name:'Cincinnati',text:'Magnum, Maxim, Milacron and related Cincinnati HMCs.'},
 {name:'Okuma',text:'MA, MC, MX and related Okuma horizontal machining centers.'},
