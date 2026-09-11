@@ -31,8 +31,7 @@ export default defineEventHandler(async (event) => {
     httpOnly: true,
     secure: true,
     sameSite: 'strict',
-    path: '/',
-    maxAge: 60 * 60 * 12
+    path: '/'
   })
 
   return { success: true }
