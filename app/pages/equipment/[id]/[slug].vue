@@ -293,16 +293,16 @@ const machineStructuredData=computed(()=>{
     '@context':'https://schema.org',
     '@graph':[
       {
-        '@type':'Product',
+        '@type':'WebPage',
         name,
         description:buildMetaDescription(machine.value),
-        sku:String(machine.value.InvID||''),
-        model:String(machine.value.Model||''),
-        category:String(machine.value.WebDesc||seoMachineType(machine.value)),
-        itemCondition:'https://schema.org/UsedCondition',
         url,
-        ...(image?{image:[image]}:{}),
-        brand:{'@type':'Brand',name:String(machine.value.Manufacturer||'')}
+        ...(image?{primaryImageOfPage:{'@type':'ImageObject',url:image}}:{}),
+        about:{
+          '@type':'Thing',
+          name:[machine.value.Manufacturer,machine.value.Model,seoMachineType(machine.value)].filter(Boolean).join(' ')
+        },
+        isPartOf:{'@id':'https://www.usedmachinerysource.com/#website'}
       },
       {
         '@type':'BreadcrumbList',
