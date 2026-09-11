@@ -1,14 +1,14 @@
 <template>
   <main class="page">
-    <section class="hero"><div class="wrap"><NuxtLink to="/spec-library/vmcs" class="back">← VMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>Haas Vertical Machining Centers</h1><p>The initial Haas VMC library includes 10 high-depth model pages built from 192 historical machine records. Additional Haas VMC models will be added from the same historical database.</p></div></section>
+    <section class="hero"><div class="wrap"><NuxtLink to="/spec-library/vmcs" class="back">← VMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>Haas Vertical Machining Centers</h1><p>The Haas VMC library now includes 25 model pages built from 279 historical machine records. Additional Haas VMC models will continue to be added from the same historical database.</p></div></section>
     <section class="wrap section"><h2>Core Haas VMC Model Pages</h2><p class="intro">Each page shows the most-supported recorded value for major specifications and also shows how many historical observations agreed with that value. Where multiple values occur, the page warns that year or configuration differences exist.</p><input v-model="q" class="search" type="search" placeholder="Search Haas VMC model"><div class="grid"><NuxtLink v-for="m in filtered" :key="m[1]" :to="`/spec-library/haas/vmcs/${m[1]}`" class="card"><strong>{{m[0]}}</strong><span>{{m[2]}} historical records · {{m[3]}}–{{m[4]}}</span></NuxtLink></div></section>
     <section class="wrap section note"><div class="label">HISTORICAL DATA METHOD</div><h2>Why the values are shown this way</h2><p>Older Haas machines can differ by year, spindle package, taper, control generation and optional equipment. UMS does not average unlike records. The displayed value is the most common recorded value for that exact model, with support counts shown so differences remain visible.</p></section>
   </main>
 </template>
 <script setup>
-import raw from '~/assets/data/haas-vmc-core.js'
+import core from '~/assets/data/haas-vmc-core.js'\nimport more from '~/assets/data/haas-vmc-more.js'
 const q=ref('')
-const models=[...raw].sort((a,b)=>a[0].localeCompare(b[0],undefined,{numeric:true}))
+const models=[...core,...more].sort((a,b)=>a[0].localeCompare(b[0],undefined,{numeric:true}))
 const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?models.filter(m=>m[0].toLowerCase().includes(x)):models})
 useSeoMeta({title:'Haas VMC Specifications | VF Series | UMS Spec Library',description:'Research historical Haas VF-series vertical machining center specifications from Used Machinery Source records.'})
 useHead({link:[{rel:'canonical',href:'https://www.usedmachinerysource.com/spec-library/haas/vmcs'}]})
