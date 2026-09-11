@@ -1,0 +1,1 @@
+export default [["Bridgecenter 8","bridgecenter-8",4,"1989","1997",[]],["Mycenter 1","mycenter-1",4,"1984","1993",[]],["Mycenter 2","mycenter-2",3,"1990","1993",[]],["Mycenter 3X","mycenter-3x",2,"1994","1996",[]],["Mycenter 4","mycenter-4",3,"1997","1997",[]]];
