@@ -25,6 +25,13 @@
       </article>
     </div>
   </section>
+  <section class="sell-cta">
+    <div>
+      <h2>Have a Machine to Sell or Trade In?</h2>
+      <p>Have a machine you’re ready to sell, or looking to trade toward new equipment? We’ll be happy to work directly with you or with your OEM distributor if it’s a trade-in.</p>
+    </div>
+    <NuxtLink to="/sell-your-machine" class="sell-button">Tell Us About Your Machine</NuxtLink>
+  </section>
 </template>
 
 <script setup>
@@ -81,4 +88,5 @@ const machineImage=m=>(imagesData||[]).find(file=>String(file).toLowerCase().sta
 
 <style scoped>
 .inventory-match{margin-top:46px;padding-top:34px;border-top:1px solid #d9e1e8}.inventory-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:20px}.eyebrow{color:#f47b20;font-size:.76rem;font-weight:900;letter-spacing:.12em;margin-bottom:7px}.inventory-head h2{margin:0 0 7px;color:#0b2545;font-size:1.75rem}.inventory-head p{margin:0;max-width:760px;color:#526579;line-height:1.55}.browse-link{color:#1c4587;font-weight:800;text-decoration:none;white-space:nowrap}.machine-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.machine-card{border:1px solid #d7e0e8;border-radius:8px;overflow:hidden;background:#fff;display:flex;flex-direction:column}.image-link{height:135px;background:#f7f9fb;display:flex;align-items:center;justify-content:center}.image-link img{width:100%;height:100%;object-fit:contain}.placeholder{padding:12px;text-align:center;color:#667789;font-size:.78rem;font-weight:700}.machine-copy{padding:12px;display:flex;flex-direction:column;flex:1}.exact-badge{align-self:flex-start;margin-bottom:6px;padding:3px 6px;border-radius:4px;background:#fff1e5;color:#a74708;font-size:.63rem;font-weight:900;letter-spacing:.04em}.machine-copy h3{margin:0 0 6px;font-size:.98rem;line-height:1.25}.machine-copy h3 a{color:#0b2545;text-decoration:none}.description{margin:0 0 6px;color:#43566b;font-size:.78rem;font-weight:700;line-height:1.35}.stock{margin:0 0 6px;color:#6b7785;font-size:.72rem}.spec{margin:0 0 9px;color:#526579;font-size:.72rem;line-height:1.4;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.view-button{display:inline-block;align-self:flex-start;margin-top:auto;background:#1c4587;color:#fff;text-decoration:none;font-size:.75rem;font-weight:800;padding:8px 10px;border-radius:5px}@media(max-width:1050px){.machine-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:760px){.inventory-head{align-items:flex-start;flex-direction:column}.machine-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.browse-link{white-space:normal}}@media(max-width:520px){.machine-grid{grid-template-columns:1fr}.image-link{height:210px}}
+.sell-cta{margin-top:32px;padding:26px 28px;border:1px solid #cfd9e3;border-radius:10px;background:#f8fafc;display:flex;align-items:center;justify-content:space-between;gap:28px}.sell-cta h2{margin:0 0 7px;color:#0b2545;font-size:1.45rem}.sell-cta p{margin:0;max-width:760px;color:#526579;line-height:1.55}.sell-button{display:inline-block;background:#1c4587;color:#fff;text-decoration:none;font-weight:800;padding:11px 16px;border-radius:6px;white-space:nowrap}@media(max-width:760px){.sell-cta{align-items:flex-start;flex-direction:column}.sell-button{white-space:normal}}
 </style>
