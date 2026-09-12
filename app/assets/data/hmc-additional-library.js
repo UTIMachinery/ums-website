@@ -6,4 +6,6 @@ import okuma from './okuma-hmc.js'
 import toshiba from './toshiba-hmc.js'
 import toyoda from './toyoda-hmc.js'
 import okk from './okk-hmc.js'
-export default [moriSeiki,makino,haas,cincinnati,okuma,toshiba,toyoda,okk]
+import remaining from './hmc-remaining-library.js'
+
+export default [moriSeiki,makino,haas,cincinnati,okuma,toshiba,toyoda,okk,...remaining]
