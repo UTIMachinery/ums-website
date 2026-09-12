@@ -1,3 +1,4 @@
+import { cleanSpecObject } from '~/utils/specText'
 import p1 from './moriseiki-packed/p1.js'
 import p2 from './moriseiki-packed/p2.js'
 import p3 from './moriseiki-packed/p3.js'
@@ -8,4 +9,4 @@ const bytes = Uint8Array.from(atob(payload), c => c.charCodeAt(0))
 const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))
 const text = await new Response(stream).text()
 
-export default JSON.parse(text)
+export default cleanSpecObject(JSON.parse(text))
