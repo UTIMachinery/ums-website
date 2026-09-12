@@ -1,7 +1,7 @@
 <template>
   <main v-if="machine" class="page">
     <section class="hero"><div class="wrap"><NuxtLink to="../" class="back">← Mori-Seiki HMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>Mori-Seiki {{machine.name}} HMC Specifications</h1><p>Historical horizontal machining center specifications based on {{machine.records}} UMS machine record{{machine.records===1?'':'s'}}.</p></div></section>
-    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Pallet, spindle, control and tooling configurations can vary by year and option package.</div><h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below represents a recorded historical year/control configuration.</p><HmcYearConfigurations :model="` Mori-Seiki ${machine.name}`.trim()" :configurations="yearConfigurations" /></section>
+    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Pallet, spindle, control and tooling configurations can vary by year and option package.</div><h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below represents a recorded historical year/control configuration.</p><HmcYearConfigurations :model="` Mori-Seiki ${machine.name}`.trim()" :configurations="yearConfigurations" /><SpecInventoryMatches manufacturer="Mori-Seiki" :model="machine.name" machine-type="hmc" /></section>
   </main>
   <main v-else class="missing"><h1>Mori-Seiki HMC model not found</h1><NuxtLink to="../">Browse Mori-Seiki HMC specifications</NuxtLink></main>
 </template>
