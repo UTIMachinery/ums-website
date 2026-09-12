@@ -1,6 +1,6 @@
 <template>
   <div>
-    <article v-for="(c,index) in configurations" :key="c.title" class="configuration">
+    <article v-for="(c,index) in configurations" :key="`${c.title}-${index}`" class="configuration">
       <div class="config-head">
         <div>
           <div class="year">{{ c.year }} <span class="year-model">{{ model }}</span></div>
