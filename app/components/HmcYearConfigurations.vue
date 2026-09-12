@@ -3,9 +3,9 @@
     <article v-for="(c,index) in configurations" :key="`${c.title}-${index}`" class="configuration">
       <div class="config-head">
         <div>
-          <div class="year">{{ c.year }} <span class="year-model">{{ model }}</span></div>
-          <h3>{{ c.title }}</h3>
-          <p><strong>Control:</strong> {{ c.control || 'Not recorded' }}</p>
+          <div class="year">{{ cleanText(c.year) }} <span class="year-model">{{ cleanText(model) }}</span></div>
+          <h3>{{ cleanText(c.title) }}</h3>
+          <p><strong>Control:</strong> {{ cleanText(c.control || 'Not recorded') }}</p>
         </div>
         <button type="button" class="copy-button" @click="copySpecs(c,index)">
           {{ copiedIndex===index ? 'Copied!' : 'Copy Specifications' }}
@@ -13,16 +13,17 @@
       </div>
       <div class="spec-grid">
         <div v-for="s in c.specs" :key="s.label" class="spec">
-          <span>{{ s.label }}</span>
-          <strong>{{ s.value }}</strong>
+          <span>{{ cleanText(s.label) }}</span>
+          <strong>{{ cleanText(s.value) }}</strong>
         </div>
       </div>
-      <p v-if="c.note" class="note">{{ c.note }}</p>
+      <p v-if="c.note" class="note">{{ cleanText(c.note) }}</p>
     </article>
   </div>
 </template>
 
 <script setup>
+import { cleanSpecText } from '~/utils/specText'
 const props=defineProps({
   model:{type:String,required:true},
   configurations:{type:Array,required:true}
@@ -31,7 +32,7 @@ const props=defineProps({
 const copiedIndex=ref(null)
 let copiedTimer
 
-const cleanText=value=>String(value??'').replace(/\uFFFD/g,'').replace(/[\u200B-\u200D\uFEFF]/g,'').replace(/\s+/g,' ').trim()
+const cleanText=cleanSpecText
 
 async function copySpecs(c,index){
   const lines=[
