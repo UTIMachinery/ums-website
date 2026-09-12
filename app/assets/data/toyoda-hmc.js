@@ -1,11 +1,2 @@
-export default {"name":"Toyoda","slug":"toyoda","records":28,"models":[
-{"name":"FA-630","slug":"fa-630","records":4,"years":[["1996","Fanuc 15MB",[],"Historical UMS record; individual year retained."],["1997","Fanuc 15MB",[],"Historical UMS records; individual year retained."]]},
-{"name":"FH-55","slug":"fh-55","records":3,"years":[["1989","Fanuc 15M",[],"Historical UMS record."],["1990","Fanuc 15M",[],"Historical UMS record."],["1991","Fanuc 15M",[["Pallet Size","21.6 in"],["X-Axis Travel","28 in"],["Y-Axis Travel","28 in"],["Z-Axis Travel","22 in"],["Spindle Speed","5000 rpm"],["ATC Capacity","120"]],"Historical UMS record."]]},
-{"name":"FA-800","slug":"fa-800","records":2,"years":[["2000","Fanuc 16IM",[],"Historical UMS record."],["New","Fanuc 31i-MB",[],"Historical new-machine record."]]},
-{"name":"FH-45/50","slug":"fh-45-50","records":2,"years":[["1988","Fanuc 15M",[["Pallet Size","17.7 in"],["X-Axis Travel","23.7 in"],["Y-Axis Travel","22 in"],["Z-Axis Travel","19.7 in"],["Spindle Speed","8000 rpm"],["ATC Capacity","48"]],"Two 1988 historical UMS records."]]},
-{"name":"FHN-60T","slug":"fhn-60t","records":2,"years":[
-["1984","Fanuc 6MB/CRT",[["Pallets","2"],["Pallet Size","24.8 in"],["X-Axis Travel","39.4 in"],["Y-Axis Travel","28 in"],["Spindle Taper","50"],["Spindle Speed","4000 rpm"],["ATC Capacity","48"]],"Historical UMS record #13991."],
-["1986","Fanuc 11M/CRT",[["Pallet Size","24.8 in"],["X-Axis Travel","39 in"],["Y-Axis Travel","28 in"],["Z-Axis Travel","28 in"],["Spindle Speed","4000 rpm"],["Spindle Motor","20 hp"],["ATC Capacity","48"],["Pallet Indexing","1°"]],"Historical UMS record #1779."]]},
-{"name":"FHN-80T","slug":"fhn-80t","records":2,"years":[["1985","Fanuc 11M/CRT",[["Pallets","2"],["Pallet Size","31.5 in"],["X-Axis Travel","39.4 in"],["Y-Axis Travel","33.5–35.4 in"],["Z-Axis Travel","30.5–31.5 in"],["Spindle Taper","50"],["Spindle Speed","4000 rpm"],["Spindle Motor","20 hp"],["ATC Capacity","48–64"]],"Two historical 1985 configurations #13419 and #15016."]]},
-{"name":"HSP-550","slug":"hsp-550","records":2,"years":[["2003","Fanuc 16iMA",[["Pallet Size","21.65 in"],["X-Axis Travel","29.5 in"],["Y-Axis Travel","29.5 in"],["Z-Axis Travel","29.5 in"],["Spindle Taper","50"],["Spindle Speed","14000 rpm"],["Spindle Motor","25–30 hp"],["ATC Capacity","40"]],"Historical UMS record."],["2004","Fanuc 16iMA",[["Pallet Size","21.65 in"],["X-Axis Travel","29.5 in"],["Y-Axis Travel","29.5 in"],["Z-Axis Travel","29.5 in"],["Spindle Taper","50"],["Spindle Speed","14000 rpm"],["Spindle Motor","25–30 hp"],["ATC Capacity","40"]],"Historical UMS record."]]}
-]};
+import library from './hmc-complete-library.js'
+export default library.find(m => m.name === 'Toyoda')
