@@ -28,11 +28,12 @@
           <span>Browse VMC Specifications →</span>
         </NuxtLink>
 
-        <article class="card upcoming">
-          <div class="status">IN DEVELOPMENT</div>
+        <NuxtLink to="/spec-library/hmcs" class="card available">
+          <div class="status">AVAILABLE</div>
           <h3>Horizontal Machining Centers (HMC)</h3>
-          <p>Historical horizontal machining center specifications will be organized by manufacturer, model and year/configuration.</p>
-        </article>
+          <p>Historical HMC specifications including pallet data, axis travels, spindle information, tooling and controls.</p>
+          <span>Browse HMC Specifications →</span>
+        </NuxtLink>
 
         <article class="card upcoming">
           <div class="status">IN DEVELOPMENT</div>

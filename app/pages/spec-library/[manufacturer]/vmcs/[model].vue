@@ -3,7 +3,7 @@
     <section class="hero"><div class="wrap"><NuxtLink :to="`/spec-library/${manufacturer.slug}/vmcs`" class="back">← {{manufacturer.name}} VMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>{{manufacturer.name}} {{machine.name}} Specifications</h1><p>Historical vertical machining center specifications based on {{machine.records}} UMS machine record{{machine.records===1?'':'s'}}.</p></div></section>
     <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Values can vary by year, CNC control, spindle package and optional equipment.</div>
       <h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below represents a recorded historical year/configuration. Differences are preserved rather than averaged together.</p>
-      <VmcYearConfigurations :model="`${manufacturer.name} ${machine.name}`" :configurations="yearConfigurations" />
+      <VmcYearConfigurations :model="`${manufacturer.name} ${machine.name}`" :configurations="yearConfigurations" /><SpecInventoryMatches :manufacturer="manufacturer.name" :model="machine.name" machine-type="vmc" />
       <section class="cta"><div><div class="cta-kicker">NEED A MACHINE?</div><h2>Looking for a {{manufacturer.name}} {{machine.name}}?</h2><p>Tell Used Machinery Source what you need and we can help locate a machine that fits your requirements.</p></div><NuxtLink to="/equipment#tell-us-what-you-need">Tell Us What You Need</NuxtLink></section>
     </section>
   </main>
