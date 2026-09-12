@@ -18,7 +18,7 @@
         <article class="card featured"><h3>Mazak</h3><p>H-Series, FH-Series, HTC and related Mazak horizontal machining centers.</p><NuxtLink to="/spec-library/mazak/hmcs">Browse Mazak HMC specifications →</NuxtLink></article>
         <article class="card featured"><h3>Mori-Seiki</h3><p>MH, SH and related Mori-Seiki horizontal machining centers.</p><NuxtLink to="/spec-library/mori-seiki/hmcs">Browse Mori-Seiki HMC specifications →</NuxtLink></article>
         <article class="card featured"><h3>Makino</h3><p>A-Series, MC, MCB and related Makino horizontal machining centers.</p><NuxtLink to="/spec-library/makino/hmcs">Browse Makino HMC specifications →</NuxtLink></article>
-        <article v-for="m in planned" :key="m.name" class="card"><h3>{{m.name}}</h3><p>{{m.text}}</p><span>Manufacturer library page being prepared</span></article>
+        <article v-for="m in completed" :key="m.slug" class="card featured"><h3>{{m.name}}</h3><p>{{m.text}}</p><NuxtLink :to="`/spec-library/${m.slug}/hmcs`">Browse {{m.name}} HMC specifications →</NuxtLink></article>
       </div>
     </section>
 
@@ -37,13 +37,13 @@ const currentHmcs=computed(()=>(machines.value||[]).filter(machine=>Number(machi
 const machineUrl=machine=>{const slug=`${machine.Manufacturer||''}-${machine.Model||''}`.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');return `/equipment/${machine.InvID}/${slug}`}
 async function loadMachineCardImages(){for(const machine of currentHmcs.value){try{const files=await $fetch('/api/images',{query:{invID:machine.InvID}});if(files?.length)machineCardImages.value[machine.InvID]=files[0]}catch(error){console.error(`Could not load image for ${machine.InvID}`,error)}}}
 onMounted(loadMachineCardImages)
-const planned=[
-{name:'Haas',text:'EC, HS and related Haas horizontal machining centers.'},
-{name:'Cincinnati',text:'Magnum, Maxim, Milacron and related Cincinnati HMCs.'},
-{name:'Okuma',text:'MA, MC, MX and related Okuma horizontal machining centers.'},
-{name:'Toshiba',text:'BMC and related Toshiba horizontal machining centers.'},
-{name:'Toyoda',text:'FH and related Toyoda horizontal machining centers.'},
-{name:'OKK',text:'HM and related OKK horizontal machining centers.'}
+const completed=[
+{name:'Haas',slug:'haas',text:'EC and HS series Haas horizontal machining centers.'},
+{name:'Cincinnati',slug:'cincinnati',text:'Maxim, T-Series and HC Cincinnati horizontal machining centers.'},
+{name:'Okuma',slug:'okuma',text:'MC, MX and MB series Okuma horizontal machining centers.'},
+{name:'Toshiba',slug:'toshiba',text:'BMC series Toshiba horizontal machining centers.'},
+{name:'Toyoda',slug:'toyoda',text:'FA, FH, FHN and HSP Toyoda horizontal machining centers.'},
+{name:'OKK',slug:'okk',text:'HM, HP, MCH and PCH series OKK horizontal machining centers.'}
 ]
 useSeoMeta({title:'Horizontal Machining Center Specifications | UMS Spec Library',description:'Research historical horizontal machining center specifications by manufacturer, model and year, including pallet, travel, spindle and ATC data.'})
 useHead({link:[{rel:'canonical',href:'https://www.usedmachinerysource.com/spec-library/hmcs'}]})
