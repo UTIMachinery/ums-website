@@ -1,9 +1,2 @@
-export default {"name":"Toshiba","slug":"toshiba","records":28,"models":[
-{"name":"BMC-80","slug":"bmc-80","records":6,"years":[["1985","Tosnuc 600",[],"Historical UMS record; individual year retained."],["1986","Tosnuc 600",[],"Historical UMS record; individual year retained."],["1987/03","Tosnuc 660",[],"1987 machine with recorded 2003 update/rebuild; historical UMS record."]]},
-{"name":"BMC-100","slug":"bmc-100","records":3,"years":[["1986","Tosnuc 600M",[],"Historical UMS record; individual year retained."],["1988","Tosnuc 600M",[],"Historical UMS record; individual year retained."],["1989","Tosnuc 600MB",[],"Historical UMS record; individual year retained."]]},
-{"name":"BMC-10B","slug":"bmc-10b","records":3,"years":[["1982","Tosnuc 500M",[],"Historical UMS record; individual 1982 configuration."],["1982","Allen Bradley 7320",[],"Historical UMS record; alternate 1982 control/configuration."],["1982","Tosnuc 500M",[],"Historical UMS record; third 1982 configuration."]]},
-{"name":"BMC-800","slug":"bmc-800","records":3,"years":[["1997","Tosnuc 888",[],"Historical UMS record; individual year retained."],["1998","Tosnuc 888",[],"Historical UMS record; individual year retained."],["1999","Control varies",[],"Historical UMS record; individual year retained."]]},
-{"name":"BMC-80E","slug":"bmc-80e","records":2,"years":[
-["1996","Tosnuc 800/CRT",[["Pallets","2"],["Pallet Size","31.5 in"],["X-Axis Travel","63 in"],["Y-Axis Travel","39 in"],["Z-Axis Travel","47 in"],["Spindle Speed","5000 rpm"],["Spindle Motor","30 hp"],["ATC Capacity","90"]],"Historical UMS record."],
-["1997","Tosnuc 888/CRT",[["Pallet Size","31.5 in"],["Pallet Indexing","1°"],["X-Axis Travel","63 in"],["Y-Axis Travel","39.4 in"],["Z-Axis Travel","47.2 in"],["Spindle Taper","50"],["Spindle Speed","5000 rpm"],["Spindle Motor","30 hp"],["ATC Capacity","90"]],"Historical UMS record #13344."]]}
-]};
+import library from './hmc-complete-library.js'
+export default library.find(m => m.name === 'Toshiba')
