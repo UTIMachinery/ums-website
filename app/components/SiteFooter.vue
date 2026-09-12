@@ -3,7 +3,7 @@
     <div class="footer-inner">
       <section class="footer-brand">
         <img src="/Images/ums-logo.png" alt="Used Machinery Source" class="footer-logo" loading="lazy">
-        <p>Buying, selling and sourcing quality used CNC machinery throughout the United States.</p>
+        <p>Buying, Selling & Brokering Used CNC Machinery Throughout North America.</p>
         <div class="footer-contact">
           <a href="tel:+12569801200">(256) 980-1200</a>
           <a href="mailto:jon@usedms.com">jon@usedms.com</a>
