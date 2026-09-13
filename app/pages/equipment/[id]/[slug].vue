@@ -118,6 +118,7 @@ import specificationsData from '~/assets/data/specifications.json'
 import videosData from '~/assets/data/Videos.json'
 import machineDescriptionsData from '~/assets/data/machineDescriptions.json'
 import imagesData from '~/assets/data/images.json'
+import { trackLeadEvent } from '~/utils/analytics'
 const showRequestForm = ref(false)
 const requestSent = ref(false)
 const requestSending = ref(false)
@@ -146,7 +147,7 @@ async function submitRequestForm() {
   const payload = { machine:{ invID:machine.value?.InvID, year:machine.value?.Year, manufacturer:machine.value?.Manufacturer, model:machine.value?.Model }, contact:{ email:requestForm.email, contactName:requestForm.contactName, phone:requestForm.phone, companyName:requestForm.companyName, address:requestForm.address, city:requestForm.city, state:requestForm.state, postalCode:requestForm.postalCode, country:requestForm.country }, machinesToSell:requestForm.machinesToSell, emailList:requestForm.emailList, message:requestForm.message }
   try {
     const response = await $fetch('/api/request-info', { method:'POST', body:payload })
-    console.log('Request submitted:', response); showRequestForm.value=false; requestSent.value=true; requestForm.message=''; requestForm.machinesToSell='no'; setTimeout(()=>{requestSent.value=false},7000)
+    trackLeadEvent('equipment_inquiry_submit',{lead_type:'equipment_inquiry',stock_number:String(machine.value?.InvID||''),manufacturer:machine.value?.Manufacturer||undefined,model:machine.value?.Model||undefined}); console.log('Request submitted:', response); showRequestForm.value=false; requestSent.value=true; requestForm.message=''; requestForm.machinesToSell='no'; setTimeout(()=>{requestSent.value=false},7000)
   } catch(error) { console.error('Request failed:',error); alert('Your request could not be sent. Please try again.') } finally { requestSending.value=false }
 }
 onMounted(() => {
