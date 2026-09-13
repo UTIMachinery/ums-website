@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue'
 import wantedsData from '~/assets/data/wanteds.json'
+import { trackLeadEvent } from '~/utils/analytics'
 
 const route = useRoute()
 const searchTerm = ref('')
@@ -170,6 +171,7 @@ async function submitSellerForm() {
         message: sellerForm.details
       }
     })
+    trackLeadEvent('wanted_response_submit', { lead_type: 'wanted_response', wanted_id: String(selectedWanted.value.WtdID), wanted_type: selectedWanted.value.WebDesc || undefined })
     sellerSent.value = true
     Object.keys(sellerForm).forEach(key => sellerForm[key as keyof typeof sellerForm] = '')
   } catch (e) {
@@ -205,6 +207,7 @@ async function submitWantedRequestForm() {
         message: wantedRequestForm.message
       }
     })
+    trackLeadEvent('wanted_request_submit', { lead_type: 'machine_needed', source: 'wanted_page' })
     wantedRequestSent.value = true
     wantedRequestForm.message = ''
     wantedRequestForm.machinesToSell = 'no'
