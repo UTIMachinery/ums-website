@@ -21,12 +21,14 @@
 </template>
 <script setup>
 import hbmAD from '~/assets/data/hbm-library-a-d.js'
-import hbmEH from '~/assets/data/hbm-library-e-h.js'
+import hbmEF from '~/assets/data/hbm-library-e-f.js'
+import hbmG from '~/assets/data/hbm-library-g.js'
+import hbmH from '~/assets/data/hbm-library-h.js'
 import hbmIM from '~/assets/data/hbm-library-i-m.js'
 import hbmNS from '~/assets/data/hbm-library-n-s.js'
 import hbmTZ from '~/assets/data/hbm-library-t-z.js'
 import { mergeSpecLibrary } from '~/utils/mergeSpecLibrary'
-const library=mergeSpecLibrary([hbmAD,hbmEH,hbmIM,hbmNS,hbmTZ])
+const library=mergeSpecLibrary([hbmAD,hbmEF,hbmG,hbmH,hbmIM,hbmNS,hbmTZ])
 import machinesData from '~/assets/data/machines.json'
 const q=ref('')
 const machines=ref(machinesData)
