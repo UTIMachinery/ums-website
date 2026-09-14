@@ -16,25 +16,19 @@ function decode(payload) {
   return JSON.parse(gunzipSync(Buffer.from(payload, 'base64')).toString('utf8'))
 }
 
-const payloads = [
-  legacyPayload,
-  hbmAD,
-  hbmEH,
-  hbmIM,
-  hbmNS,
-  hbmTZ,
-  vtlAD,
-  vtlEH,
-  vtlIM
-]
+function dedupe(rows) {
+  const seen = new Set()
+  return rows.filter(row => {
+    const key = JSON.stringify(row)
+    if (seen.has(key)) return false
+    seen.add(key)
+    return true
+  })
+}
 
-const seen = new Set()
-const rows = payloads.flatMap(decode).filter(row => {
-  const key = JSON.stringify(row)
-  if (seen.has(key)) return false
-  seen.add(key)
-  return true
-})
+const legacyRows = dedupe(decode(legacyPayload))
+const hbmRows = dedupe([hbmAD,hbmEH,hbmIM,hbmNS,hbmTZ].flatMap(decode))
+const vtlRows = dedupe([vtlAD,vtlEH,vtlIM].flatMap(decode))
 
 export default defineEventHandler((event) => {
   const query = getQuery(event)
@@ -46,5 +40,13 @@ export default defineEventHandler((event) => {
   if (!requested.length) return []
 
   const wanted = new Set(requested)
-  return rows.filter(row => wanted.has(String(row[0])))
+  const type = String(query.type || '').toLowerCase()
+  const primary = type === 'hbm' ? hbmRows : type === 'vtl' ? vtlRows : []
+  const primaryMatches = primary.filter(row => wanted.has(String(row[0])))
+
+  const matchedIds = new Set(primaryMatches.map(row => String(row[0])))
+  const missingIds = new Set(requested.filter(id => !matchedIds.has(String(id))))
+  const fallbackMatches = legacyRows.filter(row => missingIds.has(String(row[0])))
+
+  return dedupe([...primaryMatches, ...fallbackMatches])
 })
