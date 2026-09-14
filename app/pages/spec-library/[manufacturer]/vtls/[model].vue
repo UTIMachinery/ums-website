@@ -27,7 +27,17 @@ const { data: historicalSpecs } = await useAsyncData(
 const detailedSpecs=id=>(historicalSpecs.value||[])
   .filter(row=>String(row[0])===String(id)&&cleanValue(row[3]))
   .map(row=>({label:row[1]?`${String(row[1]).replace(/:$/,'')} — ${row[2]}`:row[2],value:row[3]}))
-const yearConfigurations=computed(()=>(machine.value?.years||[]).map(r=>{const details=detailedSpecs(recordId(r[3]));return{year:r[0],title:`${r[0]} ${manufacturer.value.name} ${machine.value.name} historical configuration`,control:r[1]||'Control not recorded',specs:details,note:r[3]||''}}).filter(r=>r.specs.length))
+const yearConfigurations=computed(()=>(machine.value?.years||[]).map(r=>{
+  const base=(r[2]||[]).filter(s=>cleanValue(s[1])).map(s=>({label:s[0],value:s[1]}))
+  const details=detailedSpecs(recordId(r[3]))
+  return{
+    year:r[0],
+    title:`${r[0]} ${manufacturer.value.name} ${machine.value.name} historical configuration`,
+    control:r[1]||'Control not recorded',
+    specs:details.length?details:base,
+    note:r[3]||''
+  }
+}).filter(r=>r.specs.length))
 useSeoMeta({title:()=>manufacturer.value&&machine.value?`${manufacturer.value.name} ${machine.value.name} VBM VTL Specifications | UMS Spec Library`:'VBM VTL Specifications | UMS',description:()=>manufacturer.value&&machine.value?`Historical ${manufacturer.value.name} ${machine.value.name} VBM/VTL specifications by year including table, swing, height, control and tooling data.`:'Historical VBM/VTL specifications.'})
 useHead(()=>({link:[{rel:'canonical',href:`https://www.usedmachinerysource.com/spec-library/${route.params.manufacturer}/vtls/${route.params.model}`}]}))
 </script><style scoped>
