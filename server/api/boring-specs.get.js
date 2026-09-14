@@ -17,10 +17,16 @@ function decode(payload) {
   return JSON.parse(gunzipSync(Buffer.from(payload, 'base64')).toString('utf8'))
 }
 
+const seen = new Set()
 const rows = [
   specs01, specs02, specs03, specs04, specs05, specs06,
   specs07, specs08, specs09, specs10, specs11, specs12
-].flatMap(decode)
+].flatMap(decode).filter(row => {
+  const key = JSON.stringify(row)
+  if (seen.has(key)) return false
+  seen.add(key)
+  return true
+})
 
 export default defineEventHandler((event) => {
   const query = getQuery(event)
