@@ -6,14 +6,20 @@
 </template>
 <script setup>
 import library from '~/assets/data/vtl-library.js'
-import specifications from '~/assets/data/specifications.json'
 const route=useRoute()
 const manufacturer=computed(()=>library.find(m=>m.slug===route.params.manufacturer)||null)
 const machine=computed(()=>manufacturer.value?.models?.find(m=>m.slug===route.params.model)||null)
 if(!manufacturer.value||!machine.value)setResponseStatus(404)
 const cleanValue=v=>{if(v===null||v===undefined)return false;const x=String(v).trim();return !!x&&!/^[_\-\s]+$/.test(x)&&!x.includes('\t')}
 const recordId=note=>String(note||'').match(/record\s*#(\d+)/i)?.[1]||''
-const detailedSpecs=id=>(specifications||[]).filter(s=>String(s.invid)===String(id)&&cleanValue(s.specvalues)).map(s=>({label:s.groupnames?`${String(s.groupnames).replace(/:$/,'')} — ${s.description}`:s.description,value:s.specvalues}))
+const historicalIds=(machine.value?.years||[]).map(r=>recordId(r[3])).filter(Boolean)
+const { data: historicalSpecs } = await useAsyncData(
+  `boring-specs-${route.path}`,
+  ()=>historicalIds.length ? $fetch('/api/boring-specs',{query:{ids:historicalIds.join(',')}}) : []
+)
+const detailedSpecs=id=>(historicalSpecs.value||[])
+  .filter(row=>String(row[0])===String(id)&&cleanValue(row[3]))
+  .map(row=>({label:row[1]?`${String(row[1]).replace(/:$/,'')} — ${row[2]}`:row[2],value:row[3]}))
 const yearConfigurations=computed(()=>(machine.value?.years||[]).map(r=>{const details=detailedSpecs(recordId(r[3]));return{year:r[0],title:`${r[0]} ${manufacturer.value.name} ${machine.value.name} historical configuration`,control:r[1]||'Control not recorded',specs:details.length?details:(r[2]||[]).filter(s=>cleanValue(s[1])).map(s=>({label:s[0],value:s[1]})),note:r[3]||''}}).filter(r=>r.specs.length))
 useSeoMeta({title:()=>manufacturer.value&&machine.value?`${manufacturer.value.name} ${machine.value.name} VBM VTL Specifications | UMS Spec Library`:'VBM VTL Specifications | UMS',description:()=>manufacturer.value&&machine.value?`Historical ${manufacturer.value.name} ${machine.value.name} VBM/VTL specifications by year including table, swing, height, control and tooling data.`:'Historical VBM/VTL specifications.'})
 useHead(()=>({link:[{rel:'canonical',href:`https://www.usedmachinerysource.com/spec-library/${route.params.manufacturer}/vtls/${route.params.model}`}]}))
