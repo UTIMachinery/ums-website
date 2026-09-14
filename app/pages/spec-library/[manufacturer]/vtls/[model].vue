@@ -5,13 +5,14 @@
   </main><main v-else class="missing"><h1>VBM / VTL model not found</h1><NuxtLink to="/spec-library/vtls">Browse VBM / VTL specifications</NuxtLink></main>
 </template>
 <script setup>
-import vtlAD from '~/assets/data/vtl-library.js'
+import vtlAB from '~/assets/data/vtl-library-a-b.js'
+import vtlCD from '~/assets/data/vtl-library-c-d.js'
 import vtlEH from '~/assets/data/vtl-library-e-h.js'
 import vtlIM from '~/assets/data/vtl-library-i-m.js'
 import vtlNS from '~/assets/data/vtl-library-n-s.js'
 import vtlTZ from '~/assets/data/vtl-library-t-z.js'
 import { mergeSpecLibrary } from '~/utils/mergeSpecLibrary'
-const library=mergeSpecLibrary([vtlAD,vtlEH,vtlIM,vtlNS,vtlTZ])
+const library=mergeSpecLibrary([vtlAB,vtlCD,vtlEH,vtlIM,vtlNS,vtlTZ])
 const route=useRoute()
 const manufacturer=computed(()=>library.find(m=>m.slug===route.params.manufacturer)||null)
 const machine=computed(()=>manufacturer.value?.models?.find(m=>m.slug===route.params.model)||null)
