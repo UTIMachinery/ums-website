@@ -22,7 +22,7 @@ const recordId=note=>String(note||'').match(/record\s*#(\d+)/i)?.[1]||''
 const historicalIds=(machine.value?.years||[]).map(r=>recordId(r[3])).filter(Boolean)
 const { data: historicalSpecs } = await useAsyncData(
   `boring-specs-${route.path}`,
-  ()=>historicalIds.length ? $fetch('/api/boring-specs',{query:{ids:historicalIds.join(',')}}) : []
+  ()=>historicalIds.length ? $fetch('/api/boring-specs',{query:{ids:historicalIds.join(','),type:'vtl'}}) : []
 )
 const detailedSpecs=id=>(historicalSpecs.value||[])
   .filter(row=>String(row[0])===String(id)&&cleanValue(row[3]))
