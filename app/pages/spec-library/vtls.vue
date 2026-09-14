@@ -20,13 +20,14 @@
   </main>
 </template>
 <script setup>
-import vtlAD from '~/assets/data/vtl-library.js'
+import vtlAB from '~/assets/data/vtl-library-a-b.js'
+import vtlCD from '~/assets/data/vtl-library-c-d.js'
 import vtlEH from '~/assets/data/vtl-library-e-h.js'
 import vtlIM from '~/assets/data/vtl-library-i-m.js'
 import vtlNS from '~/assets/data/vtl-library-n-s.js'
 import vtlTZ from '~/assets/data/vtl-library-t-z.js'
 import { mergeSpecLibrary } from '~/utils/mergeSpecLibrary'
-const library=mergeSpecLibrary([vtlAD,vtlEH,vtlIM,vtlNS,vtlTZ])
+const library=mergeSpecLibrary([vtlAB,vtlCD,vtlEH,vtlIM,vtlNS,vtlTZ])
 import machinesData from '~/assets/data/machines.json'
 const q=ref('')
 const machines=ref(machinesData)
