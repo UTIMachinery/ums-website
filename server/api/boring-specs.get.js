@@ -1,35 +1,19 @@
-import { gunzipSync } from 'node:zlib'
-
-import specs01 from '../../app/assets/data/boring-master-specs-01.b64.js'
-import specs02 from '../../app/assets/data/boring-master-specs-02.b64.js'
-import specs03 from '../../app/assets/data/boring-master-specs-03.b64.js'
-import specs04 from '../../app/assets/data/boring-master-specs-04.b64.js'
-import specs05 from '../../app/assets/data/boring-master-specs-05.b64.js'
-import specs06 from '../../app/assets/data/boring-master-specs-06.b64.js'
-import specs07 from '../../app/assets/data/boring-master-specs-07.b64.js'
-import specs08 from '../../app/assets/data/boring-master-specs-08.b64.js'
-import specs09 from '../../app/assets/data/boring-master-specs-09.b64.js'
-import specs10 from '../../app/assets/data/boring-master-specs-10.b64.js'
-import specs11 from '../../app/assets/data/boring-master-specs-11.b64.js'
-import specs12 from '../../app/assets/data/boring-master-specs-12.b64.js'
-
-function decode(name, payload) {
-  try {
-    return JSON.parse(gunzipSync(Buffer.from(payload, 'base64')).toString('utf8'))
-  } catch (error) {
-    console.error('[boring-specs] failed to decode '+name, error?.message || error)
-    return []
-  }
-}
-
-const payloads = [
-  ['01',specs01],['02',specs02],['03',specs03],['04',specs04],
-  ['05',specs05],['06',specs06],['07',specs07],['08',specs08],
-  ['09',specs09],['10',specs10],['11',specs11],['12',specs12]
-]
+import specs001 from '../../app/assets/data/boring-master-specs-001.js'
+import specs002 from '../../app/assets/data/boring-master-specs-002.js'
+import specs003 from '../../app/assets/data/boring-master-specs-003.js'
+import specs004 from '../../app/assets/data/boring-master-specs-004.js'
+import specs005 from '../../app/assets/data/boring-master-specs-005.js'
+import specs006 from '../../app/assets/data/boring-master-specs-006.js'
+import specs007 from '../../app/assets/data/boring-master-specs-007.js'
+import specs008 from '../../app/assets/data/boring-master-specs-008.js'
+import specs009 from '../../app/assets/data/boring-master-specs-009.js'
+import specs010 from '../../app/assets/data/boring-master-specs-010.js'
+import specs011 from '../../app/assets/data/boring-master-specs-011.js'
+import specs012 from '../../app/assets/data/boring-master-specs-012.js'
+import specs013 from '../../app/assets/data/boring-master-specs-013.js'
 
 const seen = new Set()
-const rows = payloads.flatMap(([name,payload])=>decode(name,payload)).filter(row => {
+const rows = [specs001, specs002, specs003, specs004, specs005, specs006, specs007, specs008, specs009, specs010, specs011, specs012, specs013].flat().filter(row => {
   const key = JSON.stringify(row)
   if (seen.has(key)) return false
   seen.add(key)
@@ -42,7 +26,9 @@ export default defineEventHandler((event) => {
     .split(',')
     .map(v => v.trim())
     .filter(Boolean)
+
   if (!requested.length) return []
+
   const wanted = new Set(requested)
   return rows.filter(row => wanted.has(String(row[0])))
 })
