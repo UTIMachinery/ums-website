@@ -1,14 +1,15 @@
 <template>
   <main v-if="manufacturer" class="page">
     <section class="hero"><div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb"><NuxtLink to="/spec-library">Spec Library</NuxtLink><span>/</span><NuxtLink to="/spec-library/grinders">Grinders</NuxtLink><span>/</span><span>{{manufacturer.name}}</span></nav><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>{{manufacturer.name}} Grinder Specifications</h1><p>{{manufacturer.models.length}} historical model pages built from {{manufacturer.records}} UMS grinder, lapper and hone records.</p></div></section>
-    <section class="wrap section"><h2>{{manufacturer.name}} Grinder Model Pages</h2><p class="intro">Historical reference pages only. Actual grinder types and individual year/configuration differences are preserved from the UMS historical database.</p><input v-model="q" class="search" type="search" :placeholder="`Search ${manufacturer.name} Grinder model`"><div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/${manufacturer.slug}/grinders/${m.slug}`" class="card"><strong>{{m.name}}</strong><span>{{m.records}} historical record{{m.records===1?'':'s'}} · {{typeLabel(m)}} · {{yearLabel(m)}}</span></NuxtLink></div></section>
+    <section class="wrap section"><h2>{{manufacturer.name}} Grinder Model Pages</h2><p class="intro">Historical reference pages only. Actual grinder types and individual year/configuration differences are preserved from the UMS historical database.</p><input v-model="q" class="search" type="search" :placeholder="`Search ${manufacturer.name} Grinder model`"><div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/${manufacturerSlug}/grinders/${m.slug}`" class="card"><strong>{{m.name}}</strong><span>{{m.records}} historical record{{m.records===1?'':'s'}} · {{typeLabel(m)}} · {{yearLabel(m)}}</span></NuxtLink></div></section>
     <section class="wrap section note"><div class="label">HISTORICAL DATA METHOD</div><h2>Grinder types and configurations stay separate</h2><p>Rotary surface, reciprocating surface, cylindrical/universal, centerless, tool &amp; cutter, creep-feed, jig, internal, roll and other recorded grinder types remain identified instead of being blended together.</p></section>
   </main><main v-else class="missing"><h1>Grinder manufacturer not found</h1><NuxtLink to="/spec-library/grinders">Browse the Grinder Spec Library</NuxtLink></main>
 </template>
 <script setup>
 import library from '~/assets/data/grinder-library.js'
 const route=useRoute(),q=ref('')
-const manufacturer=computed(()=>library.find(m=>m.slug===route.params.manufacturer)||null)
+const manufacturerSlug=computed(()=>String(route.params.manufacturer||'').toLowerCase())
+const manufacturer=computed(()=>library.find(m=>m.slug===manufacturerSlug.value)||null)
 if(!manufacturer.value)setResponseStatus(404)
 const filtered=computed(()=>{const x=q.value.trim().toLowerCase(),models=manufacturer.value?.models||[];return x?models.filter(m=>m.name.toLowerCase().includes(x)):models})
 const yearLabel=m=>{const y=(m.years||[]).map(v=>String(v[0])).filter(v=>v&&v!=='Year not recorded');return !y.length?'year varies/not recorded':y.length===1?y[0]:`${y[0]}–${y[y.length-1]}`}
