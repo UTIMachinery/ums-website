@@ -73,8 +73,8 @@
 <section v-if="machine" class="sell-this-machine">
   <div>
     <div class="sell-kicker">SELLING OR TRADING?</div>
-    <h2>Have a {{ machine.Manufacturer }} {{ machine.Model }} to Sell or Trade?</h2>
-    <p>We'll be happy to work with you or your OEM distributor if it's a trade-in. Tell us about your {{ machine.Manufacturer }} {{ machine.Model }} and we'll review the details.</p>
+    <h2>Have a {{ machine.Manufacturer }} {{ machine.Model }} or Another {{ sellMachineType }} to Sell or Trade?</h2>
+    <p>We'll be happy to work with you or your OEM distributor if it's a trade-in. Tell us about your {{ machine.Manufacturer }} {{ machine.Model }} or other {{ sellMachineType.toLowerCase() }} and we'll review the details.</p>
   </div>
   <NuxtLink :to="`/sell-your-machine?manufacturer=${encodeURIComponent(machine.Manufacturer || '')}&model=${encodeURIComponent(machine.Model || '')}&year=${encodeURIComponent(machine.Year || '')}&type=${encodeURIComponent(machine.WebDesc || '')}`" class="sell-machine-button">Sell Your {{ machine.Manufacturer }} {{ machine.Model }}</NuxtLink>
 </section>
@@ -283,6 +283,23 @@ const machineTypeMap={
 }
 const machineTypeLink=computed(()=>machineTypeMap[String(machine.value?.Groups||'')]?.[0]||'')
 const machineTypeLinkLabel=computed(()=>machineTypeMap[String(machine.value?.Groups||'')]?.[1]||'used machinery')
+const sellMachineType=computed(()=>{
+  const group=String(machine.value?.Groups||'')
+  const web=String(machine.value?.WebDesc||'').toLowerCase()
+  if(group==='CNC Lathes & Turning Centers') return 'CNC Lathe or Turning Center'
+  if(group==='CNC Vertical Machining Centers and CNC Mills') return 'Vertical Machining Center'
+  if(group==='CNC Horizontal Machining Centers') return 'Horizontal Machining Center'
+  if(group==='Vertical Boring Mills & VTL') return 'VTL or Vertical Boring Mill'
+  if(group==='Grinders, Lappers & Hones'){
+    if(web.includes('lapper')) return 'Lapper'
+    if(web.includes('hone')) return 'Hone'
+    return 'Grinder'
+  }
+  if(group==='Fabricating') return 'Fabrication Machine'
+  if(group==='EDM') return 'EDM Machine'
+  if(group==='Engine Lathes, Drilling & Milling') return seoMachineType(machine.value)
+  return seoMachineType(machine.value)
+})
 const manufacturerSpecLink=computed(()=>{
   const m=String(machine.value?.Manufacturer||'').trim().toLowerCase()
   const type=String(machine.value?.WebDesc||'').toLowerCase()
