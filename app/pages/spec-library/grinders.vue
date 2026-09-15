@@ -2,7 +2,7 @@
   <main class="page">
     <section class="hero"><div class="wrap"><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>Grinder Specifications</h1><p>Research historical grinder specifications by manufacturer, model and year/configuration.</p><div class="actions"><NuxtLink to="/spec-library" class="secondary">← Spec Library</NuxtLink><NuxtLink to="/equipment" class="primary">Current Equipment</NuxtLink></div></div></section>
     <section id="current-machines" class="wrap section current-section">
-      <div class="section-heading-row"><div><div class="label sale-label">FOR SALE NOW</div><h2>Grinders Currently Available</h2></div><NuxtLink to="/equipment?category=Vertical%20Boring%20Mills%20%26%20VTL" class="text-link">View matching equipment →</NuxtLink></div>
+      <div class="section-heading-row"><div><div class="label sale-label">FOR SALE NOW</div><h2>Grinders Currently Available</h2></div><NuxtLink to="/equipment" class="text-link">View all current equipment →</NuxtLink></div>
       <div v-if="currentMachines.length" class="machine-grid">
         <article v-for="machine in currentMachines" :key="machine.InvID" class="machine-card">
           <div class="machine-image-wrap"><img v-if="machineCardImages[machine.InvID]" :src="`/Images/${machineCardImages[machine.InvID]}`" :alt="`Used ${machine.Year||''} ${machine.Manufacturer||''} ${machine.Model||''} grinder for sale`.replace(/\s+/g,' ').trim()" loading="lazy"><div v-else class="machine-image-placeholder">Current UMS Inventory</div></div>
@@ -15,7 +15,7 @@
       <input v-model="q" class="search" type="search" placeholder="Search grinder manufacturer">
       <div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/${m.slug}/grinders`" class="card"><strong>{{m.name}}</strong><span>{{m.models.length}} models · {{m.records}} historical records</span></NuxtLink></div>
     </section>
-    <section class="wrap section guide"><h2>Key grinder Specifications</h2><div class="specs"><div>Grinding capacity / table size</div><div>Maximum swing / work diameter</div><div>Grinding length / travel</div><div>Wheel size / spindle speed</div><div>Spindle motor horsepower</div><div>Wheelhead / workhead details</div><div>Feeds / dresser / coolant</div><div>CNC control & configuration</div></div></section>
+    <section class="wrap section guide"><h2>Key Grinder Specifications</h2><div class="specs"><div>Grinding capacity / table size</div><div>Maximum swing / work diameter</div><div>Grinding length / travel</div><div>Wheel size / spindle speed</div><div>Spindle motor horsepower</div><div>Wheelhead / workhead details</div><div>Feeds / dresser / coolant</div><div>CNC control & configuration</div></div></section>
     <section class="wrap section note"><div class="label">HISTORICAL REFERENCE</div><h2>Built from actual UMS machine records</h2><p>These pages are reference information, not current inventory listings. Capacity, wheel size, travels, controls, horsepower and other specifications can vary by year and configuration.</p></section>
   </main>
 </template>
@@ -34,7 +34,7 @@ async function loadMachineCardImages(){for(const m of currentMachines.value){try
 onMounted(loadMachineCardImages)
 const totalRecords=computed(()=>library.reduce((n,m)=>n+Number(m.records||0),0))
 const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?library.filter(m=>m.name.toLowerCase().includes(x)):library})
-useSeoMeta({title:'Vertical Boring Mill & VTL Specifications | UMS Spec Library',description:'Research historical grinder specifications by manufacturer, model and year from Used Machinery Source records.'})
+useSeoMeta({title:'Grinder Specifications | UMS Spec Library',description:'Research historical grinder, lapper and hone specifications by manufacturer, model, year and grinder type from Used Machinery Source records.'})
 useHead({link:[{rel:'canonical',href:'https://www.usedmachinerysource.com/spec-library/grinders'}]})
 </script>
 <style scoped>
