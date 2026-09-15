@@ -21,3 +21,13 @@ main[class*="spec"] .hero .eyebrow {
 .page .library-hero .kicker {
   color: #f47b20 !important;
 }
+
+/* Final library-wide fallback: every known Spec Library label token. */
+body [class*="kicker"],
+body [class*="eyebrow"] {
+}
+main .hero .kicker,
+main .hero-kicker,
+main .library-hero .hero-kicker {
+  color: #f47b20 !important;
+}
