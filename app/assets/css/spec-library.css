@@ -9,3 +9,15 @@ main[class*="spec"] .hero .kicker,
 main[class*="spec"] .hero .eyebrow {
   color: #f47b20 !important;
 }
+
+/* Older category pages use library-hero/hero-kicker instead of hero/kicker. */
+.spec-library-page .library-hero .hero-kicker,
+.spec-library-page .library-hero .kicker,
+.library-page .library-hero .hero-kicker,
+.library-page .library-hero .kicker,
+.page .hero .kicker,
+.page .hero .eyebrow,
+.page .library-hero .hero-kicker,
+.page .library-hero .kicker {
+  color: #f47b20 !important;
+}
