@@ -52,7 +52,7 @@
         <p>{{ manufacturer.body }}</p>
         <div class="links">
           <NuxtLink to="/equipment">Browse All Used Machinery</NuxtLink>
-          <NuxtLink v-if="manufacturer.specLink" :to="manufacturer.specLink">Research {{ manufacturer.name }} CNC Lathe Specifications</NuxtLink>
+          <NuxtLink v-for="link in (manufacturer.specLinks || [])" :key="link.to" :to="link.to">Research {{ link.label }}</NuxtLink>
           <NuxtLink to="/sell-your-machine">Sell Your Machine</NuxtLink>
         </div>
       </div>
@@ -71,35 +71,37 @@ const manufacturers = {
     name: 'Haas',
     aliases: ['Haas'],
     body: 'Used Haas machinery commonly includes vertical machining centers, CNC lathes and turning centers. Buyers typically compare model, year, axis travels, spindle speed, tool capacity, control features and installed options.',
-    specLink: '/spec-library/haas/cnc-lathes'
+    specLinks: [{ label: 'Haas CNC Lathe Specifications', to: '/spec-library/haas/cnc-lathes' }, { label: 'Haas VMC Specifications', to: '/spec-library/haas/vmcs' }, { label: 'Haas HMC Specifications', to: '/spec-library/haas/hmcs' }]
   },
   doosan: {
     name: 'Doosan',
     aliases: ['Doosan', 'DN Solutions'],
-    body: 'Used Doosan and DN Solutions machinery includes CNC lathes, turning centers and machining centers across a wide range of sizes and configurations.'
+    body: 'Used Doosan and DN Solutions machinery includes CNC lathes, turning centers and machining centers across a wide range of sizes and configurations.',
+    specLinks: [{ label: 'Doosan CNC Lathe Specifications', to: '/spec-library/doosan/cnc-lathes' }, { label: 'Doosan VMC Specifications', to: '/spec-library/doosan/vmcs' }, { label: 'Doosan HMC Specifications', to: '/spec-library/doosan/hmcs' }]
   },
   hurco: {
     name: 'Hurco',
     aliases: ['Hurco'],
-    body: 'Used Hurco machinery commonly includes vertical machining centers and CNC mills known for conversational CNC controls and flexible job-shop capability.'
+    body: 'Used Hurco machinery commonly includes vertical machining centers and CNC mills known for conversational CNC controls and flexible job-shop capability.',
+    specLinks: [{ label: 'Hurco CNC Lathe Specifications', to: '/spec-library/hurco/cnc-lathes' }, { label: 'Hurco VMC Specifications', to: '/spec-library/hurco/vmcs' }]
   },
   mazak: {
     name: 'Mazak',
     aliases: ['Mazak'],
     body: 'Used Mazak machinery includes Quick Turn CNC lathes, Integrex multi-tasking machines, machining centers and other production equipment spanning many generations and control platforms.',
-    specLink: '/spec-library/mazak/cnc-lathes'
+    specLinks: [{ label: 'Mazak CNC Lathe Specifications', to: '/spec-library/mazak/cnc-lathes' }, { label: 'Mazak VMC Specifications', to: '/spec-library/mazak/vmcs' }, { label: 'Mazak HMC Specifications', to: '/spec-library/mazak/hmcs' }]
   },
   'mori-seiki': {
     name: 'Mori-Seiki',
     aliases: ['Mori-Seiki', 'Mori Seiki', 'DMG Mori', 'DMG MORI', 'DMG-Mori'],
     body: 'Used Mori-Seiki and DMG MORI machinery includes CNC turning centers, multi-axis lathes and machining centers known for rigid construction and production capability.',
-    specLink: '/spec-library/mori-seiki/cnc-lathes'
+    specLinks: [{ label: 'Mori-Seiki CNC Lathe Specifications', to: '/spec-library/mori-seiki/cnc-lathes' }, { label: 'Mori-Seiki VMC Specifications', to: '/spec-library/mori-seiki/vmcs' }, { label: 'Mori-Seiki HMC Specifications', to: '/spec-library/mori-seiki/hmcs' }]
   },
   okuma: {
     name: 'Okuma',
     aliases: ['Okuma'],
     body: 'Used Okuma machinery includes CNC lathes, turning centers and machining centers across multiple control generations and machine families.',
-    specLink: '/spec-library/okuma/cnc-lathes'
+    specLinks: [{ label: 'Okuma CNC Lathe Specifications', to: '/spec-library/okuma/cnc-lathes' }, { label: 'Okuma VMC Specifications', to: '/spec-library/okuma/vmcs' }, { label: 'Okuma HMC Specifications', to: '/spec-library/okuma/hmcs' }]
   },
   kingston: {
     name: 'Kingston',
