@@ -335,7 +335,8 @@ const machineStructuredData=computed(()=>{
         itemListElement:[
           {'@type':'ListItem',position:1,name:'Home',item:'https://www.usedmachinerysource.com/'},
           {'@type':'ListItem',position:2,name:'Equipment',item:'https://www.usedmachinerysource.com/equipment'},
-          {'@type':'ListItem',position:3,name,item:url}
+          ...(manufacturerInventoryLink.value?[{'@type':'ListItem',position:3,name:manufacturerDisplayName.value,item:`https://www.usedmachinerysource.com${manufacturerInventoryLink.value}`}]:[]),
+          {'@type':'ListItem',position:manufacturerInventoryLink.value?4:3,name,item:url}
         ]
       }
     ]
