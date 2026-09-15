@@ -22,7 +22,17 @@ const summarySpecs=r=>{
  if(cleanValue(r?.[4]))out.push({label:'Historical Record Summary',value:r[4]})
  return out
 }
-const yearConfigurations=computed(()=>(machine.value?.years||[]).map(r=>{const details=detailedSpecs(recordId(r));return{year:r[0],title:`${r[0]} ${manufacturer.value.name} ${machine.value.name} historical configuration`,control:r[1]||'Control not recorded',specs:details.length?details:summarySpecs(r),note:`Historical UMS record #${r[3]}`}}).filter(r=>r.specs.length))
+const yearConfigurations=computed(()=>(machine.value?.years||[]).map(r=>{
+ const details=detailedSpecs(recordId(r))
+ const type=cleanValue(r?.[2])?[{label:'Machine Type',value:r[2]}]:[]
+ return{
+  year:r[0],
+  title:`${r[0]} ${manufacturer.value.name} ${machine.value.name} historical configuration`,
+  control:r[1]||'Control not recorded',
+  specs:details.length?[...type,...details]:summarySpecs(r),
+  note:`Historical UMS record #${r[3]}`
+ }
+}).filter(r=>r.specs.length))
 useSeoMeta({title:()=>manufacturer.value&&machine.value?`${manufacturer.value.name} ${machine.value.name} Grinder Specifications | UMS Spec Library`:'Grinder Specifications | UMS',description:()=>manufacturer.value&&machine.value?`Historical ${manufacturer.value.name} ${machine.value.name} grinder specifications by year and recorded configuration.`:'Historical grinder specifications from Used Machinery Source.'})
 useHead(()=>({link:[{rel:'canonical',href:`https://www.usedmachinerysource.com/spec-library/${route.params.manufacturer}/grinders/${route.params.model}`}]}))
 </script><style scoped>
