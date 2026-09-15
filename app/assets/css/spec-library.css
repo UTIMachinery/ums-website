@@ -1,0 +1,11 @@
+/* Shared Spec Library identity. Important is intentional: older library pages contain scoped hero/kicker colors. */
+.library-page .hero .kicker,
+.library-page .hero .eyebrow,
+.spec-library-page .hero .kicker,
+.spec-library-page .hero .eyebrow,
+.spec-library .hero .kicker,
+.spec-library .hero .eyebrow,
+main[class*="spec"] .hero .kicker,
+main[class*="spec"] .hero .eyebrow {
+  color: #f47b20 !important;
+}
