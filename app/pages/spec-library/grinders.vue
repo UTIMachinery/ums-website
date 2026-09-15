@@ -15,28 +15,26 @@
       <input v-model="q" class="search" type="search" placeholder="Search grinder manufacturer">
       <div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/${m.slug}/grinders`" class="card"><strong>{{m.name}}</strong><span>{{m.models.length}} models · {{m.records}} historical records</span></NuxtLink></div>
     </section>
-    <section class="wrap section guide"><h2>Key Grinder Specifications</h2><div class="specs"><div>Grinding capacity</div><div>Table / work size</div><div>Grinding length & width</div><div>Wheel size & speed</div><div>Spindle horsepower</div><div>Workhead / centers</div><div>Feeds & travels</div><div>CNC control / dresser</div></div></section>
-    <section class="wrap section note"><div class="label">HISTORICAL REFERENCE</div><h2>Built from actual UMS machine records</h2><p>These pages are reference information, not current inventory listings. Grinding capacity, table size, wheel size, spindle, controls, horsepower and other specifications can vary by year and configuration.</p></section>
+    <section class="wrap section guide"><h2>Key grinder Specifications</h2><div class="specs"><div>Grinding capacity / table size</div><div>Maximum swing / work diameter</div><div>Grinding length / travel</div><div>Wheel size / spindle speed</div><div>Spindle motor horsepower</div><div>Wheelhead / workhead details</div><div>Feeds / dresser / coolant</div><div>CNC control & configuration</div></div></section>
+    <section class="wrap section note"><div class="label">HISTORICAL REFERENCE</div><h2>Built from actual UMS machine records</h2><p>These pages are reference information, not current inventory listings. Capacity, wheel size, travels, controls, horsepower and other specifications can vary by year and configuration.</p></section>
   </main>
 </template>
 <script setup>
-import grinderData from '~/assets/data/grinder-library.js'
+import library from '~/assets/data/grinder-library.js'
 import machinesData from '~/assets/data/machines.json'
-const library=grinderData
 const q=ref('')
 const machines=ref(machinesData)
 const machineCardImages=ref({})
 const webDescription=m=>m.WebDesc||m.Web_Desc||''
 const advertisingSpec=m=>m.AdvSpec||m.Adv_Spec||''
 const offMarketValue=m=>m.OffMarket??m.Off_Market??0
-const isGrinder=m=>String(m.Groups||'')==='Grinders, Lappers & Hones'||/grind|lap|hone/i.test(String(webDescription(m)))
-const currentMachines=computed(()=>(machines.value||[]).filter(m=>Number(m.Sold)===0&&Number(offMarketValue(m))===0&&Number(m.dont_advertise)===0&&isGrinder(m)).sort((a,b)=>Number(b.Year||0)-Number(a.Year||0)))
+const currentMachines=computed(()=>(machines.value||[]).filter(m=>Number(m.Sold)===0&&Number(offMarketValue(m))===0&&Number(m.dont_advertise)===0&&String(m.Groups||'')==='Grinders, Lappers & Hones').sort((a,b)=>Number(b.Year||0)-Number(a.Year||0)))
 const machineUrl=m=>{const slug=`${m.Manufacturer||''}-${m.Model||''}`.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');return `/equipment/${m.InvID}/${slug}`}
 async function loadMachineCardImages(){for(const m of currentMachines.value){try{const files=await $fetch('/api/images',{query:{invID:m.InvID}});if(files?.length)machineCardImages.value[m.InvID]=files[0]}catch(error){console.error(`Could not load image for ${m.InvID}`,error)}}}
 onMounted(loadMachineCardImages)
 const totalRecords=computed(()=>library.reduce((n,m)=>n+Number(m.records||0),0))
 const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?library.filter(m=>m.name.toLowerCase().includes(x)):library})
-useSeoMeta({title:'Grinder Specifications | UMS Spec Library',description:'Research historical grinder specifications by manufacturer, model and year from Used Machinery Source records, including surface, cylindrical, centerless, tool and cutter, jig and other grinders.'})
+useSeoMeta({title:'Vertical Boring Mill & VTL Specifications | UMS Spec Library',description:'Research historical grinder specifications by manufacturer, model and year from Used Machinery Source records.'})
 useHead({link:[{rel:'canonical',href:'https://www.usedmachinerysource.com/spec-library/grinders'}]})
 </script>
 <style scoped>
