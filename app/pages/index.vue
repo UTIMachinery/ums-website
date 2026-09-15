@@ -54,7 +54,7 @@
         <div class="home-categories-copy">
           <p class="category-kicker">BROWSE USED MACHINERY BY TYPE</p>
           <h2>Find the Machine Type You Need</h2>
-          <p>Search current UMS inventory by machine category, or research historical CNC lathe specifications by manufacturer and model.</p>
+          <p>Search current UMS inventory by machine category, or research historical machine specifications by machine type, manufacturer, model and year.</p>
         </div>
         <nav class="home-category-links" aria-label="Used machinery categories">
           <NuxtLink to="/equipment/type/cnc-lathes-turning-centers">Used CNC Lathes &amp; Turning Centers</NuxtLink>
@@ -64,7 +64,7 @@
           <NuxtLink to="/equipment/type/grinders-lappers-hones">Used Grinders, Lappers &amp; Hones</NuxtLink>
           <NuxtLink to="/equipment/type/fabrication-machinery">Used Fabrication Machinery</NuxtLink>
           <NuxtLink to="/equipment/type/edm-machines">Used EDM Machines</NuxtLink>
-          <NuxtLink to="/spec-library/cnc-lathes">CNC Lathe Specification Library</NuxtLink>
+          <NuxtLink to="/spec-library">UMS Machine Specification Library</NuxtLink>
         </nav>
       </div>
     </section>
