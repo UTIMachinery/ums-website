@@ -2,8 +2,15 @@
 <script setup>
 import a from '~/assets/data/engine-library-a-c.js'
 import d from '~/assets/data/engine-library-d-h.js'
+import i from '~/assets/data/engine-library-i-m.js'
+import n from '~/assets/data/engine-library-n-r.js'
+import s from '~/assets/data/engine-library-s-t.js'
+import u from '~/assets/data/engine-library-u-z.js'
 import { mergeSpecLibrary } from '~/utils/mergeSpecLibrary'
-const library=mergeSpecLibrary([a,d])
+const rawLibrary=mergeSpecLibrary([a,d,i,n,s,u])
+const hasUsefulSpecs=v=>(v?.[2]||[]).some(x=>x?.[0] && x[0] !== 'Machine Type' && x[0] !== 'Advertising Summary' && x?.[1])
+const cleanModel=m=>({...m,years:(m.years||[]).filter(hasUsefulSpecs)})
+const library=rawLibrary.map(m=>({...m,models:(m.models||[]).map(cleanModel).filter(x=>x.years.length)})).filter(m=>m.models.length)
 const q=ref('')
 const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?library.filter(m=>m.name.toLowerCase().includes(x)):library})
 useSeoMeta({title:'Engine Lathe, Manual Mill & Drill Specifications | UMS Spec Library',description:'Research historical engine lathe, manual mill, radial arm drill and related conventional machine specifications from Used Machinery Source records.'})
