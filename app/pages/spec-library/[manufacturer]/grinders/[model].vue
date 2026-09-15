@@ -7,8 +7,10 @@
 <script setup>
 import library from '~/assets/data/grinder-library.js'
 const route=useRoute()
-const manufacturer=computed(()=>library.find(m=>m.slug===route.params.manufacturer)||null)
-const machine=computed(()=>manufacturer.value?.models?.find(m=>m.slug===route.params.model)||null)
+const manufacturerSlug=computed(()=>String(route.params.manufacturer||'').toLowerCase())
+const modelSlug=computed(()=>String(route.params.model||'').toLowerCase())
+const manufacturer=computed(()=>library.find(m=>m.slug===manufacturerSlug.value)||null)
+const machine=computed(()=>manufacturer.value?.models?.find(m=>m.slug===modelSlug.value)||null)
 if(!manufacturer.value||!machine.value)setResponseStatus(404)
 const cleanValue=v=>{if(v===null||v===undefined)return false;const x=String(v).trim();return !!x&&!/^[_\-\s]+$/.test(x)&&!x.includes('\t')}
 const historicalIds=(machine.value?.years||[]).map(r=>String(r[3]||'')).filter(Boolean)
