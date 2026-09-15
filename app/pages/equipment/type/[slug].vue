@@ -45,11 +45,8 @@
       <div class="wrap">
         <h2>About {{ category.title }}</h2>
         <p>{{ category.body }}</p>
-        <div class="links">
-          <NuxtLink to="/equipment">Browse All Used Machinery</NuxtLink>
-          <NuxtLink v-if="category.specLink" :to="category.specLink">{{ category.specLabel }}</NuxtLink>
-          <NuxtLink to="/sell-your-machine">Sell Your Machine</NuxtLink>
-        </div>
+        <div v-if="category.specLink" class="library-box"><div class="kicker">UMS SPECIFICATION LIBRARY</div><h3>Historical {{ category.shortTitle }} Specifications</h3><p>Research historical manufacturers, models, years and recorded configurations in the UMS Machinery Specification Library. Historical specifications are reference information and are separate from current machines for sale.</p><NuxtLink :to="category.specLink" class="library-link">{{ category.specLabel }} →</NuxtLink></div>
+        <div class="links"><NuxtLink to="/equipment">Browse All Used Machinery</NuxtLink><NuxtLink to="/sell-your-machine">Sell Your Machine</NuxtLink></div>
       </div>
     </section>
   </main>
@@ -76,28 +73,36 @@ const categories = {
     title: 'Used Vertical Machining Centers for Sale',
     shortTitle: 'Vertical Machining Centers',
     intro: 'Browse current used vertical machining centers and CNC mills for production machining, tooling, mold work and general manufacturing.',
-    body: 'Vertical machining centers are commonly selected by X, Y and Z travel, table size and load, spindle speed and taper, horsepower, automatic tool changer capacity and available options such as probing, through-spindle coolant and 4th-axis capability.'
+    body: 'Vertical machining centers are commonly selected by X, Y and Z travel, table size and load, spindle speed and taper, horsepower, automatic tool changer capacity and available options such as probing, through-spindle coolant and 4th-axis capability.',
+    specLink: '/spec-library/vmcs',
+    specLabel: 'Research Vertical Machining Center Specifications'
   },
   'horizontal-machining-centers': {
     group: 'CNC Horizontal Machining Centers',
     title: 'Used Horizontal Machining Centers for Sale',
     shortTitle: 'Horizontal Machining Centers',
     intro: 'Browse current used horizontal machining centers for production machining, multi-sided part processing and palletized manufacturing.',
-    body: 'Horizontal machining centers are often evaluated by pallet size, axis travels, spindle taper and speed, tool capacity, pallet changer configuration and rotary indexing capability.'
+    body: 'Horizontal machining centers are often evaluated by pallet size, axis travels, spindle taper and speed, tool capacity, pallet changer configuration and rotary indexing capability.',
+    specLink: '/spec-library/hmcs',
+    specLabel: 'Research Horizontal Machining Center Specifications'
   },
   'vertical-boring-mills-vtls': {
     group: 'Vertical Boring Mills & VTL',
     title: 'Used Vertical Boring Mills & VTLs for Sale',
     shortTitle: 'Vertical Boring Mills & VTLs',
     intro: 'Browse current used vertical boring mills and vertical turret lathes for large-diameter turning applications.',
-    body: 'Vertical boring mills and VTLs are commonly used for large round workpieces where swing, turning diameter, height under rail, ram travel, table size and load capacity are important selection criteria.'
+    body: 'Vertical boring mills and VTLs are commonly used for large round workpieces where swing, turning diameter, height under rail, ram travel, table size and load capacity are important selection criteria.',
+    specLink: '/spec-library/vtls',
+    specLabel: 'Research VTL & Vertical Boring Mill Specifications'
   },
   'grinders-lappers-hones': {
     group: 'Grinders, Lappers & Hones',
     title: 'Used Grinders, Lappers & Hones for Sale',
     shortTitle: 'Grinders, Lappers & Hones',
     intro: 'Browse current used grinding, lapping and honing equipment for precision finishing and production work.',
-    body: 'Grinding and finishing machinery can include surface, cylindrical, centerless, internal, tool and cutter, lapping and honing equipment. Important specifications vary by machine type and intended application.'
+    body: 'Grinding and finishing machinery can include surface, cylindrical, centerless, internal, tool and cutter, lapping and honing equipment. Important specifications vary by machine type and intended application.',
+    specLink: '/spec-library/grinders',
+    specLabel: 'Research Grinder, Lapper & Hone Specifications'
   },
   'fabrication-machinery': {
     group: 'Fabricating',
@@ -193,5 +198,5 @@ useHead(() => ({
 </script>
 
 <style scoped>
-.category-page{color:#17273a;background:#fff}.wrap{max-width:1260px;margin:0 auto;padding-left:28px;padding-right:28px}.hero{background:linear-gradient(105deg,#071b33,#0d2c52);color:#fff;padding:46px 0;border-bottom:4px solid #f47b20}.back{color:#d7e5f2;text-decoration:none;font-weight:700}.kicker{margin:17px 0 8px;color:#f47b20;font-size:.78rem;font-weight:900;letter-spacing:.12em}.hero h1{margin:0 0 12px;font-size:clamp(2rem,4vw,3.2rem)}.hero p{max-width:850px;margin:0;line-height:1.65;color:#e8eef5}.section{padding-top:44px;padding-bottom:52px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}.section-head h2{margin:0;color:#0b2545}.sale{color:#22733a}.text-link,.links a{color:#1c4587;font-weight:800;text-decoration:none}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.card{border:1px solid #d7dde5;border-radius:8px;overflow:hidden;background:#fff;display:flex;flex-direction:column}.image-link{height:210px;background:#f7f8fa;display:flex;align-items:center;justify-content:center}.image-link img{width:100%;height:100%;object-fit:contain}.placeholder{color:#667789;font-weight:700}.copy{padding:15px;display:flex;flex-direction:column;flex:1}.copy h3{margin:0 0 7px;font-size:18px;line-height:1.25}.copy h3 a{color:#0b2545;text-decoration:none}.type,.stock,.spec{margin:0 0 8px}.type{font-weight:700;color:#43566b}.stock{font-size:13px;color:#667789}.spec{font-size:13px;line-height:1.45;color:#43566b}.button{display:inline-block;align-self:flex-start;margin-top:auto;background:#1c4587;color:#fff;text-decoration:none;font-weight:800;padding:9px 13px;border-radius:5px}.empty{padding:28px;border:1px solid #d8e0e9;border-left:5px solid #f47b20;border-radius:8px}.info{background:#f4f7fa;padding:48px 0}.info h2{margin-top:0;color:#0b2545}.info p{max-width:980px;line-height:1.7;color:#43566b}.links{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px}@media(max-width:1050px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{align-items:flex-start;flex-direction:column}}@media(max-width:560px){.grid{grid-template-columns:1fr}.wrap{padding-left:18px;padding-right:18px}}
+.category-page{color:#17273a;background:#fff}.wrap{max-width:1260px;margin:0 auto;padding-left:28px;padding-right:28px}.hero{background:linear-gradient(105deg,#071b33,#0d2c52);color:#fff;padding:46px 0;border-bottom:4px solid #f47b20}.back{color:#d7e5f2;text-decoration:none;font-weight:700}.kicker{margin:17px 0 8px;color:#f47b20;font-size:.78rem;font-weight:900;letter-spacing:.12em}.hero h1{margin:0 0 12px;font-size:clamp(2rem,4vw,3.2rem)}.hero p{max-width:850px;margin:0;line-height:1.65;color:#e8eef5}.section{padding-top:44px;padding-bottom:52px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}.section-head h2{margin:0;color:#0b2545}.sale{color:#22733a}.text-link,.links a{color:#1c4587;font-weight:800;text-decoration:none}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.card{border:1px solid #d7dde5;border-radius:8px;overflow:hidden;background:#fff;display:flex;flex-direction:column}.image-link{height:210px;background:#f7f8fa;display:flex;align-items:center;justify-content:center}.image-link img{width:100%;height:100%;object-fit:contain}.placeholder{color:#667789;font-weight:700}.copy{padding:15px;display:flex;flex-direction:column;flex:1}.copy h3{margin:0 0 7px;font-size:18px;line-height:1.25}.copy h3 a{color:#0b2545;text-decoration:none}.type,.stock,.spec{margin:0 0 8px}.type{font-weight:700;color:#43566b}.stock{font-size:13px;color:#667789}.spec{font-size:13px;line-height:1.45;color:#43566b}.button{display:inline-block;align-self:flex-start;margin-top:auto;background:#1c4587;color:#fff;text-decoration:none;font-weight:800;padding:9px 13px;border-radius:5px}.empty{padding:28px;border:1px solid #d8e0e9;border-left:5px solid #f47b20;border-radius:8px}.info{background:#f4f7fa;padding:48px 0}.info h2{margin-top:0;color:#0b2545}.info p{max-width:980px;line-height:1.7;color:#43566b}.library-box{margin-top:28px;padding:24px;border:1px solid #d7e0e8;border-left:5px solid #f47b20;border-radius:8px;background:#fff}.library-box h3{margin:4px 0 8px;color:#0b2545}.library-box p{margin:0 0 14px}.library-link{color:#1c4587;font-weight:800;text-decoration:none}.links{display:flex;flex-wrap:wrap;gap:18px;margin-top:22px}@media(max-width:1050px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{align-items:flex-start;flex-direction:column}}@media(max-width:560px){.grid{grid-template-columns:1fr}.wrap{padding-left:18px;padding-right:18px}}
 </style>
