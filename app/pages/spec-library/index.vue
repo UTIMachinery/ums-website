@@ -11,7 +11,7 @@
     <section class="wrap section">
       <div class="label">BROWSE BY MACHINE TYPE</div>
       <h2>Historical Machine Specifications</h2>
-      <p class="intro">Choose a machine category to browse manufacturer and model specifications. All five primary UMS historical machine categories are now available.</p>
+      <p class="intro">Choose a machine category to browse manufacturer and model specifications. Six major UMS historical machine categories are now available.</p>
 
       <div class="grid">
         <NuxtLink to="/spec-library/cnc-lathes" class="card available">
@@ -47,6 +47,13 @@
           <h3>Horizontal Boring Mills (HBM)</h3>
           <p>Historical HBM specifications organized by manufacturer, model, year and machine style such as Table Type, Floor Type or Planer Type.</p>
           <span>Browse HBM Specifications →</span>
+        </NuxtLink>
+
+        <NuxtLink to="/spec-library/grinders" class="card available">
+          <div class="status">AVAILABLE</div>
+          <h3>Grinders</h3>
+          <p>Historical grinder specifications covering surface, cylindrical, centerless, tool &amp; cutter, jig, creep-feed and other grinder configurations.</p>
+          <span>Browse Grinder Specifications →</span>
         </NuxtLink>
       </div>
     </section>
