@@ -13,7 +13,7 @@
     </section>
     <section class="wrap section"><div class="label">BROWSE BY MANUFACTURER</div><h2>Grinder Manufacturers</h2><p class="intro">This library contains {{ totalRecords }} historical UMS grinder records across {{ library.length }} manufacturers. Models and year/configuration differences are preserved from the historical records.</p>
       <input v-model="q" class="search" type="search" placeholder="Search grinder manufacturer">
-      <div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/${m.slug}/grinders`" class="card"><strong>{{m.name}}</strong><span>{{m.models.length}} models · {{m.records}} historical records</span></NuxtLink></div>
+      <div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/grinders/${m.slug}`" class="card"><strong>{{m.name}}</strong><span>{{m.models.length}} models · {{m.records}} historical records</span></NuxtLink></div>
     </section>
     <section class="wrap section guide"><h2>Key Grinder Specifications</h2><div class="specs"><div>Grinding capacity / table size</div><div>Maximum swing / work diameter</div><div>Grinding length / travel</div><div>Wheel size / spindle speed</div><div>Spindle motor horsepower</div><div>Wheelhead / workhead details</div><div>Feeds / dresser / coolant</div><div>CNC control & configuration</div></div></section>
     <section class="wrap section note"><div class="label">HISTORICAL REFERENCE</div><h2>Built from actual UMS machine records</h2><p>These pages are reference information, not current inventory listings. Capacity, wheel size, travels, controls, horsepower and other specifications can vary by year and configuration.</p></section>
