@@ -1,0 +1,38 @@
+<template>
+  <main class="page">
+    <section class="hero"><div class="wrap"><NuxtLink to="/equipment" class="back">← All Equipment</NuxtLink><div class="kicker">HURCO MACHINERY RESOURCE CENTER</div><h1>Used Hurco CNC Machines &amp; Hurco Model Specifications</h1><p>Browse current used Hurco machines for sale, research major Hurco CNC model families, and move directly between available equipment and UMS historical specification resources.</p></div></section>
+
+    <section class="wrap section">
+      <div class="eyebrow">CURRENT HURCO INVENTORY</div><div class="head"><h2>{{ machines.length }} Used Hurco Machines Available</h2><NuxtLink to="/equipment/manufacturer/hurco">View all Hurco inventory →</NuxtLink></div>
+      <div class="inventory"><article v-for="m in machines.slice(0,8)" :key="m.InvID" class="machine"><NuxtLink :to="machineUrl(m)"><strong>{{m.Year}} Hurco {{m.Model}}</strong><span>{{m.WebDesc}}</span><small>{{m.AdvSpec}}</small></NuxtLink></article></div>
+    </section>
+
+    <section class="band"><div class="wrap section"><div class="eyebrow">RESEARCH HURCO MODELS</div><h2>Popular Hurco Machine Families</h2><p class="intro">Use these model families to move from broad Hurco research into UMS historical specification pages. Year, spindle, travels, control and installed options can vary by individual machine.</p>
+      <div class="families">
+        <div class="family"><h3>VM, VMX and TM machining-center and turning families</h3><p>Research historical Hurco models by machine type, model and year in the UMS Machinery Specification Library.</p><div class="twolinks"><NuxtLink class="more" to="/spec-library/cnc-lathes">CNC lathe specifications →</NuxtLink><NuxtLink class="more" to="/spec-library/vmcs">VMC specifications →</NuxtLink><NuxtLink class="more" to="/spec-library/hmcs">HMC specifications →</NuxtLink></div></div>
+        <div class="family"><h3>Current Hurco Machinery</h3><p>See the individual machine page for the exact recorded configuration, specifications, equipment and options of each machine currently represented by UMS.</p><NuxtLink class="more" to="/equipment/manufacturer/hurco">Browse current inventory →</NuxtLink></div>
+      </div></div>
+    </section>
+
+    <section class="wrap section about"><div class="eyebrow">BUYING USED HURCO MACHINERY</div><h2>What to Compare on a Used Hurco CNC Machine</h2><p>Model and year are only the starting point. When comparing used Hurco machinery, review axis travels, spindle taper and speed, horsepower, toolchanger capacity, control generation, probing, high-speed machining, through-spindle coolant, rotary or 4th/5th-axis capability, chip handling and other installed options. UMS equipment pages show the recorded configuration of the individual machine, while the Spec Library provides historical model reference information.</p></section>
+
+    <section class="wrap actions"><div><div class="eyebrow">LOOKING FOR A HURCO?</div><h2>Don't see the Hurco machine you need?</h2><p>Send us the model, capacity or configuration you're looking for and we'll use our industry network to help locate it.</p><NuxtLink to="/equipment#tell-us-what-you-need" class="button">Tell Us What You Need</NuxtLink></div><div><div class="eyebrow">SELLING OR TRADING?</div><h2>Have a Hurco machine to sell or trade in?</h2><p>We'll be happy to work with you or your OEM distributor if it's a trade-in.</p><NuxtLink to="/sell-your-machine" class="button">Tell Us About Your Machine</NuxtLink></div></section>
+  </main>
+</template>
+
+<script setup>
+import machinesData from '~/assets/data/machines.json'
+const manufacturerKeys=["hurco"]
+const machines=computed(()=>(machinesData||[]).filter(m=>manufacturerKeys.includes(String(m.Manufacturer||'').trim().toLowerCase())&&Number(m.Sold)===0&&Number(m.OffMarket??m.Off_Market??0)===0&&Number(m.dont_advertise)===0).sort((a,b)=>Number(b.Year||0)-Number(a.Year||0)))
+const slug=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const machineUrl=m=>`/equipment/${m.InvID}/${slug(`${m.Manufacturer}-${m.Model}`)}`
+const vf=[]
+const st=[]
+const canonical='https://www.usedmachinerysource.com/manufacturers/hurco'
+const description='Research Hurco CNC machine models and historical specifications, browse current used Hurco machines for sale, or tell Used Machinery Source what Hurco equipment you need.'
+useSeoMeta({title:'Used Hurco CNC Machines & Specifications | UMS',description,ogTitle:'Used Hurco CNC Machines & Model Specifications',ogDescription:description,ogType:'website',ogUrl:canonical})
+useHead({link:[{rel:'canonical',href:canonical}],script:[{type:'application/ld+json',children:JSON.stringify({'@context':'https://schema.org','@type':'CollectionPage',name:'Used Hurco CNC Machines & Model Specifications',url:canonical,description})}]})
+</script>
+<style scoped>
+.page{color:#17273a;background:#fff;padding-bottom:64px}.wrap{max-width:1220px;margin:0 auto;padding-left:28px;padding-right:28px}.hero{background:linear-gradient(105deg,#071b33,#0d2c52);color:#fff;padding:54px 0;border-bottom:4px solid #f47b20}.back{color:#d7e5f2;text-decoration:none;font-weight:700}.kicker,.eyebrow{color:#f47b20;font-size:.78rem;font-weight:900;letter-spacing:.12em;margin:17px 0 8px}.hero h1{font-size:clamp(2.2rem,4.5vw,3.6rem);line-height:1.08;margin:0 0 15px}.hero p{max-width:900px;line-height:1.7;color:#d9e4ef}.section{padding-top:46px;padding-bottom:46px}.head{display:flex;justify-content:space-between;align-items:end;gap:20px}.head h2,.section h2,.actions h2{color:#0b2545;margin:0 0 14px}.head a,.more{color:#1c4587;font-weight:800;text-decoration:none}.inventory{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}.machine{border:1px solid #d7e0e8;border-radius:8px;padding:15px}.machine a{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:#17273a}.machine strong{color:#0b2545}.machine span{font-size:.88rem;font-weight:700}.machine small{color:#5c6d7e;line-height:1.4}.band{background:#f4f7fa}.intro,.about p,.actions p{line-height:1.7;color:#526579}.families{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:24px}.family{background:#fff;border:1px solid #d7e0e8;border-radius:9px;padding:22px}.family h3{color:#0b2545;margin-top:0}.family p{color:#526579;line-height:1.6}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.chips a,.chips span{background:#eef3f8;border:1px solid #d5dee8;border-radius:999px;padding:7px 10px;color:#1c4587;text-decoration:none;font-weight:800;font-size:.88rem}.twolinks{display:flex;gap:14px;flex-wrap:wrap}.actions{max-width:1220px;margin:20px auto 0;padding:0 28px;display:grid;grid-template-columns:1fr 1fr;gap:18px}.actions>div{background:linear-gradient(105deg,#071b33,#0d2c52);color:#fff;border-top:5px solid #f47b20;border-radius:9px;padding:26px}.actions h2{color:#fff}.actions p{color:#d9e4ef}.button{display:inline-block;background:#f47b20;color:#fff;text-decoration:none;font-weight:900;padding:11px 15px;border-radius:5px}@media(max-width:900px){.inventory{grid-template-columns:repeat(2,1fr)}.families,.actions{grid-template-columns:1fr}}@media(max-width:560px){.inventory{grid-template-columns:1fr}.wrap,.actions{padding-left:18px;padding-right:18px}.head{align-items:flex-start;flex-direction:column}}
+</style>
