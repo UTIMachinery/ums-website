@@ -21,7 +21,7 @@ if (fs.existsSync(imagesFolder)) {
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  css: ['~/assets/css/wanted-enhancements.css', '~/assets/css/compact-inventory-cards.css'],
+  css: ['~/assets/css/wanted-enhancements.css', '~/assets/css/compact-inventory-cards.css', '~/assets/css/spec-library.css'],
 
   app: {
     head: {
