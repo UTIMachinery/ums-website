@@ -34,7 +34,7 @@
 
       <nav aria-label="Used Machinery Source resources">
         <h2>Resources</h2>
-        <NuxtLink to="/spec-library/cnc-lathes">CNC Lathe Spec Library</NuxtLink>
+        <NuxtLink to="/spec-library">Machine Specification Library</NuxtLink>
         <NuxtLink to="/wanted">Wanted Machinery</NuxtLink>
         <NuxtLink to="/sell-your-machine">Sell Your Machine</NuxtLink>
         <NuxtLink to="/services">Services</NuxtLink>
