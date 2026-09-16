@@ -8,15 +8,15 @@
   <main v-else class="missing"><h1>Bridgeport VMC model not found</h1><NuxtLink to="/spec-library/bridgeport/vmcs">Browse Bridgeport VMC specifications</NuxtLink></main>
 </template>
 <script setup>
-import raw from '~/assets/data/bridgeport-vmc-core.js'
-import { historicalConfigurations } from '~/utils/historicalSpecLibrary'
+import { historicalConfigurations, historicalModelBySlug } from '~/utils/historicalSpecLibrary'
 const route=useRoute()
-const entry=computed(()=>raw.find(m=>m[1]===route.params.model))
+const isVmc=m=>String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase().startsWith('cnc machining centers, vertical')
+const modelName=computed(()=>historicalModelBySlug({manufacturer:'Bridgeport',slug:String(route.params.model||''),machineFilter:isVmc}))
+const historicalConfigs=computed(()=>modelName.value?historicalConfigurations({manufacturer:'Bridgeport',model:modelName.value,machineFilter:isVmc}):[])
+const entry=computed(()=>modelName.value?[modelName.value,String(route.params.model||''),historicalConfigs.value.length,historicalConfigs.value[0]?.year||'',historicalConfigs.value.at(-1)?.year||'',[]]:null)
 if(!entry.value)setResponseStatus(404)
-const historicalConfigs=computed(()=>entry.value?historicalConfigurations({manufacturer:'Bridgeport',model:entry.value[0]}):[])
+const actualRecords=computed(()=>historicalConfigs.value.length?historicalConfigs.value:null)
 useSeoMeta({title:()=>entry.value?`Bridgeport ${entry.value[0]} VMC Specifications | UMS Spec Library`:'Bridgeport VMC Specifications | UMS',description:()=>entry.value?`Historical Bridgeport ${entry.value[0]} vertical machining center specifications including travels, table size, spindle, horsepower and tool capacity.`:'Historical Bridgeport VMC specifications.'})
-const actualRecords=computed(()=>yearData.find(m=>m[1]===route.params.model)||null)
-const yearConfigurations=computed(()=>(actualRecords.value?.[2]||[]).map(r=>({year:r[0],title:`${r[0]} Bridgeport ${entry.value[0]} historical configuration`,control:r[1]||'Control not recorded',specs:(r[2]||[]).map(s=>({label:s[0],value:s[1]})),note:r[3]||''})))
 const canonical=computed(()=>`https://www.usedmachinerysource.com/spec-library/bridgeport/vmcs/${route.params.model}`)
 useHead(()=>({link:[{rel:'canonical',href:canonical.value}]}))
 </script>
