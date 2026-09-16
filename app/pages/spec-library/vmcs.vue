@@ -75,6 +75,7 @@
 </template>
 <script setup>
 import otherLibrary from '~/assets/data/vmc-remaining-library.js'
+import { historicalManufacturers } from '~/utils/historicalSpecLibrary'
 import machinesData from '~/assets/data/machines.json'
 
 const machines=ref(machinesData)
@@ -110,10 +111,15 @@ async function loadMachineCardImages(){
   }
 }
 onMounted(loadMachineCardImages)
+const vmcHistoricalFilter=machine=>String(machine.WebDesc||machine.Web_Desc||'').trim().toLowerCase().includes('machining centers, vertical')
+const historicalVmcManufacturers=historicalManufacturers({machineFilter:vmcHistoricalFilter})
+const vmcSlug=value=>String(value||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
 const otherQ=ref('')
 const filteredOther=computed(()=>{
   const x=otherQ.value.trim().toLowerCase()
-  const list=[...otherLibrary]
+  const existing=new Set(otherLibrary.map(m=>String(m.name||'').toLowerCase()))
+  const generated=historicalVmcManufacturers.filter(name=>!existing.has(name.toLowerCase())).map(name=>({name,to:`/spec-library/${vmcSlug(name)}/vmcs`,models:[]}))
+  const list=[...otherLibrary,...generated]
   return x?list.filter(m=>m.name.toLowerCase().includes(x)):list
 })
 const planned=[
