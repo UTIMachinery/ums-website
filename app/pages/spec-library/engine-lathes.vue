@@ -7,12 +7,18 @@ import n from '~/assets/data/engine-library-n-r.js'
 import s from '~/assets/data/engine-library-s-t.js'
 import u from '~/assets/data/engine-library-u-z.js'
 import { mergeSpecLibrary } from '~/utils/mergeSpecLibrary'
+import { historicalManufacturers } from '~/utils/historicalSpecLibrary'
 const rawLibrary=mergeSpecLibrary([a,d,i,n,s,u])
 const hasUsefulSpecs=v=>(v?.[2]||[]).some(x=>x?.[0] && x[0] !== 'Machine Type' && x[0] !== 'Advertising Summary' && x?.[1])
 const cleanModel=m=>({...m,years:(m.years||[]).filter(hasUsefulSpecs)})
 const library=rawLibrary.map(m=>({...m,models:(m.models||[]).map(cleanModel).filter(x=>x.years.length)})).filter(m=>m.models.length)
+const conventionalFilter=m=>{const x=String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase();return x==='lathes, manual'||x==='mills, manual'||x==='mills, cnc'||x==='radial arm drills'||x==='drills, turret'||x==='drills, gun'||x==='jig mills'||x==='jig mills, cnc'||x==='drills, h.d. & sensitive, multi spindle'||x==='drills, heavy duty & sensitive, sgl. vert. spdl.'||x==='drills, structural, multi spdl'||x==='millers, gantry, n/c & cnc'}
+const conventionalSlug=v=>String(v||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const historicalConventionalManufacturers=historicalManufacturers({machineFilter:conventionalFilter})
+const existingConventionalNames=new Set(library.map(m=>String(m.name||'').toLowerCase()))
+const completeLibrary=[...library,...historicalConventionalManufacturers.filter(name=>!existingConventionalNames.has(name.toLowerCase())).map(name=>({name,slug:conventionalSlug(name),models:[]}))]
 const q=ref('')
-const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?library.filter(m=>m.name.toLowerCase().includes(x)):library})
+const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?completeLibrary.filter(m=>m.name.toLowerCase().includes(x)):completeLibrary})
 useSeoMeta({title:'Engine Lathe, Manual Mill & Drill Specifications | UMS Spec Library',description:'Research historical engine lathe, manual mill, radial arm drill and related conventional machine specifications from Used Machinery Source records.'})
 useHead({link:[{rel:'canonical',href:'https://www.usedmachinerysource.com/spec-library/engine-lathes'}]})
 </script>
