@@ -39,7 +39,7 @@
       <p class="intro">Search or browse all exact model designations supported by UMS historical records. Exact wording is preserved rather than normalized into a different model name.</p>
       <input v-model="query" class="search" type="search" :placeholder="`Search ${manufacturer} model — e.g. ${searchExample}`" />
       <div class="additional-grid">
-        <NuxtLink v-for="entry in filteredEntries" :key="entry.slug" :to="`/spec-library/${routeSlug}/${entry.slug}`" class="additional-link">{{ entry.model }} → <small>{{ entry.records.length }} historical {{ entry.records.length===1?'configuration':'configurations' }}</small></NuxtLink>
+        <NuxtLink v-for="entry in filteredEntries" :key="entry.slug" :to="`/spec-library/${routeSlug}/${entry.slug}`" class="additional-link">{{ entry.model }} → <small>{{ entry.count }} historical {{ entry.count===1?'configuration':'configurations' }}</small></NuxtLink>
       </div>
       <p v-if="!filteredEntries.length" class="empty">No models match that search.</p>
     </section>
@@ -56,11 +56,12 @@
 <script setup>
 import { computed, ref, onMounted } from 'vue'
 import machinesData from '~/assets/data/machines.json'
+import { historicalModelSummaries } from '~/utils/historicalSpecLibrary'
 
 const props=defineProps({
   manufacturer:{type:String,required:true},
   routeSlug:{type:String,required:true},
-  entries:{type:Array,required:true},
+  entries:{type:Array,default:()=>[]},
   aliases:{type:Array,default:()=>[]},
   headingManufacturer:{type:String,default:''},
   historicalNote:{type:String,default:''}
@@ -72,7 +73,9 @@ const displayName=computed(()=>props.headingManufacturer||props.manufacturer)
 const headingManufacturer=computed(()=>displayName.value)
 const currentHeading=computed(()=>`${displayName.value} CNC Lathes Currently Available`)
 const searchExample=computed(()=>props.routeSlug==='okuma'?'LB-15, LU-15, Cadet':'SL-25, NL-2500, ZL-200')
-const validEntries=computed(()=>props.entries.filter(e=>e.records?.some(r=>r.specs?.length||r.recordedSpecs?.trim())))
+const isLathe=m=>String(m.Groups||'').toLowerCase().includes('cnc lathe')||String(m.WebDesc||m.Web_Desc||'').toLowerCase().includes('turning center')
+const sourceEntries=computed(()=>historicalModelSummaries({manufacturer:props.manufacturer,machineFilter:isLathe}))
+const validEntries=computed(()=>sourceEntries.value)
 const filteredEntries=computed(()=>{const q=query.value.trim().toLowerCase();return validEntries.value.filter(e=>!q||e.model.toLowerCase().includes(q))})
 const names=computed(()=>[props.manufacturer,...props.aliases].map(x=>String(x).trim().toLowerCase()))
 const webDescription=m=>m.WebDesc||m.Web_Desc||''
