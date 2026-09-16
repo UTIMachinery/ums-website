@@ -10,10 +10,11 @@ import p7 from '~/assets/data/mazak-full-specs-7.js'
 const route=useRoute()
 const excluded=new Set(['kfhgkdfj'])
 const raw=[...p1,...p2,...p3,...p4,...p5,...p6,...p7]
-const hit=raw.find(x=>x[1]===route.params.slug&&!excluded.has(x[1]))
-if(!hit)throw createError({statusCode:404,statusMessage:'Mazak model not found'})
+const hits=raw.filter(x=>x[1]===route.params.slug&&!excluded.has(x[1]))
+if(!hits.length)throw createError({statusCode:404,statusMessage:'Mazak model not found'})
+const hit=hits[0]
 const item={model:hit[0],slug:hit[1]}
-const configurations=(hit[2]||[]).map(c=>({
+const configurations=hits.flatMap(x=>x[2]||[]).map(c=>({
   invId:c[0],
   year:c[1],
   control:c[2],
