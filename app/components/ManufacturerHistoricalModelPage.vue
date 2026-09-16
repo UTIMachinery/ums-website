@@ -2,7 +2,8 @@
 <script setup>
 import { computed } from 'vue'
 const props=defineProps({entry:{type:Object,required:true},manufacturer:{type:String,required:true},routeSlug:{type:String,required:true}})
-import { historicalConfigurations } from '~/utils/historicalSpecLibrary'\nconst configurations=computed(()=>historicalConfigurations({manufacturer:props.manufacturer,model:props.entry.model}))
+import { historicalConfigurations } from '~/utils/historicalSpecLibrary'
+const configurations=computed(()=>historicalConfigurations({manufacturer:props.manufacturer,model:props.entry.model}))
 useSeoMeta({title:()=>`${props.manufacturer} ${props.entry.model} Specifications by Year | UMS Spec Library`,description:()=>`Historical ${props.manufacturer} ${props.entry.model} CNC lathe specifications, years, controls and configurations recorded by Used Machinery Source.`})
 const canonical=computed(()=>`https://www.usedmachinerysource.com/spec-library/${props.routeSlug}/${props.entry.slug}`)
 const structuredData=computed(()=>({
