@@ -177,6 +177,7 @@
 
 <script setup>
 import machinesData from '~/assets/data/machines.json'
+import { historicalManufacturers } from '~/utils/historicalSpecLibrary'
 
 const machines = ref(machinesData)
 const machineCardImages = ref({})
@@ -213,12 +214,22 @@ const machineTypes = [
   { title: 'Multi-Axis & Mill-Turn Machines', description: 'More advanced turning platforms combining multiple axes, live tooling, milling capability, multiple turrets or other integrated machining functions.' }
 ]
 
-const featuredManufacturers = [
-  { name: 'Mazak CNC Lathes & Turning Centers', families: 'Quick-Turn, QT, SQT, Slant-Turn, Integrex, Multiplex, M-Series, Powermaster and other Mazak turning platforms.', to: '/spec-library/mazak/cnc-lathes', linkLabel: 'Browse Mazak specifications →' },
-  { name: 'Haas CNC Lathes & Turning Centers', families: 'SL, ST, TL and HL series CNC turning machines.', to: '/spec-library/haas/cnc-lathes', linkLabel: 'Browse Haas specifications →' },
-  { name: 'Okuma CNC Lathes & Turning Centers', families: 'LB, LC, LU, LR, Cadet and other Okuma turning machines.', to: '/spec-library/okuma/cnc-lathes', linkLabel: 'Browse Okuma specifications →' },
-  { name: 'Mori-Seiki / DMG MORI CNC Lathes & Turning Centers', families: 'SL, ZL, LL, TL, DL and other Mori-Seiki turning machines, with current DMG MORI inventory included where applicable.', to: '/spec-library/mori-seiki/cnc-lathes', linkLabel: 'Browse Mori-Seiki / DMG MORI specifications →' }
-]
+const manufacturerSlug = value => String(value || '').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const isHistoricalLathe = machine => String(machine.Groups || '').toLowerCase().includes('cnc lathe') || String(machine.WebDesc || machine.Web_Desc || '').toLowerCase().includes('turning center')
+const historicalLatheManufacturers = historicalManufacturers({ machineFilter: isHistoricalLathe })
+const establishedManufacturerRoutes = {
+  mazak: '/spec-library/mazak/cnc-lathes',
+  haas: '/spec-library/haas/cnc-lathes',
+  okuma: '/spec-library/okuma/cnc-lathes',
+  'mori-seiki': '/spec-library/mori-seiki/cnc-lathes'
+}
+const manufacturerRoute = name => establishedManufacturerRoutes[manufacturerSlug(name)] || `/spec-library/${manufacturerSlug(name)}/cnc-lathes`
+const featuredManufacturers = historicalLatheManufacturers.map(name => ({
+  name,
+  families: 'Historical CNC lathe and turning-center models with usable recorded specifications.',
+  to: manufacturerRoute(name),
+  linkLabel: `Browse ${name} specifications →`
+}))
 
 const specificationGuide = [
   { name: 'Swing', description: 'The maximum workpiece diameter that can physically swing within the machine envelope.' },
@@ -235,12 +246,12 @@ const specificationGuide = [
   { name: 'Control', description: 'The CNC control can be especially important when comparing older machines, operator familiarity, programming features and serviceability.' }
 ]
 
-const libraryFamilies = [
-  { name: 'Mazak', families: ['Quick-Turn', 'Quick Turn', 'QT', 'SQT', 'Slant-Turn', 'Integrex', 'Multiplex', 'M-Series', 'Powermaster'], to: '/spec-library/mazak/cnc-lathes', linkLabel: 'Browse Mazak Spec Library →' },
-  { name: 'Haas', families: ['SL Series', 'ST Series', 'TL Series', 'HL Series'], to: '/spec-library/haas/cnc-lathes', linkLabel: 'Browse Haas Spec Library →' },
-  { name: 'Okuma', families: ['LB Series', 'LC Series', 'LU Series', 'LR Series', 'Cadet'], to: '/spec-library/okuma/cnc-lathes', linkLabel: 'Browse Okuma Spec Library →' },
-  { name: 'Mori-Seiki / DMG MORI', families: ['SL Series', 'ZL Series', 'LL Series', 'TL Series', 'DL Series'], to: '/spec-library/mori-seiki/cnc-lathes', linkLabel: 'Browse Mori-Seiki / DMG MORI Spec Library →' }
-]
+const libraryFamilies = historicalLatheManufacturers.map(name => ({
+  name,
+  families: ['Historical CNC Lathe Models'],
+  to: manufacturerRoute(name),
+  linkLabel: `Browse ${name} Spec Library →`
+}))
 
 async function loadMachineCardImages() {
   for (const machine of currentCncLathes.value) {
