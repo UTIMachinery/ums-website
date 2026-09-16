@@ -18,7 +18,7 @@ const configurations=(hit[2]||[]).map(c=>({
   year:c[1],
   control:c[2],
   title:`${c[1]||'Historical'} Mazak ${hit[0]}`,
-  specs:(c[3]||[]).map(s=>({description:s[0],specvalues:s[1]})),
+  specs:(c[3]||[]).map(s=>({description:s[0],specvalues:s[1],label:s[0],value:s[1]})),
   equippedWith:c[4]||[],
   note:'Historical UMS machine record. Verify specifications for the exact machine, serial number and configuration.'
 }))
