@@ -48,3 +48,26 @@ export function historicalConfigurations({ manufacturer, model, machineFilter } 
       return Number(b.invID) - Number(a.invID)
     })
 }
+
+export function historicalModels({ manufacturer, machineFilter } = {}) {
+  const manufacturerKey = normalized(manufacturer)
+  const models = new Map()
+  for (const machine of oldMachines) {
+    if (manufacturerKey && normalized(machine.Manufacturer) !== manufacturerKey) continue
+    if (machineFilter && !machineFilter(machine)) continue
+    const model = cleanSpecText(machine.Model)
+    if (!model) continue
+    const invID = String(machine.InvID || '')
+    const specs = specsByInvID.get(invID) || []
+    if (!hasUsableSpecifications(specs)) continue
+    const key = normalized(model)
+    if (!models.has(key)) models.set(key, model)
+  }
+  return [...models.values()].sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}))
+}
+
+export function historicalModelBySlug({ manufacturer, slug, machineFilter } = {}) {
+  const slugKey = String(slug || '').toLowerCase()
+  return historicalModels({ manufacturer, machineFilter })
+    .find(model => model.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') === slugKey) || null
+}
