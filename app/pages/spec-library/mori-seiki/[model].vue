@@ -1,8 +1,13 @@
-<template><ManufacturerHistoricalModelPage v-if="entry" :entry="entry" manufacturer="Mori-Seiki" route-slug="mori-seiki"/><main v-else class="missing"><h1>Mori-Seiki model not found</h1><NuxtLink to="/spec-library/mori-seiki/cnc-lathes">Browse Mori-Seiki CNC lathes</NuxtLink></main></template>
+<template><main v-if="item" class="page"><section class="hero"><div class="wrap"><NuxtLink :to="'/spec-library/mori-seiki/cnc-lathes'" class="back">← Mori-Seiki CNC Lathe Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>Mori-Seiki {{item.model}} Specifications</h1><p>Historical Mori-Seiki {{item.model}} specifications from individual UMS machinery records.</p></div></section><section class="wrap section"><div class="warning"><strong>Historical specification information — not a machine-for-sale listing.</strong> Specifications can vary by year, control, configuration and optional equipment.</div><h2>Historical {{item.model}} Specifications by Year</h2><p class="intro">Choose a recorded year below. Each configuration is joined to specifications only by its exact historical InvID.</p><HistoricalSpecConfigurations :configurations="configurations"/><SpecInventoryMatches manufacturer="Mori-Seiki" :model="item.model" machine-type="lathe"/></section></main></template>
 <script setup>
-import entries from '~/assets/data/moriseiki-historical-detailed.js'
+import { historicalConfigurations, historicalModelBySlug } from '~/utils/historicalSpecLibrary'
 const route=useRoute()
-const entry=computed(()=>entries.find(x=>x.slug===route.params.model&&x.records.some(r=>r.specs?.length||r.recordedSpecs?.trim())))
-if(!entry.value)setResponseStatus(404)
+const model=historicalModelBySlug({manufacturer:'Mori-Seiki',slug:route.params.model})
+if(!model)throw createError({statusCode:404,statusMessage:'Mori-Seiki model not found'})
+const item={model,slug:String(route.params.model)}
+const configurations=computed(()=>historicalConfigurations({manufacturer:'Mori-Seiki',model:item.model}))
+if(!configurations.value.length)throw createError({statusCode:404,statusMessage:'No usable historical specifications found'})
+useSeoMeta({title:`Mori-Seiki ${item.model} Specifications | UMS Spec Library`,description:`Historical Mori-Seiki ${item.model} specifications by year from exact UMS machinery records.`})
+useHead({link:[{rel:'canonical',href:`https://www.usedmachinerysource.com/spec-library/mori-seiki/${item.slug}`}]})
 </script>
-<style scoped>.missing{max-width:900px;margin:0 auto;padding:60px 24px}.missing a{color:#1c4587;font-weight:700}</style>
+<style scoped>.page{color:#17273a;background:#fff;padding-bottom:60px}.wrap{max-width:1120px;margin:0 auto;padding:0 28px}.hero{background:linear-gradient(105deg,#071b33,#0d2c52);color:#fff;padding:48px 0;border-bottom:4px solid #f47b20}.back{color:#c8d9eb;text-decoration:none}.kicker{color:#f47b20;font-size:.78rem;font-weight:900;letter-spacing:.12em;margin:18px 0 8px}.hero h1{font-size:clamp(2rem,4vw,3.2rem);margin:0 0 12px}.section{padding-top:44px}.warning{background:#fff7ea;border-left:5px solid #f47b20;padding:16px 18px;border-radius:6px;margin-bottom:34px}.section>h2{color:#0b2545}.intro{line-height:1.7;color:#526579}@media(max-width:760px){.wrap{padding:0 18px}}</style>
