@@ -1,26 +1,22 @@
 <template>
   <main v-if="manufacturer" class="page">
     <section class="hero"><div class="wrap"><NuxtLink to="/spec-library/hbms" class="back">← HBM Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>{{manufacturer.name}} Horizontal Boring Mills</h1><p>{{manufacturer.models.length}} historical model pages built from {{manufacturer.records}} UMS HBM records.</p></div></section>
-    <section class="wrap section"><h2>{{manufacturer.name}} HBM Model Pages</h2><p class="intro">Historical reference pages only. Table Type, Floor Type and Planer Type are retained where the source record identifies the machine style.</p><input v-model="q" class="search" type="search" :placeholder="`Search ${manufacturer.name} HBM model`"><div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/${manufacturer.slug}/hbms/${m.slug}`" class="card"><strong>{{m.name}}</strong><span>{{m.records}} historical record{{m.records===1?'':'s'}} · {{typeLabel(m)}} · {{yearLabel(m)}}</span></NuxtLink></div></section>
+    <section class="wrap section"><h2>{{manufacturer.name}} HBM Model Pages</h2><p class="intro">Historical reference pages only. Table Type, Floor Type and Planer Type are retained where the source record identifies the machine style.</p><input v-model="q" class="search" type="search" :placeholder="`Search ${manufacturer.name} HBM model`"><div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/${manufacturer.slug}/hbms/${m.slug}`" class="card"><strong>{{m.model}}</strong><span>{{m.count}} historical record{{m.count===1?'':'s'}} · {{typeLabel(m)}} · {{yearLabel(m)}}</span></NuxtLink></div></section>
     <section class="wrap section note"><div class="label">HISTORICAL DATA METHOD</div><h2>HBM style remains visible</h2><p>The library preserves recorded machine style and year/configuration differences so floor-type and table-type boring mills are not blended into a generic specification.</p></section>
   </main><main v-else class="missing"><h1>HBM manufacturer not found</h1><NuxtLink to="/spec-library/hbms">Browse the HBM Spec Library</NuxtLink></main>
 </template>
 <script setup>
-import hbmAD from '~/assets/data/hbm-library-a-d.js'
-import hbmEF from '~/assets/data/hbm-library-e-f.js'
-import hbmG from '~/assets/data/hbm-library-g.js'
-import hbmH from '~/assets/data/hbm-library-h.js'
-import hbmIM from '~/assets/data/hbm-library-i-m.js'
-import hbmNS from '~/assets/data/hbm-library-n-s.js'
-import hbmTZ from '~/assets/data/hbm-library-t-z.js'
-import { mergeSpecLibrary } from '~/utils/mergeSpecLibrary'
-const library=mergeSpecLibrary([hbmAD,hbmEF,hbmG,hbmH,hbmIM,hbmNS,hbmTZ])
+import { historicalModelSummaries } from '~/utils/historicalSpecLibrary'
 const route=useRoute(),q=ref('')
-const manufacturer=computed(()=>library.find(m=>m.slug===route.params.manufacturer)||null)
+const slugify=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const manufacturerName=String(route.params.manufacturer||'').split('-').map(x=>x?x[0].toUpperCase()+x.slice(1):x).join(' ')
+const isHbm=m=>{const x=(String(m.Groups||'')+' '+String(m.WebDesc||m.Web_Desc||'')).toLowerCase();return x.includes('horizontal boring')&&!x.includes('jig mill')}
+const models=historicalModelSummaries({manufacturer:manufacturerName,machineFilter:isHbm})
+const manufacturer=computed(()=>models.length?{name:manufacturerName,slug:slugify(manufacturerName)}:null)
 if(!manufacturer.value)setResponseStatus(404)
-const filtered=computed(()=>{const x=q.value.trim().toLowerCase(),models=manufacturer.value?.models||[];return x?models.filter(m=>m.name.toLowerCase().includes(x)):models})
-const yearLabel=m=>{const y=(m.years||[]).map(v=>String(v[0])).filter(v=>v&&v!=='Year not recorded');return !y.length?'year varies/not recorded':y.length===1?y[0]:`${y[0]}–${y[y.length-1]}`}
-const typeLabel=m=>{const t=[...new Set((m.years||[]).map(r=>(r[2]||[]).find(s=>s[0]==='Machine Type')?.[1]).filter(Boolean))];return t.length?t.join(' / '):'type not recorded'}
+const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?models.filter(m=>m.model.toLowerCase().includes(x)):models})
+const yearLabel=m=>!m.firstYear?'year varies/not recorded':m.firstYear===m.lastYear?String(m.firstYear):`${m.firstYear}–${m.lastYear}`
+const typeLabel=()=> 'historical HBM'
 useSeoMeta({title:()=>manufacturer.value?`${manufacturer.value.name} HBM Specifications | UMS Spec Library`:'HBM Specifications | UMS',description:()=>manufacturer.value?`Research historical ${manufacturer.value.name} horizontal boring mill specifications by model, year and machine style from Used Machinery Source records.`:'Historical horizontal boring mill specifications.'})
 useHead(()=>({link:[{rel:'canonical',href:`https://www.usedmachinerysource.com/spec-library/${route.params.manufacturer}/hbms`}]}))
 </script><style scoped>
