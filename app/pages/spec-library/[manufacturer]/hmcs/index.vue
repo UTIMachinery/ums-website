@@ -1,17 +1,21 @@
 <template>
   <main v-if="manufacturer" class="page">
-    <section class="hero"><div class="wrap"><NuxtLink to="/spec-library/hmcs" class="back">← HMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>{{manufacturer.name}} Horizontal Machining Centers</h1><p>{{manufacturer.models.length}} historical model pages built from {{manufacturer.records}} UMS HMC records.</p></div></section>
-    <section class="wrap section"><h2>{{manufacturer.name}} HMC Model Pages</h2><p class="intro">Historical reference pages organized by model and recorded year/control configuration.</p><input v-model="q" class="search" type="search" :placeholder="`Search ${manufacturer.name} HMC model`"><div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/${manufacturer.slug}/hmcs/${m.slug}`" class="card"><strong>{{m.name}}</strong><span>{{m.records}} historical record{{m.records===1?'':'s'}} · {{yearLabel(m)}}</span></NuxtLink></div></section>
+    <section class="hero"><div class="wrap"><NuxtLink to="/spec-library/hmcs" class="back">← HMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>{{manufacturer.name}} Horizontal Machining Centers</h1><p>{{models.length}} historical model pages built from {{manufacturer.records}} UMS HMC records.</p></div></section>
+    <section class="wrap section"><h2>{{manufacturer.name}} HMC Model Pages</h2><p class="intro">Historical reference pages organized by model and recorded year/control configuration.</p><input v-model="q" class="search" type="search" :placeholder="`Search ${manufacturer.name} HMC model`"><div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/${manufacturer.slug}/hmcs/${m.slug}`" class="card"><strong>{{m.model}}</strong><span>{{m.count}} historical record{{m.count===1?'':'s'}} · {{yearLabel(m)}}</span></NuxtLink></div></section>
   </main>
   <main v-else class="missing"><h1>HMC manufacturer not found</h1><NuxtLink to="/spec-library/hmcs">Browse the HMC Spec Library</NuxtLink></main>
 </template>
 <script setup>
-import library from '~/assets/data/hmc-additional-library.js'
+import { historicalModelSummaries } from '~/utils/historicalSpecLibrary'
 const route=useRoute(),q=ref('')
-const manufacturer=computed(()=>library.find(m=>m.slug===route.params.manufacturer)||null)
+const slugify=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const manufacturerName=String(route.params.manufacturer||'').split('-').map(x=>x?x[0].toUpperCase()+x.slice(1):x).join(' ')
+const isHmc=m=>String(m.Groups||'').toLowerCase().includes('horizontal machining')||String(m.WebDesc||m.Web_Desc||'').toLowerCase().includes('horizontal machining')
+const models=historicalModelSummaries({manufacturer:manufacturerName,machineFilter:isHmc})
+const manufacturer=computed(()=>models.length?{name:manufacturerName,slug:slugify(manufacturerName)}:null)
 if(!manufacturer.value)setResponseStatus(404)
-const filtered=computed(()=>{const x=q.value.trim().toLowerCase();const models=manufacturer.value?.models||[];return x?models.filter(m=>m.name.toLowerCase().includes(x)):models})
-const yearLabel=m=>{const y=(m.years||[]).map(r=>String(r[0])).filter(Boolean);return y.length<=1?(y[0]||'year varies'):`${y[0]}–${y[y.length-1]}`}
+const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?models.filter(m=>m.model.toLowerCase().includes(x)):models})
+const yearLabel=m=>!m.firstYear?'year varies/not recorded':m.firstYear===m.lastYear?String(m.firstYear):`${m.firstYear}–${m.lastYear}`
 useSeoMeta({title:()=>manufacturer.value?`${manufacturer.value.name} HMC Specifications | UMS Spec Library`:'HMC Specifications | UMS',description:()=>manufacturer.value?`Historical ${manufacturer.value.name} horizontal machining center specifications by model and year/configuration.`:'Historical HMC specifications.'})
 const canonical=computed(()=>`https://www.usedmachinerysource.com/spec-library/${route.params.manufacturer}/hmcs`)
 useHead(()=>({link:[{rel:'canonical',href:canonical.value}]}))
