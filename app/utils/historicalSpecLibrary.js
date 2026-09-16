@@ -1,5 +1,5 @@
-import oldMachines from '../../old-machines.json'
-import oldSpecifications from '../../old-specifications.json'
+import oldMachines from '~/assets/data/historical-machines.json'
+import oldSpecifications from '~/assets/data/historical-specifications.json'
 import { cleanSpecText } from '~/utils/specText'
 
 function normalized(value) {
