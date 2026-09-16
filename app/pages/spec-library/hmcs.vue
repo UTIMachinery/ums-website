@@ -42,10 +42,14 @@
 <script setup>
 import machinesData from '~/assets/data/machines.json'
 import hmcLibrary from '~/assets/data/hmc-additional-library.js'
+import { historicalManufacturers } from '~/utils/historicalSpecLibrary'
 const machines=ref(machinesData)
+const hmcHistoricalFilter=machine=>String(machine.WebDesc||machine.Web_Desc||'').trim().toLowerCase().startsWith('cnc machining centers, horizontal')
+const hmcSlug=value=>String(value||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const historicalHmcManufacturers=historicalManufacturers({machineFilter:hmcHistoricalFilter})
 const otherQ=ref('')
 const coreSlugs=new Set(['mori-seiki','makino','haas','cincinnati','okuma','toshiba','toyoda','okk'])
-const additionalHmcs=computed(()=>hmcLibrary.filter(m=>!coreSlugs.has(m.slug)))
+const additionalHmcs=computed(()=>{const base=hmcLibrary.filter(m=>!coreSlugs.has(m.slug));const existing=new Set([...hmcLibrary,...completed].map(m=>String(m.name||'').toLowerCase()));const generated=historicalHmcManufacturers.filter(name=>!existing.has(name.toLowerCase())).map(name=>({name,slug:hmcSlug(name),models:[]}));return [...base,...generated]})
 const filteredOther=computed(()=>{
   const q=otherQ.value.trim().toLowerCase()
   return q?additionalHmcs.value.filter(m=>m.name.toLowerCase().includes(q)):additionalHmcs.value
