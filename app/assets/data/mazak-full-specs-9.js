@@ -1,0 +1,1 @@
+export default [{"model":"ZZZ","slug":"zzz","configurations":[]}]
