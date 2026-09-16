@@ -1,24 +1,21 @@
 <template>
   <main v-if="manufacturer" class="page">
     <section class="hero"><div class="wrap"><NuxtLink to="/spec-library/vtls" class="back">← VBM / VTL Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>{{manufacturer.name}} VBM / VTL Specifications</h1><p>{{manufacturer.models.length}} historical model pages built from {{manufacturer.records}} UMS vertical boring mill / vertical turret lathe records.</p></div></section>
-    <section class="wrap section"><h2>{{manufacturer.name}} VBM / VTL Model Pages</h2><p class="intro">Historical reference pages only. Individual year and configuration differences are preserved from the UMS historical database.</p><input v-model="q" class="search" type="search" :placeholder="`Search ${manufacturer.name} VBM / VTL model`"><div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/${manufacturer.slug}/vtls/${m.slug}`" class="card"><strong>{{m.name}}</strong><span>{{m.records}} historical record{{m.records===1?'':'s'}} · {{yearLabel(m)}}</span></NuxtLink></div></section>
+    <section class="wrap section"><h2>{{manufacturer.name}} VBM / VTL Model Pages</h2><p class="intro">Historical reference pages only. Individual year and configuration differences are preserved from the UMS historical database.</p><input v-model="q" class="search" type="search" :placeholder="`Search ${manufacturer.name} VBM / VTL model`"><div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/${manufacturer.slug}/vtls/${m.slug}`" class="card"><strong>{{m.model}}</strong><span>{{m.count}} historical record{{m.count===1?'':'s'}} · {{yearLabel(m)}}</span></NuxtLink></div></section>
     <section class="wrap section note"><div class="label">HISTORICAL DATA METHOD</div><h2>Recorded configurations stay separate</h2><p>Different controls, table sizes, swings, heights, heads and spindle packages are shown as separate historical configurations rather than averaged together.</p></section>
   </main><main v-else class="missing"><h1>VBM / VTL manufacturer not found</h1><NuxtLink to="/spec-library/vtls">Browse the VBM / VTL Spec Library</NuxtLink></main>
 </template>
 <script setup>
-import vtlAB from '~/assets/data/vtl-library-a-b.js'
-import vtlCD from '~/assets/data/vtl-library-c-d.js'
-import vtlEH from '~/assets/data/vtl-library-e-h.js'
-import vtlIM from '~/assets/data/vtl-library-i-m.js'
-import vtlNS from '~/assets/data/vtl-library-n-s.js'
-import vtlTZ from '~/assets/data/vtl-library-t-z.js'
-import { mergeSpecLibrary } from '~/utils/mergeSpecLibrary'
-const library=mergeSpecLibrary([vtlAB,vtlCD,vtlEH,vtlIM,vtlNS,vtlTZ])
+import { historicalModelSummaries } from '~/utils/historicalSpecLibrary'
 const route=useRoute(),q=ref('')
-const manufacturer=computed(()=>library.find(m=>m.slug===route.params.manufacturer)||null)
+const slugify=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const manufacturerName=String(route.params.manufacturer||'').split('-').map(x=>x?x[0].toUpperCase()+x.slice(1):x).join(' ')
+const isVtl=m=>{const x=(String(m.Groups||'')+' '+String(m.WebDesc||m.Web_Desc||'')).toLowerCase();return x.includes('vertical boring')||x.includes('vertical turret')||x.includes('vtl')||x.includes('vbm')}
+const models=historicalModelSummaries({manufacturer:manufacturerName,machineFilter:isVtl})
+const manufacturer=computed(()=>models.length?{name:manufacturerName,slug:slugify(manufacturerName)}:null)
 if(!manufacturer.value)setResponseStatus(404)
-const filtered=computed(()=>{const x=q.value.trim().toLowerCase(),models=manufacturer.value?.models||[];return x?models.filter(m=>m.name.toLowerCase().includes(x)):models})
-const yearLabel=m=>{const y=(m.years||[]).map(v=>String(v[0])).filter(v=>v&&v!=='Year not recorded');return !y.length?'year varies/not recorded':y.length===1?y[0]:`${y[0]}–${y[y.length-1]}`}
+const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?models.filter(m=>m.model.toLowerCase().includes(x)):models})
+const yearLabel=m=>!m.firstYear?'year varies/not recorded':m.firstYear===m.lastYear?String(m.firstYear):`${m.firstYear}–${m.lastYear}`
 useSeoMeta({title:()=>manufacturer.value?`${manufacturer.value.name} VBM VTL Specifications | UMS Spec Library`:'VBM VTL Specifications | UMS',description:()=>manufacturer.value?`Research historical ${manufacturer.value.name} vertical boring mill and VTL specifications by model and year from Used Machinery Source records.`:'Historical VBM and VTL specifications.'})
 useHead(()=>({link:[{rel:'canonical',href:`https://www.usedmachinerysource.com/spec-library/${route.params.manufacturer}/vtls`}]}))
 </script><style scoped>
