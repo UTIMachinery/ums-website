@@ -5,21 +5,16 @@
   </main><main v-else class="missing"><h1>HBM model not found</h1><NuxtLink to="/spec-library/hbms">Browse HBM specifications</NuxtLink></main>
 </template>
 <script setup>
-import hbmAD from '~/assets/data/hbm-library-a-d.js'
-import hbmEF from '~/assets/data/hbm-library-e-f.js'
-import hbmG from '~/assets/data/hbm-library-g.js'
-import hbmH from '~/assets/data/hbm-library-h.js'
-import hbmIM from '~/assets/data/hbm-library-i-m.js'
-import hbmNS from '~/assets/data/hbm-library-n-s.js'
-import hbmTZ from '~/assets/data/hbm-library-t-z.js'
-import { mergeSpecLibrary } from '~/utils/mergeSpecLibrary'
-import { historicalConfigurations } from '~/utils/historicalSpecLibrary'
-const library=mergeSpecLibrary([hbmAD,hbmEF,hbmG,hbmH,hbmIM,hbmNS,hbmTZ])
-const route=useRoute()
-const manufacturer=computed(()=>library.find(m=>m.slug===route.params.manufacturer)||null)
-const machine=computed(()=>manufacturer.value?.models?.find(m=>m.slug===route.params.model)||null)
-if(!manufacturer.value||!machine.value)setResponseStatus(404)
-const configurations=computed(()=>manufacturer.value&&machine.value?historicalConfigurations({manufacturer:manufacturer.value.name,model:machine.value.name}):[])
+import { historicalConfigurations, historicalManufacturers, historicalModelBySlug } from '~/utils/historicalSpecLibrary'
+const route=useRoute(),manufacturerSlug=String(route.params.manufacturer||''),modelSlug=String(route.params.model||'')
+const slugify=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const isHbm=m=>String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase().startsWith('horizontal boring mill')
+const manufacturerName=historicalManufacturers({machineFilter:isHbm}).find(name=>slugify(name)===manufacturerSlug)
+const model=manufacturerName?historicalModelBySlug({manufacturer:manufacturerName,slug:modelSlug,machineFilter:isHbm}):null
+if(!manufacturerName||!model)setResponseStatus(404)
+const manufacturer=computed(()=>manufacturerName?{name:manufacturerName,slug:manufacturerSlug}:null)
+const machine=computed(()=>model?{name:model,slug:modelSlug}:null)
+const configurations=computed(()=>manufacturerName&&model?historicalConfigurations({manufacturer:manufacturerName,model,machineFilter:isHbm}):[])
 useSeoMeta({title:()=>manufacturer.value&&machine.value?`${manufacturer.value.name} ${machine.value.name} HBM Specifications | UMS Spec Library`:'HBM Specifications | UMS',description:()=>manufacturer.value&&machine.value?`Historical ${manufacturer.value.name} ${machine.value.name} horizontal boring mill specifications by year, machine type, spindle, travels, table and control.`:'Historical HBM specifications.'})
 useHead(()=>({link:[{rel:'canonical',href:`https://www.usedmachinerysource.com/spec-library/${route.params.manufacturer}/hbms/${route.params.model}`}]}))
 </script><style scoped>
