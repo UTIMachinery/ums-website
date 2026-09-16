@@ -4,7 +4,7 @@ import { historicalModelSummaries } from '~/utils/historicalSpecLibrary'
 const route=useRoute()
 const slugify=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
 const manufacturerName=String(route.params.manufacturer||'').split('-').map(x=>x?x[0].toUpperCase()+x.slice(1):x).join(' ')
-const isConventional=m=>{const x=(String(m.Groups||'')+' '+String(m.WebDesc||m.Web_Desc||'')).toLowerCase();return x.includes('engine lathe')||x.includes('manual lathe')||x.includes('manual mill')||x.includes('drill')||x.includes('conventional')}
+const isConventional=m=>{const x=String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase();return x==='lathes, manual'||x==='mills, manual'||x==='mills, cnc'||x==='radial arm drills'||x==='drills, turret'||x==='drills, gun'||x==='jig mills'||x==='jig mills, cnc'||x==='drills, h.d. & sensitive, multi spindle'||x==='drills, heavy duty & sensitive, sgl. vert. spdl.'||x==='drills, structural, multi spdl'||x==='millers, gantry, n/c & cnc'}
 const models=historicalModelSummaries({manufacturer:manufacturerName,machineFilter:isConventional})
 const maker=computed(()=>models.length?{name:manufacturerName,slug:slugify(manufacturerName)}:null)
 if(!maker.value)setResponseStatus(404)
