@@ -5,19 +5,11 @@
   </main>
 </template>
 <script setup>
-import p1 from '~/assets/data/mazak-full-specs-1.js'
-import p2 from '~/assets/data/mazak-full-specs-2.js'
-import p3 from '~/assets/data/mazak-full-specs-3.js'
-import p4 from '~/assets/data/mazak-full-specs-4.js'
-import p5 from '~/assets/data/mazak-full-specs-5.js'
-import p6 from '~/assets/data/mazak-full-specs-6.js'
-import p7 from '~/assets/data/mazak-full-specs-7.js'
-import { historicalConfigurations } from '~/utils/historicalSpecLibrary'
+import { historicalConfigurations, historicalModelBySlug } from '~/utils/historicalSpecLibrary'
 const route=useRoute()
-const raw=[...p1,...p2,...p3,...p4,...p5,...p6,...p7]
-const hit=raw.find(x=>x[1]===route.params.slug)
-if(!hit)throw createError({statusCode:404,statusMessage:'Mazak model not found'})
-const item={model:hit[0],slug:hit[1]}
+const model=historicalModelBySlug({manufacturer:'Mazak',slug:route.params.slug})
+if(!model)throw createError({statusCode:404,statusMessage:'Mazak model not found'})
+const item={model,slug:String(route.params.slug)}
 const configurations=computed(()=>historicalConfigurations({manufacturer:'Mazak',model:item.model}))
 if(!configurations.value.length)throw createError({statusCode:404,statusMessage:'No usable historical specifications found'})
 useSeoMeta({title:`Mazak ${item.model} Specifications | UMS Spec Library`,description:`Historical Mazak ${item.model} specifications by year from exact UMS machinery records.`})
