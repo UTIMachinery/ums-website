@@ -10,7 +10,7 @@ import { historicalModelSummaries } from '~/utils/historicalSpecLibrary'
 const route=useRoute(),q=ref('')
 const slugify=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
 const manufacturerName=String(route.params.manufacturer||'').split('-').map(x=>x?x[0].toUpperCase()+x.slice(1):x).join(' ')
-const isGrinder=m=>{const x=(String(m.Groups||'')+' '+String(m.WebDesc||m.Web_Desc||'')).toLowerCase();return x.includes('grind')}
+const isGrinder=m=>{const x=String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase();return x.startsWith('grinder')||x==='hones'}
 const models=historicalModelSummaries({manufacturer:manufacturerName,machineFilter:isGrinder})
 const manufacturer=computed(()=>models.length?{name:manufacturerName,slug:slugify(manufacturerName)}:null)
 if(!manufacturer.value)setResponseStatus(404)
