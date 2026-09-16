@@ -5,20 +5,17 @@
   </main><main v-else class="missing"><h1>VBM / VTL model not found</h1><NuxtLink to="/spec-library/vtls">Browse VBM / VTL specifications</NuxtLink></main>
 </template>
 <script setup>
-import vtlAB from '~/assets/data/vtl-library-a-b.js'
-import vtlCD from '~/assets/data/vtl-library-c-d.js'
-import vtlEH from '~/assets/data/vtl-library-e-h.js'
-import vtlIM from '~/assets/data/vtl-library-i-m.js'
-import vtlNS from '~/assets/data/vtl-library-n-s.js'
-import vtlTZ from '~/assets/data/vtl-library-t-z.js'
-import { mergeSpecLibrary } from '~/utils/mergeSpecLibrary'
-import { historicalConfigurations } from '~/utils/historicalSpecLibrary'
-const library=mergeSpecLibrary([vtlAB,vtlCD,vtlEH,vtlIM,vtlNS,vtlTZ])
+import { historicalConfigurations, historicalManufacturers, historicalModelBySlug } from '~/utils/historicalSpecLibrary'
 const route=useRoute()
-const manufacturer=computed(()=>library.find(m=>m.slug===route.params.manufacturer)||null)
-const machine=computed(()=>manufacturer.value?.models?.find(m=>m.slug===route.params.model)||null)
-if(!manufacturer.value||!machine.value)setResponseStatus(404)
-const configurations=computed(()=>manufacturer.value&&machine.value?historicalConfigurations({manufacturer:manufacturer.value.name,model:machine.value.name}):[])
+const manufacturerSlug=String(route.params.manufacturer||''),modelSlug=String(route.params.model||'')
+const slugify=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const isVtl=m=>String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase().startsWith('vertical boring mills, vtl')
+const manufacturerName=historicalManufacturers({machineFilter:isVtl}).find(name=>slugify(name)===manufacturerSlug)
+const model=manufacturerName?historicalModelBySlug({manufacturer:manufacturerName,slug:modelSlug,machineFilter:isVtl}):null
+if(!manufacturerName||!model)setResponseStatus(404)
+const manufacturer=computed(()=>manufacturerName?{name:manufacturerName,slug:manufacturerSlug}:null)
+const machine=computed(()=>model?{name:model,slug:modelSlug}:null)
+const configurations=computed(()=>manufacturerName&&model?historicalConfigurations({manufacturer:manufacturerName,model,machineFilter:isVtl}):[])
 useSeoMeta({title:()=>manufacturer.value&&machine.value?`${manufacturer.value.name} ${machine.value.name} VBM VTL Specifications | UMS Spec Library`:'VBM VTL Specifications | UMS',description:()=>manufacturer.value&&machine.value?`Historical ${manufacturer.value.name} ${machine.value.name} VBM/VTL specifications by year including table, swing, height, control and tooling data.`:'Historical VBM/VTL specifications.'})
 useHead(()=>({link:[{rel:'canonical',href:`https://www.usedmachinerysource.com/spec-library/${route.params.manufacturer}/vtls/${route.params.model}`}]}))
 </script><style scoped>
