@@ -10,7 +10,7 @@ import { historicalModelSummaries } from '~/utils/historicalSpecLibrary'
 const route=useRoute(),q=ref('')
 const slugify=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
 const manufacturerName=String(route.params.manufacturer||'').split('-').map(x=>x?x[0].toUpperCase()+x.slice(1):x).join(' ')
-const isHbm=m=>{const x=(String(m.Groups||'')+' '+String(m.WebDesc||m.Web_Desc||'')).toLowerCase();return x.includes('horizontal boring')&&!x.includes('jig mill')}
+const isHbm=m=>String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase().startsWith('horizontal boring mill')
 const models=historicalModelSummaries({manufacturer:manufacturerName,machineFilter:isHbm})
 const manufacturer=computed(()=>models.length?{name:manufacturerName,slug:slugify(manufacturerName)}:null)
 if(!manufacturer.value)setResponseStatus(404)
