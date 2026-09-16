@@ -5,17 +5,18 @@
   </main><main v-else class="missing"><h1>Grinder model not found</h1><NuxtLink to="/spec-library/grinders">Browse Grinder specifications</NuxtLink></main>
 </template>
 <script setup>
-import library from '~/assets/data/grinder-library.js'
-import { historicalConfigurations } from '~/utils/historicalSpecLibrary'
-const route=useRoute()
-const manufacturerSlug=computed(()=>String(route.params.manufacturer||'').toLowerCase())
-const modelSlug=computed(()=>String(route.params.model||'').toLowerCase())
-const manufacturer=computed(()=>library.find(m=>m.slug===manufacturerSlug.value)||null)
-const machine=computed(()=>manufacturer.value?.models?.find(m=>m.slug===modelSlug.value)||null)
-if(!manufacturer.value||!machine.value)setResponseStatus(404)
-const configurations=computed(()=>manufacturer.value&&machine.value?historicalConfigurations({manufacturer:manufacturer.value.name,model:machine.value.name}):[])
+import { historicalConfigurations, historicalManufacturers, historicalModelBySlug } from '~/utils/historicalSpecLibrary'
+const route=useRoute(),manufacturerSlug=String(route.params.manufacturer||''),modelSlug=String(route.params.model||'')
+const slugify=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const isGrinder=m=>{const x=String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase();return x.startsWith('grinder')||x==='hones'}
+const manufacturerName=historicalManufacturers({machineFilter:isGrinder}).find(name=>slugify(name)===manufacturerSlug)
+const model=manufacturerName?historicalModelBySlug({manufacturer:manufacturerName,slug:modelSlug,machineFilter:isGrinder}):null
+if(!manufacturerName||!model)setResponseStatus(404)
+const manufacturer=computed(()=>manufacturerName?{name:manufacturerName,slug:manufacturerSlug}:null)
+const machine=computed(()=>model?{name:model,slug:modelSlug}:null)
+const configurations=computed(()=>manufacturerName&&model?historicalConfigurations({manufacturer:manufacturerName,model,machineFilter:isGrinder}):[])
 useSeoMeta({title:()=>manufacturer.value&&machine.value?`${manufacturer.value.name} ${machine.value.name} Grinder Specifications | UMS Spec Library`:'Grinder Specifications | UMS',description:()=>manufacturer.value&&machine.value?`Historical ${manufacturer.value.name} ${machine.value.name} grinder specifications by year and configuration, including grinder type, capacity, wheel, spindle, travel and control data.`:'Historical grinder specifications from Used Machinery Source.'})
-useHead(()=>({link:[{rel:'canonical',href:`https://www.usedmachinerysource.com/spec-library/${route.params.manufacturer}/grinders/${route.params.model}`}]}))
+useHead(()=>({link:[{rel:'canonical',href:`https://www.usedmachinerysource.com/spec-library/grinders/${route.params.manufacturer}/${route.params.model}`}]}))
 </script><style scoped>
 .page{color:#17273a;background:#fff;padding-bottom:60px}.wrap{max-width:1120px;margin:0 auto;padding:0 28px}.hero{background:linear-gradient(105deg,#071b33,#0d2c52);color:#fff;padding:48px 0;border-bottom:4px solid #f47b20}.breadcrumb{display:flex;flex-wrap:wrap;gap:7px;color:#c8d9eb;font-size:.92rem}.breadcrumb a{color:#c8d9eb;text-decoration:none}.breadcrumb a:hover{text-decoration:underline}.kicker{color:#f47b20;font-size:.78rem;font-weight:900;letter-spacing:.12em;margin:18px 0 8px}.hero h1{font-size:clamp(2rem,4vw,3.2rem);margin:0 0 12px}.hero p{max-width:820px;line-height:1.7}.section{padding-top:44px}.warning{background:#fff7ea;border-left:5px solid #f47b20;padding:16px 18px;border-radius:6px;margin-bottom:34px}.section>h2{color:#0b2545;margin:0 0 12px}.intro{line-height:1.7;max-width:900px;color:#526579}.cta{margin-top:46px;padding:28px 30px;background:linear-gradient(105deg,#071b33,#0d2c52);color:#fff;border-radius:10px;border-top:5px solid #f47b20;display:flex;align-items:center;justify-content:space-between;gap:20px}.cta-kicker{color:#f47b20;font-size:.76rem;font-weight:900;letter-spacing:.12em}.cta h2{margin:6px 0;color:#fff}.cta p{margin:0;max-width:700px}.cta a{background:#f47b20;color:#fff;text-decoration:none;font-weight:800;padding:11px 16px;border-radius:5px;white-space:nowrap}.missing{max-width:900px;margin:0 auto;padding:60px 24px}.missing a{color:#1c4587;font-weight:700}@media(max-width:760px){.wrap{padding:0 18px}.cta{align-items:flex-start;flex-direction:column}}
 </style>
