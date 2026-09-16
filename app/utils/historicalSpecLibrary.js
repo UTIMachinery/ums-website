@@ -71,3 +71,24 @@ export function historicalModelBySlug({ manufacturer, slug, machineFilter } = {}
   return historicalModels({ manufacturer, machineFilter })
     .find(model => model.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') === slugKey) || null
 }
+
+export function historicalModelSummaries({ manufacturer, machineFilter } = {}) {
+  const manufacturerKey = normalized(manufacturer)
+  const models = new Map()
+  for (const machine of oldMachines) {
+    if (manufacturerKey && normalized(machine.Manufacturer) !== manufacturerKey) continue
+    if (machineFilter && !machineFilter(machine)) continue
+    const model = cleanSpecText(machine.Model)
+    if (!model) continue
+    const invID = String(machine.InvID || '')
+    const specs = specsByInvID.get(invID) || []
+    if (!hasUsableSpecifications(specs)) continue
+    const key = normalized(model)
+    if (!models.has(key)) models.set(key,{model,slug:model.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''),years:[],count:0})
+    const entry=models.get(key)
+    entry.count++
+    const year=Number.parseInt(machine.Year,10)
+    if(Number.isFinite(year))entry.years.push(year)
+  }
+  return [...models.values()].map(x=>({...x,firstYear:x.years.length?Math.min(...x.years):null,lastYear:x.years.length?Math.max(...x.years):null})).sort((a,b)=>a.model.localeCompare(b.model,undefined,{numeric:true}))
+}
