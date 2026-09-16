@@ -10,7 +10,7 @@ import { historicalModelSummaries } from '~/utils/historicalSpecLibrary'
 const route=useRoute(),q=ref('')
 const slugify=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
 const manufacturerName=String(route.params.manufacturer||'').split('-').map(x=>x?x[0].toUpperCase()+x.slice(1):x).join(' ')
-const isHmc=m=>String(m.Groups||'').toLowerCase().includes('horizontal machining')||String(m.WebDesc||m.Web_Desc||'').toLowerCase().includes('horizontal machining')
+const isHmc=m=>String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase().startsWith('cnc machining centers, horizontal')
 const models=historicalModelSummaries({manufacturer:manufacturerName,machineFilter:isHmc})
 const manufacturer=computed(()=>models.length?{name:manufacturerName,slug:slugify(manufacturerName)}:null)
 if(!manufacturer.value)setResponseStatus(404)
