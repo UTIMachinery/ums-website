@@ -49,6 +49,21 @@ export function historicalConfigurations({ manufacturer, model, machineFilter } 
     })
 }
 
+export function historicalManufacturers({ machineFilter } = {}) {
+  const manufacturers = new Map()
+  for (const machine of oldMachines) {
+    if (machineFilter && !machineFilter(machine)) continue
+    const manufacturer = cleanSpecText(machine.Manufacturer)
+    if (!manufacturer) continue
+    const invID = String(machine.InvID || '')
+    const specs = specsByInvID.get(invID) || []
+    if (!hasUsableSpecifications(specs)) continue
+    const key = normalized(manufacturer)
+    if (!manufacturers.has(key)) manufacturers.set(key, manufacturer)
+  }
+  return [...manufacturers.values()].sort((a,b)=>a.localeCompare(b,undefined,{numeric:true,sensitivity:'base'}))
+}
+
 export function historicalModels({ manufacturer, machineFilter } = {}) {
   const manufacturerKey = normalized(manufacturer)
   const models = new Map()
