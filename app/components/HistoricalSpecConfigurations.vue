@@ -6,19 +6,19 @@
         <button type="button" class="copy" @click="copySpecs(config)">{{ copied===config.invID?'Copied!':'Copy Specifications' }}</button>
       </div>
 
-      <section v-if="specRows(config).length" class="specifications-section">
+      <section v-if="specRows(config).length" class="hist-spec-section">
         <h4>Specifications</h4>
         <template v-for="(row,index) in specRows(config)" :key="`${config.invID}-spec-${index}`">
-          <div v-if="row.section" class="spec-group">{{ row.section }}</div>
-          <div v-else class="spec-row"><span>{{ row.label }}</span><strong>{{ row.value }}</strong></div>
+          <div v-if="row.section" class="hist-spec-group">{{ row.section }}</div>
+          <div v-else class="hist-spec-row"><span>{{ row.label }}</span><strong>{{ row.value }}</strong></div>
         </template>
       </section>
 
-      <section v-if="equipmentRows(config).length" class="equipment-section">
+      <section v-if="equipmentRows(config).length" class="hist-equipment-section">
         <h4>Equipped With</h4>
         <template v-for="(row,index) in equipmentRows(config)" :key="`${config.invID}-ew-${index}`">
-          <div v-if="row.section" class="equipment-group">{{ row.section }}</div>
-          <div v-else class="equipment-row">{{ row.value }}</div>
+          <div v-if="row.section" class="hist-equipment-group">{{ row.section }}</div>
+          <div v-else class="hist-equipment-row">{{ row.value }}</div>
         </template>
       </section>
     </article>
@@ -62,5 +62,5 @@ async function copySpecs(config){
 </script>
 
 <style scoped>
-.configuration{border:1px solid #cfd9e3;border-radius:8px;padding:24px;margin:24px 0 34px;background:#fff}.config-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:18px}.config-head h3{font-size:1.35rem;color:#0b2545;margin:0 0 7px}.config-head p{margin:3px 0;color:#53677a}.record-number{font-size:.9rem}.copy{border:0;border-radius:5px;background:#0b2545;color:#fff;font-weight:800;padding:10px 14px;cursor:pointer;white-space:nowrap}.specifications-section,.equipment-section{border:1px solid #d6dee8;border-radius:8px;overflow:hidden;background:#fff;margin-top:16px}.specifications-section h4,.equipment-section h4{margin:0;padding:10px 18px;background:#f3f6fa;border-bottom:1px solid #d7dde5;color:#0b2545;font-size:1.15rem}.spec-group{font-weight:700;color:#1c4587;background:#dce6f1;padding:5px 18px;border-top:1px solid #c5d0dc;border-bottom:1px solid #c5d0dc}.spec-row{display:grid;grid-template-columns:1fr 220px;gap:24px;padding:10px 18px 10px 28px;border-bottom:1px solid #e1e6ec}.spec-row span{font-size:16px;font-weight:500}.spec-row strong{text-align:right;font-size:16px}.equipment-group{font-weight:700;color:#1c4587;padding:10px 18px 5px}.equipment-row{padding:7px 18px 7px 32px;line-height:1.45}.equipment-row::before{content:'•';margin-left:-14px;margin-right:8px}@media(max-width:760px){.config-head{display:block}.copy{margin-top:14px}.spec-row{grid-template-columns:1fr;gap:3px;padding:9px 14px}.spec-row strong{text-align:left}}
+.configuration{border:1px solid #cfd9e3;border-radius:8px;padding:24px;margin:24px 0 34px;background:#fff}.config-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:18px}.config-head h3{font-size:1.35rem;color:#0b2545;margin:0 0 7px}.config-head p{margin:3px 0;color:#53677a}.record-number{font-size:.9rem}.copy{border:0;border-radius:5px;background:#0b2545;color:#fff;font-weight:800;padding:10px 14px;cursor:pointer;white-space:nowrap}.hist-spec-section,.hist-equipment-section{border:1px solid #d6dee8;border-radius:8px;overflow:hidden;background:#fff;margin-top:16px}.hist-spec-section h4,.hist-equipment-section h4{margin:0;padding:10px 18px;background:#f3f6fa;border-bottom:1px solid #d7dde5;color:#0b2545;font-size:1.15rem}.hist-spec-group{font-weight:700;color:#1c4587;background:#dce6f1;padding:5px 18px;border-top:1px solid #c5d0dc;border-bottom:1px solid #c5d0dc}.hist-spec-row{display:grid;grid-template-columns:1fr 220px;gap:24px;padding:10px 18px 10px 28px;border-bottom:1px solid #e1e6ec}.hist-spec-row span{font-size:16px;font-weight:500}.hist-spec-row strong{text-align:right;font-size:16px}.hist-equipment-group{font-weight:700;color:#1c4587;padding:10px 18px 5px}.hist-equipment-row{padding:7px 18px 7px 32px;line-height:1.45}.hist-equipment-row::before{content:'•';margin-left:-14px;margin-right:8px}@media(max-width:760px){.config-head{display:block}.copy{margin-top:14px}.hist-spec-row{grid-template-columns:1fr;gap:3px;padding:9px 14px}.hist-spec-row strong{text-align:left}}
 </style>
