@@ -1,31 +1,26 @@
 <template>
   <main v-if="manufacturer" class="page">
-    <section class="hero"><div class="wrap"><NuxtLink to="/spec-library/vmcs" class="back">← VMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>{{manufacturer.name}} Vertical Machining Centers</h1><p>{{manufacturer.models.length}} historical model pages built from {{manufacturer.records}} UMS VMC records.</p></div></section>
+    <section class="hero"><div class="wrap"><NuxtLink to="/spec-library/vmcs" class="back">← VMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>{{manufacturer.name}} Vertical Machining Centers</h1><p>{{models.length}} historical model pages with usable UMS specifications.</p></div></section>
     <section class="wrap section"><h2>{{manufacturer.name}} VMC Model Pages</h2><p class="intro">Historical reference pages only. Models remain separate unless the historical database shows an obvious spelling or punctuation duplicate.</p>
       <input v-model="q" class="search" type="search" :placeholder="`Search ${manufacturer.name} VMC model`">
-      <div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/${manufacturer.slug}/vmcs/${m.slug}`" class="card"><strong>{{m.name}}</strong><span>{{m.records}} historical record{{m.records===1?'':'s'}} · {{yearLabel(m)}}</span></NuxtLink></div>
+      <div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/${manufacturer.slug}/vmcs/${m.slug}`" class="card"><strong>{{m.model}}</strong><span>{{m.count}} historical record{{m.count===1?'':'s'}} · {{yearLabel(m)}}</span></NuxtLink></div>
     </section>
     <section class="wrap section note"><div class="label">HISTORICAL DATA METHOD</div><h2>Year and configuration differences are preserved</h2><p>Where UMS historical records show different controls, travels, tables, spindle packages or tooling by year, those configurations are displayed separately rather than averaged into one specification.</p></section>
   </main>
   <main v-else class="missing"><h1>VMC manufacturer not found</h1><NuxtLink to="/spec-library/vmcs">Browse the VMC Spec Library</NuxtLink></main>
 </template>
 <script setup>
-import library from '~/assets/data/vmc-remaining-library.js'
+import { historicalModelSummaries } from '~/utils/historicalSpecLibrary'
 const route=useRoute()
 const q=ref('')
-const manufacturer=computed(()=>library.find(m=>m.slug===route.params.manufacturer)||null)
+const slugify=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const manufacturerName=String(route.params.manufacturer||'').split('-').map(x=>x?x[0].toUpperCase()+x.slice(1):x).join(' ')
+const isVmc=m=>String(m.Groups||'').toLowerCase().includes('vertical machining')||String(m.WebDesc||m.Web_Desc||'').toLowerCase().includes('vertical machining')
+const models=historicalModelSummaries({manufacturer:manufacturerName,machineFilter:isVmc})
+const manufacturer=computed(()=>models.length?{name:manufacturerName,slug:slugify(manufacturerName)}:null)
 if(!manufacturer.value)setResponseStatus(404)
-const filtered=computed(()=>{
-  const x=q.value.trim().toLowerCase()
-  const models=manufacturer.value?.models||[]
-  return x?models.filter(m=>m.name.toLowerCase().includes(x)):models
-})
-const yearLabel=m=>{
-  const years=[...(m.years||[])].map(y=>String(y[0])).filter(y=>y&&y!=='Year not recorded')
-  if(!years.length)return 'year varies/not recorded'
-  if(years.length===1)return years[0]
-  return `${years[0]}–${years[years.length-1]}`
-}
+const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?models.filter(m=>m.model.toLowerCase().includes(x)):models})
+const yearLabel=m=>!m.firstYear?'year varies/not recorded':m.firstYear===m.lastYear?String(m.firstYear):`${m.firstYear}–${m.lastYear}`
 useSeoMeta({
   title:()=>manufacturer.value?`${manufacturer.value.name} VMC Specifications | UMS Spec Library`:'VMC Specifications | UMS',
   description:()=>manufacturer.value?`Research historical ${manufacturer.value.name} vertical machining center specifications by model and year from Used Machinery Source records.`:'Historical vertical machining center specifications.'
