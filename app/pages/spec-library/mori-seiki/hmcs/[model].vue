@@ -6,12 +6,13 @@
   <main v-else class="missing"><h1>Mori-Seiki HMC model not found</h1><NuxtLink to="../">Browse Mori-Seiki HMC specifications</NuxtLink></main>
 </template>
 <script setup>
-import manufacturer from '~/assets/data/mori-seiki-hmc.js'
-import { historicalConfigurations } from '~/utils/historicalSpecLibrary'
+import { historicalConfigurations, historicalModelBySlug } from '~/utils/historicalSpecLibrary'
 const route=useRoute()
-const machine=computed(()=>manufacturer.models.find(m=>m.slug===route.params.model)||null)
+const isHmc=m=>String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase().startsWith('cnc machining centers, horizontal')
+const modelName=computed(()=>historicalModelBySlug({manufacturer:'Mori-Seiki',slug:String(route.params.model||''),machineFilter:isHmc}))
+const configurations=computed(()=>modelName.value?historicalConfigurations({manufacturer:'Mori-Seiki',model:modelName.value,machineFilter:isHmc}):[])
+const machine=computed(()=>modelName.value?{name:modelName.value,records:configurations.value.length}:null)
 if(!machine.value)setResponseStatus(404)
-const configurations=computed(()=>machine.value?historicalConfigurations({manufacturer:'Mori-Seiki',model:machine.value.name}):[])
 useSeoMeta({title:()=>machine.value?`Mori-Seiki ${machine.value.name} HMC Specifications | UMS Spec Library`:'Mori-Seiki HMC Specifications | UMS',description:()=>machine.value?`Historical Mori-Seiki ${machine.value.name} HMC specifications including pallets, travels, spindle, ATC and control data.`:'Historical Mori-Seiki HMC specifications.'})
 </script>
 <style scoped>
