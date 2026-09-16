@@ -215,7 +215,7 @@ const machineTypes = [
 ]
 
 const manufacturerSlug = value => String(value || '').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
-const isHistoricalLathe = machine => String(machine.Groups || '').trim().toLowerCase() === 'cnc lathes'
+const isHistoricalLathe = machine => String(machine.WebDesc || machine.Web_Desc || '').trim().toLowerCase().startsWith('cnc lathes')
 const historicalLatheManufacturers = historicalManufacturers({ machineFilter: isHistoricalLathe })
 const establishedManufacturerRoutes = {
   mazak: '/spec-library/mazak/cnc-lathes',
