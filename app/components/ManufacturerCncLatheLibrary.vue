@@ -33,26 +33,9 @@
       <div v-else class="notice"><strong>No matching {{ headingManufacturer }} CNC lathe is listed in current inventory right now.</strong> The Spec Library below remains available for research. <NuxtLink to="/equipment#tell-us-what-you-need">Tell us what you need →</NuxtLink></div>
     </section>
 
-    <section class="section muted">
-      <div class="wrap">
-        <div class="kicker">{{ manufacturer.toUpperCase() }} MODEL FAMILIES</div>
-        <h2>Browse {{ headingManufacturer }} Turning Equipment</h2>
-        <p class="intro">UMS preserves exact historical model wording. Similar-looking designations remain separate when the source records use different names, while the family groups below make related machines easier to browse.</p>
-        <div class="family-grid">
-          <article v-for="family in familyGroups" :key="family.name" class="family-card featured">
-            <h3>{{ family.name }}</h3>
-            <p>{{ family.description }}</p>
-            <div class="model-links">
-              <NuxtLink v-for="entry in family.entries.slice(0,18)" :key="entry.slug" :to="`/spec-library/${routeSlug}/${entry.slug}`" class="text-link">{{ entry.model }} specifications →</NuxtLink>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section class="wrap section">
-      <div class="kicker">ADDITIONAL HISTORICAL MODEL PAGES</div>
-      <h2>More {{ manufacturer }} CNC Lathe Specifications</h2>
+      <div class="kicker">SPECIFICATION LIBRARY</div>
+      <h2>Browse Exact {{ manufacturer }} CNC Lathe Models</h2>
       <p class="intro">Search or browse all exact model designations supported by UMS historical records. Exact wording is preserved rather than normalized into a different model name.</p>
       <input v-model="query" class="search" type="search" :placeholder="`Search ${manufacturer} model — e.g. ${searchExample}`" />
       <div class="additional-grid">
