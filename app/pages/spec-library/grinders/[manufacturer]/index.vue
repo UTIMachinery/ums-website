@@ -1,19 +1,22 @@
 <template>
   <main v-if="manufacturer" class="page">
     <section class="hero"><div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb"><NuxtLink to="/spec-library">Spec Library</NuxtLink><span>/</span><NuxtLink to="/spec-library/grinders">Grinders</NuxtLink><span>/</span><span>{{manufacturer.name}}</span></nav><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>{{manufacturer.name}} Grinder Specifications</h1><p>{{manufacturer.models.length}} historical model pages built from {{manufacturer.records}} UMS grinder, lapper and hone records.</p></div></section>
-    <section class="wrap section"><h2>{{manufacturer.name}} Grinder Model Pages</h2><p class="intro">Historical reference pages only. Actual grinder types and individual year/configuration differences are preserved from the UMS historical database.</p><input v-model="q" class="search" type="search" :placeholder="`Search ${manufacturer.name} Grinder model`"><div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/grinders/${manufacturerSlug}/${m.slug}`" class="card"><strong>{{m.name}}</strong><span>{{m.records}} historical record{{m.records===1?'':'s'}} · {{typeLabel(m)}} · {{yearLabel(m)}}</span></NuxtLink></div></section>
+    <section class="wrap section"><h2>{{manufacturer.name}} Grinder Model Pages</h2><p class="intro">Historical reference pages only. Actual grinder types and individual year/configuration differences are preserved from the UMS historical database.</p><input v-model="q" class="search" type="search" :placeholder="`Search ${manufacturer.name} Grinder model`"><div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/grinders/${manufacturerSlug}/${m.slug}`" class="card"><strong>{{m.model}}</strong><span>{{m.count}} historical record{{m.count===1?'':'s'}} · {{typeLabel(m)}} · {{yearLabel(m)}}</span></NuxtLink></div></section>
     <section class="wrap section note"><div class="label">HISTORICAL DATA METHOD</div><h2>Grinder types and configurations stay separate</h2><p>Rotary surface, reciprocating surface, cylindrical/universal, centerless, tool &amp; cutter, creep-feed, jig, internal, roll and other recorded grinder types remain identified instead of being blended together.</p></section>
   </main><main v-else class="missing"><h1>Grinder manufacturer not found</h1><NuxtLink to="/spec-library/grinders">Browse the Grinder Spec Library</NuxtLink></main>
 </template>
 <script setup>
-import library from '~/assets/data/grinder-library.js'
+import { historicalModelSummaries } from '~/utils/historicalSpecLibrary'
 const route=useRoute(),q=ref('')
-const manufacturerSlug=computed(()=>String(route.params.manufacturer||'').toLowerCase())
-const manufacturer=computed(()=>library.find(m=>m.slug===manufacturerSlug.value)||null)
+const slugify=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const manufacturerName=String(route.params.manufacturer||'').split('-').map(x=>x?x[0].toUpperCase()+x.slice(1):x).join(' ')
+const isGrinder=m=>{const x=(String(m.Groups||'')+' '+String(m.WebDesc||m.Web_Desc||'')).toLowerCase();return x.includes('grind')}
+const models=historicalModelSummaries({manufacturer:manufacturerName,machineFilter:isGrinder})
+const manufacturer=computed(()=>models.length?{name:manufacturerName,slug:slugify(manufacturerName)}:null)
 if(!manufacturer.value)setResponseStatus(404)
-const filtered=computed(()=>{const x=q.value.trim().toLowerCase(),models=manufacturer.value?.models||[];return x?models.filter(m=>m.name.toLowerCase().includes(x)):models})
-const yearLabel=m=>{const y=(m.years||[]).map(v=>String(v[0])).filter(v=>v&&v!=='Year not recorded');return !y.length?'year varies/not recorded':y.length===1?y[0]:`${y[0]}–${y[y.length-1]}`}
-const typeLabel=m=>{const t=[...new Set((m.years||[]).map(r=>r[2]).filter(Boolean))];return t.length===1?t[0]:t.length?`${t.length} grinder types`:'type not recorded'}
+const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?models.filter(m=>m.model.toLowerCase().includes(x)):models})
+const yearLabel=m=>!m.firstYear?'year varies/not recorded':m.firstYear===m.lastYear?String(m.firstYear):`${m.firstYear}–${m.lastYear}`
+const typeLabel=()=> 'historical grinder'
 useSeoMeta({title:()=>manufacturer.value?`${manufacturer.value.name} Grinder Specifications | UMS Spec Library`:'Grinder Specifications | UMS',description:()=>manufacturer.value?`Research historical ${manufacturer.value.name} grinder specifications by model, year and grinder type from Used Machinery Source records.`:'Historical grinder specifications.'})
 useHead(()=>({link:[{rel:'canonical',href:`https://www.usedmachinerysource.com/spec-library/${route.params.manufacturer}/grinders`}]}))
 </script><style scoped>
