@@ -68,8 +68,17 @@ export function historicalModels({ manufacturer, machineFilter } = {}) {
 
 export function historicalModelBySlug({ manufacturer, slug, machineFilter } = {}) {
   const slugKey = String(slug || '').toLowerCase()
-  return historicalModels({ manufacturer, machineFilter })
-    .find(model => model.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') === slugKey) || null
+  const aliases = manufacturer && normalized(manufacturer) === 'mazak' ? {
+    'quick-turn-25l-quick-turn': 'Quick Turn 25L',
+    'quick-turn-35n-1500': 'Quick-Turn 35N/1500'
+  } : {}
+  const models = historicalModels({ manufacturer, machineFilter })
+  if (aliases[slugKey]) {
+    const aliasKey = normalized(aliases[slugKey])
+    const match = models.find(model => normalized(model) === aliasKey)
+    if (match) return match
+  }
+  return models.find(model => model.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') === slugKey) || null
 }
 
 export function historicalModelSummaries({ manufacturer, machineFilter } = {}) {
