@@ -3,7 +3,7 @@
 import { historicalConfigurations, historicalManufacturers, historicalModelBySlug } from '~/utils/historicalSpecLibrary'
 const route=useRoute(),manufacturerSlug=String(route.params.manufacturer||''),modelSlug=String(route.params.model||'')
 const slug=v=>String(v||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
-const isLathe=m=>String(m.Groups||'').trim().toLowerCase()==='cnc lathes'
+const isLathe=m=>String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase().startsWith('cnc lathes')
 const manufacturer=historicalManufacturers({machineFilter:isLathe}).find(name=>slug(name)===manufacturerSlug)
 if(!manufacturer)throw createError({statusCode:404,statusMessage:'CNC lathe manufacturer not found'})
 const model=historicalModelBySlug({manufacturer,slug:modelSlug,machineFilter:isLathe})
