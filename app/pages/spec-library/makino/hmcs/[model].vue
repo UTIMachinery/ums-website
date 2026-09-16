@@ -1,16 +1,17 @@
 <template>
   <main v-if="machine" class="page">
     <section class="hero"><div class="wrap"><NuxtLink to="../" class="back">← Makino HMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>Makino {{machine.name}} HMC Specifications</h1><p>Historical horizontal machining center specifications based on {{machine.records}} UMS machine record{{machine.records===1?'':'s'}}.</p></div></section>
-    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Pallet, spindle, control and tooling configurations can vary by year and option package.</div><h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below represents a recorded historical year/control configuration.</p><HmcYearConfigurations :model="` Makino ${machine.name}`.trim()" :configurations="yearConfigurations" /><SpecInventoryMatches manufacturer="Makino" :model="machine.name" machine-type="hmc" /></section>
+    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Pallet, spindle, control and tooling configurations can vary by year and option package.</div><h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below represents a recorded historical year/control configuration.</p><HistoricalSpecConfigurations :configurations="configurations" /><SpecInventoryMatches manufacturer="Makino" :model="machine.name" machine-type="hmc" /></section>
   </main>
   <main v-else class="missing"><h1>Makino HMC model not found</h1><NuxtLink to="../">Browse Makino HMC specifications</NuxtLink></main>
 </template>
 <script setup>
 import manufacturer from '~/assets/data/makino-hmc.js'
+import { historicalConfigurations } from '~/utils/historicalSpecLibrary'
 const route=useRoute()
 const machine=computed(()=>manufacturer.models.find(m=>m.slug===route.params.model)||null)
 if(!machine.value)setResponseStatus(404)
-const yearConfigurations=computed(()=>(machine.value?.years||[]).map(r=>({year:r[0],title:`${r[0]} Makino ${machine.value.name} historical configuration`,control:r[1]||'Control not recorded',specs:(r[2]||[]).filter(s=>s?.[0]&&s?.[1]&&String(s[1]).trim()).map(s=>({label:s[0],value:s[1]})),note:r[3]||''})))
+const configurations=computed(()=>machine.value?historicalConfigurations({manufacturer:'Makino',model:machine.value.name}):[])
 useSeoMeta({title:()=>machine.value?`Makino ${machine.value.name} HMC Specifications | UMS Spec Library`:'Makino HMC Specifications | UMS',description:()=>machine.value?`Historical Makino ${machine.value.name} HMC specifications including pallets, travels, spindle, ATC and control data.`:'Historical Makino HMC specifications.'})
 </script>
 <style scoped>
