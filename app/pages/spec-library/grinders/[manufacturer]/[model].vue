@@ -1,38 +1,19 @@
 <template>
   <main v-if="manufacturer&&machine" class="page">
     <section class="hero"><div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb"><NuxtLink to="/spec-library">Spec Library</NuxtLink><span>/</span><NuxtLink :to="`/spec-library/grinders/${manufacturer.slug}`">{{manufacturer.name}}</NuxtLink><span>/</span><NuxtLink to="/spec-library/grinders">Grinders</NuxtLink><span>/</span><span>{{machine.name}}</span></nav><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>{{manufacturer.name}} {{machine.name}} Grinder Specifications</h1><p>Historical grinder specifications based on {{machine.records}} UMS machine record{{machine.records===1?'':'s'}}.</p></div></section>
-    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Values can vary by year, grinder type, control, work capacity, wheel configuration and optional equipment.</div><h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below is one exact historical UMS record. Grinder type and year/configuration remain separate, and detailed specification rows are joined only by that record's InvID.</p><VmcYearConfigurations :model="`${manufacturer.name} ${machine.name}`" :configurations="yearConfigurations"/><SpecInventoryMatches :manufacturer="manufacturer.name" :model="machine.name" machine-type="grinder"/><section class="cta"><div><div class="cta-kicker">NEED A MACHINE?</div><h2>Looking for a {{manufacturer.name}} {{machine.name}}?</h2><p>Tell Used Machinery Source what you need and we can help locate a grinder that fits your requirements.</p></div><NuxtLink to="/equipment#tell-us-what-you-need">Tell Us What You Need</NuxtLink></section></section>
+    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Values can vary by year, grinder type, control, work capacity, wheel configuration and optional equipment.</div><h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below is one exact historical UMS record. Grinder type and year/configuration remain separate, and detailed specification rows are joined only by that record's InvID.</p><HistoricalSpecConfigurations :configurations="configurations"/><SpecInventoryMatches :manufacturer="manufacturer.name" :model="machine.name" machine-type="grinder"/><section class="cta"><div><div class="cta-kicker">NEED A MACHINE?</div><h2>Looking for a {{manufacturer.name}} {{machine.name}}?</h2><p>Tell Used Machinery Source what you need and we can help locate a grinder that fits your requirements.</p></div><NuxtLink to="/equipment#tell-us-what-you-need">Tell Us What You Need</NuxtLink></section></section>
   </main><main v-else class="missing"><h1>Grinder model not found</h1><NuxtLink to="/spec-library/grinders">Browse Grinder specifications</NuxtLink></main>
 </template>
 <script setup>
 import library from '~/assets/data/grinder-library.js'
+import { historicalConfigurations } from '~/utils/historicalSpecLibrary'
 const route=useRoute()
 const manufacturerSlug=computed(()=>String(route.params.manufacturer||'').toLowerCase())
 const modelSlug=computed(()=>String(route.params.model||'').toLowerCase())
 const manufacturer=computed(()=>library.find(m=>m.slug===manufacturerSlug.value)||null)
 const machine=computed(()=>manufacturer.value?.models?.find(m=>m.slug===modelSlug.value)||null)
 if(!manufacturer.value||!machine.value)setResponseStatus(404)
-const cleanValue=v=>{if(v===null||v===undefined)return false;const x=String(v).trim();return !!x&&!/^[_\-\s]+$/.test(x)&&!x.includes('\t')}
-const historicalIds=(machine.value?.years||[]).map(r=>String(r[3]||'')).filter(Boolean)
-const { data: historicalSpecs } = await useAsyncData(
-  `grinder-specs-${route.path}`,
-  ()=>historicalIds.length ? $fetch('/api/grinder-specs',{query:{ids:historicalIds.join(',')}}) : []
-)
-const detailedSpecs=id=>(historicalSpecs.value||[])
-  .filter(row=>String(row[0])===String(id)&&cleanValue(row[3]))
-  .map(row=>({label:row[1]?`${String(row[1]).replace(/:$/,'')} — ${row[2]}`:row[2],value:row[3]}))
-const yearConfigurations=computed(()=>(machine.value?.years||[]).map(r=>{
-  const type=cleanValue(r[2])?[{label:'Grinder Type',value:r[2]}]:[]
-  const details=detailedSpecs(r[3])
-  const specs=[...type,...details]
-  return{
-    year:r[0],
-    title:`${r[0]} ${manufacturer.value.name} ${machine.value.name} historical configuration`,
-    control:r[1]||'Control not recorded',
-    specs,
-    note:details.length?`Historical UMS record #${r[3]}`:`Historical UMS record #${r[3]} — no detailed specification rows were recorded in the master specification file.`
-  }
-}).filter(r=>r.specs.length))
+const configurations=computed(()=>manufacturer.value&&machine.value?historicalConfigurations({manufacturer:manufacturer.value.name,model:machine.value.name}):[])
 useSeoMeta({title:()=>manufacturer.value&&machine.value?`${manufacturer.value.name} ${machine.value.name} Grinder Specifications | UMS Spec Library`:'Grinder Specifications | UMS',description:()=>manufacturer.value&&machine.value?`Historical ${manufacturer.value.name} ${machine.value.name} grinder specifications by year and configuration, including grinder type, capacity, wheel, spindle, travel and control data.`:'Historical grinder specifications from Used Machinery Source.'})
 useHead(()=>({link:[{rel:'canonical',href:`https://www.usedmachinerysource.com/spec-library/${route.params.manufacturer}/grinders/${route.params.model}`}]}))
 </script><style scoped>
