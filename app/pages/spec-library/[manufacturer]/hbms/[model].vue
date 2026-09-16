@@ -1,7 +1,7 @@
 <template>
   <main v-if="manufacturer&&machine" class="page">
     <section class="hero"><div class="wrap"><NuxtLink :to="`/spec-library/${manufacturer.slug}/hbms`" class="back">← {{manufacturer.name}} HBM Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>{{manufacturer.name}} {{machine.name}} HBM Specifications</h1><p>Historical horizontal boring mill specifications based on {{machine.records}} UMS machine record{{machine.records===1?'':'s'}}.</p></div></section>
-    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Values can vary by year, control, spindle, travels, table and optional equipment.</div><h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below represents a recorded historical year/configuration. Detailed specification rows from the original UMS record are used whenever available, while Table Type, Floor Type or Planer Type remains identified from the historical record.</p><VmcYearConfigurations :model="`${manufacturer.name} ${machine.name}`" :configurations="yearConfigurations"/><SpecInventoryMatches :manufacturer="manufacturer.name" :model="machine.name" machine-type="hbm"/><section class="cta"><div><div class="cta-kicker">NEED A MACHINE?</div><h2>Looking for a {{manufacturer.name}} {{machine.name}}?</h2><p>Tell Used Machinery Source what you need and we can help locate a horizontal boring mill that fits your requirements.</p></div><NuxtLink to="/equipment#tell-us-what-you-need">Tell Us What You Need</NuxtLink></section></section>
+    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Values can vary by year, control, spindle, travels, table and optional equipment.</div><h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below represents a recorded historical year/configuration. Detailed specification rows from the original UMS record are used whenever available, while Table Type, Floor Type or Planer Type remains identified from the historical record.</p><HistoricalSpecConfigurations :configurations="configurations"/><SpecInventoryMatches :manufacturer="manufacturer.name" :model="machine.name" machine-type="hbm"/><section class="cta"><div><div class="cta-kicker">NEED A MACHINE?</div><h2>Looking for a {{manufacturer.name}} {{machine.name}}?</h2><p>Tell Used Machinery Source what you need and we can help locate a horizontal boring mill that fits your requirements.</p></div><NuxtLink to="/equipment#tell-us-what-you-need">Tell Us What You Need</NuxtLink></section></section>
   </main><main v-else class="missing"><h1>HBM model not found</h1><NuxtLink to="/spec-library/hbms">Browse HBM specifications</NuxtLink></main>
 </template>
 <script setup>
@@ -13,33 +13,13 @@ import hbmIM from '~/assets/data/hbm-library-i-m.js'
 import hbmNS from '~/assets/data/hbm-library-n-s.js'
 import hbmTZ from '~/assets/data/hbm-library-t-z.js'
 import { mergeSpecLibrary } from '~/utils/mergeSpecLibrary'
+import { historicalConfigurations } from '~/utils/historicalSpecLibrary'
 const library=mergeSpecLibrary([hbmAD,hbmEF,hbmG,hbmH,hbmIM,hbmNS,hbmTZ])
 const route=useRoute()
 const manufacturer=computed(()=>library.find(m=>m.slug===route.params.manufacturer)||null)
 const machine=computed(()=>manufacturer.value?.models?.find(m=>m.slug===route.params.model)||null)
 if(!manufacturer.value||!machine.value)setResponseStatus(404)
-const cleanValue=v=>{if(v===null||v===undefined)return false;const x=String(v).trim();return !!x&&!/^[_\-\s]+$/.test(x)&&!x.includes('\t')}
-const recordId=note=>String(note||'').match(/record\s*#(\d+)/i)?.[1]||''
-const historicalIds=(machine.value?.years||[]).map(r=>recordId(r[3])).filter(Boolean)
-const { data: historicalSpecs } = await useAsyncData(
-  `boring-specs-${route.path}`,
-  ()=>historicalIds.length ? $fetch('/api/boring-specs',{query:{ids:historicalIds.join(','),type:'hbm'}}) : []
-)
-const detailedSpecs=id=>(historicalSpecs.value||[])
-  .filter(row=>String(row[0])===String(id)&&cleanValue(row[3]))
-  .map(row=>({label:row[1]?`${String(row[1]).replace(/:$/,'')} — ${row[2]}`:row[2],value:row[3]}))
-const yearConfigurations=computed(()=>(machine.value?.years||[]).map(r=>{
-  const base=(r[2]||[]).filter(s=>cleanValue(s[1])).map(s=>({label:s[0],value:s[1]}))
-  const type=base.filter(s=>String(s.label||'').toLowerCase()==='machine type')
-  const details=detailedSpecs(recordId(r[3]))
-  return{
-    year:r[0],
-    title:`${r[0]} ${manufacturer.value.name} ${machine.value.name} historical configuration`,
-    control:r[1]||'Control not recorded',
-    specs:details.length?[...type,...details]:base,
-    note:r[3]||''
-  }
-}).filter(r=>r.specs.length))
+const configurations=computed(()=>manufacturer.value&&machine.value?historicalConfigurations({manufacturer:manufacturer.value.name,model:machine.value.name}):[])
 useSeoMeta({title:()=>manufacturer.value&&machine.value?`${manufacturer.value.name} ${machine.value.name} HBM Specifications | UMS Spec Library`:'HBM Specifications | UMS',description:()=>manufacturer.value&&machine.value?`Historical ${manufacturer.value.name} ${machine.value.name} horizontal boring mill specifications by year, machine type, spindle, travels, table and control.`:'Historical HBM specifications.'})
 useHead(()=>({link:[{rel:'canonical',href:`https://www.usedmachinerysource.com/spec-library/${route.params.manufacturer}/hbms/${route.params.model}`}]}))
 </script><style scoped>
