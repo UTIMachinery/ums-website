@@ -111,7 +111,7 @@ async function loadMachineCardImages(){
   }
 }
 onMounted(loadMachineCardImages)
-const vmcHistoricalFilter=machine=>String(machine.WebDesc||machine.Web_Desc||'').trim().toLowerCase().includes('machining centers, vertical')
+const vmcHistoricalFilter=machine=>String(machine.WebDesc||machine.Web_Desc||'').trim().toLowerCase().startsWith('cnc machining centers, vertical')
 const historicalVmcManufacturers=historicalManufacturers({machineFilter:vmcHistoricalFilter})
 const vmcSlug=value=>String(value||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
 const otherQ=ref('')
