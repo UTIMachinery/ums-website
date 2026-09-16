@@ -21,7 +21,13 @@
 </template>
 <script setup>
 import library from '~/assets/data/grinder-library.js'
+import { historicalManufacturers } from '~/utils/historicalSpecLibrary'
 import machinesData from '~/assets/data/machines.json'
+const grinderHistoricalFilter=m=>{const x=String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase();return x.startsWith('grinder')||x==='hones'}
+const grinderSlug=v=>String(v||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const historicalGrinderManufacturers=historicalManufacturers({machineFilter:grinderHistoricalFilter})
+const existingGrinderNames=new Set(library.map(m=>String(m.name||'').toLowerCase()))
+const completeLibrary=[...library,...historicalGrinderManufacturers.filter(name=>!existingGrinderNames.has(name.toLowerCase())).map(name=>({name,slug:grinderSlug(name),models:[],records:0}))]
 const q=ref('')
 const machines=ref(machinesData)
 const machineCardImages=ref({})
@@ -32,8 +38,8 @@ const currentMachines=computed(()=>(machines.value||[]).filter(m=>Number(m.Sold)
 const machineUrl=m=>{const slug=`${m.Manufacturer||''}-${m.Model||''}`.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');return `/equipment/${m.InvID}/${slug}`}
 async function loadMachineCardImages(){for(const m of currentMachines.value){try{const files=await $fetch('/api/images',{query:{invID:m.InvID}});if(files?.length)machineCardImages.value[m.InvID]=files[0]}catch(error){console.error(`Could not load image for ${m.InvID}`,error)}}}
 onMounted(loadMachineCardImages)
-const totalRecords=computed(()=>library.reduce((n,m)=>n+Number(m.records||0),0))
-const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?library.filter(m=>m.name.toLowerCase().includes(x)):library})
+const totalRecords=computed(()=>completeLibrary.reduce((n,m)=>n+Number(m.records||0),0))
+const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?completeLibrary.filter(m=>m.name.toLowerCase().includes(x)):completeLibrary})
 useSeoMeta({title:'Grinder Specifications | UMS Spec Library',description:'Research historical grinder, lapper and hone specifications by manufacturer, model, year and grinder type from Used Machinery Source records.'})
 useHead({link:[{rel:'canonical',href:'https://www.usedmachinerysource.com/spec-library/grinders'}]})
 </script>
