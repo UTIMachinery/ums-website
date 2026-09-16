@@ -1,4 +1,4 @@
-<template><ManufacturerCncLatheLibrary :manufacturer="manufacturer" :manufacturer-slug="manufacturerSlug" /></template>
+<template><ManufacturerCncLatheLibrary :manufacturer="manufacturer" :route-slug="manufacturerSlug" /></template>
 <script setup>
 import { historicalManufacturers } from '~/utils/historicalSpecLibrary'
 const route=useRoute()
