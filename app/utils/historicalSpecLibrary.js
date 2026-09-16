@@ -13,6 +13,17 @@ function hasUsableSpecifications(rows) {
   )
 }
 
+// The source specification export is intentionally kept in ascending id order.
+// Building the index in one pass preserves that order within every InvID while
+// avoiding a 127k-row scan for every historical machine rendered.
+const specsByInvID = new Map()
+for (const row of oldSpecifications) {
+  const key = String(row.invid || '')
+  if (!key) continue
+  if (!specsByInvID.has(key)) specsByInvID.set(key, [])
+  specsByInvID.get(key).push(row)
+}
+
 export function historicalConfigurations({ manufacturer, model, machineFilter } = {}) {
   const manufacturerKey = normalized(manufacturer)
   const modelKey = normalized(model)
@@ -25,8 +36,9 @@ export function historicalConfigurations({ manufacturer, model, machineFilter } 
       return true
     })
     .map(machine => {
-      const specs = oldSpecifications.filter(row => String(row.invid) === String(machine.InvID))
-      return { invID: String(machine.InvID), machine, specs }
+      const invID = String(machine.InvID)
+      const specs = specsByInvID.get(invID) || []
+      return { invID, machine, specs }
     })
     .filter(config => hasUsableSpecifications(config.specs))
     .sort((a, b) => {
