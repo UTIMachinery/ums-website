@@ -1,0 +1,1 @@
+<template><HistoricalJsonManufacturer group="Material Handling" title="Material Handling" slug="material-handling"/></template>
