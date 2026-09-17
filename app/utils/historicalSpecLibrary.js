@@ -16,9 +16,10 @@ function hasUsableSpecifications(rows) {
 // The source specification export is intentionally kept in ascending id order.
 // Building the index in one pass preserves that order within every InvID while
 // avoiding a 127k-row scan for every historical machine rendered.
+// Accept both historical export casing variants so specs always join by InvID.
 const specsByInvID = new Map()
 for (const row of oldSpecifications) {
-  const key = String(row.invid || '')
+  const key = String(row.invid ?? row.InvID ?? '')
   if (!key) continue
   if (!specsByInvID.has(key)) specsByInvID.set(key, [])
   specsByInvID.get(key).push(row)
@@ -36,7 +37,7 @@ export function historicalConfigurations({ manufacturer, model, machineFilter } 
       return true
     })
     .map(machine => {
-      const invID = String(machine.InvID)
+      const invID = String(machine.InvID ?? machine.invid ?? '')
       const specs = specsByInvID.get(invID) || []
       return { invID, machine, specs }
     })
@@ -55,7 +56,7 @@ export function historicalManufacturers({ machineFilter } = {}) {
     if (machineFilter && !machineFilter(machine)) continue
     const manufacturer = cleanSpecText(machine.Manufacturer)
     if (!manufacturer) continue
-    const invID = String(machine.InvID || '')
+    const invID = String(machine.InvID ?? machine.invid ?? '')
     const specs = specsByInvID.get(invID) || []
     if (!hasUsableSpecifications(specs)) continue
     const key = normalized(manufacturer)
@@ -72,7 +73,7 @@ export function historicalModels({ manufacturer, machineFilter } = {}) {
     if (machineFilter && !machineFilter(machine)) continue
     const model = cleanSpecText(machine.Model)
     if (!model) continue
-    const invID = String(machine.InvID || '')
+    const invID = String(machine.InvID ?? machine.invid ?? '')
     const specs = specsByInvID.get(invID) || []
     if (!hasUsableSpecifications(specs)) continue
     const key = normalized(model)
@@ -104,7 +105,7 @@ export function historicalModelSummaries({ manufacturer, machineFilter } = {}) {
     if (machineFilter && !machineFilter(machine)) continue
     const model = cleanSpecText(machine.Model)
     if (!model) continue
-    const invID = String(machine.InvID || '')
+    const invID = String(machine.InvID ?? machine.invid ?? '')
     const specs = specsByInvID.get(invID) || []
     if (!hasUsableSpecifications(specs)) continue
     const key = normalized(model)
