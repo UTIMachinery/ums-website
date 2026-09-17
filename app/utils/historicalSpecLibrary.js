@@ -94,7 +94,12 @@ export function historicalModelBySlug({ manufacturer, slug, machineFilter } = {}
     const match = models.find(model => normalized(model) === aliasKey)
     if (match) return match
   }
-  return models.find(model => model.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') === slugKey) || null
+  const exactSlugMatch = models.find(model => model.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') === slugKey)
+  if (exactSlugMatch) return exactSlugMatch
+  // Preserve existing crawled URLs when the source model differs only by punctuation/spacing,
+  // e.g. VMC3016HT vs VMC-3016HT.
+  const normalizedSlugKey = normalized(slugKey)
+  return models.find(model => normalized(model) === normalizedSlugKey) || null
 }
 
 export function historicalModelSummaries({ manufacturer, machineFilter } = {}) {
