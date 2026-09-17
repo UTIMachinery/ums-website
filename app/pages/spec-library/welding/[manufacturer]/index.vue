@@ -1,0 +1,1 @@
+<template><HistoricalJsonManufacturer group="Welding" title="Welding" slug="welding"/></template>
