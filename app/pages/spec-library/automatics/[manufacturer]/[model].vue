@@ -5,13 +5,14 @@ import historicalSpecifications from '~/assets/data/historical-specifications.js
 const route=useRoute(),manufacturerSlug=String(route.params.manufacturer||''),modelSlug=String(route.params.model||'')
 const clean=s=>String(s||'').trim()
 const slugify=s=>clean(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const ignoredSpecInvIDs=new Set(['2907'])
 const groupMachines=historicalMachines.filter(m=>clean(m.Groups)==='Automatics')
 const manufacturer=[...new Set(groupMachines.map(m=>clean(m.Manufacturer)).filter(Boolean))].find(name=>slugify(name)===manufacturerSlug)||''
 const manufacturerMachines=manufacturer?groupMachines.filter(m=>clean(m.Manufacturer)===manufacturer):[]
 const machine=[...new Set(manufacturerMachines.map(m=>clean(m.Model)).filter(Boolean))].find(name=>slugify(name)===modelSlug)||''
 if(!manufacturer||!machine)setResponseStatus(404)
 const specsByInvID=new Map()
-for(const row of historicalSpecifications){const id=clean(row.invid);if(!id)continue;if(!specsByInvID.has(id))specsByInvID.set(id,[]);specsByInvID.get(id).push(row)}
+for(const row of historicalSpecifications){const id=clean(row.invid);if(!id||ignoredSpecInvIDs.has(id))continue;if(!specsByInvID.has(id))specsByInvID.set(id,[]);specsByInvID.get(id).push(row)}
 const configurations=computed(()=>manufacturer&&machine?manufacturerMachines.filter(m=>clean(m.Model)===machine).map(m=>{const invID=clean(m.InvID);return{invID,machine:m,specs:specsByInvID.get(invID)||[]}}).filter(c=>c.specs.length>0).sort((a,b)=>clean(b.machine.Year).localeCompare(clean(a.machine.Year),undefined,{numeric:true})):[])
 const webDescs=manufacturer&&machine?[...new Set(manufacturerMachines.filter(m=>clean(m.Model)===machine).map(m=>clean(m.WebDesc||m.Web_Desc)).filter(Boolean))].sort((a,b)=>a.localeCompare(b)):[]
 useSeoMeta({title:()=>manufacturer&&machine?`${manufacturer} ${machine} Specifications | UMS Spec Library`:'Automatics Specifications | UMS',description:()=>manufacturer&&machine?`Historical ${manufacturer} ${machine} automatic machinery specifications by year and configuration from exact UMS records.`:'Historical automatic machinery specifications.'})
