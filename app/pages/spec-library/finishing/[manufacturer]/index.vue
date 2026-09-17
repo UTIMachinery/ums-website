@@ -1,0 +1,1 @@
+<template><HistoricalJsonManufacturer group="Finishing" title="Finishing" slug="finishing"/></template>
