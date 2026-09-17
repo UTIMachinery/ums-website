@@ -1,13 +1,11 @@
-<template><main class="page"><section class="hero"><div class="wrap"><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>Automatics Specifications</h1><p>Historical UMS Automatics records organized by WebDesc, manufacturer, model and individual machine configuration.</p></div></section><section class="wrap section"><div class="label">MACHINE TYPES IN THIS GROUP</div><h2>Automatics WebDesc Types</h2><p class="intro">These machine types come directly from the WebDesc field on historical records whose Groups field is Automatics.</p><div class="types"><span v-for="type in webDescs" :key="type">{{type}}</span></div></section><section class="wrap section"><div class="label">BROWSE BY MANUFACTURER</div><h2>Automatics Manufacturers</h2><input v-model="q" class="search" type="search" placeholder="Search Automatics manufacturer"><div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/automatics/${m.slug}`" class="card"><strong>{{m.name}}</strong><span>Browse historical models and specifications</span></NuxtLink></div></section></main></template>
+<template><main class="page"><section class="hero"><div class="wrap"><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>Automatics Specifications</h1><p>Historical UMS Automatics records organized by WebDesc, manufacturer, model and individual machine configuration.</p></div></section><section class="wrap section"><div class="label">MACHINE TYPES IN THIS GROUP</div><h2>Automatics WebDesc Types</h2><p class="intro">These machine types come directly from the WebDesc field on historical records whose Groups field is Automatics.</p><div class="types"><span v-for="type in webDescs" :key="type">{{type}}</span></div></section><section class="wrap section"><div class="label">BROWSE BY MANUFACTURER</div><h2>Automatics Manufacturers</h2><input v-model="q" class="search" type="search" placeholder="Search Automatics manufacturer"><div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/automatics/${m.slug}`" class="card"><strong>{{m.name}}</strong><span>{{m.count}} historical machine{{m.count===1?'':'s'}}</span></NuxtLink></div></section></main></template>
 <script setup>
 import historicalMachines from '~/assets/data/historical-machines.json'
-import { historicalManufacturers } from '~/utils/historicalSpecLibrary'
-const q=ref('')
-const groupName='Automatics'
-const inGroup=m=>String(m.Groups||'').trim()===groupName
-const slugify=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
-const webDescs=[...new Set(historicalMachines.filter(inGroup).map(m=>String(m.WebDesc||m.Web_Desc||'').trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b))
-const library=historicalManufacturers({machineFilter:inGroup}).map(name=>({name,slug:slugify(name)}))
+const q=ref(''),clean=s=>String(s||'').trim(),slugify=s=>clean(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const groupMachines=historicalMachines.filter(m=>clean(m.Groups)==='Automatics')
+const webDescs=[...new Set(groupMachines.map(m=>clean(m.WebDesc||m.Web_Desc)).filter(Boolean))].sort((a,b)=>a.localeCompare(b))
+const names=[...new Set(groupMachines.map(m=>clean(m.Manufacturer)).filter(Boolean))].sort((a,b)=>a.localeCompare(b))
+const library=names.map(name=>({name,slug:slugify(name),count:groupMachines.filter(m=>clean(m.Manufacturer)===name).length}))
 const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?library.filter(m=>m.name.toLowerCase().includes(x)):library})
 useSeoMeta({title:'Automatics Specifications | UMS Spec Library',description:'Research historical automatic machine specifications by WebDesc, manufacturer, model and year from Used Machinery Source records.'})
 useHead({link:[{rel:'canonical',href:'https://www.usedmachinerysource.com/spec-library/automatics'}]})
