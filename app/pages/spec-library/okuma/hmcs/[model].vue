@@ -6,13 +6,16 @@
   <main v-else class="missing"><h1>Okuma HMC model not found</h1><NuxtLink to="../">Browse Okuma HMC specifications</NuxtLink></main>
 </template>
 <script setup>
-import manufacturer from '~/assets/data/okuma-hmc.js'
-import { historicalConfigurations } from '~/utils/historicalSpecLibrary'
+import { historicalConfigurations, historicalModelBySlug } from '~/utils/historicalSpecLibrary'
 const route=useRoute()
-const machine=computed(()=>manufacturer.models.find(m=>m.slug===route.params.model)||null)
+const isHmc=m=>String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase().startsWith('cnc machining centers, horizontal')
+const modelName=computed(()=>historicalModelBySlug({manufacturer:'Okuma',slug:String(route.params.model||''),machineFilter:isHmc}))
+const configurations=computed(()=>modelName.value?historicalConfigurations({manufacturer:'Okuma',model:modelName.value,machineFilter:isHmc}):[])
+const machine=computed(()=>modelName.value?{name:modelName.value,slug:String(route.params.model||''),records:configurations.value.length}:null)
 if(!machine.value)setResponseStatus(404)
-const configurations=computed(()=>machine.value?historicalConfigurations({manufacturer:'Okuma',model:machine.value.name}):[])
-useSeoMeta({title:()=>machine.value?`Okuma ${machine.value.name} HMC Specifications | UMS Spec Library`:'Okuma HMC Specifications | UMS',description:()=>machine.value?`Historical Okuma ${machine.value.name} HMC specifications including pallets, travels, spindle, ATC and control data.`:'Historical Okuma HMC specifications.'})
+useSeoMeta({title:()=>machine.value?`Okuma ${machine.value.name} HMC Specifications | UMS Spec Library`:'Okuma HMC Specifications | UMS',description:()=>machine.value?`Historical Okuma ${machine.value.name} horizontal machining center specifications including pallet, travels, spindle, ATC and control data.`:'Historical Okuma HMC specifications.'})
+const canonical=computed(()=>`https://www.usedmachinerysource.com/spec-library/okuma/hmcs/${route.params.model}`)
+useHead(()=>({link:[{rel:'canonical',href:canonical.value}]}))
 </script>
 <style scoped>
 .page{color:#17273a;background:#fff;padding-bottom:60px}.wrap{max-width:1120px;margin:0 auto;padding:0 28px}.hero{background:linear-gradient(105deg,#071b33,#0d2c52);color:#fff;padding:48px 0;border-bottom:4px solid #f47b20}.back{color:#c8d9eb;text-decoration:none}.kicker{color:#f47b20;font-size:.78rem;font-weight:900;letter-spacing:.12em;margin:18px 0 8px}.hero h1{font-size:clamp(2rem,4vw,3.2rem);margin:0 0 12px}.hero p{max-width:820px;line-height:1.7}.section{padding-top:44px}.warning{background:#fff7ea;border-left:5px solid #f47b20;padding:16px 18px;border-radius:6px;margin-bottom:34px}.section>h2{color:#0b2545}.intro{line-height:1.7;max-width:900px;color:#526579}.missing{max-width:900px;margin:0 auto;padding:60px 24px}@media(max-width:760px){.wrap{padding:0 18px}}
