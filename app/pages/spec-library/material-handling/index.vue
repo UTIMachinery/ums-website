@@ -1,0 +1,1 @@
+<template><HistoricalJsonGroupIndex group="Material Handling" title="Material Handling" slug="material-handling"/></template>
