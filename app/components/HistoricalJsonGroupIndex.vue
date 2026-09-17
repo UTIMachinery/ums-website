@@ -22,6 +22,7 @@
       </div>
 
       <p v-if="!filteredTypes.length" class="empty">No matching machine types or manufacturers found.</p>
+      <HistoricalLibraryFooter />
     </section>
   </main>
 </template>
