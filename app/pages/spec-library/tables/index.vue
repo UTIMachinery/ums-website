@@ -1,0 +1,1 @@
+<template><HistoricalJsonGroupIndex group="Tables" title="Tables" slug="tables"/></template>
