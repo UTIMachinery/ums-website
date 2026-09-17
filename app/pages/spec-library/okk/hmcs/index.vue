@@ -5,10 +5,13 @@
   </main>
 </template>
 <script setup>
-import manufacturer from '~/assets/data/okk-hmc.js'
+import { historicalModelSummaries } from '~/utils/historicalSpecLibrary'
+const isHmc=m=>String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase().startsWith('cnc machining centers, horizontal')
+const models=historicalModelSummaries({manufacturer:'OKK',machineFilter:isHmc}).map(m=>({name:m.model,slug:m.slug,records:m.count,years:m.years.sort((a,b)=>a-b)}))
+const manufacturer={models,records:models.reduce((n,m)=>n+m.records,0)}
 const q=ref('')
 const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?manufacturer.models.filter(m=>m.name.toLowerCase().includes(x)):manufacturer.models})
-const yearLabel=m=>{const y=(m.years||[]).map(r=>String(r[0])).filter(Boolean);return y.length<=1?(y[0]||'year varies'):`${y[0]}–${y[y.length-1]}`}
+const yearLabel=m=>{const y=m.years||[];return y.length<=1?(y[0]||'year varies'):`${y[0]}–${y[y.length-1]}`}
 useSeoMeta({title:'OKK HMC Specifications | UMS Spec Library',description:'Historical OKK horizontal machining center specifications by model and year/configuration.'})
 </script>
 <style scoped>
