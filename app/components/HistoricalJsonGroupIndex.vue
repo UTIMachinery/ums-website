@@ -29,7 +29,7 @@
 
 <script setup>
 import historicalMachines from '~/assets/data/historical-machines.json'
-const props=defineProps({group:{type:String,required:true},title:{type:String,required:true},slug:{type:String,required:true}})
+const props=defineProps({group:{type:String,required:true},title:{type:String,required:true},slug:{type:String,required:true},manufacturerFirstSuffix:{type:String,default:''}})
 const q=ref('')
 const clean=s=>String(s||'').trim()
 const slugify=s=>clean(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
@@ -52,7 +52,7 @@ const filteredTypes=computed(()=>{
     return manufacturers.length?{...type,manufacturers}:null
   }).filter(Boolean)
 })
-const manufacturerLink=(manufacturer,type)=>({path:`/spec-library/${props.slug}/${manufacturer}`,query:{type}})
+const manufacturerLink=(manufacturer,type)=>({path:props.manufacturerFirstSuffix?`/spec-library/${manufacturer}/${props.manufacturerFirstSuffix}`:`/spec-library/${props.slug}/${manufacturer}`,query:{type}})
 
 useSeoMeta({title:`${props.title} Specifications | UMS Spec Library`,description:`Research historical ${props.title.toLowerCase()} specifications by machine type, manufacturer, model and year from Used Machinery Source records.`})
 useHead({link:[{rel:'canonical',href:`https://www.usedmachinerysource.com/spec-library/${props.slug}`} ]})
