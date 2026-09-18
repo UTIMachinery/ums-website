@@ -9,7 +9,7 @@ const manufacturerMachines=manufacturer?groupMachines.filter(m=>clean(m.Manufact
 const machine=[...new Set(manufacturerMachines.map(m=>clean(m.Model)).filter(Boolean))].find(name=>slugify(name)===modelSlug)||''
 if(!manufacturer||!machine)setResponseStatus(404)
 const specsByInvID=new Map()
-for(const row of historicalSpecifications){const id=clean(row.invid);if(!id)continue;if(!specsByInvID.has(id))specsByInvID.set(id,[]);specsByInvID.get(id).push(row)}
+for(const row of historicalSpecifications){const id=clean(row.InvID||row.invid);if(!id)continue;if(!specsByInvID.has(id))specsByInvID.set(id,[]);specsByInvID.get(id).push(row)}
 const configurations=computed(()=>manufacturer&&machine?manufacturerMachines.filter(m=>clean(m.Model)===machine).map(m=>{const invID=clean(m.InvID);return{invID,machine:m,specs:specsByInvID.get(invID)||[]}}).filter(c=>c.specs.length>0).sort((a,b)=>clean(b.machine.Year).localeCompare(clean(a.machine.Year),undefined,{numeric:true})):[])
 const webDescs=manufacturer&&machine?[...new Set(manufacturerMachines.filter(m=>clean(m.Model)===machine).map(m=>clean(m.WebDesc||m.Web_Desc)).filter(Boolean))].sort((a,b)=>a.localeCompare(b)):[]
 useSeoMeta({title:()=>manufacturer&&machine?`${manufacturer} ${machine} Specifications | UMS Spec Library`:'EDM Specifications | UMS',description:()=>manufacturer&&machine?`Historical ${manufacturer} ${machine} EDM specifications by year and configuration from exact UMS records.`:'Historical EDM specifications.'})
