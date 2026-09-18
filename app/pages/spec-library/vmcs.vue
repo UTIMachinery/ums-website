@@ -36,42 +36,24 @@
           <h3>Looking for a vertical machining center?</h3>
           <p>We do not have a matching VMC listed in current inventory right now. Inventory changes frequently, so send us your requirements and UMS can help locate one.</p>
         </div>
-        <NuxtLink to="/equipment#tell-us-what-you-need" class="orange-button">Tell Us What You Need</NuxtLink>
+        <NuxtLink to="/machine-needed" class="orange-button">Tell Us What You Need</NuxtLink>
       </div>
     </section>
 
-    <section id="library" class="wrap section"><div class="label">SPECIFICATION LIBRARY — HISTORICAL INFORMATION</div><h2>VMC Manufacturer & Model Library</h2><p class="intro">The UMS historical database contains approximately 1,650 vertical machining center records, with detailed specification data on more than 1,600 machines. Historical records do not indicate current availability.</p>
-      <div class="grid">
-        <article class="card featured"><h3>Haas</h3><p>VF, TM, Mini Mill, VM, UMC, DM, DT, VR and related Haas vertical machining platforms.</p><NuxtLink to="/spec-library/haas/vmcs">Browse Haas VMC specifications →</NuxtLink></article>
-        <article class="card featured"><h3>Mazak</h3><p>VTC, VQC, AJV, V-Series and related Mazak vertical machining centers.</p><NuxtLink to="/spec-library/mazak/vmcs">Browse Mazak VMC specifications →</NuxtLink></article><article class="card featured"><h3>Fadal</h3><p>VMC-15, 3016, 4020, 5020, 6030, 8030 and related Fadal vertical machining centers.</p><NuxtLink to="/spec-library/fadal/vmcs">Browse Fadal VMC specifications →</NuxtLink></article><article class="card featured"><h3>Mori-Seiki</h3><p>MV, GV and related Mori-Seiki vertical machining centers.</p><NuxtLink to="/spec-library/mori-seiki/vmcs">Browse Mori-Seiki VMC specifications →</NuxtLink></article><article class="card featured"><h3>Cincinnati</h3><p>Arrow, Lancer, Sabre, 10VC and related Cincinnati vertical machining centers.</p><NuxtLink to="/spec-library/cincinnati/vmcs">Browse Cincinnati VMC specifications →</NuxtLink></article><article class="card featured"><h3>Okuma</h3><p>MC, MX, Cadet, ES, VR and related Okuma vertical machining centers.</p><NuxtLink to="/spec-library/okuma/vmcs">Browse Okuma VMC specifications →</NuxtLink></article><article class="card featured"><h3>Matsuura</h3><p>MC and RA vertical machining center families.</p><NuxtLink to="/spec-library/matsuura/vmcs">Browse Matsuura VMC specifications →</NuxtLink></article>
-<article class="card featured"><h3>Hurco</h3><p>BMC, VM, VMX and related Hurco vertical machining centers.</p><NuxtLink to="/spec-library/hurco/vmcs">Browse Hurco VMC specifications →</NuxtLink></article>
-<article class="card featured"><h3>Kitamura</h3><p>Mycenter and Bridgecenter vertical machining centers.</p><NuxtLink to="/spec-library/kitamura/vmcs">Browse Kitamura VMC specifications →</NuxtLink></article>
-<article class="card featured"><h3>OKK</h3><p>MCV, PCV, VM, KVC and related OKK vertical machining centers.</p><NuxtLink to="/spec-library/okk/vmcs">Browse OKK VMC specifications →</NuxtLink></article>
-<article class="card featured"><h3>Tree</h3><p>VMC-1050, VMC-1060 and related Tree vertical machining centers.</p><NuxtLink to="/spec-library/tree/vmcs">Browse Tree VMC specifications →</NuxtLink></article>
-<article class="card featured"><h3>Milltronics</h3><p>VM, Partner, BR and related Milltronics vertical machining centers.</p><NuxtLink to="/spec-library/milltronics/vmcs">Browse Milltronics VMC specifications →</NuxtLink></article>
-<article class="card featured"><h3>Daewoo</h3><p>DMV-series vertical machining centers.</p><NuxtLink to="/spec-library/daewoo/vmcs">Browse Daewoo VMC specifications →</NuxtLink></article>
-<article class="card featured"><h3>Monarch</h3><p>VMC-45, VMC-75, VMC-150 and related Monarch vertical machining centers.</p><NuxtLink to="/spec-library/monarch/vmcs">Browse Monarch VMC specifications →</NuxtLink></article>
-<article class="card featured"><h3>Enshu</h3><p>650V, 650VX, 400FAV, VMC-430 and related Enshu vertical machining centers.</p><NuxtLink to="/spec-library/enshu/vmcs">Browse Enshu VMC specifications →</NuxtLink></article><article class="card featured"><h3>Leadwell</h3><p>MCV-1000P, MCV-1300 and related Leadwell vertical machining centers.</p><NuxtLink to="/spec-library/leadwell/vmcs">Browse Leadwell VMC specifications →</NuxtLink></article>
-<article class="card featured"><h3>Hitachi-Seiki</h3><p>VM, VK and related Hitachi-Seiki vertical machining centers.</p><NuxtLink to="/spec-library/hitachi-seiki/vmcs">Browse Hitachi-Seiki VMC specifications →</NuxtLink></article>
-<article class="card featured"><h3>SNK</h3><p>RB, FSP, PC and related SNK vertical machining centers.</p><NuxtLink to="/spec-library/snk/vmcs">Browse SNK VMC specifications →</NuxtLink></article>
-<article class="card featured"><h3>Bridgeport</h3><p>Interact, Torque Cut and related Bridgeport vertical machining centers.</p><NuxtLink to="/spec-library/bridgeport/vmcs">Browse Bridgeport VMC specifications →</NuxtLink></article>
-<article class="card featured"><h3>Dah Lih</h3><p>MCV-series vertical machining centers.</p><NuxtLink to="/spec-library/dah-lih/vmcs">Browse Dah Lih VMC specifications →</NuxtLink></article><article v-for="m in planned" :key="m.name" class="card"><h3>{{m.name}}</h3><p>{{m.text}}</p><span>Manufacturer library page being prepared</span></article>
-      </div>
-    </section>
-    <section class="wrap section additional">
-      <div class="label">EXPANDED HISTORICAL VMC LIBRARY</div>
-      <h2>Additional VMC Manufacturers</h2>
-      <p class="intro">Browse the rest of the UMS historical VMC database by manufacturer. These pages use the same manufacturer → model → year/configuration structure as the primary libraries above.</p>
-      <input v-model="otherQ" class="search" type="search" placeholder="Search additional VMC manufacturers">
+    <section id="library" class="wrap section">
+      <div class="label">SPECIFICATION LIBRARY — HISTORICAL INFORMATION</div>
+      <h2>VMC Manufacturers</h2>
+      <p class="intro">Browse {{ totalHistoricalRecords }} historical UMS vertical machining center records across {{ vmcLibrary.length }} manufacturers. Select a manufacturer, then a model, to view historical specifications by year/configuration.</p>
+      <input v-model="manufacturerQ" class="search" type="search" placeholder="Search VMC manufacturer">
       <div class="compact-grid">
-        <NuxtLink v-for="m in filteredOther" :key="m.slug" :to="`/spec-library/${m.slug}/vmcs`" class="compact-card">
+        <NuxtLink v-for="m in filteredManufacturers" :key="m.slug" :to="`/spec-library/${m.slug}/vmcs`" class="compact-card">
           <strong>{{m.name}}</strong>
           <span>{{m.models.length}} model{{m.models.length===1?'':'s'}} · {{m.records}} historical record{{m.records===1?'':'s'}}</span>
         </NuxtLink>
       </div>
+      <p v-if="!filteredManufacturers.length" class="empty">No VMC manufacturers match your search.</p>
     </section>
-    <section class="wrap section guide"><h2>Key VMC Specifications</h2><div class="specs"><div v-for="s in specs" :key="s[0]" class="spec"><h3>{{s[0]}}</h3><p>{{s[1]}}</p></div></div></section>
-  </main>
+    <section class="wrap section guide"><h2>Key VMC Specifications</h2><div class="specs"><div v-for="s in specs" :key="s[0]" class="spec"><h3>{{s[0]}}</h3><p>{{s[1]}}</p></div></div></section>\n    <HistoricalLibraryFooter machine-type="CNC Machining Centers, Vertical" />\n  </main>
 </template>
 <script setup>
 import historicalMachines from '~/assets/data/historical-machines.json'
@@ -114,7 +96,6 @@ async function loadMachineCardImages(){
 onMounted(loadMachineCardImages)
 
 const vmcSlug=value=>clean(value).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
-const featuredNames=new Set(['haas','mazak','fadal','mori-seiki','cincinnati','okuma','matsuura','hurco','kitamura','okk','tree','milltronics','daewoo','monarch','enshu','leadwell','hitachi-seiki','snk','bridgeport','dah lih'])
 const manufacturerMap=new Map()
 for(const machine of historicalMachines.filter(vmcHistoricalFilter)){
   const name=clean(machine.Manufacturer)
@@ -126,17 +107,15 @@ for(const machine of historicalMachines.filter(vmcHistoricalFilter)){
   const model=clean(machine.Model)
   if(model) row.models.add(model.toLowerCase())
 }
-const otherLibrary=[...manufacturerMap.entries()]
-  .filter(([key])=>!featuredNames.has(key))
-  .map(([,m])=>({name:m.name,slug:m.slug,models:[...m.models],records:m.records}))
+const vmcLibrary=[...manufacturerMap.values()]
+  .map(m=>({name:m.name,slug:m.slug,models:[...m.models],records:m.records}))
   .sort((a,b)=>a.name.localeCompare(b.name))
-
-const otherQ=ref('')
-const filteredOther=computed(()=>{
-  const x=otherQ.value.trim().toLowerCase()
-  return x?otherLibrary.filter(m=>m.name.toLowerCase().includes(x)):otherLibrary
+const totalHistoricalRecords=vmcLibrary.reduce((sum,m)=>sum+m.records,0)
+const manufacturerQ=ref('')
+const filteredManufacturers=computed(()=>{
+  const x=manufacturerQ.value.trim().toLowerCase()
+  return x?vmcLibrary.filter(m=>m.name.toLowerCase().includes(x)):vmcLibrary
 })
-const planned=[]
 const specs=[
 ['X / Y / Z Axis Travel','Defines the primary machining work envelope.'],
 ['Table Size & Capacity','Determines practical workholding area and part-weight limits.'],
