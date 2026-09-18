@@ -119,6 +119,23 @@
     "featOrder": ""
   },
   {
+    "InvID": "31229",
+    "WebDesc": "Shears",
+    "Groups": "Fabricating",
+    "Manufacturer": "Cincinnati",
+    "Model": "1812",
+    "Year": "1966",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "1/4\" x 144\" capacity, 10 hp, 18\" throat, 13 holddowns, 60 SPM, Squaring arm",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
+  },
+  {
     "InvID": "31087",
     "WebDesc": "CNC Lathes",
     "Groups": "CNC Lathes & Turning Centers",
@@ -166,8 +183,8 @@
     "Sold": "0",
     "Off_Market": "0",
     "dont_advertise": "0",
-    "Featured": "0",
-    "featOrder": ""
+    "Featured": "1",
+    "featOrder": "7"
   },
   {
     "InvID": "31155",
@@ -183,8 +200,8 @@
     "Sold": "0",
     "Off_Market": "0",
     "dont_advertise": "0",
-    "Featured": "0",
-    "featOrder": ""
+    "Featured": "1",
+    "featOrder": "4"
   },
   {
     "InvID": "31068",
@@ -221,6 +238,23 @@
     "featOrder": ""
   },
   {
+    "InvID": "31120",
+    "WebDesc": "CNC Lathes",
+    "Groups": "CNC Lathes & Turning Centers",
+    "Manufacturer": "Doosan",
+    "Model": "Puma 5100C Big Bore",
+    "Year": "2018",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "10.75\" spindle bore, 35.4\" Swing, 40\" centers, 1000 rpm, 12 pos turret, chip conveyor, 3 & 4-jaw manual chucks included, Tool Presetter",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "1",
+    "featOrder": "5"
+  },
+  {
     "InvID": "31167",
     "WebDesc": "CNC Lathes, 3-Axis or More",
     "Groups": "CNC Lathes & Turning Centers",
@@ -236,6 +270,23 @@
     "dont_advertise": "0",
     "Featured": "0",
     "featOrder": ""
+  },
+  {
+    "InvID": "31224",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "Manufacturer": "Fadal",
+    "Model": "VMC-8030",
+    "Year": "2007",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "X-80\" Y-30\" Z-30\", 30 hp, 10000 rpm, 24 ATC",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
   },
   {
     "InvID": "31137",
@@ -285,8 +336,8 @@
     "Sold": "0",
     "Off_Market": "0",
     "dont_advertise": "0",
-    "Featured": "0",
-    "featOrder": ""
+    "Featured": "1",
+    "featOrder": "6"
   },
   {
     "InvID": "31158",
@@ -303,7 +354,24 @@
     "Off_Market": "0",
     "dont_advertise": "0",
     "Featured": "1",
-    "featOrder": "6"
+    "featOrder": "10"
+  },
+  {
+    "InvID": "31090",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "Manufacturer": "Genmill",
+    "Model": "T-700",
+    "Year": "2018",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "X-27.56\" Y-16.93\" Z-12.99\", 12000 rpm, 7.5 hp, BT30BBT Big plus Spindle, 21 Pos Turret, 2361 IPM Rapids, 50 tool holders, (3) kurt vises",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": ""
   },
   {
     "InvID": "31001",
@@ -388,7 +456,7 @@
     "Off_Market": "0",
     "dont_advertise": "0",
     "Featured": "1",
-    "featOrder": "2"
+    "featOrder": "1"
   },
   {
     "InvID": "31175",
@@ -490,7 +558,7 @@
     "Off_Market": "0",
     "dont_advertise": "0",
     "Featured": "1",
-    "featOrder": "3"
+    "featOrder": "2"
   },
   {
     "InvID": "31207",
@@ -510,6 +578,23 @@
     "featOrder": "0"
   },
   {
+    "InvID": "30791",
+    "WebDesc": "CNC Lathes",
+    "Groups": "CNC Lathes & Turning Centers",
+    "Manufacturer": "Haas",
+    "Model": "ST-40LB",
+    "Year": "2012",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "34.5\" Swing, 80\" Centers, 7\" Bore, 1400 rpm, 12 pos trt, 55 hp, 18\" chuck, chip conv, Big Bore, Long Bed, Prog Tailstock, Steady rest provision, Steady rest, Extra perf opt",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": ""
+  },
+  {
     "InvID": "31166",
     "WebDesc": "CNC Lathes",
     "Groups": "CNC Lathes & Turning Centers",
@@ -525,6 +610,57 @@
     "dont_advertise": "0",
     "Featured": "0",
     "featOrder": ""
+  },
+  {
+    "InvID": "31213",
+    "WebDesc": "CNC Lathes",
+    "Groups": "CNC Lathes & Turning Centers",
+    "Manufacturer": "Haas",
+    "Model": "TL-3",
+    "Year": "2006",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "20\" swg, 60\" centers, 3.5\" bore, 18 hp, 1800 rpm, Tailstock, 12\" chuck, 5C collet Chuck, Enclosure",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
+  },
+  {
+    "InvID": "31212",
+    "WebDesc": "CNC Lathes",
+    "Groups": "CNC Lathes & Turning Centers",
+    "Manufacturer": "Haas",
+    "Model": "TL-3",
+    "Year": "2006",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "20\" Swg, 60\" centers, 3.5\" broe, 18 hp, 1800 rp, tailstock, 12\" chuck",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
+  },
+  {
+    "InvID": "31211",
+    "WebDesc": "CNC Lathes",
+    "Groups": "CNC Lathes & Turning Centers",
+    "Manufacturer": "Haas",
+    "Model": "TL-3",
+    "Year": "2011",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "20\" Swing, 60\" Centers, 3.5\" Bore, 18 hp, 1800 rpm, Tailstock, 13\" Chuck, Steady.",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
   },
   {
     "InvID": "31163",
@@ -557,8 +693,8 @@
     "Sold": "0",
     "Off_Market": "0",
     "dont_advertise": "0",
-    "Featured": "0",
-    "featOrder": ""
+    "Featured": "1",
+    "featOrder": "9"
   },
   {
     "InvID": "31194",
@@ -625,8 +761,8 @@
     "Sold": "0",
     "Off_Market": "0",
     "dont_advertise": "0",
-    "Featured": "0",
-    "featOrder": "0"
+    "Featured": "1",
+    "featOrder": "3"
   },
   {
     "InvID": "31186",
@@ -779,7 +915,7 @@
     "Off_Market": "0",
     "dont_advertise": "0",
     "Featured": "1",
-    "featOrder": "4"
+    "featOrder": "8"
   },
   {
     "InvID": "31181",
@@ -864,7 +1000,7 @@
     "Off_Market": "0",
     "dont_advertise": "0",
     "Featured": "1",
-    "featOrder": "5"
+    "featOrder": "11"
   },
   {
     "InvID": "31162",
@@ -1003,6 +1139,23 @@
     "featOrder": ""
   },
   {
+    "InvID": "31223",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "Manufacturer": "Johnford",
+    "Model": "VMC-1600HD",
+    "Year": "2011",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "X-63\" Y-33.5\" Z-28\", 4500 RPM, Cat50 Taper, 24 ATC, Rigid Tapping, Chip Conv, Box Ways, Misc Tool Holders",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
+  },
+  {
     "InvID": "30965",
     "WebDesc": "CNC Machining Centers, Vertical",
     "Groups": "CNC Vertical Machining Centers and CNC Mills",
@@ -1071,6 +1224,23 @@
     "featOrder": ""
   },
   {
+    "InvID": "31228",
+    "WebDesc": "Horizontal Boring Mill, CNC",
+    "Groups": "Horizontal Boring Mills & HBM",
+    "Manufacturer": "Kuraki",
+    "Model": "KBT-11WA",
+    "Year": "1999",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "4.3\" Spdl, X-78.7\" Y-59\"  Z-57\"  W-19.7\", 63\" x 55\" full contouring rotary table, 30 hp, 3000 rpm, 40 atc",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
+  },
+  {
     "InvID": "31180",
     "WebDesc": "Trucks, Lift, Gas or Electric, Fork Lifts",
     "Groups": "Material Handling",
@@ -1086,6 +1256,40 @@
     "dont_advertise": "0",
     "Featured": "0",
     "featOrder": ""
+  },
+  {
+    "InvID": "31230",
+    "WebDesc": "CNC Machining Centers, Horizontal",
+    "Groups": "CNC Horizontal Machining Centers",
+    "Manufacturer": "Makino",
+    "Model": "A61",
+    "Year": "2006",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "(2) 19.7\" pllts, Full 4th, X-28.7\"  Y-25.6\"  Z-28.7\", 25 hp, 12000 rpm, 60 ATC, TSC, Probing, Chip Conv",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
+  },
+  {
+    "InvID": "31226",
+    "WebDesc": "CNC Machining Centers, Horizontal",
+    "Groups": "CNC Horizontal Machining Centers",
+    "Manufacturer": "Makino",
+    "Model": "A61NX",
+    "Year": "2014",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "19.7\" Pallet, full 4th axis, X-28.7\" Y-28.7\" Z-31.5, 25 hp, 20000 rpm, 60 atc, Chip Conv, TSC, Ext y-Axis",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
   },
   {
     "InvID": "31096",
@@ -1190,6 +1394,23 @@
     "featOrder": ""
   },
   {
+    "InvID": "31232",
+    "WebDesc": "CNC Machining Centers, Vertical",
+    "Groups": "CNC Vertical Machining Centers and CNC Mills",
+    "Manufacturer": "Mori-Seiki",
+    "Model": "MV-40B",
+    "Year": "1993",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "X-31.5\"  Y-16.14\"  Z-29.08\" (9\" Extended Z-travel), Cat40 Taper, 12000 rpm, 20 atc, 4th-Axis CNC Rotary Table",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
+  },
+  {
     "InvID": "31196",
     "WebDesc": "CNC Machining Centers, Horizontal",
     "Groups": "CNC Horizontal Machining Centers",
@@ -1258,6 +1479,40 @@
     "featOrder": ""
   },
   {
+    "InvID": "31227",
+    "WebDesc": "CNC Machining Centers, Horizontal",
+    "Groups": "CNC Horizontal Machining Centers",
+    "Manufacturer": "OKK",
+    "Model": "HMC-400",
+    "Year": "2015",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "(2) 15.75\" Pallets, Full 4th, X-22.05\" Y-22.05\" Z-27.17\", 50 hp, 15000 rpm, 60 atc, TSC, Probing, Chip Conv",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
+  },
+  {
+    "InvID": "31225",
+    "WebDesc": "CNC Machining Centers, Horizontal",
+    "Groups": "CNC Horizontal Machining Centers",
+    "Manufacturer": "OKK",
+    "Model": "HMC-500",
+    "Year": "2017",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "(2) 19.7\" pllets, Full4th,  X-29.9\" Y-29.9\" Z-31.5\", 50 hp, Cat40 Big Plus, 15000 rpm, 60 atc, TSC, Probing, Chip Conv",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
+  },
+  {
     "InvID": "31093",
     "WebDesc": "CNC Lathes",
     "Groups": "CNC Lathes & Turning Centers",
@@ -1290,6 +1545,23 @@
     "dont_advertise": "0",
     "Featured": "0",
     "featOrder": ""
+  },
+  {
+    "InvID": "31231",
+    "WebDesc": "CNC Machining Centers, Horizontal",
+    "Groups": "CNC Horizontal Machining Centers",
+    "Manufacturer": "Okuma",
+    "Model": "MB-5000H",
+    "Year": "2018",
+    "Price": "$0.00",
+    "Location": "",
+    "Condition": "Good",
+    "AdvSpec": "(2) 19.7\" Pllts, Full 4th, X-29.92\" Y-29.92\" Z-29.92\", 35 hp, 15000 rpm, 148 ATC, Probing, TSC, Chip Conv",
+    "Sold": "0",
+    "Off_Market": "0",
+    "dont_advertise": "0",
+    "Featured": "0",
+    "featOrder": "0"
   },
   {
     "InvID": "31171",
@@ -1358,23 +1630,6 @@
     "dont_advertise": "0",
     "Featured": "0",
     "featOrder": ""
-  },
-  {
-    "InvID": "31156",
-    "WebDesc": "CNC Lathes",
-    "Groups": "CNC Lathes & Turning Centers",
-    "Manufacturer": "SMEC",
-    "Model": "SL-2000A",
-    "Year": "2019",
-    "Price": "$0.00",
-    "Location": "",
-    "Condition": "Good",
-    "AdvSpec": "22.45\" swg, 18.12\" Swg/cross slide, 22\" centers, 2.4\" bore, 6000 rpm, 25 hp, 12 pos turret, Tailstock, parts catcher, Tool presetter",
-    "Sold": "0",
-    "Off_Market": "0",
-    "dont_advertise": "0",
-    "Featured": "1",
-    "featOrder": "1"
   },
   {
     "InvID": "31189",
