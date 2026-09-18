@@ -74,21 +74,22 @@
   </main>
 </template>
 <script setup>
-import otherLibrary from '~/assets/data/vmc-remaining-library.js'
-import { historicalManufacturers } from '~/utils/historicalSpecLibrary'
+import historicalMachines from '~/assets/data/historical-machines.json'
 import machinesData from '~/assets/data/machines.json'
 
 const machines=ref(machinesData)
 const machineCardImages=ref({})
+const clean=value=>String(value??'').trim()
 const webDescription=machine=>machine.WebDesc||machine.Web_Desc||''
 const advertisingSpec=machine=>machine.AdvSpec||machine.Adv_Spec||''
 const offMarketValue=machine=>machine.OffMarket??machine.Off_Market??0
+const vmcHistoricalFilter=machine=>clean(machine.WebDesc||machine.Web_Desc).toLowerCase().startsWith('cnc machining centers, vertical')
 const currentVmcs=computed(()=>(machines.value||[])
   .filter(machine=>
     Number(machine.Sold)===0 &&
     Number(offMarketValue(machine))===0 &&
     Number(machine.dont_advertise)===0 &&
-    machine.Groups==='CNC Vertical Machining Centers and CNC Mills'
+    vmcHistoricalFilter(machine)
   )
   .sort((a,b)=>Number(b.Year||0)-Number(a.Year||0)))
 
@@ -111,19 +112,31 @@ async function loadMachineCardImages(){
   }
 }
 onMounted(loadMachineCardImages)
-const vmcHistoricalFilter=machine=>String(machine.WebDesc||machine.Web_Desc||'').trim().toLowerCase().startsWith('cnc machining centers, vertical')
-const historicalVmcManufacturers=historicalManufacturers({machineFilter:vmcHistoricalFilter})
-const vmcSlug=value=>String(value||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+
+const vmcSlug=value=>clean(value).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const featuredNames=new Set(['haas','mazak','fadal','mori-seiki','cincinnati','okuma','matsuura','hurco','kitamura','okk','tree','milltronics','daewoo','monarch','enshu','leadwell','hitachi-seiki','snk','bridgeport','dah lih'])
+const manufacturerMap=new Map()
+for(const machine of historicalMachines.filter(vmcHistoricalFilter)){
+  const name=clean(machine.Manufacturer)
+  if(!name) continue
+  const key=name.toLowerCase()
+  if(!manufacturerMap.has(key)) manufacturerMap.set(key,{name,slug:vmcSlug(name),models:new Set(),records:0})
+  const row=manufacturerMap.get(key)
+  row.records++
+  const model=clean(machine.Model)
+  if(model) row.models.add(model.toLowerCase())
+}
+const otherLibrary=[...manufacturerMap.entries()]
+  .filter(([key])=>!featuredNames.has(key))
+  .map(([,m])=>({name:m.name,slug:m.slug,models:[...m.models],records:m.records}))
+  .sort((a,b)=>a.name.localeCompare(b.name))
+
 const otherQ=ref('')
 const filteredOther=computed(()=>{
   const x=otherQ.value.trim().toLowerCase()
-  const existing=new Set(otherLibrary.map(m=>String(m.name||'').toLowerCase()))
-  const generated=historicalVmcManufacturers.filter(name=>!existing.has(name.toLowerCase())).map(name=>({name,to:`/spec-library/${vmcSlug(name)}/vmcs`,models:[]}))
-  const list=[...otherLibrary,...generated]
-  return x?list.filter(m=>m.name.toLowerCase().includes(x)):list
+  return x?otherLibrary.filter(m=>m.name.toLowerCase().includes(x)):otherLibrary
 })
-const planned=[
-]
+const planned=[]
 const specs=[
 ['X / Y / Z Axis Travel','Defines the primary machining work envelope.'],
 ['Table Size & Capacity','Determines practical workholding area and part-weight limits.'],
