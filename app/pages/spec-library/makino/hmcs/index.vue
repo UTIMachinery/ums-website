@@ -5,10 +5,14 @@
   </main>
 </template>
 <script setup>
-import manufacturer from '~/assets/data/makino-hmc.js'
+import { historicalConfigurations, historicalModels } from '~/utils/historicalSpecLibrary'
+const isHmc=m=>String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase().startsWith('cnc machining centers, horizontal')
+const slugify=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const models=historicalModels({manufacturer:'Makino',machineFilter:isHmc}).map(name=>{const cfg=historicalConfigurations({manufacturer:'Makino',model:name,machineFilter:isHmc});const years=cfg.map(x=>Number(x.year)).filter(Number.isFinite).sort((a,b)=>a-b);return {name,slug:slugify(name),records:cfg.length,years}})
+const manufacturer={models,records:models.reduce((n,m)=>n+m.records,0)}
 const q=ref('')
 const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?manufacturer.models.filter(m=>m.name.toLowerCase().includes(x)):manufacturer.models})
-const yearLabel=m=>{const y=(m.years||[]).map(r=>String(r[0])).filter(Boolean);return y.length<=1?(y[0]||'year varies'):`${y[0]}–${y[y.length-1]}`}
+const yearLabel=m=>{const y=m.years||[];return y.length<=1?(y[0]||'year varies'):`${y[0]}–${y[y.length-1]}`}
 useSeoMeta({title:'Makino HMC Specifications | UMS Spec Library',description:'Historical Makino horizontal machining center specifications by model and year/configuration.'})
 </script>
 <style scoped>

@@ -1,17 +1,20 @@
 <template>
   <main class="page">
-    <section class="hero"><div class="wrap"><NuxtLink to="/spec-library/hmcs" class="back">← HMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>Mazak Horizontal Machining Centers</h1><p>Historical Mazak HMC model pages built from UMS machinery records, preserving pallet, travel, spindle, ATC, control and year/configuration differences.</p></div></section>
-    <section class="wrap section"><h2>Mazak HMC Model Pages</h2><p class="intro">The first Mazak section contains the strongest repeat-model families from the historical UMS database. Obvious formatting duplicates such as H400/H-400 and H400N/H-400N are normalized.</p>
+    <section class="hero"><div class="wrap"><NuxtLink to="/spec-library/hmcs" class="back">← HMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>Mazak Horizontal Machining Centers</h1><p>{{manufacturer.models.length}} historical model pages built from {{manufacturer.records}} UMS HMC records.</p></div></section>
+    <section class="wrap section"><h2>Mazak HMC Model Pages</h2><p class="intro">Select a model to view its historical year/control configurations and recorded specifications.</p>
       <input v-model="q" class="search" type="search" placeholder="Search Mazak HMC model">
       <div class="grid"><NuxtLink v-for="m in filtered" :key="m.slug" :to="`/spec-library/mazak/hmcs/${m.slug}`" class="card"><strong>{{m.name}}</strong><span>{{m.records}} historical record{{m.records===1?'':'s'}} · {{yearLabel(m)}}</span></NuxtLink></div>
     </section>
   </main>
 </template>
 <script setup>
-import models from '~/assets/data/mazak-hmc-library.js'
+import { historicalModelSummaries } from '~/utils/historicalSpecLibrary'
+const isHmc=m=>String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase().startsWith('cnc machining centers, horizontal')
+const models=historicalModelSummaries({manufacturer:'Mazak',machineFilter:isHmc}).map(m=>({name:m.model,slug:m.slug,records:m.count,years:m.years.sort((a,b)=>a-b)}))
+const manufacturer={models,records:models.reduce((n,m)=>n+m.records,0)}
 const q=ref('')
-const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?models.filter(m=>m.name.toLowerCase().includes(x)):models})
-const yearLabel=m=>{const y=(m.years||[]).map(r=>String(r[0])).filter(Boolean);if(!y.length)return 'year varies';return y.length===1?y[0]:`${y[0]}–${y[y.length-1]}`}
+const filtered=computed(()=>{const x=q.value.trim().toLowerCase();return x?manufacturer.models.filter(m=>m.name.toLowerCase().includes(x)):manufacturer.models})
+const yearLabel=m=>{const y=m.years||[];return y.length<=1?(y[0]||'year varies'):`${y[0]}–${y[y.length-1]}`}
 useSeoMeta({title:'Mazak HMC Specifications | H FH HTC | UMS Spec Library',description:'Research historical Mazak horizontal machining center specifications including H-Series, FH-Series and HTC models by year and configuration.'})
 useHead({link:[{rel:'canonical',href:'https://www.usedmachinerysource.com/spec-library/mazak/hmcs'}]})
 </script>

@@ -1,9 +1,9 @@
 <template>
   <main v-if="manufacturer&&machine" class="page">
-    <section class="hero"><div class="wrap"><NuxtLink :to="`/spec-library/${manufacturer.slug}/vmcs`" class="back">← {{manufacturer.name}} VMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>{{manufacturer.name}} {{machine.name}} Specifications</h1><p>Historical vertical machining center specifications based on {{machine.records}} UMS machine record{{machine.records===1?'':'s'}}.</p></div></section>
+    <section class="hero"><div class="wrap"><NuxtLink :to="`/spec-library/${manufacturer.slug}/vmcs`" class="back">← {{manufacturer.name}} VMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>{{manufacturer.name}} {{machine.name}} Specifications</h1><p>Historical vertical machining center specifications based on {{historicalConfigs.length}} usable UMS machine record{{historicalConfigs.length===1?'':'s'}}.</p></div></section>
     <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Values can vary by year, CNC control, spindle package and optional equipment.</div>
-      <h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below represents a recorded historical year/configuration. Differences are preserved rather than averaged together.</p>
-      <VmcYearConfigurations :model="`${manufacturer.name} ${machine.name}`" :configurations="yearConfigurations" /><SpecInventoryMatches :manufacturer="manufacturer.name" :model="machine.name" machine-type="vmc" />
+      <h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below represents one historical UMS machine record. Specifications and equipment are joined only by that record's InvID, so configurations are never mixed together.</p>
+      <HistoricalSpecConfigurations :configurations="historicalConfigs" /><SpecInventoryMatches :manufacturer="manufacturer.name" :model="machine.name" machine-type="vmc" />
       <section class="cta"><div><div class="cta-kicker">NEED A MACHINE?</div><h2>Looking for a {{manufacturer.name}} {{machine.name}}?</h2><p>Tell Used Machinery Source what you need and we can help locate a machine that fits your requirements.</p></div><NuxtLink to="/equipment#tell-us-what-you-need">Tell Us What You Need</NuxtLink></section>
     </section>
   </main>
@@ -11,24 +11,12 @@
 </template>
 <script setup>
 import library from '~/assets/data/vmc-remaining-library.js'
+import { historicalConfigurations } from '~/utils/historicalSpecLibrary'
 const route=useRoute()
 const manufacturer=computed(()=>library.find(m=>m.slug===route.params.manufacturer)||null)
 const machine=computed(()=>manufacturer.value?.models?.find(m=>m.slug===route.params.model)||null)
 if(!manufacturer.value||!machine.value)setResponseStatus(404)
-const cleanValue=v=>{
-  if(v===null||v===undefined)return false
-  const x=String(v).trim()
-  if(!x||/^[_\-\s]+$/.test(x)||x.includes('\t'))return false
-  if(/Maximum$/.test(x)&&/\d{3,}/.test(x))return false
-  return true
-}
-const yearConfigurations=computed(()=>(machine.value?.years||[]).map(r=>({
-  year:r[0],
-  title:`${r[0]} ${manufacturer.value.name} ${machine.value.name} historical configuration`,
-  control:r[1]||'Control not recorded',
-  specs:(r[2]||[]).filter(s=>cleanValue(s[1])).map(s=>({label:s[0],value:s[1]})),
-  note:r[3]||''
-})).filter(r=>r.specs.length))
+const historicalConfigs=computed(()=>manufacturer.value&&machine.value?historicalConfigurations({manufacturer:manufacturer.value.name,model:machine.value.name}):[])
 useSeoMeta({
   title:()=>manufacturer.value&&machine.value?`${manufacturer.value.name} ${machine.value.name} VMC Specifications | UMS Spec Library`:'VMC Specifications | UMS',
   description:()=>manufacturer.value&&machine.value?`Historical ${manufacturer.value.name} ${machine.value.name} VMC specifications by year including travels, table, spindle and tooling data.`:'Historical VMC specifications.'

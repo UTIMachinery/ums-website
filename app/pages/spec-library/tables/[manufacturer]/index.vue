@@ -1,0 +1,1 @@
+<template><HistoricalJsonManufacturer group="Tables" title="Tables" slug="tables"/></template>

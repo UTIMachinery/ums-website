@@ -1,17 +1,22 @@
 <template>
   <main v-if="manufacturer&&machine" class="page">
     <section class="hero"><div class="wrap"><NuxtLink :to="`/spec-library/${manufacturer.slug}/hmcs`" class="back">← {{manufacturer.name}} HMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>{{manufacturer.name}} {{machine.name}} HMC Specifications</h1><p>Historical horizontal machining center specifications based on {{machine.records}} UMS machine record{{machine.records===1?'':'s'}}.</p></div></section>
-    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Pallet, spindle, control and tooling configurations can vary by year and option package.</div><h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below represents a recorded historical year/control configuration.</p><HmcYearConfigurations :model="`${manufacturer.name} ${machine.name}`" :configurations="yearConfigurations" /><SpecInventoryMatches :manufacturer="manufacturer.name" :model="machine.name" machine-type="hmc" /></section>
+    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Pallet, spindle, control and tooling configurations can vary by year and option package.</div><h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below represents a recorded historical year/control configuration.</p><HistoricalSpecConfigurations :configurations="configurations" /><SpecInventoryMatches :manufacturer="manufacturer.name" :model="machine.name" machine-type="hmc" /></section>
   </main>
   <main v-else class="missing"><h1>HMC model not found</h1><NuxtLink to="/spec-library/hmcs">Browse HMC specifications</NuxtLink></main>
 </template>
 <script setup>
-import library from '~/assets/data/hmc-additional-library.js'
+import { historicalConfigurations, historicalManufacturers, historicalModelBySlug } from '~/utils/historicalSpecLibrary'
 const route=useRoute()
-const manufacturer=computed(()=>library.find(m=>m.slug===route.params.manufacturer)||null)
-const machine=computed(()=>manufacturer.value?.models?.find(m=>m.slug===route.params.model)||null)
-if(!manufacturer.value||!machine.value)setResponseStatus(404)
-const yearConfigurations=computed(()=>(machine.value?.years||[]).map(r=>({year:r[0],title:`${r[0]} ${manufacturer.value.name} ${machine.value.name} historical configuration`,control:r[1],specs:(r[2]||[]).map(s=>({label:s[0],value:s[1]})),note:r[3]||''})))
+const manufacturerSlug=String(route.params.manufacturer||''),modelSlug=String(route.params.model||'')
+const slugify=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const isHmc=m=>String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase().startsWith('cnc machining centers, horizontal')
+const manufacturerName=historicalManufacturers({machineFilter:isHmc}).find(name=>slugify(name)===manufacturerSlug)
+const model=manufacturerName?historicalModelBySlug({manufacturer:manufacturerName,slug:modelSlug,machineFilter:isHmc}):null
+if(!manufacturerName||!model)setResponseStatus(404)
+const manufacturer=computed(()=>manufacturerName?{name:manufacturerName,slug:manufacturerSlug}:null)
+const machine=computed(()=>model?{name:model,slug:modelSlug}:null)
+const configurations=computed(()=>manufacturerName&&model?historicalConfigurations({manufacturer:manufacturerName,model,machineFilter:isHmc}):[])
 useSeoMeta({title:()=>manufacturer.value&&machine.value?`${manufacturer.value.name} ${machine.value.name} HMC Specifications | UMS Spec Library`:'HMC Specifications | UMS',description:()=>manufacturer.value&&machine.value?`Historical ${manufacturer.value.name} ${machine.value.name} HMC specifications including pallet, travels, spindle, ATC and control data by year.`:'Historical HMC specifications.'})
 const canonical=computed(()=>`https://www.usedmachinerysource.com/spec-library/${route.params.manufacturer}/hmcs/${route.params.model}`)
 useHead(()=>({link:[{rel:'canonical',href:canonical.value}]}))

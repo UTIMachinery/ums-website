@@ -1,0 +1,1 @@
+<template><HistoricalJsonManufacturer group="Other Machinery" title="Other Machinery" slug="other-machinery"/></template>

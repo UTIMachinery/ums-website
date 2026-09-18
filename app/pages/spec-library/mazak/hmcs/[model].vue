@@ -1,16 +1,18 @@
 <template>
   <main v-if="machine" class="page">
     <section class="hero"><div class="wrap"><NuxtLink to="/spec-library/mazak/hmcs" class="back">← Mazak HMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>Mazak {{machine.name}} HMC Specifications</h1><p>Historical horizontal machining center specifications based on {{machine.records}} UMS machine record{{machine.records===1?'':'s'}}.</p></div></section>
-    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Pallet, spindle, control and tooling configurations can vary by year and option package.</div><h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below represents a recorded year/control configuration from the UMS historical database.</p><HmcYearConfigurations :model="`Mazak ${machine.name}`" :configurations="yearConfigurations" /><SpecInventoryMatches manufacturer="Mazak" :model="machine.name" machine-type="hmc" /></section>
+    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Pallet, spindle, control and tooling configurations can vary by year and option package.</div><h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below represents a recorded year/control configuration from the UMS historical database.</p><HistoricalSpecConfigurations :configurations="configurations" /><SpecInventoryMatches manufacturer="Mazak" :model="machine.name" machine-type="hmc" /></section>
   </main>
   <main v-else class="missing"><h1>Mazak HMC model not found</h1><NuxtLink to="/spec-library/mazak/hmcs">Browse Mazak HMC specifications</NuxtLink></main>
 </template>
 <script setup>
-import models from '~/assets/data/mazak-hmc-library.js'
+import { historicalConfigurations, historicalModelBySlug } from '~/utils/historicalSpecLibrary'
 const route=useRoute()
-const machine=computed(()=>models.find(m=>m.slug===route.params.model)||null)
+const isHmc=m=>String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase().startsWith('cnc machining centers, horizontal')
+const modelName=computed(()=>historicalModelBySlug({manufacturer:'Mazak',slug:String(route.params.model||''),machineFilter:isHmc}))
+const configurations=computed(()=>modelName.value?historicalConfigurations({manufacturer:'Mazak',model:modelName.value,machineFilter:isHmc}):[])
+const machine=computed(()=>modelName.value?{name:modelName.value,records:configurations.value.length}:null)
 if(!machine.value)setResponseStatus(404)
-const yearConfigurations=computed(()=>(machine.value?.years||[]).map(r=>({year:r[0],title:`${r[0]} Mazak ${machine.value.name} historical configuration`,control:r[1],specs:(r[2]||[]).map(s=>({label:s[0],value:s[1]})),note:r[3]||''})))
 useSeoMeta({title:()=>machine.value?`Mazak ${machine.value.name} HMC Specifications | UMS Spec Library`:'Mazak HMC Specifications | UMS',description:()=>machine.value?`Historical Mazak ${machine.value.name} horizontal machining center specifications including pallets, travels, spindle, ATC and control data by year.`:'Historical Mazak HMC specifications.'})
 const canonical=computed(()=>`https://www.usedmachinerysource.com/spec-library/mazak/hmcs/${route.params.model}`)
 useHead(()=>({link:[{rel:'canonical',href:canonical.value}]}))

@@ -53,7 +53,7 @@
             so send us your requirements and UMS can help locate a machine that fits your needs.
           </p>
         </div>
-        <NuxtLink to="/equipment#tell-us-what-you-need" class="orange-button">Tell Us What You Need</NuxtLink>
+        <NuxtLink to="/machine-needed" class="orange-button">Tell Us What You Need</NuxtLink>
       </div>
     </section>
 
@@ -73,31 +73,6 @@
           <p>{{ type.description }}</p>
         </article>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="section-intro">
-        <div class="section-kicker">MANUFACTURERS</div>
-        <h2>CNC Lathe Manufacturers in the UMS Spec Library</h2>
-        <p>
-          The historical database has especially strong depth in Mazak, Haas, Okuma and Mori-Seiki turning equipment,
-          with additional records from Doosan, Daewoo, Hyundai, Hitachi-Seiki, Cincinnati, Hardinge and other builders.
-        </p>
-      </div>
-
-      <div class="manufacturer-grid">
-        <article v-for="maker in featuredManufacturers" :key="maker.name" class="manufacturer-card">
-          <h3>{{ maker.name }}</h3>
-          <p>{{ maker.families }}</p>
-          <NuxtLink v-if="maker.to" :to="maker.to" class="manufacturer-link">{{ maker.linkLabel }}</NuxtLink>
-          <span v-else class="coming-link">Manufacturer library page planned</span>
-        </article>
-      </div>
-
-      <p class="other-manufacturers">
-        <strong>Other manufacturers represented:</strong>
-        Daewoo, Doosan, Hyundai, Hitachi-Seiki, Okuma &amp; Howa, Cincinnati, Hardinge, Nakamura, Miyano and others.
-      </p>
     </section>
 
     <section class="section muted-section">
@@ -121,38 +96,18 @@
     <section id="spec-library" class="section library-section">
       <div class="library-label">SPECIFICATION LIBRARY — HISTORICAL INFORMATION</div>
       <div class="library-copy">
-        <h2>CNC Lathe Model &amp; Specification Library</h2>
-        <p>
-          Used Machinery Source maintains a historical machinery database compiled from records accumulated over many years.
-          The information is provided to help machinery buyers, dealers and manufacturing professionals research older CNC lathe
-          models, configurations and specifications.
-        </p>
-        <p class="library-warning">
-          <strong>Historical library information does not indicate that a machine is currently available for sale.</strong>
-          Specifications can vary by year, configuration, control and optional equipment. Current machines for sale are shown only
-          in the “For Sale Now” section above and on the UMS Equipment pages.
-        </p>
+        <h2>CNC Lathe Manufacturers</h2>
+        <p>Browse {{ totalHistoricalRecords }} historical UMS CNC lathe and turning-center records across {{ latheLibrary.length }} manufacturers. Select a manufacturer, then a model, to view historical specifications by year/configuration.</p>
+        <p class="library-warning"><strong>Historical library information does not indicate that a machine is currently available for sale.</strong> Specifications can vary by year, configuration, control and optional equipment.</p>
       </div>
-
-      <div class="family-grid">
-        <article v-for="maker in libraryFamilies" :key="maker.name" class="family-card">
-          <h3>{{ maker.name }}</h3>
-          <div class="family-tags">
-            <span v-for="family in maker.families" :key="family">{{ family }}</span>
-          </div>
-          <NuxtLink v-if="maker.to" :to="maker.to" class="family-browse-link">{{ maker.linkLabel }}</NuxtLink>
-        </article>
+      <input v-model="manufacturerQ" class="manufacturer-search" type="search" placeholder="Search CNC lathe manufacturer">
+      <div class="manufacturer-list-grid">
+        <NuxtLink v-for="maker in filteredManufacturers" :key="maker.slug" :to="maker.to" class="manufacturer-list-card">
+          <strong>{{maker.name}}</strong>
+          <span>{{maker.models.length}} model{{maker.models.length===1?'':'s'}} · {{maker.records}} historical record{{maker.records===1?'':'s'}}</span>
+        </NuxtLink>
       </div>
-
-      <div class="naming-note">
-        <h3>Model-name variations are preserved</h3>
-        <p>
-          Historical machinery is often entered and searched under more than one common model designation. The UMS Spec Library
-          preserves those original terms—for example, <strong>Mazak Quick-Turn 20</strong>, <strong>Quick Turn 20</strong> and
-          <strong>QT-20</strong>—rather than automatically replacing one with another. Where appropriate, related naming variations
-          can be connected on future model pages while the original historical records remain intact.
-        </p>
-      </div>
+      <p v-if="!filteredManufacturers.length" class="empty">No CNC lathe manufacturers match your search.</p>
     </section>
 
     <section class="section conversion-section">
@@ -161,7 +116,7 @@
           <h2>Looking for a CNC Lathe?</h2>
           <p>If the machine you need is not currently listed, send UMS your requirements and let us help locate it.</p>
         </div>
-        <NuxtLink to="/equipment#tell-us-what-you-need" class="orange-button">Tell Us What You Need</NuxtLink>
+        <NuxtLink to="/machine-needed" class="orange-button">Tell Us What You Need</NuxtLink>
       </div>
 
       <div class="conversion-card sell-card">
@@ -172,11 +127,13 @@
         <NuxtLink to="/sell-your-machine" class="dark-button">Sell Your Machine</NuxtLink>
       </div>
     </section>
+    <HistoricalLibraryFooter machine-type="CNC Lathes & Turning Centers" />
   </main>
 </template>
 
 <script setup>
 import machinesData from '~/assets/data/machines.json'
+import historicalMachines from '~/assets/data/historical-machines.json'
 
 const machines = ref(machinesData)
 const machineCardImages = ref({})
@@ -190,7 +147,7 @@ const currentCncLathes = computed(() => (machines.value || [])
     Number(machine.Sold) === 0 &&
     Number(offMarketValue(machine)) === 0 &&
     Number(machine.dont_advertise) === 0 &&
-    machine.Groups === 'CNC Lathes & Turning Centers'
+    isHistoricalLathe(machine)
   )
   .sort((a, b) => Number(b.Year || 0) - Number(a.Year || 0)))
 
@@ -213,12 +170,28 @@ const machineTypes = [
   { title: 'Multi-Axis & Mill-Turn Machines', description: 'More advanced turning platforms combining multiple axes, live tooling, milling capability, multiple turrets or other integrated machining functions.' }
 ]
 
-const featuredManufacturers = [
-  { name: 'Mazak CNC Lathes & Turning Centers', families: 'Quick-Turn, QT, SQT, Slant-Turn, Integrex, Multiplex, M-Series, Powermaster and other Mazak turning platforms.', to: '/spec-library/mazak/cnc-lathes', linkLabel: 'Browse Mazak specifications →' },
-  { name: 'Haas CNC Lathes & Turning Centers', families: 'SL, ST, TL and HL series CNC turning machines.', to: '/spec-library/haas/cnc-lathes', linkLabel: 'Browse Haas specifications →' },
-  { name: 'Okuma CNC Lathes & Turning Centers', families: 'LB, LC, LU, LR, Cadet and other Okuma turning machines.', to: '/spec-library/okuma/cnc-lathes', linkLabel: 'Browse Okuma specifications →' },
-  { name: 'Mori-Seiki / DMG MORI CNC Lathes & Turning Centers', families: 'SL, ZL, LL, TL, DL and other Mori-Seiki turning machines, with current DMG MORI inventory included where applicable.', to: '/spec-library/mori-seiki/cnc-lathes', linkLabel: 'Browse Mori-Seiki / DMG MORI specifications →' }
-]
+const manufacturerSlug = value => String(value || '').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const isHistoricalLathe = machine => String(machine.WebDesc || machine.Web_Desc || '').trim().toLowerCase().startsWith('cnc lathes')
+const manufacturerMap=new Map()
+for(const machine of historicalMachines.filter(isHistoricalLathe)){
+  const name=String(machine.Manufacturer||'').trim()
+  if(!name) continue
+  const key=name.toLowerCase()
+  if(!manufacturerMap.has(key)) manufacturerMap.set(key,{name,slug:manufacturerSlug(name),models:new Set(),records:0})
+  const row=manufacturerMap.get(key)
+  row.records++
+  const model=String(machine.Model||'').trim()
+  if(model) row.models.add(model.toLowerCase())
+}
+const latheLibrary=[...manufacturerMap.values()]
+  .map(m=>({name:m.name,slug:m.slug,models:[...m.models],records:m.records,to:`/spec-library/${m.slug}/cnc-lathes`}))
+  .sort((a,b)=>a.name.localeCompare(b.name))
+const totalHistoricalRecords=latheLibrary.reduce((sum,m)=>sum+m.records,0)
+const manufacturerQ=ref('')
+const filteredManufacturers=computed(()=>{
+  const q=manufacturerQ.value.trim().toLowerCase()
+  return q?latheLibrary.filter(m=>m.name.toLowerCase().includes(q)):latheLibrary
+})
 
 const specificationGuide = [
   { name: 'Swing', description: 'The maximum workpiece diameter that can physically swing within the machine envelope.' },
@@ -233,13 +206,6 @@ const specificationGuide = [
   { name: 'Live Tooling / C-Axis / Y-Axis', description: 'Capabilities that expand a turning center beyond conventional 2-axis turning into drilling, milling and more complex part processing.' },
   { name: 'Main & Sub-Spindle', description: 'A secondary spindle can receive the part for back-working and reduce additional setups.' },
   { name: 'Control', description: 'The CNC control can be especially important when comparing older machines, operator familiarity, programming features and serviceability.' }
-]
-
-const libraryFamilies = [
-  { name: 'Mazak', families: ['Quick-Turn', 'Quick Turn', 'QT', 'SQT', 'Slant-Turn', 'Integrex', 'Multiplex', 'M-Series', 'Powermaster'], to: '/spec-library/mazak/cnc-lathes', linkLabel: 'Browse Mazak Spec Library →' },
-  { name: 'Haas', families: ['SL Series', 'ST Series', 'TL Series', 'HL Series'], to: '/spec-library/haas/cnc-lathes', linkLabel: 'Browse Haas Spec Library →' },
-  { name: 'Okuma', families: ['LB Series', 'LC Series', 'LU Series', 'LR Series', 'Cadet'], to: '/spec-library/okuma/cnc-lathes', linkLabel: 'Browse Okuma Spec Library →' },
-  { name: 'Mori-Seiki / DMG MORI', families: ['SL Series', 'ZL Series', 'LL Series', 'TL Series', 'DL Series'], to: '/spec-library/mori-seiki/cnc-lathes', linkLabel: 'Browse Mori-Seiki / DMG MORI Spec Library →' }
 ]
 
 async function loadMachineCardImages() {
@@ -365,6 +331,7 @@ useHead(() => ({
 .family-tags { display: flex; flex-wrap: wrap; gap: 7px; }
 .family-tags span { padding: 6px 8px; background: #fff; border: 1px solid #ccd6e1; border-radius: 4px; color: #334b63; font-size: 12px; font-weight: 700; }
 .family-browse-link { display:inline-block; margin-top:14px; }
+.manufacturer-search{width:100%;max-width:620px;padding:13px 15px;border:1px solid #aeb8c4;border-radius:6px;font-size:17px;margin:10px 0 22px}.manufacturer-list-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.manufacturer-list-card{display:flex;flex-direction:column;gap:4px;border:1px solid #d8e0e8;border-radius:8px;padding:13px;text-decoration:none;color:#17273a}.manufacturer-list-card:hover{border-color:#f47b20;background:#fff9f4}.manufacturer-list-card strong{color:#0b2545}.manufacturer-list-card span{font-size:.78rem;color:#6a7888}
 .naming-note { margin-top: 24px; padding: 20px 22px; background: #f5f7fa; border-radius: 6px; }
 .naming-note h3 { margin: 0 0 7px; color: #0b2545; font-size: 19px; }
 .naming-note p { margin: 0; color: #43566b; line-height: 1.6; }
@@ -394,7 +361,7 @@ useHead(() => ({
   .primary-button, .secondary-button { width: 100%; box-sizing: border-box; }
   .section { padding-top: 36px; padding-bottom: 36px; }
   .section-heading-row { align-items: flex-start; flex-direction: column; }
-  .machine-grid, .type-grid, .spec-grid, .manufacturer-grid, .family-grid { grid-template-columns: 1fr; }
+  .machine-grid, .type-grid, .spec-grid, .manufacturer-grid, .family-grid, .manufacturer-list-grid { grid-template-columns: 1fr; }
   .no-current-machines, .conversion-card { flex-direction: column; align-items: flex-start; }
   .orange-button, .dark-button { width: 100%; box-sizing: border-box; }
 }

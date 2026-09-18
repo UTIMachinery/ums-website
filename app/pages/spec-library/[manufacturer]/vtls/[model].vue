@@ -1,43 +1,21 @@
 <template>
   <main v-if="manufacturer&&machine" class="page">
     <section class="hero"><div class="wrap"><NuxtLink :to="`/spec-library/${manufacturer.slug}/vtls`" class="back">← {{manufacturer.name}} VBM / VTL Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>{{manufacturer.name}} {{machine.name}} Specifications</h1><p>Historical vertical boring mill / vertical turret lathe specifications based on {{machine.records}} UMS machine record{{machine.records===1?'':'s'}}.</p></div></section>
-    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Values can vary by year, control, table/chuck, heads and optional equipment.</div><h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below represents a recorded historical year/configuration. Detailed specification rows from the original UMS record are used whenever available.</p><VmcYearConfigurations :model="`${manufacturer.name} ${machine.name}`" :configurations="yearConfigurations"/><SpecInventoryMatches :manufacturer="manufacturer.name" :model="machine.name" machine-type="vtl"/><section class="cta"><div><div class="cta-kicker">NEED A MACHINE?</div><h2>Looking for a {{manufacturer.name}} {{machine.name}}?</h2><p>Tell Used Machinery Source what you need and we can help locate a machine that fits your requirements.</p></div><NuxtLink to="/equipment#tell-us-what-you-need">Tell Us What You Need</NuxtLink></section></section>
+    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Values can vary by year, control, table/chuck, heads and optional equipment.</div><h2>Historical {{machine.name}} Specifications by Year</h2><p class="intro">Each block below represents a recorded historical year/configuration. Detailed specification rows from the original UMS record are used whenever available.</p><HistoricalSpecConfigurations :configurations="configurations"/><SpecInventoryMatches :manufacturer="manufacturer.name" :model="machine.name" machine-type="vtl"/><section class="cta"><div><div class="cta-kicker">NEED A MACHINE?</div><h2>Looking for a {{manufacturer.name}} {{machine.name}}?</h2><p>Tell Used Machinery Source what you need and we can help locate a machine that fits your requirements.</p></div><NuxtLink to="/equipment#tell-us-what-you-need">Tell Us What You Need</NuxtLink></section></section>
   </main><main v-else class="missing"><h1>VBM / VTL model not found</h1><NuxtLink to="/spec-library/vtls">Browse VBM / VTL specifications</NuxtLink></main>
 </template>
 <script setup>
-import vtlAB from '~/assets/data/vtl-library-a-b.js'
-import vtlCD from '~/assets/data/vtl-library-c-d.js'
-import vtlEH from '~/assets/data/vtl-library-e-h.js'
-import vtlIM from '~/assets/data/vtl-library-i-m.js'
-import vtlNS from '~/assets/data/vtl-library-n-s.js'
-import vtlTZ from '~/assets/data/vtl-library-t-z.js'
-import { mergeSpecLibrary } from '~/utils/mergeSpecLibrary'
-const library=mergeSpecLibrary([vtlAB,vtlCD,vtlEH,vtlIM,vtlNS,vtlTZ])
+import { historicalConfigurations, historicalManufacturers, historicalModelBySlug } from '~/utils/historicalSpecLibrary'
 const route=useRoute()
-const manufacturer=computed(()=>library.find(m=>m.slug===route.params.manufacturer)||null)
-const machine=computed(()=>manufacturer.value?.models?.find(m=>m.slug===route.params.model)||null)
-if(!manufacturer.value||!machine.value)setResponseStatus(404)
-const cleanValue=v=>{if(v===null||v===undefined)return false;const x=String(v).trim();return !!x&&!/^[_\-\s]+$/.test(x)&&!x.includes('\t')}
-const recordId=note=>String(note||'').match(/record\s*#(\d+)/i)?.[1]||''
-const historicalIds=(machine.value?.years||[]).map(r=>recordId(r[3])).filter(Boolean)
-const { data: historicalSpecs } = await useAsyncData(
-  `boring-specs-${route.path}`,
-  ()=>historicalIds.length ? $fetch('/api/boring-specs',{query:{ids:historicalIds.join(','),type:'vtl'}}) : []
-)
-const detailedSpecs=id=>(historicalSpecs.value||[])
-  .filter(row=>String(row[0])===String(id)&&cleanValue(row[3]))
-  .map(row=>({label:row[1]?`${String(row[1]).replace(/:$/,'')} — ${row[2]}`:row[2],value:row[3]}))
-const yearConfigurations=computed(()=>(machine.value?.years||[]).map(r=>{
-  const base=(r[2]||[]).filter(s=>cleanValue(s[1])).map(s=>({label:s[0],value:s[1]}))
-  const details=detailedSpecs(recordId(r[3]))
-  return{
-    year:r[0],
-    title:`${r[0]} ${manufacturer.value.name} ${machine.value.name} historical configuration`,
-    control:r[1]||'Control not recorded',
-    specs:details.length?details:base,
-    note:r[3]||''
-  }
-}).filter(r=>r.specs.length))
+const manufacturerSlug=String(route.params.manufacturer||''),modelSlug=String(route.params.model||'')
+const slugify=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const isVtl=m=>String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase().startsWith('vertical boring mills, vtl')
+const manufacturerName=historicalManufacturers({machineFilter:isVtl}).find(name=>slugify(name)===manufacturerSlug)
+const model=manufacturerName?historicalModelBySlug({manufacturer:manufacturerName,slug:modelSlug,machineFilter:isVtl}):null
+if(!manufacturerName||!model)setResponseStatus(404)
+const manufacturer=computed(()=>manufacturerName?{name:manufacturerName,slug:manufacturerSlug}:null)
+const machine=computed(()=>model?{name:model,slug:modelSlug}:null)
+const configurations=computed(()=>manufacturerName&&model?historicalConfigurations({manufacturer:manufacturerName,model,machineFilter:isVtl}):[])
 useSeoMeta({title:()=>manufacturer.value&&machine.value?`${manufacturer.value.name} ${machine.value.name} VBM VTL Specifications | UMS Spec Library`:'VBM VTL Specifications | UMS',description:()=>manufacturer.value&&machine.value?`Historical ${manufacturer.value.name} ${machine.value.name} VBM/VTL specifications by year including table, swing, height, control and tooling data.`:'Historical VBM/VTL specifications.'})
 useHead(()=>({link:[{rel:'canonical',href:`https://www.usedmachinerysource.com/spec-library/${route.params.manufacturer}/vtls/${route.params.model}`}]}))
 </script><style scoped>

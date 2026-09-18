@@ -1,0 +1,1 @@
+<template><HistoricalJsonModel group="Inspection" title="Inspection" slug="inspection"/></template>

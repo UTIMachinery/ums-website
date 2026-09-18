@@ -1,22 +1,23 @@
 <template>
   <main v-if="entry" class="page">
     <section class="hero"><div class="wrap"><NuxtLink to="/spec-library/kitamura/vmcs" class="back">← Kitamura VMC Spec Library</NuxtLink><div class="kicker">UMS MACHINERY SPECIFICATION LIBRARY</div><h1>Kitamura {{entry[0]}} Specifications</h1><p>Historical vertical machining center specifications based on {{entry[2]}} UMS machine records spanning {{entry[3]}}–{{entry[4]}}.</p></div></section>
-    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Values can vary by year, control, spindle package and optional equipment.</div><template v-if="actualRecords"><h2>Historical {{entry[0]}} Specifications by Year</h2><p class="intro">Each block below is an actual historical UMS machine record for this exact model. Differences by year, control and configuration are preserved rather than averaged together.</p><VmcYearConfigurations :model="`Kitamura ${entry[0]}`" :configurations="yearConfigurations" /></template><template v-else><h2>Most Common Recorded Specifications</h2><p class="intro">This model is still awaiting full year-by-year normalization. The values below are the most-supported historical values for the exact model and are not presented as year-specific specifications.</p><div class="spec-grid"><article v-for="s in entry[5]" :key="s[0]" class="spec-card"><div class="spec-label">{{ cleanSpecText(s[0]) }}</div><div class="spec-value">{{ cleanSpecText(s[1]) }}</div><div class="support">{{s[2]}} of {{s[3]}} recorded observations matched<span v-if="s[4]>1"> · {{s[4]}} values recorded</span></div><div v-if="s[4]>1" class="varies">Varies in historical records</div></article></div></template>
+    <section class="wrap section"><div class="warning"><strong>Historical reference information — not a machine-for-sale listing.</strong> Values can vary by year, control, spindle package and optional equipment.</div><template v-if="actualRecords"><h2>Historical {{entry[0]}} Specifications by Year</h2><p class="intro">Each block below is an actual historical UMS machine record for this exact model. Differences by year, control and configuration are preserved rather than averaged together.</p><HistoricalSpecConfigurations :configurations="historicalConfigs" /></template><template v-else><h2>Most Common Recorded Specifications</h2><p class="intro">This model is still awaiting full year-by-year normalization. The values below are the most-supported historical values for the exact model and are not presented as year-specific specifications.</p><div class="spec-grid"><article v-for="s in entry[5]" :key="s[0]" class="spec-card"><div class="spec-label">{{ cleanSpecText(s[0]) }}</div><div class="spec-value">{{ cleanSpecText(s[1]) }}</div><div class="support">{{s[2]}} of {{s[3]}} recorded observations matched<span v-if="s[4]>1"> · {{s[4]}} values recorded</span></div><div v-if="s[4]>1" class="varies">Varies in historical records</div></article></div></template>
       <SpecInventoryMatches manufacturer="Kitamura" :model="entry[0]" machine-type="vmc" /><section class="cta"><div><div class="cta-kicker">NEED A MACHINE?</div><h2>Looking for a Kitamura {{entry[0]}}?</h2><p>Tell Used Machinery Source what you need and we can help locate a machine that fits your requirements.</p></div><NuxtLink to="/equipment#tell-us-what-you-need">Tell Us What You Need</NuxtLink></section>
     </section>
   </main>
   <main v-else class="missing"><h1>Kitamura VMC model not found</h1><NuxtLink to="/spec-library/kitamura/vmcs">Browse Kitamura VMC specifications</NuxtLink></main>
 </template>
 <script setup>
-import { cleanSpecText } from '~/utils/specText'
-import raw from '~/assets/data/kitamura-vmc-core.js'
-import yearData from '~/assets/data/kitamura-vmc-years.js'
+import { historicalConfigurations, historicalModelBySlug } from '~/utils/historicalSpecLibrary'
 const route=useRoute()
-const entry=computed(()=>raw.find(m=>m[1]===route.params.model))
+const isVmc=m=>String(m.WebDesc||m.Web_Desc||'').trim().toLowerCase().startsWith('cnc machining centers, vertical')
+const modelName=computed(()=>historicalModelBySlug({manufacturer:'Kitamura',slug:String(route.params.model||''),machineFilter:isVmc}))
+const historicalConfigs=computed(()=>modelName.value?historicalConfigurations({manufacturer:'Kitamura',model:modelName.value,machineFilter:isVmc}):[])
+const years=computed(()=>historicalConfigs.value.map(x=>Number(x.year)).filter(Number.isFinite).sort((a,b)=>a-b))
+const entry=computed(()=>modelName.value?[modelName.value,String(route.params.model||''),historicalConfigs.value.length,years.value[0]||'',years.value.at(-1)||'',[]]:null)
 if(!entry.value)setResponseStatus(404)
+const actualRecords=computed(()=>historicalConfigs.value.length?historicalConfigs.value:null)
 useSeoMeta({title:()=>entry.value?`Kitamura ${entry.value[0]} VMC Specifications | UMS Spec Library`:'Kitamura VMC Specifications | UMS',description:()=>entry.value?`Historical Kitamura ${entry.value[0]} vertical machining center specifications including travels, table size, spindle, horsepower and tool capacity.`:'Historical Kitamura VMC specifications.'})
-const actualRecords=computed(()=>yearData.find(m=>m[1]===route.params.model)||null)
-const yearConfigurations=computed(()=>(actualRecords.value?.[2]||[]).map(r=>({year:r[0],title:`${r[0]} Kitamura ${entry.value[0]} historical configuration`,control:r[1]||'Control not recorded',specs:(r[2]||[]).map(s=>({label:s[0],value:s[1]})),note:r[3]||''})))
 const canonical=computed(()=>`https://www.usedmachinerysource.com/spec-library/kitamura/vmcs/${route.params.model}`)
 useHead(()=>({link:[{rel:'canonical',href:canonical.value}]}))
 </script>

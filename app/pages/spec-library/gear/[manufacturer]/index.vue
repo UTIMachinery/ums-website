@@ -1,0 +1,1 @@
+<template><HistoricalJsonManufacturer group="Gear" title="Gear" slug="gear"/></template>
