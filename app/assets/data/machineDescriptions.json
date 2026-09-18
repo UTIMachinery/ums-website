@@ -388,5 +388,85 @@
     "InvID": "31210",
     "Paragraph1": "This Haas HRT-310 CNC Servo Rotary Table features a 12.2″ diameter platter, 0.001-degree indexing increments, and a 9″ center height. The table weighs approximately 450 lbs and is equipped with a Sigma 1 motor.",
     "Paragraph2": "The rotary table is equipped with CNC servo operation and an HTS6 tailstock support. The supplied specifications list a maximum workpiece weight of 435 lbs with support and 218 lbs without support."
+  },
+  {
+    "InvID": "30791",
+    "Paragraph1": "This 2012 Haas ST-40LB CNC Lathes is configured for productive CNC turning applications. Key specifications include 34.5″ swing, 25.5″ maximum machining diameter, 80″ machining length/center capacity, 7″ spindle bore, spindle speeds up to 1400 rpm, 55 hp spindle power, 12 turret.",
+    "Paragraph2": "The machine is equipped with Haas CNC Control with 15\" LCD Monitor, Memory Lock Keyswitch, USB Port, Color Remote Jog Handle, Rigid Tap, Programmable Servo Driven Tailstock, Big Bore Spindle Option: 7\" bore, A2-11 Spindle Nose, 2-Speed Gearbox, Steady Rest Provision with Manual Positioning along Z-axis; Includes, Mounting Platform and Hydraulic Control System, Extra-Performance Option: Boosts Spindle Power to 55 hp with 2100, ft-lb Torque, includes 12 hp servo motor on Z-Axis for maximum thrust, of 7847 lbs., 18\" 3-Jaw hydraulic Chuck with 6.5\" Draw Tube Thru Hole, Belt-Type Chip Conveyor, Steady Rest."
+  },
+  {
+    "InvID": "31090",
+    "Paragraph1": "This 2018 Genmill T-700 CNC Machining Centers, Vertical provides a capable platform for precision and production machining. Key specifications include 27.56″ X-axis travel, 16.93″ Y-axis travel, 12.99″ Z-axis travel, spindle speeds up to 12000 rpm, 7.5 hp spindle power, 21 atc automatic tool changer.",
+    "Paragraph2": "The machine is equipped with Mitsubishi 3-Axis CNC Control, 6000 rpm Synchronous Tapping, BT30 BBT Big Plus Spindle Taper, 12 Position Drum Turret with 1.6 second Chip to Chip, 2362 IPM Rapids, (50) Tool Holders, (3) Kurt Vises."
+  },
+  {
+    "InvID": "31120",
+    "Paragraph1": "This 2018 Doosan Puma 5100C Big Bore CNC Lathes is configured for productive CNC turning applications. Key specifications include 35.4″″ swing, 26″ maximum machining diameter, 41″ machining length/center capacity, 10.75″ spindle bore, spindle speeds up to 1000 rpm, 60 hp spindle power, 12 turret.",
+    "Paragraph2": "The machine is equipped with Fanuc 2-Axis CNC Control, Automatic Tool Presetter, Chip Conveyor, Tailstock, 3 and 4-Jaw Manuals Chucks, Flood Coolant System, Big Bore 10.8\" Spindle bore.."
+  },
+  {
+    "InvID": "31211",
+    "Paragraph1": "This 2011 Haas TL-3 CNC Lathes is configured for productive CNC turning applications. Key specifications include 20″ swing, 16″ maximum machining diameter, 60″ machining length/center capacity, 3.5″ spindle bore, spindle speeds up to 1800 rpm, 18 hp spindle power.",
+    "Paragraph2": "The machine is equipped with Haas CNC Control with 15\" Color LCD Monitor, Intuitive Programming system, Quick code, Tailstcok with Live Center, 13” BISON 3 Jaw Chuck “Adjust-Tru”, Steady Rest, Coolant tank & pump, Hand Wheels."
+  },
+  {
+    "InvID": "31212",
+    "Paragraph1": "This 2006 Haas TL-3 CNC Lathes is configured for productive CNC turning applications. Key specifications include 20″ swing, 16″ maximum machining diameter, 60″ machining length/center capacity, 3.5″ spindle bore, spindle speeds up to 1800 rpm, 18 hp spindle power.",
+    "Paragraph2": "The machine is equipped with Haas 2-Axis CNC Control, Quick Code, 12” 4 Jaw Chuck, Tailstock, Hand Wheels."
+  },
+  {
+    "InvID": "31213",
+    "Paragraph1": "This 2006 Haas TL-3 CNC Lathes is configured for productive CNC turning applications. Key specifications include 20″ swing, 16″ maximum machining diameter, 60″ machining length/center capacity, 3.5″ spindle bore, spindle speeds up to 1800 rpm, 18 hp spindle power.",
+    "Paragraph2": "The machine is equipped with Haas 2-Axis CNC Control, Rigid Tapping, M19 Spindle Orientation, Quick Code, Intuitive Programming System, Tailstock, 12” BTC 3 Jaw Chuck “Adjust-Tru” Type, 5-C Collet chuck & Pneumatic draw tube, Coolant tank & pump, Chuck wrench, Coolant/Chip Enclosure/Doors."
+  },
+  {
+    "InvID": "31223",
+    "Paragraph1": "This 2011 Johnford VMC-1600HD CNC Machining Centers, Vertical provides a capable platform for precision and production machining. Key specifications include 63″ X-axis travel, 33.5″ Y-axis travel, 28″ Z-axis travel, spindle speeds up to 4500 rpm, 25 hp spindle power, 24 atc automatic tool changer.",
+    "Paragraph2": "The machine is equipped with Fanuc 0i-MD CNC Control, Flood Coolant System, Full Coolant/Chip Enclosure, 24 Position Side Mount Automatic Tool Changer, Oil Cooler, Transformer, Chip Conveyor, Misc Tool Holders, This is a Heavy Duty Box Way Design Machine.."
+  },
+  {
+    "InvID": "31224",
+    "Paragraph1": "This 2007 Fadal VMC-8030 CNC Machining Centers, Vertical provides a capable platform for precision and production machining. Key specifications include 80″ X-axis travel, 30″ Y-axis travel, 30″ Z-axis travel, spindle speeds up to 10000 rpm, 30 hp spindle power, 24 atc automatic tool changer.",
+    "Paragraph2": "The machine is equipped with Fadall 3-Axis CNC Control, Geared Headstock, Flood Coolant System, 24 Position Side Mounted Tool Changer, Box Way Design."
+  },
+  {
+    "InvID": "31225",
+    "Paragraph1": "This 2017 OKK HMC-500 CNC Machining Centers, Horizontal provides a capable platform for precision and production machining. Key specifications include 29.9″ X-axis travel, 29.9″ Y-axis travel, 31.5″ Z-axis travel, spindle speeds up to 15000 rpm, 50 hp spindle power, 60 atc automatic tool changer.",
+    "Paragraph2": "The machine is equipped with Fanuc 31i-MB 4-Axis CNC Control, Custom Macro B, 200 Tool Offset Pairs, Coordinate System Rotation (G-Command), T1-A Renishaw OMP60 Probe w/OTS Tool Setter, Handheld Manual Pulse Generator (MPG), Tool Life Management (256 Sets), Work Coordinate System Additional 48 Types, Expanded Memory (1000 Programs), High Speed Machining, Chip Conveyor, High Pressure Coolant Thru Spindle (1000 PSI)."
+  },
+  {
+    "InvID": "31226",
+    "Paragraph1": "This 2014 Makino A61NX CNC Machining Centers, Horizontal provides a capable platform for precision and production machining. Key specifications include 28.7″ X-axis travel, 28.7″ Y-axis travel, 31.5″ Z-axis travel, spindle speeds up to 20000 rpm, 25 hp spindle power, 60 atc automatic tool changer.",
+    "Paragraph2": "The machine is equipped with Professional 5 CNC Control (Fanuc), Full 4th B-Axis, Chip Covneyor, Y-axis Extended Stroke +3.1\" (High Column - Option), Super GI .4 Control (Option), Enhanced Super GI.4 Capability, 600 Macro Common Variables, 250 Registered Work Programs, 48 Additional Work Offsets, High Speed Skip Function, 300 psi Coolant Thru Spindle, Through Spindle Air, Overhead Shower Coolant System, 8 Nozzle Coolant."
+  },
+  {
+    "InvID": "31227",
+    "Paragraph1": "This 2015 OKK HMC-400 CNC Machining Centers, Horizontal provides a capable platform for precision and production machining. Key specifications include 22.05″ X-axis travel, 22.05″ Y-axis travel, 27.17″ Z-axis travel, spindle speeds up to 15000 rpm, 50 hp spindle power, 60 atc automatic tool changer.",
+    "Paragraph2": "The machine is equipped with Fanuc 31i-B 4-Axis CNC Control, Full B-Axis Contouring (Full 4th-Axis), 15,000 RPM Spindle, Thru-Spindle Coolant, Renishaw OMP60 Probe System, Chip Conveyor, Dual 15.7\" x 15.7\" Pallets."
+  },
+  {
+    "InvID": "31228",
+    "Paragraph1": "This 1999 Kuraki KBT-11WA Horizontal Boring Mill, CNC is offered for industrial production applications. Listing highlights include 4.3\" Spdl, X-78.7\" Y-59\"  Z-57\"  W-19.7\", 63\" x 55\" full contouring rotary table, 30 hp, 3000 rpm, 40 atc.",
+    "Paragraph2": "The machine is equipped with Fanuc 16M CNC Control, Chip Conveyor, Coolant System with Pump & Tank, 40 Position Automatic Tool Changer, Machine Weight: 63,800 lbs."
+  },
+  {
+    "InvID": "31229",
+    "Paragraph1": "This 1966 Cincinnati 1812 Shears is offered for industrial production applications. Listing highlights include 1/4\" x 144\" capacity, 10 hp, 18\" throat, 13 holddowns, 60 SPM, Squaring arm.",
+    "Paragraph2": "The machine is equipped with Squaring Arm and Front Support Arms, 1\" x 4\" x 150\" Knife, 18\" Throat, 24\" x 50\" Front Apron, 36\" Back Guage."
+  },
+  {
+    "InvID": "31230",
+    "Paragraph1": "This 2006 Makino A61 CNC Machining Centers, Horizontal provides a capable platform for precision and production machining. Key specifications include 28.7″ X-axis travel, 25.6″ Y-axis travel, 28.7″ Z-axis travel, spindle speeds up to 12000 rpm, 25 hp spindle power, 60 atc automatic tool changer.",
+    "Paragraph2": "The machine is equipped with Pro 5 Fanuc 4-Axis CNC Control, Data Server, High Speed Skip Function, 200 Tool Offset Pairs, 48 Additional Work Offsets, 600 Common Macro Variables, Increased Program Storage to 1280m, 1,000 Registered Programs, Helical Interpolation, Chip Conveyor, Coolant Tank & Pump, Coolant Thru Spindle (300 psi), Air Dryer, Full B-Axis Indexing 0.0001° Degrees."
+  },
+  {
+    "InvID": "31231",
+    "Paragraph1": "This 2018 Okuma MB-5000H CNC Machining Centers, Horizontal provides a capable platform for precision and production machining. Key specifications include 29.92″ X-axis travel, 29.92″ Y-axis travel, 29.92″ Z-axis travel, spindle speeds up to 15000 rpm, 35/25 hp spindle power, 146 atc automatic tool changer.",
+    "Paragraph2": "The machine is equipped with OSP-P300MA CNC Control w/ 15\" Color Multi-Touch Display, Active & Passive Thermal Compensation, Tool Breakage Detection, Full B-Axis Pallet Rotation (Full 4-Axis), 146-Position Automatic Tool Changer, Renishaw Tool Probing, Renishaw Auto Work Gauging, Through Spindle Coolant, Shower Coolant, Thermal Active Stabilization on Casting and Spindle, Spindle Chiller-Refrigerant Style, Air-Oil Lubrication System, Mayfran ConSep 2000 Dual Belt Filtering Type Chip Conveyor."
+  },
+  {
+    "InvID": "31232",
+    "Paragraph1": "This 1993 Mori-Seiki MV-40B CNC Machining Centers, Vertical provides a capable platform for precision and production machining. Key specifications include 31.5″ X-axis travel, 16.1″ Y-axis travel, 29.1″ Z-axis travel, spindle speeds up to 12000 rpm, 7.5 hp spindle power, 20 atc automatic tool changer.",
+    "Paragraph2": "The machine is equipped with Fanuc MF-M6 CNC Control, Nikken 4th-Axis CNC Rotary Table with Tailstock, 12000 RPM Spindle, Cat40 Taper, Flood Coolant System, Full Coolant/Chip Enclosure."
   }
 ]
