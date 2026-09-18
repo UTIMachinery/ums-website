@@ -7,7 +7,7 @@
       <div class="search-grid">
         <label><span>Manufacturer</span><select v-model="selectedManufacturer"><option value="">Select Manufacturer</option><option v-for="m in manufacturers" :key="m" :value="m">{{m}}</option></select></label>
         <label><span>Model</span><select v-model="selectedModel" :disabled="!selectedManufacturer"><option value="">All Models</option><option v-for="m in models" :key="m" :value="m">{{m}}</option></select></label>
-        <label><span>Machine Type</span><select v-model="selectedType"><option value="">Select Machine Type</option><option v-for="t in machineTypes" :key="t" :value="t">{{t}}</option></select></label>
+        <label><span>Machine Type</span><select v-model="selectedType"><option value="">Select Machine Type</option><option v-for="t in machineTypes" :key="t.key" :value="t.key">{{t.label}}</option></select></label>
       </div>
       <button class="search-button" :disabled="!canSearch" @click="runSearch">Search Specifications</button>
 
@@ -30,6 +30,7 @@
 
 <script setup>
 import historicalMachines from '~/assets/data/historical-machines.json'
+import {rawType,displayType,typeKind,browseTypeKey,modelUrl} from '~/utils/specLibraryBrowse'
 const clean=s=>String(s||'').trim()
 const slug=s=>clean(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
 const selectedManufacturer=ref('')
@@ -37,24 +38,20 @@ const selectedModel=ref('')
 const selectedType=ref('')
 const rows=historicalMachines.filter(m=>clean(m.Manufacturer)&&clean(m.Model)&&clean(m.WebDesc||m.Web_Desc))
 const manufacturers=[...new Set(rows.map(m=>clean(m.Manufacturer)))].sort((a,b)=>a.localeCompare(b))
-const machineTypes=[...new Set(rows.map(m=>clean(m.WebDesc||m.Web_Desc)))].sort((a,b)=>a.localeCompare(b))
+const typeMap=new Map()
+for(const r of rows){const raw=rawType(r),key=browseTypeKey(raw);if(!typeMap.has(key))typeMap.set(key,{key,label:displayType(raw),kind:typeKind(raw)})}
+const typeOrder={lathe:0,vmc:1,hmc:2}
+const machineTypes=[...typeMap.values()].sort((a,b)=>(typeOrder[a.kind]??3)-(typeOrder[b.kind]??3)||a.label.localeCompare(b.label))
 const models=computed(()=>selectedManufacturer.value?[...new Set(rows.filter(m=>clean(m.Manufacturer)===selectedManufacturer.value).map(m=>clean(m.Model)))].sort((a,b)=>a.localeCompare(b)):[])
 watch(selectedManufacturer,()=>{selectedModel.value=''})
 const canSearch=computed(()=>Boolean(selectedManufacturer.value||selectedType.value))
-const routeFor=(manufacturer,model,type)=>{
-  const m=slug(manufacturer),mo=slug(model),t=clean(type).toLowerCase()
-  if(t.startsWith('cnc lathes')) return model?'/spec-library/'+m+'/'+mo:'/spec-library/'+m+'/cnc-lathes'
-  if(t.startsWith('cnc machining centers, vertical')) return model?'/spec-library/'+m+'/vmcs/'+mo:'/spec-library/'+m+'/vmcs'
-  if(t.startsWith('cnc machining centers, horizontal')) return model?'/spec-library/'+m+'/hmcs/'+mo:'/spec-library/'+m+'/hmcs'
-  return model?'/spec-library/manufacturers/'+m+'?model='+encodeURIComponent(model):'/spec-library/manufacturers/'+m
-}
 const runSearch=()=>{
   if(selectedManufacturer.value&&selectedModel.value){
     const row=rows.find(m=>clean(m.Manufacturer)===selectedManufacturer.value&&clean(m.Model)===selectedModel.value)
-    if(row)return navigateTo(routeFor(selectedManufacturer.value,selectedModel.value,clean(row.WebDesc||row.Web_Desc)))
+    if(row)return navigateTo(modelUrl(selectedManufacturer.value,selectedModel.value,rawType(row)))
   }
   if(selectedManufacturer.value)return navigateTo('/spec-library/manufacturers/'+slug(selectedManufacturer.value))
-  if(selectedType.value)return navigateTo('/spec-library/machine-types/'+slug(selectedType.value))
+  if(selectedType.value)return navigateTo('/spec-library/machine-types/'+selectedType.value)
 }
 useSeoMeta({title:'Machine Specification Library | Used Machinery Source',description:'Search historical CNC and industrial machine specifications by manufacturer, model and machine type in the Used Machinery Source Spec Library.'})
 useHead({link:[{rel:'canonical',href:'https://www.usedmachinerysource.com/spec-library'}]})
