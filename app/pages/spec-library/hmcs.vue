@@ -10,7 +10,7 @@
           <div class="machine-card-copy"><h3><NuxtLink :to="machineUrl(machine)" class="machine-title-link">{{ machine.Manufacturer }} {{ machine.Model }}<span v-if="machine.Year"> – {{ machine.Year }}</span></NuxtLink></h3><p class="machine-type">{{ webDescription(machine) }}</p><p class="stock-number">Stock #{{ machine.InvID }}</p><p v-if="advertisingSpec(machine)" class="adv-spec">{{ advertisingSpec(machine) }}</p><NuxtLink :to="machineUrl(machine)" class="view-machine-button">View Machine</NuxtLink></div>
         </article>
       </div>
-      <div v-else class="no-current-machines"><div><h3>Looking for a horizontal machining center?</h3><p>We do not have a matching HMC listed in current inventory right now. Inventory changes frequently, so send us your requirements and UMS can help locate one.</p></div><NuxtLink to="/equipment#tell-us-what-you-need" class="orange-button">Tell Us What You Need</NuxtLink></div>
+      <div v-else class="no-current-machines"><div><h3>Looking for a horizontal machining center?</h3><p>We do not have a matching HMC listed in current inventory right now. Inventory changes frequently, so send us your requirements and UMS can help locate one.</p></div><NuxtLink to="/machine-needed" class="orange-button">Tell Us What You Need</NuxtLink></div>
     </section>
 
     <section id="library" class="wrap section"><div class="label">SPECIFICATION LIBRARY — HISTORICAL INFORMATION</div><h2>HMC Manufacturer & Model Library</h2><p class="intro">The UMS historical database contains about 681 horizontal machining center records. Historical records do not indicate current availability.</p>
@@ -35,30 +35,42 @@
       </div>
     </section>
 
-    <section class="wrap section guide"><h2>Key HMC Specifications</h2><div class="specs"><div>Pallet dimensions & capacity</div><div>Pallet count & indexing</div><div>X / Y / Z axis travels</div><div>Spindle taper & RPM</div><div>Spindle horsepower</div><div>Automatic tool changer capacity</div><div>CNC control</div><div>Year/configuration differences</div></div></section>
-  </main>
+    <section class="wrap section guide"><h2>Key HMC Specifications</h2><div class="specs"><div>Pallet dimensions & capacity</div><div>Pallet count & indexing</div><div>X / Y / Z axis travels</div><div>Spindle taper & RPM</div><div>Spindle horsepower</div><div>Automatic tool changer capacity</div><div>CNC control</div><div>Year/configuration differences</div></div></section>\n    <HistoricalLibraryFooter machine-type="CNC Machining Centers, Horizontal" />\n  </main>
 </template>
 
 <script setup>
 import machinesData from '~/assets/data/machines.json'
-import hmcLibrary from '~/assets/data/hmc-additional-library.js'
-import { historicalManufacturers } from '~/utils/historicalSpecLibrary'
+import historicalMachines from '~/assets/data/historical-machines.json'
 const machines=ref(machinesData)
-const hmcHistoricalFilter=machine=>String(machine.WebDesc||machine.Web_Desc||'').trim().toLowerCase().startsWith('cnc machining centers, horizontal')
-const hmcSlug=value=>String(value||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
-const historicalHmcManufacturers=historicalManufacturers({machineFilter:hmcHistoricalFilter})
+const clean=value=>String(value??'').trim()
+const hmcHistoricalFilter=machine=>clean(machine.WebDesc||machine.Web_Desc).toLowerCase().startsWith('cnc machining centers, horizontal')
+const hmcSlug=value=>clean(value).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+const manufacturerMap=new Map()
+for(const machine of historicalMachines.filter(hmcHistoricalFilter)){
+  const name=clean(machine.Manufacturer)
+  if(!name) continue
+  const key=name.toLowerCase()
+  if(!manufacturerMap.has(key)) manufacturerMap.set(key,{name,slug:hmcSlug(name),models:new Set(),records:0})
+  const row=manufacturerMap.get(key)
+  row.records++
+  const model=clean(machine.Model)
+  if(model) row.models.add(model.toLowerCase())
+}
+const coreSlugs=new Set(['mazak','mori-seiki','makino','haas','cincinnati','okuma','toshiba','toyoda','okk'])
+const additionalHmcs=[...manufacturerMap.values()]
+  .filter(m=>!coreSlugs.has(m.slug))
+  .map(m=>({name:m.name,slug:m.slug,models:[...m.models],records:m.records}))
+  .sort((a,b)=>a.name.localeCompare(b.name))
 const otherQ=ref('')
-const coreSlugs=new Set(['mori-seiki','makino','haas','cincinnati','okuma','toshiba','toyoda','okk'])
-const additionalHmcs=computed(()=>{const base=hmcLibrary.filter(m=>!coreSlugs.has(m.slug));const existing=new Set([...hmcLibrary,...completed].map(m=>String(m.name||'').toLowerCase()));const generated=historicalHmcManufacturers.filter(name=>!existing.has(name.toLowerCase())).map(name=>({name,slug:hmcSlug(name),models:[]}));return [...base,...generated]})
 const filteredOther=computed(()=>{
   const q=otherQ.value.trim().toLowerCase()
-  return q?additionalHmcs.value.filter(m=>m.name.toLowerCase().includes(q)):additionalHmcs.value
+  return q?additionalHmcs.filter(m=>m.name.toLowerCase().includes(q)):additionalHmcs
 })
 const machineCardImages=ref({})
 const webDescription=machine=>machine.WebDesc||machine.Web_Desc||''
 const advertisingSpec=machine=>machine.AdvSpec||machine.Adv_Spec||''
 const offMarketValue=machine=>machine.OffMarket??machine.Off_Market??0
-const currentHmcs=computed(()=>(machines.value||[]).filter(machine=>Number(machine.Sold)===0&&Number(offMarketValue(machine))===0&&Number(machine.dont_advertise)===0&&String(machine.Groups||'').toLowerCase().includes('horizontal machining')).sort((a,b)=>Number(b.Year||0)-Number(a.Year||0)))
+const currentHmcs=computed(()=>(machines.value||[]).filter(machine=>Number(machine.Sold)===0&&Number(offMarketValue(machine))===0&&Number(machine.dont_advertise)===0&&hmcHistoricalFilter(machine)).sort((a,b)=>Number(b.Year||0)-Number(a.Year||0)))
 const machineUrl=machine=>{const slug=`${machine.Manufacturer||''}-${machine.Model||''}`.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');return `/equipment/${machine.InvID}/${slug}`}
 async function loadMachineCardImages(){for(const machine of currentHmcs.value){try{const files=await $fetch('/api/images',{query:{invID:machine.InvID}});if(files?.length)machineCardImages.value[machine.InvID]=files[0]}catch(error){console.error(`Could not load image for ${machine.InvID}`,error)}}}
 onMounted(loadMachineCardImages)
