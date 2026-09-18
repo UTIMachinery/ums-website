@@ -13,29 +13,23 @@
       <div v-else class="no-current-machines"><div><h3>Looking for a horizontal machining center?</h3><p>We do not have a matching HMC listed in current inventory right now. Inventory changes frequently, so send us your requirements and UMS can help locate one.</p></div><NuxtLink to="/machine-needed" class="orange-button">Tell Us What You Need</NuxtLink></div>
     </section>
 
-    <section id="library" class="wrap section"><div class="label">SPECIFICATION LIBRARY — HISTORICAL INFORMATION</div><h2>HMC Manufacturer & Model Library</h2><p class="intro">The UMS historical database contains about 681 horizontal machining center records. Historical records do not indicate current availability.</p>
-      <div class="grid">
-        <article class="card featured"><h3>Mazak</h3><p>H-Series, FH-Series, HTC and related Mazak horizontal machining centers.</p><NuxtLink to="/spec-library/mazak/hmcs">Browse Mazak HMC specifications →</NuxtLink></article>
-        <article class="card featured"><h3>Mori-Seiki</h3><p>MH, SH and related Mori-Seiki horizontal machining centers.</p><NuxtLink to="/spec-library/mori-seiki/hmcs">Browse Mori-Seiki HMC specifications →</NuxtLink></article>
-        <article class="card featured"><h3>Makino</h3><p>A-Series, MC, MCB and related Makino horizontal machining centers.</p><NuxtLink to="/spec-library/makino/hmcs">Browse Makino HMC specifications →</NuxtLink></article>
-        <article v-for="m in completed" :key="m.slug" class="card featured"><h3>{{m.name}}</h3><p>{{m.text}}</p><NuxtLink :to="`/spec-library/${m.slug}/hmcs`">Browse {{m.name}} HMC specifications →</NuxtLink></article>
-      </div>
-    </section>
-
-    <section class="wrap section additional">
-      <div class="label">EXPANDED HISTORICAL HMC LIBRARY</div>
-      <h2>Additional HMC Manufacturers</h2>
-      <p class="intro">These manufacturer pages cover the remaining historical HMC records that contain enough model-specific specification data to be useful as reference pages.</p>
-      <input v-model="otherQ" class="search" type="search" placeholder="Search additional HMC manufacturers">
+    <section id="library" class="wrap section">
+      <div class="label">SPECIFICATION LIBRARY — HISTORICAL INFORMATION</div>
+      <h2>HMC Manufacturers</h2>
+      <p class="intro">Browse {{ totalHistoricalRecords }} historical UMS horizontal machining center records across {{ hmcLibrary.length }} manufacturers. Select a manufacturer, then a model, to view historical specifications by year/configuration.</p>
+      <input v-model="manufacturerQ" class="search" type="search" placeholder="Search HMC manufacturer">
       <div class="compact-grid">
-        <NuxtLink v-for="m in filteredOther" :key="m.slug" :to="`/spec-library/${m.slug}/hmcs`" class="compact-card">
+        <NuxtLink v-for="m in filteredManufacturers" :key="m.slug" :to="`/spec-library/${m.slug}/hmcs`" class="compact-card">
           <strong>{{m.name}}</strong>
           <span>{{m.models.length}} model{{m.models.length===1?'':'s'}} · {{m.records}} historical record{{m.records===1?'':'s'}}</span>
         </NuxtLink>
       </div>
+      <p v-if="!filteredManufacturers.length" class="empty">No HMC manufacturers match your search.</p>
     </section>
 
-    <section class="wrap section guide"><h2>Key HMC Specifications</h2><div class="specs"><div>Pallet dimensions & capacity</div><div>Pallet count & indexing</div><div>X / Y / Z axis travels</div><div>Spindle taper & RPM</div><div>Spindle horsepower</div><div>Automatic tool changer capacity</div><div>CNC control</div><div>Year/configuration differences</div></div></section>\n    <HistoricalLibraryFooter machine-type="CNC Machining Centers, Horizontal" />\n  </main>
+    <section class="wrap section guide"><h2>Key HMC Specifications</h2><div class="specs"><div>Pallet dimensions & capacity</div><div>Pallet count & indexing</div><div>X / Y / Z axis travels</div><div>Spindle taper & RPM</div><div>Spindle horsepower</div><div>Automatic tool changer capacity</div><div>CNC control</div><div>Year/configuration differences</div></div></section>
+    <HistoricalLibraryFooter machine-type="CNC Machining Centers, Horizontal" />
+  </main>
 </template>
 
 <script setup>
@@ -56,15 +50,14 @@ for(const machine of historicalMachines.filter(hmcHistoricalFilter)){
   const model=clean(machine.Model)
   if(model) row.models.add(model.toLowerCase())
 }
-const coreSlugs=new Set(['mazak','mori-seiki','makino','haas','cincinnati','okuma','toshiba','toyoda','okk'])
-const additionalHmcs=[...manufacturerMap.values()]
-  .filter(m=>!coreSlugs.has(m.slug))
+const hmcLibrary=[...manufacturerMap.values()]
   .map(m=>({name:m.name,slug:m.slug,models:[...m.models],records:m.records}))
   .sort((a,b)=>a.name.localeCompare(b.name))
-const otherQ=ref('')
-const filteredOther=computed(()=>{
-  const q=otherQ.value.trim().toLowerCase()
-  return q?additionalHmcs.filter(m=>m.name.toLowerCase().includes(q)):additionalHmcs
+const totalHistoricalRecords=hmcLibrary.reduce((sum,m)=>sum+m.records,0)
+const manufacturerQ=ref('')
+const filteredManufacturers=computed(()=>{
+  const q=manufacturerQ.value.trim().toLowerCase()
+  return q?hmcLibrary.filter(m=>m.name.toLowerCase().includes(q)):hmcLibrary
 })
 const machineCardImages=ref({})
 const webDescription=machine=>machine.WebDesc||machine.Web_Desc||''
@@ -74,14 +67,6 @@ const currentHmcs=computed(()=>(machines.value||[]).filter(machine=>Number(machi
 const machineUrl=machine=>{const slug=`${machine.Manufacturer||''}-${machine.Model||''}`.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');return `/equipment/${machine.InvID}/${slug}`}
 async function loadMachineCardImages(){for(const machine of currentHmcs.value){try{const files=await $fetch('/api/images',{query:{invID:machine.InvID}});if(files?.length)machineCardImages.value[machine.InvID]=files[0]}catch(error){console.error(`Could not load image for ${machine.InvID}`,error)}}}
 onMounted(loadMachineCardImages)
-const completed=[
-{name:'Haas',slug:'haas',text:'EC and HS series Haas horizontal machining centers.'},
-{name:'Cincinnati',slug:'cincinnati',text:'Maxim, T-Series and HC Cincinnati horizontal machining centers.'},
-{name:'Okuma',slug:'okuma',text:'MC, MX and MB series Okuma horizontal machining centers.'},
-{name:'Toshiba',slug:'toshiba',text:'BMC series Toshiba horizontal machining centers.'},
-{name:'Toyoda',slug:'toyoda',text:'FA, FH, FHN and HSP Toyoda horizontal machining centers.'},
-{name:'OKK',slug:'okk',text:'HM, HP, MCH and PCH series OKK horizontal machining centers.'}
-]
 useSeoMeta({title:'Horizontal Machining Center Specifications | UMS Spec Library',description:'Research historical horizontal machining center specifications by manufacturer, model and year, including pallet, travel, spindle and ATC data.'})
 useHead({link:[{rel:'canonical',href:'https://www.usedmachinerysource.com/spec-library/hmcs'}]})
 </script>
